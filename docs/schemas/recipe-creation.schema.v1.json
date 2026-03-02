@@ -1,0 +1,382 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://recipebook.app/schemas/recipe-creation/v1",
+  "title": "RecipeBook Recipe Creation Payload v1",
+  "description": "AI-friendly minimal payload for creating a single bilingual recipe with structured ingredient lines.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "recipe"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "recipe-creation/v1"
+    },
+    "recipe": {
+      "$ref": "#/$defs/RecipeCreation"
+    }
+  },
+  "$defs": {
+    "Uuid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "DateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "LanguageTextRequired": {
+      "type": "object",
+      "description": "System-defined recipe text fields must exist in both languages, even if empty strings.",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "description",
+        "preparationSteps",
+        "instructions",
+        "notesSystem"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "preparationSteps": {
+          "type": "string"
+        },
+        "instructions": {
+          "type": "string"
+        },
+        "notesSystem": {
+          "type": "string"
+        }
+      }
+    },
+    "LanguagesRequired": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fr",
+        "en"
+      ],
+      "properties": {
+        "fr": {
+          "$ref": "#/$defs/LanguageTextRequired"
+        },
+        "en": {
+          "$ref": "#/$defs/LanguageTextRequired"
+        }
+      }
+    },
+    "UserNotes": {
+      "type": "object",
+      "description": "User-entered notes can be present in one language only. No fallback should be performed by clients.",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "fr": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        }
+      }
+    },
+    "Source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceUrl",
+        "sourceName"
+      ],
+      "properties": {
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sourceName": {
+          "type": "string"
+        }
+      }
+    },
+    "IngredientLine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "originalText",
+        "ingredientName"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "ingredientRefId": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "originalText": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string",
+          "description": "Canonical unit id (for example g, ml, tsp, cup)."
+        },
+        "ingredientName": {
+          "type": "string"
+        },
+        "preparation": {
+          "type": "string"
+        },
+        "optional": {
+          "type": "boolean",
+          "default": false
+        },
+        "notes": {
+          "type": "string"
+        },
+        "group": {
+          "type": "string"
+        }
+      }
+    },
+    "Servings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "amount"
+      ],
+      "properties": {
+        "amount": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "unit": {
+          "type": "string"
+        }
+      }
+    },
+    "Times": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "prepTimeMinutes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cookTimeMinutes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "totalTimeMinutes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "LocalizedLabel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "nameFr",
+        "nameEn"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "nameFr": {
+          "type": "string"
+        },
+        "nameEn": {
+          "type": "string"
+        }
+      }
+    },
+    "RecipeCreation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "createdAt",
+        "updatedAt",
+        "languages",
+        "ingredients"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "source": {
+          "$ref": "#/$defs/Source"
+        },
+        "languages": {
+          "$ref": "#/$defs/LanguagesRequired"
+        },
+        "userNotes": {
+          "$ref": "#/$defs/UserNotes"
+        },
+        "ingredients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientLine"
+          }
+        },
+        "servings": {
+          "$ref": "#/$defs/Servings"
+        },
+        "times": {
+          "$ref": "#/$defs/Times"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LocalizedLabel"
+          }
+        },
+        "collections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LocalizedLabel"
+          }
+        },
+        "ratings": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "userRating": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "madeCount": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "lastMadeAt": {
+              "$ref": "#/$defs/DateTime"
+            }
+          }
+        },
+        "photos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "localPath"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/Uuid"
+              },
+              "localPath": {
+                "type": "string"
+              },
+              "cloudRef": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "fileName",
+              "mimeType",
+              "localPath"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/Uuid"
+              },
+              "fileName": {
+                "type": "string"
+              },
+              "mimeType": {
+                "type": "string"
+              },
+              "localPath": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "importMetadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "sourceType": {
+              "type": "string"
+            },
+            "parserVersion": {
+              "type": "string"
+            },
+            "originalUnits": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "schemaVersion": "recipe-creation/v1",
+      "recipe": {
+        "id": "9340cc85-dbcf-4b7d-92ed-574e6c8fbf3d",
+        "createdAt": "2026-03-02T12:00:00Z",
+        "updatedAt": "2026-03-02T12:00:00Z",
+        "languages": {
+          "fr": {
+            "title": "Pancakes classiques",
+            "description": "Pancakes rapides et moelleux.",
+            "preparationSteps": "Mesurer les ingredients.",
+            "instructions": "Melanger puis cuire dans une poele chaude.",
+            "notesSystem": ""
+          },
+          "en": {
+            "title": "Classic pancakes",
+            "description": "Quick fluffy pancakes.",
+            "preparationSteps": "Measure ingredients.",
+            "instructions": "Mix and cook in a hot pan.",
+            "notesSystem": ""
+          }
+        },
+        "userNotes": {
+          "en": "Use buttermilk when available."
+        },
+        "ingredients": [
+          {
+            "id": "2f3287f5-a90e-4e2d-b3ca-1bded383a4c2",
+            "originalText": "200 g flour",
+            "quantity": 200,
+            "unit": "g",
+            "ingredientName": "flour"
+          }
+        ],
+        "servings": {
+          "amount": 4
+        }
+      }
+    }
+  ]
+}
