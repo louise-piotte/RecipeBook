@@ -1,15 +1,15 @@
 ﻿<resources>
     <string name="app_name">RecipeBook</string>
-    <string name="bilingual_foundation_title">Bilingual Foundation Demo</string>
-    <string name="language_label">Language</string>
+    <string name="bilingual_foundation_title">Démo de base bilingue</string>
+    <string name="language_label">Langue</string>
     <string name="language_fr">FR</string>
     <string name="language_en">EN</string>
-    <string name="user_notes_label">User notes (no fallback)</string>
+    <string name="user_notes_label">Notes utilisateur (sans remplacement)</string>
     <string name="placeholder_missing_fr">Non disponible en français</string>
     <string name="placeholder_missing_en">Not available in English</string>
     <string name="sample_recipe_title_fr">Pois chiches au paprika</string>
-    <string name="sample_recipe_title_en">Paprika Chickpeas</string>
+    <string name="sample_recipe_title_en">Pois chiches au paprika</string>
     <string name="sample_system_description_fr">Rincer, assaisonner, puis rôtir jusqu a ce que ce soit croustillant.</string>
-    <string name="sample_system_description_en">Rinse, season, and roast until crisp.</string>
-    <string name="sample_user_notes_en">Use two trays for better roasting.</string>
+    <string name="sample_system_description_en">Rincer, assaisonner, puis rôtir jusqu a ce que ce soit croustillant.</string>
+    <string name="sample_user_notes_en">Utiliser deux plaques pour une meilleure cuisson.</string>
 </resources>

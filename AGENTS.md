@@ -16,6 +16,7 @@
 - Localize all user-facing strings in both English and French.
 - For French instructions, prefer Quebec naming conventions.
 - Ensure French text uses proper accents and corrected spelling/typos during conversion, even when source text is typed on an English keyboard.
+- Keep bilingual/language logic UI-agnostic (domain/data layer), because UI structure is expected to change multiple times.
 - Preferred Quebec terms for common recipe wording:
   - Use `cuillère à thé` instead of `cuillère à café`.
   - Use `cuillère à soupe` instead of `cuillère à table`.
@@ -51,3 +52,5 @@
 - 2026-03-06: Shopping list scope expanded to full functionality: checklist + manual entries, full editability of all entries, optional hidden-by-default amounts, delete one/checked/all actions, local-only reusable name memory with section and typo-tolerant case-insensitive suggestions, plus editable locally persisted sections.
 - 2026-03-06: Implemented a lightweight shopping-list local store using Android DataStore preferences under `data/local/shoppinglist`, intentionally separate from JSON schema/DTO export models.
 - 2026-03-06: Schema maintenance rule tightened: schema files, schema docs, examples, DTO/mappers, and schema tests must be updated together whenever any one of them changes.
+- 2026-03-06: Set up Room persistence foundation for core entities/DAOs in `data/local/db` with a real instrumentation test for DAO round-trip behavior.
+- 2026-03-06: Bilingual foundation must keep language/placeholder logic UI-agnostic so UI layout/structure can evolve without rewriting core behavior.

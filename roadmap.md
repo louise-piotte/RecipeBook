@@ -1,10 +1,5 @@
 # RecipeBook Roadmap (Active To-Do)
 
-- Set up Room persistence for core entities and DAOs.
-- Implement bilingual foundation:
-  - App language toggle (EN/FR)
-  - Placeholder behavior for missing user-entered text (no fallback)
-  - EN/FR localization coverage for UI strings
 - Build MVP functional screens:
   - Library list + search
   - Recipe detail
