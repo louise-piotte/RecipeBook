@@ -71,6 +71,7 @@ Build a personal recipe book app that:
     * `optional` (bool)
     * `notes` (string)
 * `group` (optional section header: “Dough”, “Filling”)
+* `substitutions[]` (optional references to `IngredientLineSubstitution` for suggested or selected alternatives)
 
 **IngredientReference** (the “exhaustive list” backbone)
 
@@ -80,6 +81,60 @@ Build a personal recipe book app that:
 * `defaultDensity` (g/ml) **when meaningful**
 * `unitMappings[]` (optional: “1 cup = 120g” for flour)
 * `nutrition` (optional, out-of-scope unless you want it)
+* `updatedAt`
+
+**IngredientForm** (ingredient state/format used for substitutions and conversions)
+
+* `id`
+* `ingredientRefId`
+* `formCode` (e.g., dried, cooked, canned_drained, raw, toasted)
+* `prepState` (optional normalized state metadata)
+* `densityGPerMl` (optional form-level override)
+* `notesFr?`, `notesEn?`
+* `updatedAt`
+
+**SubstitutionRule** (directed conversion between ingredient forms)
+
+* `id`
+* `fromFormId`
+* `toFormId`
+* `conversionType` (`ratio`, `affine`, `fixed_amount`)
+* `ratio?` (for `ratio`)
+* `offset?` (for `affine`; usually 0 for cooking use-cases)
+* `sourceUnitScope` (mass, volume, count, package)
+* `targetUnitScope` (mass, volume, count, package)
+* `minQty?`, `maxQty?` (optional validity range)
+* `confidence` (`exact`, `tested`, `approximate`)
+* `roundingPolicy` (e.g., none, nearest_5g, nearest_0_25cup)
+* `notesFr?`, `notesEn?`
+* `updatedAt`
+
+**IngredientLineSubstitution** (recipe-line-level substitution suggestion/selection)
+
+* `id`
+* `ingredientLineId`
+* `substitutionRuleId`
+* `isPreferred`
+* `customLabelFr?`, `customLabelEn?`
+* `createdAt`, `updatedAt`
+
+**ContextualSubstitutionRule** (ingredient-to-ingredient substitution with context limits)
+
+* `id`
+* `fromIngredientRefId`
+* `toIngredientRefId`
+* `conversionType` (`ratio`, `affine`, `fixed_amount`)
+* `ratio?`
+* `offset?`
+* `allowedDishTypes[]` (e.g., sauce, gravy)
+* `excludedDishTypes[]` (e.g., cake, pastry)
+* `allowedIngredientRoles[]` (e.g., thickener, aromatic, heat)
+* `excludedIngredientRoles[]` (optional)
+* `allowedCookingMethods[]` (optional)
+* `severityIfMisused` (`low`, `medium`, `high`)
+* `requiresUserConfirmation` (bool)
+* `confidence` (`exact`, `tested`, `approximate`)
+* `notesFr?`, `notesEn?`
 * `updatedAt`
 
 **Unit**
@@ -227,7 +282,12 @@ User can convert ingredient quantities between:
 
 * Mass units (g, kg, oz, lb…)
 * Volume units (ml, l, tsp, tbsp, cup…)
+* Temperature units must display in both Celsius (C) and Fahrenheit (F) at the same time for recipe steps and ingredient lines where temperature is present.
 * Count (e.g., “2 eggs”) should generally not auto-convert unless explicitly mapped.
+* Mass conversion must support pounds (lb) ↔ grams (g).
+* Volume conversion must support fluid ounces (fl oz) ↔ milliliters (ml).
+* Form substitutions (e.g., canned ↔ dried ↔ cooked) must support different equivalent amounts via `SubstitutionRule`.
+* Contextual substitutions between different ingredients (e.g., flour ↔ cornstarch) must use `ContextualSubstitutionRule` and must not be treated as globally valid.
 
 **Key rule:** Weight ↔ volume conversions require an ingredient density or mapping.
 
@@ -236,11 +296,19 @@ User can convert ingredient quantities between:
 
     * Select ingredient from reference list
     * Or provide a one-time density override for that recipe/line
+* User can define and save a custom weight-to-volume ratio (density in g/ml) per ingredient for future conversions.
+* Substitution results must expose confidence (`exact`, `tested`, `approximate`) and apply rule-specific rounding policy.
+* Contextual substitutions must enforce scope (dish type/role/method) and apply warning or block behavior when out of scope.
 
 **Acceptance criteria**
 
 * Converting “100 g flour → cups” uses flour mapping/density.
 * If density unknown, user is prompted (not silently wrong).
+* Temperatures are shown as dual units (for example: 180 C / 356 F).
+* Converting lb ↔ g and fl oz ↔ ml works from recipe view and edit flows.
+* A saved custom density is reused automatically for later conversions of the same ingredient.
+* Chickpea form substitution example is supported: a canned amount can convert to equivalent dried or cooked amounts using form rules.
+* A contextual substitution valid for sauces/gravy can be offered there, but is blocked or strongly warned for cakes/pastries.
 
 ---
 
@@ -364,6 +432,52 @@ User can convert ingredient quantities between:
 
 ---
 
+### FR-14 Shopping lists (full functionality)
+
+* User can generate a shopping list from one or more selected recipes.
+* Shopping list is a checklist where each entry has:
+
+    * `name` (required)
+    * `amount` (optional)
+    * `section/category` (optional)
+    * `checked` status
+* User can add arbitrary manual entries (free text), not only recipe-derived entries.
+* Any entry (manual or auto-generated) is editable after creation:
+
+    * Edit name
+    * Edit amount
+    * Edit section/category
+* Amount display behavior:
+
+    * Amounts are optional.
+    * If present, amounts are hidden by default and can be shown on demand.
+* Deletion controls:
+
+    * Delete one entry
+    * Delete all checked entries
+    * Delete all entries
+* Local memory for quick re-entry:
+
+    * Store previously entered entry names (not amounts) with their section/category.
+    * Match suggestions case-insensitively.
+    * Provide typo-tolerant suggestions for near matches.
+    * Storage is local only (no social/media/cloud sharing requirement for this memory).
+* Sections/categories:
+
+    * User can add, rename, and delete sections/categories.
+    * Section/category definitions are stored locally.
+
+**Acceptance criteria**
+
+* User can build one combined checklist from multiple recipes and add custom lines manually.
+* User can edit name/amount/section for any checklist line, including auto-generated lines.
+* Default list view hides amounts while preserving them in data.
+* Single-delete, delete-checked, and delete-all actions all work correctly.
+* Name suggestions are case-insensitive and resilient to minor typos.
+* Section/category edits persist locally across app restarts.
+
+---
+
 ## 4) Non-functional requirements (NFR)
 
 ### NFR-1 Offline-first
@@ -394,6 +508,12 @@ User can convert ingredient quantities between:
 ### NFR-5 Internationalization & localization
 
 * UI strings localized FR/EN.
+* French recipe instructions use Quebec naming conventions.
+* During recipe conversion, French text must be normalized to proper accents and corrected spelling/typos, even if source text was entered on an English keyboard.
+* Preferred Quebec terms for conversions and normalization:
+  * Use "cuillère à thé" instead of "cuillère à café".
+  * Use "cuillère à soupe" instead of "cuillère à table".
+  * Use "bicarbonate de soude" instead of "levure chimique".
 * Units display localized (decimal separators, abbreviations).
 * Placeholders localized.
 
@@ -457,6 +577,39 @@ User can convert ingredient quantities between:
 * Multiply `quantity` fields only.
 * Do not attempt to rewrite preparation steps/instructions text automatically (“bake for 20 minutes”) unless user opts in.
 
+### 6.4 Substitutions (form-to-form)
+
+* Model substitutions as directed rules between `IngredientForm` records, not plain ingredient-name aliases.
+* Suggested conversion order:
+
+    1. Convert source amount to canonical base (usually grams or milliliters) from source form mappings.
+    2. Apply `SubstitutionRule` (`ratio`, `affine`, or `fixed_amount`).
+    3. Convert result to target display unit from target form mappings.
+    4. Apply `roundingPolicy` and show `confidence` + notes.
+* Example forms for chickpeas:
+
+    * `chickpea_dried`
+    * `chickpea_cooked`
+    * `chickpea_canned_drained`
+* Package mappings (e.g., “1 can (15 oz)”) may be represented in unit mappings and linked to form-specific drained mass.
+
+### 6.5 Contextual substitutions (ingredient-to-ingredient)
+
+* Keep two substitution classes:
+
+    1. Global equivalent conversions (`SubstitutionRule`): same ingredient across forms; generally safe everywhere.
+    2. Contextual substitutions (`ContextualSubstitutionRule`): different ingredients; valid only in specific contexts.
+* Evaluation order for contextual substitutions:
+
+    1. Match recipe context (dish type, ingredient role, cooking method when available).
+    2. If context matches, offer substitution with confidence and notes.
+    3. If context is unknown, require explicit user confirmation.
+    4. If context is excluded/high-risk, block or show high-severity warning.
+* Example policy:
+
+    * `flour -> cornstarch` can be allowed for `sauce` or `gravy` when role is `thickener`.
+    * The same rule should be excluded for `cake` and `pastry`.
+
 ---
 
 ## 7) Sync requirements (Google Drive)
@@ -489,6 +642,15 @@ User can convert ingredient quantities between:
 
 ### V1.1 / V2
 
+* Publish/export recipes to a printable PDF format (first post-MVP nice-to-have).
+* Pantry mode + “cook with what I have” filtering.
+* Full shopping list functionality (FR-14): checklist, manual entries, full editability, delete controls, local name memory, editable sections.
+* Dietary/allergen profiles with safe filtering/substitution prompts.
+* Recipe version history (revision list + restore).
+* Scaling lock controls for sensitive ingredients (for example salt/yeast).
+* Step timers linked to instructions (support multiple concurrent timers).
+* Batch cooking mode (scaled batches + yield/container notes).
+* Printable PDF layout templates (for example compact, one-page, large-text).
 * Robust URL import (schema.org + better parsing)
 * Merge import + de-dup
 * Advanced conflict merge
@@ -504,7 +666,13 @@ User can convert ingredient quantities between:
 
 ---
 
-## 10) Definition of done (DoD)
+## 10) Potential ideas (not committed)
+
+* OCR import from photos/scans of handwritten or printed recipes.
+
+---
+
+## 11) Definition of done (DoD)
 
 * Round-trip test: create recipes with photos + bilingual text + tags + collections + prep steps + notes → export → delete local → import → identical.
 * Offline test: edits made offline sync correctly once online.

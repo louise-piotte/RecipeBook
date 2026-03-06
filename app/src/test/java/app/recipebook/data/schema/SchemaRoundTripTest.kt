@@ -5,8 +5,11 @@ import app.recipebook.domain.model.AttachmentRef
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.CollectionSortOrder
+import app.recipebook.domain.model.ContextualSubstitutionRule
 import app.recipebook.domain.model.ImportMetadata
+import app.recipebook.domain.model.IngredientForm
 import app.recipebook.domain.model.IngredientLine
+import app.recipebook.domain.model.IngredientLineSubstitution
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LibraryMetadata
@@ -19,8 +22,13 @@ import app.recipebook.domain.model.RecipeLibrary
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
+import app.recipebook.domain.model.SubstitutionConfidence
+import app.recipebook.domain.model.SubstitutionConversionType
+import app.recipebook.domain.model.SubstitutionRule
+import app.recipebook.domain.model.SubstitutionSeverity
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.UnitDefinition
+import app.recipebook.domain.model.UnitScope
 import app.recipebook.domain.model.UnitType
 import app.recipebook.domain.model.UserNotes
 import kotlinx.serialization.json.Json
@@ -86,6 +94,58 @@ class SchemaRoundTripTest {
                     IngredientUnitMapping(fromUnit = "cup", toUnit = "g", factor = 120.0)
                 ),
                 updatedAt = "2026-03-02T12:30:00Z"
+            )
+        ),
+        ingredientForms = listOf(
+            IngredientForm(
+                id = "3b7cb1f8-79c3-4abc-90ac-99cae87b8eca",
+                ingredientRefId = "8c35153a-4bf2-4501-a77f-b7a5af15427b",
+                formCode = "raw",
+                prepState = "raw",
+                densityGPerMl = 0.53,
+                notesFr = "Forme de reference",
+                notesEn = "Reference form",
+                updatedAt = "2026-03-02T12:35:00Z"
+            )
+        ),
+        substitutionRules = listOf(
+            SubstitutionRule(
+                id = "c324302c-f362-497d-a2ef-83ad6b130f1f",
+                fromFormId = "3b7cb1f8-79c3-4abc-90ac-99cae87b8eca",
+                toFormId = "3b7cb1f8-79c3-4abc-90ac-99cae87b8eca",
+                conversionType = SubstitutionConversionType.RATIO,
+                ratio = 1.0,
+                offset = null,
+                sourceUnitScope = UnitScope.MASS,
+                targetUnitScope = UnitScope.MASS,
+                minQty = null,
+                maxQty = null,
+                confidence = SubstitutionConfidence.EXACT,
+                roundingPolicy = "none",
+                notesFr = "Identite",
+                notesEn = "Identity",
+                updatedAt = "2026-03-02T12:40:00Z"
+            )
+        ),
+        contextualSubstitutionRules = listOf(
+            ContextualSubstitutionRule(
+                id = "4dcb26c5-7e02-4f56-8fd0-3cbf95f9cb25",
+                fromIngredientRefId = "8c35153a-4bf2-4501-a77f-b7a5af15427b",
+                toIngredientRefId = "8c35153a-4bf2-4501-a77f-b7a5af15427b",
+                conversionType = SubstitutionConversionType.RATIO,
+                ratio = 1.0,
+                offset = null,
+                allowedDishTypes = listOf("sauce", "gravy"),
+                excludedDishTypes = listOf("cake", "pastry"),
+                allowedIngredientRoles = listOf("thickener"),
+                excludedIngredientRoles = emptyList(),
+                allowedCookingMethods = listOf("simmer"),
+                severityIfMisused = SubstitutionSeverity.HIGH,
+                requiresUserConfirmation = true,
+                confidence = SubstitutionConfidence.TESTED,
+                notesFr = "Utiliser seulement pour sauces",
+                notesEn = "Use only for sauces",
+                updatedAt = "2026-03-02T12:42:00Z"
             )
         ),
         units = listOf(
@@ -175,7 +235,20 @@ class SchemaRoundTripTest {
                 preparation = null,
                 optional = false,
                 notes = null,
-                group = "Batter"
+                group = "Batter",
+                substitutions = listOf(
+                    IngredientLineSubstitution(
+                        id = "2cfc2678-7ab3-4094-ac6e-9995fbaede6b",
+                        ingredientLineId = "2f3287f5-a90e-4e2d-b3ca-1bded383a4c2",
+                        substitutionRuleId = "c324302c-f362-497d-a2ef-83ad6b130f1f",
+                        contextualSubstitutionRuleId = "4dcb26c5-7e02-4f56-8fd0-3cbf95f9cb25",
+                        isPreferred = true,
+                        customLabelFr = "Alternative test",
+                        customLabelEn = "Test alternative",
+                        createdAt = "2026-03-02T12:43:00Z",
+                        updatedAt = "2026-03-02T12:44:00Z"
+                    )
+                )
             ),
             IngredientLine(
                 id = "87d684b2-b945-4f4f-b077-21f7a5fdef1e",

@@ -38,7 +38,8 @@ data class IngredientLine(
     val preparation: String? = null,
     val optional: Boolean = false,
     val notes: String? = null,
-    val group: String? = null
+    val group: String? = null,
+    val substitutions: List<IngredientLineSubstitution> = emptyList()
 )
 
 data class Servings(
@@ -114,6 +115,92 @@ data class IngredientReference(
     val updatedAt: String
 )
 
+enum class SubstitutionConversionType {
+    RATIO,
+    AFFINE,
+    FIXED_AMOUNT
+}
+
+enum class UnitScope {
+    MASS,
+    VOLUME,
+    COUNT,
+    PACKAGE
+}
+
+enum class SubstitutionConfidence {
+    EXACT,
+    TESTED,
+    APPROXIMATE
+}
+
+enum class SubstitutionSeverity {
+    LOW,
+    MEDIUM,
+    HIGH
+}
+
+data class IngredientForm(
+    val id: String,
+    val ingredientRefId: String,
+    val formCode: String,
+    val prepState: String? = null,
+    val densityGPerMl: Double? = null,
+    val notesFr: String? = null,
+    val notesEn: String? = null,
+    val updatedAt: String
+)
+
+data class SubstitutionRule(
+    val id: String,
+    val fromFormId: String,
+    val toFormId: String,
+    val conversionType: SubstitutionConversionType,
+    val ratio: Double? = null,
+    val offset: Double? = null,
+    val sourceUnitScope: UnitScope,
+    val targetUnitScope: UnitScope,
+    val minQty: Double? = null,
+    val maxQty: Double? = null,
+    val confidence: SubstitutionConfidence,
+    val roundingPolicy: String,
+    val notesFr: String? = null,
+    val notesEn: String? = null,
+    val updatedAt: String
+)
+
+data class ContextualSubstitutionRule(
+    val id: String,
+    val fromIngredientRefId: String,
+    val toIngredientRefId: String,
+    val conversionType: SubstitutionConversionType,
+    val ratio: Double? = null,
+    val offset: Double? = null,
+    val allowedDishTypes: List<String> = emptyList(),
+    val excludedDishTypes: List<String> = emptyList(),
+    val allowedIngredientRoles: List<String> = emptyList(),
+    val excludedIngredientRoles: List<String> = emptyList(),
+    val allowedCookingMethods: List<String> = emptyList(),
+    val severityIfMisused: SubstitutionSeverity,
+    val requiresUserConfirmation: Boolean = true,
+    val confidence: SubstitutionConfidence,
+    val notesFr: String? = null,
+    val notesEn: String? = null,
+    val updatedAt: String
+)
+
+data class IngredientLineSubstitution(
+    val id: String,
+    val ingredientLineId: String,
+    val substitutionRuleId: String? = null,
+    val contextualSubstitutionRuleId: String? = null,
+    val isPreferred: Boolean = false,
+    val customLabelFr: String? = null,
+    val customLabelEn: String? = null,
+    val createdAt: String,
+    val updatedAt: String
+)
+
 enum class UnitType {
     MASS,
     VOLUME,
@@ -179,6 +266,9 @@ data class RecipeLibrary(
     val metadata: LibraryMetadata,
     val recipes: List<Recipe>,
     val ingredientReferences: List<IngredientReference>,
+    val ingredientForms: List<IngredientForm> = emptyList(),
+    val substitutionRules: List<SubstitutionRule> = emptyList(),
+    val contextualSubstitutionRules: List<ContextualSubstitutionRule> = emptyList(),
     val units: List<UnitDefinition>,
     val tags: List<Tag>,
     val collections: List<Collection>,

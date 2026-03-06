@@ -5,8 +5,11 @@ import app.recipebook.domain.model.AttachmentRef
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.CollectionSortOrder
+import app.recipebook.domain.model.ContextualSubstitutionRule
 import app.recipebook.domain.model.ImportMetadata
+import app.recipebook.domain.model.IngredientForm
 import app.recipebook.domain.model.IngredientLine
+import app.recipebook.domain.model.IngredientLineSubstitution
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LibraryMetadata
@@ -19,8 +22,13 @@ import app.recipebook.domain.model.RecipeLibrary
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
+import app.recipebook.domain.model.SubstitutionConfidence
+import app.recipebook.domain.model.SubstitutionConversionType
+import app.recipebook.domain.model.SubstitutionRule
+import app.recipebook.domain.model.SubstitutionSeverity
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.UnitDefinition
+import app.recipebook.domain.model.UnitScope
 import app.recipebook.domain.model.UnitType
 import app.recipebook.domain.model.UserNotes
 
@@ -136,7 +144,8 @@ private fun IngredientLineDto.toDomain(): IngredientLine = IngredientLine(
     preparation = preparation,
     optional = optional,
     notes = notes,
-    group = group
+    group = group,
+    substitutions = substitutions.map { it.toDomain() }
 )
 
 private fun IngredientLine.toDto(): IngredientLineDto = IngredientLineDto(
@@ -149,7 +158,8 @@ private fun IngredientLine.toDto(): IngredientLineDto = IngredientLineDto(
     preparation = preparation,
     optional = optional,
     notes = notes,
-    group = group
+    group = group,
+    substitutions = substitutions.map { it.toDto() }
 )
 
 private fun ServingsDto.toDomain(): Servings = Servings(
@@ -230,6 +240,9 @@ private fun LibraryDto.toDomain(): RecipeLibrary = RecipeLibrary(
     metadata = metadata.toDomain(),
     recipes = recipes.map { it.toDomain() },
     ingredientReferences = ingredientReferences.map { it.toDomain() },
+    ingredientForms = ingredientForms.map { it.toDomain() },
+    substitutionRules = substitutionRules.map { it.toDomain() },
+    contextualSubstitutionRules = contextualSubstitutionRules.map { it.toDomain() },
     units = units.map { it.toDomain() },
     tags = tags.map { it.toDomain() },
     collections = collections.map { it.toDomain() },
@@ -240,6 +253,9 @@ private fun RecipeLibrary.toDto(): LibraryDto = LibraryDto(
     metadata = metadata.toDto(),
     recipes = recipes.map { it.toDto() },
     ingredientReferences = ingredientReferences.map { it.toDto() },
+    ingredientForms = ingredientForms.map { it.toDto() },
+    substitutionRules = substitutionRules.map { it.toDto() },
+    contextualSubstitutionRules = contextualSubstitutionRules.map { it.toDto() },
     units = units.map { it.toDto() },
     tags = tags.map { it.toDto() },
     collections = collections.map { it.toDto() },
@@ -283,6 +299,128 @@ private fun IngredientReference.toDto(): IngredientReferenceDto = IngredientRefe
     aliasesEn = aliasesEn,
     defaultDensity = defaultDensity,
     unitMappings = unitMappings.map { it.toDto() },
+    updatedAt = updatedAt
+)
+
+private fun IngredientFormDto.toDomain(): IngredientForm = IngredientForm(
+    id = id,
+    ingredientRefId = ingredientRefId,
+    formCode = formCode,
+    prepState = prepState,
+    densityGPerMl = densityGPerMl,
+    notesFr = notesFr,
+    notesEn = notesEn,
+    updatedAt = updatedAt
+)
+
+private fun IngredientForm.toDto(): IngredientFormDto = IngredientFormDto(
+    id = id,
+    ingredientRefId = ingredientRefId,
+    formCode = formCode,
+    prepState = prepState,
+    densityGPerMl = densityGPerMl,
+    notesFr = notesFr,
+    notesEn = notesEn,
+    updatedAt = updatedAt
+)
+
+private fun SubstitutionRuleDto.toDomain(): SubstitutionRule = SubstitutionRule(
+    id = id,
+    fromFormId = fromFormId,
+    toFormId = toFormId,
+    conversionType = conversionType.toSubstitutionConversionType(),
+    ratio = ratio,
+    offset = offset,
+    sourceUnitScope = sourceUnitScope.toUnitScope(),
+    targetUnitScope = targetUnitScope.toUnitScope(),
+    minQty = minQty,
+    maxQty = maxQty,
+    confidence = confidence.toSubstitutionConfidence(),
+    roundingPolicy = roundingPolicy,
+    notesFr = notesFr,
+    notesEn = notesEn,
+    updatedAt = updatedAt
+)
+
+private fun SubstitutionRule.toDto(): SubstitutionRuleDto = SubstitutionRuleDto(
+    id = id,
+    fromFormId = fromFormId,
+    toFormId = toFormId,
+    conversionType = conversionType.toSchemaValue(),
+    ratio = ratio,
+    offset = offset,
+    sourceUnitScope = sourceUnitScope.toSchemaValue(),
+    targetUnitScope = targetUnitScope.toSchemaValue(),
+    minQty = minQty,
+    maxQty = maxQty,
+    confidence = confidence.toSchemaValue(),
+    roundingPolicy = roundingPolicy,
+    notesFr = notesFr,
+    notesEn = notesEn,
+    updatedAt = updatedAt
+)
+
+private fun ContextualSubstitutionRuleDto.toDomain(): ContextualSubstitutionRule = ContextualSubstitutionRule(
+    id = id,
+    fromIngredientRefId = fromIngredientRefId,
+    toIngredientRefId = toIngredientRefId,
+    conversionType = conversionType.toSubstitutionConversionType(),
+    ratio = ratio,
+    offset = offset,
+    allowedDishTypes = allowedDishTypes,
+    excludedDishTypes = excludedDishTypes,
+    allowedIngredientRoles = allowedIngredientRoles,
+    excludedIngredientRoles = excludedIngredientRoles,
+    allowedCookingMethods = allowedCookingMethods,
+    severityIfMisused = severityIfMisused.toSubstitutionSeverity(),
+    requiresUserConfirmation = requiresUserConfirmation,
+    confidence = confidence.toSubstitutionConfidence(),
+    notesFr = notesFr,
+    notesEn = notesEn,
+    updatedAt = updatedAt
+)
+
+private fun ContextualSubstitutionRule.toDto(): ContextualSubstitutionRuleDto = ContextualSubstitutionRuleDto(
+    id = id,
+    fromIngredientRefId = fromIngredientRefId,
+    toIngredientRefId = toIngredientRefId,
+    conversionType = conversionType.toSchemaValue(),
+    ratio = ratio,
+    offset = offset,
+    allowedDishTypes = allowedDishTypes,
+    excludedDishTypes = excludedDishTypes,
+    allowedIngredientRoles = allowedIngredientRoles,
+    excludedIngredientRoles = excludedIngredientRoles,
+    allowedCookingMethods = allowedCookingMethods,
+    severityIfMisused = severityIfMisused.toSchemaValue(),
+    requiresUserConfirmation = requiresUserConfirmation,
+    confidence = confidence.toSchemaValue(),
+    notesFr = notesFr,
+    notesEn = notesEn,
+    updatedAt = updatedAt
+)
+
+private fun IngredientLineSubstitutionDto.toDomain(): IngredientLineSubstitution = IngredientLineSubstitution(
+    id = id,
+    ingredientLineId = ingredientLineId,
+    substitutionRuleId = substitutionRuleId,
+    contextualSubstitutionRuleId = contextualSubstitutionRuleId,
+    isPreferred = isPreferred,
+    customLabelFr = customLabelFr,
+    customLabelEn = customLabelEn,
+    createdAt = createdAt,
+    updatedAt = updatedAt
+)
+
+private fun IngredientLineSubstitution.toDto(): IngredientLineSubstitutionDto = IngredientLineSubstitutionDto(
+    id = id,
+    ingredientLineId = ingredientLineId,
+    substitutionRuleId = substitutionRuleId,
+    contextualSubstitutionRuleId = contextualSubstitutionRuleId,
+    isPreferred = isPreferred,
+    customLabelFr = customLabelFr,
+    customLabelEn = customLabelEn,
+    createdAt = createdAt,
     updatedAt = updatedAt
 )
 
@@ -396,6 +534,60 @@ private fun UnitType.toSchemaValue(): String = when (this) {
     UnitType.LENGTH -> "length"
     UnitType.TEMPERATURE -> "temperature"
     UnitType.OTHER -> "other"
+}
+
+private fun String.toSubstitutionConversionType(): SubstitutionConversionType = when (lowercase()) {
+    "ratio" -> SubstitutionConversionType.RATIO
+    "affine" -> SubstitutionConversionType.AFFINE
+    "fixed_amount" -> SubstitutionConversionType.FIXED_AMOUNT
+    else -> error("Unsupported substitution conversion type: $this")
+}
+
+private fun SubstitutionConversionType.toSchemaValue(): String = when (this) {
+    SubstitutionConversionType.RATIO -> "ratio"
+    SubstitutionConversionType.AFFINE -> "affine"
+    SubstitutionConversionType.FIXED_AMOUNT -> "fixed_amount"
+}
+
+private fun String.toUnitScope(): UnitScope = when (lowercase()) {
+    "mass" -> UnitScope.MASS
+    "volume" -> UnitScope.VOLUME
+    "count" -> UnitScope.COUNT
+    "package" -> UnitScope.PACKAGE
+    else -> error("Unsupported unit scope: $this")
+}
+
+private fun UnitScope.toSchemaValue(): String = when (this) {
+    UnitScope.MASS -> "mass"
+    UnitScope.VOLUME -> "volume"
+    UnitScope.COUNT -> "count"
+    UnitScope.PACKAGE -> "package"
+}
+
+private fun String.toSubstitutionConfidence(): SubstitutionConfidence = when (lowercase()) {
+    "exact" -> SubstitutionConfidence.EXACT
+    "tested" -> SubstitutionConfidence.TESTED
+    "approximate" -> SubstitutionConfidence.APPROXIMATE
+    else -> error("Unsupported substitution confidence: $this")
+}
+
+private fun SubstitutionConfidence.toSchemaValue(): String = when (this) {
+    SubstitutionConfidence.EXACT -> "exact"
+    SubstitutionConfidence.TESTED -> "tested"
+    SubstitutionConfidence.APPROXIMATE -> "approximate"
+}
+
+private fun String.toSubstitutionSeverity(): SubstitutionSeverity = when (lowercase()) {
+    "low" -> SubstitutionSeverity.LOW
+    "medium" -> SubstitutionSeverity.MEDIUM
+    "high" -> SubstitutionSeverity.HIGH
+    else -> error("Unsupported substitution severity: $this")
+}
+
+private fun SubstitutionSeverity.toSchemaValue(): String = when (this) {
+    SubstitutionSeverity.LOW -> "low"
+    SubstitutionSeverity.MEDIUM -> "medium"
+    SubstitutionSeverity.HIGH -> "high"
 }
 
 private fun String.toCollectionSortOrder(): CollectionSortOrder = when (lowercase()) {

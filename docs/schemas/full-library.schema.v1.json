@@ -140,8 +140,66 @@
         },
         "group": {
           "type": "string"
+        },
+        "substitutions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientLineSubstitution"
+          }
         }
       }
+    },
+    "IngredientLineSubstitution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "ingredientLineId",
+        "createdAt",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "ingredientLineId": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "substitutionRuleId": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "contextualSubstitutionRuleId": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "isPreferred": {
+          "type": "boolean",
+          "default": false
+        },
+        "customLabelFr": {
+          "type": "string"
+        },
+        "customLabelEn": {
+          "type": "string"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/DateTime"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "substitutionRuleId"
+          ]
+        },
+        {
+          "required": [
+            "contextualSubstitutionRuleId"
+          ]
+        }
+      ]
     },
     "Servings": {
       "type": "object",
@@ -403,6 +461,228 @@
         }
       }
     },
+    "IngredientForm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "ingredientRefId",
+        "formCode",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "ingredientRefId": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "formCode": {
+          "type": "string"
+        },
+        "prepState": {
+          "type": "string"
+        },
+        "densityGPerMl": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "notesFr": {
+          "type": "string"
+        },
+        "notesEn": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/DateTime"
+        }
+      }
+    },
+    "SubstitutionRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "fromFormId",
+        "toFormId",
+        "conversionType",
+        "sourceUnitScope",
+        "targetUnitScope",
+        "confidence",
+        "roundingPolicy",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "fromFormId": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "toFormId": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "conversionType": {
+          "type": "string",
+          "enum": [
+            "ratio",
+            "affine",
+            "fixed_amount"
+          ]
+        },
+        "ratio": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "offset": {
+          "type": "number"
+        },
+        "sourceUnitScope": {
+          "type": "string",
+          "enum": [
+            "mass",
+            "volume",
+            "count",
+            "package"
+          ]
+        },
+        "targetUnitScope": {
+          "type": "string",
+          "enum": [
+            "mass",
+            "volume",
+            "count",
+            "package"
+          ]
+        },
+        "minQty": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "maxQty": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "exact",
+            "tested",
+            "approximate"
+          ]
+        },
+        "roundingPolicy": {
+          "type": "string"
+        },
+        "notesFr": {
+          "type": "string"
+        },
+        "notesEn": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/DateTime"
+        }
+      }
+    },
+    "ContextualSubstitutionRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "fromIngredientRefId",
+        "toIngredientRefId",
+        "conversionType",
+        "severityIfMisused",
+        "requiresUserConfirmation",
+        "confidence",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "fromIngredientRefId": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "toIngredientRefId": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "conversionType": {
+          "type": "string",
+          "enum": [
+            "ratio",
+            "affine",
+            "fixed_amount"
+          ]
+        },
+        "ratio": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "offset": {
+          "type": "number"
+        },
+        "allowedDishTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excludedDishTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowedIngredientRoles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excludedIngredientRoles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowedCookingMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "severityIfMisused": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "requiresUserConfirmation": {
+          "type": "boolean"
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "exact",
+            "tested",
+            "approximate"
+          ]
+        },
+        "notesFr": {
+          "type": "string"
+        },
+        "notesEn": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/DateTime"
+        }
+      }
+    },
     "Unit": {
       "type": "object",
       "additionalProperties": false,
@@ -581,6 +861,9 @@
         "metadata",
         "recipes",
         "ingredientReferences",
+        "ingredientForms",
+        "substitutionRules",
+        "contextualSubstitutionRules",
         "units",
         "tags",
         "collections",
@@ -600,6 +883,24 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/IngredientReference"
+          }
+        },
+        "ingredientForms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientForm"
+          }
+        },
+        "substitutionRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SubstitutionRule"
+          }
+        },
+        "contextualSubstitutionRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ContextualSubstitutionRule"
           }
         },
         "units": {
@@ -639,6 +940,9 @@
         },
         "recipes": [],
         "ingredientReferences": [],
+        "ingredientForms": [],
+        "substitutionRules": [],
+        "contextualSubstitutionRules": [],
         "units": [],
         "tags": [],
         "collections": [],

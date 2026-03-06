@@ -143,8 +143,66 @@
         },
         "group": {
           "type": "string"
+        },
+        "substitutions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/IngredientLineSubstitution"
+          }
         }
       }
+    },
+    "IngredientLineSubstitution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "ingredientLineId",
+        "createdAt",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "ingredientLineId": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "substitutionRuleId": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "contextualSubstitutionRuleId": {
+          "$ref": "#/$defs/Uuid"
+        },
+        "isPreferred": {
+          "type": "boolean",
+          "default": false
+        },
+        "customLabelFr": {
+          "type": "string"
+        },
+        "customLabelEn": {
+          "type": "string"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/DateTime"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "substitutionRuleId"
+          ]
+        },
+        {
+          "required": [
+            "contextualSubstitutionRuleId"
+          ]
+        }
+      ]
     },
     "Servings": {
       "type": "object",

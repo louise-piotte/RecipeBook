@@ -11,3 +11,7 @@ This directory contains the versioned JSON Schemas used by RecipeBook.
   - `schemaVersion` field constraint (const)
   - `$id` with versioned path
 - Any breaking change requires a new versioned schema file (for example `*.v2.json`).
+
+## Consistency rule
+- Keep schema files, this documentation, schema examples, DTO/mappers, and schema tests fully consistent.
+- Any change to one of these artifacts requires updating the others in the same change.

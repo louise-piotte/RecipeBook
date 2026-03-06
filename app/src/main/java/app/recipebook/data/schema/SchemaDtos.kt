@@ -119,7 +119,9 @@ data class IngredientLineDto(
     @SerialName("notes")
     val notes: String? = null,
     @SerialName("group")
-    val group: String? = null
+    val group: String? = null,
+    @SerialName("substitutions")
+    val substitutions: List<IngredientLineSubstitutionDto> = emptyList()
 )
 
 @Serializable
@@ -192,6 +194,12 @@ data class LibraryDto(
     val recipes: List<RecipeDto>,
     @SerialName("ingredientReferences")
     val ingredientReferences: List<IngredientReferenceDto>,
+    @SerialName("ingredientForms")
+    val ingredientForms: List<IngredientFormDto> = emptyList(),
+    @SerialName("substitutionRules")
+    val substitutionRules: List<SubstitutionRuleDto> = emptyList(),
+    @SerialName("contextualSubstitutionRules")
+    val contextualSubstitutionRules: List<ContextualSubstitutionRuleDto> = emptyList(),
     @SerialName("units")
     val units: List<UnitDefinitionDto>,
     @SerialName("tags")
@@ -234,6 +242,120 @@ data class IngredientReferenceDto(
     val defaultDensity: Double? = null,
     @SerialName("unitMappings")
     val unitMappings: List<IngredientUnitMappingDto> = emptyList(),
+    @SerialName("updatedAt")
+    val updatedAt: String
+)
+
+@Serializable
+data class IngredientFormDto(
+    @SerialName("id")
+    val id: String,
+    @SerialName("ingredientRefId")
+    val ingredientRefId: String,
+    @SerialName("formCode")
+    val formCode: String,
+    @SerialName("prepState")
+    val prepState: String? = null,
+    @SerialName("densityGPerMl")
+    val densityGPerMl: Double? = null,
+    @SerialName("notesFr")
+    val notesFr: String? = null,
+    @SerialName("notesEn")
+    val notesEn: String? = null,
+    @SerialName("updatedAt")
+    val updatedAt: String
+)
+
+@Serializable
+data class SubstitutionRuleDto(
+    @SerialName("id")
+    val id: String,
+    @SerialName("fromFormId")
+    val fromFormId: String,
+    @SerialName("toFormId")
+    val toFormId: String,
+    @SerialName("conversionType")
+    val conversionType: String,
+    @SerialName("ratio")
+    val ratio: Double? = null,
+    @SerialName("offset")
+    val offset: Double? = null,
+    @SerialName("sourceUnitScope")
+    val sourceUnitScope: String,
+    @SerialName("targetUnitScope")
+    val targetUnitScope: String,
+    @SerialName("minQty")
+    val minQty: Double? = null,
+    @SerialName("maxQty")
+    val maxQty: Double? = null,
+    @SerialName("confidence")
+    val confidence: String,
+    @SerialName("roundingPolicy")
+    val roundingPolicy: String,
+    @SerialName("notesFr")
+    val notesFr: String? = null,
+    @SerialName("notesEn")
+    val notesEn: String? = null,
+    @SerialName("updatedAt")
+    val updatedAt: String
+)
+
+@Serializable
+data class ContextualSubstitutionRuleDto(
+    @SerialName("id")
+    val id: String,
+    @SerialName("fromIngredientRefId")
+    val fromIngredientRefId: String,
+    @SerialName("toIngredientRefId")
+    val toIngredientRefId: String,
+    @SerialName("conversionType")
+    val conversionType: String,
+    @SerialName("ratio")
+    val ratio: Double? = null,
+    @SerialName("offset")
+    val offset: Double? = null,
+    @SerialName("allowedDishTypes")
+    val allowedDishTypes: List<String> = emptyList(),
+    @SerialName("excludedDishTypes")
+    val excludedDishTypes: List<String> = emptyList(),
+    @SerialName("allowedIngredientRoles")
+    val allowedIngredientRoles: List<String> = emptyList(),
+    @SerialName("excludedIngredientRoles")
+    val excludedIngredientRoles: List<String> = emptyList(),
+    @SerialName("allowedCookingMethods")
+    val allowedCookingMethods: List<String> = emptyList(),
+    @SerialName("severityIfMisused")
+    val severityIfMisused: String,
+    @SerialName("requiresUserConfirmation")
+    val requiresUserConfirmation: Boolean = true,
+    @SerialName("confidence")
+    val confidence: String,
+    @SerialName("notesFr")
+    val notesFr: String? = null,
+    @SerialName("notesEn")
+    val notesEn: String? = null,
+    @SerialName("updatedAt")
+    val updatedAt: String
+)
+
+@Serializable
+data class IngredientLineSubstitutionDto(
+    @SerialName("id")
+    val id: String,
+    @SerialName("ingredientLineId")
+    val ingredientLineId: String,
+    @SerialName("substitutionRuleId")
+    val substitutionRuleId: String? = null,
+    @SerialName("contextualSubstitutionRuleId")
+    val contextualSubstitutionRuleId: String? = null,
+    @SerialName("isPreferred")
+    val isPreferred: Boolean = false,
+    @SerialName("customLabelFr")
+    val customLabelFr: String? = null,
+    @SerialName("customLabelEn")
+    val customLabelEn: String? = null,
+    @SerialName("createdAt")
+    val createdAt: String,
     @SerialName("updatedAt")
     val updatedAt: String
 )
