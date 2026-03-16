@@ -1,9 +1,11 @@
-﻿package app.recipebook.data.local.recipes
+package app.recipebook.data.local.recipes
 
 import android.content.Context
 import app.recipebook.data.schema.FullLibraryPayloadDto
 import app.recipebook.data.schema.toDomainLibrary
+import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.Tag
 import kotlinx.serialization.json.Json
 
 object BundledRecipeLibraryLoader {
@@ -13,14 +15,24 @@ object BundledRecipeLibraryLoader {
         ignoreUnknownKeys = true
     }
 
-    fun loadRecipes(context: Context): List<Recipe> = runCatching {
+    fun loadLibrary(context: Context): SeedLibraryData = runCatching {
         context.assets.open(BOITE_DE_NOEL_ASSET_PATH).bufferedReader().use { reader ->
             val rawJson = reader.readText().trimStart('\uFEFF')
-            json.decodeFromString(FullLibraryPayloadDto.serializer(), rawJson)
+            val library = json.decodeFromString(FullLibraryPayloadDto.serializer(), rawJson)
                 .toDomainLibrary()
-                .recipes
+            SeedLibraryData(
+                recipes = library.recipes,
+                ingredientReferences = library.ingredientReferences,
+                tags = library.tags
+            )
         }
     }.getOrElse {
-        emptyList()
+        SeedLibraryData()
     }
 }
+
+data class SeedLibraryData(
+    val recipes: List<Recipe> = emptyList(),
+    val ingredientReferences: List<IngredientReference> = emptyList(),
+    val tags: List<Tag> = emptyList()
+)

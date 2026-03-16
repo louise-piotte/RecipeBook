@@ -1,11 +1,11 @@
-{
+﻿{
     "schemaVersion":  "full-library/v1",
     "library":  {
                     "metadata":  {
                                      "libraryId":  "library-boite-de-noel-converted",
                                      "createdAt":  "2026-03-13T19:00:00Z",
-                                     "updatedAt":  "2026-03-13T19:00:00Z",
-                                     "exportedAt":  "2026-03-13T19:00:00Z",
+                                     "updatedAt":  "2026-03-16T00:00:00Z",
+                                     "exportedAt":  "2026-03-16T00:00:00Z",
                                      "appVersion":  "1.0"
                                  },
                     "recipes":  [
@@ -35,62 +35,101 @@
                                                             {
                                                                 "id":  "recipe-boite-noel-nanaimo-bars-ingredient-1",
                                                                 "originalText":  "1 cup butter, divided",
-                                                                "ingredientName":  "1 cup butter, divided"
+                                                                "ingredientName":  "butter",
+                                                                "ingredientRefId":  "ingredient-ref-butter",
+                                                                "quantity":  1,
+                                                                "unit":  "cup",
+                                                                "preparation":  "divided"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-nanaimo-bars-ingredient-2",
                                                                 "originalText":  "5 tablespoons unsweetened cocoa powder",
-                                                                "ingredientName":  "5 tablespoons unsweetened cocoa powder"
+                                                                "ingredientName":  "unsweetened cocoa powder",
+                                                                "ingredientRefId":  "ingredient-ref-unsweetened-cocoa-powder",
+                                                                "quantity":  5,
+                                                                "unit":  "tablespoons"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-nanaimo-bars-ingredient-3",
                                                                 "originalText":  "1/4 cup sugar",
-                                                                "ingredientName":  "1/4 cup sugar"
+                                                                "ingredientName":  "sugar",
+                                                                "ingredientRefId":  "ingredient-ref-sugar",
+                                                                "quantity":  0.25,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-nanaimo-bars-ingredient-4",
                                                                 "originalText":  "1 egg, beaten",
-                                                                "ingredientName":  "1 egg, beaten"
+                                                                "ingredientName":  "egg",
+                                                                "ingredientRefId":  "ingredient-ref-egg",
+                                                                "quantity":  1,
+                                                                "preparation":  "beaten"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-nanaimo-bars-ingredient-5",
                                                                 "originalText":  "1 3/4 cups graham cracker crumbs",
-                                                                "ingredientName":  "1 3/4 cups graham cracker crumbs"
+                                                                "ingredientName":  "graham cracker crumbs",
+                                                                "ingredientRefId":  "ingredient-ref-graham-cracker-crumbs",
+                                                                "quantity":  1.75,
+                                                                "unit":  "cups"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-nanaimo-bars-ingredient-6",
                                                                 "originalText":  "1 cup flaked coconut",
-                                                                "ingredientName":  "1 cup flaked coconut"
+                                                                "ingredientName":  "shredded coconut",
+                                                                "ingredientRefId":  "ingredient-ref-shredded-coconut",
+                                                                "quantity":  1,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-nanaimo-bars-ingredient-7",
                                                                 "originalText":  "1/2 cup finely chopped almonds",
-                                                                "ingredientName":  "1/2 cup finely chopped almonds"
+                                                                "ingredientName":  "almonds",
+                                                                "ingredientRefId":  "ingredient-ref-almonds",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup",
+                                                                "preparation":  "chopped"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-nanaimo-bars-ingredient-8",
                                                                 "originalText":  "3 tablespoons heavy cream",
-                                                                "ingredientName":  "3 tablespoons heavy cream"
+                                                                "ingredientName":  "heavy cream",
+                                                                "ingredientRefId":  "ingredient-ref-heavy-cream",
+                                                                "quantity":  3,
+                                                                "unit":  "tablespoons"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-nanaimo-bars-ingredient-9",
                                                                 "originalText":  "3 tablespoons custard powder",
-                                                                "ingredientName":  "3 tablespoons custard powder"
+                                                                "ingredientName":  "custard powder",
+                                                                "ingredientRefId":  "ingredient-ref-custard-powder",
+                                                                "quantity":  3,
+                                                                "unit":  "tablespoons"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-nanaimo-bars-ingredient-10",
                                                                 "originalText":  "2 cups confectioners sugar",
-                                                                "ingredientName":  "2 cups confectioners sugar"
+                                                                "ingredientName":  "icing sugar",
+                                                                "ingredientRefId":  "ingredient-ref-icing-sugar",
+                                                                "quantity":  2,
+                                                                "unit":  "cups"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-nanaimo-bars-ingredient-11",
                                                                 "originalText":  "5 ounces semisweet baking chocolate",
-                                                                "ingredientName":  "5 ounces semisweet baking chocolate"
+                                                                "ingredientName":  "semisweet chocolate",
+                                                                "ingredientRefId":  "ingredient-ref-semisweet-chocolate",
+                                                                "quantity":  5,
+                                                                "unit":  "ounces",
+                                                                "notes":  "baking"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-nanaimo-bars-ingredient-12",
                                                                 "originalText":  "2 1/2 tablespoons butter",
-                                                                "ingredientName":  "2 1/2 tablespoons butter"
+                                                                "ingredientName":  "butter",
+                                                                "ingredientRefId":  "ingredient-ref-butter",
+                                                                "quantity":  2.5,
+                                                                "unit":  "tablespoons"
                                                             }
                                                         ],
                                         "servings":  {
@@ -103,7 +142,9 @@
                                                       "totalTimeMinutes":  30
                                                   },
                                         "tags":  [
-                                                     "tag-dessert"
+                                                     "tag-dessert",
+                                                     "tag-holiday",
+                                                     "tag-bars-squares"
                                                  ],
                                         "collections":  [
                                                             "collection-boite-de-noel"
@@ -141,42 +182,67 @@
                                                             {
                                                                 "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-1",
                                                                 "originalText":  "3 cups all-purpose flour",
-                                                                "ingredientName":  "3 cups all-purpose flour"
+                                                                "ingredientName":  "all-purpose flour",
+                                                                "ingredientRefId":  "ingredient-ref-all-purpose-flour",
+                                                                "quantity":  3,
+                                                                "unit":  "cups"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-2",
                                                                 "originalText":  "1 1/2 teaspoons baking powder",
-                                                                "ingredientName":  "1 1/2 teaspoons baking powder"
+                                                                "ingredientName":  "baking powder",
+                                                                "ingredientRefId":  "ingredient-ref-baking-powder",
+                                                                "quantity":  1.5,
+                                                                "unit":  "teaspoons"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-3",
                                                                 "originalText":  "1/2 teaspoon kosher salt",
-                                                                "ingredientName":  "1/2 teaspoon kosher salt"
+                                                                "ingredientName":  "kosher salt",
+                                                                "ingredientRefId":  "ingredient-ref-kosher-salt",
+                                                                "quantity":  0.5,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-4",
                                                                 "originalText":  "1 cup unsalted butter, room temperature",
-                                                                "ingredientName":  "1 cup unsalted butter, room temperature"
+                                                                "ingredientName":  "unsalted butter",
+                                                                "ingredientRefId":  "ingredient-ref-unsalted-butter",
+                                                                "quantity":  1,
+                                                                "unit":  "cup",
+                                                                "preparation":  "room temperature"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-5",
                                                                 "originalText":  "1 cup sugar",
-                                                                "ingredientName":  "1 cup sugar"
+                                                                "ingredientName":  "sugar",
+                                                                "ingredientRefId":  "ingredient-ref-sugar",
+                                                                "quantity":  1,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-6",
                                                                 "originalText":  "2 large eggs",
-                                                                "ingredientName":  "2 large eggs"
+                                                                "ingredientName":  "egg",
+                                                                "ingredientRefId":  "ingredient-ref-egg",
+                                                                "quantity":  2
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-7",
                                                                 "originalText":  "1 1/2 teaspoons vanilla extract",
-                                                                "ingredientName":  "1 1/2 teaspoons vanilla extract"
+                                                                "ingredientName":  "vanilla extract",
+                                                                "ingredientRefId":  "ingredient-ref-vanilla-extract",
+                                                                "quantity":  1.5,
+                                                                "unit":  "teaspoons"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-8",
                                                                 "originalText":  "2 ounces unsweetened chocolate, chopped",
-                                                                "ingredientName":  "2 ounces unsweetened chocolate, chopped"
+                                                                "ingredientName":  "dark chocolate",
+                                                                "ingredientRefId":  "ingredient-ref-dark-chocolate",
+                                                                "quantity":  2,
+                                                                "unit":  "ounces",
+                                                                "preparation":  "chopped"
                                                             }
                                                         ],
                                         "servings":  {
@@ -189,7 +255,9 @@
                                                       "totalTimeMinutes":  23
                                                   },
                                         "tags":  [
-                                                     "tag-dessert"
+                                                     "tag-dessert",
+                                                     "tag-holiday",
+                                                     "tag-cookies"
                                                  ],
                                         "collections":  [
                                                             "collection-boite-de-noel"
@@ -227,37 +295,60 @@
                                                             {
                                                                 "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-1",
                                                                 "originalText":  "3/4 cup pistachio crumbs",
-                                                                "ingredientName":  "3/4 cup pistachio crumbs"
+                                                                "ingredientName":  "pistachio crumbs",
+                                                                "ingredientRefId":  "ingredient-ref-pistachio-crumbs",
+                                                                "quantity":  0.75,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-2",
                                                                 "originalText":  "1 cup unsalted butter, softened",
-                                                                "ingredientName":  "1 cup unsalted butter, softened"
+                                                                "ingredientName":  "unsalted butter",
+                                                                "ingredientRefId":  "ingredient-ref-unsalted-butter",
+                                                                "quantity":  1,
+                                                                "unit":  "cup",
+                                                                "preparation":  "softened"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-3",
                                                                 "originalText":  "3/4 cup confectioners sugar",
-                                                                "ingredientName":  "3/4 cup confectioners sugar"
+                                                                "ingredientName":  "icing sugar",
+                                                                "ingredientRefId":  "ingredient-ref-icing-sugar",
+                                                                "quantity":  0.75,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-4",
                                                                 "originalText":  "1 teaspoon vanilla extract",
-                                                                "ingredientName":  "1 teaspoon vanilla extract"
+                                                                "ingredientName":  "vanilla extract",
+                                                                "ingredientRefId":  "ingredient-ref-vanilla-extract",
+                                                                "quantity":  1,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-5",
                                                                 "originalText":  "1 teaspoon almond extract",
-                                                                "ingredientName":  "1 teaspoon almond extract"
+                                                                "ingredientName":  "almond extract",
+                                                                "ingredientRefId":  "ingredient-ref-almond-extract",
+                                                                "quantity":  1,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-6",
                                                                 "originalText":  "2 1/4 cups all-purpose flour",
-                                                                "ingredientName":  "2 1/4 cups all-purpose flour"
+                                                                "ingredientName":  "all-purpose flour",
+                                                                "ingredientRefId":  "ingredient-ref-all-purpose-flour",
+                                                                "quantity":  2.25,
+                                                                "unit":  "cups"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-7",
                                                                 "originalText":  "Optional: 1 to 2 drops green gel food coloring",
-                                                                "ingredientName":  "Optional: 1 to 2 drops green gel food coloring"
+                                                                "ingredientName":  "green gel food coloring",
+                                                                "ingredientRefId":  "ingredient-ref-green-gel-food-coloring",
+                                                                "quantity":  1,
+                                                                "unit":  "drops",
+                                                                "notes":  "optional"
                                                             }
                                                         ],
                                         "servings":  {
@@ -270,7 +361,9 @@
                                                       "totalTimeMinutes":  60
                                                   },
                                         "tags":  [
-                                                     "tag-dessert"
+                                                     "tag-dessert",
+                                                     "tag-holiday",
+                                                     "tag-cookies"
                                                  ],
                                         "collections":  [
                                                             "collection-boite-de-noel"
@@ -308,52 +401,85 @@
                                                             {
                                                                 "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-1",
                                                                 "originalText":  "1 1/4 cups all-purpose flour",
-                                                                "ingredientName":  "1 1/4 cups all-purpose flour"
+                                                                "ingredientName":  "all-purpose flour",
+                                                                "ingredientRefId":  "ingredient-ref-all-purpose-flour",
+                                                                "quantity":  1.25,
+                                                                "unit":  "cups"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-2",
                                                                 "originalText":  "1/4 cup sugar",
-                                                                "ingredientName":  "1/4 cup sugar"
+                                                                "ingredientName":  "sugar",
+                                                                "ingredientRefId":  "ingredient-ref-sugar",
+                                                                "quantity":  0.25,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-3",
                                                                 "originalText":  "1/4 teaspoon salt",
-                                                                "ingredientName":  "1/4 teaspoon salt"
+                                                                "ingredientName":  "salt",
+                                                                "ingredientRefId":  "ingredient-ref-salt",
+                                                                "quantity":  0.25,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-4",
                                                                 "originalText":  "1/2 cup cold unsalted butter, cut into pieces",
-                                                                "ingredientName":  "1/2 cup cold unsalted butter, cut into pieces"
+                                                                "ingredientName":  "cold unsalted butter",
+                                                                "ingredientRefId":  "ingredient-ref-cold-unsalted-butter",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup",
+                                                                "preparation":  "cut into pieces"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-5",
                                                                 "originalText":  "1/2 cup unsalted butter",
-                                                                "ingredientName":  "1/2 cup unsalted butter"
+                                                                "ingredientName":  "unsalted butter",
+                                                                "ingredientRefId":  "ingredient-ref-unsalted-butter",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-6",
                                                                 "originalText":  "1/2 cup maple syrup",
-                                                                "ingredientName":  "1/2 cup maple syrup"
+                                                                "ingredientName":  "maple syrup",
+                                                                "ingredientRefId":  "ingredient-ref-maple-syrup",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-7",
                                                                 "originalText":  "3 tablespoons brown sugar",
-                                                                "ingredientName":  "3 tablespoons brown sugar"
+                                                                "ingredientName":  "brown sugar",
+                                                                "ingredientRefId":  "ingredient-ref-brown-sugar",
+                                                                "quantity":  3,
+                                                                "unit":  "tablespoons"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-8",
                                                                 "originalText":  "1/2 cup heavy cream",
-                                                                "ingredientName":  "1/2 cup heavy cream"
+                                                                "ingredientName":  "heavy cream",
+                                                                "ingredientRefId":  "ingredient-ref-heavy-cream",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-9",
                                                                 "originalText":  "1/4 cup dried cranberries, chopped",
-                                                                "ingredientName":  "1/4 cup dried cranberries, chopped"
+                                                                "ingredientName":  "dried cranberries",
+                                                                "ingredientRefId":  "ingredient-ref-dried-cranberries",
+                                                                "quantity":  0.25,
+                                                                "unit":  "cup",
+                                                                "preparation":  "chopped"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-10",
                                                                 "originalText":  "1 1/2 cups pecans, chopped",
-                                                                "ingredientName":  "1 1/2 cups pecans, chopped"
+                                                                "ingredientName":  "pecans",
+                                                                "ingredientRefId":  "ingredient-ref-pecans",
+                                                                "quantity":  1.5,
+                                                                "unit":  "cups",
+                                                                "preparation":  "chopped"
                                                             }
                                                         ],
                                         "servings":  {
@@ -366,7 +492,9 @@
                                                       "totalTimeMinutes":  60
                                                   },
                                         "tags":  [
-                                                     "tag-dessert"
+                                                     "tag-dessert",
+                                                     "tag-holiday",
+                                                     "tag-bars-squares"
                                                  ],
                                         "collections":  [
                                                             "collection-boite-de-noel"
@@ -404,42 +532,68 @@
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-1",
                                                                 "originalText":  "3/4 cup unsalted butter, softened",
-                                                                "ingredientName":  "3/4 cup unsalted butter, softened"
+                                                                "ingredientName":  "unsalted butter",
+                                                                "ingredientRefId":  "ingredient-ref-unsalted-butter",
+                                                                "quantity":  0.75,
+                                                                "unit":  "cup",
+                                                                "preparation":  "softened"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-2",
                                                                 "originalText":  "2/3 cup granulated sugar",
-                                                                "ingredientName":  "2/3 cup granulated sugar"
+                                                                "ingredientName":  "granulated sugar",
+                                                                "ingredientRefId":  "ingredient-ref-granulated-sugar",
+                                                                "quantity":  0.66666666666666663,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-3",
                                                                 "originalText":  "1 teaspoon vanilla extract",
-                                                                "ingredientName":  "1 teaspoon vanilla extract"
+                                                                "ingredientName":  "vanilla extract",
+                                                                "ingredientRefId":  "ingredient-ref-vanilla-extract",
+                                                                "quantity":  1,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-4",
                                                                 "originalText":  "1/2 teaspoon almond extract",
-                                                                "ingredientName":  "1/2 teaspoon almond extract"
+                                                                "ingredientName":  "almond extract",
+                                                                "ingredientRefId":  "ingredient-ref-almond-extract",
+                                                                "quantity":  0.5,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-5",
                                                                 "originalText":  "1 tablespoon maraschino cherry juice",
-                                                                "ingredientName":  "1 tablespoon maraschino cherry juice"
+                                                                "ingredientName":  "maraschino cherry juice",
+                                                                "ingredientRefId":  "ingredient-ref-maraschino-cherry-juice",
+                                                                "quantity":  1,
+                                                                "unit":  "tablespoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-6",
                                                                 "originalText":  "2 cups all-purpose flour",
-                                                                "ingredientName":  "2 cups all-purpose flour"
+                                                                "ingredientName":  "all-purpose flour",
+                                                                "ingredientRefId":  "ingredient-ref-all-purpose-flour",
+                                                                "quantity":  2,
+                                                                "unit":  "cups"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-7",
                                                                 "originalText":  "16 maraschino cherries, drained and chopped",
-                                                                "ingredientName":  "16 maraschino cherries, drained and chopped"
+                                                                "ingredientName":  "maraschino cherries",
+                                                                "ingredientRefId":  "ingredient-ref-maraschino-cherries",
+                                                                "quantity":  16,
+                                                                "preparation":  "drained and chopped"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-8",
                                                                 "originalText":  "Optional: 4 ounces white chocolate",
-                                                                "ingredientName":  "Optional: 4 ounces white chocolate"
+                                                                "ingredientName":  "white chocolate",
+                                                                "ingredientRefId":  "ingredient-ref-white-chocolate",
+                                                                "quantity":  4,
+                                                                "unit":  "ounces",
+                                                                "notes":  "optional"
                                                             }
                                                         ],
                                         "servings":  {
@@ -452,7 +606,9 @@
                                                       "totalTimeMinutes":  266
                                                   },
                                         "tags":  [
-                                                     "tag-dessert"
+                                                     "tag-dessert",
+                                                     "tag-holiday",
+                                                     "tag-cookies"
                                                  ],
                                         "collections":  [
                                                             "collection-boite-de-noel"
@@ -477,50 +633,60 @@
                                                                      "title":  "Dattes au chocolat (3 saveurs)",
                                                                      "description":  "Dattes Medjool farcies au beurre de noix et enrobees de chocolat.",
                                                                      "instructions":  "Faire fondre le chocolat au bain-marie ou au micro-ondes.\nFendre chaque datte sur la longueur et retirer le noyau sans la separer completement.\nFarcir chaque datte d un peu de beurre de noix et d une noix entiere au centre.\nRefermer les dattes, les tremper dans le chocolat fondu et laisser egoutter l excedent.\nParsemer de noix concassees et de sel en flocons, puis congeler 20 a 30 minutes pour faire prendre.",
-                                                                     "notesSystem":  ""
+                                                                     "notesSystem":  "Combinaisons suggerees : beurre d arachide et arachides, beurre de noisettes et noisettes, beurre d amande et amandes."
                                                                  },
                                                           "en":  {
                                                                      "title":  "Chocolate Dates (3 Flavors)",
                                                                      "description":  "Medjool dates stuffed with nut butter and coated in chocolate.",
                                                                      "instructions":  "Melt the chocolate using either a double boiler or the microwave.\nSlice each date lengthwise and remove the pit without cutting all the way through.\nFill each date with nut butter and press a whole nut into the center.\nClose the dates, dip them in the melted chocolate, and let the excess drip off.\nTop with crushed nuts and flaky salt, then freeze for 20 to 30 minutes to set.",
-                                                                     "notesSystem":  ""
+                                                                     "notesSystem":  "Suggested combinations: peanut butter and peanuts, hazelnut butter and hazelnuts, almond butter and almonds."
                                                                  }
                                                       },
                                         "ingredients":  [
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-dates-ingredient-1",
                                                                 "originalText":  "20 Medjool dates",
-                                                                "ingredientName":  "20 Medjool dates"
+                                                                "ingredientName":  "Medjool dates",
+                                                                "ingredientRefId":  "ingredient-ref-medjool-dates",
+                                                                "quantity":  20
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-dates-ingredient-2",
                                                                 "originalText":  "1/2 cup natural nut butter",
-                                                                "ingredientName":  "1/2 cup natural nut butter"
+                                                                "ingredientName":  "natural nut butter",
+                                                                "ingredientRefId":  "ingredient-ref-natural-nut-butter",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-dates-ingredient-3",
                                                                 "originalText":  "20 nuts for the centers",
-                                                                "ingredientName":  "20 nuts for the centers"
+                                                                "ingredientName":  "nuts",
+                                                                "ingredientRefId":  "ingredient-ref-nuts",
+                                                                "quantity":  20,
+                                                                "notes":  "for the centers"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-dates-ingredient-4",
                                                                 "originalText":  "100 g dark chocolate",
-                                                                "ingredientName":  "100 g dark chocolate"
+                                                                "ingredientName":  "dark chocolate",
+                                                                "ingredientRefId":  "ingredient-ref-dark-chocolate",
+                                                                "quantity":  100,
+                                                                "unit":  "g"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-dates-ingredient-5",
                                                                 "originalText":  "Flaky sea salt",
-                                                                "ingredientName":  "Flaky sea salt"
+                                                                "ingredientName":  "flaky sea salt",
+                                                                "ingredientRefId":  "ingredient-ref-flaky-sea-salt"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-dates-ingredient-6",
                                                                 "originalText":  "Crushed nuts for topping",
-                                                                "ingredientName":  "Crushed nuts for topping"
-                                                            },
-                                                            {
-                                                                "id":  "recipe-boite-noel-chocolate-dates-ingredient-7",
-                                                                "originalText":  "Suggested combinations: peanut butter and peanuts, hazelnut butter and hazelnuts, almond butter and almonds",
-                                                                "ingredientName":  "Suggested combinations: peanut butter and peanuts, hazelnut butter and hazelnuts, almond butter and almonds"
+                                                                "ingredientName":  "nuts",
+                                                                "ingredientRefId":  "ingredient-ref-nuts",
+                                                                "preparation":  "crushed",
+                                                                "notes":  "for topping"
                                                             }
                                                         ],
                                         "servings":  {
@@ -533,7 +699,9 @@
                                                       "totalTimeMinutes":  20
                                                   },
                                         "tags":  [
-                                                     "tag-dessert"
+                                                     "tag-dessert",
+                                                     "tag-holiday",
+                                                     "tag-snack"
                                                  ],
                                         "collections":  [
                                                             "collection-boite-de-noel"
@@ -571,32 +739,51 @@
                                                             {
                                                                 "id":  "recipe-boite-noel-coconut-macaroons-ingredient-1",
                                                                 "originalText":  "1 bag sweetened shredded coconut (396 g)",
-                                                                "ingredientName":  "1 bag sweetened shredded coconut (396 g)"
+                                                                "ingredientName":  "shredded coconut",
+                                                                "ingredientRefId":  "ingredient-ref-shredded-coconut",
+                                                                "quantity":  1,
+                                                                "unit":  "bag",
+                                                                "notes":  "sweetened"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-coconut-macaroons-ingredient-2",
                                                                 "originalText":  "1 cup sweetened condensed milk",
-                                                                "ingredientName":  "1 cup sweetened condensed milk"
+                                                                "ingredientName":  "sweetened condensed milk",
+                                                                "ingredientRefId":  "ingredient-ref-sweetened-condensed-milk",
+                                                                "quantity":  1,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-coconut-macaroons-ingredient-3",
                                                                 "originalText":  "1 teaspoon vanilla extract",
-                                                                "ingredientName":  "1 teaspoon vanilla extract"
+                                                                "ingredientName":  "vanilla extract",
+                                                                "ingredientRefId":  "ingredient-ref-vanilla-extract",
+                                                                "quantity":  1,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-coconut-macaroons-ingredient-4",
                                                                 "originalText":  "1/2 teaspoon salt",
-                                                                "ingredientName":  "1/2 teaspoon salt"
+                                                                "ingredientName":  "salt",
+                                                                "ingredientRefId":  "ingredient-ref-salt",
+                                                                "quantity":  0.5,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-coconut-macaroons-ingredient-5",
                                                                 "originalText":  "2 large egg whites, room temperature",
-                                                                "ingredientName":  "2 large egg whites, room temperature"
+                                                                "ingredientName":  "egg white",
+                                                                "ingredientRefId":  "ingredient-ref-egg-white",
+                                                                "quantity":  2,
+                                                                "preparation":  "room temperature"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-coconut-macaroons-ingredient-6",
                                                                 "originalText":  "6 ounces semisweet chocolate",
-                                                                "ingredientName":  "6 ounces semisweet chocolate"
+                                                                "ingredientName":  "semisweet chocolate",
+                                                                "ingredientRefId":  "ingredient-ref-semisweet-chocolate",
+                                                                "quantity":  6,
+                                                                "unit":  "ounces"
                                                             }
                                                         ],
                                         "servings":  {
@@ -609,7 +796,9 @@
                                                       "totalTimeMinutes":  40
                                                   },
                                         "tags":  [
-                                                     "tag-dessert"
+                                                     "tag-dessert",
+                                                     "tag-holiday",
+                                                     "tag-cookies"
                                                  ],
                                         "collections":  [
                                                             "collection-boite-de-noel"
@@ -647,42 +836,67 @@
                                                             {
                                                                 "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-1",
                                                                 "originalText":  "3 cups sugar",
-                                                                "ingredientName":  "3 cups sugar"
+                                                                "ingredientName":  "sugar",
+                                                                "ingredientRefId":  "ingredient-ref-sugar",
+                                                                "quantity":  3,
+                                                                "unit":  "cups"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-2",
                                                                 "originalText":  "3/4 cup butter",
-                                                                "ingredientName":  "3/4 cup butter"
+                                                                "ingredientName":  "butter",
+                                                                "ingredientRefId":  "ingredient-ref-butter",
+                                                                "quantity":  0.75,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-3",
                                                                 "originalText":  "1 cup half-and-half",
-                                                                "ingredientName":  "1 cup half-and-half"
+                                                                "ingredientName":  "half-and-half",
+                                                                "ingredientRefId":  "ingredient-ref-half-and-half",
+                                                                "quantity":  1,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-4",
                                                                 "originalText":  "12 ounces white chocolate",
-                                                                "ingredientName":  "12 ounces white chocolate"
+                                                                "ingredientName":  "white chocolate",
+                                                                "ingredientRefId":  "ingredient-ref-white-chocolate",
+                                                                "quantity":  12,
+                                                                "unit":  "ounces"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-5",
                                                                 "originalText":  "1 jar marshmallow creme (7 ounces)",
-                                                                "ingredientName":  "1 jar marshmallow creme (7 ounces)"
+                                                                "ingredientName":  "marshmallow creme",
+                                                                "ingredientRefId":  "ingredient-ref-marshmallow-creme",
+                                                                "quantity":  1,
+                                                                "unit":  "jar"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-6",
                                                                 "originalText":  "1 teaspoon vanilla",
-                                                                "ingredientName":  "1 teaspoon vanilla"
+                                                                "ingredientName":  "vanilla",
+                                                                "ingredientRefId":  "ingredient-ref-vanilla",
+                                                                "quantity":  1,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-7",
                                                                 "originalText":  "1 cup semisweet chocolate chips",
-                                                                "ingredientName":  "1 cup semisweet chocolate chips"
+                                                                "ingredientName":  "semisweet chocolate",
+                                                                "ingredientRefId":  "ingredient-ref-semisweet-chocolate",
+                                                                "quantity":  1,
+                                                                "unit":  "cup",
+                                                                "notes":  "chips"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-8",
                                                                 "originalText":  "3 tablespoons red food coloring",
-                                                                "ingredientName":  "3 tablespoons red food coloring"
+                                                                "ingredientName":  "red food coloring",
+                                                                "ingredientRefId":  "ingredient-ref-red-food-coloring",
+                                                                "quantity":  3,
+                                                                "unit":  "tablespoons"
                                                             }
                                                         ],
                                         "servings":  {
@@ -695,7 +909,9 @@
                                                       "totalTimeMinutes":  45
                                                   },
                                         "tags":  [
-                                                     "tag-dessert"
+                                                     "tag-dessert",
+                                                     "tag-holiday",
+                                                     "tag-fudge"
                                                  ],
                                         "collections":  [
                                                             "collection-boite-de-noel"
@@ -733,97 +949,155 @@
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-1",
                                                                 "originalText":  "1/2 cup unsalted butter",
-                                                                "ingredientName":  "1/2 cup unsalted butter"
+                                                                "ingredientName":  "unsalted butter",
+                                                                "ingredientRefId":  "ingredient-ref-unsalted-butter",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-2",
                                                                 "originalText":  "9 ounces bittersweet chocolate",
-                                                                "ingredientName":  "9 ounces bittersweet chocolate"
+                                                                "ingredientName":  "bittersweet chocolate",
+                                                                "ingredientRefId":  "ingredient-ref-bittersweet-chocolate",
+                                                                "quantity":  9,
+                                                                "unit":  "ounces"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-3",
                                                                 "originalText":  "3/4 cup plus 2 tablespoons granulated sugar",
-                                                                "ingredientName":  "3/4 cup plus 2 tablespoons granulated sugar"
+                                                                "ingredientName":  "granulated sugar",
+                                                                "ingredientRefId":  "ingredient-ref-granulated-sugar",
+                                                                "quantity":  0.75,
+                                                                "unit":  "cup",
+                                                                "notes":  "plus 2 tablespoons"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-4",
                                                                 "originalText":  "1/2 cup light brown sugar",
-                                                                "ingredientName":  "1/2 cup light brown sugar"
+                                                                "ingredientName":  "light brown sugar",
+                                                                "ingredientRefId":  "ingredient-ref-light-brown-sugar",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-5",
                                                                 "originalText":  "3 large eggs",
-                                                                "ingredientName":  "3 large eggs"
+                                                                "ingredientName":  "egg",
+                                                                "ingredientRefId":  "ingredient-ref-egg",
+                                                                "quantity":  3
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-6",
                                                                 "originalText":  "1 teaspoon vanilla",
-                                                                "ingredientName":  "1 teaspoon vanilla"
+                                                                "ingredientName":  "vanilla",
+                                                                "ingredientRefId":  "ingredient-ref-vanilla",
+                                                                "quantity":  1,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-7",
                                                                 "originalText":  "1 cup all-purpose flour",
-                                                                "ingredientName":  "1 cup all-purpose flour"
+                                                                "ingredientName":  "all-purpose flour",
+                                                                "ingredientRefId":  "ingredient-ref-all-purpose-flour",
+                                                                "quantity":  1,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-8",
                                                                 "originalText":  "3/4 cup bread flour",
-                                                                "ingredientName":  "3/4 cup bread flour"
+                                                                "ingredientName":  "bread flour",
+                                                                "ingredientRefId":  "ingredient-ref-bread-flour",
+                                                                "quantity":  0.75,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-9",
                                                                 "originalText":  "1/4 cup Dutch-process cocoa powder",
-                                                                "ingredientName":  "1/4 cup Dutch-process cocoa powder"
+                                                                "ingredientName":  "Dutch-process cocoa powder",
+                                                                "ingredientRefId":  "ingredient-ref-dutch-process-cocoa-powder",
+                                                                "quantity":  0.25,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-10",
                                                                 "originalText":  "1 teaspoon baking powder",
-                                                                "ingredientName":  "1 teaspoon baking powder"
+                                                                "ingredientName":  "baking powder",
+                                                                "ingredientRefId":  "ingredient-ref-baking-powder",
+                                                                "quantity":  1,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-11",
                                                                 "originalText":  "1 teaspoon baking soda",
-                                                                "ingredientName":  "1 teaspoon baking soda"
+                                                                "ingredientName":  "baking soda",
+                                                                "ingredientRefId":  "ingredient-ref-baking-soda",
+                                                                "quantity":  1,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-12",
                                                                 "originalText":  "3/4 teaspoon salt",
-                                                                "ingredientName":  "3/4 teaspoon salt"
+                                                                "ingredientName":  "salt",
+                                                                "ingredientRefId":  "ingredient-ref-salt",
+                                                                "quantity":  0.75,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-13",
                                                                 "originalText":  "3/4 cup unsalted butter, room temperature",
-                                                                "ingredientName":  "3/4 cup unsalted butter, room temperature"
+                                                                "ingredientName":  "unsalted butter",
+                                                                "ingredientRefId":  "ingredient-ref-unsalted-butter",
+                                                                "quantity":  0.75,
+                                                                "unit":  "cup",
+                                                                "preparation":  "room temperature"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-14",
                                                                 "originalText":  "1/2 cup brown sugar",
-                                                                "ingredientName":  "1/2 cup brown sugar"
+                                                                "ingredientName":  "brown sugar",
+                                                                "ingredientRefId":  "ingredient-ref-brown-sugar",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-15",
                                                                 "originalText":  "2 1/2 cups confectioners sugar",
-                                                                "ingredientName":  "2 1/2 cups confectioners sugar"
+                                                                "ingredientName":  "icing sugar",
+                                                                "ingredientRefId":  "ingredient-ref-icing-sugar",
+                                                                "quantity":  2.5,
+                                                                "unit":  "cups"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-16",
                                                                 "originalText":  "1/2 cup all-purpose flour",
-                                                                "ingredientName":  "1/2 cup all-purpose flour"
+                                                                "ingredientName":  "all-purpose flour",
+                                                                "ingredientRefId":  "ingredient-ref-all-purpose-flour",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-17",
                                                                 "originalText":  "1 teaspoon vanilla",
-                                                                "ingredientName":  "1 teaspoon vanilla"
+                                                                "ingredientName":  "vanilla",
+                                                                "ingredientRefId":  "ingredient-ref-vanilla",
+                                                                "quantity":  1,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-18",
                                                                 "originalText":  "1/4 teaspoon salt",
-                                                                "ingredientName":  "1/4 teaspoon salt"
+                                                                "ingredientName":  "salt",
+                                                                "ingredientRefId":  "ingredient-ref-salt",
+                                                                "quantity":  0.25,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-19",
                                                                 "originalText":  "3 to 4 tablespoons heavy cream",
-                                                                "ingredientName":  "3 to 4 tablespoons heavy cream"
+                                                                "ingredientName":  "heavy cream",
+                                                                "ingredientRefId":  "ingredient-ref-heavy-cream",
+                                                                "quantity":  3,
+                                                                "unit":  "tablespoons"
                                                             }
                                                         ],
                                         "servings":  {
@@ -836,7 +1110,9 @@
                                                       "totalTimeMinutes":  100
                                                   },
                                         "tags":  [
-                                                     "tag-dessert"
+                                                     "tag-dessert",
+                                                     "tag-holiday",
+                                                     "tag-cookies"
                                                  ],
                                         "collections":  [
                                                             "collection-boite-de-noel"
@@ -874,47 +1150,76 @@
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-sausage-ingredient-1",
                                                                 "originalText":  "225 g 70% dark chocolate, chopped",
-                                                                "ingredientName":  "225 g 70% dark chocolate, chopped"
+                                                                "ingredientName":  "dark chocolate",
+                                                                "ingredientRefId":  "ingredient-ref-dark-chocolate",
+                                                                "quantity":  225,
+                                                                "unit":  "g",
+                                                                "preparation":  "chopped"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-sausage-ingredient-2",
                                                                 "originalText":  "1/2 cup unsalted butter, softened",
-                                                                "ingredientName":  "1/2 cup unsalted butter, softened"
+                                                                "ingredientName":  "unsalted butter",
+                                                                "ingredientRefId":  "ingredient-ref-unsalted-butter",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup",
+                                                                "preparation":  "softened"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-sausage-ingredient-3",
                                                                 "originalText":  "1 cup icing sugar",
-                                                                "ingredientName":  "1 cup icing sugar"
+                                                                "ingredientName":  "icing sugar",
+                                                                "ingredientRefId":  "ingredient-ref-icing-sugar",
+                                                                "quantity":  1,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-sausage-ingredient-4",
                                                                 "originalText":  "1 egg",
-                                                                "ingredientName":  "1 egg"
+                                                                "ingredientName":  "egg",
+                                                                "ingredientRefId":  "ingredient-ref-egg",
+                                                                "quantity":  1
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-sausage-ingredient-5",
                                                                 "originalText":  "1 cup butter cookies, broken into small pieces",
-                                                                "ingredientName":  "1 cup butter cookies, broken into small pieces"
+                                                                "ingredientName":  "butter cookies",
+                                                                "ingredientRefId":  "ingredient-ref-butter-cookies",
+                                                                "quantity":  1,
+                                                                "unit":  "cup",
+                                                                "preparation":  "broken into small pieces"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-sausage-ingredient-6",
                                                                 "originalText":  "1/2 cup white marshmallows, diced",
-                                                                "ingredientName":  "1/2 cup white marshmallows, diced"
+                                                                "ingredientName":  "white marshmallows",
+                                                                "ingredientRefId":  "ingredient-ref-white-marshmallows",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup",
+                                                                "preparation":  "diced"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-sausage-ingredient-7",
                                                                 "originalText":  "2 tablespoons raisins",
-                                                                "ingredientName":  "2 tablespoons raisins"
+                                                                "ingredientName":  "raisins",
+                                                                "ingredientRefId":  "ingredient-ref-raisins",
+                                                                "quantity":  2,
+                                                                "unit":  "tablespoons"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-sausage-ingredient-8",
                                                                 "originalText":  "2 tablespoons pine nuts",
-                                                                "ingredientName":  "2 tablespoons pine nuts"
+                                                                "ingredientName":  "pine nuts",
+                                                                "ingredientRefId":  "ingredient-ref-pine-nuts",
+                                                                "quantity":  2,
+                                                                "unit":  "tablespoons"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-chocolate-sausage-ingredient-9",
                                                                 "originalText":  "Extra icing sugar for rolling",
-                                                                "ingredientName":  "Extra icing sugar for rolling"
+                                                                "ingredientName":  "icing sugar",
+                                                                "ingredientRefId":  "ingredient-ref-icing-sugar",
+                                                                "notes":  "for rolling"
                                                             }
                                                         ],
                                         "servings":  {
@@ -927,7 +1232,9 @@
                                                       "totalTimeMinutes":  25
                                                   },
                                         "tags":  [
-                                                     "tag-dessert"
+                                                     "tag-dessert",
+                                                     "tag-holiday",
+                                                     "tag-snack"
                                                  ],
                                         "collections":  [
                                                             "collection-boite-de-noel"
@@ -965,77 +1272,122 @@
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-1",
                                                                 "originalText":  "213 g all-purpose flour",
-                                                                "ingredientName":  "213 g all-purpose flour"
+                                                                "ingredientName":  "all-purpose flour",
+                                                                "ingredientRefId":  "ingredient-ref-all-purpose-flour",
+                                                                "quantity":  213,
+                                                                "unit":  "g"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-2",
                                                                 "originalText":  "85 g powdered sugar",
-                                                                "ingredientName":  "85 g powdered sugar"
+                                                                "ingredientName":  "icing sugar",
+                                                                "ingredientRefId":  "ingredient-ref-icing-sugar",
+                                                                "quantity":  85,
+                                                                "unit":  "g"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-3",
                                                                 "originalText":  "1/4 teaspoon fine salt",
-                                                                "ingredientName":  "1/4 teaspoon fine salt"
+                                                                "ingredientName":  "fine salt",
+                                                                "ingredientRefId":  "ingredient-ref-fine-salt",
+                                                                "quantity":  0.25,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-4",
                                                                 "originalText":  "1 large egg yolk",
-                                                                "ingredientName":  "1 large egg yolk"
+                                                                "ingredientName":  "egg yolk",
+                                                                "ingredientRefId":  "ingredient-ref-egg-yolk",
+                                                                "quantity":  1
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-5",
                                                                 "originalText":  "2 tablespoons heavy cream",
-                                                                "ingredientName":  "2 tablespoons heavy cream"
+                                                                "ingredientName":  "heavy cream",
+                                                                "ingredientRefId":  "ingredient-ref-heavy-cream",
+                                                                "quantity":  2,
+                                                                "unit":  "tablespoons"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-6",
                                                                 "originalText":  "1/2 teaspoon vanilla extract",
-                                                                "ingredientName":  "1/2 teaspoon vanilla extract"
+                                                                "ingredientName":  "vanilla extract",
+                                                                "ingredientRefId":  "ingredient-ref-vanilla-extract",
+                                                                "quantity":  0.5,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-7",
                                                                 "originalText":  "10 tablespoons unsalted butter, very cold",
-                                                                "ingredientName":  "10 tablespoons unsalted butter, very cold"
+                                                                "ingredientName":  "unsalted butter",
+                                                                "ingredientRefId":  "ingredient-ref-unsalted-butter",
+                                                                "quantity":  10,
+                                                                "unit":  "tablespoons",
+                                                                "preparation":  "very cold"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-8",
                                                                 "originalText":  "113 g almond flour",
-                                                                "ingredientName":  "113 g almond flour"
+                                                                "ingredientName":  "almond flour",
+                                                                "ingredientRefId":  "ingredient-ref-almond-flour",
+                                                                "quantity":  113,
+                                                                "unit":  "g"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-9",
                                                                 "originalText":  "100 g granulated sugar",
-                                                                "ingredientName":  "100 g granulated sugar"
+                                                                "ingredientName":  "granulated sugar",
+                                                                "ingredientRefId":  "ingredient-ref-granulated-sugar",
+                                                                "quantity":  100,
+                                                                "unit":  "g"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-10",
                                                                 "originalText":  "1 egg",
-                                                                "ingredientName":  "1 egg"
+                                                                "ingredientName":  "egg",
+                                                                "ingredientRefId":  "ingredient-ref-egg",
+                                                                "quantity":  1
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-11",
                                                                 "originalText":  "1 egg white",
-                                                                "ingredientName":  "1 egg white"
+                                                                "ingredientName":  "egg white",
+                                                                "ingredientRefId":  "ingredient-ref-egg-white",
+                                                                "quantity":  1
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-12",
                                                                 "originalText":  "1/2 teaspoon almond extract",
-                                                                "ingredientName":  "1/2 teaspoon almond extract"
+                                                                "ingredientName":  "almond extract",
+                                                                "ingredientRefId":  "ingredient-ref-almond-extract",
+                                                                "quantity":  0.5,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-13",
                                                                 "originalText":  "1/2 teaspoon vanilla extract",
-                                                                "ingredientName":  "1/2 teaspoon vanilla extract"
+                                                                "ingredientName":  "vanilla extract",
+                                                                "ingredientRefId":  "ingredient-ref-vanilla-extract",
+                                                                "quantity":  0.5,
+                                                                "unit":  "teaspoon"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-14",
                                                                 "originalText":  "6 tablespoons unsalted butter, room temperature",
-                                                                "ingredientName":  "6 tablespoons unsalted butter, room temperature"
+                                                                "ingredientName":  "unsalted butter",
+                                                                "ingredientRefId":  "ingredient-ref-unsalted-butter",
+                                                                "quantity":  6,
+                                                                "unit":  "tablespoons",
+                                                                "preparation":  "room temperature"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-15",
                                                                 "originalText":  "1/2 cup sliced almonds",
-                                                                "ingredientName":  "1/2 cup sliced almonds"
+                                                                "ingredientName":  "almonds",
+                                                                "ingredientRefId":  "ingredient-ref-almonds",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup",
+                                                                "preparation":  "sliced"
                                                             }
                                                         ],
                                         "servings":  {
@@ -1048,7 +1400,9 @@
                                                       "totalTimeMinutes":  85
                                                   },
                                         "tags":  [
-                                                     "tag-dessert"
+                                                     "tag-dessert",
+                                                     "tag-holiday",
+                                                     "tag-tarts"
                                                  ],
                                         "collections":  [
                                                             "collection-boite-de-noel"
@@ -1083,42 +1437,69 @@
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-1",
                                                                 "originalText":  "1 cup dark chocolate chips",
-                                                                "ingredientName":  "1 cup dark chocolate chips"
+                                                                "ingredientName":  "dark chocolate",
+                                                                "ingredientRefId":  "ingredient-ref-dark-chocolate",
+                                                                "quantity":  1,
+                                                                "unit":  "cup",
+                                                                "notes":  "chips"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-2",
                                                                 "originalText":  "1 cup milk chocolate chips",
-                                                                "ingredientName":  "1 cup milk chocolate chips"
+                                                                "ingredientName":  "milk chocolate",
+                                                                "ingredientRefId":  "ingredient-ref-milk-chocolate",
+                                                                "quantity":  1,
+                                                                "unit":  "cup",
+                                                                "notes":  "chips"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-3",
                                                                 "originalText":  "1/2 cup natural peanut butter",
-                                                                "ingredientName":  "1/2 cup natural peanut butter"
+                                                                "ingredientName":  "natural peanut butter",
+                                                                "ingredientRefId":  "ingredient-ref-natural-peanut-butter",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-4",
                                                                 "originalText":  "1 cup finely chopped pecans, almonds, or walnuts",
-                                                                "ingredientName":  "1 cup finely chopped pecans, almonds, or walnuts"
+                                                                "ingredientName":  "pecans",
+                                                                "ingredientRefId":  "ingredient-ref-pecans",
+                                                                "quantity":  1,
+                                                                "unit":  "cup",
+                                                                "preparation":  "almonds, or walnuts"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-5",
                                                                 "originalText":  "1/2 cup unsweetened shredded coconut",
-                                                                "ingredientName":  "1/2 cup unsweetened shredded coconut"
+                                                                "ingredientName":  "shredded coconut",
+                                                                "ingredientRefId":  "ingredient-ref-shredded-coconut",
+                                                                "quantity":  0.5,
+                                                                "unit":  "cup",
+                                                                "notes":  "sweetened, unsweetened"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-6",
                                                                 "originalText":  "2 tablespoons maraschino cherry juice",
-                                                                "ingredientName":  "2 tablespoons maraschino cherry juice"
+                                                                "ingredientName":  "maraschino cherry juice",
+                                                                "ingredientRefId":  "ingredient-ref-maraschino-cherry-juice",
+                                                                "quantity":  2,
+                                                                "unit":  "tablespoons"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-7",
                                                                 "originalText":  "3/4 cup icing sugar",
-                                                                "ingredientName":  "3/4 cup icing sugar"
+                                                                "ingredientName":  "icing sugar",
+                                                                "ingredientRefId":  "ingredient-ref-icing-sugar",
+                                                                "quantity":  0.75,
+                                                                "unit":  "cup"
                                                             },
                                                             {
                                                                 "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-8",
                                                                 "originalText":  "18 maraschino cherries",
-                                                                "ingredientName":  "18 maraschino cherries"
+                                                                "ingredientName":  "maraschino cherries",
+                                                                "ingredientRefId":  "ingredient-ref-maraschino-cherries",
+                                                                "quantity":  18
                                                             }
                                                         ],
                                         "servings":  {
@@ -1131,7 +1512,9 @@
                                                       "totalTimeMinutes":  30
                                                   },
                                         "tags":  [
-                                                     "tag-dessert"
+                                                     "tag-dessert",
+                                                     "tag-holiday",
+                                                     "tag-snack"
                                                  ],
                                         "collections":  [
                                                             "collection-boite-de-noel"
@@ -1145,7 +1528,878 @@
                                     }
                                 ],
                     "ingredientReferences":  [
+                                                 {
+                                                     "id":  "ingredient-ref-all-purpose-flour",
+                                                     "nameFr":  "all-purpose flour",
+                                                     "nameEn":  "all-purpose flour",
+                                                     "aliasesFr":  [
 
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-almond-extract",
+                                                     "nameFr":  "almond extract",
+                                                     "nameEn":  "almond extract",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-almond-flour",
+                                                     "nameFr":  "almond flour",
+                                                     "nameEn":  "almond flour",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-almonds",
+                                                     "nameFr":  "almonds",
+                                                     "nameEn":  "almonds",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-baking-powder",
+                                                     "nameFr":  "baking powder",
+                                                     "nameEn":  "baking powder",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-baking-soda",
+                                                     "nameFr":  "baking soda",
+                                                     "nameEn":  "baking soda",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-bittersweet-chocolate",
+                                                     "nameFr":  "bittersweet chocolate",
+                                                     "nameEn":  "bittersweet chocolate",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-bread-flour",
+                                                     "nameFr":  "bread flour",
+                                                     "nameEn":  "bread flour",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-brown-sugar",
+                                                     "nameFr":  "brown sugar",
+                                                     "nameEn":  "brown sugar",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-butter",
+                                                     "nameFr":  "butter",
+                                                     "nameEn":  "butter",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-butter-cookies",
+                                                     "nameFr":  "butter cookies",
+                                                     "nameEn":  "butter cookies",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-cold-unsalted-butter",
+                                                     "nameFr":  "cold unsalted butter",
+                                                     "nameEn":  "cold unsalted butter",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-custard-powder",
+                                                     "nameFr":  "custard powder",
+                                                     "nameEn":  "custard powder",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-dark-chocolate",
+                                                     "nameFr":  "dark chocolate",
+                                                     "nameEn":  "dark chocolate",
+                                                     "aliasesFr":  [
+                                                                       "unsweetened chocolate",
+                                                                       "70% dark chocolate",
+                                                                       "dark chocolate chips"
+                                                                   ],
+                                                     "aliasesEn":  [
+                                                                       "unsweetened chocolate",
+                                                                       "70% dark chocolate",
+                                                                       "dark chocolate chips"
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-dried-cranberries",
+                                                     "nameFr":  "dried cranberries",
+                                                     "nameEn":  "dried cranberries",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-dutch-process-cocoa-powder",
+                                                     "nameFr":  "Dutch-process cocoa powder",
+                                                     "nameEn":  "Dutch-process cocoa powder",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-egg",
+                                                     "nameFr":  "egg",
+                                                     "nameEn":  "egg",
+                                                     "aliasesFr":  [
+                                                                       "eggs"
+                                                                   ],
+                                                     "aliasesEn":  [
+                                                                       "eggs"
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-egg-white",
+                                                     "nameFr":  "egg white",
+                                                     "nameEn":  "egg white",
+                                                     "aliasesFr":  [
+                                                                       "egg whites"
+                                                                   ],
+                                                     "aliasesEn":  [
+                                                                       "egg whites"
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-egg-yolk",
+                                                     "nameFr":  "egg yolk",
+                                                     "nameEn":  "egg yolk",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-fine-salt",
+                                                     "nameFr":  "fine salt",
+                                                     "nameEn":  "fine salt",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-flaky-sea-salt",
+                                                     "nameFr":  "flaky sea salt",
+                                                     "nameEn":  "flaky sea salt",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-graham-cracker-crumbs",
+                                                     "nameFr":  "graham cracker crumbs",
+                                                     "nameEn":  "graham cracker crumbs",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-granulated-sugar",
+                                                     "nameFr":  "granulated sugar",
+                                                     "nameEn":  "granulated sugar",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-green-gel-food-coloring",
+                                                     "nameFr":  "green gel food coloring",
+                                                     "nameEn":  "green gel food coloring",
+                                                     "aliasesFr":  [
+                                                                       "drops green gel food coloring"
+                                                                   ],
+                                                     "aliasesEn":  [
+                                                                       "drops green gel food coloring"
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-half-and-half",
+                                                     "nameFr":  "half-and-half",
+                                                     "nameEn":  "half-and-half",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-heavy-cream",
+                                                     "nameFr":  "heavy cream",
+                                                     "nameEn":  "heavy cream",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-icing-sugar",
+                                                     "nameFr":  "icing sugar",
+                                                     "nameEn":  "icing sugar",
+                                                     "aliasesFr":  [
+                                                                       "confectioners sugar",
+                                                                       "powdered sugar"
+                                                                   ],
+                                                     "aliasesEn":  [
+                                                                       "confectioners sugar",
+                                                                       "powdered sugar"
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-kosher-salt",
+                                                     "nameFr":  "kosher salt",
+                                                     "nameEn":  "kosher salt",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-light-brown-sugar",
+                                                     "nameFr":  "light brown sugar",
+                                                     "nameEn":  "light brown sugar",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-maple-syrup",
+                                                     "nameFr":  "maple syrup",
+                                                     "nameEn":  "maple syrup",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-maraschino-cherries",
+                                                     "nameFr":  "maraschino cherries",
+                                                     "nameEn":  "maraschino cherries",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-maraschino-cherry-juice",
+                                                     "nameFr":  "maraschino cherry juice",
+                                                     "nameEn":  "maraschino cherry juice",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-marshmallow-creme",
+                                                     "nameFr":  "marshmallow creme",
+                                                     "nameEn":  "marshmallow creme",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-medjool-dates",
+                                                     "nameFr":  "Medjool dates",
+                                                     "nameEn":  "Medjool dates",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-milk-chocolate",
+                                                     "nameFr":  "milk chocolate",
+                                                     "nameEn":  "milk chocolate",
+                                                     "aliasesFr":  [
+                                                                       "milk chocolate chips"
+                                                                   ],
+                                                     "aliasesEn":  [
+                                                                       "milk chocolate chips"
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-natural-nut-butter",
+                                                     "nameFr":  "natural nut butter",
+                                                     "nameEn":  "natural nut butter",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-natural-peanut-butter",
+                                                     "nameFr":  "natural peanut butter",
+                                                     "nameEn":  "natural peanut butter",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-nuts",
+                                                     "nameFr":  "nuts",
+                                                     "nameEn":  "nuts",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-pecans",
+                                                     "nameFr":  "pecans",
+                                                     "nameEn":  "pecans",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-pine-nuts",
+                                                     "nameFr":  "pine nuts",
+                                                     "nameEn":  "pine nuts",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-pistachio-crumbs",
+                                                     "nameFr":  "pistachio crumbs",
+                                                     "nameEn":  "pistachio crumbs",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-raisins",
+                                                     "nameFr":  "raisins",
+                                                     "nameEn":  "raisins",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-red-food-coloring",
+                                                     "nameFr":  "red food coloring",
+                                                     "nameEn":  "red food coloring",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-salt",
+                                                     "nameFr":  "salt",
+                                                     "nameEn":  "salt",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-semisweet-chocolate",
+                                                     "nameFr":  "semisweet chocolate",
+                                                     "nameEn":  "semisweet chocolate",
+                                                     "aliasesFr":  [
+                                                                       "semisweet baking chocolate",
+                                                                       "semisweet chocolate chips"
+                                                                   ],
+                                                     "aliasesEn":  [
+                                                                       "semisweet baking chocolate",
+                                                                       "semisweet chocolate chips"
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-shredded-coconut",
+                                                     "nameFr":  "shredded coconut",
+                                                     "nameEn":  "shredded coconut",
+                                                     "aliasesFr":  [
+                                                                       "flaked coconut"
+                                                                   ],
+                                                     "aliasesEn":  [
+                                                                       "flaked coconut"
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-sugar",
+                                                     "nameFr":  "sugar",
+                                                     "nameEn":  "sugar",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-sweetened-condensed-milk",
+                                                     "nameFr":  "sweetened condensed milk",
+                                                     "nameEn":  "sweetened condensed milk",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-unsalted-butter",
+                                                     "nameFr":  "unsalted butter",
+                                                     "nameEn":  "unsalted butter",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-unsweetened-cocoa-powder",
+                                                     "nameFr":  "unsweetened cocoa powder",
+                                                     "nameEn":  "unsweetened cocoa powder",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-vanilla",
+                                                     "nameFr":  "vanilla",
+                                                     "nameEn":  "vanilla",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-vanilla-extract",
+                                                     "nameFr":  "vanilla extract",
+                                                     "nameEn":  "vanilla extract",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-white-chocolate",
+                                                     "nameFr":  "white chocolate",
+                                                     "nameEn":  "white chocolate",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 },
+                                                 {
+                                                     "id":  "ingredient-ref-white-marshmallows",
+                                                     "nameFr":  "white marshmallows",
+                                                     "nameEn":  "white marshmallows",
+                                                     "aliasesFr":  [
+
+                                                                   ],
+                                                     "aliasesEn":  [
+
+                                                                   ],
+                                                     "defaultDensity":  null,
+                                                     "unitMappings":  [
+
+                                                                      ],
+                                                     "updatedAt":  "2026-03-16T00:00:00Z"
+                                                 }
                                              ],
                     "ingredientForms":  [
 
@@ -1200,6 +2454,42 @@
                                      "nameFr":  "Dessert",
                                      "nameEn":  "Dessert",
                                      "slug":  "dessert"
+                                 },
+                                 {
+                                     "id":  "tag-holiday",
+                                     "nameFr":  "Noel",
+                                     "nameEn":  "Holiday",
+                                     "slug":  "holiday"
+                                 },
+                                 {
+                                     "id":  "tag-bars-squares",
+                                     "nameFr":  "Barres et carres",
+                                     "nameEn":  "Bars and Squares",
+                                     "slug":  "bars-and-squares"
+                                 },
+                                 {
+                                     "id":  "tag-cookies",
+                                     "nameFr":  "Biscuits",
+                                     "nameEn":  "Cookies",
+                                     "slug":  "cookies"
+                                 },
+                                 {
+                                     "id":  "tag-snack",
+                                     "nameFr":  "Collation",
+                                     "nameEn":  "Snack",
+                                     "slug":  "snack"
+                                 },
+                                 {
+                                     "id":  "tag-fudge",
+                                     "nameFr":  "Fudge",
+                                     "nameEn":  "Fudge",
+                                     "slug":  "fudge"
+                                 },
+                                 {
+                                     "id":  "tag-tarts",
+                                     "nameFr":  "Tartelettes",
+                                     "nameEn":  "Tarts",
+                                     "slug":  "tarts"
                                  }
                              ],
                     "collections":  [

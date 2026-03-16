@@ -1,4 +1,4 @@
-﻿package app.recipebook.data.local.db
+package app.recipebook.data.local.db
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -38,6 +38,9 @@ interface RecipeDao {
 @Dao
 interface IngredientReferenceDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsert(ingredientReference: IngredientReferenceEntity)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertAll(ingredientReferences: List<IngredientReferenceEntity>)
 
     @Query("SELECT * FROM ingredient_references ORDER BY nameEn COLLATE NOCASE ASC")
@@ -50,10 +53,16 @@ interface IngredientReferenceDao {
 @Dao
 interface TagDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsert(tag: TagEntity)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertAll(tags: List<TagEntity>)
 
     @Query("SELECT * FROM tags ORDER BY nameEn COLLATE NOCASE ASC")
     fun observeAll(): Flow<List<TagEntity>>
+
+    @Query("SELECT * FROM tags WHERE id = :id LIMIT 1")
+    suspend fun getById(id: String): TagEntity?
 }
 
 @Dao

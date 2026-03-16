@@ -52,7 +52,7 @@ fun RecipeLibraryScreen(
     val context = LocalContext.current
 
     LaunchedEffect(repository) {
-        repository.seedBundledRecipesIfMissing()
+        repository.seedBundledLibraryIfMissing()
     }
 
     val filteredRecipes = remember(recipes, searchQuery) {
@@ -259,4 +259,5 @@ internal fun localizedString(
     val localizedContext = context.createConfigurationContext(config)
     return localizedContext.resources.getString(resId, *formatArgs)
 }
+
 

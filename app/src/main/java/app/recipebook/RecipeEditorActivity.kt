@@ -1,10 +1,11 @@
-﻿package app.recipebook
+package app.recipebook
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -29,9 +30,11 @@ class RecipeEditorActivity : ComponentActivity() {
         setContent {
             RecipeBookTheme {
                 var recipe by remember { mutableStateOf<Recipe?>(null) }
+                val ingredientReferences by repository.observeIngredientReferences().collectAsState(initial = emptyList())
+                val tags by repository.observeTags().collectAsState(initial = emptyList())
 
                 LaunchedEffect(recipeId) {
-                    repository.seedBundledRecipesIfMissing()
+                    repository.seedBundledLibraryIfMissing()
                     recipe = if (recipeId == null) {
                         repository.createBlankRecipe()
                     } else {
@@ -43,6 +46,8 @@ class RecipeEditorActivity : ComponentActivity() {
                     RecipeEditorScreen(
                         initialRecipe = currentRecipe,
                         isNewRecipe = isNewRecipe,
+                        ingredientReferences = ingredientReferences,
+                        tags = tags,
                         onBack = ::finish,
                         onSave = { updatedRecipe ->
                             lifecycleScope.launch {
@@ -50,6 +55,8 @@ class RecipeEditorActivity : ComponentActivity() {
                                 finish()
                             }
                         },
+                        onCreateIngredientReference = { draft -> repository.createIngredientReference(draft) },
+                        onCreateTag = { draft -> repository.createTag(draft) },
                         onDelete = if (isNewRecipe) null else {
                             {
                                 lifecycleScope.launch {

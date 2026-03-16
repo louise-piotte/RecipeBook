@@ -6,6 +6,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import app.recipebook.data.local.db.RecipeBookDatabase
 import app.recipebook.data.local.db.RecipeEntity
 import app.recipebook.data.local.recipes.RecipeRepository
+import app.recipebook.data.local.recipes.SeedLibraryData
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.LocalizedSystemText
 import kotlinx.coroutines.flow.first
@@ -67,16 +68,33 @@ class InstrumentedTest {
     }
 
     @Test
-    fun recipeRepository_seedPlaceholderRecipes_populatesDatabaseOnce() = runBlocking {
-        val repository = RecipeRepository(db.recipeDao())
+    fun recipeRepository_seedBundledRecipes_populatesDatabaseOnce() = runBlocking {
+        val factoryRepository = RecipeRepository(db.recipeDao())
+        val bundledRecipes = listOf(
+            factoryRepository.createBlankRecipe("2026-03-13T10:00:00Z").copy(
+                id = "seed-1",
+                languages = BilingualText(
+                    fr = LocalizedSystemText("Recette 1", "", "", ""),
+                    en = LocalizedSystemText("Recipe 1", "", "", "")
+                )
+            ),
+            factoryRepository.createBlankRecipe("2026-03-13T10:05:00Z").copy(
+                id = "seed-2",
+                languages = BilingualText(
+                    fr = LocalizedSystemText("Recette 2", "", "", ""),
+                    en = LocalizedSystemText("Recipe 2", "", "", "")
+                )
+            )
+        )
+        val repository = RecipeRepository(db.recipeDao(), seedLibrary = SeedLibraryData(recipes = bundledRecipes))
 
-        repository.seedPlaceholderRecipesIfEmpty()
-        repository.seedPlaceholderRecipesIfEmpty()
+        repository.seedBundledRecipesIfMissing()
+        repository.seedBundledRecipesIfMissing()
 
         val storedRecipes = db.recipeDao().observeAll().first()
 
-        assertEquals(3, db.recipeDao().countActive())
-        assertEquals(3, storedRecipes.size)
+        assertEquals(2, db.recipeDao().countActive())
+        assertEquals(2, storedRecipes.size)
     }
 
     @Test
@@ -118,7 +136,7 @@ class InstrumentedTest {
                 )
             )
         )
-        val repository = RecipeRepository(db.recipeDao(), seedRecipes = bundledRecipes)
+        val repository = RecipeRepository(db.recipeDao(), seedLibrary = SeedLibraryData(recipes = bundledRecipes))
 
         repository.seedBundledRecipesIfMissing()
 
@@ -151,3 +169,5 @@ class InstrumentedTest {
         assertTrue(storedAfterDelete.isEmpty())
     }
 }
+
+

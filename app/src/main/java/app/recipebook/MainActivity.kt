@@ -1,4 +1,4 @@
-﻿package app.recipebook
+package app.recipebook
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
 
         val repository = RecipeRepositoryProvider.create(this)
         lifecycleScope.launch {
-            repository.seedBundledRecipesIfMissing()
+            repository.seedBundledLibraryIfMissing()
         }
 
         setContent {

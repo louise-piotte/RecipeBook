@@ -1,4 +1,4 @@
-﻿package app.recipebook.ui.recipes
+package app.recipebook.ui.recipes
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -28,11 +28,15 @@ import app.recipebook.domain.localization.BilingualText
 import app.recipebook.domain.localization.BilingualTextResolver
 import app.recipebook.domain.localization.MissingTextPlaceholders
 import app.recipebook.domain.model.AppLanguage
+import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.Tag
 
 @Composable
 fun RecipeDetailScreen(
     recipe: Recipe?,
+    ingredientReferences: List<IngredientReference>,
+    tags: List<Tag>,
     onBack: () -> Unit,
     onEdit: (String) -> Unit,
     modifier: Modifier = Modifier
@@ -75,7 +79,14 @@ fun RecipeDetailScreen(
                     )
                 }
             } else {
-                RecipeDetailCard(recipe = recipe, language = language, resolver = resolver, placeholders = placeholders)
+                RecipeDetailCard(
+                    recipe = recipe,
+                    ingredientReferences = ingredientReferences,
+                    tags = tags,
+                    language = language,
+                    resolver = resolver,
+                    placeholders = placeholders
+                )
             }
         }
     }
@@ -84,10 +95,14 @@ fun RecipeDetailScreen(
 @Composable
 private fun RecipeDetailCard(
     recipe: Recipe,
+    ingredientReferences: List<IngredientReference>,
+    tags: List<Tag>,
     language: AppLanguage,
     resolver: BilingualTextResolver,
     placeholders: MissingTextPlaceholders
 ) {
+    val ingredientReferenceMap = ingredientReferences.associateBy(IngredientReference::id)
+    val resolvedTags = recipe.tagIds.mapNotNull { tagId -> tags.firstOrNull { it.id == tagId } }
     val userNotes = resolver.resolveUserText(
         language = language,
         valueFr = recipe.userNotes?.fr,
@@ -95,7 +110,10 @@ private fun RecipeDetailCard(
         placeholders = placeholders
     )
     val instructions = parseTextEntries(resolver.resolveSystemText(language, recipe.instructionsText()))
-    val ingredients = recipe.ingredients.map { it.originalText.trim() }.filter { it.isNotEmpty() }
+    val ingredients = recipe.ingredients.map { ingredient ->
+        val ingredientReference = ingredient.ingredientRefId?.let(ingredientReferenceMap::get)
+        buildDetailIngredientText(ingredient, ingredientReference, language)
+    }.filter { it.isNotEmpty() }
 
     Card(modifier = Modifier.fillMaxWidth()) {
         Column(
@@ -125,6 +143,14 @@ private fun RecipeDetailCard(
                 recipe.times?.cookTimeMinutes?.let { cook -> MetaChip(text = localizedString(R.string.cook_time_value, language, cook)) }
                 recipe.times?.totalTimeMinutes?.let { total -> MetaChip(text = localizedString(R.string.total_time_value, language, total)) }
                 recipe.ratings?.userRating?.let { rating -> MetaChip(text = localizedString(R.string.rating_value, language, rating)) }
+            }
+
+            if (resolvedTags.isNotEmpty()) {
+                DetailSection(localizedString(R.string.tags_label, language)) {
+                    resolvedTags.forEach { tag ->
+                        MetaChip(text = tag.localizedName(language))
+                    }
+                }
             }
 
             DetailSection(localizedString(R.string.ingredients_label, language)) {
@@ -195,3 +221,32 @@ internal fun Recipe.systemNotesText(): BilingualText = BilingualText(
     fr = languages.fr.notesSystem,
     en = languages.en.notesSystem
 )
+
+internal fun buildDetailIngredientText(
+    ingredient: app.recipebook.domain.model.IngredientLine,
+    ingredientReference: IngredientReference?,
+    language: AppLanguage
+): String {
+    val ingredientName = ingredientReference?.localizedName(language)
+        ?.ifBlank { ingredient.ingredientName }
+        ?: ingredient.ingredientName
+    val base = listOfNotNull(
+        ingredient.quantity?.let(::formatNumber),
+        ingredient.unit,
+        ingredientName.ifBlank { null }
+    ).joinToString(" ")
+    val withPreparation = if (ingredient.preparation.isNullOrBlank()) base else "$base, ${ingredient.preparation}"
+    val withNotes = if (ingredient.notes.isNullOrBlank()) withPreparation else "$withPreparation (${ingredient.notes})"
+    return withNotes.ifBlank { ingredient.originalText.trim() }
+}
+
+private fun IngredientReference.localizedName(language: AppLanguage): String = when (language) {
+    AppLanguage.FR -> nameFr.ifBlank { nameEn }
+    AppLanguage.EN -> nameEn.ifBlank { nameFr }
+}
+
+private fun Tag.localizedName(language: AppLanguage): String = when (language) {
+    AppLanguage.FR -> nameFr.ifBlank { nameEn }
+    AppLanguage.EN -> nameEn.ifBlank { nameFr }
+}
+

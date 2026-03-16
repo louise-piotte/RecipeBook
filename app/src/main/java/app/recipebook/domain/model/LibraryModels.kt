@@ -1,4 +1,6 @@
-﻿package app.recipebook.domain.model
+package app.recipebook.domain.model
+
+import kotlinx.serialization.Serializable
 
 enum class AppLanguage {
     FR,
@@ -97,6 +99,7 @@ data class Recipe(
     val deletedAt: String? = null
 )
 
+@Serializable
 data class IngredientUnitMapping(
     val fromUnit: String,
     val toUnit: String,
@@ -273,3 +276,5 @@ data class RecipeLibrary(
     val collections: List<Collection>,
     val settings: LibrarySettings
 )
+
+

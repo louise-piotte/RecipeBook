@@ -1,12 +1,18 @@
 ﻿package app.recipebook.data.local.recipes
 
+import app.recipebook.data.local.db.IngredientReferenceDao
+import app.recipebook.data.local.db.IngredientReferenceEntity
 import app.recipebook.data.local.db.RecipeDao
 import app.recipebook.data.local.db.RecipeEntity
+import app.recipebook.data.local.db.TagDao
+import app.recipebook.data.local.db.TagEntity
 import app.recipebook.domain.model.AttachmentRef
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientLineSubstitution
+import app.recipebook.domain.model.IngredientReference
+import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Ratings
@@ -14,10 +20,13 @@ import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
+import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.UserNotes
+import java.text.Normalizer
 import java.time.Instant
 import java.util.UUID
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -25,7 +34,9 @@ import kotlinx.serialization.json.Json
 
 class RecipeRepository(
     private val recipeDao: RecipeDao,
-    private val seedRecipes: List<Recipe> = PlaceholderRecipes.recipes
+    private val ingredientReferenceDao: IngredientReferenceDao = EmptyIngredientReferenceDao,
+    private val tagDao: TagDao = EmptyTagDao,
+    private val seedLibrary: SeedLibraryData = SeedLibraryData()
 ) {
     fun observeRecipes(): Flow<List<Recipe>> = recipeDao.observeAll().map { recipes ->
         recipes.map(RecipeEntity::toDomainRecipe)
@@ -35,33 +46,114 @@ class RecipeRepository(
         entity?.toDomainRecipe()
     }
 
+    fun observeIngredientReferences(): Flow<List<IngredientReference>> = ingredientReferenceDao.observeAll().map { refs ->
+        refs.map(IngredientReferenceEntity::toDomain)
+    }
+
+    fun observeTags(): Flow<List<Tag>> = tagDao.observeAll().map { tags ->
+        tags.map(TagEntity::toDomain)
+    }
+
     suspend fun getRecipeById(id: String): Recipe? = recipeDao.getById(id)?.toDomainRecipe()
 
     suspend fun upsertRecipe(recipe: Recipe) {
         recipeDao.upsert(recipe.toEntity())
     }
 
+    suspend fun createIngredientReference(
+        draft: IngredientReferenceDraft,
+        now: String = Instant.now().toString()
+    ): IngredientReference {
+        val ingredientReference = IngredientReference(
+            id = UUID.randomUUID().toString(),
+            nameFr = draft.nameFr.trim(),
+            nameEn = draft.nameEn.trim(),
+            defaultDensity = draft.defaultDensity,
+            unitMappings = draft.unitMappings,
+            updatedAt = now
+        )
+        ingredientReferenceDao.upsert(ingredientReference.toEntity())
+        return ingredientReference
+    }
+
+    suspend fun updateIngredientReference(
+        id: String,
+        draft: IngredientReferenceDraft,
+        now: String = Instant.now().toString()
+    ): IngredientReference {
+        val existing = ingredientReferenceDao.getById(id)?.toDomain()
+            ?: error("Ingredient reference $id not found")
+        val ingredientReference = existing.copy(
+            nameFr = draft.nameFr.trim(),
+            nameEn = draft.nameEn.trim(),
+            defaultDensity = draft.defaultDensity,
+            unitMappings = draft.unitMappings,
+            updatedAt = now
+        )
+        ingredientReferenceDao.upsert(ingredientReference.toEntity())
+        return ingredientReference
+    }
+
+    suspend fun createTag(draft: TagDraft): Tag {
+        val baseName = draft.nameEn.trim().ifBlank { draft.nameFr.trim() }
+        val tag = Tag(
+            id = UUID.randomUUID().toString(),
+            nameFr = draft.nameFr.trim(),
+            nameEn = draft.nameEn.trim(),
+            slug = slugify(baseName)
+        )
+        tagDao.upsert(tag.toEntity())
+        return tag
+    }
+
+    suspend fun updateTag(id: String, draft: TagDraft): Tag {
+        val existing = tagDao.getById(id)?.toDomain() ?: error("Tag $id not found")
+        val baseName = draft.nameEn.trim().ifBlank { draft.nameFr.trim() }
+        val tag = existing.copy(
+            nameFr = draft.nameFr.trim(),
+            nameEn = draft.nameEn.trim(),
+            slug = slugify(baseName)
+        )
+        tagDao.upsert(tag.toEntity())
+        return tag
+    }
+
     suspend fun deleteRecipeById(id: String) {
         recipeDao.deleteById(id)
     }
 
-    suspend fun seedPlaceholderRecipesIfEmpty() {
-        if (recipeDao.countActive() > 0) {
-            return
+
+    suspend fun seedBundledLibraryIfMissing() {
+        val recipesToInsert = mutableListOf<RecipeEntity>()
+        val recipesToRepair = mutableListOf<RecipeEntity>()
+
+        seedLibrary.recipes
+            .distinctBy(Recipe::id)
+            .forEach { seedRecipe ->
+                val existingRecipe = recipeDao.getById(seedRecipe.id)?.toDomainRecipe()
+                if (existingRecipe == null) {
+                    recipesToInsert += seedRecipe.toEntity()
+                } else {
+                    val repairedRecipe = mergeSeedEnhancements(existingRecipe, seedRecipe)
+                    if (repairedRecipe != existingRecipe) {
+                        recipesToRepair += repairedRecipe.toEntity()
+                    }
+                }
+            }
+
+        if (recipesToInsert.isNotEmpty()) {
+            recipeDao.upsertAll(recipesToInsert)
         }
-        recipeDao.upsertAll(PlaceholderRecipes.recipes.map(Recipe::toEntity))
+        if (recipesToRepair.isNotEmpty()) {
+            recipeDao.upsertAll(recipesToRepair)
+        }
+
+        ingredientReferenceDao.upsertAll(seedLibrary.ingredientReferences.distinctBy(IngredientReference::id).map(IngredientReference::toEntity))
+        tagDao.upsertAll(seedLibrary.tags.distinctBy(Tag::id).map(Tag::toEntity))
     }
 
     suspend fun seedBundledRecipesIfMissing() {
-        val missingRecipes = seedRecipes
-            .distinctBy(Recipe::id)
-            .filter { recipeDao.getById(it.id) == null }
-
-        if (missingRecipes.isEmpty()) {
-            return
-        }
-
-        recipeDao.upsertAll(missingRecipes.map(Recipe::toEntity))
+        seedBundledLibraryIfMissing()
     }
 
     fun createBlankRecipe(now: String = Instant.now().toString()): Recipe = Recipe(
@@ -87,166 +179,17 @@ class RecipeRepository(
     )
 }
 
-object PlaceholderRecipes {
-    val recipes: List<Recipe> = listOf(
-        Recipe(
-            id = "recipe-placeholder-overnight-oats",
-            createdAt = "2026-03-13T12:00:00Z",
-            updatedAt = "2026-03-13T12:00:00Z",
-            source = RecipeSource(
-                sourceUrl = "https://example.com/overnight-oats",
-                sourceName = "RecipeBook Sample"
-            ),
-            languages = BilingualText(
-                fr = LocalizedSystemText(
-                    title = "Gruau du lendemain aux pommes",
-                    description = "Un dejeuner froid prepare la veille avec pommes, yogourt et cannelle.",
-                    instructions = "Melanger le gruau, le yogourt et le lait. Ajouter la pomme et laisser reposer au refrigerateur toute la nuit.",
-                    notesSystem = "Servir froid ou tiedir 30 secondes au micro-ondes."
-                ),
-                en = LocalizedSystemText(
-                    title = "Apple Overnight Oats",
-                    description = "A make-ahead cold breakfast with apples, yogurt, and cinnamon.",
-                    instructions = "Stir together the oats, yogurt, and milk. Fold in the apple and refrigerate overnight.",
-                    notesSystem = "Serve cold or warm for 30 seconds in the microwave."
-                )
-            ),
-            userNotes = UserNotes(
-                fr = null,
-                en = "Add extra maple syrup if the apples are tart."
-            ),
-            ingredients = listOf(
-                IngredientLine(
-                    id = "ingredient-oats-1",
-                    originalText = "1 cup rolled oats",
-                    quantity = 1.0,
-                    unit = "cup",
-                    ingredientName = "rolled oats"
-                ),
-                IngredientLine(
-                    id = "ingredient-milk-1",
-                    originalText = "3/4 cup milk",
-                    quantity = 0.75,
-                    unit = "cup",
-                    ingredientName = "milk"
-                ),
-                IngredientLine(
-                    id = "ingredient-apple-1",
-                    originalText = "1 apple, diced",
-                    quantity = 1.0,
-                    unit = "count",
-                    ingredientName = "apple",
-                    preparation = "diced"
-                )
-            ),
-            servings = Servings(amount = 2.0, unit = "bowls"),
-            times = RecipeTimes(prepTimeMinutes = 10, totalTimeMinutes = 480),
-            ratings = Ratings(userRating = 4.5, madeCount = 3, lastMadeAt = "2026-03-12")
-        ),
-        Recipe(
-            id = "recipe-placeholder-sheet-pan",
-            createdAt = "2026-03-13T12:05:00Z",
-            updatedAt = "2026-03-13T12:05:00Z",
-            source = RecipeSource(
-                sourceUrl = "https://example.com/sheet-pan-salmon",
-                sourceName = "RecipeBook Sample"
-            ),
-            languages = BilingualText(
-                fr = LocalizedSystemText(
-                    title = "Saumon et legumes sur une plaque",
-                    description = "Un souper rapide au four avec saumon, pommes de terre et haricots verts.",
-                    instructions = "Rotir les pommes de terre 15 minutes, ajouter le saumon et les haricots, puis cuire jusqu'a ce que le poisson soit cuit.",
-                    notesSystem = "Verifier la cuisson du saumon a la partie la plus epaisse."
-                ),
-                en = LocalizedSystemText(
-                    title = "Sheet Pan Salmon and Vegetables",
-                    description = "A quick oven dinner with salmon, potatoes, and green beans.",
-                    instructions = "Roast the potatoes for 15 minutes, add the salmon and beans, then bake until the fish flakes easily.",
-                    notesSystem = "Check the salmon at the thickest part for doneness."
-                )
-            ),
-            userNotes = UserNotes(
-                fr = "Tres bon avec une sauce au yogourt et a l'aneth.",
-                en = "Great with a yogurt-dill sauce."
-            ),
-            ingredients = listOf(
-                IngredientLine(
-                    id = "ingredient-salmon-1",
-                    originalText = "4 salmon fillets",
-                    quantity = 4.0,
-                    unit = "count",
-                    ingredientName = "salmon fillets"
-                ),
-                IngredientLine(
-                    id = "ingredient-potato-1",
-                    originalText = "600 g potatoes",
-                    quantity = 600.0,
-                    unit = "g",
-                    ingredientName = "potatoes"
-                ),
-                IngredientLine(
-                    id = "ingredient-beans-1",
-                    originalText = "300 g green beans",
-                    quantity = 300.0,
-                    unit = "g",
-                    ingredientName = "green beans"
-                )
-            ),
-            servings = Servings(amount = 4.0),
-            times = RecipeTimes(prepTimeMinutes = 15, cookTimeMinutes = 25, totalTimeMinutes = 40),
-            ratings = Ratings(userRating = 5.0, madeCount = 1)
-        ),
-        Recipe(
-            id = "recipe-placeholder-muffins",
-            createdAt = "2026-03-13T12:10:00Z",
-            updatedAt = "2026-03-13T12:10:00Z",
-            languages = BilingualText(
-                fr = LocalizedSystemText(
-                    title = "Muffins banane et chocolat",
-                    description = "Des muffins tendres pour collations ou dejeuners rapides.",
-                    instructions = "Melanger les ingredients humides, incorporer les ingredients secs, puis cuire jusqu'a ce qu'un cure-dents ressorte propre.",
-                    notesSystem = "Laisser refroidir 10 minutes avant de demouler."
-                ),
-                en = LocalizedSystemText(
-                    title = "Banana Chocolate Muffins",
-                    description = "Soft muffins for snacks or quick breakfasts.",
-                    instructions = "Whisk the wet ingredients, fold in the dry ingredients, and bake until a toothpick comes out clean.",
-                    notesSystem = "Cool for 10 minutes before removing from the pan."
-                )
-            ),
-            userNotes = UserNotes(
-                fr = "Utiliser des mini pepites de chocolat pour une meilleure repartition.",
-                en = null
-            ),
-            ingredients = listOf(
-                IngredientLine(
-                    id = "ingredient-banana-1",
-                    originalText = "3 ripe bananas",
-                    quantity = 3.0,
-                    unit = "count",
-                    ingredientName = "bananas"
-                ),
-                IngredientLine(
-                    id = "ingredient-flour-1",
-                    originalText = "250 g flour",
-                    quantity = 250.0,
-                    unit = "g",
-                    ingredientName = "flour"
-                ),
-                IngredientLine(
-                    id = "ingredient-chocolate-1",
-                    originalText = "1 cup chocolate chips",
-                    quantity = 1.0,
-                    unit = "cup",
-                    ingredientName = "chocolate chips"
-                )
-            ),
-            servings = Servings(amount = 12.0, unit = "muffins"),
-            times = RecipeTimes(prepTimeMinutes = 15, cookTimeMinutes = 22, totalTimeMinutes = 37),
-            ratings = Ratings(userRating = 4.0, madeCount = 5, lastMadeAt = "2026-03-01")
-        )
-    )
-}
+data class IngredientReferenceDraft(
+    val nameFr: String,
+    val nameEn: String,
+    val defaultDensity: Double? = null,
+    val unitMappings: List<IngredientUnitMapping> = emptyList()
+)
+
+data class TagDraft(
+    val nameFr: String,
+    val nameEn: String
+)
 
 internal fun RecipeEntity.toDomainRecipe(): Recipe = Recipe(
     id = id,
@@ -339,6 +282,82 @@ internal fun Recipe.toEntity(): RecipeEntity = RecipeEntity(
     importMetadataJson = importMetadata?.let { storageJson.encodeToString(it.toStored()) }
 )
 
+private fun IngredientReferenceEntity.toDomain(): IngredientReference = IngredientReference(
+    id = id,
+    nameFr = nameFr,
+    nameEn = nameEn,
+    aliasesFr = storageJson.decodeFromString(aliasesFrJson),
+    aliasesEn = storageJson.decodeFromString(aliasesEnJson),
+    defaultDensity = defaultDensity,
+    unitMappings = storageJson.decodeFromString<List<IngredientUnitMapping>>(unitMappingsJson),
+    updatedAt = updatedAt
+)
+
+private fun IngredientReference.toEntity(): IngredientReferenceEntity = IngredientReferenceEntity(
+    id = id,
+    nameFr = nameFr,
+    nameEn = nameEn,
+    aliasesFrJson = storageJson.encodeToString(aliasesFr),
+    aliasesEnJson = storageJson.encodeToString(aliasesEn),
+    defaultDensity = defaultDensity,
+    unitMappingsJson = storageJson.encodeToString(unitMappings),
+    updatedAt = updatedAt
+)
+
+private fun TagEntity.toDomain(): Tag = Tag(
+    id = id,
+    nameFr = nameFr,
+    nameEn = nameEn,
+    slug = slug
+)
+
+private fun Tag.toEntity(): TagEntity = TagEntity(
+    id = id,
+    nameFr = nameFr,
+    nameEn = nameEn,
+    slug = slug
+)
+
+
+private fun mergeSeedEnhancements(existingRecipe: Recipe, seedRecipe: Recipe): Recipe {
+    val repairedIngredients = if (existingRecipe.ingredients.size == seedRecipe.ingredients.size) {
+        existingRecipe.ingredients.mapIndexed { index, ingredient ->
+            val seedIngredient = seedRecipe.ingredients[index]
+            if (
+                seedIngredient.ingredientRefId != null &&
+                ingredient.originalText.trim().equals(seedIngredient.originalText.trim(), ignoreCase = true)
+            ) {
+                ingredient.copy(
+                    ingredientRefId = seedIngredient.ingredientRefId,
+                    quantity = ingredient.quantity ?: seedIngredient.quantity,
+                    unit = ingredient.unit ?: seedIngredient.unit,
+                    preparation = ingredient.preparation ?: seedIngredient.preparation,
+                    notes = ingredient.notes ?: seedIngredient.notes,
+                    ingredientName = if (
+                        ingredient.ingredientRefId != seedIngredient.ingredientRefId ||
+                        ingredient.ingredientName.isBlank() ||
+                        ingredient.ingredientName == ingredient.originalText ||
+                        ingredient.ingredientName.firstOrNull()?.isDigit() == true
+                    ) {
+                        seedIngredient.ingredientName
+                    } else {
+                        ingredient.ingredientName
+                    }
+                )
+            } else {
+                ingredient
+            }
+        }
+    } else {
+        existingRecipe.ingredients
+    }
+
+    val repairedTagIds = (existingRecipe.tagIds + seedRecipe.tagIds).distinct()
+    return existingRecipe.copy(
+        ingredients = repairedIngredients,
+        tagIds = repairedTagIds
+    )
+}
 private val storageJson = Json {
     ignoreUnknownKeys = true
     encodeDefaults = true
@@ -482,6 +501,45 @@ private fun ImportMetadata.toStored(): StoredImportMetadata = StoredImportMetada
     parserVersion = parserVersion,
     originalUnits = originalUnits
 )
+
+private object EmptyIngredientReferenceDao : IngredientReferenceDao {
+    override suspend fun upsert(ingredientReference: IngredientReferenceEntity) = Unit
+
+    override suspend fun upsertAll(ingredientReferences: List<IngredientReferenceEntity>) = Unit
+
+    override fun observeAll(): Flow<List<IngredientReferenceEntity>> = flowOf(emptyList())
+
+    override suspend fun getById(id: String): IngredientReferenceEntity? = null
+}
+
+private object EmptyTagDao : TagDao {
+    override suspend fun upsert(tag: TagEntity) = Unit
+
+    override suspend fun upsertAll(tags: List<TagEntity>) = Unit
+
+    override fun observeAll(): Flow<List<TagEntity>> = flowOf(emptyList())
+
+    override suspend fun getById(id: String): TagEntity? = null
+}
+
+private fun slugify(input: String): String {
+    val normalized = Normalizer.normalize(input.lowercase(), Normalizer.Form.NFD)
+        .replace("\\p{M}+".toRegex(), "")
+    return normalized
+        .replace("[^a-z0-9]+".toRegex(), "-")
+        .trim('-')
+        .ifBlank { UUID.randomUUID().toString() }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
