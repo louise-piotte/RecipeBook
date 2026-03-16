@@ -1,4 +1,4 @@
-package app.recipebook.data.schema
+﻿package app.recipebook.data.schema
 
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.AttachmentRef
@@ -111,7 +111,6 @@ private fun BilingualText.toDto(): LanguagesDto = LanguagesDto(
 private fun LocalizedSystemTextDto.toDomain(): LocalizedSystemText = LocalizedSystemText(
     title = title,
     description = description,
-    preparationSteps = preparationSteps,
     instructions = instructions,
     notesSystem = notesSystem
 )
@@ -119,7 +118,6 @@ private fun LocalizedSystemTextDto.toDomain(): LocalizedSystemText = LocalizedSy
 private fun LocalizedSystemText.toDto(): LocalizedSystemTextDto = LocalizedSystemTextDto(
     title = title,
     description = description,
-    preparationSteps = preparationSteps,
     instructions = instructions,
     notesSystem = notesSystem
 )

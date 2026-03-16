@@ -1,4 +1,4 @@
-package app.recipebook.data.schema
+﻿package app.recipebook.data.schema
 
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.AttachmentRef
@@ -90,9 +90,7 @@ class SchemaRoundTripTest {
                 aliasesFr = listOf("Farine blanche"),
                 aliasesEn = listOf("AP flour"),
                 defaultDensity = 0.53,
-                unitMappings = listOf(
-                    IngredientUnitMapping(fromUnit = "cup", toUnit = "g", factor = 120.0)
-                ),
+                unitMappings = listOf(IngredientUnitMapping(fromUnit = "cup", toUnit = "g", factor = 120.0)),
                 updatedAt = "2026-03-02T12:30:00Z"
             )
         ),
@@ -149,33 +147,10 @@ class SchemaRoundTripTest {
             )
         ),
         units = listOf(
-            UnitDefinition(
-                unitId = "g",
-                symbol = "g",
-                nameFr = "gramme",
-                nameEn = "gram",
-                type = UnitType.MASS,
-                baseUnitId = "g",
-                toBaseFactor = 1.0
-            ),
-            UnitDefinition(
-                unitId = "ml",
-                symbol = "ml",
-                nameFr = "millilitre",
-                nameEn = "milliliter",
-                type = UnitType.VOLUME,
-                baseUnitId = "ml",
-                toBaseFactor = 1.0
-            )
+            UnitDefinition("g", "g", "gramme", "gram", UnitType.MASS, "g", 1.0),
+            UnitDefinition("ml", "ml", "millilitre", "milliliter", UnitType.VOLUME, "ml", 1.0)
         ),
-        tags = listOf(
-            Tag(
-                id = "6bce17f2-67ad-40c3-8267-fee6bac1ac43",
-                nameFr = "Dejeuner",
-                nameEn = "Breakfast",
-                slug = "breakfast"
-            )
-        ),
+        tags = listOf(Tag("6bce17f2-67ad-40c3-8267-fee6bac1ac43", "Dejeuner", "Breakfast", "breakfast")),
         collections = listOf(
             Collection(
                 id = "70ac4e1b-b73f-4477-82fd-ff44c643cce6",
@@ -208,22 +183,17 @@ class SchemaRoundTripTest {
             fr = LocalizedSystemText(
                 title = "Pancakes classiques",
                 description = "Pancakes moelleux et rapides.",
-                preparationSteps = "Mesurer les ingredients et prechauffer la poele.",
                 instructions = "Melanger, verser et cuire des deux cotes.",
                 notesSystem = ""
             ),
             en = LocalizedSystemText(
                 title = "Classic pancakes",
                 description = "Quick fluffy pancakes.",
-                preparationSteps = "Measure ingredients and preheat the pan.",
                 instructions = "Mix, pour, and cook both sides.",
                 notesSystem = ""
             )
         ),
-        userNotes = UserNotes(
-            fr = null,
-            en = "Use buttermilk when available."
-        ),
+        userNotes = UserNotes(fr = null, en = "Use buttermilk when available."),
         ingredients = listOf(
             IngredientLine(
                 id = "2f3287f5-a90e-4e2d-b3ca-1bded383a4c2",
@@ -232,9 +202,6 @@ class SchemaRoundTripTest {
                 quantity = 200.0,
                 unit = "g",
                 ingredientName = "flour",
-                preparation = null,
-                optional = false,
-                notes = null,
                 group = "Batter",
                 substitutions = listOf(
                     IngredientLineSubstitution(
@@ -263,27 +230,9 @@ class SchemaRoundTripTest {
         tagIds = listOf("6bce17f2-67ad-40c3-8267-fee6bac1ac43"),
         collectionIds = listOf("70ac4e1b-b73f-4477-82fd-ff44c643cce6"),
         ratings = Ratings(userRating = 4.5, madeCount = 2, lastMadeAt = "2026-02-20T09:00:00Z"),
-        photos = listOf(
-            PhotoRef(
-                id = "3f4f2cf1-70fa-42e6-935f-fddc4e7d870e",
-                localPath = "photos/pancakes-1.jpg",
-                cloudRef = "drive://photo-1"
-            )
-        ),
-        attachments = listOf(
-            AttachmentRef(
-                id = "f49fbc5c-2b15-47a3-a81d-6fd0da70c2ed",
-                fileName = "notes.pdf",
-                mimeType = "application/pdf",
-                localPath = "attachments/notes.pdf",
-                cloudRef = null
-            )
-        ),
-        importMetadata = ImportMetadata(
-            sourceType = "url",
-            parserVersion = "1.0.0",
-            originalUnits = "metric"
-        ),
+        photos = listOf(PhotoRef("3f4f2cf1-70fa-42e6-935f-fddc4e7d870e", "photos/pancakes-1.jpg", "drive://photo-1")),
+        attachments = listOf(AttachmentRef("f49fbc5c-2b15-47a3-a81d-6fd0da70c2ed", "notes.pdf", "application/pdf", "attachments/notes.pdf", null)),
+        importMetadata = ImportMetadata(sourceType = "url", parserVersion = "1.0.0", originalUnits = "metric"),
         deletedAt = null
     )
 }

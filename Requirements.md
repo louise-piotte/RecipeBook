@@ -1,4 +1,4 @@
----
+﻿---
 
 ## 1) Product scope
 
@@ -8,7 +8,7 @@ Build a personal recipe book app that:
 
 * Lets you **add/edit/create/import/export** recipes.
 * Supports **full bilingual content (French + English)** per recipe.
-* Handles **unit conversions**, **serving scaling**, and **weight ↔ volume** conversions using an **ingredient reference database**.
+* Handles **unit conversions**, **serving scaling**, and **weight â†” volume** conversions using an **ingredient reference database**.
 * Organizes recipes into **collections**, **tags**, searchable ingredient/tag lists, pictures, ratings.
 * Syncs to **Google Drive**, and can **auto-open your library from Drive when the app launches**.
 
@@ -37,21 +37,21 @@ Build a personal recipe book app that:
     * `sourceName` (string)
 * `languages` (bilingual content):
 
-    * `fr`: `title`, `description`, `preparationSteps`, `instructions`, optional `notesSystem`
-    * `en`: `title`, `description`, `preparationSteps`, `instructions`, optional `notesSystem`
+    * `fr`: `title`, `description`, `instructions`, optional `notesSystem`
+    * `en`: `title`, `description`, `instructions`, optional `notesSystem`
     * **Rule:** all **system-defined** textual fields must exist in both languages (even if empty).
 * **User-entered notes**
 
     * `userNotes` (free text, user-entered; may be only one language)
-    * **Display rule:** if missing in currently selected language, show a placeholder like **“Not available in English / Non disponible en français”** rather than falling back to the other language.
+    * **Display rule:** if missing in currently selected language, show a placeholder like **â€œNot available in English / Non disponible en franÃ§aisâ€** rather than falling back to the other language.
 * `ingredients[]` (ordered list)
-* `servings` (number + optional unit, e.g., “4”, “1 loaf”)
+* `servings` (number + optional unit, e.g., â€œ4â€, â€œ1 loafâ€)
 * `prepTime`, `cookTime`, `totalTime` (minutes)
 * `tags[]` (references to Tag entity)
 * `collections[]` (references to Collection entity)
 * `ratings`:
 
-    * `userRating` (0–5, allow halves optional)
+    * `userRating` (0â€“5, allow halves optional)
     * optional `madeCount`, `lastMadeAt`
 * `photos[]` (local + cloud references)
 * `attachments[]` (optional; pdf, etc.)
@@ -67,19 +67,19 @@ Build a personal recipe book app that:
     * `quantity` (decimal)
     * `unit` (canonical unit enum, e.g., g, ml, tsp, cup)
     * `ingredientName` (string; display)
-    * `preparation` (string; “chopped”, “melted”)
+    * `preparation` (string; â€œchoppedâ€, â€œmeltedâ€)
     * `optional` (bool)
     * `notes` (string)
-* `group` (optional section header: “Dough”, “Filling”)
+* `group` (optional section header: â€œDoughâ€, â€œFillingâ€)
 * `substitutions[]` (optional references to `IngredientLineSubstitution` for suggested or selected alternatives)
 
-**IngredientReference** (the “exhaustive list” backbone)
+**IngredientReference** (the â€œexhaustive listâ€ backbone)
 
 * `id`
 * `nameFr`, `nameEn`
 * `aliasesFr[]`, `aliasesEn[]`
 * `defaultDensity` (g/ml) **when meaningful**
-* `unitMappings[]` (optional: “1 cup = 120g” for flour)
+* `unitMappings[]` (optional: â€œ1 cup = 120gâ€ for flour)
 * `nutrition` (optional, out-of-scope unless you want it)
 * `updatedAt`
 
@@ -142,7 +142,7 @@ Build a personal recipe book app that:
 * Canonical unit definitions with:
 
     * `unitId`, `symbol`, `nameFr`, `nameEn`
-    * `type` (mass, volume, count, length, temperature, “other”)
+    * `type` (mass, volume, count, length, temperature, â€œotherâ€)
     * conversion base (e.g., g as base mass, ml as base volume)
 
 **Tag**
@@ -155,7 +155,7 @@ Build a personal recipe book app that:
 
 **Library**
 
-* The user’s full dataset bundle:
+* The userâ€™s full dataset bundle:
 
     * recipes, ingredient refs, tags, collections, settings, version metadata
 
@@ -167,7 +167,7 @@ Two JSON specs must be defined and versioned:
 
 **(A) Recipe Creation JSON (AI-friendly minimal input)**
 
-* A “creation payload” format intended for:
+* A â€œcreation payloadâ€ format intended for:
 
     * Creating a new recipe from scratch
     * Creating a recipe from parsed/imported content
@@ -202,7 +202,7 @@ Two JSON specs must be defined and versioned:
 
 * Create recipes with:
 
-    * Title, description, **preparation steps**, instructions, ingredients, servings, times, tags, photos, rating, source URL, **user notes**.
+    * Title, description, instructions, ingredients, servings, times, tags, photos, rating, source URL, **user notes**.
 * Edit any field.
 * Delete with undo/restore (soft delete) recommended.
 
@@ -224,10 +224,10 @@ Support at least these import types:
     * Fallback: user-assisted import (paste text, manual mapping).
 2. **From text (paste)**
 
-    * Parse ingredients/**preparation steps**/**instructions** with best-effort.
+    * Parse ingredients/**instructions** with best-effort.
 3. **From file**
 
-    * Import app’s own export format (see FR-12).
+    * Import appâ€™s own export format (see FR-12).
 
 **Acceptance criteria**
 
@@ -240,7 +240,7 @@ Support at least these import types:
 
 * **Everything must have French and English equivalents**, including:
 
-    * All system-defined recipe text fields (title/description/prep steps/instructions/system notes)
+    * All system-defined recipe text fields (title/description/instructions/system notes)
     * Tags, collections, ingredient reference names/aliases
     * Units and UI strings
 * App setting: display language toggle (FR/EN) changes:
@@ -251,8 +251,8 @@ Support at least these import types:
 
     * If the current language value is missing, show a placeholder:
 
-        * English UI: “Not available in English”
-        * French UI: “Non disponible en français”
+        * English UI: â€œNot available in Englishâ€
+        * French UI: â€œNon disponible en franÃ§aisâ€
 * (System-defined fields may exist but be empty; still required to be present.)
 
 **Acceptance criteria**
@@ -265,7 +265,7 @@ Support at least these import types:
 
 ### FR-4 Go to source
 
-* If `sourceUrl` exists, provide a “Go to source” action:
+* If `sourceUrl` exists, provide a â€œGo to sourceâ€ action:
 
     * Opens in in-app browser or system browser (configurable).
 * If no source exists, hide or disable.
@@ -276,20 +276,20 @@ Support at least these import types:
 
 ---
 
-### FR-5 Unit conversion (including weight ↔ volume)
+### FR-5 Unit conversion (including weight â†” volume)
 
 User can convert ingredient quantities between:
 
-* Mass units (g, kg, oz, lb…)
-* Volume units (ml, l, tsp, tbsp, cup…)
+* Mass units (g, kg, oz, lbâ€¦)
+* Volume units (ml, l, tsp, tbsp, cupâ€¦)
 * Temperature units must display in both Celsius (C) and Fahrenheit (F) at the same time for recipe steps and ingredient lines where temperature is present.
-* Count (e.g., “2 eggs”) should generally not auto-convert unless explicitly mapped.
-* Mass conversion must support pounds (lb) ↔ grams (g).
-* Volume conversion must support fluid ounces (fl oz) ↔ milliliters (ml).
-* Form substitutions (e.g., canned ↔ dried ↔ cooked) must support different equivalent amounts via `SubstitutionRule`.
-* Contextual substitutions between different ingredients (e.g., flour ↔ cornstarch) must use `ContextualSubstitutionRule` and must not be treated as globally valid.
+* Count (e.g., â€œ2 eggsâ€) should generally not auto-convert unless explicitly mapped.
+* Mass conversion must support pounds (lb) â†” grams (g).
+* Volume conversion must support fluid ounces (fl oz) â†” milliliters (ml).
+* Form substitutions (e.g., canned â†” dried â†” cooked) must support different equivalent amounts via `SubstitutionRule`.
+* Contextual substitutions between different ingredients (e.g., flour â†” cornstarch) must use `ContextualSubstitutionRule` and must not be treated as globally valid.
 
-**Key rule:** Weight ↔ volume conversions require an ingredient density or mapping.
+**Key rule:** Weight â†” volume conversions require an ingredient density or mapping.
 
 * If ingredient line is linked to IngredientReference with density/mapping, conversion is automatic.
 * If missing, app prompts user to choose:
@@ -302,10 +302,10 @@ User can convert ingredient quantities between:
 
 **Acceptance criteria**
 
-* Converting “100 g flour → cups” uses flour mapping/density.
+* Converting â€œ100 g flour â†’ cupsâ€ uses flour mapping/density.
 * If density unknown, user is prompted (not silently wrong).
 * Temperatures are shown as dual units (for example: 180 C / 356 F).
-* Converting lb ↔ g and fl oz ↔ ml works from recipe view and edit flows.
+* Converting lb â†” g and fl oz â†” ml works from recipe view and edit flows.
 * A saved custom density is reused automatically for later conversions of the same ingredient.
 * Chickpea form substitution example is supported: a canned amount can convert to equivalent dried or cooked amounts using form rules.
 * A contextual substitution valid for sauces/gravy can be offered there, but is blocked or strongly warned for cakes/pastries.
@@ -316,10 +316,10 @@ User can convert ingredient quantities between:
 
 * User can scale a recipe by:
 
-    * New serving count (e.g., 4 → 6)
-    * Multiplier (e.g., ×0.5, ×2)
+    * New serving count (e.g., 4 â†’ 6)
+    * Multiplier (e.g., Ã—0.5, Ã—2)
 * Scaling updates ingredient quantities and optionally times (times usually do NOT scale linearly; keep times unchanged by default).
-* Must preserve original values or allow “Reset to original”.
+* Must preserve original values or allow â€œReset to originalâ€.
 
 **Acceptance criteria**
 
@@ -349,15 +349,15 @@ User can convert ingredient quantities between:
 * Each recipe can have multiple tags.
 * Recipe search supports:
 
-    * Full-text search in title/ingredients/prep steps/instructions (current language + optionally both)
+    * Full-text search in title/ingredients/instructions (current language + optionally both)
     * Filter by tag(s)
     * Filter by collection
-    * Optional: filter by rating, “has photo”, “has source URL”
+    * Optional: filter by rating, â€œhas photoâ€, â€œhas source URLâ€
 
 **Acceptance criteria**
 
 * Searching by tag returns all tagged recipes.
-* Searching “chocolate” finds recipes with chocolate in ingredients.
+* Searching â€œchocolateâ€ finds recipes with chocolate in ingredients.
 
 ---
 
@@ -378,7 +378,7 @@ User can convert ingredient quantities between:
 
 ### FR-10 Ratings
 
-* Personal rating per recipe (0–5).
+* Personal rating per recipe (0â€“5).
 * Sorting by rating.
 
 **Acceptance criteria**
@@ -418,7 +418,7 @@ User can convert ingredient quantities between:
 ### FR-13 Google Drive save + auto-open on launch
 
 * User can connect Google account and choose a Drive folder.
-* App writes exports to Drive and can keep a “current library file”.
+* App writes exports to Drive and can keep a â€œcurrent library fileâ€.
 * On app launch:
 
     * If Drive sync enabled, app checks for the chosen library file and loads it automatically.
@@ -492,7 +492,7 @@ User can convert ingredient quantities between:
     * Detect conflict via file revision/etag or timestamp.
     * Provide conflict resolution:
 
-        * “Keep local”, “Keep Drive”, or “Merge” (merge can be phase 2)
+        * â€œKeep localâ€, â€œKeep Driveâ€, or â€œMergeâ€ (merge can be phase 2)
 
 ### NFR-3 Performance
 
@@ -511,8 +511,8 @@ User can convert ingredient quantities between:
 * French recipe instructions use Quebec naming conventions.
 * During recipe conversion, French text must be normalized to proper accents and corrected spelling/typos, even if source text was entered on an English keyboard.
 * Preferred Quebec terms for conversions and normalization:
-  * Use "cuillère à thé" instead of "cuillère à café".
-  * Use "cuillère à soupe" instead of "cuillère à table".
+  * Use "cuillÃ¨re Ã  thÃ©" instead of "cuillÃ¨re Ã  cafÃ©".
+  * Use "cuillÃ¨re Ã  soupe" instead of "cuillÃ¨re Ã  table".
   * Use "bicarbonate de soude" instead of "levure chimique".
 * Units display localized (decimal separators, abbreviations).
 * Placeholders localized.
@@ -533,7 +533,7 @@ User can convert ingredient quantities between:
     * Language toggle
     * Scale controls
     * Convert units controls
-    * Ingredients + **preparation steps** + instructions
+    * Ingredients + instructions
     * Photos gallery
     * Rating
     * Go to source
@@ -548,7 +548,7 @@ User can convert ingredient quantities between:
 ### 5.2 Critical interaction rules
 
 * Language toggle affects displayed text fields, not underlying structured ingredient quantities.
-* Scaling + conversion are “view transformations” unless user chooses “apply and save”.
+* Scaling + conversion are â€œview transformationsâ€ unless user chooses â€œapply and saveâ€.
 * Missing user-entered language content shows placeholder (not fallback).
 
 ---
@@ -563,19 +563,19 @@ User can convert ingredient quantities between:
     * Volume base: milliliters
 * Preserve original user entry for display and audit.
 
-### 6.2 Weight ↔ volume
+### 6.2 Weight â†” volume
 
 * Use `density (g/ml)` or per-unit mapping.
 * Priority:
 
-    1. Specific mapping (e.g., “1 cup flour = 120g”)
-    2. Density (convert via ml ↔ g)
+    1. Specific mapping (e.g., â€œ1 cup flour = 120gâ€)
+    2. Density (convert via ml â†” g)
     3. Prompt user (choose ingredient or enter density)
 
 ### 6.3 Scaling
 
 * Multiply `quantity` fields only.
-* Do not attempt to rewrite preparation steps/instructions text automatically (“bake for 20 minutes”) unless user opts in.
+* Do not attempt to rewrite instruction text automatically (for example bake for 20 minutes) unless user opts in.
 
 ### 6.4 Substitutions (form-to-form)
 
@@ -591,7 +591,7 @@ User can convert ingredient quantities between:
     * `chickpea_dried`
     * `chickpea_cooked`
     * `chickpea_canned_drained`
-* Package mappings (e.g., “1 can (15 oz)”) may be represented in unit mappings and linked to form-specific drained mass.
+* Package mappings (e.g., â€œ1 can (15 oz)â€) may be represented in unit mappings and linked to form-specific drained mass.
 
 ### 6.5 Contextual substitutions (ingredient-to-ingredient)
 
@@ -623,7 +623,7 @@ User can convert ingredient quantities between:
 
 ### 7.2 Sync strategy (minimum viable)
 
-* Manual “Sync now”
+* Manual â€œSync nowâ€
 * Auto-sync:
 
     * On app background/close
@@ -632,7 +632,7 @@ User can convert ingredient quantities between:
 
 ---
 
-## 8) Priorities (recommended MVP → v2)
+## 8) Priorities (recommended MVP â†’ v2)
 
 ### MVP (must ship)
 
@@ -643,7 +643,7 @@ User can convert ingredient quantities between:
 ### V1.1 / V2
 
 * Publish/export recipes to a printable PDF format (first post-MVP nice-to-have).
-* Pantry mode + “cook with what I have” filtering.
+* Pantry mode + â€œcook with what I haveâ€ filtering.
 * Full shopping list functionality (FR-14): checklist, manual entries, full editability, delete controls, local name memory, editable sections.
 * Dietary/allergen profiles with safe filtering/substitution prompts.
 * Recipe version history (revision list + restore).
@@ -674,10 +674,11 @@ User can convert ingredient quantities between:
 
 ## 11) Definition of done (DoD)
 
-* Round-trip test: create recipes with photos + bilingual text + tags + collections + prep steps + notes → export → delete local → import → identical.
+* Round-trip test: create recipes with photos + bilingual text + tags + collections + notes -> export -> delete local -> import -> identical.
 * Offline test: edits made offline sync correctly once online.
 * Conversion test: flour/water/sugar conversions behave as expected; unknown ingredients prompt.
 * Launch behavior: app loads library automatically from Drive when enabled, otherwise local.
 * Localization audit: 100% UI strings and system fields localized FR/EN; placeholders shown where user text missing.
 
 ---
+

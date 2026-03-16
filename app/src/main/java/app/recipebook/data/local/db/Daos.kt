@@ -17,13 +17,19 @@ interface RecipeDao {
     @Query("SELECT * FROM recipes WHERE id = :id LIMIT 1")
     suspend fun getById(id: String): RecipeEntity?
 
-    @Query("SELECT * FROM recipes ORDER BY updatedAt DESC")
+    @Query("SELECT * FROM recipes WHERE id = :id AND deletedAt IS NULL LIMIT 1")
+    fun observeById(id: String): Flow<RecipeEntity?>
+
+    @Query("SELECT * FROM recipes WHERE deletedAt IS NULL ORDER BY updatedAt DESC")
     fun observeAll(): Flow<List<RecipeEntity>>
 
     @Query(
-        "SELECT * FROM recipes WHERE titleFr LIKE '%' || :query || '%' OR titleEn LIKE '%' || :query || '%' ORDER BY updatedAt DESC"
+        "SELECT * FROM recipes WHERE deletedAt IS NULL AND (titleFr LIKE '%' || :query || '%' OR titleEn LIKE '%' || :query || '%') ORDER BY updatedAt DESC"
     )
     fun observeByTitle(query: String): Flow<List<RecipeEntity>>
+
+    @Query("SELECT COUNT(*) FROM recipes WHERE deletedAt IS NULL")
+    suspend fun countActive(): Int
 
     @Query("DELETE FROM recipes WHERE id = :id")
     suspend fun deleteById(id: String)

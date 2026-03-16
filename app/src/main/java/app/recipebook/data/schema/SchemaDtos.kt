@@ -1,4 +1,4 @@
-package app.recipebook.data.schema
+﻿package app.recipebook.data.schema
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -82,8 +82,6 @@ data class LocalizedSystemTextDto(
     val title: String,
     @SerialName("description")
     val description: String,
-    @SerialName("preparationSteps")
-    val preparationSteps: String,
     @SerialName("instructions")
     val instructions: String,
     @SerialName("notesSystem")

@@ -1,14 +1,11 @@
-{
+﻿{
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://recipebook.app/schemas/recipe-creation/v1",
   "title": "RecipeBook Recipe Creation Payload v1",
   "description": "AI-friendly minimal payload for creating a single bilingual recipe with structured ingredient lines.",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "schemaVersion",
-    "recipe"
-  ],
+  "required": ["schemaVersion", "recipe"],
   "properties": {
     "schemaVersion": {
       "type": "string",
@@ -31,45 +28,21 @@
       "type": "object",
       "description": "System-defined recipe text fields must exist in both languages, even if empty strings.",
       "additionalProperties": false,
-      "required": [
-        "title",
-        "description",
-        "preparationSteps",
-        "instructions",
-        "notesSystem"
-      ],
+      "required": ["title", "description", "instructions", "notesSystem"],
       "properties": {
-        "title": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "preparationSteps": {
-          "type": "string"
-        },
-        "instructions": {
-          "type": "string"
-        },
-        "notesSystem": {
-          "type": "string"
-        }
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "instructions": { "type": "string" },
+        "notesSystem": { "type": "string" }
       }
     },
     "LanguagesRequired": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "fr",
-        "en"
-      ],
+      "required": ["fr", "en"],
       "properties": {
-        "fr": {
-          "$ref": "#/$defs/LanguageTextRequired"
-        },
-        "en": {
-          "$ref": "#/$defs/LanguageTextRequired"
-        }
+        "fr": { "$ref": "#/$defs/LanguageTextRequired" },
+        "en": { "$ref": "#/$defs/LanguageTextRequired" }
       }
     },
     "UserNotes": {
@@ -78,255 +51,110 @@
       "additionalProperties": false,
       "minProperties": 1,
       "properties": {
-        "fr": {
-          "type": "string"
-        },
-        "en": {
-          "type": "string"
-        }
+        "fr": { "type": "string" },
+        "en": { "type": "string" }
       }
     },
     "Source": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "sourceUrl",
-        "sourceName"
-      ],
+      "required": ["sourceUrl", "sourceName"],
       "properties": {
-        "sourceUrl": {
-          "type": "string",
-          "format": "uri"
-        },
-        "sourceName": {
-          "type": "string"
-        }
+        "sourceUrl": { "type": "string", "format": "uri" },
+        "sourceName": { "type": "string" }
       }
     },
     "IngredientLine": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "id",
-        "originalText",
-        "ingredientName"
-      ],
+      "required": ["id", "originalText", "ingredientName"],
       "properties": {
-        "id": {
-          "$ref": "#/$defs/Uuid"
-        },
-        "ingredientRefId": {
-          "$ref": "#/$defs/Uuid"
-        },
-        "originalText": {
-          "type": "string"
-        },
-        "quantity": {
-          "type": "number"
-        },
-        "unit": {
-          "type": "string",
-          "description": "Canonical unit id (for example g, ml, tsp, cup)."
-        },
-        "ingredientName": {
-          "type": "string"
-        },
-        "preparation": {
-          "type": "string"
-        },
-        "optional": {
-          "type": "boolean",
-          "default": false
-        },
-        "notes": {
-          "type": "string"
-        },
-        "group": {
-          "type": "string"
-        },
+        "id": { "$ref": "#/$defs/Uuid" },
+        "ingredientRefId": { "$ref": "#/$defs/Uuid" },
+        "originalText": { "type": "string" },
+        "quantity": { "type": "number" },
+        "unit": { "type": "string", "description": "Canonical unit id (for example g, ml, tsp, cup)." },
+        "ingredientName": { "type": "string" },
+        "preparation": { "type": "string" },
+        "optional": { "type": "boolean", "default": false },
+        "notes": { "type": "string" },
+        "group": { "type": "string" },
         "substitutions": {
           "type": "array",
-          "items": {
-            "$ref": "#/$defs/IngredientLineSubstitution"
-          }
+          "items": { "$ref": "#/$defs/IngredientLineSubstitution" }
         }
       }
     },
     "IngredientLineSubstitution": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "id",
-        "ingredientLineId",
-        "createdAt",
-        "updatedAt"
-      ],
+      "required": ["id", "ingredientLineId", "createdAt", "updatedAt"],
       "properties": {
-        "id": {
-          "$ref": "#/$defs/Uuid"
-        },
-        "ingredientLineId": {
-          "$ref": "#/$defs/Uuid"
-        },
-        "substitutionRuleId": {
-          "$ref": "#/$defs/Uuid"
-        },
-        "contextualSubstitutionRuleId": {
-          "$ref": "#/$defs/Uuid"
-        },
-        "isPreferred": {
-          "type": "boolean",
-          "default": false
-        },
-        "customLabelFr": {
-          "type": "string"
-        },
-        "customLabelEn": {
-          "type": "string"
-        },
-        "createdAt": {
-          "$ref": "#/$defs/DateTime"
-        },
-        "updatedAt": {
-          "$ref": "#/$defs/DateTime"
-        }
+        "id": { "$ref": "#/$defs/Uuid" },
+        "ingredientLineId": { "$ref": "#/$defs/Uuid" },
+        "substitutionRuleId": { "$ref": "#/$defs/Uuid" },
+        "contextualSubstitutionRuleId": { "$ref": "#/$defs/Uuid" },
+        "isPreferred": { "type": "boolean", "default": false },
+        "customLabelFr": { "type": "string" },
+        "customLabelEn": { "type": "string" },
+        "createdAt": { "$ref": "#/$defs/DateTime" },
+        "updatedAt": { "$ref": "#/$defs/DateTime" }
       },
       "anyOf": [
-        {
-          "required": [
-            "substitutionRuleId"
-          ]
-        },
-        {
-          "required": [
-            "contextualSubstitutionRuleId"
-          ]
-        }
+        { "required": ["substitutionRuleId"] },
+        { "required": ["contextualSubstitutionRuleId"] }
       ]
     },
     "Servings": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "amount"
-      ],
+      "required": ["amount"],
       "properties": {
-        "amount": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        },
-        "unit": {
-          "type": "string"
-        }
+        "amount": { "type": "number", "exclusiveMinimum": 0 },
+        "unit": { "type": "string" }
       }
     },
     "Times": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "prepTimeMinutes": {
-          "type": "integer",
-          "minimum": 0
-        },
-        "cookTimeMinutes": {
-          "type": "integer",
-          "minimum": 0
-        },
-        "totalTimeMinutes": {
-          "type": "integer",
-          "minimum": 0
-        }
-      }
-    },
-    "LocalizedLabel": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "id",
-        "nameFr",
-        "nameEn"
-      ],
-      "properties": {
-        "id": {
-          "$ref": "#/$defs/Uuid"
-        },
-        "nameFr": {
-          "type": "string"
-        },
-        "nameEn": {
-          "type": "string"
-        }
+        "prepTimeMinutes": { "type": "integer", "minimum": 0 },
+        "cookTimeMinutes": { "type": "integer", "minimum": 0 },
+        "totalTimeMinutes": { "type": "integer", "minimum": 0 }
       }
     },
     "RecipeCreation": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "id",
-        "createdAt",
-        "updatedAt",
-        "languages",
-        "ingredients"
-      ],
+      "required": ["id", "createdAt", "updatedAt", "languages", "ingredients"],
       "properties": {
-        "id": {
-          "$ref": "#/$defs/Uuid"
-        },
-        "createdAt": {
-          "$ref": "#/$defs/DateTime"
-        },
-        "updatedAt": {
-          "$ref": "#/$defs/DateTime"
-        },
-        "source": {
-          "$ref": "#/$defs/Source"
-        },
-        "languages": {
-          "$ref": "#/$defs/LanguagesRequired"
-        },
-        "userNotes": {
-          "$ref": "#/$defs/UserNotes"
-        },
+        "id": { "$ref": "#/$defs/Uuid" },
+        "createdAt": { "$ref": "#/$defs/DateTime" },
+        "updatedAt": { "$ref": "#/$defs/DateTime" },
+        "source": { "$ref": "#/$defs/Source" },
+        "languages": { "$ref": "#/$defs/LanguagesRequired" },
+        "userNotes": { "$ref": "#/$defs/UserNotes" },
         "ingredients": {
           "type": "array",
-          "items": {
-            "$ref": "#/$defs/IngredientLine"
-          }
+          "items": { "$ref": "#/$defs/IngredientLine" }
         },
-        "servings": {
-          "$ref": "#/$defs/Servings"
-        },
-        "times": {
-          "$ref": "#/$defs/Times"
-        },
+        "servings": { "$ref": "#/$defs/Servings" },
+        "times": { "$ref": "#/$defs/Times" },
         "tags": {
           "type": "array",
-          "items": {
-            "$ref": "#/$defs/LocalizedLabel"
-          }
+          "items": { "$ref": "#/$defs/Uuid" }
         },
         "collections": {
           "type": "array",
-          "items": {
-            "$ref": "#/$defs/LocalizedLabel"
-          }
+          "items": { "$ref": "#/$defs/Uuid" }
         },
         "ratings": {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "userRating": {
-              "type": "number",
-              "minimum": 0,
-              "maximum": 5
-            },
-            "madeCount": {
-              "type": "integer",
-              "minimum": 0
-            },
-            "lastMadeAt": {
-              "$ref": "#/$defs/DateTime"
-            }
+            "userRating": { "type": "number", "minimum": 0, "maximum": 5 },
+            "madeCount": { "type": "integer", "minimum": 0 },
+            "lastMadeAt": { "$ref": "#/$defs/DateTime" }
           }
         },
         "photos": {
@@ -334,20 +162,11 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": [
-              "id",
-              "localPath"
-            ],
+            "required": ["id", "localPath"],
             "properties": {
-              "id": {
-                "$ref": "#/$defs/Uuid"
-              },
-              "localPath": {
-                "type": "string"
-              },
-              "cloudRef": {
-                "type": "string"
-              }
+              "id": { "$ref": "#/$defs/Uuid" },
+              "localPath": { "type": "string" },
+              "cloudRef": { "type": "string" }
             }
           }
         },
@@ -356,25 +175,12 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": [
-              "id",
-              "fileName",
-              "mimeType",
-              "localPath"
-            ],
+            "required": ["id", "fileName", "mimeType", "localPath"],
             "properties": {
-              "id": {
-                "$ref": "#/$defs/Uuid"
-              },
-              "fileName": {
-                "type": "string"
-              },
-              "mimeType": {
-                "type": "string"
-              },
-              "localPath": {
-                "type": "string"
-              }
+              "id": { "$ref": "#/$defs/Uuid" },
+              "fileName": { "type": "string" },
+              "mimeType": { "type": "string" },
+              "localPath": { "type": "string" }
             }
           }
         },
@@ -382,15 +188,9 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "sourceType": {
-              "type": "string"
-            },
-            "parserVersion": {
-              "type": "string"
-            },
-            "originalUnits": {
-              "type": "string"
-            }
+            "sourceType": { "type": "string" },
+            "parserVersion": { "type": "string" },
+            "originalUnits": { "type": "string" }
           }
         }
       }
@@ -407,14 +207,12 @@
           "fr": {
             "title": "Pancakes classiques",
             "description": "Pancakes rapides et moelleux.",
-            "preparationSteps": "Mesurer les ingredients.",
             "instructions": "Melanger puis cuire dans une poele chaude.",
             "notesSystem": ""
           },
           "en": {
             "title": "Classic pancakes",
             "description": "Quick fluffy pancakes.",
-            "preparationSteps": "Measure ingredients.",
             "instructions": "Mix and cook in a hot pan.",
             "notesSystem": ""
           }

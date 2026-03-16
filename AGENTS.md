@@ -18,8 +18,8 @@
 - Ensure French text uses proper accents and corrected spelling/typos during conversion, even when source text is typed on an English keyboard.
 - Keep bilingual/language logic UI-agnostic (domain/data layer), because UI structure is expected to change multiple times.
 - Preferred Quebec terms for common recipe wording:
-  - Use `cuillère à thé` instead of `cuillère à café`.
-  - Use `cuillère à soupe` instead of `cuillère à table`.
+  - Use `cuillÃ¨re Ã  thÃ©` instead of `cuillÃ¨re Ã  cafÃ©`.
+  - Use `cuillÃ¨re Ã  soupe` instead of `cuillÃƒÂ¨re ÃƒÂ  table`.
   - Use `bicarbonate de soude` instead of `levure chimique`.
 
 ## Active Roadmap
@@ -43,9 +43,9 @@
 - 2026-03-02: General project overview was added to `Requirements.md`.
 - 2026-03-02: Freeze schema version upgrades until MVP is complete and real persisted databases exist.
 - 2026-03-02: Schema DTOs and schema tests must always remain consistent with each other and with active schemas.
-- 2026-03-06: French localization should use Quebec naming conventions for recipe instructions with proper accents/spelling (e.g., cuillère à thé, cuillère à soupe, bicarbonate de soude).
-- 2026-03-06: Unit conversion requirements expanded: show temperatures in both C/F, support lb↔g and fl oz↔ml, and allow saved per-ingredient custom density (g/ml).
-- 2026-03-06: Ingredient substitutions should be modeled as form-to-form directed rules (e.g., canned/drained ↔ dried ↔ cooked) with rule type, confidence, rounding policy, and recipe-line substitution links.
+- 2026-03-06: French localization should use Quebec naming conventions for recipe instructions with proper accents/spelling (e.g., cuillÃ¨re Ã  thÃ©, cuillÃ¨re Ã  soupe, bicarbonate de soude).
+- 2026-03-06: Unit conversion requirements expanded: show temperatures in both C/F, support lbâ†”g and fl ozâ†”ml, and allow saved per-ingredient custom density (g/ml).
+- 2026-03-06: Ingredient substitutions should be modeled as form-to-form directed rules (e.g., canned/drained â†” dried â†” cooked) with rule type, confidence, rounding policy, and recipe-line substitution links.
 - 2026-03-06: Distinguish global same-ingredient form conversions from contextual ingredient-to-ingredient substitutions; contextual rules must enforce scope (dish type/role/method) with warning/block behavior for risky misuse.
 - 2026-03-06: After MVP, prioritize printable PDF publishing/export as the first nice-to-have feature.
 - 2026-03-06: Added post-MVP nice-to-haves: pantry mode, smart shopping list, dietary/allergen profiles, recipe version history, scale locks, step timers, batch mode, and printable PDF templates. OCR import is tracked separately as a potential (not committed) idea.
@@ -54,3 +54,5 @@
 - 2026-03-06: Schema maintenance rule tightened: schema files, schema docs, examples, DTO/mappers, and schema tests must be updated together whenever any one of them changes.
 - 2026-03-06: Set up Room persistence foundation for core entities/DAOs in `data/local/db` with a real instrumentation test for DAO round-trip behavior.
 - 2026-03-06: Bilingual foundation must keep language/placeholder logic UI-agnostic so UI layout/structure can evolve without rewriting core behavior.
+- 2026-03-13: Converted the Boite de Noel recipe PDF into a curated bundled full-library JSON kept in docs/recipes and app assets for seed/demo use.
+

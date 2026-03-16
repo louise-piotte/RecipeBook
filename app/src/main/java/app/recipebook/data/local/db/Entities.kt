@@ -13,8 +13,6 @@ data class RecipeEntity(
     val titleEn: String,
     val descriptionFr: String,
     val descriptionEn: String,
-    val preparationStepsFr: String,
-    val preparationStepsEn: String,
     val instructionsFr: String,
     val instructionsEn: String,
     val notesSystemFr: String,
@@ -32,7 +30,6 @@ data class RecipeEntity(
     val madeCount: Int? = null,
     val lastMadeAt: String? = null,
     val deletedAt: String? = null,
-    // JSON blobs keep Room schema lightweight while preserving flexibility.
     val ingredientLinesJson: String = "[]",
     val tagIdsJson: String = "[]",
     val collectionIdsJson: String = "[]",

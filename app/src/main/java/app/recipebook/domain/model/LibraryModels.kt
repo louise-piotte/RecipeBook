@@ -1,4 +1,4 @@
-package app.recipebook.domain.model
+﻿package app.recipebook.domain.model
 
 enum class AppLanguage {
     FR,
@@ -8,7 +8,6 @@ enum class AppLanguage {
 data class LocalizedSystemText(
     val title: String,
     val description: String,
-    val preparationSteps: String,
     val instructions: String,
     val notesSystem: String
 )

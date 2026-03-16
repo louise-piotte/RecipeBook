@@ -1,19 +1,20 @@
-# RecipeBook Roadmap (Active To-Do)
+﻿# RecipeBook Roadmap (Active To-Do)
 
 - Build MVP functional screens:
-  - Library list + search
-  - Recipe detail
-  - Recipe editor
   - Basic tags and collections management
 - Implement enhanced unit conversion behavior:
   - Show both C and F for temperatures
-  - Support lb ↔ g conversion
-  - Support fl oz ↔ ml conversion
-  - Add per-ingredient custom density (g/ml) for weight ↔ volume conversion
+  - Support lb â†” g conversion
+  - Support fl oz â†” ml conversion
+  - Add per-ingredient custom density (g/ml) for weight â†” volume conversion
 - Finalize substitution modeling before implementation:
   - Global form-to-form equivalent rules (same ingredient states)
   - Contextual ingredient-to-ingredient rules with scope (dish type/role/method)
   - Warning/block behavior for out-of-scope or high-risk substitutions
+- Expand persistence/data-layer search support:
+  - Recipe search across ingredients and instructions
+  - Tag and collection filtering support in the local data layer
+  - Ingredient reference search across French/English names and aliases
 - Implement full-library export/import (replace mode first).
 - Add export/import integrity tests.
 - Implement basic Google Drive sync:
@@ -34,3 +35,4 @@
 ## Maintenance Rules
 - Remove an item immediately when it is done.
 - Add items anytime when new work is identified.
+

@@ -1,0 +1,1237 @@
+{
+    "schemaVersion":  "full-library/v1",
+    "library":  {
+                    "metadata":  {
+                                     "libraryId":  "library-boite-de-noel-converted",
+                                     "createdAt":  "2026-03-13T19:00:00Z",
+                                     "updatedAt":  "2026-03-13T19:00:00Z",
+                                     "exportedAt":  "2026-03-13T19:00:00Z",
+                                     "appVersion":  "1.0"
+                                 },
+                    "recipes":  [
+                                    {
+                                        "id":  "recipe-boite-noel-nanaimo-bars",
+                                        "createdAt":  "2026-03-13T19:00:00Z",
+                                        "updatedAt":  "2026-03-13T19:00:00Z",
+                                        "source":  {
+                                                       "sourceName":  "Allrecipes",
+                                                       "sourceUrl":  "https://www.allrecipes.com"
+                                                   },
+                                        "languages":  {
+                                                          "fr":  {
+                                                                     "title":  "Barres Nanaimo",
+                                                                     "description":  "Barres etagees au chocolat, a la noix de coco et a la creme, converties depuis la Boite de Noel.",
+                                                                     "instructions":  "Faire fondre 1/2 tasse de beurre avec le cacao et le sucre au bain-marie jusqu a consistance lisse, puis incorporer l oeuf et cuire en remuant jusqu a ce que le melange epaississe.\nRetirer du feu, ajouter la chapelure Graham, la noix de coco et les amandes, puis presser le melange dans un moule de 8 x 8 pouces chemise.\nBattre le reste du beurre avec la creme et la poudre a creme anglaise, puis incorporer le sucre a glacer et etendre cette couche sur la base. Refrigerer.\nFaire fondre le chocolat avec le beurre restant et etendre rapidement sur la couche du milieu froide.\nLaisser figer avant de couper en carres.",
+                                                                     "notesSystem":  "Temperez l oeuf en retirant le chocolat du feu avant de l ajouter.\nN attendez pas trop avant d etendre la couche de chocolat, sinon elle figera trop vite."
+                                                                 },
+                                                          "en":  {
+                                                                     "title":  "Nanaimo Bars",
+                                                                     "description":  "Layered chocolate, coconut, and custard bars converted from the Christmas Box PDF.",
+                                                                     "instructions":  "Melt 1/2 cup butter with the cocoa and sugar over a double boiler until smooth, then beat in the egg and cook until the mixture thickens.\nRemove from the heat, stir in the graham crumbs, coconut, and almonds, then press into a lined 8 x 8-inch pan.\nBeat the remaining butter with the cream and custard powder, mix in the confectioners sugar, and spread over the base. Chill until firm.\nMelt the semisweet chocolate with the remaining butter and spread it quickly over the chilled middle layer.\nLet the topping set before cutting into squares.",
+                                                                     "notesSystem":  "Temper the egg by taking the chocolate off the heat before adding it.\nDo not wait too long before spreading the chocolate topping or it will set too quickly."
+                                                                 }
+                                                      },
+                                        "ingredients":  [
+                                                            {
+                                                                "id":  "recipe-boite-noel-nanaimo-bars-ingredient-1",
+                                                                "originalText":  "1 cup butter, divided",
+                                                                "ingredientName":  "1 cup butter, divided"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-nanaimo-bars-ingredient-2",
+                                                                "originalText":  "5 tablespoons unsweetened cocoa powder",
+                                                                "ingredientName":  "5 tablespoons unsweetened cocoa powder"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-nanaimo-bars-ingredient-3",
+                                                                "originalText":  "1/4 cup sugar",
+                                                                "ingredientName":  "1/4 cup sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-nanaimo-bars-ingredient-4",
+                                                                "originalText":  "1 egg, beaten",
+                                                                "ingredientName":  "1 egg, beaten"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-nanaimo-bars-ingredient-5",
+                                                                "originalText":  "1 3/4 cups graham cracker crumbs",
+                                                                "ingredientName":  "1 3/4 cups graham cracker crumbs"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-nanaimo-bars-ingredient-6",
+                                                                "originalText":  "1 cup flaked coconut",
+                                                                "ingredientName":  "1 cup flaked coconut"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-nanaimo-bars-ingredient-7",
+                                                                "originalText":  "1/2 cup finely chopped almonds",
+                                                                "ingredientName":  "1/2 cup finely chopped almonds"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-nanaimo-bars-ingredient-8",
+                                                                "originalText":  "3 tablespoons heavy cream",
+                                                                "ingredientName":  "3 tablespoons heavy cream"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-nanaimo-bars-ingredient-9",
+                                                                "originalText":  "3 tablespoons custard powder",
+                                                                "ingredientName":  "3 tablespoons custard powder"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-nanaimo-bars-ingredient-10",
+                                                                "originalText":  "2 cups confectioners sugar",
+                                                                "ingredientName":  "2 cups confectioners sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-nanaimo-bars-ingredient-11",
+                                                                "originalText":  "5 ounces semisweet baking chocolate",
+                                                                "ingredientName":  "5 ounces semisweet baking chocolate"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-nanaimo-bars-ingredient-12",
+                                                                "originalText":  "2 1/2 tablespoons butter",
+                                                                "ingredientName":  "2 1/2 tablespoons butter"
+                                                            }
+                                                        ],
+                                        "servings":  {
+                                                         "amount":  16,
+                                                         "unit":  "squares"
+                                                     },
+                                        "times":  {
+                                                      "prepTimeMinutes":  30,
+                                                      "cookTimeMinutes":  null,
+                                                      "totalTimeMinutes":  30
+                                                  },
+                                        "tags":  [
+                                                     "tag-dessert"
+                                                 ],
+                                        "collections":  [
+                                                            "collection-boite-de-noel"
+                                                        ],
+                                        "photos":  [
+
+                                                   ],
+                                        "attachments":  [
+
+                                                        ]
+                                    },
+                                    {
+                                        "id":  "recipe-boite-noel-pinwheel-cookies",
+                                        "createdAt":  "2026-03-13T19:00:00Z",
+                                        "updatedAt":  "2026-03-13T19:00:00Z",
+                                        "source":  {
+                                                       "sourceName":  "Preppy Kitchen",
+                                                       "sourceUrl":  "https://preppykitchen.com"
+                                                   },
+                                        "languages":  {
+                                                          "fr":  {
+                                                                     "title":  "Biscuits tourbillon",
+                                                                     "description":  "Biscuits vanille et chocolat roules en spirale, avec une traduction et un nettoyage leger du texte source.",
+                                                                     "instructions":  "Faire fondre le chocolat au bain-marie puis le laisser tiedir legerement.\nFouetter la farine, la poudre a pate et le sel.\nCremer le beurre et le sucre, ajouter les oeufs un a la fois puis la vanille, et incorporer les ingredients secs.\nDiviser la pate en deux et melanger le chocolat fondu dans une moitie.\nAbaisser les deux pates en rectangles, les superposer, rouler en buche et refrigerer jusqu a fermete.\nTrancher la buche et cuire les biscuits a 375 F jusqu a ce que les bords commencent a dorer.",
+                                                                     "notesSystem":  "La pate doit etre bien refroidie avant le roulage pour garder une belle spirale.\nLa buche se conserve jusqu a 3 mois au congelateur."
+                                                                 },
+                                                          "en":  {
+                                                                     "title":  "Pinwheel Cookies",
+                                                                     "description":  "Vanilla and chocolate spiral cookies, lightly cleaned up and translated from the source PDF.",
+                                                                     "instructions":  "Melt the chocolate over a double boiler and let it cool slightly.\nWhisk together the flour, baking powder, and salt.\nCream the butter and sugar, beat in the eggs one at a time and the vanilla, then add the dry ingredients.\nDivide the dough in half and mix the melted chocolate into one portion.\nRoll both doughs into rectangles, stack them, roll into a log, and chill until firm.\nSlice the log and bake the cookies at 375 F until the edges just start to brown.",
+                                                                     "notesSystem":  "The dough needs to be chilled before rolling so the spiral keeps its shape.\nThe cookie log keeps for up to 3 months in the freezer."
+                                                                 }
+                                                      },
+                                        "ingredients":  [
+                                                            {
+                                                                "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-1",
+                                                                "originalText":  "3 cups all-purpose flour",
+                                                                "ingredientName":  "3 cups all-purpose flour"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-2",
+                                                                "originalText":  "1 1/2 teaspoons baking powder",
+                                                                "ingredientName":  "1 1/2 teaspoons baking powder"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-3",
+                                                                "originalText":  "1/2 teaspoon kosher salt",
+                                                                "ingredientName":  "1/2 teaspoon kosher salt"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-4",
+                                                                "originalText":  "1 cup unsalted butter, room temperature",
+                                                                "ingredientName":  "1 cup unsalted butter, room temperature"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-5",
+                                                                "originalText":  "1 cup sugar",
+                                                                "ingredientName":  "1 cup sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-6",
+                                                                "originalText":  "2 large eggs",
+                                                                "ingredientName":  "2 large eggs"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-7",
+                                                                "originalText":  "1 1/2 teaspoons vanilla extract",
+                                                                "ingredientName":  "1 1/2 teaspoons vanilla extract"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pinwheel-cookies-ingredient-8",
+                                                                "originalText":  "2 ounces unsweetened chocolate, chopped",
+                                                                "ingredientName":  "2 ounces unsweetened chocolate, chopped"
+                                                            }
+                                                        ],
+                                        "servings":  {
+                                                         "amount":  48,
+                                                         "unit":  "cookies"
+                                                     },
+                                        "times":  {
+                                                      "prepTimeMinutes":  15,
+                                                      "cookTimeMinutes":  8,
+                                                      "totalTimeMinutes":  23
+                                                  },
+                                        "tags":  [
+                                                     "tag-dessert"
+                                                 ],
+                                        "collections":  [
+                                                            "collection-boite-de-noel"
+                                                        ],
+                                        "photos":  [
+
+                                                   ],
+                                        "attachments":  [
+
+                                                        ]
+                                    },
+                                    {
+                                        "id":  "recipe-boite-noel-pistachio-drop-cookies",
+                                        "createdAt":  "2026-03-13T19:00:00Z",
+                                        "updatedAt":  "2026-03-13T19:00:00Z",
+                                        "source":  {
+                                                       "sourceName":  "Sally\u0027s Baking Addiction",
+                                                       "sourceUrl":  "https://sallysbakingaddiction.com"
+                                                   },
+                                        "languages":  {
+                                                          "fr":  {
+                                                                     "title":  "Boules de neige aux pistaches",
+                                                                     "description":  "Petits biscuits sables a la pistache avec une touche d amande et de vanille.",
+                                                                     "instructions":  "Battre le beurre jusqu a ce qu il soit lisse, puis ajouter le sucre a glacer, la vanille et l extrait d amande.\nAjouter la farine, les miettes de pistaches et le colorant si desire, puis melanger jusqu a l obtention d une pate epaisse.\nCouvrir la pate et refrigerer au moins 30 minutes.\nFormer des boules d environ 1 cuilleree a soupe et les disposer sur des plaques chemisees.\nCuire a 350 F jusqu a ce que les biscuits soient legerement dores sur les bords, puis laisser refroidir avant de servir ou de tremper dans le chocolat blanc.",
+                                                                     "notesSystem":  "Tres jolis lorsqu ils sont trempes dans le chocolat blanc."
+                                                                 },
+                                                          "en":  {
+                                                                     "title":  "Pistachio Drop Cookies",
+                                                                     "description":  "Tender pistachio cookies with almond and vanilla flavor.",
+                                                                     "instructions":  "Beat the butter until smooth, then add the confectioners sugar, vanilla, and almond extract.\nMix in the flour, pistachio crumbs, and food coloring if using until a thick dough forms.\nCover and chill the dough for at least 30 minutes.\nRoll into 1-tablespoon balls and place them on lined baking sheets.\nBake at 350 F until lightly golden on the edges, then cool before serving or dipping in white chocolate.",
+                                                                     "notesSystem":  "These are especially pretty dipped in white chocolate."
+                                                                 }
+                                                      },
+                                        "ingredients":  [
+                                                            {
+                                                                "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-1",
+                                                                "originalText":  "3/4 cup pistachio crumbs",
+                                                                "ingredientName":  "3/4 cup pistachio crumbs"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-2",
+                                                                "originalText":  "1 cup unsalted butter, softened",
+                                                                "ingredientName":  "1 cup unsalted butter, softened"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-3",
+                                                                "originalText":  "3/4 cup confectioners sugar",
+                                                                "ingredientName":  "3/4 cup confectioners sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-4",
+                                                                "originalText":  "1 teaspoon vanilla extract",
+                                                                "ingredientName":  "1 teaspoon vanilla extract"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-5",
+                                                                "originalText":  "1 teaspoon almond extract",
+                                                                "ingredientName":  "1 teaspoon almond extract"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-6",
+                                                                "originalText":  "2 1/4 cups all-purpose flour",
+                                                                "ingredientName":  "2 1/4 cups all-purpose flour"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-pistachio-drop-cookies-ingredient-7",
+                                                                "originalText":  "Optional: 1 to 2 drops green gel food coloring",
+                                                                "ingredientName":  "Optional: 1 to 2 drops green gel food coloring"
+                                                            }
+                                                        ],
+                                        "servings":  {
+                                                         "amount":  36,
+                                                         "unit":  "cookies"
+                                                     },
+                                        "times":  {
+                                                      "prepTimeMinutes":  45,
+                                                      "cookTimeMinutes":  15,
+                                                      "totalTimeMinutes":  60
+                                                  },
+                                        "tags":  [
+                                                     "tag-dessert"
+                                                 ],
+                                        "collections":  [
+                                                            "collection-boite-de-noel"
+                                                        ],
+                                        "photos":  [
+
+                                                   ],
+                                        "attachments":  [
+
+                                                        ]
+                                    },
+                                    {
+                                        "id":  "recipe-boite-noel-maple-pecan-cranberry-squares",
+                                        "createdAt":  "2026-03-13T19:00:00Z",
+                                        "updatedAt":  "2026-03-13T19:00:00Z",
+                                        "source":  {
+                                                       "sourceName":  "The Hungary Soul",
+                                                       "sourceUrl":  "https://thehungarysoul.com"
+                                                   },
+                                        "languages":  {
+                                                          "fr":  {
+                                                                     "title":  "Carres erable, pacanes et canneberges",
+                                                                     "description":  "Carres fondants a l erable avec pacanes et canneberges sechees.",
+                                                                     "instructions":  "Prechauffer le four a 350 F et chemiser un moule carre de 8 x 8 pouces.\nAu robot culinaire, pulser la farine, le sucre, le sel et le beurre froid jusqu a obtenir une texture sablee, puis presser dans le moule et cuire 15 a 17 minutes.\nDans une casserole, chauffer le beurre, le sirop d erable et la cassonade jusqu a dissolution puis faire bouillir environ 2 minutes.\nHors du feu, incorporer la creme, les pacanes et les canneberges, puis verser sur la croute precuite.\nRemettre au four jusqu a ce que la garniture bouillonne et prenne une couleur caramel, puis laisser refroidir completement avant de couper.",
+                                                                     "notesSystem":  "Ces carres se congelent bien jusqu a 3 mois."
+                                                                 },
+                                                          "en":  {
+                                                                     "title":  "Maple Pecan Cranberry Squares",
+                                                                     "description":  "Rich maple squares loaded with pecans and dried cranberries.",
+                                                                     "instructions":  "Preheat the oven to 350 F and line an 8 x 8-inch square pan.\nPulse the flour, sugar, salt, and cold butter in a food processor until crumbly, press into the pan, and bake for 15 to 17 minutes.\nIn a saucepan, heat the butter, maple syrup, and brown sugar until dissolved, then boil for about 2 minutes.\nRemove from the heat, stir in the cream, pecans, and cranberries, and pour over the baked crust.\nBake again until the filling bubbles and turns caramel colored, then cool completely before slicing.",
+                                                                     "notesSystem":  "These squares freeze well for up to 3 months."
+                                                                 }
+                                                      },
+                                        "ingredients":  [
+                                                            {
+                                                                "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-1",
+                                                                "originalText":  "1 1/4 cups all-purpose flour",
+                                                                "ingredientName":  "1 1/4 cups all-purpose flour"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-2",
+                                                                "originalText":  "1/4 cup sugar",
+                                                                "ingredientName":  "1/4 cup sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-3",
+                                                                "originalText":  "1/4 teaspoon salt",
+                                                                "ingredientName":  "1/4 teaspoon salt"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-4",
+                                                                "originalText":  "1/2 cup cold unsalted butter, cut into pieces",
+                                                                "ingredientName":  "1/2 cup cold unsalted butter, cut into pieces"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-5",
+                                                                "originalText":  "1/2 cup unsalted butter",
+                                                                "ingredientName":  "1/2 cup unsalted butter"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-6",
+                                                                "originalText":  "1/2 cup maple syrup",
+                                                                "ingredientName":  "1/2 cup maple syrup"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-7",
+                                                                "originalText":  "3 tablespoons brown sugar",
+                                                                "ingredientName":  "3 tablespoons brown sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-8",
+                                                                "originalText":  "1/2 cup heavy cream",
+                                                                "ingredientName":  "1/2 cup heavy cream"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-9",
+                                                                "originalText":  "1/4 cup dried cranberries, chopped",
+                                                                "ingredientName":  "1/4 cup dried cranberries, chopped"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-maple-pecan-cranberry-squares-ingredient-10",
+                                                                "originalText":  "1 1/2 cups pecans, chopped",
+                                                                "ingredientName":  "1 1/2 cups pecans, chopped"
+                                                            }
+                                                        ],
+                                        "servings":  {
+                                                         "amount":  16,
+                                                         "unit":  "squares"
+                                                     },
+                                        "times":  {
+                                                      "prepTimeMinutes":  20,
+                                                      "cookTimeMinutes":  40,
+                                                      "totalTimeMinutes":  60
+                                                  },
+                                        "tags":  [
+                                                     "tag-dessert"
+                                                 ],
+                                        "collections":  [
+                                                            "collection-boite-de-noel"
+                                                        ],
+                                        "photos":  [
+
+                                                   ],
+                                        "attachments":  [
+
+                                                        ]
+                                    },
+                                    {
+                                        "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies",
+                                        "createdAt":  "2026-03-13T19:00:00Z",
+                                        "updatedAt":  "2026-03-13T19:00:00Z",
+                                        "source":  {
+                                                       "sourceName":  "Sally\u0027s Baking Addiction",
+                                                       "sourceUrl":  "https://sallysbakingaddiction.com"
+                                                   },
+                                        "languages":  {
+                                                          "fr":  {
+                                                                     "title":  "Biscuits sablees aux cerises et aux amandes",
+                                                                     "description":  "Biscuits sables garnis de cerises au marasquin et d un filet de chocolat blanc.",
+                                                                     "instructions":  "Battre le beurre jusqu a consistance cremeuse, puis ajouter le sucre, la vanille, l extrait d amande et le jus de cerises.\nIncorporer la farine puis les cerises hachees pour obtenir une pate tres souple.\nCompacter la pate, l envelopper et refrigerer au moins 4 heures.\nFormer des boules, les deposer sur des plaques chemisees et cuire a 350 F jusqu a ce que les bords soient a peine dores.\nLaisser refroidir puis arroser de chocolat blanc fondu si desire.",
+                                                                     "notesSystem":  ""
+                                                                 },
+                                                          "en":  {
+                                                                     "title":  "Cherry Almond Shortbread Cookies",
+                                                                     "description":  "Buttery shortbread cookies with maraschino cherries and a white chocolate drizzle.",
+                                                                     "instructions":  "Beat the butter until creamy, then add the sugar, vanilla, almond extract, and cherry juice.\nMix in the flour, then fold in the chopped cherries to make a very soft dough.\nPress the dough together, wrap it tightly, and chill for at least 4 hours.\nRoll into balls, place on lined baking sheets, and bake at 350 F until the edges are just lightly browned.\nCool completely, then drizzle with melted white chocolate if desired.",
+                                                                     "notesSystem":  ""
+                                                                 }
+                                                      },
+                                        "ingredients":  [
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-1",
+                                                                "originalText":  "3/4 cup unsalted butter, softened",
+                                                                "ingredientName":  "3/4 cup unsalted butter, softened"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-2",
+                                                                "originalText":  "2/3 cup granulated sugar",
+                                                                "ingredientName":  "2/3 cup granulated sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-3",
+                                                                "originalText":  "1 teaspoon vanilla extract",
+                                                                "ingredientName":  "1 teaspoon vanilla extract"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-4",
+                                                                "originalText":  "1/2 teaspoon almond extract",
+                                                                "ingredientName":  "1/2 teaspoon almond extract"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-5",
+                                                                "originalText":  "1 tablespoon maraschino cherry juice",
+                                                                "ingredientName":  "1 tablespoon maraschino cherry juice"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-6",
+                                                                "originalText":  "2 cups all-purpose flour",
+                                                                "ingredientName":  "2 cups all-purpose flour"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-7",
+                                                                "originalText":  "16 maraschino cherries, drained and chopped",
+                                                                "ingredientName":  "16 maraschino cherries, drained and chopped"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-almond-shortbread-cookies-ingredient-8",
+                                                                "originalText":  "Optional: 4 ounces white chocolate",
+                                                                "ingredientName":  "Optional: 4 ounces white chocolate"
+                                                            }
+                                                        ],
+                                        "servings":  {
+                                                         "amount":  24,
+                                                         "unit":  "cookies"
+                                                     },
+                                        "times":  {
+                                                      "prepTimeMinutes":  255,
+                                                      "cookTimeMinutes":  11,
+                                                      "totalTimeMinutes":  266
+                                                  },
+                                        "tags":  [
+                                                     "tag-dessert"
+                                                 ],
+                                        "collections":  [
+                                                            "collection-boite-de-noel"
+                                                        ],
+                                        "photos":  [
+
+                                                   ],
+                                        "attachments":  [
+
+                                                        ]
+                                    },
+                                    {
+                                        "id":  "recipe-boite-noel-chocolate-dates",
+                                        "createdAt":  "2026-03-13T19:00:00Z",
+                                        "updatedAt":  "2026-03-13T19:00:00Z",
+                                        "source":  {
+                                                       "sourceName":  "Cooking With Ayeh",
+                                                       "sourceUrl":  "https://cookingwithayeh.com"
+                                                   },
+                                        "languages":  {
+                                                          "fr":  {
+                                                                     "title":  "Dattes au chocolat (3 saveurs)",
+                                                                     "description":  "Dattes Medjool farcies au beurre de noix et enrobees de chocolat.",
+                                                                     "instructions":  "Faire fondre le chocolat au bain-marie ou au micro-ondes.\nFendre chaque datte sur la longueur et retirer le noyau sans la separer completement.\nFarcir chaque datte d un peu de beurre de noix et d une noix entiere au centre.\nRefermer les dattes, les tremper dans le chocolat fondu et laisser egoutter l excedent.\nParsemer de noix concassees et de sel en flocons, puis congeler 20 a 30 minutes pour faire prendre.",
+                                                                     "notesSystem":  ""
+                                                                 },
+                                                          "en":  {
+                                                                     "title":  "Chocolate Dates (3 Flavors)",
+                                                                     "description":  "Medjool dates stuffed with nut butter and coated in chocolate.",
+                                                                     "instructions":  "Melt the chocolate using either a double boiler or the microwave.\nSlice each date lengthwise and remove the pit without cutting all the way through.\nFill each date with nut butter and press a whole nut into the center.\nClose the dates, dip them in the melted chocolate, and let the excess drip off.\nTop with crushed nuts and flaky salt, then freeze for 20 to 30 minutes to set.",
+                                                                     "notesSystem":  ""
+                                                                 }
+                                                      },
+                                        "ingredients":  [
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-dates-ingredient-1",
+                                                                "originalText":  "20 Medjool dates",
+                                                                "ingredientName":  "20 Medjool dates"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-dates-ingredient-2",
+                                                                "originalText":  "1/2 cup natural nut butter",
+                                                                "ingredientName":  "1/2 cup natural nut butter"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-dates-ingredient-3",
+                                                                "originalText":  "20 nuts for the centers",
+                                                                "ingredientName":  "20 nuts for the centers"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-dates-ingredient-4",
+                                                                "originalText":  "100 g dark chocolate",
+                                                                "ingredientName":  "100 g dark chocolate"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-dates-ingredient-5",
+                                                                "originalText":  "Flaky sea salt",
+                                                                "ingredientName":  "Flaky sea salt"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-dates-ingredient-6",
+                                                                "originalText":  "Crushed nuts for topping",
+                                                                "ingredientName":  "Crushed nuts for topping"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-dates-ingredient-7",
+                                                                "originalText":  "Suggested combinations: peanut butter and peanuts, hazelnut butter and hazelnuts, almond butter and almonds",
+                                                                "ingredientName":  "Suggested combinations: peanut butter and peanuts, hazelnut butter and hazelnuts, almond butter and almonds"
+                                                            }
+                                                        ],
+                                        "servings":  {
+                                                         "amount":  20,
+                                                         "unit":  "dates"
+                                                     },
+                                        "times":  {
+                                                      "prepTimeMinutes":  20,
+                                                      "cookTimeMinutes":  null,
+                                                      "totalTimeMinutes":  20
+                                                  },
+                                        "tags":  [
+                                                     "tag-dessert"
+                                                 ],
+                                        "collections":  [
+                                                            "collection-boite-de-noel"
+                                                        ],
+                                        "photos":  [
+
+                                                   ],
+                                        "attachments":  [
+
+                                                        ]
+                                    },
+                                    {
+                                        "id":  "recipe-boite-noel-coconut-macaroons",
+                                        "createdAt":  "2026-03-13T19:00:00Z",
+                                        "updatedAt":  "2026-03-13T19:00:00Z",
+                                        "source":  {
+                                                       "sourceName":  "Preppy Kitchen",
+                                                       "sourceUrl":  "https://preppykitchen.com"
+                                                   },
+                                        "languages":  {
+                                                          "fr":  {
+                                                                     "title":  "Congolais",
+                                                                     "description":  "Macarons a la noix de coco avec base trempee dans le chocolat.",
+                                                                     "instructions":  "Prechauffer le four a 325 F et chemiser deux plaques de papier parchemin.\nMelanger la noix de coco, le lait concentre sucre, la vanille et le sel.\nMonter les blancs d oeufs en pics fermes puis les incorporer delicatement au melange de noix de coco.\nFormer les macarons sur les plaques et cuire jusqu a ce qu ils soient dores sur le dessus et dessous.\nFaire fondre le chocolat, tremper la base des macarons encore tiedes et laisser figer a temperature ambiante.",
+                                                                     "notesSystem":  "Les blancs se separent plus facilement a froid, mais ils montent mieux a temperature ambiante.\nOn peut aussi simplement arroser le chocolat sur le dessus."
+                                                                 },
+                                                          "en":  {
+                                                                     "title":  "Coconut Macaroons",
+                                                                     "description":  "Coconut macaroons finished with a chocolate-dipped base.",
+                                                                     "instructions":  "Preheat the oven to 325 F and line two baking sheets with parchment paper.\nStir together the coconut, sweetened condensed milk, vanilla, and salt.\nWhip the egg whites to stiff peaks and gently fold them into the coconut mixture.\nScoop the macaroons onto the prepared sheets and bake until golden on the tops and bottoms.\nMelt the chocolate, dip the bottoms of the still-warm macaroons, and let them set at room temperature.",
+                                                                     "notesSystem":  "Egg whites separate more easily when cold, but they whip better closer to room temperature.\nYou can drizzle the chocolate on top instead of dipping the bottoms."
+                                                                 }
+                                                      },
+                                        "ingredients":  [
+                                                            {
+                                                                "id":  "recipe-boite-noel-coconut-macaroons-ingredient-1",
+                                                                "originalText":  "1 bag sweetened shredded coconut (396 g)",
+                                                                "ingredientName":  "1 bag sweetened shredded coconut (396 g)"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-coconut-macaroons-ingredient-2",
+                                                                "originalText":  "1 cup sweetened condensed milk",
+                                                                "ingredientName":  "1 cup sweetened condensed milk"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-coconut-macaroons-ingredient-3",
+                                                                "originalText":  "1 teaspoon vanilla extract",
+                                                                "ingredientName":  "1 teaspoon vanilla extract"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-coconut-macaroons-ingredient-4",
+                                                                "originalText":  "1/2 teaspoon salt",
+                                                                "ingredientName":  "1/2 teaspoon salt"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-coconut-macaroons-ingredient-5",
+                                                                "originalText":  "2 large egg whites, room temperature",
+                                                                "ingredientName":  "2 large egg whites, room temperature"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-coconut-macaroons-ingredient-6",
+                                                                "originalText":  "6 ounces semisweet chocolate",
+                                                                "ingredientName":  "6 ounces semisweet chocolate"
+                                                            }
+                                                        ],
+                                        "servings":  {
+                                                         "amount":  24,
+                                                         "unit":  "cookies"
+                                                     },
+                                        "times":  {
+                                                      "prepTimeMinutes":  20,
+                                                      "cookTimeMinutes":  20,
+                                                      "totalTimeMinutes":  40
+                                                  },
+                                        "tags":  [
+                                                     "tag-dessert"
+                                                 ],
+                                        "collections":  [
+                                                            "collection-boite-de-noel"
+                                                        ],
+                                        "photos":  [
+
+                                                   ],
+                                        "attachments":  [
+
+                                                        ]
+                                    },
+                                    {
+                                        "id":  "recipe-boite-noel-red-velvet-fudge",
+                                        "createdAt":  "2026-03-13T19:00:00Z",
+                                        "updatedAt":  "2026-03-13T19:00:00Z",
+                                        "source":  {
+                                                       "sourceName":  "That Skinny Chick Can Bake",
+                                                       "sourceUrl":  "https://www.thatskinnychickcanbake.com"
+                                                   },
+                                        "languages":  {
+                                                          "fr":  {
+                                                                     "title":  "Fudge rouge velours",
+                                                                     "description":  "Fudge marbre rouge et blanc, riche en chocolat blanc, guimauve et cacao.",
+                                                                     "instructions":  "Chemiser un moule de 9 x 9 pouces et reserver.\nMettre les pepites de chocolat mi-sucre et le colorant rouge dans un bol resistant a la chaleur.\nCuire le sucre, le beurre et le moitie-moitie jusqu a environ 234 F, puis ajouter immediatement le chocolat blanc, la creme de guimauve et la vanille.\nVerser la moitie du melange blanc sur les pepites de chocolat mi-sucre pour obtenir la portion rouge.\nDeposer des cuillerees alternees de fudge rouge et blanc dans le moule, marbrer avec un couteau et laisser refroidir avant de couper.",
+                                                                     "notesSystem":  ""
+                                                                 },
+                                                          "en":  {
+                                                                     "title":  "Red Velvet Fudge",
+                                                                     "description":  "Red and white swirled fudge with white chocolate, marshmallow creme, and cocoa.",
+                                                                     "instructions":  "Line a 9 x 9-inch pan and set it aside.\nPlace the semisweet chocolate chips and red food coloring in a heat-safe bowl.\nCook the sugar, butter, and half-and-half to about 234 F, then immediately stir in the white chocolate, marshmallow creme, and vanilla.\nPour half of the white fudge into the bowl with the semisweet chocolate to make the red portion.\nDrop alternating spoonfuls of red and white fudge into the pan, swirl with a knife, and cool before slicing.",
+                                                                     "notesSystem":  ""
+                                                                 }
+                                                      },
+                                        "ingredients":  [
+                                                            {
+                                                                "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-1",
+                                                                "originalText":  "3 cups sugar",
+                                                                "ingredientName":  "3 cups sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-2",
+                                                                "originalText":  "3/4 cup butter",
+                                                                "ingredientName":  "3/4 cup butter"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-3",
+                                                                "originalText":  "1 cup half-and-half",
+                                                                "ingredientName":  "1 cup half-and-half"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-4",
+                                                                "originalText":  "12 ounces white chocolate",
+                                                                "ingredientName":  "12 ounces white chocolate"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-5",
+                                                                "originalText":  "1 jar marshmallow creme (7 ounces)",
+                                                                "ingredientName":  "1 jar marshmallow creme (7 ounces)"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-6",
+                                                                "originalText":  "1 teaspoon vanilla",
+                                                                "ingredientName":  "1 teaspoon vanilla"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-7",
+                                                                "originalText":  "1 cup semisweet chocolate chips",
+                                                                "ingredientName":  "1 cup semisweet chocolate chips"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-red-velvet-fudge-ingredient-8",
+                                                                "originalText":  "3 tablespoons red food coloring",
+                                                                "ingredientName":  "3 tablespoons red food coloring"
+                                                            }
+                                                        ],
+                                        "servings":  {
+                                                         "amount":  81,
+                                                         "unit":  "pieces"
+                                                     },
+                                        "times":  {
+                                                      "prepTimeMinutes":  15,
+                                                      "cookTimeMinutes":  30,
+                                                      "totalTimeMinutes":  45
+                                                  },
+                                        "tags":  [
+                                                     "tag-dessert"
+                                                 ],
+                                        "collections":  [
+                                                            "collection-boite-de-noel"
+                                                        ],
+                                        "photos":  [
+
+                                                   ],
+                                        "attachments":  [
+
+                                                        ]
+                                    },
+                                    {
+                                        "id":  "recipe-boite-noel-brownie-cookie-sandwiches",
+                                        "createdAt":  "2026-03-13T19:00:00Z",
+                                        "updatedAt":  "2026-03-13T19:00:00Z",
+                                        "source":  {
+                                                       "sourceName":  "Browned Butter Blondie",
+                                                       "sourceUrl":  "https://brownedbutterblondie.com"
+                                                   },
+                                        "languages":  {
+                                                          "fr":  {
+                                                                     "title":  "Sandwichs de biscuits brownies",
+                                                                     "description":  "Biscuits brownies moelleux garnis d une creme au beurre de type pate a biscuits.",
+                                                                     "instructions":  "Faire fondre le chocolat avec le beurre et laisser tiedir.\nFouetter ensemble les farines, le cacao, la poudre a pate, le bicarbonate et le sel.\nAjouter au melange chocolat les oeufs, les sucres et la vanille, puis incorporer les ingredients secs. Refrigerer 30 minutes.\nFormer de petites boules de pate, les cuire a 350 F jusqu a ce que les bords soient pris et laisser refroidir completement.\nPour la garniture, cremer le beurre et la cassonade, puis ajouter le sucre a glacer, la farine, la vanille, le sel et assez de creme pour obtenir une creme au beurre ferme.\nPocher ou etaler la creme sur un biscuit et refermer avec un deuxieme biscuit.",
+                                                                     "notesSystem":  ""
+                                                                 },
+                                                          "en":  {
+                                                                     "title":  "Brownie Cookie Sandwiches",
+                                                                     "description":  "Soft brownie cookies sandwiched with a cookie-dough-style buttercream.",
+                                                                     "instructions":  "Melt the chocolate with the butter and let it cool slightly.\nWhisk together the flours, cocoa powder, baking powder, baking soda, and salt.\nAdd the eggs, sugars, and vanilla to the chocolate mixture, then mix in the dry ingredients. Chill for 30 minutes.\nScoop small portions of dough, bake at 350 F until the edges are set, and cool completely.\nFor the filling, cream the butter and brown sugar, then beat in the confectioners sugar, flour, vanilla, salt, and enough cream to make a firm buttercream.\nPipe or spread the filling onto one cookie and top with a second cookie.",
+                                                                     "notesSystem":  ""
+                                                                 }
+                                                      },
+                                        "ingredients":  [
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-1",
+                                                                "originalText":  "1/2 cup unsalted butter",
+                                                                "ingredientName":  "1/2 cup unsalted butter"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-2",
+                                                                "originalText":  "9 ounces bittersweet chocolate",
+                                                                "ingredientName":  "9 ounces bittersweet chocolate"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-3",
+                                                                "originalText":  "3/4 cup plus 2 tablespoons granulated sugar",
+                                                                "ingredientName":  "3/4 cup plus 2 tablespoons granulated sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-4",
+                                                                "originalText":  "1/2 cup light brown sugar",
+                                                                "ingredientName":  "1/2 cup light brown sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-5",
+                                                                "originalText":  "3 large eggs",
+                                                                "ingredientName":  "3 large eggs"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-6",
+                                                                "originalText":  "1 teaspoon vanilla",
+                                                                "ingredientName":  "1 teaspoon vanilla"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-7",
+                                                                "originalText":  "1 cup all-purpose flour",
+                                                                "ingredientName":  "1 cup all-purpose flour"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-8",
+                                                                "originalText":  "3/4 cup bread flour",
+                                                                "ingredientName":  "3/4 cup bread flour"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-9",
+                                                                "originalText":  "1/4 cup Dutch-process cocoa powder",
+                                                                "ingredientName":  "1/4 cup Dutch-process cocoa powder"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-10",
+                                                                "originalText":  "1 teaspoon baking powder",
+                                                                "ingredientName":  "1 teaspoon baking powder"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-11",
+                                                                "originalText":  "1 teaspoon baking soda",
+                                                                "ingredientName":  "1 teaspoon baking soda"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-12",
+                                                                "originalText":  "3/4 teaspoon salt",
+                                                                "ingredientName":  "3/4 teaspoon salt"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-13",
+                                                                "originalText":  "3/4 cup unsalted butter, room temperature",
+                                                                "ingredientName":  "3/4 cup unsalted butter, room temperature"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-14",
+                                                                "originalText":  "1/2 cup brown sugar",
+                                                                "ingredientName":  "1/2 cup brown sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-15",
+                                                                "originalText":  "2 1/2 cups confectioners sugar",
+                                                                "ingredientName":  "2 1/2 cups confectioners sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-16",
+                                                                "originalText":  "1/2 cup all-purpose flour",
+                                                                "ingredientName":  "1/2 cup all-purpose flour"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-17",
+                                                                "originalText":  "1 teaspoon vanilla",
+                                                                "ingredientName":  "1 teaspoon vanilla"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-18",
+                                                                "originalText":  "1/4 teaspoon salt",
+                                                                "ingredientName":  "1/4 teaspoon salt"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-brownie-cookie-sandwiches-ingredient-19",
+                                                                "originalText":  "3 to 4 tablespoons heavy cream",
+                                                                "ingredientName":  "3 to 4 tablespoons heavy cream"
+                                                            }
+                                                        ],
+                                        "servings":  {
+                                                         "amount":  18,
+                                                         "unit":  "sandwiches"
+                                                     },
+                                        "times":  {
+                                                      "prepTimeMinutes":  90,
+                                                      "cookTimeMinutes":  10,
+                                                      "totalTimeMinutes":  100
+                                                  },
+                                        "tags":  [
+                                                     "tag-dessert"
+                                                 ],
+                                        "collections":  [
+                                                            "collection-boite-de-noel"
+                                                        ],
+                                        "photos":  [
+
+                                                   ],
+                                        "attachments":  [
+
+                                                        ]
+                                    },
+                                    {
+                                        "id":  "recipe-boite-noel-chocolate-sausage",
+                                        "createdAt":  "2026-03-13T19:00:00Z",
+                                        "updatedAt":  "2026-03-13T19:00:00Z",
+                                        "source":  {
+                                                       "sourceName":  "Ricardo Cuisine",
+                                                       "sourceUrl":  "https://www.ricardocuisine.com"
+                                                   },
+                                        "languages":  {
+                                                          "fr":  {
+                                                                     "title":  "Saucisson au chocolat",
+                                                                     "description":  "Dessert sans cuisson au chocolat noir, biscuits, guimauves et fruits secs.",
+                                                                     "instructions":  "Faire fondre le chocolat avec le beurre au bain-marie.\nFouetter le sucre a glacer et l oeuf dans le melange de chocolat, puis incorporer les biscuits, les guimauves, les raisins et les noix de pin.\nDeposer la preparation sur une grande feuille de papier d aluminium ou de pellicule plastique et faconner un cylindre bien compact.\nRefermer et refrigerer environ 2 heures, jusqu a fermete.\nRetirer l emballage, rouler dans le sucre a glacer et servir en tranches.",
+                                                                     "notesSystem":  "Compacter le rouleau dans une pellicule plastique donne un meilleur resultat qu un moule."
+                                                                 },
+                                                          "en":  {
+                                                                     "title":  "Chocolate Sausage",
+                                                                     "description":  "No-bake chocolate dessert with cookies, marshmallows, and dried fruit.",
+                                                                     "instructions":  "Melt the chocolate with the butter over a double boiler.\nWhisk the icing sugar and egg into the chocolate mixture, then fold in the cookies, marshmallows, raisins, and pine nuts.\nSpoon the mixture onto a large sheet of foil or plastic wrap and shape it into a tightly packed log.\nWrap it well and refrigerate for about 2 hours, until firm.\nUnwrap, roll in icing sugar, and slice to serve.",
+                                                                     "notesSystem":  "Rolling the mixture tightly in plastic wrap works better than pressing it into a mold."
+                                                                 }
+                                                      },
+                                        "ingredients":  [
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-sausage-ingredient-1",
+                                                                "originalText":  "225 g 70% dark chocolate, chopped",
+                                                                "ingredientName":  "225 g 70% dark chocolate, chopped"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-sausage-ingredient-2",
+                                                                "originalText":  "1/2 cup unsalted butter, softened",
+                                                                "ingredientName":  "1/2 cup unsalted butter, softened"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-sausage-ingredient-3",
+                                                                "originalText":  "1 cup icing sugar",
+                                                                "ingredientName":  "1 cup icing sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-sausage-ingredient-4",
+                                                                "originalText":  "1 egg",
+                                                                "ingredientName":  "1 egg"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-sausage-ingredient-5",
+                                                                "originalText":  "1 cup butter cookies, broken into small pieces",
+                                                                "ingredientName":  "1 cup butter cookies, broken into small pieces"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-sausage-ingredient-6",
+                                                                "originalText":  "1/2 cup white marshmallows, diced",
+                                                                "ingredientName":  "1/2 cup white marshmallows, diced"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-sausage-ingredient-7",
+                                                                "originalText":  "2 tablespoons raisins",
+                                                                "ingredientName":  "2 tablespoons raisins"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-sausage-ingredient-8",
+                                                                "originalText":  "2 tablespoons pine nuts",
+                                                                "ingredientName":  "2 tablespoons pine nuts"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-chocolate-sausage-ingredient-9",
+                                                                "originalText":  "Extra icing sugar for rolling",
+                                                                "ingredientName":  "Extra icing sugar for rolling"
+                                                            }
+                                                        ],
+                                        "servings":  {
+                                                         "amount":  32,
+                                                         "unit":  "slices"
+                                                     },
+                                        "times":  {
+                                                      "prepTimeMinutes":  20,
+                                                      "cookTimeMinutes":  5,
+                                                      "totalTimeMinutes":  25
+                                                  },
+                                        "tags":  [
+                                                     "tag-dessert"
+                                                 ],
+                                        "collections":  [
+                                                            "collection-boite-de-noel"
+                                                        ],
+                                        "photos":  [
+
+                                                   ],
+                                        "attachments":  [
+
+                                                        ]
+                                    },
+                                    {
+                                        "id":  "recipe-boite-noel-frangipane-mini-tarts",
+                                        "createdAt":  "2026-03-13T19:00:00Z",
+                                        "updatedAt":  "2026-03-13T19:00:00Z",
+                                        "source":  {
+                                                       "sourceName":  "Tablespoon",
+                                                       "sourceUrl":  "https://www.tablespoon.com"
+                                                   },
+                                        "languages":  {
+                                                          "fr":  {
+                                                                     "title":  "Mini-tartelettes frangipane aux amandes",
+                                                                     "description":  "Petites tartelettes aux amandes avec pate sucree et garniture frangipane.",
+                                                                     "instructions":  "Pour la pate, fouetter la farine, le sucre et le sel, puis ajouter le jaune d oeuf, la creme, la vanille et le beurre froid jusqu a l obtention d une pate grossiere. Former un disque et refrigerer au moins 1 heure.\nPour la frangipane, melanger la farine d amande, le sucre et le sel, puis ajouter l oeuf, le blanc d oeuf, les extraits et le beurre jusqu a consistance lisse.\nAbaisser la pate, foncer 12 cavites d un moule a muffins et refrigerer 30 minutes.\nAjouter une grosse cuilleree de frangipane dans chaque fond et garnir d amandes tranchees.\nCuire a 350 F pendant 20 a 25 minutes et laisser tiedir avant de demouler.",
+                                                                     "notesSystem":  ""
+                                                                 },
+                                                          "en":  {
+                                                                     "title":  "Frangipane Mini Tarts",
+                                                                     "description":  "Mini almond tarts with a sweet crust and frangipane filling.",
+                                                                     "instructions":  "For the crust, whisk together the flour, sugar, and salt, then add the yolk, cream, vanilla, and cold butter until a rough dough forms. Shape into a disk and chill for at least 1 hour.\nFor the frangipane, combine the almond flour, sugar, and salt, then process in the egg, egg white, extracts, and butter until smooth.\nRoll out the dough, press it into 12 muffin cups, and chill for 30 minutes.\nSpoon a heaping tablespoon of frangipane into each shell and top with sliced almonds.\nBake at 350 F for 20 to 25 minutes and cool briefly before unmolding.",
+                                                                     "notesSystem":  ""
+                                                                 }
+                                                      },
+                                        "ingredients":  [
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-1",
+                                                                "originalText":  "213 g all-purpose flour",
+                                                                "ingredientName":  "213 g all-purpose flour"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-2",
+                                                                "originalText":  "85 g powdered sugar",
+                                                                "ingredientName":  "85 g powdered sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-3",
+                                                                "originalText":  "1/4 teaspoon fine salt",
+                                                                "ingredientName":  "1/4 teaspoon fine salt"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-4",
+                                                                "originalText":  "1 large egg yolk",
+                                                                "ingredientName":  "1 large egg yolk"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-5",
+                                                                "originalText":  "2 tablespoons heavy cream",
+                                                                "ingredientName":  "2 tablespoons heavy cream"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-6",
+                                                                "originalText":  "1/2 teaspoon vanilla extract",
+                                                                "ingredientName":  "1/2 teaspoon vanilla extract"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-7",
+                                                                "originalText":  "10 tablespoons unsalted butter, very cold",
+                                                                "ingredientName":  "10 tablespoons unsalted butter, very cold"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-8",
+                                                                "originalText":  "113 g almond flour",
+                                                                "ingredientName":  "113 g almond flour"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-9",
+                                                                "originalText":  "100 g granulated sugar",
+                                                                "ingredientName":  "100 g granulated sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-10",
+                                                                "originalText":  "1 egg",
+                                                                "ingredientName":  "1 egg"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-11",
+                                                                "originalText":  "1 egg white",
+                                                                "ingredientName":  "1 egg white"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-12",
+                                                                "originalText":  "1/2 teaspoon almond extract",
+                                                                "ingredientName":  "1/2 teaspoon almond extract"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-13",
+                                                                "originalText":  "1/2 teaspoon vanilla extract",
+                                                                "ingredientName":  "1/2 teaspoon vanilla extract"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-14",
+                                                                "originalText":  "6 tablespoons unsalted butter, room temperature",
+                                                                "ingredientName":  "6 tablespoons unsalted butter, room temperature"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-frangipane-mini-tarts-ingredient-15",
+                                                                "originalText":  "1/2 cup sliced almonds",
+                                                                "ingredientName":  "1/2 cup sliced almonds"
+                                                            }
+                                                        ],
+                                        "servings":  {
+                                                         "amount":  12,
+                                                         "unit":  "tarts"
+                                                     },
+                                        "times":  {
+                                                      "prepTimeMinutes":  60,
+                                                      "cookTimeMinutes":  25,
+                                                      "totalTimeMinutes":  85
+                                                  },
+                                        "tags":  [
+                                                     "tag-dessert"
+                                                 ],
+                                        "collections":  [
+                                                            "collection-boite-de-noel"
+                                                        ],
+                                        "photos":  [
+
+                                                   ],
+                                        "attachments":  [
+
+                                                        ]
+                                    },
+                                    {
+                                        "id":  "recipe-boite-noel-cherry-blossom-version",
+                                        "createdAt":  "2026-03-13T19:00:00Z",
+                                        "updatedAt":  "2026-03-13T19:00:00Z",
+                                        "source":  null,
+                                        "languages":  {
+                                                          "fr":  {
+                                                                     "title":  "Ma version des Cherry Blossom",
+                                                                     "description":  "Chocolats fourres aux cerises au marasquin, beurre d arachide, noix et noix de coco.",
+                                                                     "instructions":  "Chemiser un carton d oeufs de 18 cavites avec une pellicule plastique en epousant bien les formes.\nFaire fondre les chocolats au micro-ondes en remuant toutes les 30 secondes, puis incorporer le beurre d arachide, les noix et la noix de coco.\nDeposer environ 1 cuilleree a soupe de chocolat dans chaque cavite et remonter le melange sur les parois. Refrigerer.\nFouetter le jus de cerises avec le sucre a glacer pour obtenir une sauce epaisse.\nAjouter une cerise dans chaque cavite, napper d un peu de sauce, couvrir du reste du chocolat et refrigerer jusqu a ce que tout soit bien fige.",
+                                                                     "notesSystem":  "Conserver les chocolats au refrigerateur, base vers le haut, pour limiter les fuites si un bonbon est mal scelle."
+                                                                 },
+                                                          "en":  {
+                                                                     "title":  "My Cherry Blossom Version",
+                                                                     "description":  "Homemade cherry chocolates with peanut butter, nuts, and coconut.",
+                                                                     "instructions":  "Line an 18-cup egg carton with plastic wrap, pressing it into the cavities.\nMelt both chocolates in the microwave, stirring every 30 seconds, then mix in the peanut butter, nuts, and coconut.\nSpoon about 1 tablespoon of chocolate into each cavity and push some up the sides to form shells. Chill.\nWhisk the cherry juice with the icing sugar to make a thick syrup.\nPlace one cherry in each shell, add a little syrup, cover with the remaining chocolate mixture, and chill until firm.",
+                                                                     "notesSystem":  "Store the chocolates upside down in the refrigerator so the filling is less likely to leak if one is not fully sealed."
+                                                                 }
+                                                      },
+                                        "ingredients":  [
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-1",
+                                                                "originalText":  "1 cup dark chocolate chips",
+                                                                "ingredientName":  "1 cup dark chocolate chips"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-2",
+                                                                "originalText":  "1 cup milk chocolate chips",
+                                                                "ingredientName":  "1 cup milk chocolate chips"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-3",
+                                                                "originalText":  "1/2 cup natural peanut butter",
+                                                                "ingredientName":  "1/2 cup natural peanut butter"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-4",
+                                                                "originalText":  "1 cup finely chopped pecans, almonds, or walnuts",
+                                                                "ingredientName":  "1 cup finely chopped pecans, almonds, or walnuts"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-5",
+                                                                "originalText":  "1/2 cup unsweetened shredded coconut",
+                                                                "ingredientName":  "1/2 cup unsweetened shredded coconut"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-6",
+                                                                "originalText":  "2 tablespoons maraschino cherry juice",
+                                                                "ingredientName":  "2 tablespoons maraschino cherry juice"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-7",
+                                                                "originalText":  "3/4 cup icing sugar",
+                                                                "ingredientName":  "3/4 cup icing sugar"
+                                                            },
+                                                            {
+                                                                "id":  "recipe-boite-noel-cherry-blossom-version-ingredient-8",
+                                                                "originalText":  "18 maraschino cherries",
+                                                                "ingredientName":  "18 maraschino cherries"
+                                                            }
+                                                        ],
+                                        "servings":  {
+                                                         "amount":  18,
+                                                         "unit":  "candies"
+                                                     },
+                                        "times":  {
+                                                      "prepTimeMinutes":  30,
+                                                      "cookTimeMinutes":  null,
+                                                      "totalTimeMinutes":  30
+                                                  },
+                                        "tags":  [
+                                                     "tag-dessert"
+                                                 ],
+                                        "collections":  [
+                                                            "collection-boite-de-noel"
+                                                        ],
+                                        "photos":  [
+
+                                                   ],
+                                        "attachments":  [
+
+                                                        ]
+                                    }
+                                ],
+                    "ingredientReferences":  [
+
+                                             ],
+                    "ingredientForms":  [
+
+                                        ],
+                    "substitutionRules":  [
+
+                                          ],
+                    "contextualSubstitutionRules":  [
+
+                                                    ],
+                    "units":  [
+                                  {
+                                      "unitId":  "g",
+                                      "symbol":  "g",
+                                      "nameFr":  "gramme",
+                                      "nameEn":  "gram",
+                                      "type":  "mass",
+                                      "baseUnitId":  "g",
+                                      "toBaseFactor":  1
+                                  },
+                                  {
+                                      "unitId":  "ml",
+                                      "symbol":  "ml",
+                                      "nameFr":  "millilitre",
+                                      "nameEn":  "milliliter",
+                                      "type":  "volume",
+                                      "baseUnitId":  "ml",
+                                      "toBaseFactor":  1
+                                  },
+                                  {
+                                      "unitId":  "cup",
+                                      "symbol":  "cup",
+                                      "nameFr":  "tasse",
+                                      "nameEn":  "cup",
+                                      "type":  "volume",
+                                      "baseUnitId":  null,
+                                      "toBaseFactor":  1
+                                  },
+                                  {
+                                      "unitId":  "count",
+                                      "symbol":  "x",
+                                      "nameFr":  "unite",
+                                      "nameEn":  "count",
+                                      "type":  "count",
+                                      "baseUnitId":  "count",
+                                      "toBaseFactor":  1
+                                  }
+                              ],
+                    "tags":  [
+                                 {
+                                     "id":  "tag-dessert",
+                                     "nameFr":  "Dessert",
+                                     "nameEn":  "Dessert",
+                                     "slug":  "dessert"
+                                 }
+                             ],
+                    "collections":  [
+                                        {
+                                            "id":  "collection-boite-de-noel",
+                                            "nameFr":  "Boite de Noel",
+                                            "nameEn":  "Christmas Box",
+                                            "descriptionFr":  "Conversion bilingue du PDF de recettes preferees.",
+                                            "descriptionEn":  "Bilingual conversion of the favorite recipes PDF.",
+                                            "recipeIds":  [
+                                                              "recipe-boite-noel-nanaimo-bars",
+                                                              "recipe-boite-noel-pinwheel-cookies",
+                                                              "recipe-boite-noel-pistachio-drop-cookies",
+                                                              "recipe-boite-noel-maple-pecan-cranberry-squares",
+                                                              "recipe-boite-noel-cherry-almond-shortbread-cookies",
+                                                              "recipe-boite-noel-chocolate-dates",
+                                                              "recipe-boite-noel-coconut-macaroons",
+                                                              "recipe-boite-noel-red-velvet-fudge",
+                                                              "recipe-boite-noel-brownie-cookie-sandwiches",
+                                                              "recipe-boite-noel-chocolate-sausage",
+                                                              "recipe-boite-noel-frangipane-mini-tarts",
+                                                              "recipe-boite-noel-cherry-blossom-version"
+                                                          ],
+                                            "sortOrder":  "title_asc"
+                                        }
+                                    ],
+                    "settings":  {
+                                     "language":  "en",
+                                     "driveSyncEnabled":  false,
+                                     "driveFileName":  null,
+                                     "driveFolderId":  null,
+                                     "openSourceInAppBrowser":  true
+                                 }
+                }
+}
