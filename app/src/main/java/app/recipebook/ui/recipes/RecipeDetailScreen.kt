@@ -1,19 +1,14 @@
 package app.recipebook.ui.recipes
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.AssistChip
-import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -21,7 +16,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import app.recipebook.R
 import app.recipebook.domain.localization.BilingualText
@@ -37,18 +34,42 @@ fun RecipeDetailScreen(
     recipe: Recipe?,
     ingredientReferences: List<IngredientReference>,
     tags: List<Tag>,
+    language: AppLanguage,
+    onLanguageChange: (AppLanguage) -> Unit,
     onBack: () -> Unit,
     onEdit: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var language by rememberSaveable { mutableStateOf(AppLanguage.EN) }
     val resolver = BilingualTextResolver()
     val placeholders = MissingTextPlaceholders(
         missingInFrench = localizedString(R.string.placeholder_missing_fr, AppLanguage.FR),
         missingInEnglish = localizedString(R.string.placeholder_missing_en, AppLanguage.EN)
     )
 
-    Scaffold(modifier = modifier) { innerPadding ->
+    Scaffold(
+        modifier = modifier,
+        topBar = {
+            RecipeBookTopBar(
+                title = localizedString(R.string.detail_section_title, language),
+                language = language,
+                onLanguageChange = onLanguageChange,
+                onNavigate = { },
+                navigationIcon = {
+                    BackIconButton(
+                        contentDescription = localizedString(R.string.back_label, language),
+                        onClick = onBack
+                    )
+                }
+            ) {
+                recipe?.let {
+                    EditIconButton(
+                        contentDescription = localizedString(R.string.edit_recipe_label, language),
+                        onClick = { onEdit(it.id) }
+                    )
+                }
+            }
+        }
+    ) { innerPadding ->
         Column(
             modifier = Modifier
                 .padding(innerPadding)
@@ -56,28 +77,11 @@ fun RecipeDetailScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                AssistChip(onClick = onBack, label = { Text(localizedString(R.string.back_label, language)) })
-                AssistChip(onClick = { language = AppLanguage.EN }, label = { Text(localizedString(R.string.language_en, language)) })
-                AssistChip(onClick = { language = AppLanguage.FR }, label = { Text(localizedString(R.string.language_fr, language)) })
-                if (recipe != null) {
-                    AssistChip(onClick = { onEdit(recipe.id) }, label = { Text(localizedString(R.string.edit_recipe_label, language)) })
-                }
-            }
-
-            Text(
-                text = localizedString(R.string.detail_section_title, language),
-                style = MaterialTheme.typography.headlineMedium
-            )
-
             if (recipe == null) {
-                Card(modifier = Modifier.fillMaxWidth()) {
-                    Text(
-                        text = localizedString(R.string.recipe_not_found, language),
-                        modifier = Modifier.padding(16.dp),
-                        style = MaterialTheme.typography.bodyLarge
-                    )
-                }
+                Text(
+                    text = localizedString(R.string.recipe_not_found, language),
+                    style = MaterialTheme.typography.bodyLarge
+                )
             } else {
                 RecipeDetailCard(
                     recipe = recipe,
@@ -102,11 +106,12 @@ private fun RecipeDetailCard(
     placeholders: MissingTextPlaceholders
 ) {
     val ingredientReferenceMap = ingredientReferences.associateBy(IngredientReference::id)
+    val uriHandler = LocalUriHandler.current
     val resolvedTags = recipe.tagIds.mapNotNull { tagId -> tags.firstOrNull { it.id == tagId } }
-    val userNotes = resolver.resolveUserText(
+    val notes = resolver.resolveUserText(
         language = language,
-        valueFr = recipe.userNotes?.fr,
-        valueEn = recipe.userNotes?.en,
+        valueFr = recipe.languages.fr.notes.ifBlank { null },
+        valueEn = recipe.languages.en.notes.ifBlank { null },
         placeholders = placeholders
     )
     val instructions = parseTextEntries(resolver.resolveSystemText(language, recipe.instructionsText()))
@@ -115,11 +120,10 @@ private fun RecipeDetailCard(
         buildDetailIngredientText(ingredient, ingredientReference, language)
     }.filter { it.isNotEmpty() }
 
-    Card(modifier = Modifier.fillMaxWidth()) {
-        Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
             Text(
                 text = resolver.resolveSystemText(language, recipe.titleText()),
                 style = MaterialTheme.typography.headlineSmall
@@ -131,25 +135,45 @@ private fun RecipeDetailCard(
 
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 recipe.servings?.let { servings ->
-                    MetaChip(
-                        text = if (servings.unit.isNullOrBlank()) {
-                            localizedString(R.string.servings_value_plain, language, formatNumber(servings.amount))
-                        } else {
-                            localizedString(R.string.servings_value_with_unit, language, formatNumber(servings.amount), servings.unit)
-                        }
+                    Text(
+                        text = localizedString(
+                            R.string.detail_amount_value,
+                            language,
+                            if (servings.unit.isNullOrBlank()) {
+                                formatNumber(servings.amount)
+                            } else {
+                                localizedString(R.string.servings_value_with_unit, language, formatNumber(servings.amount), servings.unit)
+                            }
+                        ),
+                        style = MaterialTheme.typography.bodyLarge
                     )
                 }
-                recipe.times?.prepTimeMinutes?.let { prep -> MetaChip(text = localizedString(R.string.prep_time_value, language, prep)) }
-                recipe.times?.cookTimeMinutes?.let { cook -> MetaChip(text = localizedString(R.string.cook_time_value, language, cook)) }
-                recipe.times?.totalTimeMinutes?.let { total -> MetaChip(text = localizedString(R.string.total_time_value, language, total)) }
-                recipe.ratings?.userRating?.let { rating -> MetaChip(text = localizedString(R.string.rating_value, language, rating)) }
+                recipe.times?.prepTimeMinutes?.let { prep ->
+                    Text(
+                        text = localizedString(R.string.detail_prep_time_value, language, prep),
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+                }
+                recipe.times?.cookTimeMinutes?.let { cook ->
+                    Text(
+                        text = localizedString(R.string.detail_cook_time_value, language, cook),
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+                }
+                recipe.ratings?.userRating?.let { rating ->
+                    Text(
+                        text = localizedString(R.string.detail_rating_value, language, rating),
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+                }
             }
 
             if (resolvedTags.isNotEmpty()) {
                 DetailSection(localizedString(R.string.tags_label, language)) {
-                    resolvedTags.forEach { tag ->
-                        MetaChip(text = tag.localizedName(language))
-                    }
+                    Text(
+                        text = buildDetailTagText(resolvedTags, language),
+                        style = MaterialTheme.typography.bodyLarge
+                    )
                 }
             }
 
@@ -165,27 +189,26 @@ private fun RecipeDetailCard(
                 }
             }
 
-            DetailSection(localizedString(R.string.system_notes_label, language)) {
-                Text(text = resolver.resolveSystemText(language, recipe.systemNotesText()))
-            }
-
-            DetailSection(localizedString(R.string.user_notes_label, language)) {
+            DetailSection(localizedString(R.string.notes_label, language)) {
                 Text(
-                    text = userNotes.text,
-                    fontStyle = if (userNotes.isPlaceholder) FontStyle.Italic else FontStyle.Normal
+                    text = notes.text,
+                    fontStyle = if (notes.isPlaceholder) FontStyle.Italic else FontStyle.Normal
                 )
             }
 
             recipe.source?.let { source ->
                 DetailSection(localizedString(R.string.source_label, language)) {
-                    Text(text = source.sourceName)
-                    Spacer(modifier = Modifier.height(2.dp))
-                    Text(text = source.sourceUrl, color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.bodyMedium)
+                    Text(
+                        text = source.sourceName.ifBlank { source.sourceUrl },
+                        color = MaterialTheme.colorScheme.primary,
+                        style = MaterialTheme.typography.bodyMedium,
+                        textDecoration = TextDecoration.Underline,
+                        modifier = Modifier.clickable { uriHandler.openUri(source.sourceUrl) }
+                    )
                 }
             }
         }
     }
-}
 
 @Composable
 private fun DetailSection(
@@ -198,28 +221,12 @@ private fun DetailSection(
     }
 }
 
-@Composable
-private fun MetaChip(text: String) {
-    Surface(
-        color = MaterialTheme.colorScheme.tertiaryContainer,
-        shape = MaterialTheme.shapes.large
-    ) {
-        Text(
-            text = text,
-            modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
-            style = MaterialTheme.typography.labelLarge
-        )
-    }
-}
+internal fun buildDetailTagText(tags: List<Tag>, language: AppLanguage): String =
+    tags.joinToString(", ") { it.localizedName(language) }
 
 internal fun Recipe.instructionsText(): BilingualText = BilingualText(
     fr = languages.fr.instructions,
     en = languages.en.instructions
-)
-
-internal fun Recipe.systemNotesText(): BilingualText = BilingualText(
-    fr = languages.fr.notesSystem,
-    en = languages.en.notesSystem
 )
 
 internal fun buildDetailIngredientText(
@@ -230,15 +237,60 @@ internal fun buildDetailIngredientText(
     val ingredientName = ingredientReference?.localizedName(language)
         ?.ifBlank { ingredient.ingredientName }
         ?: ingredient.ingredientName
+    val localizedUnit = ingredient.unit?.localizedIngredientUnit(language)
+    val localizedPreparation = ingredient.preparation?.localizedIngredientDescriptor(language)
+    val localizedNotes = ingredient.notes?.localizedIngredientDescriptor(language)
     val base = listOfNotNull(
         ingredient.quantity?.let(::formatNumber),
-        ingredient.unit,
+        localizedUnit,
         ingredientName.ifBlank { null }
     ).joinToString(" ")
-    val withPreparation = if (ingredient.preparation.isNullOrBlank()) base else "$base, ${ingredient.preparation}"
-    val withNotes = if (ingredient.notes.isNullOrBlank()) withPreparation else "$withPreparation (${ingredient.notes})"
+    val withPreparation = if (localizedPreparation.isNullOrBlank()) base else "$base, $localizedPreparation"
+    val withNotes = if (localizedNotes.isNullOrBlank()) withPreparation else "$withPreparation ($localizedNotes)"
     return withNotes.ifBlank { ingredient.originalText.trim() }
 }
+
+private fun String.localizedIngredientUnit(language: AppLanguage): String {
+    val normalized = trim()
+    if (normalized.isEmpty()) return normalized
+    return when (language) {
+        AppLanguage.EN -> normalized
+        AppLanguage.FR -> ingredientUnitTranslations[normalized.lowercase()] ?: normalized
+    }
+}
+
+private fun String.localizedIngredientDescriptor(language: AppLanguage): String {
+    val normalized = trim()
+    if (normalized.isEmpty()) return normalized
+    return when (language) {
+        AppLanguage.EN -> normalized
+        AppLanguage.FR -> ingredientDescriptorTranslations[normalized.lowercase()] ?: normalized
+    }
+}
+
+private val ingredientUnitTranslations = mapOf(
+    "cup" to "tasse",
+    "cups" to "tasses",
+    "tablespoon" to "cuill\u00E8re \u00E0 soupe",
+    "tablespoons" to "cuill\u00E8res \u00E0 soupe",
+    "teaspoon" to "cuill\u00E8re \u00E0 th\u00E9",
+    "teaspoons" to "cuill\u00E8res \u00E0 th\u00E9",
+    "ounce" to "once",
+    "ounces" to "onces",
+    "square" to "carr\u00E9",
+    "squares" to "carr\u00E9s",
+    "cookie" to "biscuit",
+    "cookies" to "biscuits"
+)
+
+private val ingredientDescriptorTranslations = mapOf(
+    "divided" to "divis\u00E9",
+    "beaten" to "battu",
+    "chopped" to "hach\u00E9",
+    "baking" to "pour cuisson",
+    "room temperature" to "temp\u00E9rature ambiante",
+    "softened" to "ramolli"
+)
 
 private fun IngredientReference.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
@@ -249,4 +301,5 @@ private fun Tag.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
     AppLanguage.EN -> nameEn.ifBlank { nameFr }
 }
+
 

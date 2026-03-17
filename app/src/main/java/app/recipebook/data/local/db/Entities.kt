@@ -1,4 +1,4 @@
-﻿package app.recipebook.data.local.db
+package app.recipebook.data.local.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -15,10 +15,8 @@ data class RecipeEntity(
     val descriptionEn: String,
     val instructionsFr: String,
     val instructionsEn: String,
-    val notesSystemFr: String,
-    val notesSystemEn: String,
-    val userNotesFr: String? = null,
-    val userNotesEn: String? = null,
+    val notesFr: String,
+    val notesEn: String,
     val sourceUrl: String? = null,
     val sourceName: String? = null,
     val servingsAmount: Double? = null,

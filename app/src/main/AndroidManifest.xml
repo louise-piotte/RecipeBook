@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -11,6 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipeBook">
+        <activity
+            android:name=".IngredientTagManagerActivity"
+            android:exported="false"
+            android:label="@string/manage_library_data_short_label"
+            android:theme="@style/Theme.RecipeBook" />
         <activity
             android:name=".RecipeEditorActivity"
             android:exported="false"
@@ -35,4 +40,3 @@
     </application>
 
 </manifest>
-

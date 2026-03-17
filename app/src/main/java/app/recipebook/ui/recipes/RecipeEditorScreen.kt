@@ -4,16 +4,25 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -24,7 +33,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import app.recipebook.R
 import app.recipebook.data.local.recipes.IngredientReferenceDraft
@@ -33,14 +44,12 @@ import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientReference
-import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
 import app.recipebook.domain.model.Tag
-import app.recipebook.domain.model.UserNotes
 import java.time.Instant
 import java.util.UUID
 import kotlinx.coroutines.launch
@@ -51,6 +60,8 @@ fun RecipeEditorScreen(
     isNewRecipe: Boolean,
     ingredientReferences: List<IngredientReference>,
     tags: List<Tag>,
+    language: AppLanguage,
+    onLanguageChange: (AppLanguage) -> Unit,
     onBack: () -> Unit,
     onSave: (Recipe) -> Unit,
     onCreateIngredientReference: suspend (IngredientReferenceDraft) -> IngredientReference,
@@ -58,17 +69,14 @@ fun RecipeEditorScreen(
     onDelete: (() -> Unit)?,
     modifier: Modifier = Modifier
 ) {
-    var language by rememberSaveable { mutableStateOf(AppLanguage.EN) }
     var titleFr by rememberSaveable { mutableStateOf(initialRecipe.languages.fr.title) }
     var titleEn by rememberSaveable { mutableStateOf(initialRecipe.languages.en.title) }
     var descriptionFr by rememberSaveable { mutableStateOf(initialRecipe.languages.fr.description) }
     var descriptionEn by rememberSaveable { mutableStateOf(initialRecipe.languages.en.description) }
     var instructionsFr by rememberSaveable { mutableStateOf(initialRecipe.languages.fr.instructions) }
     var instructionsEn by rememberSaveable { mutableStateOf(initialRecipe.languages.en.instructions) }
-    var systemNotesFr by rememberSaveable { mutableStateOf(initialRecipe.languages.fr.notesSystem) }
-    var systemNotesEn by rememberSaveable { mutableStateOf(initialRecipe.languages.en.notesSystem) }
-    var userNotesFr by rememberSaveable { mutableStateOf(initialRecipe.userNotes?.fr.orEmpty()) }
-    var userNotesEn by rememberSaveable { mutableStateOf(initialRecipe.userNotes?.en.orEmpty()) }
+    var notesFr by rememberSaveable { mutableStateOf(initialRecipe.languages.fr.notes) }
+    var notesEn by rememberSaveable { mutableStateOf(initialRecipe.languages.en.notes) }
     var sourceName by rememberSaveable { mutableStateOf(initialRecipe.source?.sourceName.orEmpty()) }
     var sourceUrl by rememberSaveable { mutableStateOf(initialRecipe.source?.sourceUrl.orEmpty()) }
     var servingsAmount by rememberSaveable { mutableStateOf(initialRecipe.servings?.amount?.let(::formatNumber).orEmpty()) }
@@ -97,7 +105,31 @@ fun RecipeEditorScreen(
         if (language == AppLanguage.FR) titleFr else titleEn
     }
 
-    Scaffold(modifier = modifier) { innerPadding ->
+    Scaffold(
+        modifier = modifier,
+        topBar = {
+            RecipeBookTopBar(
+                title = if (isNewRecipe) localizedString(R.string.add_recipe_label, language) else localizedString(R.string.edit_recipe_label, language),
+                language = language,
+                onLanguageChange = onLanguageChange,
+                onNavigate = { },
+                navigationIcon = {
+                    BackIconButton(
+                        contentDescription = localizedString(R.string.back_label, language),
+                        onClick = onBack
+                    )
+                }
+            ) {
+                if (onDelete != null) {
+                    AppIconButton(
+                        icon = Icons.Filled.Delete,
+                        contentDescription = localizedString(R.string.delete_recipe_label, language),
+                        onClick = onDelete
+                    )
+                }
+            }
+        }
+    ) { innerPadding ->
         Column(
             modifier = Modifier
                 .padding(innerPadding)
@@ -105,153 +137,124 @@ fun RecipeEditorScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                AssistChip(onClick = onBack, label = { Text(localizedString(R.string.back_label, language)) })
-                AssistChip(onClick = { language = AppLanguage.EN }, label = { Text(localizedString(R.string.language_en, language)) })
-                AssistChip(onClick = { language = AppLanguage.FR }, label = { Text(localizedString(R.string.language_fr, language)) })
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Text(
+                    text = titlePreview.ifBlank { localizedString(R.string.editor_preview_placeholder, language) },
+                    style = MaterialTheme.typography.titleLarge
+                )
+
+                LabeledField(localizedString(R.string.title_fr_label, language), titleFr) { titleFr = it }
+                LabeledField(localizedString(R.string.title_en_label, language), titleEn) { titleEn = it }
+                LabeledField(localizedString(R.string.description_fr_label, language), descriptionFr, singleLine = false, minLines = 4) { descriptionFr = it }
+                LabeledField(localizedString(R.string.description_en_label, language), descriptionEn, singleLine = false, minLines = 4) { descriptionEn = it }
+                IngredientsEditorSection(
+                    language = language,
+                    ingredientRows = ingredientRows,
+                    ingredientReferences = ingredientReferences,
+                    expanded = ingredientsExpanded,
+                    onToggleExpanded = { ingredientsExpanded = !ingredientsExpanded },
+                    onSelectIngredient = { index ->
+                        pendingIngredientTargetIndex = index
+                        ingredientPickerIndex = index
+                    },
+                    onQuantityChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(quantity = value) },
+                    onUnitChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(unit = value) },
+                    onPreparationChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(preparation = value) },
+                    onNotesChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(notes = value) },
+                    onOriginalTextChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(originalText = value) },
+                    onRemove = { index ->
+                        ingredientRows.removeAt(index)
+                        if (ingredientRows.isEmpty()) ingredientRows.add(blankIngredientRow())
+                    },
+                    onAddIngredientLine = { ingredientRows.add(blankIngredientRow()) },
+                    onAddReusableIngredient = {
+                        ingredientRows.add(blankIngredientRow())
+                        pendingIngredientTargetIndex = ingredientRows.lastIndex
+                        ingredientPickerIndex = ingredientRows.lastIndex
+                    }
+                )
+                LabeledField(localizedString(R.string.instructions_fr_label, language), instructionsFr, singleLine = false, minLines = 5) { instructionsFr = it }
+                LabeledField(localizedString(R.string.instructions_en_label, language), instructionsEn, singleLine = false, minLines = 5) { instructionsEn = it }
+                LabeledField(localizedString(R.string.notes_fr_label, language), notesFr, singleLine = false, minLines = 4) { notesFr = it }
+                LabeledField(localizedString(R.string.notes_en_label, language), notesEn, singleLine = false, minLines = 4) { notesEn = it }
+                LabeledField(localizedString(R.string.source_name_label, language), sourceName) { sourceName = it }
+                LabeledField(localizedString(R.string.source_url_label, language), sourceUrl) { sourceUrl = it }
+                LabeledField(localizedString(R.string.servings_amount_label, language), servingsAmount) { servingsAmount = it }
+                LabeledField(localizedString(R.string.servings_unit_label, language), servingsUnit) { servingsUnit = it }
+                LabeledField(localizedString(R.string.prep_minutes_label, language), prepMinutes) { prepMinutes = it }
+                LabeledField(localizedString(R.string.cook_minutes_label, language), cookMinutes) { cookMinutes = it }
+                LabeledField(localizedString(R.string.total_minutes_label, language), totalMinutes) { totalMinutes = it }
             }
 
-            Text(
-                text = if (isNewRecipe) localizedString(R.string.add_recipe_label, language) else localizedString(R.string.edit_recipe_label, language),
-                style = MaterialTheme.typography.headlineMedium
-            )
-
-            Card(modifier = Modifier.fillMaxWidth()) {
-                Column(
-                    modifier = Modifier.padding(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
-                ) {
-                    Text(
-                        text = titlePreview.ifBlank { localizedString(R.string.editor_preview_placeholder, language) },
-                        style = MaterialTheme.typography.titleLarge
-                    )
-
-                    LabeledField(localizedString(R.string.title_fr_label, language), titleFr) { titleFr = it }
-                    LabeledField(localizedString(R.string.title_en_label, language), titleEn) { titleEn = it }
-                    LabeledField(localizedString(R.string.description_fr_label, language), descriptionFr, singleLine = false, minLines = 4) { descriptionFr = it }
-                    LabeledField(localizedString(R.string.description_en_label, language), descriptionEn, singleLine = false, minLines = 4) { descriptionEn = it }
-                    IngredientsEditorSection(
-                        language = language,
-                        ingredientRows = ingredientRows,
-                        ingredientReferences = ingredientReferences,
-                        expanded = ingredientsExpanded,
-                        onToggleExpanded = { ingredientsExpanded = !ingredientsExpanded },
-                        onSelectIngredient = { index ->
-                            pendingIngredientTargetIndex = index
-                            ingredientPickerIndex = index
-                        },
-                        onQuantityChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(quantity = value) },
-                        onUnitChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(unit = value) },
-                        onPreparationChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(preparation = value) },
-                        onNotesChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(notes = value) },
-                        onOriginalTextChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(originalText = value) },
-                        onRemove = { index ->
-                            ingredientRows.removeAt(index)
-                            if (ingredientRows.isEmpty()) ingredientRows.add(blankIngredientRow())
-                        },
-                        onAddIngredientLine = { ingredientRows.add(blankIngredientRow()) },
-                        onAddReusableIngredient = {
-                            ingredientRows.add(blankIngredientRow())
-                            pendingIngredientTargetIndex = ingredientRows.lastIndex
-                            ingredientPickerIndex = ingredientRows.lastIndex
-                        }
-                    )
-                    LabeledField(localizedString(R.string.instructions_fr_label, language), instructionsFr, singleLine = false, minLines = 5) { instructionsFr = it }
-                    LabeledField(localizedString(R.string.instructions_en_label, language), instructionsEn, singleLine = false, minLines = 5) { instructionsEn = it }
-                    LabeledField(localizedString(R.string.system_notes_fr_label, language), systemNotesFr, singleLine = false, minLines = 4) { systemNotesFr = it }
-                    LabeledField(localizedString(R.string.system_notes_en_label, language), systemNotesEn, singleLine = false, minLines = 4) { systemNotesEn = it }
-                    LabeledField(localizedString(R.string.user_notes_fr_label, language), userNotesFr, singleLine = false, minLines = 4) { userNotesFr = it }
-                    LabeledField(localizedString(R.string.user_notes_en_label, language), userNotesEn, singleLine = false, minLines = 4) { userNotesEn = it }
-                    LabeledField(localizedString(R.string.source_name_label, language), sourceName) { sourceName = it }
-                    LabeledField(localizedString(R.string.source_url_label, language), sourceUrl) { sourceUrl = it }
-                    LabeledField(localizedString(R.string.servings_amount_label, language), servingsAmount) { servingsAmount = it }
-                    LabeledField(localizedString(R.string.servings_unit_label, language), servingsUnit) { servingsUnit = it }
-                    LabeledField(localizedString(R.string.prep_minutes_label, language), prepMinutes) { prepMinutes = it }
-                    LabeledField(localizedString(R.string.cook_minutes_label, language), cookMinutes) { cookMinutes = it }
-                    LabeledField(localizedString(R.string.total_minutes_label, language), totalMinutes) { totalMinutes = it }
-                }
-            }
-
-
-            Card(modifier = Modifier.fillMaxWidth()) {
-                Column(
-                    modifier = Modifier.padding(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(
                         text = localizedString(R.string.tags_editor_label, language),
                         style = MaterialTheme.typography.titleLarge
                     )
-                    if (selectedTagIds.isEmpty()) {
-                        Text(
-                            text = localizedString(R.string.no_tags_selected_label, language),
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    } else {
-                        selectedTagIds.forEach { tagId ->
-                            val tag = tags.firstOrNull { it.id == tagId }
-                            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                                Text(text = tag?.localizedName(language).orEmpty())
-                                TextButton(onClick = { selectedTagIds.remove(tagId) }) {
-                                    Text(localizedString(R.string.remove_label, language))
-                                }
-                            }
-                        }
-                    }
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Button(onClick = { showTagPickerDialog = true }) {
-                            Text(localizedString(R.string.select_tags_label, language))
-                        }
-                        Button(onClick = { showCreateTagDialog = true }) {
-                            Text(localizedString(R.string.create_tag_label, language))
-                        }
-                    }
+                    AppIconButton(
+                        icon = Icons.Filled.Add,
+                        contentDescription = localizedString(R.string.select_tags_label, language),
+                        onClick = { showTagPickerDialog = true }
+                    )
+                }
+                if (selectedTagIds.isEmpty()) {
+                    Text(
+                        text = localizedString(R.string.no_tags_selected_label, language),
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                } else {
+                    Text(
+                        text = selectedTagIds
+                            .mapNotNull { tagId -> tags.firstOrNull { it.id == tagId }?.localizedName(language) }
+                            .joinToString(", "),
+                        style = MaterialTheme.typography.bodyMedium
+                    )
                 }
             }
 
-            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                Button(
-                    onClick = {
-                        onSave(
-                            initialRecipe.copy(
-                                updatedAt = Instant.now().toString(),
-                                languages = BilingualText(
-                                    fr = LocalizedSystemText(
-                                        title = titleFr.trim(),
-                                        description = descriptionFr.trim(),
-                                        instructions = normalizeMultilineText(instructionsFr),
-                                        notesSystem = systemNotesFr.trim()
-                                    ),
-                                    en = LocalizedSystemText(
-                                        title = titleEn.trim(),
-                                        description = descriptionEn.trim(),
-                                        instructions = normalizeMultilineText(instructionsEn),
-                                        notesSystem = systemNotesEn.trim()
-                                    )
+            Button(
+                onClick = {
+                    onSave(
+                        initialRecipe.copy(
+                            updatedAt = Instant.now().toString(),
+                            languages = BilingualText(
+                                fr = LocalizedSystemText(
+                                    title = titleFr.trim(),
+                                    description = descriptionFr.trim(),
+                                    instructions = normalizeMultilineText(instructionsFr),
+                                    notes = normalizeMultilineText(notesFr)
                                 ),
-                                userNotes = UserNotes(
-                                    fr = userNotesFr.trim().ifBlank { null },
-                                    en = userNotesEn.trim().ifBlank { null }
-                                ).takeIf { it.fr != null || it.en != null },
-                                source = if (sourceName.isBlank() && sourceUrl.isBlank()) null else RecipeSource(
-                                    sourceName = sourceName.trim(),
-                                    sourceUrl = sourceUrl.trim()
-                                ),
-                                servings = parseServings(servingsAmount, servingsUnit),
-                                times = parseTimes(prepMinutes, cookMinutes, totalMinutes),
-                                ingredients = ingredientRows.toIngredientLines(ingredientReferences, language),
-                                tagIds = selectedTagIds.distinct()
-                            )
+                                en = LocalizedSystemText(
+                                    title = titleEn.trim(),
+                                    description = descriptionEn.trim(),
+                                    instructions = normalizeMultilineText(instructionsEn),
+                                    notes = normalizeMultilineText(notesEn)
+                                )
+                            ),
+                            source = if (sourceName.isBlank() && sourceUrl.isBlank()) null else RecipeSource(
+                                sourceName = sourceName.trim(),
+                                sourceUrl = sourceUrl.trim()
+                            ),
+                            servings = parseServings(servingsAmount, servingsUnit),
+                            times = parseTimes(prepMinutes, cookMinutes, totalMinutes),
+                            ingredients = ingredientRows.toIngredientLines(ingredientReferences, language),
+                            tagIds = selectedTagIds.distinct()
                         )
-                    }
-                ) {
-                    Text(localizedString(R.string.save_recipe_label, language))
-                }
-                if (onDelete != null) {
-                    Button(onClick = onDelete) {
-                        Text(localizedString(R.string.delete_recipe_label, language))
-                    }
-                }
+                    )
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(localizedString(R.string.save_recipe_label, language))
             }
         }
     }
@@ -349,57 +352,59 @@ private fun IngredientsEditorSection(
         if (line == null) null else buildDetailIngredientText(line, line.ingredientRefId?.let(ingredientMap::get), language)
     }
 
-    Card(modifier = Modifier.fillMaxWidth()) {
-        Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text(
-                    text = localizedString(R.string.ingredients_editor_label, language),
-                    style = MaterialTheme.typography.titleLarge
+            Text(
+                text = localizedString(R.string.ingredients_editor_label, language),
+                style = MaterialTheme.typography.titleLarge
+            )
+            AppIconButton(
+                icon = if (expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
+                contentDescription = if (expanded) localizedString(R.string.collapse_ingredients_label, language) else localizedString(R.string.edit_ingredients_label, language),
+                onClick = onToggleExpanded
+            )
+        }
+
+        if (expanded) {
+            ingredientRows.forEachIndexed { index, row ->
+                IngredientEditorCard(
+                    language = language,
+                    row = row,
+                    ingredientReference = ingredientReferences.firstOrNull { it.id == row.ingredientRefId },
+                    onSelectIngredient = { onSelectIngredient(index) },
+                    onQuantityChange = { onQuantityChange(index, it) },
+                    onUnitChange = { onUnitChange(index, it) },
+                    onPreparationChange = { onPreparationChange(index, it) },
+                    onNotesChange = { onNotesChange(index, it) },
+                    onOriginalTextChange = { onOriginalTextChange(index, it) },
+                    onRemove = { onRemove(index) }
                 )
-                TextButton(onClick = onToggleExpanded) {
-                    Text(
-                        if (expanded) localizedString(R.string.collapse_ingredients_label, language)
-                        else localizedString(R.string.edit_ingredients_label, language)
-                    )
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                Button(onClick = onAddIngredientLine) {
+                    Icon(Icons.Filled.Add, contentDescription = null)
+                    Text(localizedString(R.string.add_ingredient_line_label, language))
+                }
+                Button(onClick = onAddReusableIngredient) {
+                    Icon(Icons.Filled.Add, contentDescription = null)
+                    Text(localizedString(R.string.add_existing_ingredient_label, language))
                 }
             }
-
-            if (expanded) {
-                ingredientRows.forEachIndexed { index, row ->
-                    IngredientEditorCard(
-                        language = language,
-                        row = row,
-                        ingredientReference = ingredientReferences.firstOrNull { it.id == row.ingredientRefId },
-                        onSelectIngredient = { onSelectIngredient(index) },
-                        onQuantityChange = { onQuantityChange(index, it) },
-                        onUnitChange = { onUnitChange(index, it) },
-                        onPreparationChange = { onPreparationChange(index, it) },
-                        onNotesChange = { onNotesChange(index, it) },
-                        onOriginalTextChange = { onOriginalTextChange(index, it) },
-                        onRemove = { onRemove(index) }
-                    )
-                }
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Button(onClick = onAddIngredientLine) {
-                        Text(localizedString(R.string.add_ingredient_line_label, language))
-                    }
-                    Button(onClick = onAddReusableIngredient) {
-                        Text(localizedString(R.string.add_existing_ingredient_label, language))
-                    }
-                }
+        } else {
+            if (previewLines.isEmpty()) {
+                Text(
+                    text = localizedString(R.string.no_ingredients_added_label, language),
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
             } else {
-                if (previewLines.isEmpty()) {
-                    Text(
-                        text = localizedString(R.string.no_ingredients_added_label, language),
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                } else {
-                    previewLines.forEach { ingredient ->
-                        Text(text = ingredient)
-                    }
+                previewLines.forEach { ingredient ->
+                    Text(text = ingredient)
                 }
             }
         }
@@ -419,36 +424,39 @@ private fun IngredientEditorCard(
     onOriginalTextChange: (String) -> Unit,
     onRemove: () -> Unit
 ) {
-    Card(modifier = Modifier.fillMaxWidth()) {
-        Column(
-            modifier = Modifier.padding(12.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        Text(
+            text = ingredientReference?.localizedName(language)?.ifBlank { row.ingredientName }
+                ?: row.ingredientName.ifBlank { localizedString(R.string.no_ingredient_selected_label, language) },
+            style = MaterialTheme.typography.titleMedium
+        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Text(
-                text = ingredientReference?.localizedName(language)?.ifBlank { row.ingredientName }
-                    ?: row.ingredientName.ifBlank { localizedString(R.string.no_ingredient_selected_label, language) },
-                style = MaterialTheme.typography.titleMedium
-            )
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                Button(onClick = onSelectIngredient) {
-                    Text(localizedString(R.string.select_ingredient_label, language))
-                }
-                TextButton(onClick = onRemove) {
-                    Text(localizedString(R.string.remove_label, language))
-                }
+            Button(onClick = onSelectIngredient) {
+                Text(localizedString(R.string.select_ingredient_label, language))
             }
-            LabeledField(localizedString(R.string.ingredient_quantity_label, language), row.quantity, onValueChange = onQuantityChange)
-            LabeledField(localizedString(R.string.ingredient_unit_label, language), row.unit, onValueChange = onUnitChange)
-            LabeledField(localizedString(R.string.ingredient_preparation_label, language), row.preparation, onValueChange = onPreparationChange)
-            LabeledField(localizedString(R.string.ingredient_notes_label, language), row.notes, onValueChange = onNotesChange)
-            LabeledField(
-                localizedString(R.string.ingredient_original_text_label, language),
-                row.originalText,
-                singleLine = false,
-                minLines = 2,
-                onValueChange = onOriginalTextChange
+            AppIconButton(
+                icon = Icons.Filled.Delete,
+                contentDescription = localizedString(R.string.remove_label, language),
+                onClick = onRemove
             )
         }
+        LabeledField(localizedString(R.string.ingredient_quantity_label, language), row.quantity, onValueChange = onQuantityChange)
+        LabeledField(localizedString(R.string.ingredient_unit_label, language), row.unit, onValueChange = onUnitChange)
+        LabeledField(localizedString(R.string.ingredient_preparation_label, language), row.preparation, onValueChange = onPreparationChange)
+        LabeledField(localizedString(R.string.ingredient_notes_label, language), row.notes, onValueChange = onNotesChange)
+        LabeledField(
+            localizedString(R.string.ingredient_original_text_label, language),
+            row.originalText,
+            singleLine = false,
+            minLines = 2,
+            onValueChange = onOriginalTextChange
+        )
     }
 }
 
@@ -481,6 +489,7 @@ private fun IngredientPickerDialog(
         onDismissRequest = onDismiss,
         confirmButton = {
             TextButton(onClick = onCreateNew) {
+                Icon(Icons.Filled.Add, contentDescription = null)
                 Text(localizedString(R.string.create_ingredient_label, language))
             }
         },
@@ -492,11 +501,24 @@ private fun IngredientPickerDialog(
         title = { Text(localizedString(R.string.select_ingredient_label, language)) },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                LabeledField(localizedString(R.string.search_label, language), query, onValueChange = { query = it })
-                filtered.take(12).forEach { ingredientReference ->
-                    TextButton(onClick = { onSelect(ingredientReference) }) {
-                        Text(ingredientReference.pickerName(language))
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .heightIn(max = 280.dp),
+                    verticalArrangement = Arrangement.spacedBy(2.dp)
+                ) {
+                    items(filtered.take(12), key = { it.id }) { ingredientReference ->
+                        TextButton(onClick = { onSelect(ingredientReference) }) {
+                            Text(ingredientReference.pickerName(language))
+                        }
                     }
+                }
+                BottomSearchBar(useNavigationBarPadding = false) {
+                    SearchField(
+                        value = query,
+                        onValueChange = { query = it },
+                        label = localizedString(R.string.search_label, language)
+                    )
                 }
             }
         }
@@ -522,35 +544,87 @@ private fun TagPickerDialog(
             }
         }
     }
+    val orderedTags = filtered.sortedWith(
+        compareByDescending<Tag> { selectedTagIds.contains(it.id) }
+            .thenBy { it.localizedName(language) }
+    )
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        confirmButton = {
-            TextButton(onClick = onCreateNew) {
-                Text(localizedString(R.string.create_tag_label, language))
+        confirmButton = {},
+        dismissButton = {},
+        title = {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                BackIconButton(
+                    contentDescription = localizedString(R.string.back_label, language),
+                    onClick = onDismiss
+                )
+                Text(
+                    text = localizedString(R.string.select_tags_label, language),
+                    style = MaterialTheme.typography.titleLarge,
+                    modifier = Modifier.weight(1f)
+                )
+                AppIconButton(
+                    icon = Icons.Filled.Add,
+                    contentDescription = localizedString(R.string.create_tag_label, language),
+                    onClick = onCreateNew
+                )
             }
         },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text(localizedString(R.string.done_label, language))
-            }
-        },
-        title = { Text(localizedString(R.string.select_tags_label, language)) },
         text = {
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                LabeledField(localizedString(R.string.search_label, language), query, onValueChange = { query = it })
-                filtered.take(12).forEach { tag ->
-                    val isSelected = selectedTagIds.contains(tag.id)
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Text(text = tag.localizedName(language))
-                        TextButton(onClick = {
-                            if (isSelected) selectedTagIds.remove(tag.id) else selectedTagIds.add(tag.id)
-                        }) {
+            Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .heightIn(max = 280.dp),
+                    verticalArrangement = Arrangement.spacedBy(0.dp)
+                ) {
+                    items(orderedTags.take(12), key = { it.id }) { tag ->
+                        val isSelected = selectedTagIds.contains(tag.id)
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 1.dp),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
                             Text(
-                                if (isSelected) localizedString(R.string.remove_label, language)
-                                else localizedString(R.string.add_tag_label, language)
+                                text = tag.localizedName(language),
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
+                                modifier = Modifier.weight(1f)
                             )
+                            if (isSelected) {
+                                AppIconButton(
+                                    icon = Icons.Filled.Delete,
+                                    contentDescription = localizedString(R.string.remove_label, language),
+                                    onClick = { selectedTagIds.remove(tag.id) }
+                                )
+                            } else {
+                                AppIconButton(
+                                    icon = Icons.Filled.Add,
+                                    contentDescription = localizedString(R.string.add_tag_label, language),
+                                    onClick = { selectedTagIds.add(tag.id) }
+                                )
+                            }
                         }
+                    }
+                }
+                Surface(tonalElevation = 3.dp) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 12.dp, vertical = 4.dp)
+                    ) {
+                        SearchField(
+                            value = query,
+                            onValueChange = { query = it },
+                            label = localizedString(R.string.search_label, language)
+                        )
                     }
                 }
             }
@@ -564,64 +638,11 @@ private fun CreateIngredientDialog(
     onDismiss: () -> Unit,
     onConfirm: (IngredientReferenceDraft) -> Unit
 ) {
-    var nameFr by rememberSaveable { mutableStateOf("") }
-    var nameEn by rememberSaveable { mutableStateOf("") }
-    var density by rememberSaveable { mutableStateOf("") }
-    val mappings = remember { mutableStateListOf(EditableUnitMapping()) }
-
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        confirmButton = {
-            TextButton(onClick = {
-                onConfirm(
-                    IngredientReferenceDraft(
-                        nameFr = nameFr,
-                        nameEn = nameEn,
-                        defaultDensity = density.trim().toDoubleOrNull(),
-                        unitMappings = mappings.mapNotNull(EditableUnitMapping::toDomain)
-                    )
-                )
-            }) {
-                Text(localizedString(R.string.save_label, language))
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text(localizedString(R.string.cancel_label, language))
-            }
-        },
-        title = { Text(localizedString(R.string.create_ingredient_label, language)) },
-        text = {
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                LabeledField(localizedString(R.string.ingredient_name_fr_label, language), nameFr, onValueChange = { nameFr = it })
-                LabeledField(localizedString(R.string.ingredient_name_en_label, language), nameEn, onValueChange = { nameEn = it })
-                LabeledField(localizedString(R.string.ingredient_density_label, language), density, onValueChange = { density = it })
-                Text(text = localizedString(R.string.unit_conversions_label, language), style = MaterialTheme.typography.titleSmall)
-                mappings.forEachIndexed { index, mapping ->
-                    Card(modifier = Modifier.fillMaxWidth()) {
-                        Column(modifier = Modifier.padding(8.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                            LabeledField(localizedString(R.string.from_unit_label, language), mapping.fromUnit) {
-                                mappings[index] = mapping.copy(fromUnit = it)
-                            }
-                            LabeledField(localizedString(R.string.to_unit_label, language), mapping.toUnit) {
-                                mappings[index] = mapping.copy(toUnit = it)
-                            }
-                            LabeledField(localizedString(R.string.conversion_factor_label, language), mapping.factor) {
-                                mappings[index] = mapping.copy(factor = it)
-                            }
-                            if (mappings.size > 1) {
-                                TextButton(onClick = { mappings.removeAt(index) }) {
-                                    Text(localizedString(R.string.remove_label, language))
-                                }
-                            }
-                        }
-                    }
-                }
-                TextButton(onClick = { mappings.add(EditableUnitMapping()) }) {
-                    Text(localizedString(R.string.add_conversion_label, language))
-                }
-            }
-        }
+    IngredientDraftDialog(
+        language = language,
+        title = localizedString(R.string.create_ingredient_label, language),
+        onDismiss = onDismiss,
+        onConfirm = onConfirm
     )
 }
 
@@ -631,37 +652,20 @@ private fun CreateTagDialog(
     onDismiss: () -> Unit,
     onConfirm: (TagDraft) -> Unit
 ) {
-    var nameFr by rememberSaveable { mutableStateOf("") }
-    var nameEn by rememberSaveable { mutableStateOf("") }
-
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        confirmButton = {
-            TextButton(onClick = { onConfirm(TagDraft(nameFr = nameFr, nameEn = nameEn)) }) {
-                Text(localizedString(R.string.save_label, language))
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text(localizedString(R.string.cancel_label, language))
-            }
-        },
-        title = { Text(localizedString(R.string.create_tag_label, language)) },
-        text = {
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                LabeledField(localizedString(R.string.tag_name_fr_label, language), nameFr, onValueChange = { nameFr = it })
-                LabeledField(localizedString(R.string.tag_name_en_label, language), nameEn, onValueChange = { nameEn = it })
-            }
-        }
+    TagDraftDialog(
+        language = language,
+        title = localizedString(R.string.create_tag_label, language),
+        onDismiss = onDismiss,
+        onConfirm = onConfirm
     )
 }
-
 @Composable
 private fun LabeledField(
     label: String,
     value: String,
     singleLine: Boolean = true,
     minLines: Int = 1,
+    leadingIcon: (@Composable () -> Unit)? = null,
     onValueChange: (String) -> Unit
 ) {
     OutlinedTextField(
@@ -669,6 +673,7 @@ private fun LabeledField(
         onValueChange = onValueChange,
         modifier = Modifier.fillMaxWidth(),
         label = { Text(label) },
+        leadingIcon = leadingIcon,
         singleLine = singleLine,
         minLines = minLines
     )
@@ -725,23 +730,6 @@ private data class EditableIngredientRow(
     val originalText: String = ""
 )
 
-private data class EditableUnitMapping(
-    val fromUnit: String = "",
-    val toUnit: String = "",
-    val factor: String = ""
-) {
-    fun toDomain(): IngredientUnitMapping? {
-        val parsedFactor = factor.trim().toDoubleOrNull() ?: return null
-        val normalizedFrom = fromUnit.trim()
-        val normalizedTo = toUnit.trim()
-        if (normalizedFrom.isEmpty() || normalizedTo.isEmpty()) return null
-        return IngredientUnitMapping(
-            fromUnit = normalizedFrom,
-            toUnit = normalizedTo,
-            factor = parsedFactor
-        )
-    }
-}
 
 private fun IngredientLine.toEditableRow(): EditableIngredientRow = EditableIngredientRow(
     id = id,
@@ -789,7 +777,6 @@ private fun List<EditableIngredientRow>.toIngredientLines(
         }
     }
 }
-
 private fun buildIngredientPreview(
     quantity: Double?,
     unit: String?,
@@ -845,7 +832,7 @@ private fun IngredientReference.localizedName(language: AppLanguage): String = w
 private fun IngredientReference.pickerName(language: AppLanguage): String {
     val raw = localizedName(language)
     return raw
-        .replace(Regex("^[\\d\\s/.,¼½¾??????-]+"), "")
+        .replace(Regex("^[\\d\\s/.,-]+"), "")
         .replace(
             Regex(
                 "^(cup|cups|tablespoon|tablespoons|tbsp|teaspoon|teaspoons|tsp|ounce|ounces|oz|gram|grams|g|kilogram|kilograms|kg|milliliter|milliliters|ml|liter|liters|l|pound|pounds|lb|lbs|bag|bags|package|packages|pkg|jar|jars|can|cans|box|boxes)\\s+",
@@ -860,6 +847,32 @@ private fun Tag.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
     AppLanguage.EN -> nameEn.ifBlank { nameFr }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

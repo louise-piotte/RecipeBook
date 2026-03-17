@@ -1,4 +1,4 @@
-﻿package app.recipebook.data.schema
+package app.recipebook.data.schema
 
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.AttachmentRef
@@ -30,7 +30,6 @@ import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.UnitDefinition
 import app.recipebook.domain.model.UnitScope
 import app.recipebook.domain.model.UnitType
-import app.recipebook.domain.model.UserNotes
 
 fun RecipeCreationPayloadDto.toDomainRecipe(): Recipe = recipe.toDomain()
 
@@ -56,7 +55,6 @@ private fun RecipeDto.toDomain(): Recipe = Recipe(
     updatedAt = updatedAt,
     source = source?.toDomain(),
     languages = languages.toDomain(),
-    userNotes = userNotes?.toDomain(),
     ingredients = ingredients.map { it.toDomain() },
     servings = servings?.toDomain(),
     times = times?.toDomain(),
@@ -75,7 +73,6 @@ private fun Recipe.toDto(): RecipeDto = RecipeDto(
     updatedAt = updatedAt,
     source = source?.toDto(),
     languages = languages.toDto(),
-    userNotes = userNotes?.toDto(),
     ingredients = ingredients.map { it.toDto() },
     servings = servings?.toDto(),
     times = times?.toDto(),
@@ -112,24 +109,14 @@ private fun LocalizedSystemTextDto.toDomain(): LocalizedSystemText = LocalizedSy
     title = title,
     description = description,
     instructions = instructions,
-    notesSystem = notesSystem
+    notes = notes
 )
 
 private fun LocalizedSystemText.toDto(): LocalizedSystemTextDto = LocalizedSystemTextDto(
     title = title,
     description = description,
     instructions = instructions,
-    notesSystem = notesSystem
-)
-
-private fun UserNotesDto.toDomain(): UserNotes = UserNotes(
-    fr = fr,
-    en = en
-)
-
-private fun UserNotes.toDto(): UserNotesDto = UserNotesDto(
-    fr = fr,
-    en = en
+    notes = notes
 )
 
 private fun IngredientLineDto.toDomain(): IngredientLine = IngredientLine(

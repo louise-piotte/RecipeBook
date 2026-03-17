@@ -11,7 +11,7 @@ data class LocalizedSystemText(
     val title: String,
     val description: String,
     val instructions: String,
-    val notesSystem: String
+    val notes: String
 )
 
 data class BilingualText(
@@ -19,10 +19,6 @@ data class BilingualText(
     val en: LocalizedSystemText
 )
 
-data class UserNotes(
-    val fr: String? = null,
-    val en: String? = null
-)
 
 data class RecipeSource(
     val sourceUrl: String,
@@ -86,7 +82,6 @@ data class Recipe(
     val updatedAt: String,
     val source: RecipeSource? = null,
     val languages: BilingualText,
-    val userNotes: UserNotes? = null,
     val ingredients: List<IngredientLine>,
     val servings: Servings? = null,
     val times: RecipeTimes? = null,

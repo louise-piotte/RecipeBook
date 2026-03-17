@@ -1,4 +1,4 @@
-﻿package app.recipebook.data.local.recipes
+package app.recipebook.data.local.recipes
 
 import app.recipebook.data.local.db.IngredientReferenceDao
 import app.recipebook.data.local.db.IngredientReferenceEntity
@@ -21,7 +21,6 @@ import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
 import app.recipebook.domain.model.Tag
-import app.recipebook.domain.model.UserNotes
 import java.text.Normalizer
 import java.time.Instant
 import java.util.UUID
@@ -165,16 +164,15 @@ class RecipeRepository(
                 title = "",
                 description = "",
                 instructions = "",
-                notesSystem = ""
+                notes = ""
             ),
             en = LocalizedSystemText(
                 title = "",
                 description = "",
                 instructions = "",
-                notesSystem = ""
+                notes = ""
             )
         ),
-        userNotes = UserNotes(fr = null, en = null),
         ingredients = emptyList()
     )
 }
@@ -205,20 +203,15 @@ internal fun RecipeEntity.toDomainRecipe(): Recipe = Recipe(
             title = titleFr,
             description = descriptionFr,
             instructions = instructionsFr,
-            notesSystem = notesSystemFr
+            notes = notesFr
         ),
         en = LocalizedSystemText(
             title = titleEn,
             description = descriptionEn,
             instructions = instructionsEn,
-            notesSystem = notesSystemEn
+            notes = notesEn
         )
     ),
-    userNotes = if (userNotesFr != null || userNotesEn != null) {
-        UserNotes(fr = userNotesFr, en = userNotesEn)
-    } else {
-        null
-    },
     ingredients = storageJson.decodeFromString<List<StoredIngredientLine>>(ingredientLinesJson).map(StoredIngredientLine::toDomain),
     servings = if (servingsAmount != null) {
         Servings(amount = servingsAmount, unit = servingsUnit)
@@ -259,10 +252,8 @@ internal fun Recipe.toEntity(): RecipeEntity = RecipeEntity(
     descriptionEn = languages.en.description,
     instructionsFr = languages.fr.instructions,
     instructionsEn = languages.en.instructions,
-    notesSystemFr = languages.fr.notesSystem,
-    notesSystemEn = languages.en.notesSystem,
-    userNotesFr = userNotes?.fr,
-    userNotesEn = userNotes?.en,
+    notesFr = languages.fr.notes,
+    notesEn = languages.en.notes,
     sourceUrl = source?.sourceUrl,
     sourceName = source?.sourceName,
     servingsAmount = servings?.amount,

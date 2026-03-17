@@ -1,4 +1,4 @@
-﻿package app.recipebook.data.local.recipes
+package app.recipebook.data.local.recipes
 
 import app.recipebook.data.local.db.IngredientReferenceDao
 import app.recipebook.data.local.db.IngredientReferenceEntity
@@ -36,14 +36,14 @@ class RecipeRepositoryTest {
                 unit = "cups",
                 ingredientName = "all-purpose flour"
             )
-        ).copy(userNotes = app.recipebook.domain.model.UserNotes(fr = null, en = "Note"))
+        ).copy(languages = sampleRecipe(id = "recipe-round-trip").languages.copy(en = sampleRecipe(id = "recipe-round-trip").languages.en.copy(notes = "Note")))
 
         val roundTrip = original.toEntity().toDomainRecipe()
 
         assertEquals(original.languages.fr.title, roundTrip.languages.fr.title)
         assertEquals(original.ingredients.first().ingredientRefId, roundTrip.ingredients.first().ingredientRefId)
         assertEquals(original.ingredients.first().quantity, roundTrip.ingredients.first().quantity)
-        assertEquals(original.userNotes?.en, roundTrip.userNotes?.en)
+        assertEquals(original.languages.en.notes, roundTrip.languages.en.notes)
     }
 
     @Test

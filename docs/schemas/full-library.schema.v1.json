@@ -1,4 +1,4 @@
-﻿{
+{
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://recipebook.app/schemas/full-library/v1",
   "title": "RecipeBook Full Library v1",
@@ -21,12 +21,12 @@
     "LanguageTextRequired": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "description", "instructions", "notesSystem"],
+      "required": ["title", "description", "instructions", "notes"],
       "properties": {
         "title": { "type": "string" },
         "description": { "type": "string" },
         "instructions": { "type": "string" },
-        "notesSystem": { "type": "string" }
+        "notes": { "type": "string" }
       }
     },
     "LanguagesRequired": {
@@ -36,15 +36,6 @@
       "properties": {
         "fr": { "$ref": "#/$defs/LanguageTextRequired" },
         "en": { "$ref": "#/$defs/LanguageTextRequired" }
-      }
-    },
-    "UserNotes": {
-      "type": "object",
-      "additionalProperties": false,
-      "minProperties": 1,
-      "properties": {
-        "fr": { "type": "string" },
-        "en": { "type": "string" }
       }
     },
     "Source": {
@@ -165,7 +156,6 @@
         "updatedAt": { "$ref": "#/$defs/DateTime" },
         "source": { "$ref": "#/$defs/Source" },
         "languages": { "$ref": "#/$defs/LanguagesRequired" },
-        "userNotes": { "$ref": "#/$defs/UserNotes" },
         "ingredients": {
           "type": "array",
           "items": { "$ref": "#/$defs/IngredientLine" }

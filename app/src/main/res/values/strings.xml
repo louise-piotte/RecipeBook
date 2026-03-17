@@ -1,23 +1,20 @@
-﻿<resources>
+<resources>
     <string name="app_name">RecipeBook</string>
-    <string name="language_label">Language</string>
-    <string name="language_fr">FR</string>
-    <string name="language_en">EN</string>
-    <string name="user_notes_label">User notes</string>
-    <string name="system_notes_label">Recipe notes</string>
+    <string name="language_option_en_label">English</string>
+    <string name="language_option_fr_label">Fran&#231;ais</string>
+    <string name="menu_label">Menu</string>
+    <string name="menu_recipe_library_label">Recipes</string>
+    <string name="menu_ingredients_label">Ingredients</string>
+    <string name="menu_tags_label">Tags</string>
+    <string name="notes_label">Notes</string>
     <string name="placeholder_missing_fr">Non disponible en fran&#231;ais</string>
     <string name="placeholder_missing_en">Not available in English</string>
-    <string name="recipe_library_title">Recipe Library</string>
-    <string name="recipe_library_subtitle">Your local recipe library with reusable ingredients and tags.</string>
+    <string name="recipe_library_title">Recipes</string>
     <string name="search_label">Search recipes</string>
     <string name="search_placeholder">Search by title or description</string>
-    <string name="library_section_title">Library</string>
     <string name="detail_section_title">Recipe details</string>
-    <string name="read_only_label">Read only</string>
-    <string name="recipe_count">%1$d recipes</string>
     <string name="empty_results">No recipes match the current search.</string>
     <string name="recipe_not_found">Recipe not found.</string>
-    <string name="open_recipe_detail">Open recipe details</string>
     <string name="back_label">Back</string>
     <string name="add_recipe_label">Add recipe</string>
     <string name="edit_recipe_label">Edit recipe</string>
@@ -30,10 +27,8 @@
     <string name="description_en_label">Description (EN)</string>
     <string name="instructions_fr_label">Instructions (FR)</string>
     <string name="instructions_en_label">Instructions (EN)</string>
-    <string name="system_notes_fr_label">Recipe notes (FR)</string>
-    <string name="system_notes_en_label">Recipe notes (EN)</string>
-    <string name="user_notes_fr_label">User notes (FR)</string>
-    <string name="user_notes_en_label">User notes (EN)</string>
+    <string name="notes_fr_label">Notes (FR)</string>
+    <string name="notes_en_label">Notes (EN)</string>
     <string name="source_name_label">Source name</string>
     <string name="source_url_label">Source URL</string>
     <string name="servings_amount_label">Servings amount</string>
@@ -41,9 +36,8 @@
     <string name="prep_minutes_label">Prep minutes</string>
     <string name="cook_minutes_label">Cook minutes</string>
     <string name="total_minutes_label">Total minutes</string>
-    <string name="ingredients_multiline_label">Ingredients (one per line)</string>
     <string name="ingredients_label">Ingredients</string>
-    <string name="ingredients_editor_label">Ingredients and reuse</string>
+    <string name="ingredients_editor_label">Ingredients</string>
     <string name="instructions_label">Instructions</string>
     <string name="source_label">Source</string>
     <string name="tags_label">Tags</string>
@@ -85,21 +79,21 @@
     <string name="cook_time_value">Cook %1$d min</string>
     <string name="total_time_value">Total %1$d min</string>
     <string name="rating_value">Rating %1$.1f/5</string>
-    <string name="manage_library_data_label">Manage ingredients and tags</string>
+    <string name="detail_amount_value">Amount: %1$s</string>
+    <string name="detail_prep_time_value">Prep Time: %1$d min</string>
+    <string name="detail_cook_time_value">Cook Time: %1$d min</string>
+    <string name="detail_rating_value">Rating: %1$.1f/5</string>
     <string name="manage_library_data_short_label">Ingredients and tags</string>
-    <string name="manage_library_data_subtitle">Edit the reusable ingredients and tags stored in the local database.</string>
-    <string name="manage_ingredients_section_label">Ingredients database</string>
-    <string name="manage_tags_section_label">Tags database</string>
-    <string name="manage_item_count_label">%1$d items</string>
+    <string name="manage_ingredients_section_label">Ingredients</string>
+    <string name="manage_tags_section_label">Tags</string>
     <string name="search_ingredients_label">Search ingredients</string>
     <string name="search_tags_label">Search tags</string>
     <string name="no_ingredient_references_label">No reusable ingredients found.</string>
     <string name="no_tag_references_label">No tags found.</string>
-    <string name="edit_item_label">Edit</string>
     <string name="edit_ingredient_reference_label">Edit ingredient</string>
     <string name="edit_tag_reference_label">Edit tag</string>
     <string name="ingredient_density_value_label">Density %1$s g/ml</string>
-    <string name="ingredient_conversion_value_label">%1$s → %2$s × %3$s</string>
+    <string name="ingredient_conversion_value_label">%1$s -&gt; %2$s x %3$s</string>
 </resources>
 
 

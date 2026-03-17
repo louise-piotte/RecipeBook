@@ -1,4 +1,4 @@
-﻿package app.recipebook.data.schema
+package app.recipebook.data.schema
 
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.AttachmentRef
@@ -30,7 +30,6 @@ import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.UnitDefinition
 import app.recipebook.domain.model.UnitScope
 import app.recipebook.domain.model.UnitType
-import app.recipebook.domain.model.UserNotes
 import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -184,16 +183,15 @@ class SchemaRoundTripTest {
                 title = "Pancakes classiques",
                 description = "Pancakes moelleux et rapides.",
                 instructions = "Melanger, verser et cuire des deux cotes.",
-                notesSystem = ""
+                notes = ""
             ),
             en = LocalizedSystemText(
                 title = "Classic pancakes",
                 description = "Quick fluffy pancakes.",
                 instructions = "Mix, pour, and cook both sides.",
-                notesSystem = ""
+                notes = ""
             )
         ),
-        userNotes = UserNotes(fr = null, en = "Use buttermilk when available."),
         ingredients = listOf(
             IngredientLine(
                 id = "2f3287f5-a90e-4e2d-b3ca-1bded383a4c2",

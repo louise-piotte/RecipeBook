@@ -1,4 +1,4 @@
-﻿package app.recipebook.data.schema
+package app.recipebook.data.schema
 
 import java.io.File
 import kotlinx.serialization.json.Json
@@ -27,6 +27,21 @@ class BundledBoiteDeNoelPayloadTest {
         assertTrue(payload.library.recipes.any { it.tags.contains("tag-holiday") })
         assertTrue(payload.library.ingredientReferences.any { it.nameEn == "all-purpose flour" })
         assertTrue(payload.library.ingredientReferences.any { it.nameEn == "icing sugar" })
+        assertTrue(
+            payload.library.ingredientReferences.any {
+                it.id == "ingredient-ref-all-purpose-flour" && it.nameFr == "farine tout usage"
+            }
+        )
+        assertTrue(
+            payload.library.ingredientReferences.any {
+                it.id == "ingredient-ref-icing-sugar" && it.nameFr == "sucre a glacer"
+            }
+        )
+        assertTrue(
+            payload.library.ingredientReferences.any {
+                it.id == "ingredient-ref-butter" && it.nameFr == "beurre"
+            }
+        )
         assertTrue(payload.library.ingredientReferences.none { it.nameEn.startsWith("Suggested combinations") })
     }
 }

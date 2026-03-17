@@ -1,12 +1,12 @@
-﻿# RecipeBook Roadmap (Active To-Do)
+# RecipeBook Roadmap (Active To-Do)
 
 - Build MVP functional screens:
   - Basic tags and collections management
 - Implement enhanced unit conversion behavior:
   - Show both C and F for temperatures
-  - Support lb â†” g conversion
-  - Support fl oz â†” ml conversion
-  - Add per-ingredient custom density (g/ml) for weight â†” volume conversion
+  - Support lb ↔ g conversion
+  - Support fl oz ↔ ml conversion
+  - Add per-ingredient custom density (g/ml) for weight ↔ volume conversion
 - Finalize substitution modeling before implementation:
   - Global form-to-form equivalent rules (same ingredient states)
   - Contextual ingredient-to-ingredient rules with scope (dish type/role/method)

@@ -1,4 +1,4 @@
-﻿package app.recipebook.data.schema
+package app.recipebook.data.schema
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -36,8 +36,6 @@ data class RecipeDto(
     val source: SourceDto? = null,
     @SerialName("languages")
     val languages: LanguagesDto,
-    @SerialName("userNotes")
-    val userNotes: UserNotesDto? = null,
     @SerialName("ingredients")
     val ingredients: List<IngredientLineDto>,
     @SerialName("servings")
@@ -84,16 +82,8 @@ data class LocalizedSystemTextDto(
     val description: String,
     @SerialName("instructions")
     val instructions: String,
-    @SerialName("notesSystem")
-    val notesSystem: String
-)
-
-@Serializable
-data class UserNotesDto(
-    @SerialName("fr")
-    val fr: String? = null,
-    @SerialName("en")
-    val en: String? = null
+    @SerialName("notes")
+    val notes: String
 )
 
 @Serializable

@@ -1,24 +1,40 @@
-﻿package app.recipebook.ui.recipes
+package app.recipebook.ui.recipes
 
 import android.content.Intent
 import android.content.res.Configuration
+import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.AssistChip
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Language
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -28,8 +44,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import app.recipebook.IngredientTagManagerActivity
 import app.recipebook.R
 import app.recipebook.RecipeDetailActivity
 import app.recipebook.RecipeEditorActivity
@@ -43,9 +61,10 @@ import java.util.Locale
 @Composable
 fun RecipeLibraryScreen(
     repository: RecipeRepository,
+    language: AppLanguage,
+    onLanguageChange: (AppLanguage) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var language by rememberSaveable { mutableStateOf(AppLanguage.EN) }
     var searchQuery by rememberSaveable { mutableStateOf("") }
     val recipes by repository.observeRecipes().collectAsState(initial = emptyList())
     val resolver = remember { BilingualTextResolver() }
@@ -71,74 +90,78 @@ fun RecipeLibraryScreen(
         }
     }
 
-    Scaffold(modifier = modifier.fillMaxSize()) { innerPadding ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
-                .verticalScroll(rememberScrollState())
-                .padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            Text(
-                text = localizedString(R.string.recipe_library_title, language),
-                style = MaterialTheme.typography.headlineMedium
-            )
-            Text(
-                text = localizedString(R.string.recipe_library_subtitle, language),
-                style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
+    Scaffold(
+        modifier = modifier.fillMaxSize(),
+        topBar = {
+            RecipeBookTopBar(
+                title = localizedString(R.string.recipe_library_title, language),
+                language = language,
+                onLanguageChange = onLanguageChange,
+                onNavigate = { destination ->
+                    when (destination) {
+                        MainMenuDestination.Library -> Unit
+                        MainMenuDestination.Ingredients -> {
+                            context.startActivity(
+                                IngredientTagManagerActivity.intentForSection(
+                                    context = context,
+                                    section = LibraryManagerSection.Ingredients
+                                )
+                            )
+                        }
 
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                LanguageChip(
-                    label = localizedString(R.string.language_en, language),
-                    onClick = { language = AppLanguage.EN }
-                )
-                LanguageChip(
-                    label = localizedString(R.string.language_fr, language),
-                    onClick = { language = AppLanguage.FR }
-                )
-                LanguageChip(
-                    label = localizedString(R.string.add_recipe_label, language),
-                    onClick = {
-                        context.startActivity(Intent(context, RecipeEditorActivity::class.java))
+                        MainMenuDestination.Tags -> {
+                            context.startActivity(
+                                IngredientTagManagerActivity.intentForSection(
+                                    context = context,
+                                    section = LibraryManagerSection.Tags
+                                )
+                            )
+                        }
                     }
+                }
+            ) {
+                AppIconButton(
+                    icon = Icons.Filled.Add,
+                    contentDescription = localizedString(R.string.add_recipe_label, language),
+                    onClick = { context.startActivity(Intent(context, RecipeEditorActivity::class.java)) }
                 )
             }
-
-            OutlinedTextField(
-                value = searchQuery,
-                onValueChange = { searchQuery = it },
-                modifier = Modifier.fillMaxWidth(),
-                label = { Text(localizedString(R.string.search_label, language)) },
-                placeholder = { Text(localizedString(R.string.search_placeholder, language)) },
-                singleLine = true,
-                shape = RoundedCornerShape(18.dp)
-            )
-
-            SectionHeader(
-                title = localizedString(R.string.library_section_title, language),
-                trailing = localizedString(R.string.recipe_count, language, filteredRecipes.size)
-            )
-
+        },
+        bottomBar = {
+            BottomSearchBar {
+                SearchField(
+                    value = searchQuery,
+                    onValueChange = { searchQuery = it },
+                    label = localizedString(R.string.search_label, language),
+                    placeholder = localizedString(R.string.search_placeholder, language)
+                )
+            }
+        }
+    ) { innerPadding ->
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding),
+            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 12.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
             if (filteredRecipes.isEmpty()) {
-                EmptyLibraryCard(language = language)
+                item {
+                    EmptyLibraryCard(language = language)
+                }
             } else {
-                Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    filteredRecipes.forEach { recipe ->
-                        RecipeListCard(
-                            recipe = recipe,
-                            language = language,
-                            resolver = resolver,
-                            onClick = {
-                                context.startActivity(
-                                    Intent(context, RecipeDetailActivity::class.java)
-                                        .putExtra(RecipeDetailActivity.EXTRA_RECIPE_ID, recipe.id)
-                                )
-                            }
-                        )
-                    }
+                items(filteredRecipes, key = { it.id }) { recipe ->
+                    RecipeListCard(
+                        recipe = recipe,
+                        language = language,
+                        resolver = resolver,
+                        onClick = {
+                            context.startActivity(
+                                Intent(context, RecipeDetailActivity::class.java)
+                                    .putExtra(RecipeDetailActivity.EXTRA_RECIPE_ID, recipe.id)
+                            )
+                        }
+                    )
                 }
             }
         }
@@ -146,31 +169,43 @@ fun RecipeLibraryScreen(
 }
 
 @Composable
-private fun LanguageChip(
+internal fun SearchField(
+    value: String,
+    onValueChange: (String) -> Unit,
     label: String,
-    onClick: () -> Unit
+    placeholder: String? = null,
+    modifier: Modifier = Modifier
 ) {
-    AssistChip(
-        onClick = onClick,
-        label = { Text(label) }
+    OutlinedTextField(
+        value = value,
+        onValueChange = onValueChange,
+        modifier = modifier.fillMaxWidth(),
+        label = { Text(label) },
+        placeholder = placeholder?.let { { Text(it) } },
+        leadingIcon = { Icon(Icons.Filled.Search, contentDescription = null) },
+        singleLine = true,
+        shape = RoundedCornerShape(18.dp)
     )
 }
 
 @Composable
-private fun SectionHeader(
-    title: String,
-    trailing: String
+internal fun BottomSearchBar(
+    useNavigationBarPadding: Boolean = true,
+    content: @Composable () -> Unit
 ) {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Text(text = title, style = MaterialTheme.typography.titleLarge)
-        Text(
-            text = trailing,
-            style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.primary
-        )
+    Surface(tonalElevation = 3.dp) {
+        val barModifier = if (useNavigationBarPadding) {
+            Modifier.navigationBarsPadding()
+        } else {
+            Modifier
+        }
+        Column(
+            modifier = barModifier
+                .fillMaxWidth()
+                .padding(horizontal = 12.dp, vertical = 8.dp)
+        ) {
+            content()
+        }
     }
 }
 
@@ -188,8 +223,8 @@ private fun RecipeListCard(
     ) {
         Surface(color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f)) {
             Column(
-                modifier = Modifier.padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(6.dp)
+                modifier = Modifier.padding(14.dp),
+                verticalArrangement = Arrangement.spacedBy(4.dp)
             ) {
                 Text(
                     text = resolver.resolveSystemText(language, recipe.titleText()),
@@ -206,11 +241,6 @@ private fun RecipeListCard(
                         style = MaterialTheme.typography.labelLarge
                     )
                 }
-                Text(
-                    text = localizedString(R.string.open_recipe_detail, language),
-                    style = MaterialTheme.typography.labelLarge,
-                    color = MaterialTheme.colorScheme.primary
-                )
             }
         }
     }
@@ -260,4 +290,105 @@ internal fun localizedString(
     return localizedContext.resources.getString(resId, *formatArgs)
 }
 
+enum class LibraryManagerSection {
+    Ingredients,
+    Tags
+}
 
+internal enum class MainMenuDestination(@StringRes val labelResId: Int) {
+    Library(R.string.menu_recipe_library_label),
+    Ingredients(R.string.menu_ingredients_label),
+    Tags(R.string.menu_tags_label)
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+internal fun RecipeBookTopBar(
+    title: String,
+    language: AppLanguage,
+    onLanguageChange: (AppLanguage) -> Unit,
+    onNavigate: (MainMenuDestination) -> Unit,
+    navigationIcon: (@Composable () -> Unit)? = null,
+    actions: @Composable RowScope.() -> Unit = {}
+) {
+    var menuExpanded by remember { mutableStateOf(false) }
+
+    TopAppBar(
+        title = { Text(title) },
+        navigationIcon = { navigationIcon?.invoke() },
+        actions = {
+            actions()
+            AppIconButton(
+                icon = Icons.Filled.Menu,
+                contentDescription = localizedString(R.string.menu_label, language),
+                onClick = { menuExpanded = true }
+            )
+            DropdownMenu(
+                expanded = menuExpanded,
+                onDismissRequest = { menuExpanded = false }
+            ) {
+                MainMenuDestination.entries.forEach { destination ->
+                    DropdownMenuItem(
+                        text = { Text(localizedString(destination.labelResId, language)) },
+                        onClick = {
+                            menuExpanded = false
+                            onNavigate(destination)
+                        }
+                    )
+                }
+                HorizontalDivider()
+                DropdownMenuItem(
+                    text = { Text(localizedString(R.string.language_option_en_label, language)) },
+                    leadingIcon = { Icon(Icons.Filled.Language, contentDescription = null) },
+                    onClick = {
+                        menuExpanded = false
+                        onLanguageChange(AppLanguage.EN)
+                    }
+                )
+                DropdownMenuItem(
+                    text = { Text(localizedString(R.string.language_option_fr_label, language)) },
+                    leadingIcon = { Icon(Icons.Filled.Language, contentDescription = null) },
+                    onClick = {
+                        menuExpanded = false
+                        onLanguageChange(AppLanguage.FR)
+                    }
+                )
+            }
+        }
+    )
+}
+
+@Composable
+internal fun AppIconButton(
+    icon: ImageVector,
+    contentDescription: String,
+    onClick: () -> Unit
+) {
+    IconButton(onClick = onClick) {
+        Icon(imageVector = icon, contentDescription = contentDescription)
+    }
+}
+
+@Composable
+internal fun BackIconButton(
+    contentDescription: String,
+    onClick: () -> Unit
+) {
+    AppIconButton(
+        icon = Icons.AutoMirrored.Filled.ArrowBack,
+        contentDescription = contentDescription,
+        onClick = onClick
+    )
+}
+
+@Composable
+internal fun EditIconButton(
+    contentDescription: String,
+    onClick: () -> Unit
+) {
+    AppIconButton(
+        icon = Icons.Filled.Edit,
+        contentDescription = contentDescription,
+        onClick = onClick
+    )
+}

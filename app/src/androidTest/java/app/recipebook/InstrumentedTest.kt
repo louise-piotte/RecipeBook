@@ -1,4 +1,4 @@
-﻿package app.recipebook
+package app.recipebook
 
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -49,8 +49,8 @@ class InstrumentedTest {
             descriptionEn = "EN description",
             instructionsFr = "Cuire 2 minutes",
             instructionsEn = "Cook 2 minutes",
-            notesSystemFr = "",
-            notesSystemEn = "",
+            notesFr = "",
+            notesEn = "",
             ingredientLinesJson = "[]",
             tagIdsJson = "[\"tag-1\"]",
             collectionIdsJson = "[]",
@@ -109,8 +109,8 @@ class InstrumentedTest {
             descriptionEn = "EN description",
             instructionsFr = "Une etape",
             instructionsEn = "One step",
-            notesSystemFr = "",
-            notesSystemEn = "",
+            notesFr = "",
+            notesEn = "",
             ingredientLinesJson = "[]",
             tagIdsJson = "[]",
             collectionIdsJson = "[]",
