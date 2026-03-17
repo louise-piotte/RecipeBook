@@ -92,90 +92,65 @@ class RecipeRepositoryTest {
     }
 
     @Test
-    fun seedBundledLibraryIfMissing_repairsExistingSeedRecipeMetadata() = runBlocking {
+    fun seedBundledLibraryIfMissing_doesNotOverwriteExistingRecipe() = runBlocking {
         val fakeDao = FakeRecipeDao()
+        val existingRecipe = sampleRecipe(
+            id = "seed-existing",
+            titleEn = "User recipe",
+            ingredient = IngredientLine(
+                id = "ingredient-1",
+                ingredientRefId = "ingredient-ref-user-choice",
+                originalText = "2 cups custom flour",
+                quantity = 2.0,
+                unit = "cups",
+                ingredientName = "custom flour"
+            ),
+            tagIds = listOf("tag-user")
+        )
+        fakeDao.upsert(existingRecipe.toEntity())
         val repository = RecipeRepository(
             recipeDao = fakeDao,
             seedLibrary = SeedLibraryData(
                 recipes = listOf(
                     sampleRecipe(
                         id = "seed-existing",
+                        titleEn = "Bundled recipe",
                         ingredient = IngredientLine(
                             id = "ingredient-1",
-                            ingredientRefId = "ingredient-ref-all-purpose-flour",
+                            ingredientRefId = "ingredient-ref-bundled",
                             originalText = "2 cups flour",
                             quantity = 2.0,
                             unit = "cups",
                             ingredientName = "all-purpose flour"
                         ),
-                        tagIds = listOf("tag-cookies")
+                        tagIds = listOf("tag-bundled")
                     )
                 )
             )
         )
-        fakeDao.upsert(
-            sampleRecipe(
-                id = "seed-existing",
-                ingredient = IngredientLine(
-                    id = "ingredient-1",
-                    originalText = "2 cups flour",
-                    ingredientName = "2 cups flour"
-                )
-            ).toEntity()
-        )
 
         repository.seedBundledLibraryIfMissing()
 
-        val repaired = fakeDao.getById("seed-existing")!!.toDomainRecipe()
-        assertEquals("ingredient-ref-all-purpose-flour", repaired.ingredients.first().ingredientRefId)
-        assertEquals(2.0, repaired.ingredients.first().quantity)
-        assertEquals("cups", repaired.ingredients.first().unit)
-        assertEquals("all-purpose flour", repaired.ingredients.first().ingredientName)
-        assertTrue(repaired.tagIds.contains("tag-cookies"))
+        val stored = fakeDao.getById("seed-existing")!!.toDomainRecipe()
+        assertEquals("User recipe", stored.languages.en.title)
+        assertEquals("ingredient-ref-user-choice", stored.ingredients.first().ingredientRefId)
+        assertEquals(listOf("tag-user"), stored.tagIds)
     }
 
     @Test
-    fun seedBundledLibraryIfMissing_repairsCanonicalIngredientDetailsFromBundledLibrary() = runBlocking {
-        val fakeDao = FakeRecipeDao()
-        val repository = RecipeRepository(
-            recipeDao = fakeDao,
-            seedLibrary = SeedLibraryData(
-                recipes = listOf(
-                    sampleRecipe(
-                        id = "seed-canonical",
-                        ingredient = IngredientLine(
-                            id = "ingredient-1",
-                            ingredientRefId = "ingredient-ref-icing-sugar",
-                            originalText = "85 g powdered sugar",
-                            quantity = 85.0,
-                            unit = "g",
-                            ingredientName = "icing sugar"
-                        )
-                    )
-                )
+    fun recipeEntityRoundTrip_preservesUrlOnlySource() {
+        val original = sampleRecipe(id = "recipe-source-only").copy(
+            source = app.recipebook.domain.model.RecipeSource(
+                sourceUrl = "https://example.com/recipe",
+                sourceName = ""
             )
         )
-        fakeDao.upsert(
-            sampleRecipe(
-                id = "seed-canonical",
-                ingredient = IngredientLine(
-                    id = "ingredient-1",
-                    ingredientRefId = "ingredient-ref-powdered-sugar",
-                    originalText = "85 g powdered sugar",
-                    ingredientName = "powdered sugar"
-                )
-            ).toEntity()
-        )
 
-        repository.seedBundledLibraryIfMissing()
+        val roundTrip = original.toEntity().toDomainRecipe()
 
-        val repaired = fakeDao.getById("seed-canonical")!!.toDomainRecipe().ingredients.first()
-        assertEquals("ingredient-ref-icing-sugar", repaired.ingredientRefId)
-        assertEquals("icing sugar", repaired.ingredientName)
-        assertEquals(85.0, repaired.quantity)
-        assertEquals("g", repaired.unit)
+        assertEquals("https://example.com/recipe", roundTrip.source?.sourceUrl)
+        assertEquals("", roundTrip.source?.sourceName)
     }
-
     @Test
     fun createReusableIngredientAndTag_persistsNormalizedValues() = runBlocking {
         val ingredientDao = FakeIngredientReferenceDao()
@@ -349,6 +324,7 @@ private class FakeTagDao : TagDao {
 
     override suspend fun getById(id: String): TagEntity? = items[id]
 }
+
 
 
 

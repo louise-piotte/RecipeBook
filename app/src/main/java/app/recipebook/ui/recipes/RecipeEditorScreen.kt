@@ -247,7 +247,7 @@ fun RecipeEditorScreen(
                             ),
                             servings = parseServings(servingsAmount, servingsUnit),
                             times = parseTimes(prepMinutes, cookMinutes, totalMinutes),
-                            ingredients = ingredientRows.toIngredientLines(ingredientReferences, language),
+                            ingredients = ingredientRows.toIngredientLines(ingredientReferences),
                             tagIds = selectedTagIds.distinct()
                         )
                     )
@@ -268,7 +268,7 @@ fun RecipeEditorScreen(
                 val currentRow = ingredientRows[index]
                 ingredientRows[index] = currentRow.copy(
                     ingredientRefId = ingredientReference.id,
-                    ingredientName = ingredientReference.localizedName(language).ifBlank { currentRow.ingredientName }
+                    ingredientName = ingredientReference.canonicalName().ifBlank { currentRow.ingredientName }
                 )
                 ingredientPickerIndex = null
             },
@@ -290,7 +290,7 @@ fun RecipeEditorScreen(
                     val currentRow = ingredientRows[targetIndex]
                     ingredientRows[targetIndex] = currentRow.copy(
                         ingredientRefId = created.id,
-                        ingredientName = created.localizedName(language)
+                        ingredientName = created.canonicalName()
                     )
                     showCreateIngredientDialog = false
                 }
@@ -470,19 +470,7 @@ private fun IngredientPickerDialog(
 ) {
     var query by rememberSaveable { mutableStateOf("") }
     val filtered = remember(query, ingredientReferences) {
-        val trimmed = query.trim()
-        if (trimmed.isEmpty()) {
-            ingredientReferences
-        } else {
-            ingredientReferences.filter { ingredientReference ->
-                listOf(
-                    ingredientReference.nameFr,
-                    ingredientReference.nameEn,
-                    ingredientReference.aliasesFr.joinToString(" "),
-                    ingredientReference.aliasesEn.joinToString(" ")
-                ).any { it.contains(trimmed, ignoreCase = true) }
-            }
-        }
+        filterIngredientReferences(ingredientReferences, query)
     }
 
     AlertDialog(
@@ -507,7 +495,7 @@ private fun IngredientPickerDialog(
                         .heightIn(max = 280.dp),
                     verticalArrangement = Arrangement.spacedBy(2.dp)
                 ) {
-                    items(filtered.take(12), key = { it.id }) { ingredientReference ->
+                    items(filtered, key = { it.id }) { ingredientReference ->
                         TextButton(onClick = { onSelect(ingredientReference) }) {
                             Text(ingredientReference.pickerName(language))
                         }
@@ -535,14 +523,7 @@ private fun TagPickerDialog(
 ) {
     var query by rememberSaveable { mutableStateOf("") }
     val filtered = remember(query, tags) {
-        val trimmed = query.trim()
-        if (trimmed.isEmpty()) {
-            tags
-        } else {
-            tags.filter { tag ->
-                listOf(tag.nameFr, tag.nameEn, tag.slug).any { it.contains(trimmed, ignoreCase = true) }
-            }
-        }
+        filterTags(tags, query)
     }
     val orderedTags = filtered.sortedWith(
         compareByDescending<Tag> { selectedTagIds.contains(it.id) }
@@ -583,7 +564,7 @@ private fun TagPickerDialog(
                         .heightIn(max = 280.dp),
                     verticalArrangement = Arrangement.spacedBy(0.dp)
                 ) {
-                    items(orderedTags.take(12), key = { it.id }) { tag ->
+                    items(orderedTags, key = { it.id }) { tag ->
                         val isSelected = selectedTagIds.contains(tag.id)
                         Row(
                             modifier = Modifier
@@ -719,7 +700,7 @@ private fun parseTimes(prep: String, cook: String, total: String): RecipeTimes? 
     }
 }
 
-private data class EditableIngredientRow(
+internal data class EditableIngredientRow(
     val id: String,
     val ingredientRefId: String? = null,
     val ingredientName: String = "",
@@ -742,16 +723,35 @@ private fun IngredientLine.toEditableRow(): EditableIngredientRow = EditableIngr
     originalText = originalText
 )
 
+
+internal fun editableIngredientRowForTest(
+    id: String,
+    ingredientRefId: String? = null,
+    ingredientName: String = "",
+    quantity: String = "",
+    unit: String = "",
+    preparation: String = "",
+    notes: String = "",
+    originalText: String = ""
+): EditableIngredientRow = EditableIngredientRow(
+    id = id,
+    ingredientRefId = ingredientRefId,
+    ingredientName = ingredientName,
+    quantity = quantity,
+    unit = unit,
+    preparation = preparation,
+    notes = notes,
+    originalText = originalText
+)
 private fun blankIngredientRow(): EditableIngredientRow = EditableIngredientRow(id = UUID.randomUUID().toString())
 
-private fun List<EditableIngredientRow>.toIngredientLines(
-    ingredientReferences: List<IngredientReference>,
-    language: AppLanguage
+internal fun List<EditableIngredientRow>.toIngredientLines(
+    ingredientReferences: List<IngredientReference>
 ): List<IngredientLine> {
     val ingredientMap = ingredientReferences.associateBy(IngredientReference::id)
     return mapNotNull { row ->
         val ingredientReference = row.ingredientRefId?.let(ingredientMap::get)
-        val ingredientName = ingredientReference?.localizedName(language)
+        val ingredientName = ingredientReference?.canonicalName()
             ?.ifBlank { row.ingredientName.trim() }
             ?: row.ingredientName.trim()
         val quantity = row.quantity.trim().toDoubleOrNull()
@@ -824,6 +824,32 @@ private fun EditableIngredientRow.toIngredientLinePreview(
         notes = resolvedNotes
     )
 }
+internal fun filterIngredientReferences(
+    ingredientReferences: List<IngredientReference>,
+    query: String
+): List<IngredientReference> {
+    val trimmed = query.trim()
+    if (trimmed.isEmpty()) return ingredientReferences
+    return ingredientReferences.filter { ingredientReference ->
+        listOf(
+            ingredientReference.nameFr,
+            ingredientReference.nameEn,
+            ingredientReference.aliasesFr.joinToString(" "),
+            ingredientReference.aliasesEn.joinToString(" ")
+        ).any { it.contains(trimmed, ignoreCase = true) }
+    }
+}
+
+internal fun filterTags(
+    tags: List<Tag>,
+    query: String
+): List<Tag> {
+    val trimmed = query.trim()
+    if (trimmed.isEmpty()) return tags
+    return tags.filter { tag ->
+        listOf(tag.nameFr, tag.nameEn, tag.slug).any { it.contains(trimmed, ignoreCase = true) }
+    }
+}
 private fun IngredientReference.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
     AppLanguage.EN -> nameEn.ifBlank { nameFr }
@@ -843,10 +869,17 @@ private fun IngredientReference.pickerName(language: AppLanguage): String {
         .trim()
         .ifBlank { raw }
 }
+internal fun IngredientReference.canonicalName(): String = nameEn.ifBlank { nameFr }
+
 private fun Tag.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
     AppLanguage.EN -> nameEn.ifBlank { nameFr }
 }
+
+
+
+
+
 
 
 

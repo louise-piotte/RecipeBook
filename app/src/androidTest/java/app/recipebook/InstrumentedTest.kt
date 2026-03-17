@@ -68,7 +68,7 @@ class InstrumentedTest {
     }
 
     @Test
-    fun recipeRepository_seedBundledRecipes_populatesDatabaseOnce() = runBlocking {
+    fun recipeRepository_seedBundledLibrary_populatesDatabaseOnce() = runBlocking {
         val factoryRepository = RecipeRepository(db.recipeDao())
         val bundledRecipes = listOf(
             factoryRepository.createBlankRecipe("2026-03-13T10:00:00Z").copy(
@@ -88,8 +88,8 @@ class InstrumentedTest {
         )
         val repository = RecipeRepository(db.recipeDao(), seedLibrary = SeedLibraryData(recipes = bundledRecipes))
 
-        repository.seedBundledRecipesIfMissing()
-        repository.seedBundledRecipesIfMissing()
+        repository.seedBundledLibraryIfMissing()
+        repository.seedBundledLibraryIfMissing()
 
         val storedRecipes = db.recipeDao().observeAll().first()
 
@@ -98,7 +98,7 @@ class InstrumentedTest {
     }
 
     @Test
-    fun recipeRepository_seedBundledRecipesIfMissing_addsOnlyMissingRecipes() = runBlocking {
+    fun recipeRepository_seedBundledLibraryIfMissing_addsOnlyMissingRecipes() = runBlocking {
         val existing = RecipeEntity(
             id = "seed-existing",
             createdAt = "2026-03-13T10:00:00Z",
@@ -138,7 +138,7 @@ class InstrumentedTest {
         )
         val repository = RecipeRepository(db.recipeDao(), seedLibrary = SeedLibraryData(recipes = bundledRecipes))
 
-        repository.seedBundledRecipesIfMissing()
+        repository.seedBundledLibraryIfMissing()
 
         val storedRecipes = db.recipeDao().observeAll().first()
 
@@ -169,5 +169,6 @@ class InstrumentedTest {
         assertTrue(storedAfterDelete.isEmpty())
     }
 }
+
 
 

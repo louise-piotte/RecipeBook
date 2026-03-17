@@ -56,6 +56,7 @@
 - 2026-03-06: Bilingual foundation must keep language/placeholder logic UI-agnostic so UI layout/structure can evolve without rewriting core behavior.
 - 2026-03-13: Converted the Boite de Noel recipe PDF into a curated bundled full-library JSON kept in docs/recipes and app assets for seed/demo use.
 - 2026-03-16: The codebase is still very new and far from a complete product. Do not add backward-compatibility layers for draft code, draft schemas, or debug seed recipes. Prefer removing and replacing problematic draft code/data instead of stacking compatibility logic. If a change feels too large or too destructive, stop and ask the user before proceeding.
+- 2026-03-16: Treat backward compatibility as out of scope until explicitly requested by the user. For this pre-MVP codebase, do not preserve old draft behavior, old draft databases, old draft schemas, or compatibility shims by default.
 - 2026-03-16: For any non-trivial change, present a plan and get user confirmation before proceeding. Trivial changes do not require a confirmation step.
 - 2026-03-16: Prefer classic, compact UI iconography to keep screens clean: hamburger for menu, plus for add/new, trash can for delete, and similar widely recognized symbols over text-only actions when practical.
 

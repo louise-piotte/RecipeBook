@@ -123,36 +123,29 @@ class RecipeRepository(
 
 
     suspend fun seedBundledLibraryIfMissing() {
-        val recipesToInsert = mutableListOf<RecipeEntity>()
-        val recipesToRepair = mutableListOf<RecipeEntity>()
-
         seedLibrary.recipes
             .distinctBy(Recipe::id)
             .forEach { seedRecipe ->
-                val existingRecipe = recipeDao.getById(seedRecipe.id)?.toDomainRecipe()
-                if (existingRecipe == null) {
-                    recipesToInsert += seedRecipe.toEntity()
-                } else {
-                    val repairedRecipe = mergeSeedEnhancements(existingRecipe, seedRecipe)
-                    if (repairedRecipe != existingRecipe) {
-                        recipesToRepair += repairedRecipe.toEntity()
-                    }
+                if (recipeDao.getById(seedRecipe.id) == null) {
+                    recipeDao.upsert(seedRecipe.toEntity())
                 }
             }
 
-        if (recipesToInsert.isNotEmpty()) {
-            recipeDao.upsertAll(recipesToInsert)
-        }
-        if (recipesToRepair.isNotEmpty()) {
-            recipeDao.upsertAll(recipesToRepair)
-        }
+        seedLibrary.ingredientReferences
+            .distinctBy(IngredientReference::id)
+            .forEach { ingredientReference ->
+                if (ingredientReferenceDao.getById(ingredientReference.id) == null) {
+                    ingredientReferenceDao.upsert(ingredientReference.toEntity())
+                }
+            }
 
-        ingredientReferenceDao.upsertAll(seedLibrary.ingredientReferences.distinctBy(IngredientReference::id).map(IngredientReference::toEntity))
-        tagDao.upsertAll(seedLibrary.tags.distinctBy(Tag::id).map(Tag::toEntity))
-    }
-
-    suspend fun seedBundledRecipesIfMissing() {
-        seedBundledLibraryIfMissing()
+        seedLibrary.tags
+            .distinctBy(Tag::id)
+            .forEach { tag ->
+                if (tagDao.getById(tag.id) == null) {
+                    tagDao.upsert(tag.toEntity())
+                }
+            }
     }
 
     fun createBlankRecipe(now: String = Instant.now().toString()): Recipe = Recipe(
@@ -193,8 +186,8 @@ internal fun RecipeEntity.toDomainRecipe(): Recipe = Recipe(
     id = id,
     createdAt = createdAt,
     updatedAt = updatedAt,
-    source = if (sourceUrl != null && sourceName != null) {
-        RecipeSource(sourceUrl = sourceUrl, sourceName = sourceName)
+    source = if (sourceUrl != null) {
+        RecipeSource(sourceUrl = sourceUrl, sourceName = sourceName.orEmpty())
     } else {
         null
     },
@@ -309,46 +302,6 @@ private fun Tag.toEntity(): TagEntity = TagEntity(
     slug = slug
 )
 
-
-private fun mergeSeedEnhancements(existingRecipe: Recipe, seedRecipe: Recipe): Recipe {
-    val repairedIngredients = if (existingRecipe.ingredients.size == seedRecipe.ingredients.size) {
-        existingRecipe.ingredients.mapIndexed { index, ingredient ->
-            val seedIngredient = seedRecipe.ingredients[index]
-            if (
-                seedIngredient.ingredientRefId != null &&
-                ingredient.originalText.trim().equals(seedIngredient.originalText.trim(), ignoreCase = true)
-            ) {
-                ingredient.copy(
-                    ingredientRefId = seedIngredient.ingredientRefId,
-                    quantity = ingredient.quantity ?: seedIngredient.quantity,
-                    unit = ingredient.unit ?: seedIngredient.unit,
-                    preparation = ingredient.preparation ?: seedIngredient.preparation,
-                    notes = ingredient.notes ?: seedIngredient.notes,
-                    ingredientName = if (
-                        ingredient.ingredientRefId != seedIngredient.ingredientRefId ||
-                        ingredient.ingredientName.isBlank() ||
-                        ingredient.ingredientName == ingredient.originalText ||
-                        ingredient.ingredientName.firstOrNull()?.isDigit() == true
-                    ) {
-                        seedIngredient.ingredientName
-                    } else {
-                        ingredient.ingredientName
-                    }
-                )
-            } else {
-                ingredient
-            }
-        }
-    } else {
-        existingRecipe.ingredients
-    }
-
-    val repairedTagIds = (existingRecipe.tagIds + seedRecipe.tagIds).distinct()
-    return existingRecipe.copy(
-        ingredients = repairedIngredients,
-        tagIds = repairedTagIds
-    )
-}
 private val storageJson = Json {
     ignoreUnknownKeys = true
     encodeDefaults = true
@@ -521,6 +474,9 @@ private fun slugify(input: String): String {
         .trim('-')
         .ifBlank { UUID.randomUUID().toString() }
 }
+
+
+
 
 
 
