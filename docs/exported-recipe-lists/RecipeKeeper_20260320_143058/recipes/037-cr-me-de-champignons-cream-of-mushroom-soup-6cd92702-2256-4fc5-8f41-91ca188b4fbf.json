@@ -1,0 +1,61 @@
+{
+    "recipeId":  "6cd92702-2256-4fc5-8f41-91ca188b4fbf",
+    "title":  "Crème de champignons/Cream of Mushroom Soup",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Entrée/Appetizer",
+    "categories":  [
+                       "Champignon/Mushroom",
+                       "Soupe/Soup",
+                       "Végétarien/Vegetarian"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://roxannecuisine.com/recette/creme-de-champignons/",
+    "yield":  "4 portions",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT30M",
+    "ingredientLines":  [
+                            "2 cuillère à soupe d\u0027 huile d\u0027olive - 2 tablespoons of olive oil",
+                            "1 cuillère à soupe de beurre - 1 tablespoon of butter",
+                            "1 oignon jaune haché - 1 chopped yellow onion",
+                            "½ cuillère à thé de thym - ½ teaspoon of thyme",
+                            "½ cuillère à thé d\u0027origan - ½ teaspoon of oregano",
+                            "2 gousse d\u0027ail, haché - 2 clove of garlic, minced",
+                            "1 lb de champignons blancs tranchés - 1 lb sliced white mushrooms",
+                            "1 pomme de terre, pelée et coupée en petits dés - 1 potato, peeled and diced",
+                            "4 tasses de bouillon de poulet réduit en sodium - 4 cups low salt chicken broth",
+                            "â…“ tasse de crème à cuisson 15% m.g - â…“ cup 15% fat cooking cream",
+                            "Poivre au goût - Pepper to taste",
+                            "Champignons tranchés grillés extra, au goût - Extra grilled sliced â€‹â€‹mushrooms, to taste"
+                        ],
+    "directionLines":  [
+                           "Dans une grande casserole, faire fondre le beurre et y verser l\u0027huile d\u0027olive. Faire suer l\u0027oignon jusqu\u0027à ce qu\u0027il soit translucide. Ajouter les champignons, la pomme de terre et l\u0027ail. Poursuivre la cuisson à feu moyen pendant environ 5 à 7 minutes.",
+                           "In a large saucepan, melt the butter and pour in the olive oil. Sweat the onion until translucent. Add mushrooms, potato and garlic. Continue cooking over medium heat for about 5 to 7 minutes.",
+                           "Verser le bouillon de poulet et porter à ébullition. Couvrir, réduire le feu à moyen-élevé et poursuivre la cuisson 10 à 15 minutes ou jusqu\u0027à ce que la pomme de terre soit lisse. Verser la préparation dans un robot culinaire, saler, poivrer, ajouter la crème et réduire en une crème lisse. Garnir de ciboulette et de persil haché.",
+                           "Pour in the chicken broth and bring to a boil. Cover, reduce heat to medium-high and continue cooking 10 to 15 minutes or until potato is smooth. Pour the mixture into a food processor, season with salt and pepper, add the cream and reduce to a smooth cream.",
+                           "Ajouter les champignons tranchés additionnel pour faire des morceau dans la soupe.",
+                           "Add the additional sliced â€‹â€‹mushrooms to make chunks in the soup."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/6cd92702-2256-4fc5-8f41-91ca188b4fbf_0.jpg"
+                   ]
+}

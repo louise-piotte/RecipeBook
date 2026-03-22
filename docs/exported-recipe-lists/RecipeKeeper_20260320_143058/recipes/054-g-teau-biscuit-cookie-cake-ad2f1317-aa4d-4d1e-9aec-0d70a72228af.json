@@ -1,0 +1,77 @@
+{
+    "recipeId":  "ad2f1317-aa4d-4d1e-9aec-0d70a72228af",
+    "title":  "Gâteau Biscuit / Cookie Cake",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Biscuit/Cookie",
+                       "Chocolat/Chocolate",
+                       "Gâteau/Cake",
+                       "Glassage/Icing"
+                   ],
+    "collections":  [
+                        "Pour enfants/For kids"
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/cookie-cake/",
+    "yield":  "16 portions",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT20M",
+    "ingredientLines":  [
+                            "1¾ tasses (210g) de farine tout usage - 1¾ cups (210g) all-purpose flour",
+                            "¾ cuillère à thé de bicarbonate de soude - ¾ teaspoon baking soda",
+                            "½ cuillère à thé de sel - ½ teaspoon salt",
+                            "½ tasse (113 g) de beurre non salé, ramolli - ½ cup (113g) unsalted butter, softened",
+                            "¾ tasse (165 g) de cassonade claire - ¾ cup (165g) light brown sugar",
+                            "¼ tasse (50 g) de sucre - ¼ cup (50g) granulated sugar",
+                            "1 Å“uf large - 1 large egg",
+                            "2½ cuillères à thé d\u0027extrait de vanille - 2½ teaspoons vanilla extract",
+                            "1 ½ tasse (270 g) de pépites de chocolat mi-sucré (et plus pour décorer) - 1½ cups (270g) semi-sweet chocolate chips (plus more for sprinkling)",
+                            "6 cuillères à soupe (85 g) de beurre non salé, ramolli - 6 tablespoons (85g) unsalted butter, softened",
+                            "1 ¼ tasse (150 g) de sucre en poudre, tamisé - 1¼ cups (150g) powdered sugar, sifted",
+                            "3 cuillères à soupe de cacao en poudre - 3 tablespoons cocoa powder",
+                            "2 cuillères à soupe de lait - 2 tablespoons milk",
+                            "½ cuillère à thé d\u0027extrait de vanille - ½ teaspoon vanilla extract",
+                            "Sprinkles"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 350°F. Beurrer ou vaporiser un moule à gâteau rond de 9 pouces avec un aérosol de cuisson.",
+                           "Preheat the oven to 350°F. Butter or spray a 9-inch round cake pan with baking spray.",
+                           "Dans un bol moyen, tamiser ensemble la farine, le bicarbonate de soude et le sel.",
+                           "In a medium bowl, sift together flour, baking soda, and salt.",
+                           "Dans un grand bol à mélanger, battre le beurre jusqu\u0027à consistance lisse. Ajouter les sucres et battre à vitesse moyenne jusqu\u0027à consistance lisse et bien mélangée, environ 2 minutes. (Vous ne voulez pas battre le mélange jusqu\u0027à ce qu\u0027il soit très léger et moelleux comme vous le feriez pour un gâteau, car l\u0027air rendra le cookie trop friable et gonflé.)",
+                           "In a large mixing bowl, beat butter until smooth. Add sugars and beat on medium speed until smooth and well combined, about 2 minutes. (You donâ€™t want to beat the mixture until very light and fluffy like you would for a cake because the air will make the cookie too crumbly and puffy.)",
+                           "Ajouter l\u0027oeuf et la vanille. Battre jusqu\u0027à ce que le tout soit bien mélangé, en raclant les parois du bol au besoin. Tout en mélangeant à basse vitesse, ajouter la farine et battre jusqu\u0027à consistance homogène. Incorporer les pépites de chocolat.",
+                           "Add the egg and vanilla. Beat until well combined, scraping down the sides of the bowl as needed. While mixing on low speed, add the flour and beat just until combined. Fold in the chocolate chips.",
+                           "Presser la pâte à biscuits en une couche uniforme dans le moule à gâteau préparé. Saupoudrer de plus de pépites de chocolat si désiré.",
+                           "Press the cookie dough into an even layer in the prepared cake pan. Sprinkle with more chocolate chips if desired.",
+                           "Cuire au four de 20 à 25 minutes ou jusqu\u0027à ce que le biscuit soit légèrement doré et semble sec en surface. Laisser refroidir complètement dans le moule sur une grille.",
+                           "Bake for 20 to 25 minutes or until the cookie is lightly browned and appears dry on the surface. Let cool completely in the pan on a wire rack.",
+                           "Dans un bol à mélanger, battre le beurre jusqu\u0027à consistance lisse. Ajouter le sucre en poudre, la poudre de cacao, le lait et la vanille. Battre à basse vitesse jusqu\u0027à consistance homogène, environ 2 minutes. Augmenter la vitesse à moyenne et battre jusqu\u0027à consistance légère et mousseuse, environ 2 minutes. Transférer dans une poche à douille munie d\u0027une douille décorative.",
+                           "In a mixing bowl, beat butter until smooth. Add the powdered sugar, cocoa powder, milk, and vanilla. Beat on low speed until combined, about 2 minutes. Increase speed to medium and beat until light and fluffy, about 2 minutes. Transfer to a piping bag fitted with a decorative tip.",
+                           "Retirez le biscuit du moule et placez-le sur une assiette de service. Appliquez du glaçage sur le pourtour du biscuit. Décorer avec des pépites, si désiré.",
+                           "Remove the cookie from the pan and place on a serving plate. Pipe frosting around the edge of the cookie. Decorate with sprinkles, if desired."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 serving",
+                      "calories":  "673",
+                      "totalFat":  "34",
+                      "saturatedFat":  "21",
+                      "cholesterol":  "79",
+                      "sodium":  "272",
+                      "totalCarbohydrate":  "86",
+                      "dietaryFiber":  "4",
+                      "sugars":  "59",
+                      "protein":  "6"
+                  },
+    "photoPaths":  [
+                       "images/ad2f1317-aa4d-4d1e-9aec-0d70a72228af_0.jpg",
+                       "images/ad2f1317-aa4d-4d1e-9aec-0d70a72228af_1.jpg",
+                       "images/ad2f1317-aa4d-4d1e-9aec-0d70a72228af_2.jpg"
+                   ]
+}

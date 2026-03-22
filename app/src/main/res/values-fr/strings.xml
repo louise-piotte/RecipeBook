@@ -9,7 +9,6 @@
     <string name="notes_label">Notes</string>
     <string name="placeholder_missing_fr">Non disponible en fran&#231;ais</string>
     <string name="placeholder_missing_en">Not available in English</string>
-    <string name="recipe_library_title">Recettes</string>
     <string name="search_label">Rechercher des recettes</string>
     <string name="search_placeholder">Chercher par titre ou description</string>
     <string name="detail_section_title">D&#233;tails de la recette</string>
@@ -37,11 +36,9 @@
     <string name="cook_minutes_label">Minutes de cuisson</string>
     <string name="total_minutes_label">Minutes totales</string>
     <string name="ingredients_label">Ingr&#233;dients</string>
-    <string name="ingredients_editor_label">Ingr&#233;dients</string>
     <string name="instructions_label">Instructions</string>
     <string name="source_label">Source</string>
     <string name="tags_label">Tags</string>
-    <string name="tags_editor_label">Tags</string>
     <string name="no_tags_selected_label">Aucun tag s&#233;lectionn&#233;.</string>
     <string name="select_tags_label">Choisir des tags</string>
     <string name="create_tag_label">Cr&#233;er un tag</string>
@@ -59,6 +56,8 @@
     <string name="ingredient_original_text_label">Texte original de la ligne</string>
     <string name="ingredient_name_fr_label">Nom de l\'ingr&#233;dient (FR)</string>
     <string name="ingredient_name_en_label">Nom de l\'ingr&#233;dient (EN)</string>
+    <string name="ingredient_aliases_fr_label">Alias internes (FR)</string>
+    <string name="ingredient_aliases_en_label">Alias internes (EN)</string>
     <string name="ingredient_density_label">Densit&#233; (g/ml)</string>
     <string name="unit_conversions_label">Conversions d\'unit&#233;s</string>
     <string name="from_unit_label">Unit&#233; source</string>
@@ -71,28 +70,46 @@
     <string name="no_ingredient_selected_label">Aucun ingr&#233;dient choisi</string>
     <string name="remove_label">Retirer</string>
     <string name="cancel_label">Annuler</string>
-    <string name="done_label">Termin&#233;</string>
+    <string name="close_label">Fermer</string>
     <string name="save_label">Enregistrer</string>
-    <string name="servings_value_plain">Donne %1$s portions</string>
     <string name="servings_value_with_unit">%1$s %2$s</string>
-    <string name="prep_time_value">Pr&#233;paration %1$d min</string>
-    <string name="cook_time_value">Cuisson %1$d min</string>
-    <string name="total_time_value">Total %1$d min</string>
-    <string name="rating_value">Note %1$.1f/5</string>
     <string name="detail_amount_value">Quantit&#233;: %1$s</string>
     <string name="detail_prep_time_value">Temps de pr&#233;paration: %1$d min</string>
     <string name="detail_cook_time_value">Temps de cuisson: %1$d min</string>
     <string name="detail_rating_value">Note: %1$.1f/5</string>
     <string name="manage_library_data_short_label">Ingr&#233;dients et tags</string>
-    <string name="manage_ingredients_section_label">Ingr&#233;dients</string>
-    <string name="manage_tags_section_label">Tags</string>
     <string name="search_ingredients_label">Rechercher des ingr&#233;dients</string>
+    <string name="search_ingredients_placeholder">Chercher par nom ou alias</string>
     <string name="search_tags_label">Rechercher des tags</string>
+    <string name="search_tags_placeholder">Chercher par nom de tag</string>
     <string name="no_ingredient_references_label">Aucun ingr&#233;dient r&#233;utilisable trouv&#233;.</string>
     <string name="no_tag_references_label">Aucun tag trouv&#233;.</string>
     <string name="edit_ingredient_reference_label">Modifier l\'ingr&#233;dient</string>
     <string name="edit_tag_reference_label">Modifier le tag</string>
     <string name="ingredient_density_value_label">Densit&#233; %1$s g/ml</string>
     <string name="ingredient_conversion_value_label">%1$s &#8594; %2$s &#215; %3$s</string>
+    <string name="photos_editor_label">Photos</string>
+    <string name="add_photo_from_file_label">Ajouter depuis un fichier</string>
+    <string name="take_photo_label">Prendre une photo</string>
+    <string name="no_photos_added_label">Aucune photo ajout&#233;e.</string>
+    <string name="main_photo_label">Photo principale</string>
+    <string name="additional_photo_label">Photo suppl&#233;mentaire</string>
+    <string name="set_main_photo_label">D&#233;finir comme principale</string>
+    <string name="remove_photo_label">Retirer la photo</string>
+    <string name="recipe_photo_label">Photo de la recette</string>
+    <string name="recipe_photo_preview_label">Aper&#231;u de la photo de la recette</string>
+    <string name="ingredient_conversion_dialog_title">Convertir %1$s</string>
+    <string name="ingredient_conversion_unavailable_label">Aucune conversion d&#8217;unit&#233; prise en charge n&#8217;est disponible pour cet ingr&#233;dient.</string>
+    <string name="ingredient_conversion_reset_label">R&#233;initialiser</string>
+    <string name="ingredient_state_done">Termin&#233;</string>
+    <string name="ingredient_state_pending">&#192; faire</string>
 </resources>
+
+
+
+
+
+
+
+
 

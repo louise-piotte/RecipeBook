@@ -1,0 +1,76 @@
+{
+    "recipeId":  "f3ce6ed8-0389-457c-92ec-240cf53eacde",
+    "title":  "Nanaimo Cake",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Amande/Almond",
+                       "Chocolat/Chocolate",
+                       "Gâteau/Cake",
+                       "Noix de Coco/Coconut"
+                   ],
+    "collections":  [
+                        "À nettoyer/To Clean"
+                    ],
+    "sourceUrl":  null,
+    "yield":  "8",
+    "prepTimeIso":  "PT1H5M",
+    "cookTimeIso":  "PT45M",
+    "ingredientLines":  [
+                            "1¼ (162g) all-purpose flour",
+                            "1 teaspoon baking soda",
+                            "¼ teaspoon salt",
+                            "56 g semisweet chocolate (finely chopped)",
+                            "½ cup (113 g) unsalted butter (softened)",
+                            "1 cup (200 g) granulated sugar",
+                            "2 large eggs (room temperature)",
+                            "1 teaspoon vanilla extract",
+                            "â…“ cup (28 g)  unsweetened cocoa powder (used volume)",
+                            "¾ cups (180 ml) canned unsweetened coconut milk, room temperature",
+                            "½ cup  unsweetened dessicated coconut",
+                            "35g dark chocolate",
+                            "15g butter",
+                            "60g almond butter",
+                            "20g sliced almonds (or to taste)",
+                            "1½ batch of Nanaimo frosting (2nd layer of Nanaimo bar recipe)",
+                            "4-ounce quality semi-sweet chocolate  (113g), finely chopped",
+                            "½ cup (4 ounces; 120ml) heavy cream"
+                        ],
+    "directionLines":  [
+                           "Heat the oven to 325°F.",
+                           "Spray 2 6-inch round pans with nonstick spray. Line the bottoms with parchment paper cut into a circle to fit the pan. Spray the parchment paper with nonstick spray and dust the pan lightly with cocoa powder. Tap out any excess and set aside.",
+                           "In a medium bowl, combine the flour, baking soda, and salt. Stir with a whisk and set aside.",
+                           "Add the chocolate to a small heatproof bowl and set it over a pot of barely simmering water. Stir continuously until melted and smooth. Remove from heat. Set aside to cool.",
+                           "Using a stand mixer fitted with a paddle attachment or a handheld electric mixer, beat the butter and sugar together at medium-low speed until light and fluffy.",
+                           "Beat in the eggs, one at a time, mixing well after each addition. Scrape down the sides of the bowl as needed. Beat in the vanilla. Add the cocoa powder and melted chocolate and mix until well incorporated.",
+                           "With the mixer set to low speed. gradually add half the flour mixture, followed by the coconut milk, and then the remaining flour mixture. Beat just until almost combined. Fold on dessicated coconut. The batter will be thick.",
+                           "Divide the batter evenly between the 2 prepared pans. Use an offset spatula to spread the batter all the way to the edges of the pan and smooth out the surface.",
+                           "Bake for 40 to 50 (?) minutes, or until a toothpick inserted into the center comes out with only a few dry crumbs. Cool the cake in the pans for 10 minutes, then invert the cakes onto a wire rack to cool completely. Peel the parchment paper off the bottoms before filling.",
+                           "Crunch: Melt the butter and chocolate in a microwave-proof bowl in the microwave. Once the chocolate and butter are melted, mix in the other ingredients (almond butter \u0026 almonds).",
+                           "Ganache: Place chopped chocolate in a medium heat-proof bowl. Heat the cream in a small saucepan over medium heat until it begins to gently simmer. Pour over chocolate, then let it sit for 2â€“3 minutes to gently soften the chocolate. With a metal spoon or small rubber spatula, very slowly stir until completely combined and chocolate has melted.",
+                           "Assembly: Cool cake. Place the crunch on the first layer, then frosting, then the second layer. Frost the entire cake, then add ganache on top"
+                       ],
+    "notes":  [
+                  "chocolate coconut cake inspiration recipe https://www.bakedbyanintrovert.com/chocolate-coconut-cake/ (was modified)",
+                  "My dream Nanaimo cake!"
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/f3ce6ed8-0389-457c-92ec-240cf53eacde_0.jpg",
+                       "images/f3ce6ed8-0389-457c-92ec-240cf53eacde_1.jpg"
+                   ]
+}

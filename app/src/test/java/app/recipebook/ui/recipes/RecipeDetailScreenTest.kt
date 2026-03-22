@@ -3,7 +3,10 @@ package app.recipebook.ui.recipes
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientReference
+import app.recipebook.domain.model.IngredientUnitMapping
+import app.recipebook.domain.model.RecipeSource
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class RecipeDetailScreenTest {
@@ -67,4 +70,117 @@ class RecipeDetailScreenTest {
 
         assertEquals("1 cup butter, divided (baking)", result)
     }
+
+    @Test
+    fun buildDetailIngredientText_usesFractionGlyphsForCommonCupAmounts() {
+        val ingredient = IngredientLine(
+            id = "ingredient-1",
+            originalText = "",
+            quantity = 2.0 / 3.0,
+            unit = "cup",
+            ingredientName = "sugar"
+        )
+
+        val result = buildDetailIngredientText(ingredient, null, AppLanguage.EN)
+
+        assertEquals("\u2154 cup sugar", result)
+    }
+
+    @Test
+    fun buildDetailIngredientText_usesTablespoonsForAwkwardCupAmounts() {
+        val ingredient = IngredientLine(
+            id = "ingredient-1",
+            originalText = "",
+            quantity = 0.375,
+            unit = "cup",
+            ingredientName = "sugar"
+        )
+
+        val result = buildDetailIngredientText(ingredient, null, AppLanguage.EN)
+
+        assertEquals("6 tbsp sugar", result)
+    }
+
+    @Test
+    fun buildDetailIngredientText_usesTeaspoonFractionsForAwkwardTablespoons() {
+        val ingredient = IngredientLine(
+            id = "ingredient-1",
+            originalText = "",
+            quantity = 0.25,
+            unit = "tbsp",
+            ingredientName = "vanilla"
+        )
+
+        val result = buildDetailIngredientText(ingredient, null, AppLanguage.EN)
+
+        assertEquals("\u00BE tsp vanilla", result)
+    }
+
+    @Test
+    fun convertIngredientQuantity_usesIngredientMappingsAndDensity() {
+        val ingredientReference = IngredientReference(
+            id = "ingredient-ref-flour",
+            nameFr = "farine",
+            nameEn = "flour",
+            defaultDensity = 0.53,
+            unitMappings = listOf(
+                IngredientUnitMapping(fromUnit = "cup", toUnit = "g", factor = 120.0),
+                IngredientUnitMapping(fromUnit = "tbsp", toUnit = "g", factor = 7.5)
+            ),
+            updatedAt = "2026-03-21T00:00:00Z"
+        )
+
+        assertEquals(120.0, requireNotNull(convertIngredientQuantity(1.0, "cup", "g", ingredientReference)), 0.001)
+        assertEquals(16.0, requireNotNull(convertIngredientQuantity(120.0, "g", "tbsp", ingredientReference)), 0.001)
+        assertEquals(1.0, requireNotNull(convertIngredientQuantity(120.0, "g", "cup", ingredientReference)), 0.001)
+    }
+
+    @Test
+    fun convertIngredientQuantity_supportsStandardUnitsWithoutIngredientMapping() {
+        assertEquals(454.0, requireNotNull(convertIngredientQuantity(1.0, "lb", "g", null)), 0.001)
+        assertEquals(8.0, requireNotNull(convertIngredientQuantity(1.0, "cup", "fl oz", null)), 0.001)
+    }
+
+    @Test
+    fun availableConversionUnits_returnsReachableUnitsSortedByCategory() {
+        val ingredientReference = IngredientReference(
+            id = "ingredient-ref-water",
+            nameFr = "eau",
+            nameEn = "water",
+            defaultDensity = 1.0,
+            unitMappings = listOf(IngredientUnitMapping(fromUnit = "fl oz", toUnit = "ml", factor = 29.57)),
+            updatedAt = "2026-03-21T00:00:00Z"
+        )
+
+        val units = availableConversionUnits("cup", ingredientReference)
+
+        assertTrue(units.containsAll(listOf("g", "ml", "tbsp", "tsp", "fl oz")))
+        assertEquals("g", units.first())
+    }
+
+    @Test
+    fun recipeSource_displayText_prefersNameWhenPresent() {
+        val source = RecipeSource(
+            sourceUrl = "https://example.com/recipe",
+            sourceName = "Example Kitchen"
+        )
+
+        assertEquals("Example Kitchen", source.displayText())
+        assertEquals("https://example.com/recipe", source.clickableUrlOrNull())
+    }
+
+    @Test
+    fun recipeSource_withoutUrl_staysPlainText() {
+        val source = RecipeSource(
+            sourceUrl = "   ",
+            sourceName = "Family recipe card"
+        )
+
+        assertEquals("Family recipe card", source.displayText())
+        assertEquals(null, source.clickableUrlOrNull())
+    }
 }
+
+
+
+

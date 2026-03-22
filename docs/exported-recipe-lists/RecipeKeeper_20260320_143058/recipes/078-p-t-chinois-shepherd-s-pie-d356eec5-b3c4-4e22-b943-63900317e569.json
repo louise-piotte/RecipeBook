@@ -1,0 +1,89 @@
+{
+    "recipeId":  "d356eec5-b3c4-4e22-b943-63900317e569",
+    "title":  "Pâté Chinois / Shepherdâ€™s Pie",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Boeuf/Beef",
+                       "Casserole",
+                       "Patate/Potato"
+                   ],
+    "collections":  [
+                        "Favori à Gab/Gab\u0027s favorites"
+                    ],
+    "sourceUrl":  "https://www.thewholesomedish.com/the-best-classic-shepherds-pie/",
+    "yield":  "6 servings",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT50M",
+    "ingredientLines":  [
+                            "2 cuillères à soupe d\u0027huile d\u0027olive - 2 tablespoons olive oil",
+                            "1 tasse d\u0027oignon jaune haché - 1 cup chopped yellow onion",
+                            "1 lb de bÅ“uf haché maigre à 90 % (-ou agneau haché) - 1 lb. 90% lean ground beef (-or ground lamb)",
+                            "2 cuillères à café de feuilles de persil séchées - 2 teaspoons dried parsley leaves",
+                            "1 cuillère à café de feuilles de romarin séchées - 1 teaspoon dried rosemary leaves",
+                            "1 cuillère à café de feuilles de thym séchées - 1 teaspoon dried thyme leaves",
+                            "1/2 cuillère à café de sel - 1/2 teaspoon salt",
+                            "1/2 cuillère à café de poivre noir moulu - 1/2 teaspoon ground black pepper",
+                            "1 cuillère à soupe de sauce Worcestershire - 1 tablespoon Worcestershire sauce",
+                            "2 gousses d\u0027ail - 2 garlic cloves",
+                            "2 cuillères à soupe de farine tout usage - 2 tablespoons all purpose flour",
+                            "2 cuillères à soupe de pâte de tomate - 2 tablespoons tomato paste",
+                            "1 tasse de bouillon de boeuf - 1 cup beef broth",
+                            "1 tasse de mélange de pois et de carottes surgelés - 1 cup frozen mixed peas \u0026 carrots",
+                            "1/2 tasse de grains de maïs surgelés - 1/2 cup frozen corn kernels",
+                            "1 1/2 - 2 lb de pommes de terre Russet (environ 2 grosses pommes de terre pelées et coupées en cubes de 1 pouce) - 1 1/2 - 2 lb. russet potatoes (-about 2 large potatoes peeled and cut into 1 inch cubes)",
+                            "8 cuillères à soupe de beurre non salé - 8 tablespoons unsalted butter",
+                            "1/3 tasse moitié-moitié - 1/3 cup half \u0026 half",
+                            "1/2 cuillère à café d\u0027ail en poudre - 1/2 teaspoon garlic powder",
+                            "1/2 cuillère à café de sel - 1/2 teaspoon salt",
+                            "1/4 cuillère à café de poivre noir moulu - 1/4 teaspoon ground black pepper",
+                            "1/4 tasse de parmesan - 1/4 cup parmesan cheese"
+                        ],
+    "directionLines":  [
+                           "Ajouter l\u0027huile dans une grande poêle et la placer à feu moyen-élevé pendant 2 minutes. Ajouter les oignons. Cuire 5 minutes en remuant de temps en temps.",
+                           "Add the oil to a large skillet and place it over medium-high heat for 2 minutes. Add the onions. Cook 5 minutes, stirring occasionally.",
+                           "Ajouter le bÅ“uf haché (ou l\u0027agneau haché) dans la poêle et le briser avec une cuillère en bois. Ajouter le persil, le romarin, le thym, le sel et le poivre. Bien mélanger. Cuire pendant 6 à 8 minutes, jusqu\u0027à ce que la viande soit dorée, en remuant de temps en temps.",
+                           "Add the ground beef (or ground lamb) to the skillet and break it apart with a wooden spoon. Add the parsley, rosemary, thyme, salt, and and pepper. Stir well. Cook for 6-8 minutes, until the meat is browned, stirring occasionally.",
+                           "Ajouter la sauce Worcestershire et l\u0027ail. Remuer pour combiner. Cuire 1 minute.",
+                           "Add the Worcestershire sauce and garlic. Stir to combine. Cook for 1 minute.",
+                           "Ajouter la farine et le concentré de tomate. Remuer jusqu\u0027à ce qu\u0027il soit bien incorporé et qu\u0027il ne reste plus de grumeaux de pâte de tomate.",
+                           "Add the flour and tomato paste. Stir until well incorporated and no clumps of tomato paste remain.",
+                           "Ajouter le bouillon, les pois et les carottes surgelés et le maïs surgelé. Porter le liquide à ébullition puis réduire le feu. Laisser mijoter 5 minutes en remuant de temps en temps.",
+                           "Add the broth, frozen peas and carrots, and frozen corn. Bring the liquid to a boil then reduce to simmer. Simmer for 5 minutes, stirring occasionally.",
+                           "Réserver le mélange de viande. Préchauffer le four à 400 degrés F.",
+                           "Set the meat mixture aside. Preheat oven to 400 degrees F.",
+                           "Mettre les pommes de terre dans une grande marmite. Couvrir les pommes de terre d\u0027eau. Amenez l\u0027eau à ébullition. Réduire à feu doux. Cuire jusqu\u0027à ce que les pommes de terre soient tendres, 10-15 minutes.",
+                           "Place the potatoes in a large pot. Cover the potatoes with water. Bring the water to a boil. Reduce to a simmer. Cook until potatoes are fork tender, 10-15 minutes.",
+                           "Égoutter les pommes de terre dans une passoire. Remettre les pommes de terre dans la marmite. Laissez les pommes de terre reposer dans la marmite pendant 1 minute pour évaporer tout liquide restant.",
+                           "Drain the potatoes in a colander. Return the potatoes to the hot pot. Let the potatoes rest in the hot pot for 1 minute to evaporate any remaining liquid.",
+                           "Ajouter le beurre, moitié-moitié, la poudre d\u0027ail, le sel et le poivre. Écraser les pommes de terre et remuer jusqu\u0027à ce que tous les ingrédients soient mélangés.",
+                           "Add butter, half \u0026 half, garlic powder, salt, and pepper. Mash the potatoes and stir until all the ingredients are mixed together.",
+                           "Ajouter le parmesan aux pommes de terre. Remuer jusqu\u0027à ce que le tout soit bien mélangé.",
+                           "Add the parmesan cheese to the potatoes. Stir until well combined.",
+                           "Verser le mélange de viande dans un plat de cuisson de 9x9 (ou 7x11) pouces. Étalez-le en une couche uniforme. Déposer la purée de pommes de terre sur la viande. Étalez soigneusement en une couche uniforme.",
+                           "Pour the meat mixture into a 9x9 (or 7x11) inch baking dish. Spread it out into an even layer. Spoon the mashed potatoes on top of the meat. Carefully spread into an even layer.",
+                           "Si le plat de cuisson semble très rempli, placez-le sur une plaque à pâtisserie à rebords afin que la garniture ne bouillonne pas dans votre four. Cuire à découvert de 25 à 30 minutes. Laisser refroidir 15 minutes avant de servir.",
+                           "If the baking dish looks very full, place it on a rimmed baking sheet so that the filling doesnâ€™t bubble over into your oven. Bake uncovered for 25-30 minutes. Cool for 15 minutes before serving."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 /6th of the recipe",
+                      "calories":  "400",
+                      "totalFat":  "30",
+                      "saturatedFat":  "15",
+                      "cholesterol":  "97",
+                      "sodium":  "751",
+                      "totalCarbohydrate":  "13",
+                      "dietaryFiber":  "2",
+                      "sugars":  "2",
+                      "protein":  "19"
+                  },
+    "photoPaths":  [
+                       "images/d356eec5-b3c4-4e22-b943-63900317e569_0.jpg"
+                   ]
+}

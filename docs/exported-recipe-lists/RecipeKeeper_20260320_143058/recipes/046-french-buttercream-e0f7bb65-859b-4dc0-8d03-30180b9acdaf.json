@@ -1,0 +1,52 @@
+{
+    "recipeId":  "e0f7bb65-859b-4dc0-8d03-30180b9acdaf",
+    "title":  "French Buttercream",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "0",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+
+                   ],
+    "collections":  [
+                        "À nettoyer/To Clean"
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/how-to-make-french-buttercream/",
+    "yield":  "1 batch",
+    "prepTimeIso":  "PT5M",
+    "cookTimeIso":  "PT5M",
+    "ingredientLines":  [
+                            "1/2 cup granulated sugar (100g)",
+                            "3 tbsp water (45mL)",
+                            "5 large egg yolks",
+                            "1 cup unsalted butter (227g, room temperature and cubed)",
+                            "1 tsp vanilla extract (5mL)",
+                            "pinch of salt (optional)"
+                        ],
+    "directionLines":  [
+                           "1. Combine sugar and water in medium saucepan. Heat over low heat while stirring until sugar dissolves. Increase heat to medium- high and bring to a boil",
+                           "2. Put egg yolks in a stand-mixer fitted with a whisk attachment and beat until thick and foamy.",
+                           "3. Cook the sugar and water syrup until it reaches 240 degrees F. Immediately remove from heat. With mixer running, SLOWLY drizzle hot syrup into bowl with yolks.",
+                           "4. Continue mixing until the bottom of the bowl is cool to the touch and the yolk mixture has cooled to room temperature.",
+                           "5. Add in butter one cube at a time allowing each piece to incorporate before adding the next. Add vanilla and salt. Continue mixing until buttercream is smooth and creamy. (About 5-6 minutes.)"
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "35 grams",
+                      "calories":  "170",
+                      "totalFat":  "11",
+                      "saturatedFat":  "116",
+                      "cholesterol":  "9",
+                      "sodium":  "9",
+                      "totalCarbohydrate":  "17",
+                      "dietaryFiber":  null,
+                      "sugars":  "10",
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/e0f7bb65-859b-4dc0-8d03-30180b9acdaf_0.jpg"
+                   ]
+}

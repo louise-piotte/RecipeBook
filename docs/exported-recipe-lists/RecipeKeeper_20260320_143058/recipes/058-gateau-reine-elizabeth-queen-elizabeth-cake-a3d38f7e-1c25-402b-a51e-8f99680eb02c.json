@@ -1,0 +1,77 @@
+{
+    "recipeId":  "a3d38f7e-1c25-402b-a51e-8f99680eb02c",
+    "title":  "Gateau Reine Elizabeth/Queen Elizabeth Cake",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Date",
+                       "Gâteau/Cake",
+                       "Noix de Coco/Coconut"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.allrecipes.com/recipe/7666/queen-elizabeth-cake-i/",
+    "yield":  "",
+    "prepTimeIso":  "PT30M",
+    "cookTimeIso":  "PT40M",
+    "ingredientLines":  [
+                            "1½ tasse d\u0027eau bouillante - 1½ cup boiling water",
+                            "1½ tasse de dattes, dénoyautées et hachées - 1½ cup dates, pitted and chopped",
+                            "¼  tasse de beurre, ramolli - ¼ cup butter, softened",
+                            "1 tasse de sucre blanc - 1 cup white sugar",
+                            "1 oeuf - 1 egg",
+                            "1 cuillère à thé d\u0027extrait de vanille - 1 teaspoon vanilla extract",
+                            "1½ tasse de farine tout usage - 1½ cups all-purpose flour",
+                            "1 cuillère à thé de bicarbonate de soude - 1 teaspoon baking soda",
+                            "1 cuillère à thé de levure chimique - 1 teaspoon baking powder",
+                            "½ cuillère à thé de sel - ½ teaspoon salt",
+                            "½ tasse de noix hachées - ½ cup chopped walnuts",
+                            "1 tasse de noix de coco en flocons - 1 cup flaked coconut",
+                            "1 tasse de cassonade tassée - 1 cup packed brown sugar",
+                            "9 cuillères à soupe de beurre - 9 tablespoons butter",
+                            "6 cuillères à soupe de crème - 6 tablespoon cream",
+                            "¾ tasse de noix de coco grillée - ¾ cup of toasted coconut"
+                        ],
+    "directionLines":  [
+                           "Versez de l\u0027eau bouillante sur les dattes dans un petit bol et laissez reposer à découvert jusqu\u0027à ce qu\u0027elle atteigne la température ambiante. Prend plusieurs heures.",
+                           "Pour boiling water over dates in a small bowl, and let stand uncovered until it reaches room temperature. Takes multiple hours.",
+                           "Mesurez la farine, la levure chimique, le soda, le sel et les noix dans un petit bol. Remuer pour mélanger.",
+                           "Measure flour, baking powder, soda, salt, and nuts into a small bowl. Stir to mix.",
+                           "Crémer ensemble ¼ tasse de beurre et de sucre blanc dans un bol à mélanger; battre l\u0027oeuf et la vanille. Ajouter le mélange de farine au mélange crémeux en trois parties en alternance avec le mélange de dattes en deux parties, en commençant et en terminant par le mélange sec. Étendre la pâte dans 2 moules circulaires de 8 pouces.",
+                           "Cream ¼ cup butter or margarine and white sugar together in a mixing bowl; beat in egg and vanilla. Add flour mixture to creamed mixture in three parts alternately with date mixture in two parts, beginning and ending with dry mixture. Spread batter into 2 8-inch circular pan.",
+                           "Cuire au four à 350°F (175°C) pendant 40 minutes, ou jusqu\u0027à ce qu\u0027un pic en bois inséré en ressorte propre.",
+                           "Bake at 350° F (175°C) for 30 to 40 minutes, or until an inserted wooden pick comes out clean.",
+                           "Mélanger la noix de coco, la cassonade, 9 cuillères à soupe de beurre et la crème dans une petite casserole à feu moyen. Faire bouillir pendant trois minutes.",
+                           "Mix coconut, brown sugar, 9 tablespoons butter and cream in a small saucepan over medium heat. Boil for three minutes.",
+                           "Laisser refroidir la garniture jusqu\u0027à ce qu\u0027elle soit tartinable et assembler le gâteau. Couvrez le haut de la couche inférieure, puis placez la deuxième couche par-dessus. Répartir la garniture sur le dessus et sur le côté.",
+                           "Let topping cool until spreadable and assemble cake. Cover the top of the bottom layer, then place de second layer on top. Spread the topping on the top and side.",
+                           "Collez de la noix de coco grillée sur la garniture visible pour décorer",
+                           "Stick toasted coconut over visible topping to decorate"
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1/12",
+                      "calories":  "372",
+                      "totalFat":  "17",
+                      "saturatedFat":  "9",
+                      "cholesterol":  "48",
+                      "sodium":  "340",
+                      "totalCarbohydrate":  "54",
+                      "dietaryFiber":  "2",
+                      "sugars":  "39",
+                      "protein":  "4"
+                  },
+    "photoPaths":  [
+                       "images/a3d38f7e-1c25-402b-a51e-8f99680eb02c_0.jpg",
+                       "images/a3d38f7e-1c25-402b-a51e-8f99680eb02c_1.jpg",
+                       "images/a3d38f7e-1c25-402b-a51e-8f99680eb02c_2.jpg",
+                       "images/a3d38f7e-1c25-402b-a51e-8f99680eb02c_3.jpg",
+                       "images/a3d38f7e-1c25-402b-a51e-8f99680eb02c_4.jpg"
+                   ]
+}

@@ -1,0 +1,54 @@
+{
+    "recipeId":  "eea71586-6439-4826-9a3d-b87c5c98a2a6",
+    "title":  "Blueberry Cake Filling",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "0",
+    "course":  "",
+    "categories":  [
+
+                   ],
+    "collections":  [
+                        "À nettoyer/To Clean"
+                    ],
+    "sourceUrl":  "https://bakingwithbutter.com/blueberry-cake-filling/",
+    "yield":  "2",
+    "prepTimeIso":  "PT5M",
+    "cookTimeIso":  "PT15M",
+    "ingredientLines":  [
+                            "450g (1lb) fresh or frozen blueberries",
+                            "50g (1/4 cup) granulated sugar (can be decreased if blueberries are very sweet or increased if tart)",
+                            "2 Tablespoons cornstarch or arrowroot",
+                            "1 Tablespoon lemon juice",
+                            "1 teaspoon lemon zest",
+                            "1 teaspoon vanilla extract",
+                            "1/4 teaspoon salt"
+                        ],
+    "directionLines":  [
+                           "1. In a medium saucepan, combine 2 tablespoons of cold water with the cornstarch. Mix it into a slurry.",
+                           "2. Add the blueberries, sugar, lemon juice, vanilla, and salt to this.",
+                           "3. Place the saucepan over medium-low heat and stir regularly as the mixture begins to warm up.",
+                           "4. As the mixture boils, it will thicken, become jelly-like, and lose its cloudy appearance. Let it boil for around 2 minutes, stirring continuously, before taking it off the heat. The cornstarch must be cooked through properly, or the filling can lose its thickness.",
+                           "5. Tip into a bowl. As the mixture is cooling, cover it with plastic wrap, gently pressing it on the mixture. This stops a skin from forming.",
+                           "6. Once cooled to room temperature, store in the fridge in an airtight container until needed."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1",
+                      "calories":  "72",
+                      "totalFat":  "0",
+                      "saturatedFat":  "0",
+                      "cholesterol":  "0",
+                      "sodium":  "71",
+                      "totalCarbohydrate":  "17",
+                      "dietaryFiber":  "2",
+                      "sugars":  "11",
+                      "protein":  "1"
+                  },
+    "photoPaths":  [
+                       "images/eea71586-6439-4826-9a3d-b87c5c98a2a6_0.jpg"
+                   ]
+}

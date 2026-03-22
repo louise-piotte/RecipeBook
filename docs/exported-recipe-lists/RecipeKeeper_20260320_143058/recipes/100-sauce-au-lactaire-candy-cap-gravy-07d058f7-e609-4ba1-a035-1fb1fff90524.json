@@ -1,0 +1,55 @@
+{
+    "recipeId":  "07d058f7-e609-4ba1-a035-1fb1fff90524",
+    "title":  "Sauce au lactaire/Candy cap gravy",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Accompagnement/Side Dish",
+    "categories":  [
+                       "Champignon/Mushroom",
+                       "Sauce"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://bittersweetblog.com/2022/11/07/candy-cap-mushrooms/",
+    "yield":  "6",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT10M",
+    "ingredientLines":  [
+                            "½ tasse de sucre - ½ cup granulated sugar",
+                            "7 g de lactaire sèchés et moulu - 7 g ground dried candy cap mushrooms",
+                            "2 cuillères à soupe de farine - 2 tablespoons flour",
+                            "1½ tasse de lait - 1½ cups milk",
+                            "2 cuillères à soupe de beurre - 2 tablespoons butter",
+                            "1 cuillère à thé d\u0027extrait de vanille - 1 teaspoon vanilla extract",
+                            "1 cuillère à thé de pâte miso blanche - 1 teaspoon white miso paste"
+                        ],
+    "directionLines":  [
+                           "Dans une casserole moyenne, fouetter ensemble le sucre, les champignons de Paris moulus et la farine. Versez lentement le lait en fouettant continuellement jusqu\u0027à consistance lisse.",
+                           "In medium saucepan, whisk together the sugar, ground candy cap mushrooms, and flour. Slowly pour in the milk while whisking continuously, until smooth.",
+                           "Mettre à feu moyen. Cuire pendant 8 à 10 minutes, en remuant constamment, jusqu\u0027à ébullition et que le mélange épaississe.",
+                           "Set over medium heat. Cook for 8 - 10 minutes, stirring constantly, until it comes to a boil and the mixture thickens.",
+                           "Retirer du feu et incorporer le beurre, la vanille et le miso. Battre vigoureusement jusqu\u0027à ce qu\u0027il soit complètement incorporé.",
+                           "Remove from the heat and stir in butter, vanilla, and miso. Beat vigorously until fully incorporated."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1",
+                      "calories":  "111",
+                      "totalFat":  "4",
+                      "saturatedFat":  "1",
+                      "cholesterol":  "4",
+                      "sodium":  "49",
+                      "totalCarbohydrate":  "17",
+                      "dietaryFiber":  "0",
+                      "sugars":  "16",
+                      "protein":  "2"
+                  },
+    "photoPaths":  [
+                       "images/07d058f7-e609-4ba1-a035-1fb1fff90524_0.jpg"
+                   ]
+}

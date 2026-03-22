@@ -1,0 +1,59 @@
+{
+    "recipeId":  "9c2ee378-3b20-47c0-ae4a-77195a908b07",
+    "title":  "Sauce au jus / Gravy",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "0",
+    "course":  "Accompagnement/Side Dish",
+    "categories":  [
+                       "Boeuf/Beef",
+                       "Épices/Spices",
+                       "Sauce"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  null,
+    "yield":  "",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "3 cuillères à soupe de beurre - 3 cuillères à soupe de beurre",
+                            "¼ tasse de farine - ¼ cup flour",
+                            "1 cuillère à soupe de \"better than bouillon\" - 1 tablespoon \"better than bouillon\"",
+                            "2 tasse d\u0027eau bouillante - 2 cup boiling water",
+                            "Épices au goût - Spices to taste"
+                        ],
+    "directionLines":  [
+                           "Faire fondre le beurre dans une casserole à feu moyen.",
+                           "Melt the butter in a saucepan over medium heat.",
+                           "Ajouter la farine et faire cuire pour une minute (faire un roux).",
+                           "Add the flour and cook for one minute (make a roux).",
+                           "Ajouter le \"better than bouillon\" et bien mélanger.",
+                           "Add the \"better than bouillon\" and mix well.",
+                           "Ajouter l\u0027eau bouillante et les épices additionnelles et remuer jusqu\u0027à épaississement.",
+                           "Add boiling water and additional spices and stir until thickened.",
+                           "Laisser refroidir pour qu\u0027il s\u0027épaississe plus.",
+                           "Allow to cool to thicken more."
+                       ],
+    "notes":  [
+                  "N\u0027importe quel saveur de \"better than bouillon\" peut être utilisé pour varier la saveur.",
+                  "Any flavor of \"better than bouillon\" can be used to vary the flavor."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/9c2ee378-3b20-47c0-ae4a-77195a908b07_0.jpg"
+                   ]
+}

@@ -8,6 +8,7 @@ import app.recipebook.domain.model.CollectionSortOrder
 import app.recipebook.domain.model.ContextualSubstitutionRule
 import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.IngredientForm
+import app.recipebook.domain.model.IngredientCategory
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientLineSubstitution
 import app.recipebook.domain.model.IngredientReference
@@ -70,6 +71,20 @@ class SchemaRoundTripTest {
 
         assertEquals(library, roundTrip)
     }
+    @Test
+    fun fullLibrary_export_rewritesAbsoluteMediaPathsToPortableRelativePaths() {
+        val recipe = sampleRecipe().copy(
+            photos = listOf(PhotoRef("3f4f2cf1-70fa-42e6-935f-fddc4e7d870e", "C:/recipe-photos/pancakes.jpg", "drive://photo-1")),
+            attachments = listOf(AttachmentRef("f49fbc5c-2b15-47a3-a81d-6fd0da70c2ed", "notes.pdf", "application/pdf", "C:/recipe-files/notes.pdf", null))
+        )
+        val payload = sampleLibrary().copy(recipes = listOf(recipe)).toFullLibraryPayloadDto()
+
+        assertEquals("photos/3f4f2cf1-70fa-42e6-935f-fddc4e7d870e.jpg", payload.library.recipes.single().photos.single().relativePath)
+        assertEquals(
+            "attachments/f49fbc5c-2b15-47a3-a81d-6fd0da70c2ed-notes.pdf",
+            payload.library.recipes.single().attachments.single().relativePath
+        )
+    }
 
     private fun sampleLibrary(): RecipeLibrary = RecipeLibrary(
         metadata = LibraryMetadata(
@@ -86,6 +101,7 @@ class SchemaRoundTripTest {
                 id = "8c35153a-4bf2-4501-a77f-b7a5af15427b",
                 nameFr = "Farine tout usage",
                 nameEn = "All-purpose flour",
+                category = IngredientCategory.FLOUR_AND_STARCH,
                 aliasesFr = listOf("Farine blanche"),
                 aliasesEn = listOf("AP flour"),
                 defaultDensity = 0.53,
@@ -228,9 +244,14 @@ class SchemaRoundTripTest {
         tagIds = listOf("6bce17f2-67ad-40c3-8267-fee6bac1ac43"),
         collectionIds = listOf("70ac4e1b-b73f-4477-82fd-ff44c643cce6"),
         ratings = Ratings(userRating = 4.5, madeCount = 2, lastMadeAt = "2026-02-20T09:00:00Z"),
-        photos = listOf(PhotoRef("3f4f2cf1-70fa-42e6-935f-fddc4e7d870e", "photos/pancakes-1.jpg", "drive://photo-1")),
-        attachments = listOf(AttachmentRef("f49fbc5c-2b15-47a3-a81d-6fd0da70c2ed", "notes.pdf", "application/pdf", "attachments/notes.pdf", null)),
+        photos = listOf(PhotoRef("3f4f2cf1-70fa-42e6-935f-fddc4e7d870e", "photos/3f4f2cf1-70fa-42e6-935f-fddc4e7d870e.jpg", "drive://photo-1")),
+        attachments = listOf(AttachmentRef("f49fbc5c-2b15-47a3-a81d-6fd0da70c2ed", "notes.pdf", "application/pdf", "attachments/f49fbc5c-2b15-47a3-a81d-6fd0da70c2ed-notes.pdf", null)),
         importMetadata = ImportMetadata(sourceType = "url", parserVersion = "1.0.0", originalUnits = "metric"),
         deletedAt = null
     )
 }
+
+
+
+
+

@@ -1,0 +1,73 @@
+{
+    "recipeId":  "43199cff-7fba-4cd0-8447-2c7265b0bb1c",
+    "title":  "Boulette de dinde/Turkey Meatballs",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Poulet/Chicken"
+                   ],
+    "collections":  [
+                        "Favori à Gab/Gab\u0027s favorites"
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/turkey-meatballs/",
+    "yield":  "",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT15M",
+    "ingredientLines":  [
+                            "2 lb de dinde hachée maigre - 2 lb lean ground turkey",
+                            "1 tasse (125 g) de chapelure - 1 cup (125g) bread crumbs",
+                            "1 tasse (113 g) de fromage manchego râpé - 1 cup (113g) grated manchego cheese",
+                            "½ tasse (75 g) d\u0027oignon rouge émincé - ½ cup (75g) minced red onion",
+                            "1 cuillère à soupe d\u0027ail frais haché - 1 tablespoon minced fresh garlic",
+                            "2 gros oeufs - 2 large eggs",
+                            "4 cuillères à thé de paprika fumé - 4 teaspoon smoked paprika",
+                            "1 cuillère à thé de sel - 1 teaspoon salt",
+                            "1 cuillère à thé de poivre noir moulu - 1 teaspoon ground black pepper",
+                            "2 cuillères à soupe d\u0027huile d\u0027olive - 2 tablespoon olive oil"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 425°F.",
+                           "Preheat oven to 425°F.",
+                           "Dans un grand bol, mélanger la dinde, la chapelure, le fromage, l\u0027oignon, l\u0027ail, les Å“ufs, le paprika, le sel et le poivre.",
+                           "In a large bowl stir together turkey, bread crumbs, cheese, onion, garlic, eggs, paprika, salt, and pepper.",
+                           "Tapisser deux plaques à pâtisserie à rebord de papier d\u0027aluminium; vaporiser d\u0027enduit à cuisson.",
+                           "Line two rimmed sheet pans with aluminum foil; spray with cooking spray.",
+                           "À l\u0027aide d\u0027une petite cuillère (1 oz) ou d\u0027une cuillère à soupe, prélevez les boulettes de viande et placez-les sur des plaques à pâtisserie préparées.",
+                           "Using a small (1 oz.) scoop or a tablespoon, scoop out meatballs, and place on prepared baking sheets.",
+                           "Arroser les boulettes d\u0027huile d\u0027olive. Cuire au four jusqu\u0027à ce qu\u0027il soit bien cuit, environ 15 minutes.",
+                           "Drizzle meatballs with olive oil. Bake until cooked through, about 15 minutes.",
+                           "Servir les boulettes sur du couscous, du quinoa ou de la salade verte; garnir de fromage et de persil supplémentaires.",
+                           "Serve meatballs over couscous, quinoa, or salad greens; garnish with additional cheese and parsley."
+                       ],
+    "notes":  [
+                  "Delicious and healthy turkey meatballs with smoky marinara sauce. Serve with your favorite pasta, over polenta or with couscous and salad",
+                  "servingSize : 100 g",
+                  "calories : 167 kcal",
+                  "carbohydrate : 21 g",
+                  "protein : 19 g",
+                  "fat : 14 g",
+                  "saturatedFat : 3 g",
+                  "cholesterol : 65 mg",
+                  "sodium : 600 mg",
+                  "fiber : 3 g",
+                  "sugar : 6 g"
+              ],
+    "nutrition":  {
+                      "servingSize":  "100g",
+                      "calories":  "167",
+                      "totalFat":  "14",
+                      "saturatedFat":  "3",
+                      "cholesterol":  "65",
+                      "sodium":  "600",
+                      "totalCarbohydrate":  "21",
+                      "dietaryFiber":  "3",
+                      "sugars":  "6",
+                      "protein":  "19"
+                  },
+    "photoPaths":  [
+                       "images/43199cff-7fba-4cd0-8447-2c7265b0bb1c_0.jpg"
+                   ]
+}

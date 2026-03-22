@@ -1,0 +1,80 @@
+{
+    "recipeId":  "cfa64319-d4b9-4425-b087-3e30be3cc4a0",
+    "title":  "Pain à hamburger/Hamburger bun",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Accompagnement/Side Dish",
+    "categories":  [
+                       "Pâte/Dough"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.joshuaweissman.com/post/mcdonald-s-big-mac-but-better",
+    "yield":  "12",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "2 cuillères à soupe (18 g) de farine - 2 tablespoon (18g) flour",
+                            "2 cuillères à soupe d\u0027eau - 2 tablespoon water",
+                            "¼ tasse de lait entier - ¼ cup whole milk",
+                            "½ tasse plus 2 cuillères à soupe d\u0027eau - ½ cup plus 2 tablespoons water",
+                            "½ tasse de lait - ½ cup milk",
+                            "2½ cuillères à thé de levure instantanée - 2½ teaspoon instant yeast",
+                            "3½ tasses de farine à pain - 3½ cups bread flour",
+                            "1½ cuillère à soupe de sucre - 1½ tablespoon granulated sugar",
+                            "2 cuillères à thé de sel - 2 teaspoon salt",
+                            "3 cuillères à soupe de beurre non salé - 3 tablespoon unsalted butter",
+                            "1 jaune d\u0027oeuf - 1 egg yolk",
+                            "1 Å“uf entier - 1 whole egg",
+                            "Dorure aux Å“ufs - Egg wash",
+                            "Graines de sésame, grillées - Sesame Seeds, toasted",
+                            "Beurre fondu - Melted butter"
+                        ],
+    "directionLines":  [
+                           "Dans une petite casserole, ajouter la farine tout usage et incorporer le lait entier et l\u0027eau en fouettant. Fouetter jusqu\u0027à consistance lisse et mettre sur feu moyen, en remuant de temps en temps, jusqu\u0027à épaississement. Placer le tangzhong de côté.",
+                           "In a small saucepan, add all-purpose flour and whisk in whole milk and water. Whisk until smooth and put over medium heat, stirring occasionally, until thickens. Place the tangzhong to the side.",
+                           "Dans un récipient, mélangez le lait entier et l\u0027eau. Chauffer jusqu\u0027à 95F et mélanger le sucre et la levure instantanée. Laissez-le reposer jusqu\u0027à ce qu\u0027il soit mousseux.",
+                           "In a container, combine the whole milk and water. Heat until 95F, and mix in granulated sugar and instant yeast. Let it sit until frothy.",
+                           "Dans le bol d\u0027un batteur sur socle, ajoutez la farine à pain et le sel marin fin. Mélangez et allumez le mélangeur à vitesse moyenne-basse.",
+                           "In the bowl of a stand mixer, add in bread flour and fine sea salt. Toss and turn the mixer on medium-low speed.",
+                           "Ajoutez le mélange mousseux lait/levure, le tangzhong, le jaune d\u0027Å“uf et un Å“uf entier. Laissez mélanger 2-3 minutes.",
+                           "Add in the frothy milk/yeast mixture, the tangzhong, egg yolk, and a whole egg. Let mix for 2-3 minutes.",
+                           "Une fois qu\u0027une pâte lisse s\u0027est formée, ajoutez le beurre non salé ramolli 1 cuillère à soupe à la fois. Mélanger jusqu\u0027à ce que la pâte soit incorporée et lisse.",
+                           "Once a smooth dough has formed, add in softened unsalted butter 1 tablespoon at a time. Mix until incorporated and the dough is smooth.",
+                           "Retirez la pâte sur un plan de travail et roulez-la en une boule serrée. Ajouter dans un grand bol graissé, couvrir d\u0027une pellicule plastique et laisser lever à température ambiante pendant 1 heure.",
+                           "Remove the dough onto a work surface and roll into a tight ball. Add to a large greased bowl, cover with plastic wrap, and let rise at room temperature for 1 hour.",
+                           "Abattez la pâte jusqu\u0027à ce qu\u0027elle soit dégazée et placez-la sur une surface non farinée.",
+                           "Punch the dough down to degas, and place on an unfloured surface.",
+                           "Divisez-le en 12 morceaux de taille égale et roulez-le en une boule serrée. Placer à intervalles réguliers sur une plaque à pâtisserie recouverte de papier parchemin. Couvrir d\u0027une plaque à pâtisserie inversée.",
+                           "Divide into 12 equal-sized pieces and roll into a tight ball. Place spaced evenly apart on a baking sheet lined with parchment paper. Cover with an inverted baking sheet.",
+                           "Laisser lever à température ambiante pendant 30 minutes.",
+                           "Let proof at room temperature for 30 minutes.",
+                           "Badigeonner les petits pains de dorure à l\u0027Å“uf et saupoudrer de graines de sésame.",
+                           "Brush buns with egg wash and sprinkle with sesame seeds.",
+                           "Cuire au four à 375F pendant 17 minutes ou brun doré.",
+                           "Bake at 375F for 17 minutes or golden brown.",
+                           "Retirer et badigeonner immédiatement de beurre fondu.",
+                           "Remove and immediately brush with melted butter."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/cfa64319-d4b9-4425-b087-3e30be3cc4a0_0.jpg"
+                   ]
+}

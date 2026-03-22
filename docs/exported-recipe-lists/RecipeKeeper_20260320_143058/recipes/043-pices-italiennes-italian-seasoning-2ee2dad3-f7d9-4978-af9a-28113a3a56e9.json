@@ -1,0 +1,52 @@
+{
+    "recipeId":  "2ee2dad3-f7d9-4978-af9a-28113a3a56e9",
+    "title":  "Épices italiennes / Italian Seasoning",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Ingrédient/Ingredient",
+    "categories":  [
+                       "Épices/Spices"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.spendwithpennies.com/homemade-italian-seasoning-recipe/",
+    "yield":  "8 tablespoons",
+    "prepTimeIso":  "PT5M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "2 cuillères à soupe de basilic séché - 2 tablespoons dried basil",
+                            "2 cuillères à soupe d\u0027origan séché - 2 tablespoons dried oregano",
+                            "1 cuillères à soupe de romarin séché - 1 tablespoons dried rosemary",
+                            "2 cuillères à soupe de persil séché - 2 tablespoons dried parsley",
+                            "1 cuillère à soupe de thym séché - 1 tablespoon dried thyme",
+                            "1 cuillère à soupe de flocons de piment rouge - 1 tablespoon red chili flakes",
+                            "1 cuillère à thé de poudre d\u0027ail - 1 teaspoon garlic powder"
+                        ],
+    "directionLines":  [
+                           "Mélanger tous les ingredients dans un petit bol.",
+                           "Combine all ingredients in a small bowl.",
+                           "Verser dans un contenant hermétique et conserver dans un endroit sombre et frais jusqu\u0027à 6 mois.",
+                           "Pour into an air tight container and store in a cool dark place for up to 6 months."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 serving",
+                      "calories":  "13",
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  "20",
+                      "totalCarbohydrate":  "2",
+                      "dietaryFiber":  "1",
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/2ee2dad3-f7d9-4978-af9a-28113a3a56e9_0.jpg"
+                   ]
+}

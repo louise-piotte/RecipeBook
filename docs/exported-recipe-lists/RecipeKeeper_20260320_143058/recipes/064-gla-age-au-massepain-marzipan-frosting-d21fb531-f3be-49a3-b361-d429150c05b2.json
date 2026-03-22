@@ -1,0 +1,50 @@
+{
+    "recipeId":  "d21fb531-f3be-49a3-b361-d429150c05b2",
+    "title":  "Glaçage au massepain / Marzipan Frosting",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Amande/Almond",
+                       "Glassage/Icing"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://odense.com/odense-recipes/marzipan-frosting-recipe/",
+    "yield":  "2.5 tasses/cups",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "1 à 7 oz de paquet de massepain, râpée - 1-7 oz marzipan box, grated",
+                            "1 bâton de beurre ramolli - 1 stick butter, softened",
+                            "3 tasses de sucre en poudre - 3 cups confectioners sugar",
+                            "2 cuillères à soupe d\u0027eau chaude - 2 tablespoons hot water"
+                        ],
+    "directionLines":  [
+                           "Ajouter le massepain râpé et le beurre dans un bol moyen. Battre à feu doux jusqu\u0027à ce que le tout soit combiné. Augmentez la vitesse et battez pour obtenir une pâte lisse.",
+                           "Add grated Marzipan and butter into a medium bowl. Beat on low until combined. Turn speed to high and beat into a smooth paste.",
+                           "Ajouter le sucre et l\u0027eau chaude. Battre à feu doux jusqu\u0027à ce que le tout soit combiné. Tournez le mélangeur à puissance élevée et battez jusqu\u0027à consistance lisse. Si le glaçage est trop ferme, ajoutez une cuillère à café d\u0027eau chaude à la fois jusqu\u0027à obtenir la consistance désirée.",
+                           "Add sugar and hot water. Beat on low until combined. Turn mixer to high and beat until smooth. If frosting is too stiff, add one teaspoon of hot water at a time until desired spreading consistency is reached."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/d21fb531-f3be-49a3-b361-d429150c05b2_0.jpg"
+                   ]
+}

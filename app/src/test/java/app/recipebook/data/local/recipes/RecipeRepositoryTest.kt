@@ -8,15 +8,18 @@ import app.recipebook.data.local.db.TagDao
 import app.recipebook.data.local.db.TagEntity
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.IngredientLine
+import app.recipebook.domain.model.IngredientCategory
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LocalizedSystemText
+import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.Tag
 import app.recipebook.ui.recipes.normalizeMultilineText
 import app.recipebook.ui.recipes.parseIngredients
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
+import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
@@ -44,6 +47,7 @@ class RecipeRepositoryTest {
         assertEquals(original.ingredients.first().ingredientRefId, roundTrip.ingredients.first().ingredientRefId)
         assertEquals(original.ingredients.first().quantity, roundTrip.ingredients.first().quantity)
         assertEquals(original.languages.en.notes, roundTrip.languages.en.notes)
+        assertEquals(original.mainPhotoId, roundTrip.mainPhotoId)
     }
 
     @Test
@@ -151,6 +155,7 @@ class RecipeRepositoryTest {
         assertEquals("https://example.com/recipe", roundTrip.source?.sourceUrl)
         assertEquals("", roundTrip.source?.sourceName)
     }
+
     @Test
     fun createReusableIngredientAndTag_persistsNormalizedValues() = runBlocking {
         val ingredientDao = FakeIngredientReferenceDao()
@@ -165,6 +170,9 @@ class RecipeRepositoryTest {
             IngredientReferenceDraft(
                 nameFr = " Sucre ",
                 nameEn = " Sugar ",
+                aliasesFr = listOf(" sucre blanc ", "Sucre", "sucre blanc"),
+                aliasesEn = listOf(" white sugar ", "Sugar", "White Sugar"),
+                category = IngredientCategory.SUGAR_AND_SWEETENER,
                 defaultDensity = 0.85,
                 unitMappings = listOf(IngredientUnitMapping("cup", "g", 200.0))
             ),
@@ -174,7 +182,18 @@ class RecipeRepositoryTest {
 
         assertEquals("Sucre", ingredient.nameFr)
         assertEquals("Sugar", ingredient.nameEn)
+        assertEquals(listOf("sucre blanc"), ingredient.aliasesFr)
+        assertEquals(listOf("white sugar"), ingredient.aliasesEn)
+        assertEquals(IngredientCategory.SUGAR_AND_SWEETENER, ingredient.category)
         assertEquals(1, ingredientDao.items.size)
+        assertEquals(
+            listOf("sucre blanc"),
+            Json.decodeFromString<List<String>>(ingredientDao.items.values.single().aliasesFrJson)
+        )
+        assertEquals(
+            listOf("white sugar"),
+            Json.decodeFromString<List<String>>(ingredientDao.items.values.single().aliasesEnJson)
+        )
         assertEquals("breakfast", tag.slug)
         assertEquals(1, tagDao.items.size)
     }
@@ -201,8 +220,11 @@ class RecipeRepositoryTest {
         val updatedIngredient = repository.updateIngredientReference(
             id = "ingredient-ref-sugar",
             draft = IngredientReferenceDraft(
-                nameFr = "Sucre à glacer",
+                nameFr = "Sucre a glacer",
                 nameEn = "Icing sugar",
+                aliasesFr = listOf("sucre en poudre", "Sucre a glacer"),
+                aliasesEn = listOf("powdered sugar", "confectioners sugar", "Icing sugar"),
+                category = IngredientCategory.BAKING_AND_SPICE,
                 defaultDensity = 0.9,
                 unitMappings = listOf(IngredientUnitMapping("cup", "g", 120.0))
             ),
@@ -210,10 +232,13 @@ class RecipeRepositoryTest {
         )
         val updatedTag = repository.updateTag(
             id = "tag-breakfast",
-            draft = TagDraft(nameFr = "Déjeuner", nameEn = "Morning")
+            draft = TagDraft(nameFr = "Dejeuner", nameEn = "Morning")
         )
 
         assertEquals("Icing sugar", updatedIngredient.nameEn)
+        assertEquals(listOf("sucre en poudre"), updatedIngredient.aliasesFr)
+        assertEquals(listOf("powdered sugar", "confectioners sugar"), updatedIngredient.aliasesEn)
+        assertEquals(IngredientCategory.BAKING_AND_SPICE, updatedIngredient.category)
         assertEquals(0.9, updatedIngredient.defaultDensity)
         assertEquals(1, updatedIngredient.unitMappings.size)
         assertEquals("Morning", updatedTag.nameEn)
@@ -256,6 +281,8 @@ private fun sampleRecipe(
         en = LocalizedSystemText(titleEn, "", "", "")
     ),
     ingredients = listOf(ingredient),
+    mainPhotoId = "photo-main",
+    photos = listOf(PhotoRef("photo-main", "C:/photos/photo-main.jpg")),
     tagIds = tagIds
 )
 
@@ -324,7 +351,5 @@ private class FakeTagDao : TagDao {
 
     override suspend fun getById(id: String): TagEntity? = items[id]
 }
-
-
 
 

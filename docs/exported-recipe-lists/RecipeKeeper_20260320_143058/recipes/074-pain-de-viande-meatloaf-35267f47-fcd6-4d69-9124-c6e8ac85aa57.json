@@ -1,0 +1,65 @@
+{
+    "recipeId":  "35267f47-fcd6-4d69-9124-c6e8ac85aa57",
+    "title":  "Pain de viande / Meatloaf",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Boeuf/Beef"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.allrecipes.com/recipe/16354/easy-meatloaf/",
+    "yield":  "8",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT1H",
+    "ingredientLines":  [
+                            "1½ livre de boeuf haché - 1½ pounds ground beef",
+                            "1 oeuf - 1 egg",
+                            "1 oignon, haché - 1 onion, chopped",
+                            "1 tasse de lait - 1 cup milk",
+                            "1 tasse de chapelure séchée - 1 cup dried bread crumbs",
+                            "1 cuillères à soupe de sauce Worcestershire  - 1 tablespoon Worcestershire sauce",
+                            "1 cuillère à thé d\u0027ail en poudre - 1 teaspoon garlic powder",
+                            "1 cuillère à thé de basilique séché - 1 teaspoon dried basilic",
+                            "1 cuillère à thé d\u0027origan - 1 teaspoon dried oregano",
+                            "½ cuillère à thé de paprika fumé - ½ teaspoon smoked paprika",
+                            "sel et poivre au goût - salt and pepper to taste",
+                            "â…“ tasse de ketchup - â…“ cup ketchup",
+                            "â…“ tasse de sauce BBQ - â…“ cup BBQ sauce",
+                            "1 cuillères à soupe de cassonade - 1 tablespoon brown sugar",
+                            "1 cuillère à soupe de vinaigre - 1 tablespoon vinegar"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 350°F (175°C). Graisser légèrement un moule à pain de 9 x 5 pouces.",
+                           "Preheat the oven to 350°F (175°C). Lightly grease a 9x5-inch loaf pan.",
+                           "Mélanger le bÅ“uf haché, l\u0027oignon, le lait, la chapelure, l\u0027Å“uf, la sauce Worcestershire et les épices dans un grand bol; Assaisonnez avec du sel et du poivre. Transférer dans le moule à pain préparé.",
+                           "Combine ground beef, onion, milk, bread crumbs, egg, Worcestershire sauce and spices in a large bowl; season with salt and pepper. Transfer into prepared loaf pan.",
+                           "Mélanger le ketchup, la sauce BBQ, la cassonade et le vinaigre dans un petit bol jusqu\u0027à ce qu\u0027ils soient bien mélangés; verser sur le pain de viande et l\u0027étaler uniformément sur le dessus.",
+                           "Mix ketchup, BBQ sauce, brown sugar, and vinegar together in a small bowl until well combined; pour over meatloaf and spread it evenly over the top.",
+                           "Cuire au four préchauffé jusqu\u0027à ce qu\u0027il ne soit plus rosé au centre, environ 1 heure.",
+                           "Bake in the preheated oven until no longer pink in the center, about 1 hour."
+                       ],
+    "notes":  [
+                  "Doubler les épices.",
+                  "Double the spices."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "372",
+                      "totalFat":  "25",
+                      "saturatedFat":  "10",
+                      "cholesterol":  "98",
+                      "sodium":  "335",
+                      "totalCarbohydrate":  "19",
+                      "dietaryFiber":  "1",
+                      "sugars":  "9",
+                      "protein":  "18"
+                  },
+    "photoPaths":  [
+                       "images/35267f47-fcd6-4d69-9124-c6e8ac85aa57_0.jpg"
+                   ]
+}

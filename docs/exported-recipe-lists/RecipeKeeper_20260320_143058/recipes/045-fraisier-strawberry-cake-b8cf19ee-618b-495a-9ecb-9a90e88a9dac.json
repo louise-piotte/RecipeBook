@@ -1,0 +1,90 @@
+{
+    "recipeId":  "b8cf19ee-618b-495a-9ecb-9a90e88a9dac",
+    "title":  "Fraisier / Strawberry Cake",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Amande/Almond",
+                       "Fraise/Strawberry",
+                       "Gâteau/Cake"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.fashioncooking.fr/2016/09/fraisier-traditionnel/",
+    "yield":  "20cm / 8-inch",
+    "prepTimeIso":  "PT4H",
+    "cookTimeIso":  "PT1H",
+    "ingredientLines":  [
+                            "150g d\u0027Å“uf entiers - 150g whole eggs",
+                            "90g de sucre - 90g of sugar",
+                            "75g de farine - 75g flour",
+                            "20g de Maïzena - 20g cornstarch",
+                            "500g de lait - 500g of milk",
+                            "1 gousse de vanille - 1 vanilla pod",
+                            "60g de jaune dâ€™Å“uf - 60g egg yolk",
+                            "125g de sucre - 125g of sugar",
+                            "50g de Maïzena - 50g cornstarch",
+                            "175g de beurre température pièce - 175g room temperature butter",
+                            "500g de fraises fraîches - 500g fresh strawberries",
+                            "50g de sucre - 50g of sugar",
+                            "50g eau - 50g water",
+                            "500g de massepin rose - 500g pink marzipan"
+                        ],
+    "directionLines":  [
+                           "Fendez la gousse de vanille en deux, récupérez les grains et mettez-les dans le lait. Portez le lait à ébullition.",
+                           "Split the vanilla pod in half, collect the grains and put them in the milk. Bring the milk to a boil.",
+                           "Dans un bol, fouettez les jaunes et le sucre jusquâ€™à ce quâ€™ils blanchissent. Incorporez la Maïzena et mélangez.",
+                           "In a bowl, whisk the yolks and sugar until they whiten. Add the cornstarch and mix.",
+                           "Hors du feu, versez un tiers du lait bouillant sur le mélange jaunes-sucre-Maïzena en fouettant doucement. Ajoutez ensuite le reste du lait et faites cuire à feu doux jusqu\u0027à ce que la crème s\u0027épaississe en remuant constamment. Filmez la crème pâtissière au contact et faites-la refroidir jusqu\u0027à environ 30°C.",
+                           "Off the heat, pour a third of the boiling milk over the egg yolks-sugar-cornflour mixture, whisking gently. Then add the rest of the milk and cook over low heat until the cream thickens, stirring constantly. Film the pastry cream on contact and let it cool to around 30°C.",
+                           "Préchauffez le four à 180°. Placez la cuve du robot au bain-marie et fouettez les Å“ufs et le sucre jusqu\u0027à ce que le mélange atteigne 50°. Une fois la température atteinte, retirez la cuve du bain marie et placez-la dans le robot. Fouettez jusqu\u0027à ce que le mélange double de volume et refroidisse.",
+                           "Preheat the oven to 180°. Place the bowl of the food processor in a bain-marie and whisk the eggs and sugar until the mixture reaches 50°. Once the temperature has been reached, remove the tank from the water bath and place it in the robot. Whisk until the mixture doubles in volume and cools.",
+                           "Mélangez à part la farine et la maïzena. Incorporez ce mélange tamisé délicatement dans l\u0027appareil Å“ufs + sucre précédent.",
+                           "Mix the flour and cornstarch separately. Incorporate this sieved mixture delicately into the egg + sugar mixture above.",
+                           "Versez le tout dans un cercle de 18cm de diamètre posé sur une toile silicone sur une plaque de cuisson. Enfournez pour 15 min à 180°. Laissez la génoise refroidir dans son cercle.",
+                           "Pour everything into a circle 18cm in diameter placed on a silicone cloth on a baking sheet. Bake for 15 minutes at 180°. Let the sponge cake cool in its circle.",
+                           "Faites chauffer lâ€™eau et le sucre dans une casserole à feu doux jusquâ€™à ce que le sucre soit dissout.",
+                           "Heat the water and sugar in a saucepan over low heat until the sugar has dissolved.",
+                           "Quand la crème pâtissière a refroidi, crémez le beurre pommade dans la cuve du robot. Prenez votre crème pâtissière (fouettez-la un peu) et versez-la en trois fois dans la cuve sur le beurre pommade. Fouettez jusqu\u0027à ce que votre mousseline soit foisonnée et qu\u0027elle ait la texture d\u0027une mousse.",
+                           "When the pastry cream has cooled, cream the softened butter in the stand mixer bowl. Take your pastry cream (whip it a little) and pour it in three times into the bowl over the softened butter. Whip until your mousseline is fluffy and has the texture of a mousse.",
+                           "Prenez un cercle de 20cm de diamètre, placez une bande de rhodoïd sur tout le tour intérieur. Coupez votre génoise en deux.",
+                           "Take a circle 20cm in diameter, place a strip of rhodoïd all around the inside. Cut your sponge cake in half.",
+                           "Placez un disque de génoise bien centré dans le fond du cercle. Avec un pinceau, imbibez la génoise avec le sirop de punchage.",
+                           "Place a disc of sponge cake well centered in the bottom of the circle. With a brush, soak the sponge cake with the simple syrup.",
+                           "Coupez une douzaine de fraises en deux et placez-les sur tout le tour entre le cercle et la génoise, pointe de la fraise vers le haut. Recouvrez de crème mousseline en plaquant bien la crème sur les côtés. Disposez le reste des fraises coupées en petits morceaux. Placez le second disque de génoise, imbibez de sirop de punchage.",
+                           "Cut a dozen strawberries in half and place them all around between the circle and the sponge cake, strawberry tip up. Cover with mousseline cream, spreading the cream well on the sides. Arrange the rest of the strawberries cut into small pieces. Place the second disc of sponge cake, soak with syrup.",
+                           "Recouvrez du reste de crème mousseline et lissez à la surface. Réservez au frais 3h minimum.",
+                           "Cover with the rest of the mousseline cream and smooth on the surface. Reserve for a minimum of 3 hours.",
+                           "Une fois la crème mousseline bien prise, décerclez et retirez délicatement la bande de rhodoïd. Étalez la pâte d\u0027amande rose et à lâ€™aide du cercle, découpez un cercle de 20cm de diamètre puis déposez-le sur le gâteau.",
+                           "Once the mousseline cream is well set, uncircle and gently remove the strip of rhodoïd. Spread the pink marzipan and using the circle, cut a circle 20cm in diameter and place it on the cake.",
+                           "Rouler une cercle de 20cm avec le massepin et placer le sur le gâteau. Créez les décorations de votre choix à lâ€™aide de chocolat blanc fondu, de fraises et de billes en sucre.",
+                           "Roll a 20cm circle with the marzipan and place it on the cake. Create the decorations of your choice using melted white chocolate, strawberries and sugar balls.",
+                           "Conserver au frais jusquâ€™au moment de servir.",
+                           "Keep refrigerated until ready to serve."
+                       ],
+    "notes":  [
+                  "La crème patissière et la génoise peuvent être faites la veuille. Si c\u0027est le cas, il faut que la crème remonte à température pièce avant d\u0027être moussée avec le beurre.",
+                  "The pastry cream and the sponge cake can be made the day before. If so, the cream must come back to room temperature before being creamed with the butter."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/b8cf19ee-618b-495a-9ecb-9a90e88a9dac_0.jpg",
+                       "images/b8cf19ee-618b-495a-9ecb-9a90e88a9dac_1.jpg",
+                       "images/b8cf19ee-618b-495a-9ecb-9a90e88a9dac_2.jpg"
+                   ]
+}

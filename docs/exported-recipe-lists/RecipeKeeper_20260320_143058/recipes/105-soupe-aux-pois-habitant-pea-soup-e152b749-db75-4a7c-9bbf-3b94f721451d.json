@@ -1,0 +1,60 @@
+{
+    "recipeId":  "e152b749-db75-4a7c-9bbf-3b94f721451d",
+    "title":  "Soupe aux Pois/Habitant Pea Soup",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Accompagnement/Side Dish",
+    "categories":  [
+                       "Pois Chiches / Chickpeas",
+                       "Soupe/Soup",
+                       "Végétarien/Vegetarian"
+                   ],
+    "collections":  [
+                        "Favori à Gab/Gab\u0027s favorites"
+                    ],
+    "sourceUrl":  "http://veganfeastkitchen.blogspot.com/2013/02/homemade-habitant-pea-soup-soupe-aux.html",
+    "yield":  "6-8",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT1H30M",
+    "ingredientLines":  [
+                            "2 tasses de pois chiches entiers séchés - 2 cups dried whole chickpeas",
+                            "8 tasses de bouillon (poulet ou légumes) - 8 cups broth (chicken or vegetable)",
+                            "1 gros oignon, haché - 1 large onion, chopped",
+                            "4 gousses d\u0027ail, écrasées - 4 cloves garlic, crushed",
+                            "1 patate douce - 1 sweet potato",
+                            "4 petites carottes, lavées et coupées en dés - 4 small carrots, scrubbed and diced",
+                            "2 branches de céleri hachées - 2 branches chopped celery",
+                            "Herbes de Provence",
+                            "poivre noir fraichement moulu - freshly-ground black pepper",
+                            "1 cuillère à thé de fumée liquide - 1 teaspoon liquid smoke",
+                            "1 cuillère à soupe d\u0027huile de sésame noir - 1 tablespoon dark sesame oil"
+                        ],
+    "directionLines":  [
+                           "Faire tremper les petits pois dans l\u0027eau pour couvrir généreusement pendant environ 8 heures, puis égoutter.",
+                           "Soak the peas in water to cover generously for about 8 hours, then drain.",
+                           "Mélanger les pois trempés dans une grande casserole épaisse avec le bouillon, les légumes, les herbes et les épices, la fumée liquide et l\u0027huile de sésame. Laisser mijoter 1h30.",
+                           "Mix the soaked peas in a large heavy pot with the broth, vegetables, herbs and spices, liquid smoke, and sesame oil. Simmer for 1½ hours.",
+                           "Avec un mélangeur à immersion, mélanger juste assez pour réduire en purée certains pois, mais pas tous. Pulsez juste brièvement autour du pot.",
+                           "With a immersion blender, blend just enough to puree some of the peas, but not all. Just pulse briefly around the pot."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/e152b749-db75-4a7c-9bbf-3b94f721451d_0.jpg"
+                   ]
+}

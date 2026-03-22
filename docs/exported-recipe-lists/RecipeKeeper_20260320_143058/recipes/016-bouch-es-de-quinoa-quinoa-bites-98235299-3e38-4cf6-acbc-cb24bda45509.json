@@ -1,0 +1,56 @@
+{
+    "recipeId":  "98235299-3e38-4cf6-acbc-cb24bda45509",
+    "title":  "Bouchées de quinoa / Quinoa bites",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Accompagnement/Side Dish",
+    "categories":  [
+                       "Muffin"
+                   ],
+    "collections":  [
+                        "Santé/Health"
+                    ],
+    "sourceUrl":  "https://www.eatyourselfskinny.com/cheesy-broccoli-quinoa-bites/",
+    "yield":  "10 Servings",
+    "prepTimeIso":  "PT5M",
+    "cookTimeIso":  "PT20M",
+    "ingredientLines":  [
+                            "2 tasses de quinoa cuit - 2 cups cooked quinoa",
+                            "2 Å“ufs - 2 eggs",
+                            "1 tasse de fromage cheddar râpé - 1 cup shredded cheddar cheese",
+                            "½ tasse de carotte râpée - ½ cup grated carrot",
+                            "1½ tasse de brocoli haché - 1½ cups chopped broccoli",
+                            "½ cuillère à thé de sel - ½ teaspoon salt"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 350F.",
+                           "Preheat oven to 350F.",
+                           "Dans un robot culinaire, mélanger le brocoli et la carotte râpée jusqu\u0027à ce qu\u0027ils soient finement hachés.",
+                           "In a food processor, blend together broccoli and grated carrot until finely chopped.",
+                           "Mélanger les légumes hachés, le quinoa cuit, les Å“ufs, le fromage râpé et le sel dans un grand bol. Répartir uniformément le mélange de quinoa dans deux moules à mini muffins vaporisés d\u0027un enduit à cuisson, en appuyant sur chacun d\u0027eux pour que les bouchées tiennent ensemble.",
+                           "Mix together chopped veggies, cooked quinoa, eggs, shredded cheese and salt in a large bowl. Divide quinoa mixture evenly into two mini muffin tins sprayed with cooking spray, pressing down each one so that the bites hold together.",
+                           "Cuire les bouchées de quinoa pendant 15 à 20 minutes ou jusqu\u0027à ce qu\u0027elles soient légèrement dorées. Laissez refroidir 5 minutes avant de servir et dégustez !",
+                           "Bake quinoa bites for 15 to 20 minutes, or until lightly browned. Let cool for 5 minutes before serving and enjoy!"
+                       ],
+    "notes":  [
+                  "â…” tasse de quinoa avant la cuisson",
+                  "â…” cup uncooked quinoa"
+              ],
+    "nutrition":  {
+                      "servingSize":  "3 quinoa bites",
+                      "calories":  "110",
+                      "totalFat":  "5.5",
+                      "saturatedFat":  "2.7",
+                      "cholesterol":  null,
+                      "sodium":  "93.6",
+                      "totalCarbohydrate":  "9.2",
+                      "dietaryFiber":  "1.4",
+                      "sugars":  "0.5",
+                      "protein":  "6.1"
+                  },
+    "photoPaths":  [
+                       "images/98235299-3e38-4cf6-acbc-cb24bda45509_0.jpg"
+                   ]
+}

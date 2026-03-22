@@ -88,6 +88,7 @@ data class Recipe(
     val tagIds: List<String> = emptyList(),
     val collectionIds: List<String> = emptyList(),
     val ratings: Ratings? = null,
+    val mainPhotoId: String? = null,
     val photos: List<PhotoRef> = emptyList(),
     val attachments: List<AttachmentRef> = emptyList(),
     val importMetadata: ImportMetadata? = null,
@@ -101,10 +102,33 @@ data class IngredientUnitMapping(
     val factor: Double
 )
 
+enum class IngredientCategory {
+    FLOUR_AND_STARCH,
+    GRAIN_AND_CEREAL,
+    SUGAR_AND_SWEETENER,
+    BAKING_AND_SPICE,
+    HERB,
+    CHOCOLATE_AND_CANDY,
+    FAT_AND_OIL,
+    DAIRY_AND_ALTERNATIVE,
+    EGG,
+    CHEESE,
+    BAKING_MIXIN_AND_PANTRY,
+    NUT_SEED_AND_DRIED_FRUIT,
+    FRUIT,
+    VEGETABLE_AND_AROMATIC,
+    LEGUME_AND_PULSE,
+    STOCK_AND_BROTH,
+    SAUCE_AND_CONDIMENT,
+    PROTEIN,
+    OTHER
+}
+
 data class IngredientReference(
     val id: String,
     val nameFr: String,
     val nameEn: String,
+    val category: IngredientCategory = IngredientCategory.OTHER,
     val aliasesFr: List<String> = emptyList(),
     val aliasesEn: List<String> = emptyList(),
     val defaultDensity: Double? = null,
@@ -271,5 +295,12 @@ data class RecipeLibrary(
     val collections: List<Collection>,
     val settings: LibrarySettings
 )
+
+
+
+
+
+
+
 
 

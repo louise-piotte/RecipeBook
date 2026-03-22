@@ -1,0 +1,67 @@
+{
+    "recipeId":  "7dde7849-5f6e-4e20-b84f-e90fa780d871",
+    "title":  "Gruau sans cuisson/Overnight Oats",
+    "recipeShareId":  "",
+    "linkedRecipeId":  "583ae5e3-e482-42ba-971f-72d8418ef175",
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Déjeuné/Breakfast",
+    "categories":  [
+                       "Avoine/Oat",
+                       "Modifiable/Customisable"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  null,
+    "yield":  "",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "1 portion avoine - 1 portion oats",
+                            "1 portion lait - 1 portion milk",
+                            "â…› portion graine chia - â…› portion chia seeds",
+                            "Source de sucre  (anko, sirop d\u0027érable) - Source of sugar (anko, maple syrup)",
+                            "Saveur (vanille, cacao, beurre d\u0027arachide) - Flavor (vanilla, cocoa, peanut butter)",
+                            "Garnitures (dates, bananes, bleuets, sauce aux canneberges) - Toppings (dates, bananas, blueberries, cranberry sauce)",
+                            "Noix (amandes, pacanes, noix de Grenoble, arachides - Nuts (almonds, pecans, walnuts, peanuts)"
+                        ],
+    "directionLines":  [
+                           "Dans un pot Masson ajouter et mélanger l\u0027avoine, les graines de chia et le lait.",
+                           "In a Masson jar add and mix the oats, chia seeds and milk.",
+                           "Ajouter la source de sucre et les saveur. Mélanger a nouveau. La couleur doit être uniforme.",
+                           "Add sugar source and flavors. Mix again. The color should be uniform.",
+                           "Ajouter la garniture en mélangeant au fur et a mesure.",
+                           "Add the filling, mixing as you go.",
+                           "Laisser tremper au frigidaire pour la nuit.",
+                           "Leave to soak in the fridge for the night.",
+                           "Ajouter les noix juste avant de servir. Manger froid ou chaud.",
+                           "Add nuts just before serving. Eat hot or cold."
+                       ],
+    "notes":  [
+                  "Banane suprême: sirop d\u0027érable, vanille, cacao, beurre d\u0027arachide, bananes, pacanes",
+                  "Banana supreme: maple syrup, vanilla, cocoa, peanut butter, bananas, pecans",
+                  "Surprise pourpre: anko, vanille, dates, amande",
+                  "Purple surprise: anko, vanilla, dates, almonds",
+                  "Explosion de canneberges: sirop d\u0027érable, vanille, sauce aux canneberges, canneberges séchées, amandes",
+                  "Cranberry Burst: maple syrup, vanilla, cranberry sauce, dried cranberries, almonds",
+                  "Tempête tropicale: sirop d\u0027érable, essence d\u0027amande, noix de coco en flocons, mangue, amandes",
+                  "Tropical Storm: maple syrup, almond extract, flaked coconut, mango, amandes"
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/7dde7849-5f6e-4e20-b84f-e90fa780d871_0.jpg",
+                       "images/7dde7849-5f6e-4e20-b84f-e90fa780d871_1.jpg"
+                   ]
+}

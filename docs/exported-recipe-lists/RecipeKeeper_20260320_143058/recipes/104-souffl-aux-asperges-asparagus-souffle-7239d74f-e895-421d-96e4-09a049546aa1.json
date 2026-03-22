@@ -1,0 +1,72 @@
+{
+    "recipeId":  "7239d74f-e895-421d-96e4-09a049546aa1",
+    "title":  "Soufflé aux asperges/Asparagus Souffle",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Entrée/Appetizer",
+    "categories":  [
+                       "Asperge/Asparagus",
+                       "Végétarien/Vegetarian"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.allrecipes.com/recipe/220991/chef-johns-asparagus-souffle/",
+    "yield":  "4 soufflés/souffles",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT30M",
+    "ingredientLines":  [
+                            "1 botte d\u0027asperges, parées et coupées en morceaux de ½ pouce - 1 bunch asparagus, trimmed and cut into ½-inch pieces",
+                            "2 cuillères à soupe de beurre non salé - 2 tablespoons unsalted butter",
+                            "2 cuillères à soupe de farine tout usage - 2 tablespoons all-purpose flour",
+                            "1 tasse de lait froid - 1 cup cold milk",
+                            "½ cuillère à thé de sel - ½ teaspoon salt",
+                            "1 gousse d\u0027ail, hachée - 1 clove garlic, minced",
+                            "4 Å“ufs, séparés - 4 eggs, separated",
+                            "½ tasse de fromage Cheddar blanc fort râpé - ½ cup grated sharp white Cheddar cheese"
+                        ],
+    "directionLines":  [
+                           "Cuire les asperges dans une casserole d\u0027eau bouillante jusqu\u0027à ce qu\u0027elles soient vertes mais encore croquantes, environ 2 minutes. Transférer les asperges dans de l\u0027eau glacée pour arrêter la cuisson. Égoutter et réserver.",
+                           "Cook asparagus in a saucepan of boiling water until bright green but still crisp, about 2 minutes. Transfer asparagus to ice water to stop the cooking process. Drain and set aside.",
+                           "Faire fondre le beurre dans une casserole à feu moyen-doux. Incorporer la farine et remuer jusqu\u0027à ce que le mélange devienne pâteux et légèrement doré, environ 2 minutes.",
+                           "Melt butter in a saucepan over medium-low heat. Whisk in flour and stir until mixture becomes paste-like and light golden brown, about 2 minutes.",
+                           "Fouetter le lait dans le mélange beurre-farine; porter à ébullition et cuire jusqu\u0027à épaississement, 2 à 3 minutes. Assaisonner de sel et de poivre de Cayenne.",
+                           "Whisk milk into butter-flour mixture; bring to a simmer and cook until thick, 2 to 3 minutes. Season with salt and cayenne pepper.",
+                           "Placer le mélange de lait, l\u0027ail et les asperges dans un mélangeur et réduire en purée jusqu\u0027à consistance lisse.",
+                           "Place milk mixture, garlic, and asparagus in a blender and puree until smooth.",
+                           "Verser le mélange d\u0027asperges dans un grand bol; incorporer les jaunes d\u0027Å“ufs et le fromage Cheddar.",
+                           "Pour asparagus mixture into a large bowl; stir in egg yolks and Cheddar cheese.",
+                           "Préchauffer le four à 375°F (190°C)",
+                           "Preheat oven to 375°F (190°C)",
+                           "Beurrer généreusement 4 ramequins (6 onces)",
+                           "Generously butter 4 (6-ounce) ramekins",
+                           "Battre les blancs d\u0027Å“ufs dans un grand bol en verre ou en métal jusqu\u0027à formation de pics mous. Soulevez votre batteur ou fouettez vers le haut : les blancs d\u0027Å“ufs formeront des monticules mous plutôt qu\u0027un pic pointu",
+                           "Beat egg whites in a large glass or metal mixing bowl until soft peaks form. Lift your beater or whisk straight up: the egg whites will form soft mounds rather than a sharp peak",
+                           "Incorporer la moitié des blancs d\u0027Å“ufs au mélange de fromage aux asperges jusqu\u0027à ce qu\u0027ils soient juste combinés. Incorporer délicatement les blancs d\u0027Å“ufs restants au mélange.",
+                           "Stir half of egg whites into asparagus cheese mixture until just combined. Gently fold remaining egg whites into mixture.",
+                           "Remplissez les ramequins préparés environ aux 3/4 et placez-les sur une plaque à pâtisserie; cuire au four préchauffé jusqu\u0027à ce que les bords soient dorés, environ 20 à 25 minutes",
+                           "Fill prepared ramekins about 3/4 full and place on a baking sheet; bake in the preheated oven until edges are golden brown, about 20 to 25 minutes"
+                       ],
+    "notes":  [
+                  "Essayez avec d\u0027autres légumes. Brocoli, artichauts, poireaux, épinards ou toute autre plante comestible que vous pouvez réduire en purée doivent fonctionner avec la même procédure de base.",
+                  "Try with other vegetables. Broccoli, artichokes, leeks, spinach, or any other edible plant you can puree should work with the same basic procedure."
+              ],
+    "nutrition":  {
+                      "servingSize":  "1",
+                      "calories":  "239",
+                      "totalFat":  "16.2",
+                      "saturatedFat":  null,
+                      "cholesterol":  "198.6",
+                      "sodium":  "16.2",
+                      "totalCarbohydrate":  "10.9",
+                      "dietaryFiber":  "2.5",
+                      "sugars":  "5.3",
+                      "protein":  "14.1"
+                  },
+    "photoPaths":  [
+                       "images/7239d74f-e895-421d-96e4-09a049546aa1_0.jpg",
+                       "images/7239d74f-e895-421d-96e4-09a049546aa1_1.jpg"
+                   ]
+}

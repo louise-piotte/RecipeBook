@@ -1,0 +1,57 @@
+{
+    "recipeId":  "e9dfacc1-69f7-47cf-9f4e-c5c79508162f",
+    "title":  "Épis de Maïs / Corn on the cob",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Entrée/Appetizer",
+    "categories":  [
+                       "Maïs/Corn",
+                       "Soupe/Soup"
+                   ],
+    "collections":  [
+                        "Questionable"
+                    ],
+    "sourceUrl":  null,
+    "yield":  "1",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "2 tasses d\u0027eau - 2 cups of water",
+                            "1 tasse de lait - 1 cup milk",
+                            "¼ tasse de beurre - ¼ cup butter",
+                            "â…› tasse de cassonade - â…› cup brown sugar",
+                            "2 cuillère à thé de better than bouillon (poulet ou légumes) - 2 tsp better than bouillon (chicken or vegetable)",
+                            "Ail en poudre ou ail frais - Garlic powder or fresh garlic",
+                            "2 maïs en épis - 2 corn on the cob"
+                        ],
+    "directionLines":  [
+                           "Faire bouillir l\u0027eau avec le better than bouillon et l\u0027ail.",
+                           "Boil the water with the better than bouillon and the garlic.",
+                           "Ajouter le lait, la cassonade et le beurre. Ramener le tout a ébullition.",
+                           "Add milk, brown sugar and butter. Bring everything back to a boil.",
+                           "Ajouter le maïs et bouillir 5 minutes.",
+                           "Add the corn and boil for 5 minutes.",
+                           "Servir le maïs et garder le liquide comme base de soupe.",
+                           "Serve the corn and save the liquid as a soup base."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+
+                   ]
+}

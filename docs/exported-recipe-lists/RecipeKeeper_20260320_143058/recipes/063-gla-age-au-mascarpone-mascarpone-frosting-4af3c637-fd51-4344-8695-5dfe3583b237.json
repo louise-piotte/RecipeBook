@@ -1,0 +1,51 @@
+{
+    "recipeId":  "4af3c637-fd51-4344-8695-5dfe3583b237",
+    "title":  "Glaçage au mascarpone/Mascarpone frosting",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Glassage/Icing"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://selfproclaimedfoodie.com/mascarpone-frosting/#wprm-recipe-container-35652",
+    "yield":  "12 servings",
+    "prepTimeIso":  "PT5M",
+    "cookTimeIso":  "PT5M",
+    "ingredientLines":  [
+                            "8 onces de fromage mascarpone - 8 ounces mascarpone cheese",
+                            "1 tasse de sucre à glacé - 1 cup confectioners sugar",
+                            "1 tasse de crème fouettée épaisse froide - 1 cup cold heavy whipping cream",
+                            "½ cuillère à thé d\u0027extrait d\u0027amande - ½ teaspoon almond extract",
+                            "1 cuillère à soupe d\u0027extrait de vanille - 1 tablespoon vanilla extract"
+                        ],
+    "directionLines":  [
+                           "Placez le mascarpone dans le bol d\u0027un batteur sur socle équipé du fouet et commencez à battre à vitesse moyenne. Tout en battant, ajoutez l\u0027extrait d\u0027amande et la vanille suivi du sucre glace. Racler les côtés et continuer à battre jusqu\u0027à ce que le mélange soit léger et mousseux.",
+                           "Place the mascarpone in the bowl of a stand mixer with the whisk attachment and start beating on medium speed. While beating, add the almond extract and vanilla followed by the confectioners sugar. Scrape sides and continue beating until light and fluffy.",
+                           "Pendant que le batteur tourne à grande vitesse, ajoutez lentement la crème fouettée jusqu\u0027à ce que le glaçage devienne léger et mousseux, environ 1 à 3 minutes.",
+                           "With the mixer running on high speed, slowly add the whipping cream until the frosting becomes light and fluffy, about 1-3 minutes."
+                       ],
+    "notes":  [
+                  "Ne pas trop mélanger.",
+                  "Do not overmix."
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 serving",
+                      "calories":  "195",
+                      "totalFat":  "15",
+                      "saturatedFat":  "9",
+                      "cholesterol":  "46",
+                      "sodium":  "18",
+                      "totalCarbohydrate":  "11",
+                      "dietaryFiber":  null,
+                      "sugars":  "9",
+                      "protein":  "1"
+                  },
+    "photoPaths":  [
+                       "images/4af3c637-fd51-4344-8695-5dfe3583b237_0.jpg"
+                   ]
+}

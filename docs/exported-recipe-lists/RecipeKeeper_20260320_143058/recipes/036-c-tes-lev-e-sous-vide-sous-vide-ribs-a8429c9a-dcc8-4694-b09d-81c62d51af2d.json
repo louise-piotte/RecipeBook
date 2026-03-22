@@ -1,0 +1,65 @@
+{
+    "recipeId":  "a8429c9a-dcc8-4694-b09d-81c62d51af2d",
+    "title":  "Côtes levée sous vide / Sous vide ribs",
+    "recipeShareId":  "",
+    "linkedRecipeId":  "f137bc89-dee6-46e1-b9cd-1bb426bdbdda",
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Barbecue",
+                       "Porc/Pork",
+                       "Sous-vide"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://fitfoodiefinds.com/24-hour-sous-vide-ribs/",
+    "yield":  "4",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "P1D",
+    "ingredientLines":  [
+                            "1 carré de côtes levées - 1 rack of ribs",
+                            "1/2 cuillère à soupe d\u0027huile d\u0027olive - 1/2 tablespoon olive oil",
+                            "3/4 tasse d\u0027épice à porc (divisée) - 3/4 cup pork dry rub (divided)",
+                            "1/2 tasse de sauce BBQ - 1/2 cup BBQ sauce"
+                        ],
+    "directionLines":  [
+                           "Remplissez une grande casserole d\u0027eau (quelque chose d\u0027assez grand pour immerger vos côtes). Préchauffez votre bain-marie sous vide à 152 °F en fixant votre sous vide sur le côté de la casserole.",
+                           "Fill a large pot with water (something large enough to submerge your ribs). Preheat your sous vide water bath to 152ºF by attaching your sous vide to the side of the pot.",
+                           "Préparez le mélange sec de porc en combinant toutes les épices dans un bol moyen et réservez.",
+                           "Prepare the pork dry rub by combining all of the spices together in a medium bowl and set aside.",
+                           "Retirez le carré de côtes levées de l\u0027emballage et placez-le sur une grande plaque à pâtisserie. Utilisez un couteau bien aiguisé pour couper la grille en deux. Ensuite, retournez les côtes et retirez la membrane blanche en la décollant. Jeter la membrane.",
+                           "Remove rack of ribs from the package and place it onto a large baking sheet. Use a sharp knife to cut the rack in half. Then, flip the ribs over and remove the white membrane by peeling it back. Discard membrane.",
+                           "Assaisonner généreusement les côtes avec votre marinade sèche. Utilisez environ 1/2 tasse de frottement sec à ce stade et conservez le reste pour plus tard. Utilisez vos mains pour masser le frottement à l\u0027avant et à l\u0027arrière des côtes.",
+                           "Generously season ribs with your dry rub. Use about 1/2 cup of dry rub at this point and save the rest for later. Use your hands to massage the rub into the front and back of the ribs.",
+                           "Cuire les côtes levées sous vide dans des sacs pendant 24 heures.",
+                           "Cook the ribs sous-vide in bags for 24 hours.",
+                           "Une fois les côtes cuites, retirez les sacs du bain-marie puis coupez-les avec une paire de ciseaux. Jetez le jus et retirez les côtes. Placez les côtes sur une serviette en papier et utilisez une autre serviette en papier pour éponger toute humidité.",
+                           "Once the ribs are done, remove bags from water bath and then cut them open with a pair of scissors. Discard the juices and remove the ribs. Place ribs on top of paper towel and use an additional paper towel to blot any moisture out of them.",
+                           "Préchauffer le four à gril.",
+                           "Preheat oven to broil.",
+                           "Utilisez environ 1/4 tasse de plus de marinade sèche pour assaisonner l\u0027avant et l\u0027arrière des côtes. Placez les côtes de porc côté viande vers le bas sur un plat, puis utilisez un pinceau pour appliquer une couche de votre sauce barbecue préférée. Vous pouvez utiliser autant ou aussi peu de sauce barbecue que vous le souhaitez.",
+                           "Use around 1/4 cup more of dry rub to season the front and back of the ribs. Place the ribs meat side down on a dish, then, use a brush to apply a layer of your favorite BBQ sauce. You can use as much or as little BBQ sauce as you\u0027d like.",
+                           "Faire griller pendant 2-3 minutes puis retourner les côtes et ajouter la sauce côté viande. Faire griller encore 2-3 minutes.",
+                           "Broil for 2-3 minutes then flip the ribs and add sauce to the meat side. Broil for another 2-3 minutes."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 serving",
+                      "calories":  "360",
+                      "totalFat":  "17",
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  "31",
+                      "dietaryFiber":  "2",
+                      "sugars":  "14",
+                      "protein":  "51"
+                  },
+    "photoPaths":  [
+                       "images/a8429c9a-dcc8-4694-b09d-81c62d51af2d_0.jpg"
+                   ]
+}

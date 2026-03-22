@@ -1,0 +1,53 @@
+{
+    "recipeId":  "834bade3-bdda-432f-a4a6-1cb0fec6f065",
+    "title":  "Sauce BigMac/BigMac sauce",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Accompagnement/Side Dish",
+    "categories":  [
+                       "Sauce"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.joshuaweissman.com/post/mcdonald-s-big-mac-but-better",
+    "yield":  "2-4",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "½ tasse de mayonnaise - ½ cup mayonnaise",
+                            "3 cuillères à soupe de ketchup - 3 tablespoon ketchup",
+                            "3 cuillères à soupe de moutarde jaune - 3 tablespoon yellow mustard",
+                            "2-3 cuillères à soupe d\u0027oignon doux brunoise - 2-3 tablespoon brunoise sweet onion",
+                            "â…› cuillère à thé de poudre d\u0027oignon - â…› teaspoon onion powder",
+                            "1 gousse d\u0027ail râpée - 1 clove garlic grated",
+                            "1 cornichon au pain et au beurre, coupé finement - 1 bread and butter pickle, finely diced",
+                            "1 cuillère à café de vinaigre blanc- 1 teaspoon white vinegar",
+                            "Sel et poivre au goût - Salt and pepper to taste"
+                        ],
+    "directionLines":  [
+                           "Mélanger tous les ingrédients dans un petit bol et fouetter pour combiner.",
+                           "Combine all ingredients into a small bowl and whisk to combine."
+                       ],
+    "notes":  [
+                  "Sauce is good",
+                  "Recipe need tuning"
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/834bade3-bdda-432f-a4a6-1cb0fec6f065_0.jpg"
+                   ]
+}

@@ -1,0 +1,69 @@
+{
+    "recipeId":  "c5486a31-4047-4437-ad8b-14a6e776bdd5",
+    "title":  "Pain au banane et chocolat/Chocolate Banana Bread",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déjeuné/Breakfast",
+    "categories":  [
+                       "Banane/Banana",
+                       "Chocolat/Chocolate",
+                       "Pain/Bread"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/chocolate-chip-banana-bread/",
+    "yield":  "12",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT1H",
+    "ingredientLines":  [
+                            "1¾ tasses (215 g) de farine tout usage - 1¾ cups (215g) all purpose flour",
+                            "½ cuillère à thé (6 g) de bicarbonate de soude - ½ teaspoon (6g) baking soda",
+                            "1 cuillère à thé (4 g) de poudre à pate - 1 teaspoon (4g) baking powder",
+                            "1 cuillère à thé (6 g) de sel - 1 teaspoon (6g) salt",
+                            "1 cuillère à thé de cannelle - 1 teaspoon cinnamon",
+                            "1 cuillère à thé d\u0027épices tarte à la citrouille - 1 teaspoon pumpkin spice",
+                            "¾ tasse (150 g) de sucre granulé ou de cassonade - ¾ cup (150g) granulated sugar or brown sugar",
+                            "½ tasse (113 g) de beurre non salé à température ambiante) - ½ cup (113g) unsalted butter  room temperature)",
+                            "2 gros Å“ufs - 2 large eggs",
+                            "3 bananes (très mûres, écrasées, environ 1 ½ tasse) - 3 bananas (very ripe, mashed, about 1 ½ cups)",
+                            "1½ tasse extra pépites de chocolat mi-sucré et pacanes - 1½ cup extras semi sweet chocolate chips et pecans",
+                            "1 cuillère à thé (5 ml) de vanille - 1 teaspoon (5ml) vanilla"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 350°F (180°C) et graisser un moule à pain.",
+                           "Preheat oven to 350°F (180°C) and grease a loaf pan.",
+                           "Mélanger la farine, le bicarbonate de soude, la poudre à pâte et le sel dans un bol, puis fouetter ensemble et réserver.",
+                           "Combine the flour, baking soda, baking powder, and salt in a bowl then whisk together and set aside.",
+                           "Crémer le beurre puis ajouter le sucre et mélanger jusqu\u0027à ce qu\u0027il soit bien mélangé et de couleur plus claire, environ 3 minutes.",
+                           "Cream the butter then add the sugar and mix in high until well combined and lighter in color, about 3 minutes.",
+                           "Battre les Å“ufs un à la fois. Incorporer l\u0027extrait de vanille et la purée de bananes. Ajoutez ensuite les ingrédients secs et mélangez jusqu\u0027à ce qu\u0027ils soient presque combinés.",
+                           "Beat in the the eggs one at a time. Mix in the vanilla extract and the mashed bananas. Then add the dry ingredients and fold together until almost combined.",
+                           "Réserver une poignée de pépites de chocolat et ajouter le reste à la pâte. Pliez pour distribuer. Transférer la pâte dans votre moule à pain préparé, saupoudrer les pépites de chocolat réservées sur le dessus.",
+                           "Reserve a handful of the chocolate chips and add the rest to the batter. Fold in to distribute. Transfer batter into your prepared loaf pan, sprinkle the reserved chocolate chips on top.",
+                           "Cuire au four à 350F pendant environ 60 minutes ou jusqu\u0027à ce qu\u0027un couteau inséré au centre en ressorte propre.",
+                           "Bake at 350F for about 60 minutes or until a skewer inserted into the middle comes out clean."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "309",
+                      "totalFat":  "14",
+                      "saturatedFat":  "8",
+                      "cholesterol":  "52",
+                      "sodium":  "255",
+                      "totalCarbohydrate":  "41",
+                      "dietaryFiber":  "2",
+                      "sugars":  "22",
+                      "protein":  "4"
+                  },
+    "photoPaths":  [
+                       "images/c5486a31-4047-4437-ad8b-14a6e776bdd5_0.jpg",
+                       "images/c5486a31-4047-4437-ad8b-14a6e776bdd5_1.jpg",
+                       "images/c5486a31-4047-4437-ad8b-14a6e776bdd5_2.jpg"
+                   ]
+}

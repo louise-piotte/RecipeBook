@@ -146,15 +146,16 @@
             "lastMadeAt": { "$ref": "#/$defs/DateTime" }
           }
         },
+        "mainPhotoId": { "$ref": "#/$defs/Uuid" },
         "photos": {
           "type": "array",
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["id", "localPath"],
+            "required": ["id", "relativePath"],
             "properties": {
               "id": { "$ref": "#/$defs/Uuid" },
-              "localPath": { "type": "string" },
+              "relativePath": { "type": "string", "description": "Package-relative media path inside an export bundle, for example photos/abc.jpg." },
               "cloudRef": { "type": "string" }
             }
           }
@@ -164,12 +165,12 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["id", "fileName", "mimeType", "localPath"],
+            "required": ["id", "fileName", "mimeType", "relativePath"],
             "properties": {
               "id": { "$ref": "#/$defs/Uuid" },
               "fileName": { "type": "string" },
               "mimeType": { "type": "string" },
-              "localPath": { "type": "string" }
+              "relativePath": { "type": "string", "description": "Package-relative media path inside an export bundle, for example attachments/abc.pdf." }
             }
           }
         },
@@ -222,3 +223,5 @@
     }
   ]
 }
+
+

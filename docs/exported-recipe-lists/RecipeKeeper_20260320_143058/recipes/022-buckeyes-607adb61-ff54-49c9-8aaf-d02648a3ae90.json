@@ -1,0 +1,60 @@
+{
+    "recipeId":  "607adb61-ff54-49c9-8aaf-d02648a3ae90",
+    "title":  "Buckeyes",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Collation/Snack",
+    "categories":  [
+                       "Arachide/Peanut",
+                       "Chocolat/Chocolate"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/buckeyes/",
+    "yield":  "24 boules/balls",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "1 tasse (240 g) de beurre d\u0027arachide crémeux - 1 cup (240g) smooth peanut butter",
+                            "5 cuillères à soupe (70 g) de beurre non salé - 5 tablespoon (70g) unsalted butter",
+                            "2 tasses (240 g) de sucre en poudre - 2 cups (240g) powdered sugar",
+                            "1 cuillère à thé (5mL) d\u0027extrait de vanille - 1 teaspoon (5mL) vanilla extract",
+                            "2 tasses (340 g) de chocolat mi-sucré - 2 cups (340g) semisweet chocolate",
+                            "2 cuillères à soupe (30 ml) d\u0027huile de noix de coco - 2 tablespoon (30ml) coconut oil"
+                        ],
+    "directionLines":  [
+                           "Crémer le beurre d\u0027arachide et le beurre avec l\u0027extrait de vanille.",
+                           "Cream the peanut butter and butter together with the vanilla extract.",
+                           "Ajouter le sucre en poudre et mélanger à feu doux jusqu\u0027à ce qu\u0027il soit combiné. Racler le bol et mélanger à nouveau.",
+                           "Add powdered sugar and mix on low until combined. Scrape down bowl and mix again.",
+                           "Pincez des morceaux de la taille d\u0027une cuillère à soupe et roulez-les en boules. Environ 20g si vous pesez. Transférer les boules sur une plaque à pâtisserie et réfrigérer jusqu\u0027à ce qu\u0027elles soient fermes. Au moins 20 minutes.",
+                           "Pinch off tablespoon sized pieces and roll into balls. About 20g if you\u0027re weighing. Transfer balls to a baking sheet and chill until firm. At least 20 minutes.",
+                           "Ajouter le chocolat et l\u0027huile de noix de coco dans un bol moyen et faire fondre à 50 % de puissance au micro-ondes. Remuer pour combiner et laisser refroidir à température ambiante.",
+                           "Add chocolate and coconut oil to a medium bowl and melt on 50% power in the microwave. Stir to combine and set aside to cool to room temperature.",
+                           "Utilisez une brochette ou un cure-dent pour tremper les boules de beurre de cacahuète dans le chocolat. Laissez un peu de beurre de cacahuète exposé pour ce look de pois buckeye signature.",
+                           "Use a skewer or toothpick to dip the peanut butter balls into the chocolate. Leave a bit of the peanut butter exposed for that signature buckeye pea look.",
+                           "Réfrigérer pour permettre au chocolat de se raffermir et de se régaler. Si vous souhaitez retirer les trous laissés par les brochettes, passez un petit couteau ou une spatule sur le dessus.",
+                           "Chill to allow the chocolate to firm up and enjoy. If you want to remove the holes left from the skewers, run a small knife or spatula over the tops."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "2 boules/balls",
+                      "calories":  "218",
+                      "totalFat":  "15",
+                      "saturatedFat":  "7",
+                      "cholesterol":  "7",
+                      "sodium":  "51",
+                      "totalCarbohydrate":  "20",
+                      "dietaryFiber":  "2",
+                      "sugars":  "10",
+                      "protein":  "4"
+                  },
+    "photoPaths":  [
+                       "images/607adb61-ff54-49c9-8aaf-d02648a3ae90_0.jpg"
+                   ]
+}

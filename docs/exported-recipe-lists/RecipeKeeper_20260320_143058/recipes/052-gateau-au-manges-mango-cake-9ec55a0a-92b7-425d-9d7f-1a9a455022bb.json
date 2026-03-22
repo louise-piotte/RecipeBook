@@ -1,0 +1,62 @@
+{
+    "recipeId":  "9ec55a0a-92b7-425d-9d7f-1a9a455022bb",
+    "title":  "Gateau au manges/Mango Cake",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Gâteau/Cake",
+                       "Mangue/Mango"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.allrecipes.com/recipe/242162/delightfully-exotic-mango-cake/",
+    "yield":  "plat 9x13 pouces",
+    "prepTimeIso":  "PT25M",
+    "cookTimeIso":  "PT35M",
+    "ingredientLines":  [
+                            "3 mangues - 3 mangos",
+                            "2 cuillères à soupe de sucre en poudre - 2 tablespoon powered sugar",
+                            "¼ tasse de lait - ¼ cup milk",
+                            "1 tasse de sucre blanc - 1 cup white sugar",
+                            "½ tasse de margarine - ½ cup margarine",
+                            "2 Å“ufs moyens - 2 medium eggs",
+                            "2 cups all-purpose flour",
+                            "2 tasses de farine tout usage - 1 teaspoon baking powder",
+                            "1 cuillère à thé de levure chimique - 1 teaspoon baking soda",
+                            "2 cuillères à soupe d\u0027amandes entières - 2 tablespoons whole almonds"
+                        ],
+    "directionLines":  [
+                           "Mettez les mangues (peau et noyau retirés), le sucre en poudre et le lait dans le bol d\u0027un robot culinaire. Pulser jusqu\u0027à consistance lisse. La recette nécessite 1½ tasse de pulpe de mangue sucrée.",
+                           "Put the mangos (skin and core removed), the powered sugar and the milk in the bowl of a food processor. Pulse until smooth. The recipe needs 1½ cups of sweetened mango pulp.",
+                           "Préchauffer le four à 375°F. Graisser un plat de cuisson de 9 x 13 pouces.",
+                           "Preheat oven to 375°F. Grease a 9x13-inch baking dish.",
+                           "Crémer ensemble le sucre et la margarine dans un bol à l\u0027aide d\u0027un batteur électrique à vitesse moyenne. battre les Å“ufs un à un, puis ajouter la pulpe de mangue. Continuer à battre jusqu\u0027à consistance légère et crémeuse.",
+                           "Cream the sugar and margarine together in a bowl using an electric mixer on medium speed. beat in the eggs one at a time, then add the mango pulp. Continue beating until light and creamy.",
+                           "Tamiser ensemble la farine, la poudre à pâte et le bicarbonate de soude dans un bol. Incorporer le mélange de mangue dans le mélange de farine jusqu\u0027à ce que la pâte soit combinée. Verser la pâte dans le plat de cuisson préparé.",
+                           "Sift flour, baking powder, and baking soda together in a bowl. Stir mango mixture into flour mixture just until batter is combined. Pour batter into the prepared baking dish.",
+                           "Cuire pendant 15 minutes. Presser délicatement les amandes dans la pâte. Poursuivre la cuisson jusqu\u0027à ce qu\u0027un cure-dent inséré au milieu en ressorte propre, environ 20 minutes.",
+                           "Bake for 15 minutes. Gently press almonds into batter. Continue baking until a toothpick inserted in the middle comes out clean, about 20 minutes."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "304.6",
+                      "totalFat":  "10.9",
+                      "saturatedFat":  "2",
+                      "cholesterol":  "37.2",
+                      "sodium":  "296.1",
+                      "totalCarbohydrate":  "48.2",
+                      "dietaryFiber":  "2.1",
+                      "sugars":  "20.3",
+                      "protein":  "4.4"
+                  },
+    "photoPaths":  [
+                       "images/9ec55a0a-92b7-425d-9d7f-1a9a455022bb_0.jpg"
+                   ]
+}

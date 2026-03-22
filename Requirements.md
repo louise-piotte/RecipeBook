@@ -161,7 +161,7 @@ Build a personal recipe book app that:
 
 ---
 
-### 2.2 JSON formats (required)
+### 2.2 JSON formats (required) [Done]
 
 Two JSON specs must be defined and versioned:
 
@@ -197,6 +197,8 @@ Two JSON specs must be defined and versioned:
 ---
 
 ## 3) Functional requirements (FR)
+
+Status note: `Done` is reserved for bounded requirements that are fully implemented in the current codebase. Ongoing cross-cutting requirements that must continue to expand with new features, such as localization coverage, should not be marked `Done` even if the current implementation is strong.
 
 ### FR-1 Recipe CRUD (create/edit/delete)
 
@@ -263,7 +265,7 @@ Support at least these import types:
 
 ---
 
-### FR-4 Go to source
+### FR-4 Go to source [Done]
 
 * If `sourceUrl` exists, provide a “Go to source” action:
 

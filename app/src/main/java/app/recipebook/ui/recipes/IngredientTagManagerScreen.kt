@@ -1,5 +1,6 @@
 package app.recipebook.ui.recipes
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -7,22 +8,21 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -54,25 +54,14 @@ fun IngredientTagManagerScreen(
     var currentSection by rememberSaveable { mutableStateOf(initialSection) }
     var ingredientQuery by rememberSaveable { mutableStateOf("") }
     var tagQuery by rememberSaveable { mutableStateOf("") }
+    var selectedIngredient by remember { mutableStateOf<IngredientReference?>(null) }
     var editingIngredient by remember { mutableStateOf<IngredientReference?>(null) }
     var showNewIngredientDialog by remember { mutableStateOf(false) }
     var editingTag by remember { mutableStateOf<Tag?>(null) }
     var showNewTagDialog by remember { mutableStateOf(false) }
 
     val filteredIngredients = remember(ingredientReferences, ingredientQuery) {
-        val query = ingredientQuery.trim()
-        if (query.isEmpty()) {
-            ingredientReferences
-        } else {
-            ingredientReferences.filter { ingredient ->
-                listOf(
-                    ingredient.nameFr,
-                    ingredient.nameEn,
-                    ingredient.aliasesFr.joinToString(" "),
-                    ingredient.aliasesEn.joinToString(" ")
-                ).any { it.contains(query, ignoreCase = true) }
-            }
-        }
+        filterManagedIngredientReferences(ingredientReferences, ingredientQuery)
     }
     val filteredTags = remember(tags, tagQuery) {
         val query = tagQuery.trim()
@@ -90,8 +79,8 @@ fun IngredientTagManagerScreen(
         topBar = {
             RecipeBookTopBar(
                 title = when (currentSection) {
-                    LibraryManagerSection.Ingredients -> localizedString(R.string.manage_ingredients_section_label, language)
-                    LibraryManagerSection.Tags -> localizedString(R.string.manage_tags_section_label, language)
+                    LibraryManagerSection.Ingredients -> localizedString(R.string.ingredients_label, language)
+                    LibraryManagerSection.Tags -> localizedString(R.string.tags_label, language)
                 },
                 language = language,
                 onLanguageChange = onLanguageChange,
@@ -135,6 +124,10 @@ fun IngredientTagManagerScreen(
                     label = when (currentSection) {
                         LibraryManagerSection.Ingredients -> localizedString(R.string.search_ingredients_label, language)
                         LibraryManagerSection.Tags -> localizedString(R.string.search_tags_label, language)
+                    },
+                    placeholder = when (currentSection) {
+                        LibraryManagerSection.Ingredients -> localizedString(R.string.search_ingredients_placeholder, language)
+                        LibraryManagerSection.Tags -> localizedString(R.string.search_tags_placeholder, language)
                     }
                 )
             }
@@ -147,7 +140,7 @@ fun IngredientTagManagerScreen(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(innerPadding),
-                onEdit = { editingIngredient = it }
+                onOpen = { selectedIngredient = it }
             )
 
             LibraryManagerSection.Tags -> TagManagerView(
@@ -169,6 +162,17 @@ fun IngredientTagManagerScreen(
             onSave = {
                 onCreateIngredient(it)
                 showNewIngredientDialog = false
+            }
+        )
+    }
+    selectedIngredient?.let { ingredient ->
+        IngredientReferenceDetailDialog(
+            language = language,
+            ingredient = ingredient,
+            onDismiss = { selectedIngredient = null },
+            onEdit = {
+                selectedIngredient = null
+                editingIngredient = ingredient
             }
         )
     }
@@ -211,12 +215,12 @@ fun IngredientTagManagerScreen(
 private fun IngredientManagerView(
     language: AppLanguage,
     ingredients: List<IngredientReference>,
-    onEdit: (IngredientReference) -> Unit,
+    onOpen: (IngredientReference) -> Unit,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(
         modifier = modifier,
-        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp),
+        contentPadding = PaddingValues(horizontal = 4.dp, vertical = 4.dp),
         verticalArrangement = Arrangement.spacedBy(2.dp)
     ) {
         if (ingredients.isEmpty()) {
@@ -224,7 +228,7 @@ private fun IngredientManagerView(
                 Card(modifier = Modifier.fillMaxWidth()) {
                     Text(
                         text = localizedString(R.string.no_ingredient_references_label, language),
-                        modifier = Modifier.padding(16.dp)
+                        modifier = Modifier.padding(8.dp)
                     )
                 }
             }
@@ -233,7 +237,7 @@ private fun IngredientManagerView(
                 IngredientReferenceRow(
                     ingredient = ingredient,
                     language = language,
-                    onEdit = { onEdit(ingredient) }
+                    onOpen = { onOpen(ingredient) }
                 )
             }
         }
@@ -249,7 +253,7 @@ private fun TagManagerView(
 ) {
     LazyColumn(
         modifier = modifier,
-        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp),
+        contentPadding = PaddingValues(horizontal = 4.dp, vertical = 4.dp),
         verticalArrangement = Arrangement.spacedBy(2.dp)
     ) {
         if (tags.isEmpty()) {
@@ -257,7 +261,7 @@ private fun TagManagerView(
                 Card(modifier = Modifier.fillMaxWidth()) {
                     Text(
                         text = localizedString(R.string.no_tag_references_label, language),
-                        modifier = Modifier.padding(16.dp)
+                        modifier = Modifier.padding(8.dp)
                     )
                 }
             }
@@ -273,13 +277,17 @@ private fun TagManagerView(
 private fun IngredientReferenceRow(
     ingredient: IngredientReference,
     language: AppLanguage,
-    onEdit: () -> Unit
+    onOpen: () -> Unit
 ) {
-    Column(modifier = Modifier.fillMaxWidth()) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onOpen)
+    ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 2.dp),
+                .padding(vertical = 4.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -291,33 +299,14 @@ private fun IngredientReferenceRow(
                     text = ingredient.localizedName(language),
                     style = MaterialTheme.typography.titleMedium
                 )
-                ingredient.defaultDensity?.let {
+                ingredient.secondaryLocalizedName(language)?.let { secondaryName ->
                     Text(
-                        text = localizedString(R.string.ingredient_density_value_label, language, formatNumber(it)),
+                        text = secondaryName,
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
-                if (ingredient.unitMappings.isNotEmpty()) {
-                    ingredient.unitMappings.forEach { mapping ->
-                        Text(
-                            text = localizedString(
-                                R.string.ingredient_conversion_value_label,
-                                language,
-                                mapping.fromUnit,
-                                mapping.toUnit,
-                                formatNumber(mapping.factor)
-                            ),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-                }
             }
-            EditIconButton(
-                contentDescription = localizedString(R.string.edit_ingredient_reference_label, language),
-                onClick = onEdit
-            )
         }
         HorizontalDivider()
     }
@@ -352,6 +341,97 @@ private fun TagRow(
 }
 
 @Composable
+private fun IngredientReferenceDetailDialog(
+    language: AppLanguage,
+    ingredient: IngredientReference,
+    onDismiss: () -> Unit,
+    onEdit: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        confirmButton = {
+            TextButton(onClick = onEdit) {
+                Text(localizedString(R.string.edit_ingredient_reference_label, language))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(localizedString(R.string.close_label, language))
+            }
+        },
+        title = { Text(ingredient.localizedName(language)) },
+        text = {
+            Column(
+                modifier = Modifier.verticalScroll(rememberScrollState()),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                IngredientReferenceDetailSection(
+                    label = localizedString(R.string.ingredient_name_fr_label, language),
+                    value = ingredient.nameFr
+                )
+                IngredientReferenceDetailSection(
+                    label = localizedString(R.string.ingredient_name_en_label, language),
+                    value = ingredient.nameEn
+                )
+                ingredient.defaultDensity?.let { density ->
+                    IngredientReferenceDetailSection(
+                        label = localizedString(R.string.ingredient_density_label, language),
+                        value = localizedString(R.string.ingredient_density_value_label, language, formatNumber(density))
+                    )
+                }
+                if (ingredient.unitMappings.isNotEmpty()) {
+                    IngredientReferenceDetailSection(
+                        label = localizedString(R.string.unit_conversions_label, language),
+                        values = ingredient.unitMappings.map { mapping ->
+                            localizedString(
+                                R.string.ingredient_conversion_value_label,
+                                language,
+                                mapping.fromUnit,
+                                mapping.toUnit,
+                                formatNumber(mapping.factor)
+                            )
+                        }
+                    )
+                }
+                if (ingredient.aliasesFr.isNotEmpty()) {
+                    IngredientReferenceDetailSection(
+                        label = localizedString(R.string.ingredient_aliases_fr_label, language),
+                        values = ingredient.aliasesFr
+                    )
+                }
+                if (ingredient.aliasesEn.isNotEmpty()) {
+                    IngredientReferenceDetailSection(
+                        label = localizedString(R.string.ingredient_aliases_en_label, language),
+                        values = ingredient.aliasesEn
+                    )
+                }
+            }
+        }
+    )
+}
+
+@Composable
+private fun IngredientReferenceDetailSection(
+    label: String,
+    value: String? = null,
+    values: List<String> = emptyList()
+) {
+    Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+        Text(
+            text = label,
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+        value?.let {
+            Text(text = it, style = MaterialTheme.typography.bodyMedium)
+        }
+        values.forEach { item ->
+            Text(text = item, style = MaterialTheme.typography.bodyMedium)
+        }
+    }
+}
+
+@Composable
 private fun IngredientReferenceEditorDialog(
     language: AppLanguage,
     initial: IngredientReference?,
@@ -367,6 +447,8 @@ private fun IngredientReferenceEditorDialog(
         },
         initialNameFr = initial?.nameFr.orEmpty(),
         initialNameEn = initial?.nameEn.orEmpty(),
+        initialAliasesFr = formatAliasList(initial?.aliasesFr.orEmpty()),
+        initialAliasesEn = formatAliasList(initial?.aliasesEn.orEmpty()),
         initialDensity = initial?.defaultDensity?.let(::formatNumber).orEmpty(),
         initialMappings = initial?.unitMappings
             ?.map { DraftUnitMappingRow(it.fromUnit, it.toUnit, formatNumber(it.factor)) }
@@ -397,22 +479,40 @@ private fun TagEditorDialog(
         onConfirm = onSave
     )
 }
+
 private fun IngredientReference.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
     AppLanguage.EN -> nameEn.ifBlank { nameFr }
+}
+
+internal fun IngredientReference.secondaryLocalizedName(language: AppLanguage): String? {
+    val secondary = when (language) {
+        AppLanguage.FR -> nameEn.trim()
+        AppLanguage.EN -> nameFr.trim()
+    }
+    if (secondary.isEmpty()) return null
+    return secondary.takeUnless { it.equals(localizedName(language), ignoreCase = true) }
+}
+internal fun filterManagedIngredientReferences(
+    ingredientReferences: List<IngredientReference>,
+    query: String
+): List<IngredientReference> {
+    val trimmedQuery = query.trim()
+    if (trimmedQuery.isEmpty()) return ingredientReferences
+    return ingredientReferences.filter { ingredient ->
+        listOf(
+            ingredient.nameFr,
+            ingredient.nameEn,
+            ingredient.aliasesFr.joinToString(" "),
+            ingredient.aliasesEn.joinToString(" ")
+        ).any { it.contains(trimmedQuery, ignoreCase = true) }
+    }
 }
 
 private fun Tag.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
     AppLanguage.EN -> nameEn.ifBlank { nameFr }
 }
-
-
-
-
-
-
-
 
 
 

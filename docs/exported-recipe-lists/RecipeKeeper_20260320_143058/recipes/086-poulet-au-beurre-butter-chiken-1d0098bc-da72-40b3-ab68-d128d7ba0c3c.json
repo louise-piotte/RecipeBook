@@ -1,0 +1,67 @@
+{
+    "recipeId":  "1d0098bc-da72-40b3-ab68-d128d7ba0c3c",
+    "title":  "Poulet au beurre/Butter Chiken",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Poulet/Chicken"
+                   ],
+    "collections":  [
+                        "Favori à Gab/Gab\u0027s favorites"
+                    ],
+    "sourceUrl":  "https://www.troisfoisparjour.com/fr/recettes/plats-principaux/poulet-volaille/poulet-au-beurre/",
+    "yield":  "8-10",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT2H",
+    "ingredientLines":  [
+                            "1 kg de poitrines de poulet, désossées et coupées en cubes - 1 kg chicken breasts, deboned and cut into cubes",
+                            "5 cuillère à soupe de beurre - 5 tbsp butter",
+                            "1 oignon, grossièrement haché - 1 onion, coarsely chopped",
+                            "2 gousses dâ€™ail, grossièrement hachées - 2 garlic cloves, coarsely chopped",
+                            "¼ de tasse de yogourt grec nature - ¼ cup plain Greek yogurt",
+                            "2 cuillère à thé de poudre de cari - 2 teaspoons of curry powder",
+                            "2 cuillère à thé de garam masala - 2 teaspoons of garam masala",
+                            "2 cuillère à thé de pâte de cari - 2 teaspoon curry paste",
+                            "â…™ cuillère à thé de cardamome moulue - â…™ teaspoon ground cardamom",
+                            "¼ cuillère à thé de gingembre moulu - ¼ teaspoon ground ginger",
+                            "Sel - Salt",
+                            "1 boîte de 156 ml de pâte de tomates - 1 can (156 ml) tomato paste",
+                            "1 tasse de lait de coco en canne - 1 cup canned coconut milk",
+                            "1 tasse de crème 35 % - 1 cup 35% cream",
+                            "1 cuillère à soupe de miel - 1 tablespoon of honey"
+                        ],
+    "directionLines":  [
+                           "Dans un bol, mélanger les épices puis réserver. Dans un autre bol, mélanger les ingrédients liquides puis réserver.",
+                           "In a bowl, combine the spices then set aside. In another bowl, combine the liquid ingredients then set aside.",
+                           "Dans une poêle, faire chauffer 1 cuillère à soupe de beurre puis attendrir lâ€™oignon pendant environ 10 minutes. Saler, ajouter lâ€™ail et le mélange dâ€™épices puis poursuivre la cuisson pendant 2 à 3 minutes.",
+                           "In a skillet, heat 1 tablespoon of butter then soften the onion for about 10 minutes. Salt, add the garlic and the spice mix and continue cooking for 2 to 3 minutes.",
+                           "Dans un robot culinaire, mixer les oignons et le yogourt grec jusquâ€™à lâ€™obtention dâ€™une texture lisse et homogène. Assaisonner.",
+                           "In a food processor, blend the onions and Greek yogurt until smooth and homogeneous. Season.",
+                           "Dans une poêle, faire fondre le beurre et ajouter le mélange dâ€™oignons ainsi que les ingrédients liquides. Bien mélanger puis porter à ébullition. Baisser le feu, ajouter le poulet puis laisser mijoter pendant 1 h 30 à 2 h. Rectifier lâ€™assaisonnement au besoin.",
+                           "In a frying pan, melt the butter and add the onion mixture and the liquid ingredients. Mix well then bring to a boil. Lower the heat, add the chicken and simmer for 1½ to 2 hours. Adjust the seasoning if necessary.",
+                           "Servir sur du riz.",
+                           "Serve over rice."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/1d0098bc-da72-40b3-ab68-d128d7ba0c3c_0.jpg",
+                       "images/1d0098bc-da72-40b3-ab68-d128d7ba0c3c_1.jpg"
+                   ]
+}

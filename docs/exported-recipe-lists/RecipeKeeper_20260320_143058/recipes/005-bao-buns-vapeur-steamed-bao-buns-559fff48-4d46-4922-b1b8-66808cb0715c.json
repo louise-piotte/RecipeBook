@@ -1,0 +1,70 @@
+{
+    "recipeId":  "559fff48-4d46-4922-b1b8-66808cb0715c",
+    "title":  "Bao buns vapeur/Steamed bao buns",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Modifiable/Customisable",
+                       "Pain/Bread"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://redhousespice.com/steamed-bao-buns/",
+    "yield":  "1",
+    "prepTimeIso":  "PT2H",
+    "cookTimeIso":  "PT20M",
+    "ingredientLines":  [
+                            "300 g de farine tout usage - 300 g all-purpose flour",
+                            "1 cuillère à thé de levure sèche - 1 teaspoon dried yeast",
+                            "1 cuillère à thé de sucre - 1 teaspoon sugar",
+                            "1 cuillère à soupe d\u0027huile de cuisson - 1 tablespoon cooking oil",
+                            "140 ml d\u0027eau tiède - 140 ml lukewarm water",
+                            "Toute garniture en sauce - Any saucy filling"
+                        ],
+    "directionLines":  [
+                           "Mélanger la farine, la levure, le sucre et l\u0027huile dans un bol. Verser l\u0027eau petit à petit tout en mélangeant.",
+                           "Mix flour, yeast, sugar and oil in a bowl. Pour in water little by little while mixing.",
+                           "Mélanger et pétrir avec les mains jusqu\u0027à l\u0027obtention d\u0027une pâte très lisse.",
+                           "Combine and knead with your hands until a very smooth dough forms.",
+                           "Couvrir le bol d\u0027un torchon humide et laisser lever dans un endroit chaud jusqu\u0027à ce qu\u0027elle double de volume (40 à 90 minutes).",
+                           "Cover the bowl with a damp tea towel and leave to rise in a warm place until doubled in size (40 to 90 minutes).",
+                           "Pétrir la pâte jusqu\u0027à ce qu\u0027elle reprenne sa taille initiale.",
+                           "Knead the dough until it goes back to its original size.",
+                           "Divisez-le en 12 portions égales. Rouler chaque morceau dans une enveloppe en forme de disque.",
+                           "Divide it into 12 equal portions. Roll each piece into a disk-like wrapper.",
+                           "Placer un peu de garniture au milieu d\u0027un emballage puis plier en forme de bao.",
+                           "Place some filling in the middle of a wrapper then fold into a bao shape.",
+                           "Laissez tous les petits pains assemblés reposer pendant encore 15 minutes.",
+                           "Leave all the assembled buns to rest for another 15 minutes.",
+                           "Placez les petits pains (avec du papier sulfurisé en dessous de chacun) dans le panier vapeur. Laissez un espace de 2 cm entre les petits pains et le côté du cuiseur vapeur.",
+                           "Place the buns (with parchment paper underneath each one) in the steamer basket. Leave 2cm space between the buns and the side of the steamer.",
+                           "Commencez la cuisson à l\u0027eau froide à feu vif. Baisser le feu à moyen-doux lorsque l\u0027eau commence à bouillir. Cuire 15-18 minutes.",
+                           "Start cooking with cold water over a high heat. Turn the heat down to medium-low when the water starts boiling. Cook for 15-18 minutes."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/559fff48-4d46-4922-b1b8-66808cb0715c_0.jpg",
+                       "images/559fff48-4d46-4922-b1b8-66808cb0715c_1.jpg",
+                       "images/559fff48-4d46-4922-b1b8-66808cb0715c_2.jpg",
+                       "images/559fff48-4d46-4922-b1b8-66808cb0715c_3.jpg",
+                       "images/559fff48-4d46-4922-b1b8-66808cb0715c_4.jpg"
+                   ]
+}

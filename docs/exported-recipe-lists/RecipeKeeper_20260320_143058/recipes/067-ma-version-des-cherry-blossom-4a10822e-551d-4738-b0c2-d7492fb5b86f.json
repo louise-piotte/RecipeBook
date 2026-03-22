@@ -1,0 +1,58 @@
+{
+    "recipeId":  "4a10822e-551d-4738-b0c2-d7492fb5b86f",
+    "title":  "Ma version des Cherry Blossom",
+    "recipeShareId":  "UVGakMUU_kqiVkSalRIQYA",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Cerise/Cherry",
+                       "Chocolat/Chocolate"
+                   ],
+    "collections":  [
+                        "Boîte de Noël/Christmas Box"
+                    ],
+    "sourceUrl":  null,
+    "yield":  "18",
+    "prepTimeIso":  "PT30M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "250 ml (1 tasse) de pastilles de chocolat noir",
+                            "250 ml (1 tasse) de pastilles de chocolat au lait",
+                            "125 ml (½ tasse) de beurre d\u0027arachide naturel",
+                            "250 ml (1 tasse) de pacanes (ou d\u0027amandes ou de noix de Grenoble) hachées finement",
+                            "125 ml (½ tasse) de noix de coco non sucrée râpée",
+                            "30 ml (2 c. à soupe) de jus du pot de cerises au marasquin",
+                            "160 ml (3 de tasse) de sucre à glacer",
+                            "18 cerises au marasquin"
+                        ],
+    "directionLines":  [
+                           "Déposer une pellicule plastique à l\u0027intérieur d\u0027un carton d\u0027Å“ufs à 18 cavités. Façonner la pellicule pour qu\u0027elle épouse bien les cavités (pour éviter que le chocolat ne colle au carton).",
+                           "Dans un bol, déposer les pastilles de chocolat noir et de chocolat au lait. Chauffer au micro-ondes jusqu\u0027à ce que les pastilles soient fondues, en remuant toutes les 30 secondes.",
+                           "Ajouter le beurre d\u0027arachide et remuer. Ajouter les pacanes et la noix de coco, puis remuer de nouveau.",
+                           "Déposer environ 15 ml (1 c. à soupe) de préparation au chocolat dans chaque cavité. Avec une cuillère, ramener suffisamment de préparation sur la paroi des cavités. Réserver au réfrigérateur.",
+                           "Dans un autre bol, fouetter le jus du pot de cerises au marasquin avec le sucre à glacer (pour une préparation plus épaisse, utiliser plus de sucre à glacer).",
+                           "Déposer une cerise au marasquin dans chaque cavité du carton d\u0027Å“ufs. Répartir la sauce sucrée sur les cerises (ne pas trop remplir les cavités).",
+                           "Couvrir du reste de la préparation au chocolat pour sceller les Cherry Blossom. Réfrigérer 30 minutes, jusqu\u0027à ce que le chocolat ait figé.",
+                           "Conserver les Cherry Blossom au réfrigérateur tête en bas (base vers le haut, pour éviter que la sauce sucrée ne coule si les chocolats sont mal scellés)."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/4a10822e-551d-4738-b0c2-d7492fb5b86f_0.jpg"
+                   ]
+}

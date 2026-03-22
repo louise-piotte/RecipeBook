@@ -1,0 +1,67 @@
+{
+    "recipeId":  "f07ba465-a5c8-4fad-bba3-83941f165410",
+    "title":  "Biscuits froissés au citron / Lemon Crinkle Cookies",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Collation/Snack",
+    "categories":  [
+                       "Biscuit/Cookie",
+                       "Citron/Lemon"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/lemon-crinkle-cookies/",
+    "yield":  "24 cookies",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT12M",
+    "ingredientLines":  [
+                            "200g de sucre - 200g granulated sugar",
+                            "1 cuillère à soupe de zeste de citron râpé - 1 tablespoon grated lemon zest",
+                            "½ cuillère à thé de sel - ½ teaspoon salt",
+                            "½ tasse (113 g) de beurre non salé, fondu - ½ cup (113g) unsalted butter, melted",
+                            "2 gros Å“ufs - 2 large eggs",
+                            "¼ tasse (60 ml) de jus de citron frais - ¼ cup (60ml) fresh lemon juice",
+                            "1 cuillère à café d\u0027extrait de vanille - 1 teaspoon vanilla extract",
+                            "280g tasses de farine tout usage - 280g cups all-purpose flour",
+                            "½ cuillère à thé de bicarbonate de soude - ½ teaspoon baking soda",
+                            "98 g de sucre en poudre - 98g confectionersâ€™ sugar"
+                        ],
+    "directionLines":  [
+                           "Dans un grand bol, fouetter ensemble le sucre, le zeste de citron et le sel. Pour plus de saveur, frottez le sucre et le zeste avec vos doigts jusqu\u0027à ce que le mélange ressemble à du sable humide. Fouetter le beurre fondu, les Å“ufs, le jus de citron et la vanille jusqu\u0027à ce qu\u0027ils soient bien mélangés.",
+                           "In a large bowl, whisk together the sugar, lemon zest, and salt. For extra flavor, rub the sugar and zest together with your fingers until the mixture feels like wet sand. Whisk in the melted butter, eggs, lemon juice, and vanilla until well combined.",
+                           "Dans un petit bol, mélanger la farine et le bicarbonate de soude. Incorporer le mélange de farine au mélange de sucre jusqu\u0027à ce qu\u0027il soit bien mélangé. Couvrir et réfrigérer pendant au moins 4 heures ou jusqu\u0027à 12 heures.",
+                           "In a small bowl whisk together the flour and baking soda. Fold the flour mixture into the sugar mixture until well combined. Cover and refrigerate for at least 4 hours or up to 12 hours.",
+                           "Préchauffer le four à 350°F. Tapisser 2 plaques à biscuits de papier parchemin.",
+                           "Preheat the oven to 350°F. Line 2 cookie sheets with parchment paper.",
+                           "Ajoutez le sucre glace dans un petit bol et mettez-le de côté.",
+                           "Add the confectionersâ€™ sugar to a small bowl and set it aside.",
+                           "Prélevez 12 boules de pâte à biscuits réfrigérée à l\u0027aide d\u0027une cuillère à soupe à ressort de 1 ½ cuillère à soupe. (Vous pouvez utiliser une grosse cuillère à soupe si vous n\u0027avez pas de cuillère à ressort). Couvrir et remettre le reste de pâte au réfrigérateur.",
+                           "Scoop 12 balls of the chilled cookie dough using a 1 ½ tablespoon spring-loaded scoop. (You can use a heaping tablespoon if you donâ€™t have a spring-loaded scoop). Cover and place the remaining dough back in the fridge.",
+                           "Rouler la pâte ramassée entre vos paumes pour former des boules lisses. Enrober très bien chaque boule de pâte avec le sucre à glacer et placer à 1 1/2 pouces d\u0027intervalle sur une plaque à pâtisserie tapissée.",
+                           "Roll the scooped dough between your palms to form smooth balls. Coat each dough ball very well with the confectionersâ€™ sugar, and place 1 1/2 inches apart on a lined baking sheet.",
+                           "Cuire au four de 12 à 14 minutes ou jusqu\u0027à ce que le dessus se fissure et que le bord inférieur commence à dorer. Laisser refroidir sur la plaque pendant 2 minutes puis transférer les biscuits sur une grille et laisser refroidir complètement. Répétez le processus de ramassage et de cuisson avec la pâte restante. Les cookies peuvent être conservés dans une boîte hermétique jusqu\u0027à 5 jours.",
+                           "Bake for 12 to 14 minutes or until the tops crack and the bottom edges are just starting to brown. Let cool on the pan for 2 minutes then transfer the cookies to a wire rack and allow to cool completely. Repeat the scooping and baking process with the remaining dough. Cookies can be stored in an airtight container for up to 5 days."
+                       ],
+    "notes":  [
+                  "Avant de rouler les biscuit dans le sucre en poudre il faut le rouler dans le sucre blanc. Ça fait une meilleure croûte.",
+                  "Before rolling the cookies in powdered sugar, roll them in white sugar. It makes a better crust."
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 serving",
+                      "calories":  "131",
+                      "totalFat":  "4",
+                      "saturatedFat":  "3",
+                      "cholesterol":  "24",
+                      "sodium":  "77",
+                      "totalCarbohydrate":  "22",
+                      "dietaryFiber":  "0.4",
+                      "sugars":  "12",
+                      "protein":  "2"
+                  },
+    "photoPaths":  [
+                       "images/f07ba465-a5c8-4fad-bba3-83941f165410_0.jpg"
+                   ]
+}

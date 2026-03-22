@@ -1,0 +1,51 @@
+{
+    "recipeId":  "dfa44a33-5dff-4304-9308-1d8326055a58",
+    "title":  "Chocolat Chaud Nutella/Nutella Hot Chocolate",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Boisson/Beverage",
+    "categories":  [
+                       "Chocolat/Chocolate",
+                       "Lait/Milk"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://celebratingsweets.com/nutella-hot-chocolate/",
+    "yield":  "",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT5M",
+    "ingredientLines":  [
+                            "2 tasses de lait - 2 cups milk",
+                            "â…“ tasse de nutella - â…“ cup nutella",
+                            "2 cuillères à soupe de cacao en poudre non sucré - 2 tablespoons unsweetened cocoa powder"
+                        ],
+    "directionLines":  [
+                           "Mettre tous les ingrédients dans une petite casserole.",
+                           "Place all ingredients in a small saucepan.",
+                           "Porter à ébullition en fouettant jusqu\u0027à homogénéité.",
+                           "Bring to a simmer, whisking until combined.",
+                           "Servir chaud.",
+                           "Serve warm."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "317",
+                      "totalFat":  "19",
+                      "saturatedFat":  "15",
+                      "cholesterol":  null,
+                      "sodium":  "347",
+                      "totalCarbohydrate":  "35",
+                      "dietaryFiber":  "5",
+                      "sugars":  "27",
+                      "protein":  "5"
+                  },
+    "photoPaths":  [
+                       "images/dfa44a33-5dff-4304-9308-1d8326055a58_0.jpg"
+                   ]
+}

@@ -1,0 +1,89 @@
+{
+    "recipeId":  "1da10533-75ef-41b4-af55-298775c4c9ea",
+    "title":  "Gâteau aux carottes/Carrot cake",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Carotte/Carrot",
+                       "Épices D\u0027Automne/Pumpkin Spice",
+                       "Gâteau/Cake",
+                       "Glassage/Icing"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  null,
+    "yield":  "12",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "250 g de cassonade - 250 g brown sugar",
+                            "50 g de sucre - 50 g of sugar",
+                            "1¼ tasse d\u0027huile - 1¼ cup oil",
+                            "4 Å“ufs - 4 eggs",
+                            "300 g de farine - 300 g of flour",
+                            "2 cuillère à thé de poudre à pâte - 2 teaspoon baking powder",
+                            "1 cuillère à thé de sel - 1 teaspoon of salt",
+                            "2 cuillère à thé de bicarbonate de soude - 2 teaspoon baking soda",
+                            "1½ cuillère à thé de cannelle - 1½ teaspoon cinnamon",
+                            "½ cuillère à thé de muscade - ½ teaspoon nutmeg",
+                            "½ cuillère à thé de all spice - ½ teaspoon of all spice",
+                            "3 tasses carottes râpées - 3 cups grated carrots",
+                            "1½ tasse de pacanes hachées (plus pour décorer) - 1½ cup chopped pecans (more for garnish)",
+                            "1 tasse d\u0027ananas broyés, sans sucre et égoutté - 1 cup crushed pineapple, unsweetened and drained",
+                            "8 onces de fromage à la crème - 8 ounces cream cheese",
+                            "2 cuillères à soupe de lait - 2 tablespoons of milk",
+                            "1 cuillère à thé vanille - 1 teaspoon vanilla",
+                            "6 tasses de sucre à glacer - 6 cups icing sugar"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four a 350°F.",
+                           "Preheat the oven to 350°F.",
+                           "Mettre les pacanes sur une plaque à biscuits puis faire cuire au four pour 8 minutes, en brassant les noix à la moitié du temps.",
+                           "Place the pecans on a cookie sheet then bake for 8 minutes, stirring the nuts halfway through.",
+                           "Garder le four à 350°F.",
+                           "Keep the oven at 350°F.",
+                           "Dans un grand bol, tamisez farine, poudre à pâte, bicarbonate de soude, sel et les épices.",
+                           "In a large bowl, sift flour, baking powder, baking soda, salt and spices.",
+                           "Dans un autre bol, mélanger l\u0027huile, la cassonade et le sucre, puis rajouter les Å“ufs. Mélanger jusqu\u0027à qu\u0027à l\u0027obtention une texture uniforme.",
+                           "In another bowl, mix the oil, brown sugar and sugar, then add the eggs. Mix until a uniform texture is obtained.",
+                           "Verser les ingrédients liquides dans les ingrédients secs. Mélanger doucement, mais arrêter avant que ce soit incorporer. On devrait encore voir de la farine.",
+                           "Pour the liquid ingredients into the dry ingredients. Mix gently, but stop before it is incorporated. We should still see flour.",
+                           "Intégrer les carottes, les noix et les ananas et finir de mélanger. Attention de ne pas agiter trop la pâte.",
+                           "Add the carrots, walnuts and pineapple and finish mixing. Be careful not to stir the dough too much.",
+                           "Mettre dans 3 moules ronds de 8 pouces et pour 35 minutes, avec des cake strips.",
+                           "Place in 3 8-inch round pans and bake for 35 minutes, with cake strips.",
+                           "Laisser le gâteau refroidir à température ambiante puis au réfrigérateur, dans leur moules.",
+                           "Let the cake cool to room temperature then refrigerate, in their molds.",
+                           "Pour le glaçage, crémer le fromage à la crème avec le lait et la vanille au malaxeur. Ajouter le sucre en poudre une tasse à la fois. Ajuster la consistance avec quelles gouttes de lait.",
+                           "For the frosting, cream the cream cheese with the milk and vanilla with a mixer. Add the powdered sugar one cup at a time. Adjust the consistency with which drops of milk."
+                       ],
+    "notes":  [
+                  "Tous les ingrédients doivent être température pièce! Surtout les carottes, les Å“ufs et le fromage à la crème.",
+                  "All ingredients must be room temperature! Especially carrots, eggs and cream cheese.",
+                  "Peux aussi être mis dans 2 moules carrés de 9 pouces.",
+                  "Can also be put in 2 9-inch square molds."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/1da10533-75ef-41b4-af55-298775c4c9ea_0.jpg",
+                       "images/1da10533-75ef-41b4-af55-298775c4c9ea_1.jpg",
+                       "images/1da10533-75ef-41b4-af55-298775c4c9ea_2.jpg",
+                       "images/1da10533-75ef-41b4-af55-298775c4c9ea_3.jpg",
+                       "images/1da10533-75ef-41b4-af55-298775c4c9ea_4.jpg"
+                   ]
+}

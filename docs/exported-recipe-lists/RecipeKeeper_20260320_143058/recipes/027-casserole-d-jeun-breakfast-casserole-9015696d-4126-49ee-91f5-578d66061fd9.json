@@ -1,0 +1,71 @@
+{
+    "recipeId":  "9015696d-4126-49ee-91f5-578d66061fd9",
+    "title":  "Casserole déjeuné/Breakfast Casserole",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Brunch",
+    "categories":  [
+                       "Oeuf/Egg",
+                       "Porc/Pork",
+                       "Saucisse/Sausage"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/breakfast-casserole/",
+    "yield":  "8 - 10",
+    "prepTimeIso":  "PT10M",
+    "cookTimeIso":  "PT55M",
+    "ingredientLines":  [
+                            "1 livre de saucisse à déjeuner - 1 pound breakfast sausage",
+                            "1 tasse d\u0027oignon jaune haché - 1 cup chopped yellow onion",
+                            "3 tasses de chou frais haché - 3 cups chopped fresh kale",
+                            "12 onces de muffins anglais (coupés en cubes et grillés) - 12 ounces English muffins (cubed and toasted)",
+                            "2 tasses de fromage râpé (comme du cheddar ou du gruyère, divisé) - 2 cups shredded cheese (such as cheddar or Gruyere, divided)",
+                            "10 Å“ufs - 10 eggs",
+                            "2 tasses de lait - 2 cups milk",
+                            "1 cuillère à thé de sel casher - 1 teaspoon kosher salt",
+                            "½ cuillère à thé de poivre noir - ½ teaspoon black pepper"
+                        ],
+    "directionLines":  [
+                           "Dans une grande poêle, cuire les saucisses à feu moyen jusqu\u0027à ce qu\u0027elles soient dorées et friables, environ 8 minutes.",
+                           "In a large skillet, cook sausage over medium heat until browned and crumbly, about 8 minutes.",
+                           "Ajouter les oignons; cuire, en remuant de temps à autre, jusqu\u0027à ce qu\u0027ils ramollissent, environ 5 minutes.",
+                           "Add onions; cook, stirring occasionally, until softened, about 5 minutes.",
+                           "Incorporer le chou frisé; cuire, en remuant de temps à autre, 2 minutes. Retirer du feu.",
+                           "Stir in kale; cook, stirring occasionally, 2 minutes. Remove from heat.",
+                           "Ajouter le mélange de saucisses dans une casserole de 13 x 9 pouces. Incorporer les cubes de muffins anglais grillés et 1 tasse de fromage.",
+                           "Add sausage mixture to a 13x9-inch casserole dish. Stir in toasted English muffin cubes and 1 cup cheese.",
+                           "Dans un bol moyen, battre les Å“ufs jusqu\u0027à consistance lisse. Fouetter le lait jusqu\u0027à ce qu\u0027il soit combiné. Incorporer le sel et le poivre.",
+                           "In a medium bowl, beat eggs until smooth. Whisk in milk until combined. Stir in salt and pepper.",
+                           "Verser le mélange d\u0027Å“ufs sur le mélange de saucisses dans une casserole. Garnir de la 1 tasse de fromage restante.",
+                           "Pour egg mixture over sausage mixture in casserole dish. Top with remaining 1 cup cheese.",
+                           "Couvrir de papier d\u0027aluminium. Réfrigérer deux heures ou toute la nuit.",
+                           "Cover with aluminum foil. Refrigerate two hours or overnight.",
+                           "Préchauffer le four à 350°F.",
+                           "Preheat oven to 350°F.",
+                           "Cuire 20 minutes; découvrir et cuire jusqu\u0027à ce que le dessus soit grillé, 15 à 20 minutes de plus. Garnir de persil, si désiré.",
+                           "Bake 20 minutes; uncover, and bake until top is toasted, 15 to 20 minutes more. Garnish with parsley, if desired."
+                       ],
+    "notes":  [
+                  "Pour griller les muffins anglais, cuire au four à 400°F pendant 10 minutes.",
+                  "To toast the English muffins, bake at 400°F for 10 minutes."
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 serving",
+                      "calories":  "493",
+                      "totalFat":  "30",
+                      "saturatedFat":  "12",
+                      "cholesterol":  "274",
+                      "sodium":  "1087",
+                      "totalCarbohydrate":  "28",
+                      "dietaryFiber":  "2",
+                      "sugars":  "4",
+                      "protein":  "28"
+                  },
+    "photoPaths":  [
+                       "images/9015696d-4126-49ee-91f5-578d66061fd9_0.jpg"
+                   ]
+}

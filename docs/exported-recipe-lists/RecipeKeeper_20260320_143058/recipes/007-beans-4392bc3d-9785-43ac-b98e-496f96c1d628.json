@@ -1,0 +1,48 @@
+{
+    "recipeId":  "4392bc3d-9785-43ac-b98e-496f96c1d628",
+    "title":  "Beans",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Accompagnement/Side Dish",
+    "categories":  [
+
+                   ],
+    "collections":  [
+                        "À nettoyer/To Clean"
+                    ],
+    "sourceUrl":  "https://www.ethanchlebowski.com/cooking-techniques-recipes/mexican-inspired-bento-box-lunch",
+    "yield":  "",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "10 g (2 tsp) oil",
+                            "1 clove of garlic, minced",
+                            "1 chipotle in adobo, minced",
+                            "1 can of pinto beans",
+                            "5 g (1 tsp) vinegar or lime juice",
+                            "Salt to Taste"
+                        ],
+    "directionLines":  [
+                           "Add a drizzle of oil and toss in 1 clove of minced garlic along with a spoonful of the chipotle in adobo and let saute for 30 to 60 seconds or until fragrant. Add the whole can of beans along with the liquid, and let come to a simmer. Mash the beans until they have transformed into your desired texture. Taste and adjust with vinegar and salt."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+
+                   ]
+}

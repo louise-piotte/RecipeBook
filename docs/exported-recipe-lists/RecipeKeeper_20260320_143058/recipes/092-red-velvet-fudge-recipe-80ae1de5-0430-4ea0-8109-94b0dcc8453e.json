@@ -1,0 +1,65 @@
+{
+    "recipeId":  "80ae1de5-0430-4ea0-8109-94b0dcc8453e",
+    "title":  "Red Velvet Fudge Recipe",
+    "recipeShareId":  "DSltW7N6cEGUoww_koU4wg",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Bonbon/Candy",
+                       "Chocolat/Chocolate"
+                   ],
+    "collections":  [
+                        "Boîte de Noël/Christmas Box",
+                        "Favori à Gab/Gab\u0027s favorites"
+                    ],
+    "sourceUrl":  "https://www.thatskinnychickcanbake.com/red-velvet-fudge/",
+    "yield":  "81",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT30M",
+    "ingredientLines":  [
+                            "3 tasses de sucre - 3 cups sugar",
+                            "¾ tasse de beurre - ¾ cup butter",
+                            "â…” tasse moitié-moitié - â…” cup half \u0026 half",
+                            "12 onces de chocolat blanc - 12 ounce white chocolate",
+                            "1 pot de 7 onces de crème à la guimauve - 1 7-­ounce jar marshmallow creme",
+                            "1 cuillère à thé de vanille - 1 teaspoon vanilla",
+                            "1 tasse de pépites de chocolat mi-sucré - 1 cup semisweet chocolate chips",
+                            "3 cuillères à soupe de colorant alimentaire rouge - 3 tablespoons red food coloring"
+                        ],
+    "directionLines":  [
+                           "Tapisser un moule de 9 x 9 pouces de papier d\u0027aluminium antiadhésif. Mettre de côté.",
+                           "Line a 9 x 9 inch pan with non-stick foil. Set aside.",
+                           "Placez les pépites de chocolat mi-sucré et le colorant alimentaire dans un bol résistant à la chaleur et réservez.",
+                           "Place semi-sweet chocolate chips and food coloring in a heat safe bowl and set aside.",
+                           "Dans une grande casserole à fond épais, mélanger le sucre, le beurre et moitié-moitié. Cuire à 234 ºF, en remuant de temps en temps. Ajoutez immédiatement les pépites de chocolat blanc, la crème de guimauve et la vanille. Mélanger pour combiner.",
+                           "In a large, heavy saucepan, combine, sugar, butter and half and half. Cook to 234ºF, stirring occasionally. Immediately add white chocolate chips, marshmallow cream and vanilla. Mix to combine.",
+                           "Une fois bien mélangé, versez la moitié du fondant au chocolat blanc dans le bol avec les pépites de chocolat mi-sucré et mélangez jusqu\u0027à ce qu\u0027il soit fondu et lisse.",
+                           "When well mixed, scrape half of the white chocolate fudge into the bowl with the semi-sweet chocolate chips and mix till melted and smooth.",
+                           "À l\u0027aide de deux cuillères à soupe placez des boules de fudge rouge et blanc dans le moule préparé, en alternant les saveurs.",
+                           "Using two tablespoons, place scoops of red and white fudge in the prepared pan, alternating flavors.",
+                           "Laissez tomber la casserole de quelques centimètres au-dessus du comptoir plusieurs fois pour éliminer les poches d\u0027air. Avec un couteau, faites tourner le fudge pour lui donner un aspect marbré.",
+                           "Drop pan from a few inches above counter a couple times to remove any air pockets. With a knife, swirl though the fudge to give a marbelize appearance.",
+                           "Laisser refroidir à température ambiante. Une fois refroidi, retirer du moule à l\u0027aide de papier d\u0027aluminium et couper en carrés.",
+                           "Allow to cool at room temperature. When cool, remove from pan using foil and cut into squares."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "2 squares",
+                      "calories":  "177",
+                      "totalFat":  "8",
+                      "saturatedFat":  "5",
+                      "cholesterol":  "13",
+                      "sodium":  "43",
+                      "totalCarbohydrate":  "27",
+                      "dietaryFiber":  "0",
+                      "sugars":  "25",
+                      "protein":  "1"
+                  },
+    "photoPaths":  [
+                       "images/80ae1de5-0430-4ea0-8109-94b0dcc8453e_0.jpg"
+                   ]
+}

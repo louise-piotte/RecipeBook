@@ -1,0 +1,78 @@
+{
+    "recipeId":  "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672",
+    "title":  "Saté / Satay",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Arachide/Peanut",
+                       "Porc/Pork",
+                       "Poulet/Chicken",
+                       "Sauce",
+                       "Sous-vide",
+                       "Tempeh"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  null,
+    "yield":  "2-4",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT1H30M",
+    "ingredientLines":  [
+                            "2 côtelettes de longe de porc désossées (1 pouce d\u0027épaisseur), coupées dans le sens de la longueur en diagonale en lanières de ½ pouce d\u0027épaisseur (environ 1 livre) - 2 (1-inch-thick) boneless pork loin chops, cut lengthwise on the diagonal into ½-inch-thick strips (about 1 pound)",
+                            "½ tasse de lait de coco en conserve - ½ cup canned coconut milk",
+                            "2 cuillères à soupe de cassonade - 2 tablespoons brown sugar",
+                            "1 à 2 cuillères à soupe de pâte de cari rouge du commerce - 1 to 2 tablespoons store-bought red curry paste",
+                            "1 cuillère à soupe de sauce de poisson - 1 tablespoon fish sauce",
+                            "1 cuillère à soupe de sauce soja - 1 tablespoon soy sauce",
+                            "1 cuillère à soupe de jus de citron vert frais - 1 tablespoon fresh lime juice",
+                            "1½ cuillères à thé de curcuma moulu - 1½ teaspoons ground turmeric",
+                            "½ cuillère à thé de cumin moulu - ½ teaspoon ground cumin",
+                            "½ cuillère à thé de coriandre moulue - ½ teaspoon ground coriander",
+                            "2 cuillères à soupe de beurre d\u0027arachide - 2 tablespoons peanut butter"
+                        ],
+    "directionLines":  [
+                           "Préchauffez votre bain-marie sous vide à 57°C (134.6°F).",
+                           "Preheat your sous vide water bath 57°C (134.6°F).",
+                           "Pour faire la marinade, dans une grande tasse à mesurer, fouetter ensemble le lait de coco, la cassonade, la pâte de cari, la sauce de poisson, la sauce soja, le jus de citron vert, le curcuma, le cumin et la coriandre.",
+                           "To make the marinade, in a large measuring cup, whisk together the coconut milk, brown sugar, curry paste, fish sauce, soy sauce, lime juice, turmeric, cumin and coriander.",
+                           "Placez le porc et la marinade dans un sac ziplock de la taille d\u0027un gallon et massez le contenu jusqu\u0027à ce qu\u0027il soit uniformément recouvert de marinade. Sceller en utilisant la méthode de déplacement d\u0027eau, puis presser le sac à plat pour que le porc soit plus ou moins en une seule couche.",
+                           "Place the pork and the marinade in a gallon-size freezer-safe ziplock bag and massage the contents until the evenly coated with the marinade. Seal using the water displacement method, then press the bag flat so the pork is more or less in single layer.",
+                           "Lorsque l\u0027eau atteint la température cible, abaissez le porc ensaché au bain-marie (en vous assurant que le sac est complètement immergé) et faites cuire pendant 1h30.",
+                           "When the water reaches target temperature, lower the bagged pork the water bath (making sure bag fully submerged) and cook for 1½ hours.",
+                           "Lorsque le porc est prêt, retirez le sac du bain-marie et laissez-le reposer pendant 5 minutes. Verser le liquide du sac dans une petite casserole et transférer le porc dans une assiette. Enfiler les morceaux de porc sur des brochettes.",
+                           "When the pork is ready, remove the bag from the water bath and let it rest for 5 minutes. Pour the liquid from the bag into a small saucepan and transfer the pork to a plate. Thread the pork pieces onto some skewers.",
+                           "Pour préparer la trempette, porter le liquide de la casserole à ébullition à feu moyen, puis fouetter le beurre d\u0027arachide. Cuire, en remuant souvent, jusqu\u0027à ce que le mélange épaississe, environ 4 minutes. Retirer du feu, transférer dans un petit bol et réserver.",
+                           "To prepare the dipping sauce, bring the liquid the saucepan to a simmer over medium heat, then whisk the peanut butter. Cook, stirring often, until the mixture thickens, about 4 minutes. Remove from the heat, transfer to a small bowl and set aside.",
+                           "Préchauffer une poêle à griller rectangulaire sur la cuisinière à feu moyen-vif. Graisser la poêle à griller avec de l\u0027huile.",
+                           "Preheat rectangular stove-top grill pan over medium-high heat. Grease the grill pan with oil.",
+                           "Placer les brochettes sur la poêle, en les retournant une fois, jusqu\u0027à ce qu\u0027elles soient bien dorées des deux côtés, environ 2 minutes de chaque côté.",
+                           "Place the skewers on the pan, turning once, until deeply browned on both sides, about 2 minutes per side."
+                       ],
+    "notes":  [
+                  "Poulet: Remplacez le porc par des poitrines de poulet désossées et sans peau coupées contre le grain en lanières de 1 pouce d\u0027épaisseur et faites cuire au bain-marie à 60 °C (140 °F) pendant 1 h 30.",
+                  "Chicken: substitute with skinless, boneless chicken breasts cut against the grain into 1-inch-thick strips and cook in a 60°C (140°F) water bath for 1 ½ hours.",
+                  "Tempeh : remplacer par du tempeh coupé en lanières de 1 pouce et cuire au bain-marie à 88°C (190°F) pendant 3 heures.",
+                  "Tempeh: Substitute the pork with tempeh sliced in 1-inch strips and cook in a 88°C (190°F) water bath for 3 hours."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/9ec0ba36-1f7e-47d0-aedc-22ca03a5c672_0.jpg",
+                       "images/9ec0ba36-1f7e-47d0-aedc-22ca03a5c672_1.jpg",
+                       "images/9ec0ba36-1f7e-47d0-aedc-22ca03a5c672_2.jpg"
+                   ]
+}

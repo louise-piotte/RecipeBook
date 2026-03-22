@@ -1,0 +1,53 @@
+{
+    "recipeId":  "5719878d-25d9-40df-9f2c-8035a862f9e4",
+    "title":  "Cherry Almond Shortbread Cookies",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Biscuit/Cookie",
+                       "Cerise/Cherry"
+                   ],
+    "collections":  [
+                        "Boîte de Noël/Christmas Box"
+                    ],
+    "sourceUrl":  "https://sallysbakingaddiction.com/cherry-almond-shortbread-cookies/",
+    "yield":  "24 cookies",
+    "prepTimeIso":  "PT4H15M",
+    "cookTimeIso":  "PT11M",
+    "ingredientLines":  [
+                            "3/4 cup (12 Tbsp; 170g) unsalted butter, softened to room temperature",
+                            "2/3 cup (134g) granulated sugar",
+                            "1 teaspoon pure vanilla extract",
+                            "1/2 teaspoon almond extract",
+                            "1 Tablespoon (15ml) maraschino cherry juice",
+                            "2 cups (250g) all-purpose flour (spooned \u0026 leveled)",
+                            "16 maraschino cherries (drained and chopped)",
+                            "optional: 4 ounces white chocolate"
+                        ],
+    "directionLines":  [
+                           "1. Using a handheld or stand mixer with a paddle attachment, beat the butter on high speed until creamy, about 1 minute. Switch mixer to medium speed and add the the sugar, vanilla and almond extracts. Scrape down the sides and the bottom of the bowl as needed. With the mixer running on high, slowly drizzle in 1 Tablespoon of the cherry juice. Beat for 1 minute on high. Turn the mixer off and pour the flour into the wet ingredients. Turn the mixer on low and slowly beat until a very soft dough is formed, then, with the mixer still running on low, add the chopped cherries. Beat just until the cherries are disbursed in the dough. Press the dough down to compact it and tightly cover with plastic wrap to chill until firm, at least 4 hours (and up to 3 days). If the cookie dough is not sufficiently chilled, your cookies will spread.",
+                           "2. Preheat oven to 350°F (177°C). Line two baking sheets with parchment paper or silicone baking mats (silicone mats preferred to reduce spreading). Shape the cookie dough into balls. Mine were about 1 Tablespoon of dough per ball. Make sure theyâ€™re nice and smooth. If you find that the balls of dough are sticky and/or have gotten a little soft after rolling, place the balls of dough back into the refrigerator to firm up. You absolutely DO NOT want soft dough.",
+                           "3. Bake for 11-12 minutes, or until very lightly browned on the edges. The cookies will puff up and spread slightly. Do not overbake.  In fact, I only baked mine for 10 minutes. I prefer them a little soft. Allow the cookies to cool on the baking sheet for 5 minutes before transferring to a wire rack. Allow to cool for at least 30 minutes before drizzling with white chocolate. Melt the white chocolate in a double boiler or in the microwave, in 20 second increments, stirring after each increment until melted. I used a squeeze bottle to drizzle the melted white chocolate."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/5719878d-25d9-40df-9f2c-8035a862f9e4_0.jpg"
+                   ]
+}

@@ -1,0 +1,62 @@
+{
+    "recipeId":  "ae0f1410-da1e-478b-98a0-67fa6b420576",
+    "title":  "Tarte au Chocolat /French Silk Pie",
+    "recipeShareId":  "",
+    "linkedRecipeId":  "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca",
+    "isFavourite":  "False",
+    "rating":  "2",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Chocolat/Chocolate",
+                       "Tarte/Pie"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/pecan-pie/",
+    "yield":  "1 tarte 5 pouces/1 5-inch pie",
+    "prepTimeIso":  "PT30M",
+    "cookTimeIso":  "PT30M",
+    "ingredientLines":  [
+                            "2 croute de tarte pré-cuite de 5 pouces  - 2 5-inch blind baked sweet pie shell",
+                            "2 gros Å“ufs - 2 large eggs",
+                            "¾ tasses (125 g) de sucre - ¾ cups (125g) sugar",
+                            "2 onces (56g) de chocolat non sucré, finement haché - 2 ounces (56g) unsweetened chocolate, finely chopped",
+                            "1 cuillère à thé d\u0027extrait de vanille - 1 teaspoon vanilla extract",
+                            "½ tasse (113 g) de beurre non salé, ramolli - ½ cup (113g) unsalted butter, softened",
+                            "â…“ tasse de crème à fouettée - â…“ cup heavy whipping cream"
+                        ],
+    "directionLines":  [
+                           "Porter une petite casserole remplie de 2 pouces d\u0027eau à ébullition à feu moyen. Dans un bol résistant à la chaleur, fouetter ensemble le sucre et les Å“ufs. Placez le bol sur le dessus de la casserole en vous assurant que le fond ne touche pas l\u0027eau. (Le bol doit être assez grand pour reposer sur le dessus du pot.)",
+                           "Bring a small pot filled with 2 inches of water to a simmer over medium heat. In a heat-proof bowl, whisk together sugar and eggs. Place the bowl on top of the pot, making sure the bottom doesnâ€™t touch the water. (The bowl should be large enough to rest on top of the pot.)",
+                           "Cuire, en remuant constamment, jusqu\u0027à ce que le mélange atteigne 160F ou jusqu\u0027à ce qu\u0027il soit chaud au toucher et complètement lisse lorsqu\u0027il est frotté entre vos doigts. Retirer de la marmite.",
+                           "Cook, stirring constantly, until the mixture reaches 160F or until it feels warm to the touch and completely smooth when rubbed between your fingers. Remove from the pot.",
+                           "Ajouter le chocolat et la vanille. Fouetter doucement jusqu\u0027à ce qu\u0027il soit complètement fondu et que le mélange soit lisse. Il va probablement s\u0027épaissir au fur et à mesure que vous remuez, se transformant en une consistance de pudding. Laisser refroidir, en remuant de temps en temps, jusqu\u0027à ce que le mélange ne soit pas chaud mais ne soit pas solidifié, environ 30 minutes.",
+                           "Add the chocolate and vanilla. Gently whisk until completely melted and the mixture is smooth. It will likely thicken as you stir, turning into a pudding-like consistency. Let cool, stirring occasionally, until the mixture doesnâ€™t feel warm but isnâ€™t solidified, about 30 minutes.",
+                           "Dans un bol à mélanger, battre le beurre à vitesse moyenne jusqu\u0027à ce qu\u0027il soit lisse et mousseux, environ 2 minutes. Ajouter le mélange de chocolat refroidi. Battre à vitesse moyenne jusqu\u0027à ce qu\u0027il soit très mousseux et que des pics doux et brillants se forment, environ 3 minutes.",
+                           "In a mixing bowl, beat the butter on medium speed until smooth and fluffy, about 2 minutes. Add the cooled chocolate mixture. Beat on medium speed until very fluffy, and soft shiny peaks form, about 3 minutes.",
+                           "Dans un autre bol, battre la crème à vitesse moyenne jusqu\u0027à la formation de pics mous. Incorporer la crème fouettée au mélange de chocolat fouetté jusqu\u0027à ce qu\u0027il ne reste plus de traces blanches. Verser dans le fond de tarte refroidi.",
+                           "In a separate bowl, beat the cream on medium speed until soft peaks form. Fold the whipped cream into the whipped chocolate mixture until no white streaks remain. Pour into the cool pie shell.",
+                           "Réfrigérer pendant au moins 3 heures ou jusqu\u0027à une journée.",
+                           "Refrigerate for at least 3 hours or up to a day."
+                       ],
+    "notes":  [
+                  "Faire 2 fois la quantité pour faire une tarte de 9 pouces.",
+                  "Make 2 time the amount for a 9-inch pie."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/ae0f1410-da1e-478b-98a0-67fa6b420576_0.jpg"
+                   ]
+}

@@ -1,0 +1,52 @@
+{
+    "recipeId":  "e34243f0-f13c-47bf-991f-a8d50e3c67a8",
+    "title":  "Glaçage au faire/Strawberry Frosting",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Fraise/Strawberry",
+                       "Glassage/Icing"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://sallysbakingaddiction.com/strawberry-frosting/",
+    "yield":  "3 tasses/3 cup",
+    "prepTimeIso":  "PT10M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "25 g de fraises lyophilisées - 25g freeze-dried strawberries",
+                            "1 tasse (226 g) de beurre non salé, ramolli à température ambiante - 1 cup (226g) unsalted butter, softened to room temperature",
+                            "4 tasses (480 g) de sucre glace - 4 cups (480g) confectionersâ€™ sugar",
+                            "¼ tasse de crème épaisse ou de lait entier, à température ambiante - ¼ cup heavy cream or whole milk, at room temperature",
+                            "1 cuillère à thé d\u0027extrait de vanille pure - 1 teaspoon pure vanilla extract",
+                            "sel, au goût - salt, to taste"
+                        ],
+    "directionLines":  [
+                           "À l\u0027aide d\u0027un robot culinaire ou d\u0027un mixeur, transformez les fraises lyophilisées en une chapelure poudreuse. Vous devriez en avoir environ 1/2 tasse. Sâ€™il nâ€™est pas suffisamment broyé, vous pouvez le tamiser avec un tamis à mailles fines pour éliminer les graines/morceaux plus gros. Mettre de côté.",
+                           "Using a food processor or blender, process the freeze-dried strawberries into a powdery crumb. You should have around 1/2 cup. If itâ€™s not grinding down fine enough, you can sift it with a fine mesh sieve to rid larger seeds/pieces. Set aside.",
+                           "Dans un grand bol, à l\u0027aide d\u0027un batteur à main ou sur socle équipé d\u0027une palette ou d\u0027un fouet, battre le beurre à vitesse moyenne-élevée jusqu\u0027à ce qu\u0027il soit crémeux, environ 2 minutes. Ajouter le sucre glace, la poudre de fraise, la crème épaisse/le lait et la vanille. Battez à basse vitesse pendant 30 secondes, puis passez à haute vitesse et battez pendant 2 minutes. Goût. Ajoutez 1 à 2 cuillères à soupe supplémentaires de crème épaisse/lait si nécessaire pour éclaircir, si vous le souhaitez. (J\u0027en ajoute généralement au moins 1 de plus.) Ajoutez une pincée de sel si le glaçage est trop sucré.",
+                           "In a large bowl using a handheld or stand mixer fitted with a paddle or whisk attachment, beat the butter on medium-high speed until creamy, about 2 minutes. Add confectionersâ€™ sugar, strawberry powder, heavy cream/milk, and vanilla. Beat on low speed for 30 seconds, then switch to high speed and beat for 2 minutes. Taste. Add 1â€“2 more Tablespoons of heavy cream/milk if needed to thin out, if desired. (I usually add at least 1 more.) Add a pinch of salt if frosting is too sweet."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/e34243f0-f13c-47bf-991f-a8d50e3c67a8_0.jpg"
+                   ]
+}

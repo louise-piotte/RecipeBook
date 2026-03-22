@@ -1,0 +1,49 @@
+{
+    "recipeId":  "d40521c8-874f-4cbb-847a-1c8b7e27b52e",
+    "title":  "Poudre de chili / Chili Powder",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Ingrédient/Ingredient",
+    "categories":  [
+                       "Épices/Spices"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.allrecipes.com/recipe/237172/chili-powder/",
+    "yield":  "6",
+    "prepTimeIso":  "PT5M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "2 cuillères à soupe de paprika - 2 tablespoons paprika",
+                            "2 cuillères à thé d\u0027origan - 2 teaspoons oregano",
+                            "1½ cuillère à thé de cumin - 1½ teaspoons cumin",
+                            "1½ cuillère à thé de poudre d\u0027ail - 1½ teaspoons garlic powder",
+                            "¾ cuillère à thé de poudre d\u0027oignon - ¾ teaspoon onion powder",
+                            "½ cuillère à thé de poivre de Cayenne, ou au goût - ½ teaspoon cayenne pepper, or to taste"
+                        ],
+    "directionLines":  [
+                           "Fouetter le paprika, l\u0027origan, le cumin, la poudre d\u0027ail, la poudre d\u0027oignon et le poivre de Cayenne dans un bol.",
+                           "Whisk paprika, oregano, cumin, garlic powder, onion powder, and cayenne pepper together in a bowl."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "14",
+                      "totalFat":  "1",
+                      "saturatedFat":  "0",
+                      "cholesterol":  null,
+                      "sodium":  "2",
+                      "totalCarbohydrate":  "3",
+                      "dietaryFiber":  "1",
+                      "sugars":  "1",
+                      "protein":  "1"
+                  },
+    "photoPaths":  [
+                       "images/d40521c8-874f-4cbb-847a-1c8b7e27b52e_0.jpg"
+                   ]
+}

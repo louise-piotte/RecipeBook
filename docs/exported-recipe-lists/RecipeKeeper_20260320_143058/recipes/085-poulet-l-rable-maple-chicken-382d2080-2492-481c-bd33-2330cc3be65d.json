@@ -1,0 +1,69 @@
+{
+    "recipeId":  "382d2080-2492-481c-bd33-2330cc3be65d",
+    "title":  "Poulet à l\u0027érable/Maple Chicken",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Érable/Maple",
+                       "Poulet/Chicken"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://foodiebadge.com/one-pan-butter-garlic-chicken-korean-soy-sauce-chicken-chicken-breast-recipe/",
+    "yield":  "",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "1 poitrine de poulet - 1 Chicken breast",
+                            "Poivre - Black Pepper",
+                            "3 cuillères à soupe de fécule de maïs - 3 Tablespoon of cornstarch",
+                            "1 cuillère à soupe de beurre non salé - 1 Tablespoon Unsalted butter",
+                            "1 cuillère à soupe d\u0027ail haché (2 ou 3 gousses) - 1 Tablespoon Minced garlic",
+                            "2½ cuillères à soupe de sauce soja - 2½ Tablespoon Soya sauce",
+                            "3½ cuillère à soupe de sirop d\u0027érable - 3½ Tablespoon Maple syrup",
+                            "1 cuillère à soupe de vinaigre - 1 Tablespoon Vinegar",
+                            "(facultatif) Arachides grillées hachées - (optional) Chopped roasted peanut"
+                        ],
+    "directionLines":  [
+                           "Couper le poulet en morceaux de la taille d\u0027un doigt et assaisonner de poivre. Couvrir le tout de fécule de maïs en s\u0027assurant de recouvrir le poulet complètement.",
+                           "Cut the chicken into finger size pieces and season with pepper. Cover it with cornstarch while making sure all sides are covered.",
+                           "Préparez la sauce en mélangeant la sauce soya, le sirop d\u0027érable et le vinaigre.",
+                           "Prepare sauce by mixing soy sauce, maple syrup and vinegar.",
+                           "Cuire avec de l\u0027huile jusqu\u0027à ce qu\u0027ils soient blancs de tous les côtés. Ne faites pas trop cuire le poulet à ce stade, sinon le résultat final sera trop cuit.",
+                           "Cook with oil until white on all sides. Don`t cook the chicken too much at this stage, otherwise the end result will be overcooked.",
+                           "Ajouter l\u0027ail et le beurre. Faire revenir un peu l\u0027ail, puis ajouter la sauce.",
+                           "Add garlic and butter. Brown the garlic a little, then add sauce.",
+                           "Cuire le poulet complètement dans la sauce tout en le retournant pour couvrir tous les côtés de sauce.",
+                           "Cook the chicken completely in sauce while flipping to cover all sides with sauce.",
+                           "Ajouter les arachides et les cuire dans la sauce.",
+                           "Add peanuts and cook them in the sauce.",
+                           "Terminé lorsque la sauce a réduit et est devenue collante.",
+                           "Finished when the sauce has reduced and has become sticky."
+                       ],
+    "notes":  [
+                  "Des champignons peuvent être ajoutés en même temps que la sauce.",
+                  "Mushrooms can be added at the same time as the sauce."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/382d2080-2492-481c-bd33-2330cc3be65d_0.jpg",
+                       "images/382d2080-2492-481c-bd33-2330cc3be65d_1.jpg",
+                       "images/382d2080-2492-481c-bd33-2330cc3be65d_2.jpg",
+                       "images/382d2080-2492-481c-bd33-2330cc3be65d_3.jpg"
+                   ]
+}

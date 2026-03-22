@@ -1,0 +1,56 @@
+{
+    "recipeId":  "9dc0c02c-ac20-411c-9adf-38095e980487",
+    "title":  "Tzatziki",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Accompagnement/Side Dish",
+    "categories":  [
+                       "Ail/Garlic",
+                       "Concombre/Cucumber",
+                       "Sauce",
+                       "Yaourt/Yogurt"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://cookieandkate.com/how-to-make-tzatziki/",
+    "yield":  "2 1/2 tasse/cups",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "2 tasses de concombre râpé - 2 cups grated cucumber",
+                            "1½ tasses de yaourt grec nature - 1½ cups plain Greek yogurt",
+                            "2 cuillères à soupe d\u0027huile d\u0027olive extra vierge - 2 tablespoons extra-virgin olive oil",
+                            "2 cuillères à soupe de menthe fraîche hachée et/ou d\u0027aneth - 2 tablespoons chopped fresh mint and/or dill",
+                            "1 cuillère à soupe de jus de citron - 1 tablespoon lemon juice",
+                            "1 gousse d\u0027ail moyenne, pressée ou hachée - 1 medium clove garlic, pressed or minced",
+                            "¼ cuillère à thé de sel - ¼ teaspoon salt"
+                        ],
+    "directionLines":  [
+                           "En travaillant avec une grosse poignée à la fois, pressez légèrement le concombre râpé entre vos paumes au-dessus de l\u0027évier pour éliminer l\u0027excès d\u0027humidité. Transférer le concombre pressé dans un bol de service et répéter avec le concombre restant.",
+                           "Working with one big handful at a time, lightly squeeze the grated cucumber between your palms over the sink to remove excess moisture. Transfer the squeezed cucumber to a serving bowl, and repeat with the remaining cucumber.",
+                           "Ajouter le yaourt, l\u0027huile d\u0027olive, les herbes, le jus de citron, l\u0027ail et le sel dans le bol et remuer pour mélanger. Laisser reposer le mélange pendant 5 minutes pour permettre aux saveurs de se marier. Add the yogurt, olive oil, herbs, lemon juice, garlic, and salt to the bowl, and stir to blend. Let the mixture rest for 5 minutes to allow the flavors to meld.",
+                           "Servir le tzatziki immédiatement ou réfrigérer pour plus tard. Les restes de tzatziki se conservent bien, au frais, pendant environ 4 jours.",
+                           "Serve tzatziki immediately or chill for later. Leftover tzatziki keeps well, chilled, for about 4 days."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1/4 cup",
+                      "calories":  "78",
+                      "totalFat":  "5.4",
+                      "saturatedFat":  "1.4",
+                      "cholesterol":  "4.6",
+                      "sodium":  "154.2",
+                      "totalCarbohydrate":  "4.5",
+                      "dietaryFiber":  "0.4",
+                      "sugars":  "2.7",
+                      "protein":  "3.8"
+                  },
+    "photoPaths":  [
+                       "images/9dc0c02c-ac20-411c-9adf-38095e980487_0.jpg"
+                   ]
+}

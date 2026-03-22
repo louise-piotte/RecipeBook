@@ -1,0 +1,59 @@
+{
+    "recipeId":  "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d",
+    "title":  "Saucissons de chocolat/Chocolate sausage",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Barres/Bars",
+                       "Biscuit/Cookie",
+                       "Chocolat/Chocolate",
+                       "Modifiable/Customisable"
+                   ],
+    "collections":  [
+                        "Boîte de Noël/Christmas Box"
+                    ],
+    "sourceUrl":  "https://www.ricardocuisine.com/recettes/3769-saucissons-de-chocolat",
+    "yield":  "32",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT5M",
+    "ingredientLines":  [
+                            "225 g de chocolat 70%, haché - 225 g 70% dark chocolate, chopped",
+                            "½ tasse de beurre non salé, ramolli - ½ cup unsalted butter, softened",
+                            "1 tasse de sucre à glacer - 1 cup icing sugar",
+                            "1 oeuf - 1 egg",
+                            "1 tasse de biscuits de type petits-beurre cassés en petits morceaux d\u0027environ 1 cm - 1 cup butter cookies broken into approximately 1 cm pieces",
+                            "½ tasse de guimauves blanches coupées en dés - ½ cup diced white marshmallows",
+                            "2 cuillère à soupe de raisins secs - 2 tablespoons raisins",
+                            "2 cuillère à soupe de noix de pin - 2 tablespoons pine nuts"
+                        ],
+    "directionLines":  [
+                           "Dans un bol au bain-marie, fondre le chocolat avec le beurre. Retirer le bol du bain-marie. Ajouter le sucre à glacer et l\u0027oeuf en fouettant. À l\u0027aide d\u0027une spatule, incorporer les biscuits, les guimauves, les raisins et les noix de pin.",
+                           "In a bowl over a double boiler, melt the chocolate with the butter. Remove the bowl from the double boiler. Whisk in the icing sugar and egg. With a spatula, stir in the cookies, marshmallows, raisins and pine nuts.",
+                           "Sur un plan de travail, déposer la préparation au chocolat sur une grande feuille de papier d\u0027aluminium. Former un cylindre d\u0027environ 30 cm (12 po) de longueur ou deux cylindres de 15 cm (6 po) . Refermer le cylindre en tortillant les deux extrémités de papier d\u0027aluminium. Réfrigérer environ 2 heures ou jusqu\u0027à ce que le saucisson soit ferme au toucher. Retirer le papier d\u0027aluminium et rouler le cylindre dans du sucre à glacer pour lui donner l\u0027aspect d\u0027un vrai saucisson. Ficeler si désiré.",
+                           "On a work surface, spoon the chocolate mixture on a large sheet of aluminum foil. Form a 30-cm (12-inch) in length cylinder or two 15-cm (6-inch) cylinders. Close the cylinder, twisting both ends of the foil. Refrigerate for about 2 hours or until the sausage is firm to the touch. Remove the foil and roll the cylinder in icing sugar to give it the appearance of a real dry sausage. Tie, if desired.",
+                           "Servir sur une planche de bois et trancher.",
+                           "Serve on a wooden board and slice."
+                       ],
+    "notes":  [
+                  "Utiliser la technique de compacter en roulant avec une pellicule plastique.",
+                  "Un moule ne condense pas assez la pâte."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/bd3f9152-5ea3-44c3-ad79-8f4d7624f07d_0.jpg"
+                   ]
+}

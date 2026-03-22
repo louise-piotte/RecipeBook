@@ -2,6 +2,7 @@ package app.recipebook.data.local.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import app.recipebook.domain.model.IngredientCategory
 
 @Entity(tableName = "recipes")
 data class RecipeEntity(
@@ -27,6 +28,7 @@ data class RecipeEntity(
     val userRating: Double? = null,
     val madeCount: Int? = null,
     val lastMadeAt: String? = null,
+    val mainPhotoId: String? = null,
     val deletedAt: String? = null,
     val ingredientLinesJson: String = "[]",
     val tagIdsJson: String = "[]",
@@ -42,6 +44,7 @@ data class IngredientReferenceEntity(
     val id: String,
     val nameFr: String,
     val nameEn: String,
+    val category: String = IngredientCategory.OTHER.name,
     val aliasesFrJson: String = "[]",
     val aliasesEnJson: String = "[]",
     val defaultDensity: Double? = null,

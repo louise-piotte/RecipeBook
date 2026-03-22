@@ -1,0 +1,50 @@
+{
+    "recipeId":  "de2f7507-1126-4c10-a364-320b0e540125",
+    "title":  "Garam masala",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Ingrédient/Ingredient",
+    "categories":  [
+                       "Épices/Spices"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://ileauxepices.com/blog/2014/11/03/comment-faire-ses-propres-melanges-depices/wpid6390/",
+    "yield":  "10½ culière a thé / teaspoons",
+    "prepTimeIso":  "PT5M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "2 cuillères à thé de cumin - 2 teaspoons of cumin",
+                            "1½ cuillère à thé de coriandre - 1½ teaspoon coriander",
+                            "1½ cuillère à thé de cardamome - 1½ teaspoon cardamom",
+                            "1½ cuillère à thé de poivre noir moulu - 1½  teaspoon ground black pepper",
+                            "1 cuillère à thé de cannelle - 1 teaspoon cinnamon",
+                            "½ cuillère à thé de girofle - ½ teaspoon of cloves",
+                            "½ cuillère à thé de muscade - ½ teaspoon nutmeg"
+                        ],
+    "directionLines":  [
+                           "Mélanger tout les épices dans un petit bol jusqu\u0027à l\u0027obtention d\u0027une poudre de couleur uniforme.",
+                           "Mix all the spices in a small bowl until you get a uniform colored powder."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/de2f7507-1126-4c10-a364-320b0e540125_0.jpg"
+                   ]
+}

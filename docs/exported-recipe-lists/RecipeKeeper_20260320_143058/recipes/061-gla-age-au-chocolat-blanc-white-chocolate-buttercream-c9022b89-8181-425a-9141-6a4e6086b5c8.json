@@ -1,0 +1,60 @@
+{
+    "recipeId":  "c9022b89-8181-425a-9141-6a4e6086b5c8",
+    "title":  "Glaçage au chocolat blanc/White Chocolate Buttercream",
+    "recipeShareId":  "",
+    "linkedRecipeId":  "4207e09a-429f-437f-b7bd-14e862d6d696",
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Ingrédient/Ingredient",
+    "categories":  [
+                       "Chocolat/Chocolate",
+                       "Glassage/Icing"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://sugarspunrun.com/white-chocolate-buttercream/",
+    "yield":  "12",
+    "prepTimeIso":  "PT25M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "6 oz (170g) de chocolat blanc coupé en petits morceaux - 6 oz (170g) white chocolate chopped into small pieces",
+                            "1 tasse (226 g) de beurre non salé ramolli à température ambiante - 1 cup (226g) unsalted butter softened to room temperature",
+                            "2 tasses (250 g) de sucre en poudre - 2 cups (250g) powdered sugar",
+                            "½ cuillère à thé d\u0027extrait de vanille - ½ teaspoon vanilla extract",
+                            "â…› cuillère à thé de sel - â…› teaspoon salt",
+                            "2 cuillères à soupe de crème 35% - 2 tablespoons heavy cream"
+                        ],
+    "directionLines":  [
+                           "Faire chauffer le chocolat blanc au micro-ondes ou au bain-marie jusqu\u0027à ce que le chocolat soit complètement lisse et fondu.",
+                           "Heat the white chocolate in the microwave or a double boiler until chocolate is completely smooth and melted.",
+                           "Laisser le chocolat refroidir pendant au moins 15 minutes et ne plus être chaud au toucher, sinon il fera fondre le beurre.",
+                           "Set chocolate aside to cool for at least 15 minutes and no longer warm to the touch, otherwise it will melt the butter.",
+                           "Pendant que le chocolat refroidit, placer le beurre ramolli dans le bol d\u0027un batteur sur socle et batter jusqu\u0027à ce qu\u0027il soit crémeux.",
+                           "While chocolate is cooling, place softened butter in the bowl of a stand mixer and beat until creamy.",
+                           "Avec le mélangeur à basse vitesse, ajouter progressivement le chocolat fondu et refroidi et remuez bien.",
+                           "With mixer on low-speed, gradually add melted, cooled chocolate and stir well.",
+                           "Ajouter progressivement le sucre en poudre, en raclant périodiquement les parois et le fond du bol pour vous assurer que tous les ingrédients sont bien combinés. Puis ajouter le sel et l\u0027extrait de vanille et bien mélanger.",
+                           "Gradually add powdered sugar , scraping down the sides and bottom of the bowl periodically to ensure that all ingredients are well combined. Then sprinkle in salt and vanilla extract and stir well.",
+                           "Avec le batteur à basse vitesse, ajouter progressivement la crème épaisse au glaçage. Augmentez progressivement la vitesse et battez pendant 30 à 60 secondes ou jusqu\u0027à ce que la consistance désirée soit atteinte.",
+                           "With mixer on low-speed, gradually add heavy cream to frosting. Gradually increase speed to high and beat for 30-60 seconds or until desired consistency is reached."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/c9022b89-8181-425a-9141-6a4e6086b5c8_0.jpg"
+                   ]
+}

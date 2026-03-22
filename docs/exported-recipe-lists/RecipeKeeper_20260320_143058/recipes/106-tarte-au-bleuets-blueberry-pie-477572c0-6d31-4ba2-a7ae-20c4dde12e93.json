@@ -1,0 +1,58 @@
+{
+    "recipeId":  "477572c0-6d31-4ba2-a7ae-20c4dde12e93",
+    "title":  "Tarte au Bleuets/Blueberry Pie",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Bleuet/Blueberry",
+                       "Tarte/Pie"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/blueberry-pie/",
+    "yield":  "1 tarte 5 pouces/1 5-inch pie",
+    "prepTimeIso":  "PT10M",
+    "cookTimeIso":  "PT40M",
+    "ingredientLines":  [
+                            "1 croute de tarte non-cuite de 5 pouces + pâte extra pour le dessus - 1 5-inch raw sweet pie shell + extra dough for top layer",
+                            "1¼ tasse de bleuets - 1¼ cup blueberries",
+                            "¾ cuire à thé de zeste de citron - ¾ teaspoon lemon zest (optional)",
+                            "¾ de cuillère a soupe de jus de citron - ¾ tablespoon lemon Juice",
+                            "1 cuillère à soupe de fécule de maïs - 1 tablespoon corn starch",
+                            "â…› (25g) de tasse de sucre - â…› (25g) cup sugar",
+                            "Pincée de sel - Pinch of salt"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four a 400°F.",
+                           "Preheat oven to 400°F.",
+                           "Dans un bol, mélanger les bleuets, le jus et le zeste de citron, le sucre, la fécule de maïs et le sel.",
+                           "In a bowl, mix together the blueberries, lemon juice, zest, sugar, salt, and corn starch.",
+                           "Mettre le mélange de bleuets dans la croute a tarte non-cuite. Fermer la tarte avec la pâte a tarte extra.",
+                           "Place the blueberry mixture in the raw 5-inch pie shell. Close the pie with the extra pie dough.",
+                           "Cuire dans le four pour 40 minutes.",
+                           "Bake in oven for 40 minutes."
+                       ],
+    "notes":  [
+                  "Faire 4 fois la quantité pour faire une tarte de 9 pouces.",
+                  "Make four time the amount for a 9-inch pie."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/477572c0-6d31-4ba2-a7ae-20c4dde12e93_0.jpg"
+                   ]
+}

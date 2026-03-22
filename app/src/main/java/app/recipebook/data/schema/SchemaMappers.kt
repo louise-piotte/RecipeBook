@@ -10,6 +10,7 @@ import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.IngredientForm
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientLineSubstitution
+import app.recipebook.domain.model.IngredientCategory
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LibraryMetadata
@@ -30,6 +31,7 @@ import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.UnitDefinition
 import app.recipebook.domain.model.UnitScope
 import app.recipebook.domain.model.UnitType
+import java.io.File
 
 fun RecipeCreationPayloadDto.toDomainRecipe(): Recipe = recipe.toDomain()
 
@@ -61,6 +63,7 @@ private fun RecipeDto.toDomain(): Recipe = Recipe(
     tagIds = tags,
     collectionIds = collections,
     ratings = ratings?.toDomain(),
+    mainPhotoId = mainPhotoId,
     photos = photos.map { it.toDomain() },
     attachments = attachments.map { it.toDomain() },
     importMetadata = importMetadata?.toDomain(),
@@ -79,6 +82,7 @@ private fun Recipe.toDto(): RecipeDto = RecipeDto(
     tags = tagIds,
     collections = collectionIds,
     ratings = ratings?.toDto(),
+    mainPhotoId = mainPhotoId,
     photos = photos.map { it.toDto() },
     attachments = attachments.map { it.toDto() },
     importMetadata = importMetadata?.toDto(),
@@ -183,13 +187,13 @@ private fun Ratings.toDto(): RatingsDto = RatingsDto(
 
 private fun PhotoRefDto.toDomain(): PhotoRef = PhotoRef(
     id = id,
-    localPath = localPath,
+    localPath = relativePath,
     cloudRef = cloudRef
 )
 
 private fun PhotoRef.toDto(): PhotoRefDto = PhotoRefDto(
     id = id,
-    localPath = localPath,
+    relativePath = portablePhotoRelativePath(this),
     cloudRef = cloudRef
 )
 
@@ -197,7 +201,7 @@ private fun AttachmentRefDto.toDomain(): AttachmentRef = AttachmentRef(
     id = id,
     fileName = fileName,
     mimeType = mimeType,
-    localPath = localPath,
+    localPath = relativePath,
     cloudRef = cloudRef
 )
 
@@ -205,10 +209,26 @@ private fun AttachmentRef.toDto(): AttachmentRefDto = AttachmentRefDto(
     id = id,
     fileName = fileName,
     mimeType = mimeType,
-    localPath = localPath,
+    relativePath = portableAttachmentRelativePath(this),
     cloudRef = cloudRef
 )
 
+private fun portablePhotoRelativePath(photo: PhotoRef): String {
+    val extension = File(photo.localPath).extension.ifBlank { "jpg" }
+    return "photos/${photo.id}.$extension"
+}
+
+private fun portableAttachmentRelativePath(attachment: AttachmentRef): String {
+    val extension = File(attachment.fileName).extension
+        .ifBlank { File(attachment.localPath).extension }
+        .ifBlank { "bin" }
+    val normalizedFileName = attachment.fileName
+        .substringBeforeLast('.')
+        .replace("[^A-Za-z0-9._-]".toRegex(), "-")
+        .trim('-')
+        .ifBlank { attachment.id }
+    return "attachments/${attachment.id}-$normalizedFileName.$extension"
+}
 private fun ImportMetadataDto.toDomain(): ImportMetadata = ImportMetadata(
     sourceType = sourceType,
     parserVersion = parserVersion,
@@ -269,6 +289,7 @@ private fun IngredientReferenceDto.toDomain(): IngredientReference = IngredientR
     id = id,
     nameFr = nameFr,
     nameEn = nameEn,
+    category = IngredientCategory.valueOf(category),
     aliasesFr = aliasesFr,
     aliasesEn = aliasesEn,
     defaultDensity = defaultDensity,
@@ -280,6 +301,7 @@ private fun IngredientReference.toDto(): IngredientReferenceDto = IngredientRefe
     id = id,
     nameFr = nameFr,
     nameEn = nameEn,
+    category = category.name,
     aliasesFr = aliasesFr,
     aliasesEn = aliasesEn,
     defaultDensity = defaultDensity,
@@ -591,3 +613,9 @@ private fun CollectionSortOrder.toSchemaValue(): String = when (this) {
     CollectionSortOrder.RATING_DESC -> "rating_desc"
     CollectionSortOrder.RECENT_DESC -> "recent_desc"
 }
+
+
+
+
+
+

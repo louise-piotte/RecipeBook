@@ -3,6 +3,7 @@ package app.recipebook
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.core.view.WindowCompat
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -10,6 +11,8 @@ import androidx.lifecycle.lifecycleScope
 import app.recipebook.data.local.recipes.RecipeRepositoryProvider
 import app.recipebook.data.local.settings.AppLanguageStore
 import app.recipebook.domain.model.AppLanguage
+import app.recipebook.ui.recipes.LibraryManagerSection
+import app.recipebook.ui.recipes.MainMenuDestination
 import app.recipebook.ui.recipes.RecipeDetailScreen
 import app.recipebook.ui.theme.RecipeBookTheme
 import kotlinx.coroutines.flow.flowOf
@@ -19,7 +22,7 @@ class RecipeDetailActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        WindowCompat.setDecorFitsSystemWindows(window, true)
 
         val repository = RecipeRepositoryProvider.create(this)
         val languageStore = AppLanguageStore(this)
@@ -49,6 +52,26 @@ class RecipeDetailActivity : ComponentActivity() {
                         lifecycleScope.launch { languageStore.setLanguage(selected) }
                     },
                     onBack = ::finish,
+                    onNavigate = { destination ->
+                        when (destination) {
+                            MainMenuDestination.Library -> {
+                                startActivity(
+                                    android.content.Intent(this, MainActivity::class.java).apply {
+                                        addFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP or android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                                    }
+                                )
+                                finish()
+                            }
+                            MainMenuDestination.Ingredients -> {
+                                startActivity(IngredientTagManagerActivity.intentForSection(this, LibraryManagerSection.Ingredients))
+                                finish()
+                            }
+                            MainMenuDestination.Tags -> {
+                                startActivity(IngredientTagManagerActivity.intentForSection(this, LibraryManagerSection.Tags))
+                                finish()
+                            }
+                        }
+                    },
                     onEdit = {
                         startActivity(
                             android.content.Intent(this, RecipeEditorActivity::class.java)
@@ -64,3 +87,5 @@ class RecipeDetailActivity : ComponentActivity() {
         const val EXTRA_RECIPE_ID = "recipe_id"
     }
 }
+
+

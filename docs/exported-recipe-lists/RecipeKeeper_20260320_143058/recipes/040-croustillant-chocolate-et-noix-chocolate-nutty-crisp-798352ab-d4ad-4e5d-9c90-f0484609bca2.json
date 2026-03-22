@@ -1,0 +1,53 @@
+{
+    "recipeId":  "798352ab-d4ad-4e5d-9c90-f0484609bca2",
+    "title":  "Croustillant chocolate et noix/Chocolate nutty crisp",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Collation/Snack",
+    "categories":  [
+                       "Amande/Almond",
+                       "Barres/Bars",
+                       "Chocolat/Chocolate"
+                   ],
+    "collections":  [
+                        "Pour enfants/For kids"
+                    ],
+    "sourceUrl":  "https://www.allrecipes.com/recipe/258753/chocolate-nutty-crispy-treats/",
+    "yield":  "12",
+    "prepTimeIso":  "PT10M",
+    "cookTimeIso":  "PT5M",
+    "ingredientLines":  [
+                            "1 tasse de sirop de maïs - 1 cup corn syrup",
+                            "1 tasse de sucre - 1 cup granulated sugar",
+                            "2 tasses de pépites de chocolat noir - 2 cups dark chocolate chips",
+                            "1 tasse de beurre d\u0027amande - 1 cup almond butter",
+                            "6 tasses de céréales de riz - 6 cups rice cereal"
+                        ],
+    "directionLines":  [
+                           "Mélanger le sirop de maïs et le sucre dans une casserole à feu moyen jusqu\u0027à bouillonnement, environ 5 minutes. Retirer du feu; incorporer les pépites de chocolat et le beurre d\u0027amande jusqu\u0027à ce qu\u0027ils soient fondus.",
+                           "Mix corn syrup and sugar in a saucepan over medium heat until bubbling, about 5 minutes. Remove from heat; stir in chocolate chips and almond butter until melted.",
+                           "Mettez les céréales de riz dans un grand bol; incorporer le mélange amandes-chocolat. Verser le mélange de céréales dans un plat allant au four de 9 x 13 pouces; laisser refroidir 1 heure avant de servir.",
+                           "Put rice cereal in a large bowl; mix in almond-chocolate mixture. Pour cereal mixture into a 9x13-inch baking dish; cool for 1 hour before serving."
+                       ],
+    "notes":  [
+                  "Deviens trop dur lorsque congelé.",
+                  "Becomes too hard when frozen."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "463",
+                      "totalFat":  "21",
+                      "saturatedFat":  "6",
+                      "cholesterol":  null,
+                      "sodium":  "221",
+                      "totalCarbohydrate":  "72",
+                      "dietaryFiber":  "3",
+                      "sugars":  "42",
+                      "protein":  "5"
+                  },
+    "photoPaths":  [
+                       "images/798352ab-d4ad-4e5d-9c90-f0484609bca2_0.jpg"
+                   ]
+}

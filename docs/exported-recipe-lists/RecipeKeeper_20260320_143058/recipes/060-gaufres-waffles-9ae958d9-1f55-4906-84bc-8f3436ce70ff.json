@@ -1,0 +1,57 @@
+{
+    "recipeId":  "9ae958d9-1f55-4906-84bc-8f3436ce70ff",
+    "title":  "Gaufres/Waffles",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Brunch",
+    "categories":  [
+                       "Pâte/Dough",
+                       "Végétarien/Vegetarian"
+                   ],
+    "collections":  [
+                        "Recettes de Maman et Papa/Mom and Dad recipes"
+                    ],
+    "sourceUrl":  null,
+    "yield":  "2½",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "1 Å“uf - 1 egg",
+                            "1 tasse de farine - 1 cup flour",
+                            "¾ tasse de lait - ¾ cup of milk",
+                            "¼ tasse d\u0027huile - ¼ cup oil",
+                            "2 cuillère à soupe de sucre - 2 tablespoon of sugar",
+                            "2 cuillère à thé de poudre à pâte - 2 teaspoon baking powder",
+                            "1 cuillère à thé de vanille - 1 teaspoon vanilla"
+                        ],
+    "directionLines":  [
+                           "Mélanger la farine, le sucre et la poudre à pâte dans un bol.",
+                           "Combine flour, sugar and baking powder in a bowl.",
+                           "Dans un deuxième bol, mélanger l\u0027oeuf, le lait, l\u0027huile et la vanille.",
+                           "In a second bowl, combine the egg, milk, oil and vanilla.",
+                           "Ajouter les ingrédient liquides aux ingrédients sec et mélanger jusqu\u0027à ce que ce soit combiner.",
+                           "Add the wet ingredients to the dry ingredients and mix until combined.",
+                           "Cuire avec un gaufrier.",
+                           "Bake with a waffle iron."
+                       ],
+    "notes":  [
+                  "Pour 2"
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/9ae958d9-1f55-4906-84bc-8f3436ce70ff_0.jpg"
+                   ]
+}

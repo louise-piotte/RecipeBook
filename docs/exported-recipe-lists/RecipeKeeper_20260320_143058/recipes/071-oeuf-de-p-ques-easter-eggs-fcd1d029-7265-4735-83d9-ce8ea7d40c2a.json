@@ -1,0 +1,56 @@
+{
+    "recipeId":  "fcd1d029-7265-4735-83d9-ce8ea7d40c2a",
+    "title":  "Oeuf de Pâques / Easter Eggs",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Collation/Snack",
+    "categories":  [
+                       "Bonbon/Candy",
+                       "Chocolat/Chocolate"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.eaglebrand.ca/En/Recipes/Sunny-Chocolate-Easter-Eggs",
+    "yield":  "Makes: 30 eggs",
+    "prepTimeIso":  "PT40M",
+    "cookTimeIso":  "PT5M",
+    "ingredientLines":  [
+                            "½ tasse de beurre, ramolli - ½ cup butter, softened",
+                            "1 cuillère à thé de sel - 1 teaspoon salt",
+                            "1 boîte de 300 ml de lait concentré sucré - 1 can 300 ml Sweetened Condensed Milk",
+                            "1 cuillère à thé d\u0027extrait de vanille ou d\u0027amande - 1 teaspoon vanilla or almond extract",
+                            "1 kg de sucre à glacer - 1 kg icing sugar",
+                            "680 g de chocolat mi-sucré, fondu - 680 g semi-sweet chocolate, melted"
+                        ],
+    "directionLines":  [
+                           "Crémer le beurre et le sel jusqu\u0027à consistance mousseuse. Incorporer graduellement le lait concentré sucré, la vanille et le colorant alimentaire. Incorporer lentement le sucre glace jusqu\u0027à ce qu\u0027il soit bien mélangé.",
+                           "Cream butter and salt until fluffy. Gradually beat in sweetened condensed milk, vanilla and food colouring. Slowly beat in icing sugar until well blended.",
+                           "Pétrir avec les mains jusqu\u0027à ce que le mélange soit lisse et malléable. Façonner le mélange en Å“ufs. Placer sur un plateau tapissé de papier ciré. Couvrir et réfrigérer 4 heures ou jusqu\u0027à consistance ferme.",
+                           "Knead with hands until mixture is smooth and pliable. Form mixture into eggs. Place onto wax paper-lined tray. Cover and chill 4 hours, or until firm.",
+                           "Poser chaque Å“uf sur une fourchette à 2 dents, tremper dans le chocolat fondu, en laissant égoutter l\u0027excédent d\u0027enrobage. Remettre sur un plateau tapissé de papier ciré; laisser reposer jusqu\u0027à consistance ferme.",
+                           "Resting each egg on a 2-pronged fork, dip into melted chocolate, letting excess coating drip off. Place back on wax paper-lined tray; let stand until firm.",
+                           "Conserver couvert à température ambiante ou au réfrigérateur.",
+                           "Store covered at room temperature or in the refrigerator."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/fcd1d029-7265-4735-83d9-ce8ea7d40c2a_0.jpg"
+                   ]
+}

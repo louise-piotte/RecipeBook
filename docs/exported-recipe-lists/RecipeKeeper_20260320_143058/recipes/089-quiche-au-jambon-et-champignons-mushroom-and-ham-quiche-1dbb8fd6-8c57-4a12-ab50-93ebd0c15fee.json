@@ -1,0 +1,66 @@
+{
+    "recipeId":  "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee",
+    "title":  "Quiche au jambon et champignons/Mushroom and Ham Quiche",
+    "recipeShareId":  "_bOPbnyRIk2dgLAnLe61YA",
+    "linkedRecipeId":  "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca",
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Champignon/Mushroom",
+                       "Jambon/Ham",
+                       "Oeuf/Egg",
+                       "Tarte/Pie"
+                   ],
+    "collections":  [
+                        "Favori à Gab/Gab\u0027s favorites"
+                    ],
+    "sourceUrl":  null,
+    "yield":  "4 tarte 5\"/5-inch pies",
+    "prepTimeIso":  "PT1H",
+    "cookTimeIso":  "PT55M",
+    "ingredientLines":  [
+                            "½ jambon - ½ ham",
+                            "1 poireau - 1 leek",
+                            "¾ casseaux champignons - ¾ mushroom boxes",
+                            "½ tasse de lait - ½ cup of milk",
+                            "½ tasse de crème 10% - ½ cup half and half",
+                            "4 Å“ufs - 4 eggs",
+                            "2 tasse de fromage gruyère râpé - 2 cup grated Gruyere cheese",
+                            "4 croûtes de tarte 5\" - 4 5\" pie crusts"
+                        ],
+    "directionLines":  [
+                           "Couper le jambon, le poireau et les champignons en morceau de taille équivalente. Les champignons devraient plus gros puisqu\u0027ils vont réduire à la cuisson.",
+                           "Cut the ham, leek and mushrooms into pieces of equal size. The mushrooms should be larger since they will shrink during cooking.",
+                           "Cuire les ingrédients coupés dans un wok a feu moyen-vif le poireau jusqu\u0027à ce que les poireau ramollissent et les champignons aient réduit en tailles.",
+                           "Cook the cut ingredients in a wok over medium-high heat until the leeks soften and the mushrooms have reduced in size.",
+                           "Préchauffer le four a 350°F",
+                           "Preheat the oven to 350°F",
+                           "Mélanger les Å“ufs, le lait et le half and half dans un robot culinaire jusqu\u0027à ce que ça mousse.",
+                           "Blend the eggs, milk and half and half in a food processor until frothy.",
+                           "Ajouter le gruyère et deux tasses du sauté et mélanger.",
+                           "Add the Gruyère cheese and two cups of the sauté and mix.",
+                           "Verser dans les croûtes a tartes",
+                           "Pour into pie crusts",
+                           "Cuire au four pour 55 minutes ou que le centre soit saisi.",
+                           "Bake for 55 minutes or until center is set."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee_0.jpg"
+                   ]
+}

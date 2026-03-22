@@ -1,5 +1,8 @@
 package app.recipebook.ui.recipes
 
+import android.net.Uri
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -13,8 +16,10 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material.icons.filled.Save
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -26,6 +31,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -39,12 +45,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import app.recipebook.R
 import app.recipebook.data.local.recipes.IngredientReferenceDraft
+import app.recipebook.data.local.recipes.PendingRecipePhotoCapture
 import app.recipebook.data.local.recipes.TagDraft
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.LocalizedSystemText
+import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
@@ -66,6 +74,11 @@ fun RecipeEditorScreen(
     onSave: (Recipe) -> Unit,
     onCreateIngredientReference: suspend (IngredientReferenceDraft) -> IngredientReference,
     onCreateTag: suspend (TagDraft) -> Tag,
+    onImportPhoto: suspend (Uri) -> PhotoRef,
+    onCreatePendingCameraCapture: () -> PendingRecipePhotoCapture,
+    onFinalizePendingCameraCapture: suspend (PendingRecipePhotoCapture) -> PhotoRef?,
+    onDiscardDraftPhoto: (PhotoRef) -> Unit,
+    onDraftPhotosChange: (List<PhotoRef>, String?) -> Unit,
     onDelete: (() -> Unit)?,
     modifier: Modifier = Modifier
 ) {
@@ -90,6 +103,10 @@ fun RecipeEditorScreen(
             if (isEmpty()) add(blankIngredientRow())
         }
     }
+    val recipePhotos = remember(initialRecipe.id) {
+        mutableStateListOf<PhotoRef>().apply { addAll(initialRecipe.photos) }
+    }
+    var mainPhotoId by rememberSaveable(initialRecipe.id) { mutableStateOf(initialRecipe.mainPhotoId) }
     val selectedTagIds = remember(initialRecipe.id) {
         mutableStateListOf<String>().apply { addAll(initialRecipe.tagIds) }
     }
@@ -99,10 +116,78 @@ fun RecipeEditorScreen(
     var showTagPickerDialog by remember { mutableStateOf(false) }
     var showCreateTagDialog by remember { mutableStateOf(false) }
     var ingredientsExpanded by rememberSaveable { mutableStateOf(false) }
+    var pendingCameraCapture by remember { mutableStateOf<PendingRecipePhotoCapture?>(null) }
     val coroutineScope = rememberCoroutineScope()
+    val saveRecipe = {
+        onSave(
+            initialRecipe.copy(
+                updatedAt = Instant.now().toString(),
+                languages = BilingualText(
+                    fr = LocalizedSystemText(
+                        title = titleFr.trim(),
+                        description = descriptionFr.trim(),
+                        instructions = normalizeMultilineText(instructionsFr),
+                        notes = normalizeMultilineText(notesFr)
+                    ),
+                    en = LocalizedSystemText(
+                        title = titleEn.trim(),
+                        description = descriptionEn.trim(),
+                        instructions = normalizeMultilineText(instructionsEn),
+                        notes = normalizeMultilineText(notesEn)
+                    )
+                ),
+                source = if (sourceName.isBlank() && sourceUrl.isBlank()) null else RecipeSource(
+                    sourceName = sourceName.trim(),
+                    sourceUrl = sourceUrl.trim()
+                ),
+                servings = parseServings(servingsAmount, servingsUnit),
+                times = parseTimes(prepMinutes, cookMinutes, totalMinutes),
+                ingredients = ingredientRows.toIngredientLines(ingredientReferences),
+                tagIds = selectedTagIds.distinct(),
+                mainPhotoId = normalizedMainPhotoId(mainPhotoId, recipePhotos),
+                photos = recipePhotos.toList()
+            )
+        )
+    }
 
     val titlePreview = remember(language, titleFr, titleEn) {
         if (language == AppLanguage.FR) titleFr else titleEn
+    }
+
+    val importPhotoLauncher = rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+        if (uri != null) {
+            coroutineScope.launch {
+                val importedPhoto = onImportPhoto(uri)
+                recipePhotos.add(importedPhoto)
+                mainPhotoId = normalizedMainPhotoId(mainPhotoId, recipePhotos)
+            }
+        }
+    }
+
+    val takePhotoLauncher = rememberLauncherForActivityResult(ActivityResultContracts.TakePicture()) { success ->
+        val capture = pendingCameraCapture ?: return@rememberLauncherForActivityResult
+        coroutineScope.launch {
+            if (success) {
+                val capturedPhoto = onFinalizePendingCameraCapture(capture)
+                if (capturedPhoto != null) {
+                    recipePhotos.add(capturedPhoto)
+                    mainPhotoId = normalizedMainPhotoId(mainPhotoId, recipePhotos)
+                } else {
+                    onDiscardDraftPhoto(PhotoRef(id = capture.photoId, localPath = capture.localPath))
+                }
+            } else {
+                onDiscardDraftPhoto(PhotoRef(id = capture.photoId, localPath = capture.localPath))
+            }
+            pendingCameraCapture = null
+        }
+    }
+
+    LaunchedEffect(recipePhotos.toList(), mainPhotoId) {
+        val normalized = normalizedMainPhotoId(mainPhotoId, recipePhotos)
+        if (normalized != mainPhotoId) {
+            mainPhotoId = normalized
+        }
+        onDraftPhotosChange(recipePhotos.toList(), normalized)
     }
 
     Scaffold(
@@ -113,6 +198,7 @@ fun RecipeEditorScreen(
                 language = language,
                 onLanguageChange = onLanguageChange,
                 onNavigate = { },
+                disabledDestinations = MainMenuDestination.entries.toSet(),
                 navigationIcon = {
                     BackIconButton(
                         contentDescription = localizedString(R.string.back_label, language),
@@ -120,6 +206,11 @@ fun RecipeEditorScreen(
                     )
                 }
             ) {
+                AppIconButton(
+                    icon = Icons.Filled.Save,
+                    contentDescription = localizedString(R.string.save_recipe_label, language),
+                    onClick = saveRecipe
+                )
                 if (onDelete != null) {
                     AppIconButton(
                         icon = Icons.Filled.Delete,
@@ -134,12 +225,12 @@ fun RecipeEditorScreen(
             modifier = Modifier
                 .padding(innerPadding)
                 .verticalScroll(rememberScrollState())
-                .padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+                .padding(6.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             Column(
                 modifier = Modifier.fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(12.dp)
+                verticalArrangement = Arrangement.spacedBy(6.dp)
             ) {
                 Text(
                     text = titlePreview.ifBlank { localizedString(R.string.editor_preview_placeholder, language) },
@@ -191,14 +282,14 @@ fun RecipeEditorScreen(
 
             Column(
                 modifier = Modifier.fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(12.dp)
+                verticalArrangement = Arrangement.spacedBy(6.dp)
             ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(
-                        text = localizedString(R.string.tags_editor_label, language),
+                        text = localizedString(R.string.tags_label, language),
                         style = MaterialTheme.typography.titleLarge
                     )
                     AppIconButton(
@@ -221,6 +312,29 @@ fun RecipeEditorScreen(
                     )
                 }
             }
+
+                RecipePhotoEditorSection(
+                    language = language,
+                    photos = recipePhotos,
+                    mainPhotoId = mainPhotoId,
+                    onAddFromFile = { importPhotoLauncher.launch("image/*") },
+                    onTakePhoto = {
+                        val capture = onCreatePendingCameraCapture()
+                        pendingCameraCapture = capture
+                        takePhotoLauncher.launch(capture.uri)
+                    },
+                    onSetMainPhoto = { selectedPhotoId ->
+                        mainPhotoId = selectedPhotoId
+                    },
+                    onRemovePhoto = { photo ->
+                        recipePhotos.remove(photo)
+                        onDiscardDraftPhoto(photo)
+                        mainPhotoId = normalizedMainPhotoId(
+                            mainPhotoId = if (mainPhotoId == photo.id) null else mainPhotoId,
+                            photos = recipePhotos
+                        )
+                    }
+                )
 
             Button(
                 onClick = {
@@ -248,7 +362,9 @@ fun RecipeEditorScreen(
                             servings = parseServings(servingsAmount, servingsUnit),
                             times = parseTimes(prepMinutes, cookMinutes, totalMinutes),
                             ingredients = ingredientRows.toIngredientLines(ingredientReferences),
-                            tagIds = selectedTagIds.distinct()
+                            tagIds = selectedTagIds.distinct(),
+                            mainPhotoId = normalizedMainPhotoId(mainPhotoId, recipePhotos),
+                            photos = recipePhotos.toList()
                         )
                     )
                 },
@@ -354,14 +470,14 @@ private fun IngredientsEditorSection(
 
     Column(
         modifier = Modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+        verticalArrangement = Arrangement.spacedBy(6.dp)
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                text = localizedString(R.string.ingredients_editor_label, language),
+                text = localizedString(R.string.ingredients_label, language),
                 style = MaterialTheme.typography.titleLarge
             )
             AppIconButton(
@@ -386,7 +502,7 @@ private fun IngredientsEditorSection(
                     onRemove = { onRemove(index) }
                 )
             }
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
                 Button(onClick = onAddIngredientLine) {
                     Icon(Icons.Filled.Add, contentDescription = null)
                     Text(localizedString(R.string.add_ingredient_line_label, language))
@@ -428,18 +544,22 @@ private fun IngredientEditorCard(
         modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Text(
-            text = ingredientReference?.localizedName(language)?.ifBlank { row.ingredientName }
-                ?: row.ingredientName.ifBlank { localizedString(R.string.no_ingredient_selected_label, language) },
-            style = MaterialTheme.typography.titleMedium
-        )
         Row(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Button(onClick = onSelectIngredient) {
-                Text(localizedString(R.string.select_ingredient_label, language))
-            }
+            Text(
+                text = ingredientReference?.localizedName(language)?.ifBlank { row.ingredientName }
+                    ?: row.ingredientName.ifBlank { localizedString(R.string.no_ingredient_selected_label, language) },
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.weight(1f)
+            )
+            AppIconButton(
+                icon = Icons.Filled.Edit,
+                contentDescription = localizedString(R.string.select_ingredient_label, language),
+                onClick = onSelectIngredient
+            )
             AppIconButton(
                 icon = Icons.Filled.Delete,
                 contentDescription = localizedString(R.string.remove_label, language),
@@ -505,7 +625,8 @@ private fun IngredientPickerDialog(
                     SearchField(
                         value = query,
                         onValueChange = { query = it },
-                        label = localizedString(R.string.search_label, language)
+                        label = localizedString(R.string.search_ingredients_label, language),
+                        placeholder = localizedString(R.string.search_ingredients_placeholder, language)
                     )
                 }
             }
@@ -599,12 +720,13 @@ private fun TagPickerDialog(
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(horizontal = 12.dp, vertical = 4.dp)
+                            .padding(horizontal = 4.dp, vertical = 2.dp)
                     ) {
                         SearchField(
                             value = query,
                             onValueChange = { query = it },
-                            label = localizedString(R.string.search_label, language)
+                            label = localizedString(R.string.search_tags_label, language),
+                            placeholder = localizedString(R.string.search_tags_placeholder, language)
                         )
                     }
                 }
@@ -875,6 +997,30 @@ private fun Tag.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
     AppLanguage.EN -> nameEn.ifBlank { nameFr }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

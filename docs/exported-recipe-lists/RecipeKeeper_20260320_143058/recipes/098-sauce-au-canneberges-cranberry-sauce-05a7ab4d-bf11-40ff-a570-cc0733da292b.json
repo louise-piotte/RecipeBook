@@ -1,0 +1,53 @@
+{
+    "recipeId":  "05a7ab4d-bf11-40ff-a570-cc0733da292b",
+    "title":  "Sauce au canneberges/Cranberry Sauce",
+    "recipeShareId":  "",
+    "linkedRecipeId":  "7dde7849-5f6e-4e20-b84f-e90fa780d871",
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Ingrédient/Ingredient",
+    "categories":  [
+                       "Canneberge/Cranberry",
+                       "Sauce"
+                   ],
+    "collections":  [
+                        "Recettes de Maman et Papa/Mom and Dad recipes"
+                    ],
+    "sourceUrl":  null,
+    "yield":  "",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT10M",
+    "ingredientLines":  [
+                            "1 casseaux de canneberges - 1 box of cranberries",
+                            "¼ tasse d\u0027eau - ¼ cup water",
+                            "â…” tasse de sucre - â…” cup sugar"
+                        ],
+    "directionLines":  [
+                           "Mettre les canneberges et l\u0027eau dans un chaudron. L\u0027eau est là pour que les canneberges ne brûlent pas. Bouillir les canneberges avec l\u0027eau 5 minutes.",
+                           "Put cranberries and water in a pot. The water is there so the cranberries don\u0027t burn. Boil the cranberries with the water for 5 minutes.",
+                           "Écraser les canneberges avec un pile patate ou une cuillère en bois le plus que possible. Il ne doit pas rester de canneberges entières.",
+                           "Crush the cranberries with a potato masher or a wooden spoon as much as possible. There should not be any whole cranberries left.",
+                           "Ajouter le sucre. Les canneberges devraient se liquéfier.",
+                           "Add the sugar. The cranberries should liquefy.",
+                           "Retirer du feu et mettre dans des pots Masson. Manger froid",
+                           "Remove from the heat and put in Mason jars. Eat cold"
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/05a7ab4d-bf11-40ff-a570-cc0733da292b_0.jpg"
+                   ]
+}

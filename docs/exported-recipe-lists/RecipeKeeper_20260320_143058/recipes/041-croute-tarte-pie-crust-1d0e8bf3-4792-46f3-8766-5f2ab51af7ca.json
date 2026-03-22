@@ -1,0 +1,73 @@
+{
+    "recipeId":  "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca",
+    "title":  "Croute à tarte/Pie Crust",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Ingrédient/Ingredient",
+    "categories":  [
+                       "Modifiable/Customisable",
+                       "Pâte/Dough",
+                       "Tarte/Pie"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/classic-pastry-crust/",
+    "yield":  "4 tartelettes 5 pouces/5-inch pies",
+    "prepTimeIso":  "PT1H10M",
+    "cookTimeIso":  "PT20M",
+    "ingredientLines":  [
+                            "2½ tasses (300g) de farine tout usage - 2½ cups (300g) all-purpose flour",
+                            "0-4 cuillère à soupe de sucre - 0-4 tablespoon sugar",
+                            "¾ cuillère à thé de sel - ¾ teaspoon salt",
+                            "1 tasse (227g) de beurre non salé froid coupé en cubes - 1 cup (227g) cold unsalted butter cut into cubes",
+                            "4 cuillères à soupe (60 ml) d\u0027eau glacée - 4 tablespoons (60ml) ice water"
+                        ],
+    "directionLines":  [
+                           "Dans le bol d\u0027un robot culinaire, mélanger la farine, le sucre et le sel. Pulser quelques fois pour combiner.",
+                           "In the work bowl of a food processor, combine the flour, sugar, and salt. Pulse a few times to combine.",
+                           "Ajouter le beurre. Traiter jusqu\u0027à ce qu\u0027il soit très friable.",
+                           "Add the butter. Process until very crumbly.",
+                           "Verser 4 cuillères à soupe d\u0027eau glacée sur le mélange tout en pulsant. Ajouter de l\u0027eau supplémentaire, une cuillère à soupe à la fois, si nécessaire, et pulser une ou deux fois après chaque ajout. Le mélange doit facilement coller ensemble lorsqu\u0027il est pressé, mais ne pas être mouillé ou sec.",
+                           "Drizzle 4 tablespoons of ice water over the mixture while pulsing. Add additional water, a tablespoon at a time, if needed, and pulse once or twice after each addition. The mixture should easily stick together when squeezed, but not feel wet or dry.",
+                           "Transférer la pâte sur le comptoir et former une boule. Couper la boule en quatre et presser chaque moitié dans un plat. Envelopper fermement dans une pellicule plastique et réfrigérer pendant au moins 1 heure ou jusqu\u0027à 2 jours. Les disques peuvent également être congelés pendant quelques mois et décongelés au réfrigérateur pendant la nuit avant utilisation.",
+                           "Transfer the dough onto the counter and form it into a ball. Cut the ball in four and press each part into a dish. Wrap tightly in plastic wrap and refrigerate for at least 1 hour or up to 2 days. The disks can also be frozen for a few months and thawed in the fridge overnight before using.",
+                           "Abaisser chaque partie de la pâte et tapisser quatre moules à tarte de 5 pouces. sertir les bords. Si la croûte n\u0027a pas besoin d\u0027être précuite, arrêtez-vous maintenant et suivez les instructions de la recette de la tarte.",
+                           "Roll out each part of the dough and line four 5-inch pie pans. crimp the edges. If the crust doesn\u0027t need to be prebaked, stop now, and follow instructions of the pie recipe.",
+                           "Percer le fond avec une fourchette et refroidir dans le moule pendant plus de 30 minutes",
+                           "Pierce bottom with fork and chill in mold for 30+ minutes",
+                           "Préchauffer le four à 400°F",
+                           "Preheat oven to 400°F",
+                           "Ajouter des poids de tarte ou des haricots dans du papier parchemin/aluminium. Cuire 15 minutes",
+                           "Add pie weights or beans in parchment paper/aluminum. Cook 15 minutes",
+                           "Retirez le poids. Cuire à découvert pendant 5 minutes",
+                           "Remove weight. Bake uncovered for 5 minutes"
+                       ],
+    "notes":  [
+                  "Le sucre dépend du type de tarte. La tarte aux desserts sucrés est sucrée, la tarte aux quiches saute le sucre.",
+                  "Sugar depends on type of pie. Sweet dessert pie is sweet, quiche pie skips the sugar.",
+                  "Possible to add spices to the crust, such as cinnamon or ginger.",
+                  "Possible d\u0027ajouter des épices à la croute, comme de la cannelle ou du gingembre.",
+                  "Quiche:",
+                  "1 cuillère à thé de thym",
+                  "½ cuillère à thé d\u0027ail en poudre",
+                  "¼ cuillère à thé de poivre"
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/1d0e8bf3-4792-46f3-8766-5f2ab51af7ca_0.jpg"
+                   ]
+}

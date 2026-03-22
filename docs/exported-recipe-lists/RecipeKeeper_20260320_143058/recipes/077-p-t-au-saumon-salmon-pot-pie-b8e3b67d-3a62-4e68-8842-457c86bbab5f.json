@@ -1,0 +1,69 @@
+{
+    "recipeId":  "b8e3b67d-3a62-4e68-8842-457c86bbab5f",
+    "title":  "Pâté au saumon/Salmon Pot Pie",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Poisson/Fish",
+                       "Tarte/Pie"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.ricardocuisine.com/recettes/6174-pate-au-saumon-style-pot-en-pot-de-ricardo",
+    "yield":  "6 portion(s)",
+    "prepTimeIso":  "PT40M",
+    "cookTimeIso":  "PT1H15M",
+    "ingredientLines":  [
+                            "160 g (1 tasse) de pommes de terre pelées et coupées en petits dés - 1 cup (160 g) potatoes, peeled and cut into small dice",
+                            "15 ml (1 c. à soupe) de fécule de maïs - 1 tbsp cornstarch",
+                            "1 c. à soupe dâ€™eau - 1 tbsp water",
+                            "95 g (1 tasse) de poireau haché - 1 cup (95 g) leek, chopped",
+                            "1 branche de céleri, coupée en petits dés - 1 celery stalk, cut into small dice",
+                            "85 g (6 c. à soupe) de beurre - 6 tbsp (85 g) butter",
+                            "30 g (3 c. à soupe) de farine tout usage non blanchie - 3 tbsp unbleached all-purpose flour",
+                            "250 ml (1 tasse) de lait, et plus pour badigeonner - 1 cup (250 ml) milk, plus more for brushing",
+                            "60 ml (¼ tasse) de crème 35 % - 1/4 cup (60 ml) 35% cream",
+                            "675 g (1 ½ lb) de filet de saumon sans la peau, coupé en cubes - 1 1/2 lb (675 g) salmon fillets without skin, cubed",
+                            "Pate à tarte - Pie crust"
+                        ],
+    "directionLines":  [
+                           "Dans une petite casserole, placer les pommes de terre. Couvrir d\u0027eau froide. Saler. Porter à ébullition et cuire jusquâ€™à ce quâ€™elles soient tendres. Égoutter et réserver.",
+                           "Place the potatoes in a small pot. Cover with cold water. Season with salt. Bring to a boil and cook until tender. Drain and set aside.",
+                           "Dans un petit bol, délayer la fécule dans lâ€™eau. Réserver.",
+                           "In a small bowl, combine the cornstarch and water until smooth. Set aside.",
+                           "4Dans une grande casserole, attendrir le poireau et le céleri dans le beurre. Saler et poivrer. Saupoudrer de la farine et cuire 1 minute en remuant. Ajouter le lait et la crème. Porter à ébullition en remuant au fouet.",
+                           "In a large pot, soften the leek and celery in the butter. Season with salt and pepper. Sprinkle with the flour and cook for 1 minute while stirring. Add the milk and cream. Bring to a boil while whisking.",
+                           "Ajouter 450 g (1 lb) du saumon. Porter à ébullition et laisser mijoter 2 minutes et remuant pour émietter le saumon. Rectifier lâ€™assaisonnement. Retirer du feu. Ajouter les pommes de terre, le mélange de fécule et le reste du saumon. Réserver.",
+                           "Add 1 lb (450 g) of the salmon to the pot. Bring to a boil. Simmer for 2 minutes, stirring to break up the salmon. Adjust the seasoning. Remove from the heat. Add the potatoes, cornstarch mixture and remaining salmon. Set aside.",
+                           "Placer la grille dans le bas du four. Préchauffer le four à 200 °C (400 °F).",
+                           "With the rack in the lowest position, preheat the oven to 400°F (200°C).",
+                           "Sur un plan de travail légèrement fariné, abaisser la pâte en 4 bas et 4 haut pour des tartelettes de 5 pouces. Mettre  les croûtes dans des moules a tarte 5 pouce et répartir la garniture au saumon dans les croûtes.",
+                           "On a lightly floured work surface, roll out the dough into 4 low and 4 high for 5-inch tartlets. Put the crust in 5 inch pie pans and spread the salmon filling in the crusts.",
+                           "Pour chaque tarte, badigeonner de lait le pourtour de la pâte et couvrir de la seconde abaisse. Retirer lâ€™excédent de pâte, au besoin. Rabattre la bordure de la seconde abaisse sous la première, puis sceller les pâtes ensemble en écrasant le rebord à lâ€™aide dâ€™une fourchette ou avec les doigts. Badigeonner le dessus de la pâte de lait.",
+                           "For each pie, brush the edges of the dough with milk and cover with the second crust. Remove excess dough, if needed. Fold the edge of the second crust under the first, then seal the pasta together by crushing the edge with a fork or your fingers. Brush the top of the dough with milk.",
+                           "Cuire au four 40 minutes ou jusquâ€™à ce que la pâte soit bien dorée. Laisser reposer 15 minutes avant de servir.",
+                           "Bake for 40 minutes or until the crust is nicely browned. Let sit for 15 minutes before serving."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "720",
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/b8e3b67d-3a62-4e68-8842-457c86bbab5f_0.jpg"
+                   ]
+}

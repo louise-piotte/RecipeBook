@@ -1,0 +1,60 @@
+{
+    "recipeId":  "135813a6-75e2-4596-8c71-ffd450fab0ca",
+    "title":  "Boulettes de crabe/Crab balls",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Accompagnement/Side Dish",
+    "categories":  [
+                       "Fruit de mer/Seafood"
+                   ],
+    "collections":  [
+                        "Santé/Health"
+                    ],
+    "sourceUrl":  "https://www.eatyourselfskinny.com/baked-crab-cake-bites-with-sriracha-dipping-sauce/",
+    "yield":  "8",
+    "prepTimeIso":  "PT5M",
+    "cookTimeIso":  "PT25M",
+    "ingredientLines":  [
+                            "1 Å“uf légèrement battu - 1 egg, lightly whisked",
+                            "¼ tasse de yaourt grec nature - ¼ cup plain Greek yogurt",
+                            "1 cuillère à soupe de moutarde de Dijon - 1 tablespoon Dijon mustard",
+                            "¼ cuillère à café de sauce Sriracha - ¼ teaspoon Sriracha sauce",
+                            "2 cuillères à café de jus de citron frais - 2 teaspoon fresh lemon juice",
+                            "2 oignons verts, hachés - 2 green onions, chopped",
+                            "1½ cuillère à thé d\u0027assaisonnement Old Bay - 1½ teaspoon Old Bay seasoning",
+                            "1 livre de chair de crabe en gros morceaux - 1 pound jumbo lump crab meat",
+                            "1 tasse de chapelure Panko - 1 cup Panko breadcrumbs",
+                            "¼ cuillère à café de sel d\u0027ail - ¼ teaspoon garlic salt",
+                            "â…› cuillère à café de poivre noir - â…› teaspoon black pepper"
+                        ],
+    "directionLines":  [
+                           "Rincez la chair de crabe et retirez les coquilles, en essayant de ne pas briser les gros morceaux.",
+                           "Rinse crab meat and remove any shells, trying not to break up any large lumps.",
+                           "Dans un grand bol, fouetter ensemble l\u0027Å“uf, le yaourt, la Sriracha, le jus de citron, les oignons verts et l\u0027assaisonnement Old Bay jusqu\u0027à ce que le tout soit bien mélangé. Incorporer la chair de crabe puis incorporer la chapelure, l\u0027ail, le sel et le poivre.",
+                           "In a large bowl, whisk together egg, yogurt, Sriracha, lemon juice, green onions and Old Bay seasoning until well combined. Mix in crab meat then fold in breadcrumbs, garlic salt and pepper.",
+                           "Formez le mélange de crabe avec vos mains en boules de 1 pouce et placez-le sur une plaque à biscuits. Couvrir d\u0027une pellicule plastique et réfrigérer les boules pendant 30 minutes.",
+                           "Form the crab mixture with your hands into 1-inch balls and place on a cookie sheet. Cover with plastic wrap and refrigerate balls for 30 minutes.",
+                           "Disposez les boules de crabe en une seule couche sur la grille de votre friteuse à air, en prenant soin de ne pas les surcharger, et faites-les frire à l\u0027air libre à 370 degrés pendant environ 5 minutes. Retournez les boules et continuez à les faire frire à l\u0027air libre pendant encore 5 minutes jusqu\u0027à ce qu\u0027elles soient dorées et croustillantes.",
+                           "Arrange crab balls in a single layer on the wire rack of your air fryer, being careful not to overcrowd them, and air-fry at 370 degrees for about 5 minutes.  Flip the balls over and continue air-frying for another 5 minutes until golden and crispy."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "3 balls + 2 Tbsp sauce",
+                      "calories":  "166",
+                      "totalFat":  "6.4",
+                      "saturatedFat":  "1",
+                      "cholesterol":  null,
+                      "sodium":  "641.7",
+                      "totalCarbohydrate":  "12.1",
+                      "dietaryFiber":  "1.3",
+                      "sugars":  "2.1",
+                      "protein":  "12.5"
+                  },
+    "photoPaths":  [
+                       "images/135813a6-75e2-4596-8c71-ffd450fab0ca_0.jpg"
+                   ]
+}

@@ -1,0 +1,62 @@
+{
+    "recipeId":  "b109cd15-b162-4825-9479-bbc022bd6cb4",
+    "title":  "Truffles au Framboises / Raspberry Truffles",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Collation/Snack",
+    "categories":  [
+                       "Chocolat/Chocolate",
+                       "Framboise/Raspberry"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.thesumofallsweets.com/3-ingredient-white-chocolate-raspberry-truffles/",
+    "yield":  "6 people",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "200 g de chocolat blanc - 200 g white chocolate",
+                            "50 g de crème à cuisson 35% - 50 g heavy cream",
+                            "10 g de framboises lyophilisées - 10 g freeze dried raspberries",
+                            "framboises lyophilisées supplémentaires pour l\u0027enrobage - additional freeze dried raspberries for coating"
+                        ],
+    "directionLines":  [
+                           "Hacher le chocolat blanc en petits morceaux.",
+                           "Chop white chocolate into small pieces.",
+                           "Au micro-ondes, chauffer la crème jusqu\u0027à ce qu\u0027elle soit chaude. Ne pas faire bouillir ! Verser la crème chaude sur le chocolat et laisser reposer quelques minutes.",
+                           "In microwave, heat cream until hot. Do not boil! Pour hot cream over chocolate and let sit for a few minutes.",
+                           "Ajouter la poudre de fruits et mélanger jusqu\u0027à ce que le tout soit bien mélangé. Utilisez plus de poudre pour une saveur de framboise plus forte et une couleur plus profonde.",
+                           "Add in the fruit powder and mix until well combined. Use more powder for a stronger raspberry flavor and deeper color.",
+                           "Si nécessaire, passer au micro-ondes toutes les 5 secondes jusqu\u0027à ce qu\u0027il soit complètement fondu et lisse.",
+                           "If needed, microwave in 5 second intervals until fully melted and smooth.",
+                           "Déposez de petites boules sur une plaque de cuisson recouverte de parchemin et laissez refroidir.",
+                           "Scoop small balls onto lined sheet pan, and let cool.",
+                           "Roulez chaque boule entre la paume de vos mains jusqu\u0027à consistance lisse.",
+                           "Roll each ball between the palm of your hands until smooth.",
+                           "Rouler chaque boule formée dans le reste de la poudre de fruits jusqu\u0027à ce qu\u0027elle soit complètement enrobée. Mélanger doucement entre les doigts pour secouer l\u0027excès de poudre. Rouler quelques fois de plus pour s\u0027assurer que la poudre est bien attachée au chocolat.",
+                           "Roll each formed ball in remaining fruit powder until completely coated. Toss gently between fingers to shake off extra powder. Roll a couple more times to ensure powder is fully attached to chocolate.",
+                           "Servir à température ambiante.",
+                           "Serve at room temperature."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "42 g",
+                      "calories":  "209",
+                      "totalFat":  "14",
+                      "saturatedFat":  "8",
+                      "cholesterol":  "18",
+                      "sodium":  "33",
+                      "totalCarbohydrate":  "20",
+                      "dietaryFiber":  "1",
+                      "sugars":  "20",
+                      "protein":  "2"
+                  },
+    "photoPaths":  [
+                       "images/b109cd15-b162-4825-9479-bbc022bd6cb4_0.jpg"
+                   ]
+}

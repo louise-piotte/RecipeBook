@@ -1,0 +1,75 @@
+{
+    "recipeId":  "7303400a-3535-4c39-9584-051c5b7873e7",
+    "title":  "Churros frits à l\u0027air/Air Fryer Churros",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Frit/Fried",
+                       "Pain/Bread"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://platedcravings.com/air-fryer-churros/#wprm-recipe-container-7808",
+    "yield":  "4",
+    "prepTimeIso":  "PT10M",
+    "cookTimeIso":  "PT10M",
+    "ingredientLines":  [
+                            "1/2 tasse d\u0027eau - 1/2 cup water",
+                            "1/6 tasse de beurre non salé (coupé en cubes) - 1/6 cup unsalted butter (cut into cubes)",
+                            "1 cuillères à soupe de sucre cristallisé - 1 Tablespoon granulated sugar",
+                            "1/8 cuillère à thé de sel - 1/8 teaspoon salt",
+                            "1/2 tasse de farine tout usage - 1/2 cup all-purpose flour",
+                            "1 gros oeufs - 1 large eggs",
+                            "1/2 cuillère à thé d\u0027extrait de vanille - 1/2 teaspoon vanilla extract",
+                            "aérosol d\u0027huile - oil spray",
+                            "1/4 cup granulated sugar - 1/4 tasse de sucre cristallisé",
+                            "1/2 teaspoon ground cinnamon - 1/2 cuillère à café de cannelle moulue"
+                        ],
+    "directionLines":  [
+                           "Mettez un tapis de cuisson en silicone sur une plaque à pâtisserie et vaporisez d\u0027un spray d\u0027huile.",
+                           "Put a silicone baking mat on a baking sheet and spray with oil spray.",
+                           "Dans une casserole moyenne, ajouter l\u0027eau, le beurre, le sucre et le sel. Porter à ébullition à feu moyen-vif.",
+                           "In a medium saucepan add water, butter, sugar, and salt. Bring to a boil over medium-high heat.",
+                           "Réduire le feu à moyen-doux et ajouter la farine dans la casserole. En remuant constamment avec une spatule en caoutchouc, cuire jusqu\u0027à ce que la pâte se rassemble et soit lisse.",
+                           "Reduce heat to medium-low and add flour to the saucepan. Stirring constantly with a rubber spatula cook until the dough comes together and is smooth.",
+                           "Retirer du feu et transférer la pâte dans un bol à mélanger. Laisser refroidir 4 minutes.",
+                           "Remove from heat and transfer the dough to a mixing bowl. Let cool for 4 minutes.",
+                           "Ajouter les Å“ufs et l\u0027extrait de vanille dans le bol à mélanger et mélanger à l\u0027aide d\u0027un batteur à main électrique ou d\u0027un batteur sur socle jusqu\u0027à ce que la pâte se rassemble. Le mélange ressemblera à une purée de pommes de terre gluante. Utilisez vos mains pour presser les grumeaux en boule et transférez-les dans une grande poche à douille munie d\u0027une grande douille en forme d\u0027étoile.",
+                           "Add eggs and vanilla extract to the mixing bowl and mix using an electric hand mixer or stand mixer until dough comes together. The mixture will look like gluey mashed potatoes. Use your hands to press lumps together into a ball and transfer to a large piping bag fitted with a large star-shaped tip.",
+                           "Pocher les churros sur le tapis de cuisson graissé, en longueurs de 4 pouces et couper l\u0027extrémité avec des ciseaux.",
+                           "Pipe churros onto the greased baking mat, into 4-inch lengths and cut end with scissors.",
+                           "Réfrigérer les churros sur la plaque de cuisson pendant 1 heure.",
+                           "Refrigerate piped churros on the baking sheet for 1 hour.",
+                           "Transférez délicatement les churros avec une spatule à biscuits dans le panier de la friteuse à air, en laissant environ 1/2 pouce d\u0027espace entre les churros. Vaporiser les churros avec un spray d\u0027huile. Selon la taille de votre Air Fryer, vous devez les faire frire par lots.",
+                           "Carefully transfer churros with a cookie spatula to the Air Fryer basket, leaving about 1/2-inch space between churros. Spray churros with oil spray. Depending on the size of your Air Fryer you have to fry them in batches.",
+                           "Faites frire à l\u0027air à 375°F pendant 10 à 12 minutes jusqu\u0027à ce qu\u0027ils soient dorés.",
+                           "Air fry at 375°F for 10-12 minutes until golden brown.",
+                           "Dans un bol peu profond, mélanger le sucre granulé et la cannelle.",
+                           "In a shallow bowl combine granulated sugar and cinnamon.",
+                           "Transférer immédiatement les churros cuits au four dans le bol avec le mélange de sucre et mélanger pour enrober. Travailler par lots. Servir chaud avec du Nutella ou une sauce au chocolat.",
+                           "Immediately transfer baked churros to the bowl with the sugar mixture and toss to coat. Working in batches. Serve warm with Nutella or chocolate dipping sauce."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 serving",
+                      "calories":  "204",
+                      "totalFat":  "9",
+                      "saturatedFat":  "5",
+                      "cholesterol":  "61",
+                      "sodium":  "91",
+                      "totalCarbohydrate":  "27",
+                      "dietaryFiber":  null,
+                      "sugars":  "15",
+                      "protein":  "3"
+                  },
+    "photoPaths":  [
+                       "images/7303400a-3535-4c39-9584-051c5b7873e7_0.jpg",
+                       "images/7303400a-3535-4c39-9584-051c5b7873e7_1.jpg"
+                   ]
+}

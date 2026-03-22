@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
+import androidx.core.view.WindowCompat
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.lifecycleScope
@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
 class IngredientTagManagerActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        WindowCompat.setDecorFitsSystemWindows(window, true)
 
         val repository = RecipeRepositoryProvider.create(this)
         val languageStore = AppLanguageStore(this)
@@ -84,3 +84,5 @@ class IngredientTagManagerActivity : ComponentActivity() {
         }
     }
 }
+
+

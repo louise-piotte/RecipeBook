@@ -1,0 +1,67 @@
+{
+    "recipeId":  "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d",
+    "title":  "Amaretti",
+    "recipeShareId":  "",
+    "linkedRecipeId":  "1dca3c8b-ed68-4397-b804-ae62e769ee5e",
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Amande/Almond",
+                       "Biscuit/Cookie"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://foodtasia.com/almond-paste-cookies/",
+    "yield":  "",
+    "prepTimeIso":  "PT5M",
+    "cookTimeIso":  "PT20M",
+    "ingredientLines":  [
+                            "Un lot de pâte d\u0027amande maison (16 oz) - One batch homemade almond Paste (16oz)",
+                            "1 tasse (198 g) de sucre - 1 cup (198g) sugar",
+                            "1/4 de cuillère à thé de sel - 1/4 teaspoon salt",
+                            "2 gros blancs d\u0027oeufs (60g), légèrement battus - 2 large egg whites (60g), lightly beaten",
+                            "1 cuillère à thé d\u0027extrait d\u0027amande - 1 teaspoon almond extract",
+                            "Amandes tranchées pour rouler - Sliced almonds for rolling",
+                            "Facultatif : sucre en poudre pour saupoudrer - Optional: powdered sugar for dusting"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 350F.",
+                           "Preheat oven to 350F.",
+                           "Casser la pâte d\u0027amande en morceaux de 1 pouce et la mettre dans le bol d\u0027un robot culinaire. Ajouter le sucre, le sel, les blancs d\u0027Å“ufs et l\u0027extrait d\u0027amande et mélanger jusqu\u0027à l\u0027obtention d\u0027une pâte lisse. La pâte sera humide et collante, mais vous pourrez la rouler en boules entre vos mains.",
+                           "Break up the almond paste into 1 inch pieces and put it in the bowl of a food processor. Add the sugar, salt, egg whites, and almond extract and process until a smooth paste forms. The dough will be wet and sticky, but you will be able to roll it into balls between your hands.",
+                           "Réfrigérer la pâte pendant 1 heure ou jusqu\u0027à 3 jours.",
+                           "Chill the dough for 1 hour or up to 3 days.",
+                           "Prélevez des cuillères à soupe de pâte et roulez-les en boules de 1 pouce, d\u0027environ 25 grammes chacune.",
+                           "Scoop out rounded tablespoons of dough and roll into 1 inch balls, about 25 grams each.",
+                           "Appuyez sur les tranches d\u0027amandes sur les côtés du biscuit. Le caractère collant de la pâte aidera les noix à coller.",
+                           "Press almond slices onto the sides of the cookie. The stickiness of the dough will help the nuts stick.",
+                           "Placer sur une plaque à pâtisserie recouverte de papier sulfurisé à 2 pouces d\u0027intervalle et cuire jusqu\u0027à ce que les bords inférieurs commencent à dorer, environ 15 à 18 minutes. Ne pas trop cuire.",
+                           "Place on a parchment lined baking sheet 2 inches apart and bake until the bottom edges are starting to turn golden, about 15-18 minutes. Donâ€™t overbake.",
+                           "Refroidir sur une grille.",
+                           "Cool on a rack.",
+                           "Facultatif : Saupoudrer les biscuits refroidis de sucre en poudre.",
+                           "Optional: Dust cooled cookies with powdered sugar."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 COOKIE",
+                      "calories":  "102",
+                      "totalFat":  "4.2",
+                      "saturatedFat":  "0.3",
+                      "cholesterol":  "0",
+                      "sodium":  "7.8",
+                      "totalCarbohydrate":  "15.1",
+                      "dietaryFiber":  "0.8",
+                      "sugars":  "13.9",
+                      "protein":  "2.1"
+                  },
+    "photoPaths":  [
+                       "images/8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d_0.jpg",
+                       "images/8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d_1.jpg",
+                       "images/8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d_2.jpg"
+                   ]
+}

@@ -1,0 +1,63 @@
+{
+    "recipeId":  "e1e7939b-206f-4839-97d9-2a91febb28eb",
+    "title":  "Boeuf Stroganov/Beef Stroganov",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Boeuf/Beef",
+                       "Ragout/Stew"
+                   ],
+    "collections":  [
+                        "Recettes de Maman et Papa/Mom and Dad recipes"
+                    ],
+    "sourceUrl":  null,
+    "yield":  "",
+    "prepTimeIso":  "PT10M",
+    "cookTimeIso":  "PT55M",
+    "ingredientLines":  [
+                            "400 g de b≈ìuf - 400 g beef",
+                            "2 oignons - 2 onions",
+                            "2 cuillËre ‡ soupe de margarine - 2 tablespoon margarine",
+                            "1 canette de bouillon de b≈ìuf - 1 can of beef broth",
+                            "Poivre Pepper",
+                            "1 cuillËre ‡ soupe paprika - 1 tablespoon paprika",
+                            "1 tasse de lait - 1 cup milk",
+                            "2 cuillËre ‡ soupe de farine - 1 tablespoon flour"
+                        ],
+    "directionLines":  [
+                           "Faire revenir les oignons avec la margarine.",
+                           "Brown the onions with the margarine.",
+                           "Ajouter le b≈ìuf. Saupoudrer le paprika et du poivre.",
+                           "Add the beef. Sprinkle with paprika and pepper.",
+                           "Lorsque la b≈ìuf aura changer de couleur ajouter le bouillon de b≈ìuf.",
+                           "When the beef has changed color add the beef broth.",
+                           "Faire mijoter, ‡ feu moyen environ 45 minutes en ajoutant de l‚Äôeau au besoin.",
+                           "Simmer over medium heat for about 45 minutes, adding water as needed.",
+                           "Diluer la farine dans le lait et Ècraser le grumeau le plus possible. Ajouter le tout au b≈ìuf. Augmenter le feu et brasser jusqu‚Äô‡ ce que sa bouille. Attention le lait colle au fond facilement.",
+                           "Dilute the flour in the milk and crush the lump as much as possible. Add everything to the beef. Increase the heat and stir until it boils. Be careful, the milk sticks to the bottom easily.",
+                           "Retirer du feu et servir avec riz ou nouilles.",
+                           "Remove from heat and serve with rice or noodles."
+                       ],
+    "notes":  [
+                  "Recette signature de maman",
+                  "Mom\u0027s signature recipe"
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/e1e7939b-206f-4839-97d9-2a91febb28eb_0.jpg"
+                   ]
+}

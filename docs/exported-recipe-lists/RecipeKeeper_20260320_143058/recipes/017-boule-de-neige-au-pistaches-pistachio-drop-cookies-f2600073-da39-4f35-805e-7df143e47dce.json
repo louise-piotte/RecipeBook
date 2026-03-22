@@ -1,0 +1,67 @@
+{
+    "recipeId":  "f2600073-da39-4f35-805e-7df143e47dce",
+    "title":  "Boule de neige au pistaches/Pistachio Drop Cookies",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Biscuit/Cookie",
+                       "Pistaches/Pistachio"
+                   ],
+    "collections":  [
+                        "Boîte de Noël/Christmas Box"
+                    ],
+    "sourceUrl":  "https://sallysbakingaddiction.com/pistachio-cookies/",
+    "yield":  "36 biscuits/cookies",
+    "prepTimeIso":  "PT45M",
+    "cookTimeIso":  "PT15M",
+    "ingredientLines":  [
+                            "¾ tasse (130 g) de miettes de pistaches salées ou non salées - ¾ cup (130g) salted or unsalted pistachios crumbs",
+                            "1 tasse (230 g) de beurre non salé, ramolli à température ambiante - 1 cup (230 g) unsalted butter, softened to room temperature",
+                            "¾ tasse (90 g) de sucre à glacer - ¾ cup (90g) confectioners\u0027 sugar",
+                            "1 cuillère à thé d\u0027extrait de vanille pure - 1 teaspoon pure vanilla extract",
+                            "1 cuillère à thé d\u0027extrait d\u0027amande - 1 teaspoon almond extract",
+                            "2¼ tasses (281 g) de farine tout usage - 2¼ cups (281g) all-purpose flour",
+                            "optional: 1-2 drops gel green food coloring - facultatif : 1-2 gouttes de colorant alimentaire vert en gel"
+                        ],
+    "directionLines":  [
+                           "Avec un malaxeur, battre le beurre pendant 1 minute à vitesse moyenne jusqu\u0027à ce qu\u0027il soit complètement lisse et crémeux.",
+                           "Using a handheld or stand mixer fitted with a paddle attachment, beat the butter for 1 minute on medium speed until completely smooth and creamy.",
+                           "Ajouter le sucre à glacer, l\u0027extrait de vanille et l\u0027extrait d\u0027amande, puis battre à vitesse moyenne-élevée jusqu\u0027à homogénéité. Ajouter la farine, les miettes de pistaches et le colorant alimentaire (le cas échéant) et battre à vitesse moyenne-élevée jusqu\u0027à homogénéité. La pâte peut ne pas se former au début, mais continuez à mélanger. La pâte à biscuits sera épaisse.",
+                           "Add the confectioners\u0027 sugar, vanilla extract, and almond extract, then beat on medium-high speed until combined. Add the flour, pistachio crumbs, and food coloring (if using) and beat on medium-high speed until combined. The dough may not come together at first, but keep mixing. The cookie dough will be thick.",
+                           "Couvrir la pâte à biscuits hermétiquement et réfrigérer au réfrigérateur pendant 30 minutes et jusqu\u0027à 3 jours. (Si vous réfrigérez pendant plus de 2 heures, laissez la pâte à biscuits reposer à température ambiante pendant au moins 30 minutes avant de la rouler en boules. La pâte à biscuits sera très dure après avoir été au réfrigérateur aussi longtemps.)",
+                           "Cover the cookie dough tightly and chill in the refrigerator for 30 minutes and up to 3 days. (If chilling for 2+ hours, let the cookie dough sit at room temperature for at least 30 minutes before rolling into balls. The cookie dough will be very stiff after being in the refrigerator that long.)",
+                           "Préchauffer le four à 350°F (177°C). Tapisser de grandes plaques à pâtisserie de papier parchemin.",
+                           "Preheat oven to 350°F (177°C). Line large baking sheets with parchment paper.",
+                           "Roulez la pâte à biscuits en boules, environ 1 cuillère à soupe de pâte chacune, et placez les boules de pâte à 2 pouces d\u0027intervalle sur les plaques à pâtisserie. Si la pâte à biscuits est trop friable, continuez à la rouler et à la travailler avec vos mains. La chaleur de vos mains aidera à le former.",
+                           "Roll the cookie dough into balls, about 1 Tablespoon of dough each, and place dough balls 2 inches apart on the baking sheets. If the cookie dough is too crumbly, keep rolling and working it with your hands. The warmth of your hands will help bring it together.",
+                           "Cuire les biscuits jusqu\u0027à ce qu\u0027ils soient légèrement dorés sur les bords inférieurs et à peine dorés sur le dessus, environ 14-15 minutes.",
+                           "Bake the cookies until lightly browned on the bottom edges and just barely browned on top, about 14-15 minutes.",
+                           "Laisser les biscuits refroidir pendant 5 minutes sur la plaque à pâtisserie, puis transférer sur une grille. S\u0027assurer que les biscuits sont froids au toucher avant d\u0027être trempés dans le chocolat.",
+                           "Allow the cookies to cool for 5 minutes on the baking sheet, then transfer to a wire rack. Make sure cookies are cool to the touch before dipping in chocolate."
+                       ],
+    "notes":  [
+                  "Super bon et jolis trempés dans le chocolat blanc",
+                  "Very tasty and pretty dipped in white chocolate"
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/f2600073-da39-4f35-805e-7df143e47dce_0.jpg",
+                       "images/f2600073-da39-4f35-805e-7df143e47dce_1.jpg",
+                       "images/f2600073-da39-4f35-805e-7df143e47dce_2.jpg",
+                       "images/f2600073-da39-4f35-805e-7df143e47dce_3.jpg"
+                   ]
+}

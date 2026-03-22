@@ -1,0 +1,67 @@
+{
+    "recipeId":  "81d376ac-c305-402f-a73d-8bb721045319",
+    "title":  "Muffins double chocolat/Double chocolate muffins",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déjeuné/Breakfast",
+    "categories":  [
+                       "Chocolat/Chocolate",
+                       "Muffin"
+                   ],
+    "collections":  [
+                        "Recettes de Maman et Papa/Mom and Dad recipes"
+                    ],
+    "sourceUrl":  null,
+    "yield":  "",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT20M",
+    "ingredientLines":  [
+                            "1 oeuf - 1 egg",
+                            "1 cuillère à thé de poudre à pâte - 1 teaspoon baking powder",
+                            "1 cuillère à thé de bicarbonate de soude - 1 teaspoon baking soda",
+                            "1 tasse de farine - 1 cup flour",
+                            "1â…“ cuillère à soupe de margarine -1â…“ tablespoon margarine",
+                            "½ tasse de lait - ½ cup of milk",
+                            "¾ tasse de cassonade - ¾ cup brown sugar",
+                            "â…“ tasse de poudre de cacao - â…“ cup cocoa powder",
+                            "1 tasse de pépites de chocolat blanc - 1 cup white chocolate chips"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 350°F.",
+                           "Preheat the oven to 350°F.",
+                           "Mélanger la poudre à pâte, le bicarbonate de soude et la poudre de cacao.",
+                           "Combine baking powder, baking soda and cocoa powder.",
+                           "Dans un deuxième bol, mélanger la margarine, l\u0027oeuf et la cassonade.",
+                           "In a second bowl, combine the margarine, egg and brown sugar.",
+                           "Verser les ingrédients liquides dans les ingrédients secs.",
+                           "Pour the liquid ingredients into the dry ingredients.",
+                           "Incorporer le lait et la farine en alternance, tout en continuant à mélanger.",
+                           "Add the milk and flour alternately, while continuing to mix.",
+                           "Ajouter et mélanger les pépites de chocolat blanc.",
+                           "Mix in the white chocolate chips",
+                           "Mettre dans des moules à muffins.",
+                           "Put in muffin tins.",
+                           "Cuire 30 minutes au four.",
+                           "Bake 30 minutes in the oven."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+
+                   ]
+}

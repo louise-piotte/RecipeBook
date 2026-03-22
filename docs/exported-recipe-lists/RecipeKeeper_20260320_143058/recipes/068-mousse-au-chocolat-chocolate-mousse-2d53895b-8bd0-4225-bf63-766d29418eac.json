@@ -1,0 +1,60 @@
+{
+    "recipeId":  "2d53895b-8bd0-4225-bf63-766d29418eac",
+    "title":  "Mousse au chocolat/Chocolate Mousse",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Chocolat/Chocolate"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.onceuponachef.com/recipes/chocolate-mousse.html",
+    "yield":  "6",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "3 cuillères à soupe de beurre non salé - 3 tablespoons unsalted butter",
+                            "6 onces de chocolat mi-sucré, meilleure qualité - 6 ounces semisweet chocolate, best quality",
+                            "3 gros Å“ufs, à température ambiante, jaunes et blancs séparés - 3 large eggs, at room temperature, yolks and whites separated",
+                            "½ cuillère à thé de crème de tartre - ½ teaspoon cream of tartar",
+                            "¼ tasse plus 2 cuillères à soupe de sucre - ¼ cup plus 2 tablespoons sugar",
+                            "½ tasse de crème épaisse, froide - ½ cup heavy cream, cold",
+                            "½ cuillère à thé d\u0027extrait de vanille - ½ teaspoon vanilla extract",
+                            "2 cuillères à thé de sucre - 2 teaspoons sugar",
+                            "Copeaux de chocolat - Chocolate shavings"
+                        ],
+    "directionLines":  [
+                           "Placer le chocolat et le beurre dans un bol résistant à la chaleur et placer au-dessus d\u0027une casserole contenant environ 1 pouce d\u0027eau à peine frémissante. Remuer jusqu\u0027à ce que le chocolat soit fondu et que le mélange soit lisse. Laisser refroidir le mélange pendant quelques minutes, puis incorporer les jaunes d\u0027Å“ufs un à un en fouettant jusqu\u0027à consistance lisse après chaque ajout. Mettre de côté.",
+                           "Place the chocolate and butter in a heatproof bowl and place over a saucepan containing about 1 inch of barely simmering water. Stir until the chocolate is melted and the mixture is smooth. Let the mixture cool for a few minutes, then whisk in the egg yolks one at a time, mixing until smooth after each addition. Set aside.",
+                           "Dans le bol d\u0027un malaxeur, battre les blancs d\u0027Å“ufs à vitesse moyenne-élevée jusqu\u0027à consistance mousseuse. Ajouter la crème de tartre et battre jusqu\u0027à formation de pics mous. Incorporer graduellement ¼ de tasse de sucre et continuer à battre jusqu\u0027à ce que des pics fermes se forment. À l\u0027aide d\u0027une grande spatule en caoutchouc, incorporer le mélange de blancs d\u0027Å“ufs au mélange de chocolat jusqu\u0027à consistance homogène. Mettre de côté.",
+                           "In the bowl of a stand mixer, beat the egg whites on medium-high speed until foamy. Add the cream of tartar and beat until soft peaks form. Gradually beat in ¼ cup of the sugar and continue beating until stiff peaks form. Using a large rubber spatula, fold the egg white mixture into the chocolate mixture until uniform. Set aside.",
+                           "Dans un autre bol, battre la crème à vitesse moyenne-élevée jusqu\u0027à ce qu\u0027elle commence à épaissir. Ajouter les 2 cuillères à soupe de sucre restantes et la vanille et continuer à battre jusqu\u0027à ce que la crème ait des pics moyens. Incorporer la crème fouettée au mélange de chocolat. Assurez-vous qu\u0027il est entièrement incorporé, mais ne mélangez pas plus que nécessaire.",
+                           "In another bowl, beat the heavy cream on medium-high speed until it begins to thicken up. Add the remaining 2 tablespoons of sugar and the vanilla and continue beating until the cream holds medium peaks. Fold the whipped cream into the chocolate mixture. Be sure it is fully incorporated but don\u0027t mix any more than necessary.",
+                           "Répartir la mousse dans 6 verres individuels, couvrir et réfrigérer jusqu\u0027à ce qu\u0027elle soit prise, au moins 2 heures.",
+                           "Divide the mousse between 6 individual glasses, cover, and chill until set, at least 2 hours.",
+                           "Jusqu\u0027à quelques heures avant de servir, fouetter la crème jusqu\u0027à ce qu\u0027elle commence à épaissir. Ajouter le sucre et fouetter jusqu\u0027à pics moyens. Déposer la crème fouettée sur la mousse et garnir de copeaux de chocolat.",
+                           "Up to a few hours before serving, whip the cream until it begins to thicken up. Add the sugar and whip to medium peaks. Dollop the whipped cream over the mousse and top with chocolate shavings."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "415",
+                      "totalFat":  "31",
+                      "saturatedFat":  "19",
+                      "cholesterol":  "163",
+                      "sodium":  "55",
+                      "totalCarbohydrate":  "34",
+                      "dietaryFiber":  "2",
+                      "sugars":  "31",
+                      "protein":  "5"
+                  },
+    "photoPaths":  [
+                       "images/2d53895b-8bd0-4225-bf63-766d29418eac_0.jpg"
+                   ]
+}

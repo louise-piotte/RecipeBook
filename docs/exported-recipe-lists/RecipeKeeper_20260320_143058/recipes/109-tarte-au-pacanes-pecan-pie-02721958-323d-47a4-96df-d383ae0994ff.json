@@ -1,0 +1,59 @@
+{
+    "recipeId":  "02721958-323d-47a4-96df-d383ae0994ff",
+    "title":  "Tarte au Pacanes/Pecan Pie",
+    "recipeShareId":  "",
+    "linkedRecipeId":  "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca",
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Pacane/Pecan",
+                       "Tarte/Pie"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/pecan-pie/",
+    "yield":  "1 tarte 5 pouces/1 5-inch pie",
+    "prepTimeIso":  "PT10M",
+    "cookTimeIso":  "PT40M",
+    "ingredientLines":  [
+                            "1 croute de tarte non-cuite de 5 pouces  - 1 5-inch raw sweet pie shell",
+                            "½ tasse de pacanes en morceaux - ½ cup coarsely chopped pecans",
+                            "â…“ tasse de sirop de maïs - â…“ cup dark corn syrup",
+                            "¼ sucre - ¼ cup (50g) sugar",
+                            "1 oeuf 1 large egg",
+                            "19g de beurre non salé fondu - 19g unsalted butter melted",
+                            "1 cuillère à thé d\u0027extrait de vanille - 1 teaspoon vanilla extract",
+                            "¼ cuillère à thé de sel - ¼ teaspoon salt"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four a 400°F.",
+                           "Preheat oven to 400°F.",
+                           "Dans un bol, mélanger le sirop de maïs le sucre, l\u0027oeuf, le beurre fondu, la vanille et le sel.",
+                           "In a bowl, whisk together the corn syrup, sugar, egg, melted butter, vanilla, and salt until well combined.",
+                           "Mettre les pacanes en morceaux dans la croute a tarte non-cuite. Recouvrir du mélange de sirop de maïs. Placer les moitiés de pacanes sur le dessus pour décorer.",
+                           "Place the chopped pecans mixture in the raw 5-inch pie shell. Pour the corn syrup mixture on top. Place pecan halves on top for decoration.",
+                           "Cuire dans le four pour 40 minutes.",
+                           "Bake in oven for 40 minutes."
+                       ],
+    "notes":  [
+                  "Faire 3 fois la quantité pour faire une tarte de 9 pouces.",
+                  "Make 3 time the amount for a 9-inch pie."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/02721958-323d-47a4-96df-d383ae0994ff_0.jpg"
+                   ]
+}

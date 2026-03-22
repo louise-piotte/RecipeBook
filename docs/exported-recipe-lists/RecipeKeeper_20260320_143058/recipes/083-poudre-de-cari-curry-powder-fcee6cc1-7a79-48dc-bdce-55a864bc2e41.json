@@ -1,0 +1,49 @@
+{
+    "recipeId":  "fcee6cc1-7a79-48dc-bdce-55a864bc2e41",
+    "title":  "Poudre de cari / Curry powder",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Ingrédient/Ingredient",
+    "categories":  [
+                       "Épices/Spices"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://ileauxepices.com/blog/2014/11/03/comment-faire-ses-propres-melanges-depices/wpid6390/",
+    "yield":  "16½ cuillères à thé / teaspoons",
+    "prepTimeIso":  "PT5M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "3 cuillères à thé de curcuma - 3 teaspoons of turmeric",
+                            "2 cuillères à soupe de cumin - 2 tablespoons cumin",
+                            "2 cuillères à soupe de coriandre - 2 tablespoons cilantro",
+                            "½ cuillère à thé de poivre noir moulu - ½ teaspoon ground black pepper",
+                            "½ cuillère à thé de graines de moutarde moulues - ½ teaspoon ground mustard seeds",
+                            "½ cuillère à thé de gingembre - ½ teaspoon of ginger"
+                        ],
+    "directionLines":  [
+                           "Mélanger tout les épices dans un petit bol jusqu\u0027à l\u0027obtention d\u0027une poudre de couleur uniforme.",
+                           "Mix all the spices in a small bowl until you get a uniform colored powder."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/fcee6cc1-7a79-48dc-bdce-55a864bc2e41_0.jpg"
+                   ]
+}

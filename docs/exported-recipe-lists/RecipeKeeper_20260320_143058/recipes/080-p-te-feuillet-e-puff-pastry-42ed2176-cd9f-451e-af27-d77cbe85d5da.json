@@ -1,0 +1,60 @@
+{
+    "recipeId":  "42ed2176-cd9f-451e-af27-d77cbe85d5da",
+    "title":  "Pâte feuilletée/Puff Pastry",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Ingrédient/Ingredient",
+    "categories":  [
+                       "Pâte/Dough"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/puff-pastry/",
+    "yield":  "",
+    "prepTimeIso":  "PT40M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "1 tasse (227 g) de beurre non salé froid - 1 cup (227g) cold unsalted butter",
+                            "2 tasses (240 g) de farine tout usage - 2 cups (240g) all-purpose flour",
+                            "1 cuillère à soupe (12 g) de sucre - 1 tablespoon (12g) sugar",
+                            "¼ cuillère à thé de sel - ¼ teaspoon salt",
+                            "8-10 cuillères à soupe (120-150 ml) d\u0027eau froide - 8-10 tablespoon (120-150 mL) cold water"
+                        ],
+    "directionLines":  [
+                           "Placer le beurre au congélateur pendant 10 minutes.",
+                           "Place butter in the freezer for 10 minutes.",
+                           "Dans un grand bol à mélanger, fouetter ensemble la farine, le sucre et le sel.",
+                           "In a large mixing bowl, whisk together flour, sugar, and salt.",
+                           "Râpez le beurre congelé dans la farine. (Coupez l\u0027extrémité restante du beurre que vous ne pouvez pas râper.) Mélangez le beurre dans le mélange de farine avec vos mains jusqu\u0027à ce qu\u0027il soit bien enrobé.",
+                           "Grate the frozen butter into the flour. (Dice the remaining end of butter that you canâ€™t grate.) Toss the butter into the flour mixture with your hands until well coated.",
+                           "Versez 6 cuillères à soupe d\u0027eau sur le mélange et pliez le mélange jusqu\u0027à ce qu\u0027il s\u0027agglutine. Continuez à ajouter de l\u0027eau une cuillère à soupe à la fois jusqu\u0027à ce qu\u0027une pâte lâche et émiettée se forme. (Il devrait tenir lorsqu\u0027il est pressé.)",
+                           "Drizzle 6 tablespoons of water over the mixture and fold the mixture together until it clumps together. Continue adding water a tablespoon at a time until a loose and crumble dough forms. (It should hold when squeezed.)",
+                           "Pétrissez doucement la pâte plusieurs fois dans le bol jusqu\u0027à ce qu\u0027une masse cohésive se forme. Façonner en un carré de ½ pouce d\u0027épaisseur et envelopper fermement dans une pellicule plastique. Réfrigérer pendant 1 heure.",
+                           "Gently knead the dough a few times in the bowl until a cohesive mass is formed. Shape into a ½-inch thick square and wrap tightly in plastic wrap. Chill for 1 hour.",
+                           "Sur une surface légèrement farinée, abaisser la pâte refroidie en un rectangle de ½ pouce d\u0027épaisseur. Pliez la pâte en trois comme une lettre. Tourner à 90 degrés. Répétez le roulement, le pliage et la rotation 3 fois de plus.",
+                           "On a lightly floured surface, roll the chilled dough into a ½-inch-thick rectangle. Fold the dough in thirds like a letter. Turn 90 degrees. Repeat rolling, folding, and rotating 3 more times.",
+                           "Repliez en trois, enveloppez fermement, puis réfrigérez pendant au moins 2 heures ou jusqu\u0027à 2 jours, ou placez-les dans un sac de congélation et congelez jusqu\u0027à 2 mois.",
+                           "Fold back into thirds, wrap tightly, then chill for at least 2 hours or up to 2 days, or placed in a freezer bag and freeze for up to 2 months."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "646",
+                      "totalFat":  "47",
+                      "saturatedFat":  "29",
+                      "cholesterol":  "122",
+                      "sodium":  "298",
+                      "totalCarbohydrate":  "51",
+                      "dietaryFiber":  "2",
+                      "sugars":  "3",
+                      "protein":  "7"
+                  },
+    "photoPaths":  [
+                       "images/42ed2176-cd9f-451e-af27-d77cbe85d5da_0.jpg"
+                   ]
+}

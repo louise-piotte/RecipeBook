@@ -1,0 +1,53 @@
+{
+    "recipeId":  "b3aacc80-d2f6-471d-bf42-85ba5fb8843a",
+    "title":  "Pain doré/French toast",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Brunch",
+    "categories":  [
+                       "Oeuf/Egg",
+                       "Pain/Bread",
+                       "Végétarien/Vegetarian"
+                   ],
+    "collections":  [
+                        "Favori à Gab/Gab\u0027s favorites"
+                    ],
+    "sourceUrl":  null,
+    "yield":  "4-8 tranches de pain",
+    "prepTimeIso":  "PT2M",
+    "cookTimeIso":  "PT10M",
+    "ingredientLines":  [
+                            "2 oeufs - 2 eggs",
+                            "½ tasse de lait - ½ cup of milk",
+                            "1 cuillère à thé de vanille - 1 teaspoon of vanilla",
+                            "5 à 8 tranches de pain brioche - 5 to 8 slices of brioche bread"
+                        ],
+    "directionLines":  [
+                           "Mélanger les Å“ufs, le lait et la vanille dans un bol à l\u0027aide d\u0027un fouet.",
+                           "Mix the eggs, milk and vanilla in a bowl using a whisk.",
+                           "Huiler une poêle a feu moyen-vif.",
+                           "Oil a skillet over medium-high heat.",
+                           "Tramper une tranche de pain dans le mélange d\u0027oeuf et faire griller dans la poêle des deux côtés. Répéter pour toutes les tranches de pain.",
+                           "Dip a slice of bread in the egg mixture and toast in the pan on both sides. Repeat for all slices of bread."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+
+                   ]
+}

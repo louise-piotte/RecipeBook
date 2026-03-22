@@ -1,0 +1,62 @@
+{
+    "recipeId":  "2d1a7685-9425-40ae-bdd5-6eaf2a55792f",
+    "title":  "Biscuits bonbons aux amandes/Almond Bonbon Cookies",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Amande/Almond",
+                       "Bonbon/Candy"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.tasteofhome.com/recipes/almond-bonbon-cookies/",
+    "yield":  "48 bonbon/candy",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT10M",
+    "ingredientLines":  [
+                            "1 tasse de beurre, ramolli - 1 cup butter, softened",
+                            "â…” tasse de sucre à glacer - â…” cup confectioners\u0027 sugar",
+                            "¼ tasse de lait - ¼ cup milk",
+                            "1 cuillère à thé d\u0027extrait de vanille - 1 teaspoon vanilla extract",
+                            "3 tasses de farine tout usage - 3 cups all-purpose flour",
+                            "1 paquet (7 onces) de pâte d\u0027amande - 1 package (7 ounces) almond paste",
+                            "2 tasses de sucre à glacer - 2 cup confectioners\u0027 sugar",
+                            "3 (à 8?) cuillères à soupe de lait - 3 (to 8?) tablespoons milk",
+                            "1 cuillères à thé d\u0027extrait d\u0027amande - 1 teaspoon almond extract",
+                            "Sprinkles"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 375°F. Dans un grand bol, crémer le beurre et le sucre à glacer jusqu\u0027à consistance légère et mousseuse. Incorporer le lait et la vanille. Incorporer progressivement la farine.",
+                           "Preheat oven to 375°F. In a large bowl, cream butter and confectioners\u0027 sugar until light and fluffy. Beat in milk and vanilla. Gradually beat in flour.",
+                           "Couper la pâte d\u0027amande en 12 tranches (environ ¼ pouce d\u0027épaisseur); couper chacun en quartiers. Façonner en boules. Enveloppez une cuillère à soupe de pâte à biscuits autour de la pâte d\u0027amande pour couvrir complètement. Placer à 2 pouces d\u0027intervalle sur des plaques à pâtisserie non graissées.",
+                           "Cut almond paste into 12 slices (about ¼ inch thick); cut each into quarters. Shape into balls. Wrap  a tablespoon of cookie dough around almond paste to cover completely. Place 2 inches apart on ungreased baking sheets.",
+                           "Cuire 10-12 minutes ou jusqu\u0027à ce qu\u0027ils soient dorés. Retirer sur des grilles pour refroidir complètement.",
+                           "Bake 10-12 minutes or until golden brown. Remove to wire racks to cool completely.",
+                           "Dans un petit bol, mélanger les ingrédients du glaçage à la vanille jusqu\u0027à consistance lisse. Pour le glaçage au chocolat, mélanger le sucre à glacer, le chocolat refroidi, le lait et la vanille jusqu\u0027à consistance lisse. Tremper les biscuits dans les glaçages au choix; laisser l\u0027excédent s\u0027égoutter. Décorer avec des sprinkles. Placer sur du papier ciré; laisser reposer jusqu\u0027à ce qu\u0027il soit pris. Conserver dans des contenants hermétiques.",
+                           "In a small bowl, mix vanilla icing ingredients until smooth. Dip cookies in icings as desired; allow excess to drip off. Decorate with sprinkles. Place on waxed paper; let stand until set. Store in airtight containers."
+                       ],
+    "notes":  [
+                  "https://www.housewifebarbie.com/2011/04/almond-bon-bon-cookies-for-spring-or.html?m=1",
+                  "https://www.bettycrocker.com/recipes/frosted-bonbons-cookie-exchange-quantity/5d74fa9f-1093-45cd-8a85-b0020cfe3cbf",
+                  "Plus gros pour goûter la pâte d\u0027amande"
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "112",
+                      "totalFat":  "5",
+                      "saturatedFat":  null,
+                      "cholesterol":  "10",
+                      "sodium":  "29",
+                      "totalCarbohydrate":  "15",
+                      "dietaryFiber":  "1",
+                      "sugars":  null,
+                      "protein":  "1"
+                  },
+    "photoPaths":  [
+                       "images/2d1a7685-9425-40ae-bdd5-6eaf2a55792f_0.jpg"
+                   ]
+}

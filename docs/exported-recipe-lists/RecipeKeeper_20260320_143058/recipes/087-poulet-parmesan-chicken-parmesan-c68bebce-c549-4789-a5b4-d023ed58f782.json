@@ -1,0 +1,68 @@
+{
+    "recipeId":  "c68bebce-c549-4789-a5b4-d023ed58f782",
+    "title":  "Poulet Parmesan/Chicken Parmesan",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Poulet/Chicken",
+                       "Tomate/Tomato"
+                   ],
+    "collections":  [
+                        "Favori à Gab/Gab\u0027s favorites"
+                    ],
+    "sourceUrl":  "https://www.foxandbriar.com/baked-chicken-parmesan-recipe/",
+    "yield":  "",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT20M",
+    "ingredientLines":  [
+                            "2 cuillères à soupe d\u0027huile d\u0027olive - 2 tablespoons olive oil",
+                            "2 poitrines de poulet - 2 chicken breasts",
+                            "1 oeuf - 1 egg",
+                            "1 tasse de chapelure panko - 1 cup panko bread crumbs",
+                            "½ tasse de parmesan (fraîchement râpé) - ½ cup parmesan cheese (fresh grated)",
+                            "1 cuillère à thé d\u0027origan séché - 1 teaspoon dried oregano",
+                            "½ cuillère à thé d\u0027ail en poudre - ½ teaspoon garlic powder",
+                            "½ cuillère à thé de sel - ½ teaspoon salt",
+                            "½ cuillère à thé de poivre noir - ½ teaspoon black pepper",
+                            "1 tasse de sauce marinara - 1 cup marinara sauce",
+                            "1½ tasse de mozzarella râpée -1½ cups shredded mozzarella",
+                            "2 cuillères à soupe de persil haché (facultatif, pour la garniture) - 2 tablespoon minced parsley (optional, for garnish)"
+                        ],
+    "directionLines":  [
+                           "Tapisser une plaque à pâtisserie de papier d\u0027aluminium, badigeonner le papier d\u0027huile d\u0027olive. Ajustez la grille du four de manière à ce qu\u0027elle se trouve dans la seconde à partir de l\u0027espace supérieur. Préchauffer le four à 400°F.",
+                           "Line a baking sheet with foil, brush foil with olive oil.  Adjust oven rack so that is in the second from the top space. Preheat the oven to 400°F.",
+                           "Couper au milieu de la hauteur de la poitrine de poulet pour faire deux morceaux de taille égale. Séchez les poitrines de poulet avec une serviette en papier, puis assaisonnez avec du sel et du poivre.",
+                           "Cut through the middle of the chicken breast height wise to make two equal sized pieces. Pat the chicken breasts dry with a paper towel, then season with salt and pepper.",
+                           "Dans un plat peu profond, mélanger la chapelure panko, le parmesan râpé, le sel, le poivre, la poudre d\u0027ail, l\u0027origan et le poivre noir.",
+                           "In one shallow dish, mix together panko bread crumbs, grated parmesan cheese, salt, pepper, garlic powder, oregano, and black pepper.",
+                           "Dans une autre assiette creuse, fouetter un oeuf.",
+                           "In another shallow dish, whisk one egg.",
+                           "Tremper une poitrine de poulet dans l\u0027Å“uf, puis dans le mélange de chapelure. Assurez-vous que la poitrine de poulet est entièrement recouverte du mélange de chapelure et appuyez doucement avec votre main pour aider les miettes à coller au poulet. Placer la poitrine de poulet sur la plaque à pâtisserie préparée, répéter avec les morceaux de poulet restants.",
+                           "Dip one chicken breast into the egg, then into the bread crumb mixture.  Ensure chicken breast is fully coated in the crumb mixture, and gently press with your hand do help the crumbs stick to the chicken.  Place chicken breast on prepared baking sheet, repeat with remaining pieces of chicken.",
+                           "Placer la plaque à pâtisserie au four sur la deuxième à partir de la grille du haut. Cuire au four pendant 15 minutes ou jusqu\u0027à ce qu\u0027ils soient bien cuits.",
+                           "Place baking sheet in oven on the second from the top rack.  Bake for 15 minutes, or until cooked through.",
+                           "Retourner le poulet, verser ¼ tasse de sauce marinara sur chaque morceau de poulet, puis garnir de fromage. Remettre au four. Allumez le gril. Faire griller pendant 2 à 4 minutes, jusqu\u0027à ce que le fromage soit fondu et qu\u0027il bouillonne et que les bords du poulet soient dorés.",
+                           "Flip chicken, pour ¼ cup of marinara sauce over each piece of chicken, then top with cheese. Place back in the oven. Turn on the broiler. Broil for 2-4 minutes, until cheese is melted and bubbly and edges of chicken are browning."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "459",
+                      "totalFat":  "25",
+                      "saturatedFat":  "10",
+                      "cholesterol":  "155",
+                      "sodium":  "1624",
+                      "totalCarbohydrate":  "16",
+                      "dietaryFiber":  "2",
+                      "sugars":  "4",
+                      "protein":  "42"
+                  },
+    "photoPaths":  [
+                       "images/c68bebce-c549-4789-a5b4-d023ed58f782_0.jpg"
+                   ]
+}

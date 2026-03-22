@@ -1,0 +1,58 @@
+{
+    "recipeId":  "4cbff09a-679f-420c-89e2-4175fb8e8662",
+    "title":  "Classic Beef Chili",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "0",
+    "course":  "",
+    "categories":  [
+
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.ricardocuisine.com/en/recipes/5762-classic-beef-chili",
+    "yield":  "6 serving(s)",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT1H",
+    "ingredientLines":  [
+                            "1 onion, finely chopped",
+                            "1 jalapeño pepper, seeded or not, finely chopped",
+                            "2 tablespoons (30 ml) butter",
+                            "2 lbs (1 kg) ground beef",
+                            "2 cloves garlic, finely chopped",
+                            "2 tablespoons (30 ml) chili powder",
+                            "1 teaspoon (5 ml) ground cumin",
+                            "1 can 28 oz (798 ml) diced tomatoes",
+                            "1 can 19 oz (540 ml) kidney beans, rinsed and drained",
+                            "1 cup (250 ml) regular or strong coffee (see note)",
+                            "1/4 cup (60 ml) beef broth or water",
+                            "1/4 cup (60 ml) ketchup",
+                            "3 tablespoons (45 ml) lime juice",
+                            "1/4 cup (10 g) chopped fresh cilantro"
+                        ],
+    "directionLines":  [
+                           "1. Classic Beef Chili",
+                           "2. In a large saucepan, brown the onion and pepper in the butter. Add the meat and brown thoroughly. Season with salt and pepper. Add the garlic and spices and cook for 2 minutes while stirring.",
+                           "3. Add the remaining ingredients, except for the cilantro, and bring to a boil. Simmer half-covered for 45 minutes or until the chili thickens. Add the cilantro. Adjust the seasoning."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "528",
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/4cbff09a-679f-420c-89e2-4175fb8e8662_0.jpg"
+                   ]
+}

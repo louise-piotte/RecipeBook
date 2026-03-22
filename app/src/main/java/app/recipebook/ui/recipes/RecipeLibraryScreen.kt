@@ -5,11 +5,16 @@ import android.content.res.Configuration
 import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -46,6 +51,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import app.recipebook.IngredientTagManagerActivity
 import app.recipebook.R
@@ -94,7 +100,7 @@ fun RecipeLibraryScreen(
         modifier = modifier.fillMaxSize(),
         topBar = {
             RecipeBookTopBar(
-                title = localizedString(R.string.recipe_library_title, language),
+                title = localizedString(R.string.menu_recipe_library_label, language),
                 language = language,
                 onLanguageChange = onLanguageChange,
                 onNavigate = { destination ->
@@ -142,8 +148,8 @@ fun RecipeLibraryScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding),
-            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 12.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+            contentPadding = PaddingValues(horizontal = 4.dp, vertical = 4.dp),
+            verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
             if (filteredRecipes.isEmpty()) {
                 item {
@@ -202,7 +208,8 @@ internal fun BottomSearchBar(
         Column(
             modifier = barModifier
                 .fillMaxWidth()
-                .padding(horizontal = 12.dp, vertical = 8.dp)
+                .imePadding()
+                .padding(horizontal = 4.dp, vertical = 4.dp)
         ) {
             content()
         }
@@ -219,26 +226,29 @@ private fun RecipeListCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
+            .height(68.dp)
             .clickable(onClick = onClick)
     ) {
         Surface(color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f)) {
-            Column(
-                modifier = Modifier.padding(14.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp)
-            ) {
-                Text(
-                    text = resolver.resolveSystemText(language, recipe.titleText()),
-                    style = MaterialTheme.typography.titleLarge
+            Row(modifier = Modifier.fillMaxSize()) {
+                RecipePhoto(
+                    localPath = recipe.mainPhoto()?.localPath,
+                    contentDescription = localizedString(R.string.recipe_photo_label, language),
+                    modifier = Modifier
+                        .fillMaxHeight()
+                        .aspectRatio(1f)
                 )
-                Text(
-                    text = resolver.resolveSystemText(language, recipe.descriptionText()),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-                recipe.times?.totalTimeMinutes?.let { totalTime ->
+                Column(
+                    modifier = Modifier
+                        .fillMaxHeight()
+                        .padding(horizontal = 8.dp),
+                    verticalArrangement = Arrangement.Center
+                ) {
                     Text(
-                        text = localizedString(R.string.total_time_value, language, totalTime),
-                        style = MaterialTheme.typography.labelLarge
+                        text = resolver.resolveSystemText(language, recipe.titleText()),
+                        style = MaterialTheme.typography.titleLarge,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis
                     )
                 }
             }
@@ -251,7 +261,7 @@ private fun EmptyLibraryCard(language: AppLanguage) {
     Card(modifier = Modifier.fillMaxWidth()) {
         Text(
             text = localizedString(R.string.empty_results, language),
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier.padding(6.dp),
             style = MaterialTheme.typography.bodyLarge
         )
     }
@@ -308,6 +318,7 @@ internal fun RecipeBookTopBar(
     language: AppLanguage,
     onLanguageChange: (AppLanguage) -> Unit,
     onNavigate: (MainMenuDestination) -> Unit,
+    disabledDestinations: Set<MainMenuDestination> = emptySet(),
     navigationIcon: (@Composable () -> Unit)? = null,
     actions: @Composable RowScope.() -> Unit = {}
 ) {
@@ -330,6 +341,7 @@ internal fun RecipeBookTopBar(
                 MainMenuDestination.entries.forEach { destination ->
                     DropdownMenuItem(
                         text = { Text(localizedString(destination.labelResId, language)) },
+                        enabled = destination !in disabledDestinations,
                         onClick = {
                             menuExpanded = false
                             onNavigate(destination)
@@ -392,3 +404,20 @@ internal fun EditIconButton(
         onClick = onClick
     )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

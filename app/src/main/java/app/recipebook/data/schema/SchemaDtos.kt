@@ -48,6 +48,8 @@ data class RecipeDto(
     val collections: List<String> = emptyList(),
     @SerialName("ratings")
     val ratings: RatingsDto? = null,
+    @SerialName("mainPhotoId")
+    val mainPhotoId: String? = null,
     @SerialName("photos")
     val photos: List<PhotoRefDto> = emptyList(),
     @SerialName("attachments")
@@ -144,8 +146,8 @@ data class RatingsDto(
 data class PhotoRefDto(
     @SerialName("id")
     val id: String,
-    @SerialName("localPath")
-    val localPath: String,
+    @SerialName("relativePath")
+    val relativePath: String,
     @SerialName("cloudRef")
     val cloudRef: String? = null
 )
@@ -158,8 +160,8 @@ data class AttachmentRefDto(
     val fileName: String,
     @SerialName("mimeType")
     val mimeType: String,
-    @SerialName("localPath")
-    val localPath: String,
+    @SerialName("relativePath")
+    val relativePath: String,
     @SerialName("cloudRef")
     val cloudRef: String? = null
 )
@@ -222,6 +224,8 @@ data class IngredientReferenceDto(
     val nameFr: String,
     @SerialName("nameEn")
     val nameEn: String,
+    @SerialName("category")
+    val category: String = "OTHER",
     @SerialName("aliasesFr")
     val aliasesFr: List<String> = emptyList(),
     @SerialName("aliasesEn")
@@ -419,3 +423,11 @@ data class LibrarySettingsDto(
     @SerialName("openSourceInAppBrowser")
     val openSourceInAppBrowser: Boolean? = null
 )
+
+
+
+
+
+
+
+

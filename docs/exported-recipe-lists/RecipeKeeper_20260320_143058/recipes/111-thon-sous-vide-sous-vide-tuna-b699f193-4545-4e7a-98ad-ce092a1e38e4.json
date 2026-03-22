@@ -1,0 +1,64 @@
+{
+    "recipeId":  "b699f193-4545-4e7a-98ad-ce092a1e38e4",
+    "title":  "Thon sous-vide/Sous Vide Tuna",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Poisson/Fish",
+                       "Sous-vide"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://recipes.anovaculinary.com/recipe/sous-vide-tuna",
+    "yield":  "2",
+    "prepTimeIso":  "PT5M",
+    "cookTimeIso":  "PT47M",
+    "ingredientLines":  [
+                            "1 pavé de thon - 1 tuna steaks",
+                            "Sel - Salt",
+                            "Poivre noir fraichement moulu - Freshly ground black pepper",
+                            "1 cuillère à soupe d\u0027huile d\u0027olive extra vierge - 1 tablespoon extra-virgin olive oil",
+                            "Assaisonnement comme le thym frais, l\u0027aneth, le persil, les échalotes finement tranchées et/ou le zeste d\u0027agrumes - Aromatics such as fresh thyme, dill, parsley, thinly sliced shallots, and/or citrus zest",
+                            "Graines de sésame - Sesame seeds"
+                        ],
+    "directionLines":  [
+                           "Assaisonnez généreusement le thon avec du sel et du poivre de tous les côtés.",
+                           "Season tuna generously with salt and pepper on all sides.",
+                           "Placez le thon en une seule couche dans un sac à fermeture à glissière de la taille d\u0027un gallon ou dans 2 sacs individuels de la taille d\u0027un litre. Ajoutez de l\u0027huile d\u0027olive au sac ou répartissez-la dans des sacs plus petits et tournez le thon pour l\u0027enrober. Ajouter les aromates aux sacs, le cas échéant. Fermez les sacs, placez-les au réfrigérateur et laissez reposer le thon pendant au moins 30 minutes ou jusqu\u0027à la nuit.",
+                           "Place tuna in a single layer in a gallon-size zipper-lock bag, or in 2 individual quart-size bags. Add olive oil to bag, or divide it between smaller bags, and turn tuna to coat. Add aromatics to bags, if using. Close bags, place in refrigerator, and let tuna rest for at least 30 minutes or up to overnight.",
+                           "Réglez la température de l\u0027eau à 46°C (115°F).",
+                           "Set the water temperature to 46°C (115°F).",
+                           "Retirez tout l\u0027air du sac en utilisant la méthode de déplacement d\u0027eau, puis ajoutez le thon au bain-marie préchauffé et faites cuire pendant 30 à 45 minutes pour les filets d\u0027un pouce, ou 45 minutes à une heure pour les filets jusqu\u0027à deux pouces d\u0027épaisseur.",
+                           "Remove all the air from the bag using the water displacement method, then add the tuna to the preheated water bath and cook for 30 to 45 minutes for one-inch filets, or 45 minutes to an hour for filets up to two inches thick.",
+                           "Assaisonnez le thon avec un peu (ou beaucoup) de poivre noir fraîchement moulu, ou roulez-le dans des graines de sésame ou d\u0027autres assaisonnements de votre choix.",
+                           "Season the tuna with a little (or a lot) more freshly ground black pepper, or roll it in sesame seeds or other seasonings of your choice.",
+                           "Faites chauffer une cuillère à soupe d\u0027huile dans une poêle à feu vif jusqu\u0027à ce qu\u0027elle fume légèrement. Ajouter délicatement le thon et cuire sans bouger jusqu\u0027à ce qu\u0027il soit doré, 30 à 45 secondes.",
+                           "Heat a tablespoon of oil in a heavy skillet over high heat until lightly smoking. Carefully add the tuna and cook without moving until browned, 30 to 45 seconds.",
+                           "Retourner délicatement le thon et saisir l\u0027autre côté. À l\u0027aide de pinces, soulevez le thon et maintenez-le de côté pour saisir les bords tout autour.",
+                           "Carefully flip the tuna and sear the second side. Using tongs, lift the tuna and hold it sideways to sear the edges all around.",
+                           "Servir avec une fourchette et un couteau à steak ou trancher avec un couteau à poulet tranchant avant de servir.",
+                           "Serve with a fork and a steak knife, or slice with a sharp chicken knife before serving."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/b699f193-4545-4e7a-98ad-ce092a1e38e4_0.jpg"
+                   ]
+}

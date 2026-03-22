@@ -14,7 +14,7 @@ import androidx.room.RoomDatabase
         LibrarySettingsEntity::class,
         LibraryMetadataEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class RecipeBookDatabase : RoomDatabase() {
@@ -40,11 +40,12 @@ object RecipeBookDatabaseProvider {
                 context.applicationContext,
                 RecipeBookDatabase::class.java,
                 RecipeBookDatabase.DATABASE_NAME
-            ).build().also { db ->
+            ).fallbackToDestructiveMigration().build().also { db ->
                 instance = db
             }
         }
     }
 }
+
 
 

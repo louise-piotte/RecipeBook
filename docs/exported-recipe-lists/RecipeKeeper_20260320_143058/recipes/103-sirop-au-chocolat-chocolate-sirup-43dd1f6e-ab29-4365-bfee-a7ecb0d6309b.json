@@ -1,0 +1,56 @@
+{
+    "recipeId":  "43dd1f6e-ab29-4365-bfee-a7ecb0d6309b",
+    "title":  "Sirop au chocolat/Chocolate sirup",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Ingrédient/Ingredient",
+    "categories":  [
+                       "Chocolat/Chocolate",
+                       "Sauce"
+                   ],
+    "collections":  [
+                        "Recettes de Maman et Papa/Mom and Dad recipes"
+                    ],
+    "sourceUrl":  null,
+    "yield":  "",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "¾ tasse de sucre - ¾ cup sugar",
+                            "1½ cuillère à soupe de farine - 1½ tablespoon flour",
+                            "½ tasse de poudre de cacao - ½ cup cocoa powder",
+                            "1¼ tasse de lait - 1¼ cup milk",
+                            "2 cuillères à soupe de margarine - 2 tablespoon of margarine"
+                        ],
+    "directionLines":  [
+                           "Mettre les ingrédients secs et la margarine dans un petit chaudron.",
+                           "Put the dry ingredients and the margarine in a small pot.",
+                           "Allumer la cuisinière a feu moyen et ajouter le lait tranquillement en mélangeant avec un fouet. Il est important de s\u0027assurer qu\u0027il ne reste aucun grumeaux.",
+                           "Turn on the stove to medium heat and slowly add the milk, stirring with a whisk. It is important to make sure that there are no lumps left.",
+                           "Amener le sirop à ébullition sans changer la température. Laisser bouillir pour une minute puis éteindre le feu. Brasser jusqu\u0027à ce que ça arrête de bouillir.",
+                           "Bring the syrup to a boil without changing the temperature. Let boil for a minute then turn off the heat. Stir until it stops boiling.",
+                           "Retirer de feu et mettre dans une bouteille.",
+                           "Remove from heat and put in a bottle."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/43dd1f6e-ab29-4365-bfee-a7ecb0d6309b_0.jpg",
+                       "images/43dd1f6e-ab29-4365-bfee-a7ecb0d6309b_1.jpg"
+                   ]
+}

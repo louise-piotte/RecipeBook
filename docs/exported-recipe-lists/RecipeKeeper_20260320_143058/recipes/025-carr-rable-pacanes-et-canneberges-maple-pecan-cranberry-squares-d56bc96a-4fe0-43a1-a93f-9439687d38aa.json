@@ -1,0 +1,67 @@
+{
+    "recipeId":  "d56bc96a-4fe0-43a1-a93f-9439687d38aa",
+    "title":  "Carré érable pacanes et canneberges/Maple Pecan Cranberry Squares",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Barres/Bars",
+                       "Canneberge/Cranberry",
+                       "Érable/Maple",
+                       "Pacane/Pecan"
+                   ],
+    "collections":  [
+                        "Boîte de Noël/Christmas Box"
+                    ],
+    "sourceUrl":  "https://thehungarysoul.com/maple-pecan-cranberry-squares-2/",
+    "yield":  "16 squares",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT40M",
+    "ingredientLines":  [
+                            "1¼ tasse de farine tout usage - 1¼ cup all-purpose flour",
+                            "¼ tasse de sucre - ¼ cup sugar",
+                            "¼ cuillère à thé de sel - ¼ teaspoon salt",
+                            "½ tasse de beurre non salé froid, coupé en morceaux - ½ cup cold unsalted butter, cut into pieces",
+                            "â…“ tasse de beurre non salé - â…“ cup unsalted butter",
+                            "½ tasse de sirop d\u0027érable - ½ cup maple syrup",
+                            "3 cuillères à soupe de cassonade - 3 tablespoons brown sugar",
+                            "â…“ tasse de crème 35 % - â…“ cup 35% heavy cream",
+                            "¼ tasse de canneberges séchées, hachées - ¼ cup dried cranberries, chopped",
+                            "1½ tasse de pacanes, hachées - 1½ cups pecans, chopped"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 350°F. Tapisser un moule carré de 8 x 8 pouces de papier parchemin ou de papier d\u0027aluminium.",
+                           "Preheat oven to 350°F. Line an 8 x 8 inch square baking pan with parchment paper or foil.",
+                           "À l\u0027aide d\u0027un robot culinaire, ajouter la farine, le sucre et le sel, pulser 3 à 4 fois, suffisamment pour combiner les ingrédients secs. Ajouter le beurre et pulser 8 à 10 fois, jusqu\u0027à ce que le beurre forme des miettes de la taille de petits pois.",
+                           "Using a food processor, add flour(s), sugar, and salt, pulse for 3-4 times, enough to combine the dry ingredients. Add butter and pulse for 8-10 times, until the butter forms crumbs the size of small peas.",
+                           "Presser le mélange de croûte dans le moule et cuire au four pendant 15 à 17 minutes ou jusqu\u0027à ce que les bords soient légèrement dorés.",
+                           "Press the crust mixture to the baking pan and bake for 15-17 minutes or until the edges are lightly browned.",
+                           "Dans une petite casserole à feu moyen, ajouter le beurre, le sirop d\u0027érable et la cassonade. Remuer jusqu\u0027à ce que le beurre fonde et que la cassonade soit dissoute. Augmenter le feu et laisser bouillir le mélange pendant environ 2 minutes. Retirer du feu et incorporer la crème, puis incorporer les pacanes et les canneberges. Verser la garniture chaude sur la croûte, en l\u0027étalant uniformément sur les bords.",
+                           "In a small saucepan over medium heat, add butter, maple syrup and brown sugar. Stir until the butter melts and the brown sugar is dissolves. Increase heat and allow the mixture to boil for about 2 minutes. Remove from heat and stir in cream, then stir in the pecans and cranberries. Pour the hot filling over crust, spreading evenly to the edges.",
+                           "Cuire au four jusqu\u0027à ce que la garniture bouillonne et ait une couleur caramel pendant environ 20-25 minutes.",
+                           "Bake until the filling is bubbling and has a caramel colour for about 20-25 minutes.",
+                           "Laisser refroidir complètement. Pour couper, retirez délicatement le moule en le soulevant à l\u0027aide du papier parchemin en surplomb. À l\u0027aide d\u0027un couteau bien aiguisé, couper en carrés de 2 pouces. Conservez les carrés dans un récipient hermétique à température ambiante pendant 3 jours.",
+                           "Allow to completely cool. To cut, carefully remove square out the pan by lifting using the parchment paper overhang. Using a sharp knife, cut into 2-inch squares. Store squares in an air-tight container at room temperature for 3 days."
+                       ],
+    "notes":  [
+                  "Ces carrés peuvent être placés au congélateur jusqu\u0027à 3 mois dans un contenant hermétique.",
+                  "These squares can be placed in the freezer for up to 3 months in an air-tight container."
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 serving",
+                      "calories":  "253",
+                      "totalFat":  "18",
+                      "saturatedFat":  "8",
+                      "cholesterol":  "32",
+                      "sodium":  "91",
+                      "totalCarbohydrate":  "21",
+                      "dietaryFiber":  "2",
+                      "sugars":  "12",
+                      "protein":  "2"
+                  },
+    "photoPaths":  [
+                       "images/d56bc96a-4fe0-43a1-a93f-9439687d38aa_0.jpg"
+                   ]
+}

@@ -1,0 +1,51 @@
+{
+    "recipeId":  "1958c47a-95cf-46f1-ab81-fa71435b1ca5",
+    "title":  "Chocolate Drip Cake",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "0",
+    "course":  "",
+    "categories":  [
+
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.lifeloveandsugar.com/how-to-make-a-chocolate-drip-cake/#tasty-recipes-36958",
+    "yield":  "",
+    "prepTimeIso":  "PT5M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "6 oz (1 cup | 169g) semi sweet chocolate chips",
+                            "1/2 cup heavy whipping cream",
+                            "6 oz (1 cup | 169g) white chocolate chips",
+                            "3 tbsp heavy whipping cream"
+                        ],
+    "directionLines":  [
+                           "1. Add the chocolate chips to a medium sized bowl and set aside.",
+                           "2. Add the heavy whipping cream to a microwave safe bowl or measuring cup and heat for about 1 minute, keeping an eye on it. If it heats up too much, it’ll end up everywhere. Remove from the microwave just before it bubbles up.",
+                           "3. . Pour the warm cream over the chocolate chips and allow to sit for 3-5 minutes. You can cover the bowl with some clear wrap to trap in the heat, if you like.",
+                           "4. . Gently stir the cream and chocolate together until they come together to a smooth consistency. Try not to whisk too vigorously, which can add air bubbles to the ganache.",
+                           "5. . If making white chocolate ganache and you have some lumps remaining, heat in 10 second increments, stirring between, until ganache is smooth.",
+                           "6. . Allow ganache to cool for about 10 minutes, give or take, prior to using."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/1958c47a-95cf-46f1-ab81-fa71435b1ca5_0.jpg"
+                   ]
+}

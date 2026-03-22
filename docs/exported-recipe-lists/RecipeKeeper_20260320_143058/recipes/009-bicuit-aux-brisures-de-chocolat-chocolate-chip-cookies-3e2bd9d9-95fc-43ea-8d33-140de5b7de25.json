@@ -1,0 +1,65 @@
+{
+    "recipeId":  "3e2bd9d9-95fc-43ea-8d33-140de5b7de25",
+    "title":  "Bicuit aux brisures de Chocolat/Chocolate chip cookies",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Collation/Snack",
+    "categories":  [
+                       "Biscuit/Cookie",
+                       "Chocolat/Chocolate"
+                   ],
+    "collections":  [
+                        "Recettes de Maman et Papa/Mom and Dad recipes"
+                    ],
+    "sourceUrl":  null,
+    "yield":  "24",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT10M",
+    "ingredientLines":  [
+                            "½ tasse de margarine - ½ cup margarine",
+                            "¾ tasse de cassonade bien tassée - ¾ cup firmly packed brown sugar",
+                            "1 oeuf - 1 egg",
+                            "1 cuillère à thé de vanille - 1 teaspoon of vanilla",
+                            "1 grosse tasse (240g) de farine - 1 large cup (240g) flour",
+                            "1 bout de cuillère de bicarbonate de soude - 1 teaspoon of baking soda",
+                            "1 tasse de brisure de chocolat - 1 cup chocolate chip"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 350 °F.",
+                           "Preheat the oven to 350°F.",
+                           "Battre au malaxeur a vitesse moyenne la margarine et la cassonade jusqu\u0027à ce que la texture soit crémeuse.",
+                           "Cream the margarine and brown sugar with a mixer on medium speed until the texture is light and fluffy.",
+                           "Ajouter l\u0027Å“uf et la vanille. Continuer de battre le mélange jusqu\u0027à ce que l\u0027Å“uf soit incorporé.",
+                           "Add egg and vanilla. Continue mixing until the egg is incorporated.",
+                           "Mettre le bicarbonate de soude dans la farine et ajouter tranquillement au mélange en continuant de mélanger.",
+                           "Put the baking soda in the flour and slowly add to the mixture while continuing to mix.",
+                           "Arrêter quand le tout est tout juste incorporé.",
+                           "Stop when everything is just incorporated.",
+                           "Retirer le bol du malaxeur et ajouter les brisures de chocolat. Mélanger avec une spatule.",
+                           "Remove bowl from mixer and add chocolate chips. Mix with a spatula.",
+                           "Séparer en biscuit sur une plaque recouverte de papier parchemin.",
+                           "Separate into cookies on a baking sheet lined with parchment paper.",
+                           "Cuire au four à 350 °F 9 minutes.",
+                           "Bake at 350°F for 9 minutes."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/3e2bd9d9-95fc-43ea-8d33-140de5b7de25_0.jpg"
+                   ]
+}

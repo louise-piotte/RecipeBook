@@ -118,22 +118,22 @@
     "PhotoRef": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "localPath"],
+      "required": ["id", "relativePath"],
       "properties": {
         "id": { "$ref": "#/$defs/Uuid" },
-        "localPath": { "type": "string" },
+        "relativePath": { "type": "string", "description": "Package-relative media path inside an export bundle, for example photos/abc.jpg." },
         "cloudRef": { "type": "string" }
       }
     },
     "AttachmentRef": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "fileName", "mimeType", "localPath"],
+      "required": ["id", "fileName", "mimeType", "relativePath"],
       "properties": {
         "id": { "$ref": "#/$defs/Uuid" },
         "fileName": { "type": "string" },
         "mimeType": { "type": "string" },
-        "localPath": { "type": "string" },
+        "relativePath": { "type": "string", "description": "Package-relative media path inside an export bundle, for example attachments/abc.pdf." },
         "cloudRef": { "type": "string" }
       }
     },
@@ -171,6 +171,7 @@
           "items": { "$ref": "#/$defs/Uuid" }
         },
         "ratings": { "$ref": "#/$defs/Ratings" },
+        "mainPhotoId": { "$ref": "#/$defs/Uuid" },
         "photos": {
           "type": "array",
           "items": { "$ref": "#/$defs/PhotoRef" }
@@ -186,11 +187,15 @@
     "IngredientReference": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "nameFr", "nameEn", "aliasesFr", "aliasesEn", "updatedAt"],
+      "required": ["id", "nameFr", "nameEn", "category", "aliasesFr", "aliasesEn", "updatedAt"],
       "properties": {
         "id": { "$ref": "#/$defs/Uuid" },
         "nameFr": { "type": "string" },
         "nameEn": { "type": "string" },
+        "category": {
+          "type": "string",
+          "enum": ["FLOUR_AND_STARCH", "GRAIN_AND_CEREAL", "SUGAR_AND_SWEETENER", "BAKING_AND_SPICE", "HERB", "CHOCOLATE_AND_CANDY", "FAT_AND_OIL", "DAIRY_AND_ALTERNATIVE", "EGG", "CHEESE", "BAKING_MIXIN_AND_PANTRY", "NUT_SEED_AND_DRIED_FRUIT", "FRUIT", "VEGETABLE_AND_AROMATIC", "LEGUME_AND_PULSE", "STOCK_AND_BROTH", "SAUCE_AND_CONDIMENT", "PROTEIN", "OTHER"]
+        },
         "aliasesFr": { "type": "array", "items": { "type": "string" } },
         "aliasesEn": { "type": "array", "items": { "type": "string" } },
         "defaultDensity": { "type": "number", "exclusiveMinimum": 0, "description": "Density in g/ml when meaningful." },
@@ -380,3 +385,15 @@
     }
   ]
 }
+
+
+
+
+
+
+
+
+
+
+
+

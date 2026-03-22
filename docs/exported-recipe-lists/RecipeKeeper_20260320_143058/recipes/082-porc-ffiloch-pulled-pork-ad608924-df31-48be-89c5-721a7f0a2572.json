@@ -1,0 +1,70 @@
+{
+    "recipeId":  "ad608924-df31-48be-89c5-721a7f0a2572",
+    "title":  "Porc Éffiloché / Pulled pork",
+    "recipeShareId":  "q2xHc3ebpEeOyg0XwkJjrg",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Porc/Pork",
+                       "Sous-vide"
+                   ],
+    "collections":  [
+                        "Favori à Gab/Gab\u0027s favorites"
+                    ],
+    "sourceUrl":  "https://recipes.anovaculinary.com/recipe/sous-vide-bbq-pork-shoulder",
+    "yield":  "4",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT23H59M",
+    "ingredientLines":  [
+                            "1 Épaule de porc entière désossée ou avec os - 1 Whole boneless or bone-in pork shoulder",
+                            "¼ tasse (50g) Paprika - ¼ cup (50g) Paprika",
+                            "¼ tasse (50 g) de cassonade - ¼ cup (50g) brown sugar",
+                            "1½ cuillère à soupe de sel - 1½ tablespoon salt",
+                            "1 cuillère à soupe de poivre noir fraîchement moulu - 1 tablespoon Freshly ground black pepper",
+                            "1 cuillère à soupe de graines de moutarde moulu - 1 tablespoon ground yellow mustard seed",
+                            "2 cuillères à soupe d\u0027ail en poudre granulé - 2 tablespoon Granulated garlic powder",
+                            "1 cuillère à soupe d\u0027origan séché - 1 tablespoon Dried oregano",
+                            "1 cuillère à soupe de graines de coriandre - 1 tablespoon Coriander seed"
+                        ],
+    "directionLines":  [
+                           "Réglez la température de votre thermocirculateur à 165°F/74°C pour du porc tendre en morceaux.",
+                           "Set the temperature on your Precision Cooker to 165°F/74ºC for pull-apart tender pork.",
+                           "Pendant que votre bain sous vide chauffe, créez votre mélange d\u0027épices. En travaillant par lots, mélanger le paprika, la cassonade, le sel, les graines de moutarde, le poivre noir, la poudre d\u0027ail, l\u0027origan, les graines de coriandre et les flocons de piment rouge dans un moulin à épices et réduire le tout en poudre fine.",
+                           "While your sous vide bath heats, create your spice rub. Working in batches, combine paprika, brown sugar, salt, mustard seed, black pepper, garlic powder, oregano, coriander seed, and red pepper flakes in a spice grinder and reduce it all to a fine powder.",
+                           "Avant d\u0027appliquer les épices, mettez de côté 3 cuillères à soupe du mélange, vous l\u0027utiliserez pour recouvrir à nouveau votre épaule avant de terminer. Appliquer généreusement le reste du mélange sur toute l\u0027épaule.",
+                           "Before applying the rub, set aside 3 tablespoons of the mixture, you\u0027ll use that to re-rub your shoulder before finishing. Rub the remaining mixture generously all over the shoulder.",
+                           "Scellez le Ziplock en utilisant la méthode de déplacement. Pour ce faire, scellez tout sauf le dernier centimètre du sac, puis abaissez lentement votre porc ensaché dans une casserole d\u0027eau, en laissant la pression de l\u0027eau expulser l\u0027air par l\u0027ouverture du sac. Scellez le sac juste avant qu\u0027il ne submerge complètement. Il doit être complètement exempt d\u0027air.",
+                           "Seal the Ziplock by using the displacement method. To do this, seal all but the last inch of the bag, then slowly lower your bagged pork into a pot of water, letting the pressure of the water press air out through the opening of the bag. Seal the bag just before it completely submerges. It should be completely air-free.",
+                           "Déposez votre porc scellé dans le bain-marie, réglez une minuterie sur 18 à 24 heures et détendez-vous. Pour les cuisiniers prolongés comme celui-ci, c\u0027est une bonne idée de couvrir le dessus du récipient avec du papier d\u0027aluminium ou une pellicule plastique pour éviter une évaporation excessive qui pourrait entraîner l\u0027arrêt du circulateur en raison du faible niveau d\u0027eau.",
+                           "Drop your sealed pork into the water bath, set a timer for 18 to 24 hours, and relax. For extended cooks like this, it\u0027s a good idea to cover the top of the container with foil or plastic wrap to prevent excessive evaporation that could lead to the circulator shutting down due to low water levels.",
+                           "Une fois le porc cuit, vous pouvez le refroidir et le réfrigérer jusqu\u0027à une semaine avant de continuer, ou simplement continuer directement dans les étapes de finition. La première chose à faire est de se débarrasser de l\u0027excès d\u0027humidité en retirant le porc et en le tapotant soigneusement avec des serviettes en papier. Si vous le souhaitez, vous pouvez prendre les jus dans le sac sous vide, les ajouter à votre sauce barbecue préférée et les réduire sur la cuisinière pour donner à votre sauce une saveur de porc supplémentaire.",
+                           "Once the pork is cooked, you can chill it and refrigerate for up to a week before continuing, or just continue straight into the finishing steps. The first thing to do is get rid of excess moisture by removing the pork and patting it down thoroughly with paper towels. If desired, you can take the juices in the sous vide bag, add them to your favorite barbecue sauce, and reduce it over the stovetop to give your sauce extra porky flavor.",
+                           "La première application d\u0027épice a fait du bon travail pour donner de la saveur au porc. Une deuxième couche vous donne maintenant une bonne base pour construire cette écorce croquante, sombre et savoureuse.",
+                           "The first sprinkling of rub did a good job of getting flavor into the pork. A second coat of rub now gives you a good foundation for building up that crunchy, dark, flavorful bark.",
+                           "Placer le porc sur une plaque à pâtisserie tapissée de papier d\u0027aluminium avec une grille placée dedans. Placez-le dans un four préchauffé à 300°F/149°C et faites cuire jusqu\u0027à ce que l\u0027extérieur atteigne une croute foncé, environ 1½h. Retirer du four et passer à l\u0027étape suivante.",
+                           "Place the pork on a foil-lined rimmed baking sheet with a wire rack placed in it. Set it in a preheated 300°F/149ºC oven and cook until the exterior achieves a dark, mahogany bark, about 1½hr. Remove from the oven and continue to the next step.",
+                           "La viande est prête à être effilochée ! Je trouve cela plus facile à faire avec deux fourchettes, mais si vous avez des gants en plastique résistants pour protéger vos doigts de la viande chaude, alors allez-y avec vos mains. Une fois le porc effiloché, il est prêt à être servi avec votre sauce barbecue préférée.",
+                           "The meat is ready to be pulled! I find this easiest to do with two forks, but if you have heavy duty plastic gloves to protect your fingers from the hot meat, then by all means go right in with your hands. Once the pork is shredded it\u0027s ready to serve with your favorite barbecue sauce."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/ad608924-df31-48be-89c5-721a7f0a2572_0.jpg",
+                       "images/ad608924-df31-48be-89c5-721a7f0a2572_1.jpg"
+                   ]
+}

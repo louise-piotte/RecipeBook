@@ -1,0 +1,59 @@
+{
+    "recipeId":  "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7",
+    "title":  "Sauce à pizza / Pizza sauce",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Ingrédient/Ingredient",
+    "categories":  [
+                       "Ail/Garlic",
+                       "Sauce",
+                       "Tomate/Tomato"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://lecoupdegrace.ca/recette/sauce-a-pizza-maison/",
+    "yield":  "",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "4 grosses tomates, coupées en cubes - 4 large tomatoes, diced",
+                            "2 cuillère à thé dâ€™huile dâ€™olive - 2 teaspoons of olive oil",
+                            "1 oignon espagnol, haché finement - 1 Spanish onion, finely chopped",
+                            "1 cuillère à soupe de vin blanc - 1 tablespoon of white wine",
+                            "2 grosses gousses dâ€™ail, hachées finement - 2 large garlic cloves, finely chopped",
+                            "1 cuillère à thé dâ€™origan séché - 1 teaspoon dried oregano",
+                            "1 cuillère à thé de basilic séché - 1 teaspoon dried basil",
+                            "1 cuillère à thé de sel - 1 teaspoon of salt",
+                            "10 feuilles de basilic frais - 10 fresh basil leaves",
+                            "Poivre du moulin - Ground pepper"
+                        ],
+    "directionLines":  [
+                           "Dans un chaudron chauffé à feu moyen, ajouter lâ€™huile dâ€™olive et faire revenir lâ€™oignon et lâ€™ail pendant 3-4 minutes. Ajouter le vin blanc et poursuivre la cuisson 1 minute.",
+                           "In a pot over medium heat, add the olive oil and sauté the onion and garlic for 3-4 minutes. Add the white wine and continue cooking for 1 minute.",
+                           "Ajouter le reste des ingrédients, poivrer puis bien mélanger. Laisser mijoter pendant 15 minutes en remuant de temps en temps.",
+                           "Add the rest of the ingredients, season with pepper and mix well. Simmer for 15 minutes, stirring occasionally.",
+                           "Retirer du feu et réduire en purée! Laisser refroidir entièrement avant dâ€™utiliser sur vos pizzas ! Je suggère de congeler la sauce dans des bacs à glaçons. Un glaçon donne environ 1 c. à soupe et jâ€™en mets habituellement environ 2-3 c. à soupe pour une pizza moyenne.",
+                           "Remove from heat and puree! Allow to cool completely before using on your pizzas! I suggest freezing the sauce in ice cube trays. One ice cube makes about 1 tbsp. and I usually put about 2-3 tbsp. tablespoons for a medium pizza."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7_0.jpg"
+                   ]
+}

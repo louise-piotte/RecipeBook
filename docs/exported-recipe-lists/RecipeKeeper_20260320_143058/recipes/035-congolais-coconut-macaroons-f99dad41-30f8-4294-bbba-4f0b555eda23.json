@@ -1,0 +1,72 @@
+{
+    "recipeId":  "f99dad41-30f8-4294-bbba-4f0b555eda23",
+    "title":  "Congolais/Coconut Macaroons",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Biscuit/Cookie",
+                       "Chocolat/Chocolate",
+                       "Noix de Coco/Coconut"
+                   ],
+    "collections":  [
+                        "Boîte de Noël/Christmas Box"
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/coconut-macaroons/",
+    "yield":  "24 biscuit/cookies",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT20M",
+    "ingredientLines":  [
+                            "1 sac (396 g) de noix de coco râpée sucrée - 1 (396g) bag sweetened shredded coconut",
+                            "â…” tasse de lait concentré sucré - â…” cup sweetened condensed milk",
+                            "1 cuillère à thé d\u0027extrait de vanille - 1 teaspoon vanilla extract",
+                            "½ cuillère à thé de sel - ½ teaspoon salt",
+                            "2 gros blancs d\u0027Å“ufs (température ambiante) - 2 large egg whites (room temperature)",
+                            "6 onces (170 g) de pépites de chocolat mi-sucré ou de barres hachées - 6 ounces (170g) semi-sweet chocolate chips or chopped bars"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 325°F. Tapisser deux plaques à pâtisserie à rebords de papier parchemin.",
+                           "Preheat the oven to 325°F. Line two rimmed baking sheets with parchment paper.",
+                           "Dans un grand bol, mélanger la noix de coco, le lait concentré, la vanille et le sel.",
+                           "In a large bowl, stir together the coconut, condensed milk, vanilla, and salt.",
+                           "Dans un autre bol plus grand, battre les blancs d\u0027Å“ufs à haute vitesse jusqu\u0027à formation de pics fermes, environ 3 minutes. Incorporer délicatement les blancs d\u0027Å“ufs au mélange de noix de coco.",
+                           "In another larger bowl, beat the egg whites on high speed until stiff peaks form, about 3 minutes. Fold the egg whites into the coconut mixture.",
+                           "À l\u0027aide d\u0027une cuillère à soupe de crème glacée de 1½ cuillère à soupe, déposer la pâte à biscuits sur les plaques à pâtisserie tapissées, en les espaçant d\u0027environ 1 pouce.",
+                           "Using a 1½-tablespoon ice cream scoop, scoop the cookie batter onto the lined baking sheets, spacing about 1 inch apart.",
+                           "Cuire au four, 1 plaque à la fois, de 20 à 25 minutes ou jusqu\u0027à ce que le dessus et le dessous soient dorés. Laisser refroidir complètement sur la plaque.",
+                           "Bake, 1 sheet at a time, for 20 to 25 minutes or until the tops and bottom edges are golden brown. Let cool completely on the pan.",
+                           "Placer le chocolat mi-sucré dans un bol allant au micro-ondes. Cuire au micro-ondes à puissance élevée à intervalles de 15 à 30 secondes, en remuant entre chaque, jusqu\u0027à ce que le chocolat soit lisse et fondu.",
+                           "Place the semi-sweet chocolate in a microwave-safe bowl. Microwave on high in 15- to 30-second intervals, stirring between each, until the chocolate is smooth and melted.",
+                           "Tremper le dessous des biscuits chauds dans le chocolat. Remettre sur les plaques chemisées et laisser refroidir complètement à température ambiante. Les cookies peuvent être conservés dans un récipient hermétique à température ambiante jusqu\u0027à 1 semaine.",
+                           "Dip the bottom of the warm cookies in the chocolate. Place back on the lined baking sheets and let cool completely at room temperature.Cookies can be stored in an airtight container at room temperature for up to 1 week."
+                       ],
+    "notes":  [
+                  "Les Å“ufs sont plus faciles à séparer lorsqu\u0027ils sont froids. Les blancs d\u0027Å“ufs fouettent plus facilement lorsqu\u0027ils sont plus proches de la température ambiante. Je recommande de les séparer à l\u0027avance si vous avez le temps.",
+                  "Eggs are easier to separate when cold. Egg whites whip up easier when closer to room temperature. I recommend separating them in advance if you have the time.",
+                  "Lorsque vous pliez les blancs d\u0027Å“ufs avec le mélange de noix de coco, faites-le doucement, afin que les blancs d\u0027Å“ufs ne se dégonflent pas.",
+                  "When folding the egg whites with the coconut mixture, do so gently, so egg whites do not deflate.",
+                  "Utilisez toujours du papier parchemin ou une doublure en silicone pour les plaques à pâtisserie, car le dessous deviendrait trop brun sans cela.",
+                  "Always use parchment paper or a silicone liner for the baking sheets, as the bottoms will get too brown without it.",
+                  "Au lieu de tremper les macarons à la noix de coco dans le chocolat, vous pouvez les arroser à la place.",
+                  "Instead of dipping the coconut macaroons in the chocolate, you can drizzle them over the top instead.",
+                  "Cette recette donne un macaron délicieusement texturé mais n\u0027utilise pas toute la boîte de lait concentré sucré. Si vous préférez un macaron fondant, vous pouvez utiliser toute la boîte. Cependant, les biscuits s\u0027étaleront un peu plus à la base et peuvent devenir plus foncés en bas.",
+                  "This recipe makes a delightfully textured macaroon but doesnâ€™t use the whole can of sweetened condensed milk. If you prefer a gooey macaroon, you can use the whole can. However, the cookies will spread a bit more at the base and may get darker in color on the bottom."
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 serving",
+                      "calories":  "153",
+                      "totalFat":  "9",
+                      "saturatedFat":  "7",
+                      "cholesterol":  "3",
+                      "sodium":  "108",
+                      "totalCarbohydrate":  "16",
+                      "dietaryFiber":  "1",
+                      "sugars":  "14",
+                      "protein":  "2"
+                  },
+    "photoPaths":  [
+                       "images/f99dad41-30f8-4294-bbba-4f0b555eda23_0.jpg"
+                   ]
+}

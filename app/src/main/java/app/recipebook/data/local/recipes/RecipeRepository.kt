@@ -11,6 +11,7 @@ import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientLineSubstitution
+import app.recipebook.domain.model.IngredientCategory
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LocalizedSystemText
@@ -63,10 +64,15 @@ class RecipeRepository(
         draft: IngredientReferenceDraft,
         now: String = Instant.now().toString()
     ): IngredientReference {
+        val normalizedNameFr = draft.nameFr.trim()
+        val normalizedNameEn = draft.nameEn.trim()
         val ingredientReference = IngredientReference(
             id = UUID.randomUUID().toString(),
-            nameFr = draft.nameFr.trim(),
-            nameEn = draft.nameEn.trim(),
+            nameFr = normalizedNameFr,
+            nameEn = normalizedNameEn,
+            category = draft.category,
+            aliasesFr = normalizeAliases(draft.aliasesFr, normalizedNameFr, normalizedNameEn),
+            aliasesEn = normalizeAliases(draft.aliasesEn, normalizedNameEn, normalizedNameFr),
             defaultDensity = draft.defaultDensity,
             unitMappings = draft.unitMappings,
             updatedAt = now
@@ -82,9 +88,14 @@ class RecipeRepository(
     ): IngredientReference {
         val existing = ingredientReferenceDao.getById(id)?.toDomain()
             ?: error("Ingredient reference $id not found")
+        val normalizedNameFr = draft.nameFr.trim()
+        val normalizedNameEn = draft.nameEn.trim()
         val ingredientReference = existing.copy(
-            nameFr = draft.nameFr.trim(),
-            nameEn = draft.nameEn.trim(),
+            nameFr = normalizedNameFr,
+            nameEn = normalizedNameEn,
+            category = draft.category,
+            aliasesFr = normalizeAliases(draft.aliasesFr, normalizedNameFr, normalizedNameEn),
+            aliasesEn = normalizeAliases(draft.aliasesEn, normalizedNameEn, normalizedNameFr),
             defaultDensity = draft.defaultDensity,
             unitMappings = draft.unitMappings,
             updatedAt = now
@@ -173,6 +184,9 @@ class RecipeRepository(
 data class IngredientReferenceDraft(
     val nameFr: String,
     val nameEn: String,
+    val category: IngredientCategory = IngredientCategory.OTHER,
+    val aliasesFr: List<String> = emptyList(),
+    val aliasesEn: List<String> = emptyList(),
     val defaultDensity: Double? = null,
     val unitMappings: List<IngredientUnitMapping> = emptyList()
 )
@@ -227,6 +241,7 @@ internal fun RecipeEntity.toDomainRecipe(): Recipe = Recipe(
     } else {
         null
     },
+    mainPhotoId = mainPhotoId,
     photos = storageJson.decodeFromString<List<StoredPhotoRef>>(photosJson).map(StoredPhotoRef::toDomain),
     attachments = storageJson.decodeFromString<List<StoredAttachmentRef>>(attachmentsJson).map(StoredAttachmentRef::toDomain),
     importMetadata = importMetadataJson?.let {
@@ -257,6 +272,7 @@ internal fun Recipe.toEntity(): RecipeEntity = RecipeEntity(
     userRating = ratings?.userRating,
     madeCount = ratings?.madeCount,
     lastMadeAt = ratings?.lastMadeAt,
+    mainPhotoId = mainPhotoId,
     deletedAt = deletedAt,
     ingredientLinesJson = storageJson.encodeToString(ingredients.map(IngredientLine::toStored)),
     tagIdsJson = storageJson.encodeToString(tagIds),
@@ -270,6 +286,7 @@ private fun IngredientReferenceEntity.toDomain(): IngredientReference = Ingredie
     id = id,
     nameFr = nameFr,
     nameEn = nameEn,
+    category = IngredientCategory.valueOf(category),
     aliasesFr = storageJson.decodeFromString(aliasesFrJson),
     aliasesEn = storageJson.decodeFromString(aliasesEnJson),
     defaultDensity = defaultDensity,
@@ -281,6 +298,7 @@ private fun IngredientReference.toEntity(): IngredientReferenceEntity = Ingredie
     id = id,
     nameFr = nameFr,
     nameEn = nameEn,
+    category = category.name,
     aliasesFrJson = storageJson.encodeToString(aliasesFr),
     aliasesEnJson = storageJson.encodeToString(aliasesEn),
     defaultDensity = defaultDensity,
@@ -474,6 +492,41 @@ private fun slugify(input: String): String {
         .trim('-')
         .ifBlank { UUID.randomUUID().toString() }
 }
+
+private fun normalizeAliases(
+    aliases: List<String>,
+    primaryName: String,
+    counterpartName: String
+): List<String> {
+    val excluded = setOf(primaryName, counterpartName)
+        .map(String::trim)
+        .filter(String::isNotEmpty)
+        .map(String::lowercase)
+        .toSet()
+    val seen = linkedSetOf<String>()
+    return aliases.mapNotNull { alias ->
+        val normalized = alias.trim()
+        if (normalized.isEmpty()) {
+            null
+        } else {
+            val key = normalized.lowercase()
+            if (key in excluded || !seen.add(key)) null else normalized
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

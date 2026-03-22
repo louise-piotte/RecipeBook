@@ -3,11 +3,13 @@ package app.recipebook.ui.theme
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.Shapes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
@@ -15,6 +17,14 @@ private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,
     tertiary = Pink80
+)
+
+private val CompactShapes = Shapes(
+    extraSmall = RoundedCornerShape(0),
+    small = RoundedCornerShape(0),
+    medium = RoundedCornerShape(0),
+    large = RoundedCornerShape(0),
+    extraLarge = RoundedCornerShape(0)
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -53,6 +63,7 @@ fun RecipeBookTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
+        shapes = CompactShapes,
         content = content
     )
 }

@@ -1,0 +1,56 @@
+{
+    "recipeId":  "b676257d-c46f-4ddc-bb63-1516307ad18f",
+    "title":  "Gauffre au babeurre/Buttermilk waffles",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Brunch",
+    "categories":  [
+                       "Pâte/Dough"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.allrecipes.com/recipe/233920/tender-and-easy-buttermilk-waffles/",
+    "yield":  "6",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT10M",
+    "ingredientLines":  [
+                            "2 tasses de farine - 2 cups flour",
+                            "2 cuillères à soupe de sucre - 2 tablespoons sugar",
+                            "2 cuillères à thé de poudre à pâte - 2 teaspoons baking powder",
+                            "1 cuillère à thé de bicarbonate de soude - 1 teaspoon baking soda",
+                            "½ cuillère à thé de sel - ½ teaspoon salt",
+                            "2 tasses de babeurre - 2 cups buttermilk",
+                            "â…“ tasse (76g) de beurre fondu - â…“ cup (76g) melted butter",
+                            "2 gros Å“ufs, légèrement battus - 2 large eggs, lightly beaten",
+                            "1 cuillère à thé d\u0027extrait de vanille - 1 teaspoon vanilla extract"
+                        ],
+    "directionLines":  [
+                           "Fouetter la farine, le sucre, la levure chimique, le bicarbonate de soude et le sel dans un bol jusqu\u0027à ce que le tout soit homogène.",
+                           "Whisk flour, sugar, baking powder, baking soda, and salt together in a bowl until evenly combined.",
+                           "Fouetter le babeurre et le beurre fondu dans un autre bol; incorporer les Å“ufs en fouettant. Incorporer le mélange de babeurre au mélange de farine jusqu\u0027à ce que tout soit bien combiné et que la pâte soit légèrement grumeleuse; incorporer lâ€™extrait de vanille.",
+                           "Whisk buttermilk and melted butter together in a separate bowl; whisk in eggs. Stir buttermilk mixture into flour mixture until just combined and batter is slightly lumpy; stir in vanilla extract.",
+                           "Cuire dans un gaufrier préchauffé.",
+                           "Cook in preheated waffle iron."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "318",
+                      "totalFat":  "13",
+                      "saturatedFat":  "8",
+                      "cholesterol":  "92",
+                      "sodium":  "749",
+                      "totalCarbohydrate":  "41",
+                      "dietaryFiber":  "1",
+                      "sugars":  "8",
+                      "protein":  "9"
+                  },
+    "photoPaths":  [
+                       "images/b676257d-c46f-4ddc-bb63-1516307ad18f_0.jpg"
+                   ]
+}

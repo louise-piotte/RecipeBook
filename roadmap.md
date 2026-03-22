@@ -1,7 +1,7 @@
 # RecipeBook Roadmap (Active To-Do)
 
 - Build MVP functional screens:
-  - Basic tags and collections management
+  - Basic collections management
 - Implement enhanced unit conversion behavior:
   - Show both C and F for temperatures
   - Support lb ↔ g conversion
@@ -31,8 +31,10 @@
   - Support delete one, delete checked, delete all
   - Keep local-only reusable name memory with section, case-insensitive and typo-tolerant suggestions
   - Allow add/rename/delete sections and persist locally
+- Expose bundled ingredient conversion data in user-facing recipe screens:
+  - Show reference-based unit conversions using saved density and explicit ingredient mappings
+  - Surface duplicate warnings and ingredient suggestions using internal aliases/synonyms
 
 ## Maintenance Rules
 - Remove an item immediately when it is done.
 - Add items anytime when new work is identified.
-

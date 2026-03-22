@@ -1,0 +1,68 @@
+{
+    "recipeId":  "1dca3c8b-ed68-4397-b804-ae62e769ee5e",
+    "title":  "Pâte d\u0027amande et massepain / Almond Paste and Marzipan",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Ingrédient/Ingredient",
+    "categories":  [
+                       "Amande/Almond",
+                       "Bonbon/Candy"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://foodtasia.com/almond-paste-and-marzipan/",
+    "yield":  "",
+    "prepTimeIso":  "PT3M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "1½ tasse (210 g) d\u0027amandes entières émondées - 1½ cups (210g) whole blanched almonds",
+                            "1½ tasse (180 g) de sucre en poudre tamisé, divisé - 1½ cups (180g) sifted powdered sugar, divided",
+                            "1 gros blanc d\u0027oeuf (30g), légèrement battu, à température ambiante - 1 large egg white (30g), lightly beaten, at room temperature",
+                            "1/8 de cuillère à thé de sel - 1/8 teaspoon salt",
+                            "½ cuillère à thé d\u0027extrait d\u0027amande, facultatif - ½ teaspoon almond extract, optional",
+                            "1½ tasse (180 g) de sucre en poudre tamisé - 1½ cups (180g) sifted powdered sugar",
+                            "1 gros blancs d\u0027oeufs (30g), légèrement battus, à température ambiante - 1 large egg whites (30g), lightly beaten, at room temperature",
+                            "½ cuillère à café d\u0027extrait d\u0027amande, facultatif - ½ teaspoon almond extract, optional"
+                        ],
+    "directionLines":  [
+                           "Pour faire de la pâte d\u0027amande :",
+                           "To make Almond Paste:",
+                           "Mélanger les amandes et ½ tasse de sucre à glacer dans le bol d\u0027un robot culinaire. Traiter jusqu\u0027à ce que les noix soient finement broyées.",
+                           "Combine the almonds and ½ cup confectioners\u0027 sugar in the bowl of a food processor. Process until the nuts are finely ground.",
+                           "Ajouter le reste du sucre à glacer et mélanger.",
+                           "Add the remaining confectionersâ€™ sugar and process to combine.",
+                           "Ajouter le blanc d\u0027Å“uf, le sel et l\u0027extrait d\u0027amande. Mélanger jusqu\u0027à ce que le mélange se rassemble et forme une boule. Si le mélange est très collant, ajoutez du sucre glace à la cuillère jusqu\u0027à ce qu\u0027il forme une boule.",
+                           "Add the egg white, salt, and almond extract. Process until the mixture comes together and forms a ball. If the mixture is very sticky, add confectionersâ€™ sugar by the spoonful until it forms a ball.",
+                           "Retirer la pâte d\u0027amande du robot et façonner en bûche. Enveloppez-le deux fois dans du plastique et réfrigérez-le jusqu\u0027à ce qu\u0027il soit prêt à l\u0027emploi.",
+                           "Remove the almond paste from the processor and shape into a log. Double wrap it in plastic and refrigerate until ready to use.",
+                           "Pour faire du massepain :",
+                           "To make Marzipan:",
+                           "Ajouter les ingrédients supplémentaires après avoir broyé finement les amandes. Ajoutez les blancs d\u0027Å“ufs par incréments car vous n\u0027aurez peut-être pas besoin de toute la quantité. Mélanger jusqu\u0027à ce que le mélange se rassemble et forme une boule. Si le mélange est très collant, ajoutez du sucre glace à la cuillère jusqu\u0027à ce qu\u0027il forme une boule.",
+                           "Add the additional ingredients after finely grinding the almonds. Add the egg whites in increments as you may not need the entire quantity. Process until the mixture comes together and forms a ball. If the mixture is very sticky, add confectionersâ€™ sugar by the spoonful until it forms a ball.",
+                           "Saupoudrez le plan de travail de sucre à glacer et pétrissez le massepain jusqu\u0027à ce qu\u0027il développe une texture lisse et malléable.",
+                           "Dust the countertop with confectionersâ€™ sugar and knead the marzipan until it develops a smooth, pliable texture.",
+                           "Retirer le massepain du robot et façonner en bûche. Enveloppez-le deux fois dans du plastique et réfrigérez-le jusqu\u0027à ce qu\u0027il soit prêt à l\u0027emploi.",
+                           "Remove the marzipan from the processor and shape into a log. Double wrap it in plastic and refrigerate until ready to use."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1oz slice",
+                      "calories":  "123",
+                      "totalFat":  "7.1",
+                      "saturatedFat":  "0.5",
+                      "cholesterol":  "0",
+                      "sodium":  "6.2",
+                      "totalCarbohydrate":  "13.2",
+                      "dietaryFiber":  "1.3",
+                      "sugars":  "11",
+                      "protein":  "3.1"
+                  },
+    "photoPaths":  [
+                       "images/1dca3c8b-ed68-4397-b804-ae62e769ee5e_0.jpg"
+                   ]
+}

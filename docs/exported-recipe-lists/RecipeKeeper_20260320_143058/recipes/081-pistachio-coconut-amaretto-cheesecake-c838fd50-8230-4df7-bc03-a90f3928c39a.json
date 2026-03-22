@@ -1,0 +1,70 @@
+{
+    "recipeId":  "c838fd50-8230-4df7-bc03-a90f3928c39a",
+    "title":  "Pistachio-Coconut-Amaretto Cheesecake",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Amande/Almond",
+                       "Gâteau/Cake",
+                       "Noix de Coco/Coconut",
+                       "Pistaches/Pistachio"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.justapinch.com/recipes/dessert/cake/pistachio-coconut-amaretto-cheesecake.html",
+    "yield":  "12",
+    "prepTimeIso":  "PT30M",
+    "cookTimeIso":  "PT1H25M",
+    "ingredientLines":  [
+                            "1½ tasse de biscuits Graham, écrasés - 1½ cup graham crackers, crushed",
+                            "1 tasse de flocons de noix de coco grillés - 1 cup toasted coconut flakes",
+                            "½ tasse de pistaches - ½ cup pistachio nuts",
+                            "½ tasse d\u0027amandes - ½ cup almonds",
+                            "1 tasse de beurre fondu - 1 cup melted butter",
+                            "1 tasse de flocons de noix de coco grillés - 1 cup toasted coconut flakes",
+                            "1 tasse de pistaches - 1 cup pistachio nuts",
+                            "1 tasse d\u0027amandes - 1 cup almonds",
+                            "2 livres de fromage à la crème - 2 pounds cream cheese",
+                            "4 gros Å“ufs - 4 large eggs",
+                            "¾ tasse de sucre cristallisé - ¾ cup granulated sugar",
+                            "1 boîte de 15 oz de crème de noix de coco - 1 15 oz can cream of coconut",
+                            "1 tasse de crème fouettée - 1 cup heavy whipping cream",
+                            "1 cuillère à thé d\u0027extrait d\u0027amande - 1 teaspoon almond extract",
+                            "1 cuillère à thé d\u0027extrait de vanille pure - 1 teaspoon pure vanilla extract"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 325 degrés. Enveloppez lâ€™extérieur dâ€™un moule à charnière de 9 pouces avec du papier dâ€™aluminium. Poêle à pulvériser avec revêtement antiadhésif.",
+                           "Preheat oven to 325 degrees. Wrap the outside of a 9 inch springform pan with aluminum foil. Spray pan with nonstick coating.",
+                           "Traiter les pistaches, les amandes et la noix de coco jusqu\u0027à ce qu\u0027elles soient finement moulues. Mélanger la chapelure de biscuits Graham, la noix de coco, les pistaches et les amandes, puis ajoutez le beurre fondu. Metter le mélange dans un moule à charnière bien graissé et travaillez le mélange à environ 1 pouce du côté du moule. Mettre de côté.",
+                           "Process pistachios, almonds and coconut until ground fine.  Mix graham cracker crumbs, coconut, pistachios and almonds together and then add melted butter. Put the mixture into well-greased springform pan and work mixture about 1 inch up the side of the pan. Set aside.",
+                           "Mélanger les pistaches, les amandes et la noix de coco jusqu\u0027à ce qu\u0027elles soient fines. Mettre de côté. Battre le fromage à la crème et le sucre dans un grand bol jusqu\u0027à ce que le tout soit bien mélangé. Ajouter les Å“ufs 1 à la fois en battant bien après chaque ajout. Ajouter la crème de coco, la crème fouettée, la noix de coco, les pistaches, les amandes, la vanille et l\u0027amaretto (ou l\u0027extrait d\u0027amande) et battre jusqu\u0027à homogénéité. Verser la garniture dans la croûte.",
+                           "Process pistachios, almonds and coconut until fine. Set aside. Beat the cream cheese and sugar in a large bowl until well blended. Add eggs 1 at a time, beating well after each addition. Add the cream of coconut, whipping cream, coconut, pistachios, almonds, vanilla and amaretto (or almond extract) and beat until well blended. Pour filling into crust.",
+                           "Créez un bain-marie pour le gâteau. Cuire au four jusqu\u0027à ce que le tout soit gonflé et pris au centre, au moins 1 heure et 25 minutes.",
+                           "Create a water bath for the cake. Bake until puffed and set in center, at least 1 hour and 25 minutes",
+                           "Transférer sur une grille et laisser refroidir complètement, puis couvrir et réfrigérer toute la nuit. Après réfrigération, passez un couteau d\u0027office le long du bord du cheesecake puis retirez délicatement les côtés.",
+                           "Transfer to a wire rack and cool completely, then cover and refrigerate overnight. After refrigerating run a paring knife along the edge of the cheesecake then carefully remove the sides."
+                       ],
+    "notes":  [
+                  "Trop de gâteau pour un moule de 9 pouces. C\u0027est au moins un 10 pouces. Faites ¾ du gâteau, mais toute la croûte sur 9 pouces.",
+                  "To much cake for a 9-inch pan. This is at least a 10-inch. Do ¾ of the cake, but the whole crust for a 9-inch."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/c838fd50-8230-4df7-bc03-a90f3928c39a_0.jpg"
+                   ]
+}

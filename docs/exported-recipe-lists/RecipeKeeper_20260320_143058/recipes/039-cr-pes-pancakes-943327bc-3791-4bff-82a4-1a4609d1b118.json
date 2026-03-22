@@ -1,0 +1,64 @@
+{
+    "recipeId":  "943327bc-3791-4bff-82a4-1a4609d1b118",
+    "title":  "Crêpes/Pancakes",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Brunch",
+    "categories":  [
+                       "Pâte/Dough",
+                       "Végétarien/Vegetarian"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://onedishkitchen.com/how-to-make-pancakes-for-one/#recipe",
+    "yield":  "",
+    "prepTimeIso":  "PT10M",
+    "cookTimeIso":  "PT10M",
+    "ingredientLines":  [
+                            "1 tasse de farine tout usage - 1 cup all purpose flour",
+                            "1 cuillère à thé de poudre à pâte - 1 teaspoon baking powder",
+                            "½ cuillère à soupe de sucre - ½ tablespoon sugar",
+                            "¼ cuillère à thé de sel - ¼ teaspoon salt",
+                            "1 Å“uf large - 1 large egg",
+                            "¾ tasse de lait - ¾ cup milk",
+                            "¼ cuillère à thé d\u0027extrait de vanille - ¼ teaspoon vanilla extract",
+                            "1 cuillère à soupe de beurre salé, fondu - 1 tablespoon salted butter, melted"
+                        ],
+    "directionLines":  [
+                           "Dans un grand bol, mélanger la farine, la poudre à pâte, le sucre et le sel.",
+                           "In a large bowl, whisk together the flour, baking powder, sugar and salt.",
+                           "Dans un autre bol, battre l\u0027oeuf puis incorporer le lait, la vanille et le beurre fondu.",
+                           "In another bowl, beat the egg and then whisk in the milk, vanilla and melted butter.",
+                           "Verser les ingrédients humides dans les ingrédients secs et mélanger jusqu\u0027à ce qu\u0027ils soient juste incorporés. Si la pâte semble trop épaisse, ajouter plus de lait, un peu à la fois.",
+                           "Pour the wet ingredients into the dry ingredients and mix until just incorporated. If the batter seems too thick, add more of the milk, a little at a time.",
+                           "Faire fondre le beurre dans une grande poêle ou une plaque chauffante à feu moyen.",
+                           "Melt the butter in a large skillet or griddle over medium heat.",
+                           "Verser environ ¾ tasse de pâte dans la poêle pour faire une crêpe.",
+                           "Ladle about ¾ cup of the batter onto the skillet to make a pancake.",
+                           "Cuire jusqu\u0027à ce que des bulles brisent la surface de la crêpe et que le dessous soit doré, environ 3 minutes.",
+                           "Cook until bubbles break the surface of the pancake, and the underside is golden brown, about 3 minutes.",
+                           "Retourner à l\u0027aide d\u0027une spatule et cuire environ 1 minute de plus sur l\u0027autre face. Retirer de la poêle et déposer sur une assiette.",
+                           "Flip with a spatula and cook about 1 minute more on the second side. Remove from the pan and place on a plate."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 crÃªpe/pancake",
+                      "calories":  "228",
+                      "totalFat":  "6",
+                      "saturatedFat":  "3",
+                      "cholesterol":  "82",
+                      "sodium":  "472",
+                      "totalCarbohydrate":  "38",
+                      "dietaryFiber":  "1",
+                      "sugars":  "5",
+                      "protein":  "9"
+                  },
+    "photoPaths":  [
+                       "images/943327bc-3791-4bff-82a4-1a4609d1b118_0.jpg"
+                   ]
+}

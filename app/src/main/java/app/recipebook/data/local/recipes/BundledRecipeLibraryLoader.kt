@@ -21,13 +21,13 @@ object BundledRecipeLibraryLoader {
             val library = json.decodeFromString(FullLibraryPayloadDto.serializer(), rawJson)
                 .toDomainLibrary()
             SeedLibraryData(
-                recipes = library.recipes,
-                ingredientReferences = library.ingredientReferences,
+                recipes = normalizeBundledRecipes(library.recipes),
+                ingredientReferences = mergeBundledIngredientReferences(library.ingredientReferences),
                 tags = library.tags
             )
         }
     }.getOrElse {
-        SeedLibraryData()
+        SeedLibraryData(ingredientReferences = mergeBundledIngredientReferences(emptyList()))
     }
 }
 
@@ -36,3 +36,4 @@ data class SeedLibraryData(
     val ingredientReferences: List<IngredientReference> = emptyList(),
     val tags: List<Tag> = emptyList()
 )
+

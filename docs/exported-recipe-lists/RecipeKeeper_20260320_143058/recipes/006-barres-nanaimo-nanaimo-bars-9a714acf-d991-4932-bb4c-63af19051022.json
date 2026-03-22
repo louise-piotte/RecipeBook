@@ -1,0 +1,74 @@
+{
+    "recipeId":  "9a714acf-d991-4932-bb4c-63af19051022",
+    "title":  "Barres Nanaimo/Nanaimo Bars",
+    "recipeShareId":  "fIFpXHxf8E-Aep_BdiNp-g",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "5",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Barres/Bars",
+                       "Chocolat/Chocolate",
+                       "Noix de Coco/Coconut"
+                   ],
+    "collections":  [
+                        "Boîte de Noël/Christmas Box",
+                        "Favori à Gab/Gab\u0027s favorites"
+                    ],
+    "sourceUrl":  "https://www.allrecipes.com/recipe/25095/nanaimo-bars-iii/",
+    "yield":  "16 carrés/squares",
+    "prepTimeIso":  "PT30M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "1 tasse (227g) de beurre, ramolli, divisé - 1 cup (227g) butter, softened, divided",
+                            "5 cuillères à soupe de cacao en poudre non sucré - 5 tablespoons unsweetened cocoa powder",
+                            "¼ tasse (50g) de sucre - ¼ cup (50g) sugar",
+                            "1 oeuf, battu - 1 egg, beaten",
+                            "1¾ tasse (175g) de chapelure de biscuits Graham - 1¾ cups (175g) graham cracker crumbs",
+                            "1 tasse (120g) de noix de coco en flocons - 1 cup (120g) flaked coconut",
+                            "½ tasse (40g) d\u0027amandes finement hachées - ½ cup (40g) finely chopped almonds",
+                            "3 cuillères à soupe de crème à fouetter - 3 tablespoons heavy cream",
+                            "3 cuillères à soupe de poudre à crème pâtissière - 3 tablespoons custard powder",
+                            "2 tasses (240g) de sucre à glacer - 2 cups (240g) confectioners\u0027 sugar",
+                            "5 once de chocolat mi-sucré - 5 ounce squares semisweet baking chocolate",
+                            "2½ cuillères à soupe de beurre - 2½ tablespoons butter"
+                        ],
+    "directionLines":  [
+                           "Dans le haut d\u0027un bain-marie, mélanger ½ tasse de beurre, la poudre de cacao et le sucre. Remuer de temps en temps jusqu\u0027à ce qu\u0027il soit fondu et lisse. Retirer du feu et incorporer l\u0027Å“uf. Remettre qu\u0027 feu et remuer jusqu\u0027à épaississement, 2 à 3 minutes.",
+                           "In the top of a double boiler, combine ½ cup butter, cocoa powder, and sugar. Stir occasionally until melted and smooth. Remove from heat and beat in egg. Return to heat and stir until thick, 2 to 3 minutes.",
+                           "Retirer du feu et incorporer la chapelure de biscuits Graham, la noix de coco et les amandes. Presser au fond d\u0027un moule chemisé de 8 x 8 pouces.",
+                           "Remove from the heat and mix in graham cracker crumbs, coconut, and almonds. Press into the bottom of lined 8x8-inch pan.",
+                           "Pour la couche intermédiaire, battre la ½ tasse de beurre ramolli restant, la crème à fouetter et la poudre à crème anglaise jusqu\u0027à consistance légère et mousseuse. Incorporer le sucre à glacer jusqu\u0027à consistance lisse. Répartir sur la couche inférieure du moule. Réfrigérer pour mettre.",
+                           "For the middle layer, beat remaining ½ cup butter, heavy cream, and custard powder until light and fluffy. Mix in confectioners\u0027 sugar until smooth. Spread over the bottom layer in the pan. Chill to set.",
+                           "Pendant que la deuxième couche refroidit, faites fondre du chocolat mi-sucré et 2½ cuillères à café de beurre ensemble au micro-ondes ou à feu doux.",
+                           "While the second layer is chilling, melt semisweet chocolate and 2½ teaspoons butter together in the microwave or over low heat.",
+                           "Étendre le mélange de chocolat fondu sur les barres refroidies.",
+                           "Spread melted chocolate mixture over chilled bars.",
+                           "Laisser durcir le chocolat avant de le couper en carrés.",
+                           "Let the chocolate set before cutting into squares."
+                       ],
+    "notes":  [
+                  "Première couche : Tempérer l\u0027Å“uf et retirer le chocolat du feu avant de l\u0027ajouter.",
+                  "First layer: Temper the egg and remove chocolate from heat before adding it.",
+                  "Troisième couche : N\u0027attendez pas avant d\u0027ajouter la couche de chocolat. Si la deuxième couche est trop froide, le chocolat durcira avant de pouvoir être étalé.",
+                  "Third layer: Do not wait before adding the chocolate layer. If the second layer is too cold, the chocolate will set before it can be spread."
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 carrÃ© (1/16 recette)",
+                      "calories":  "310",
+                      "totalFat":  "19.6",
+                      "saturatedFat":  null,
+                      "cholesterol":  "47",
+                      "sodium":  "160",
+                      "totalCarbohydrate":  "34.1",
+                      "dietaryFiber":  "2.1",
+                      "sugars":  "26.1",
+                      "protein":  "2.8"
+                  },
+    "photoPaths":  [
+                       "images/9a714acf-d991-4932-bb4c-63af19051022_0.jpg",
+                       "images/9a714acf-d991-4932-bb4c-63af19051022_1.jpg",
+                       "images/9a714acf-d991-4932-bb4c-63af19051022_2.jpg",
+                       "images/9a714acf-d991-4932-bb4c-63af19051022_3.jpg"
+                   ]
+}

@@ -1,0 +1,59 @@
+{
+    "recipeId":  "fdb8f001-0f1a-4c73-a916-8721bdc1713f",
+    "title":  "Chocolate Dates (3 Flavors)",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Chocolat/Chocolate",
+                       "Date",
+                       "Noisette/Hazelnut"
+                   ],
+    "collections":  [
+                        "Boîte de Noël/Christmas Box"
+                    ],
+    "sourceUrl":  "https://cookingwithayeh.com/chocolate-dates/",
+    "yield":  "20",
+    "prepTimeIso":  "PT20M",
+    "cookTimeIso":  "PT0S",
+    "ingredientLines":  [
+                            "20 Medjool dates",
+                            "â…“ cup natural nut butter (see below for flavor combinations)",
+                            "20 nuts (see below for flavor combinations)",
+                            "100 g dark chocolate (or preferred chocolate)",
+                            "Flakey sea salt and crushed nuts",
+                            "Peanut butter",
+                            "Peanuts",
+                            "Hazelnut butter",
+                            "Hazelnuts",
+                            "Almond butter",
+                            "Almonds"
+                        ],
+    "directionLines":  [
+                           "1. Melt the chocolate using either the double boiler method or microwave",
+                           "2. Using a knife or your fingers, carefully slice a date lengthways to open and remove the pit. Making sure not to cut all the way through the other side .",
+                           "3. Add a teaspoon of nut butter inside the date and spread on both sides, followed by adding a nut in the middle",
+                           "4. Close the date and dip into the melted chocolate using your fingers, toothpick or a fork. Make sure the are fully coated and allow the excess chocolate to drip off then place on a tray with parchment paper",
+                           "5. Sprinkle with crushed nuts and flakey salt then freeze for 20-30 minutes to allow the chocolate to set. Enjoy your Chocolate Dates!"
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 serving",
+                      "calories":  "128",
+                      "totalFat":  "5",
+                      "saturatedFat":  "2",
+                      "cholesterol":  "1",
+                      "sodium":  "2",
+                      "totalCarbohydrate":  "21",
+                      "dietaryFiber":  "2",
+                      "sugars":  "18",
+                      "protein":  "2"
+                  },
+    "photoPaths":  [
+                       "images/fdb8f001-0f1a-4c73-a916-8721bdc1713f_0.jpg"
+                   ]
+}

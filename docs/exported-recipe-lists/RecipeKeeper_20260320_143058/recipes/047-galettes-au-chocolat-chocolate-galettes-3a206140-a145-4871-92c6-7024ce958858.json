@@ -1,0 +1,63 @@
+{
+    "recipeId":  "3a206140-a145-4871-92c6-7024ce958858",
+    "title":  "Galettes au Chocolat/Chocolate Galettes",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Avoine/Oat",
+                       "Biscuit/Cookie",
+                       "Chocolat/Chocolate"
+                   ],
+    "collections":  [
+                        "Recettes de Maman et Papa/Mom and Dad recipes"
+                    ],
+    "sourceUrl":  null,
+    "yield":  "6 galettes",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT15M",
+    "ingredientLines":  [
+                            "1 oeuf - 1 egg",
+                            "1¼ tasse de cassonade - 1¼ cup brown sugar",
+                            "1½ tasse de farine - 1½ cup flour",
+                            "1½ tasse de avoine rapide - 1½ cups quick oats",
+                            "½ tasse margarine - ½ cup margarine",
+                            "¼ tasse huile - ¼ cup oil",
+                            "½ cuillère à thé de bicarbonate de soude - ½ teaspoon baking soda",
+                            "1 tasse de pépites en chocolat - 1 cup chocolate chips"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four a 350°F.",
+                           "Preheat the oven to 350°F.",
+                           "Mélanger l\u0027oeuf, la cassonade, la margarine, l\u0027huile et le bicarbonate de soude.",
+                           "Combine egg, brown sugar, margarine, oil and baking soda.",
+                           "Ajouter la farine et le gruau ½ tasse à la fois en alternant.",
+                           "Add flour and oats ½ cup at a time, alternating.",
+                           "Ajouter les pépites de chocolat.",
+                           "Add the chocolate chips.",
+                           "Séparer le mélange en 6 portions et les aplatir en disques sur une plaque à biscuit.",
+                           "Divide mixture into 6 portions and flatten into disks on a cookie sheet.",
+                           "Cuire 15 minutes.",
+                           "Bake 15 minutes."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+
+                   ]
+}

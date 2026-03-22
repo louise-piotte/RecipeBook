@@ -59,4 +59,16 @@
 - 2026-03-16: Treat backward compatibility as out of scope until explicitly requested by the user. For this pre-MVP codebase, do not preserve old draft behavior, old draft databases, old draft schemas, or compatibility shims by default.
 - 2026-03-16: For any non-trivial change, present a plan and get user confirmation before proceeding. Trivial changes do not require a confirmation step.
 - 2026-03-16: Prefer classic, compact UI iconography to keep screens clean: hamburger for menu, plus for add/new, trash can for delete, and similar widely recognized symbols over text-only actions when practical.
+- 2026-03-20: Recipe photo support stores app-managed local image files, tracks a recipe-level `mainPhotoId`, and renders list/detail images with centered square cropping.
+- 2026-03-20: Avoid generous padding in phone UI layouts; favor compact spacing because excess padding wastes too much screen space.
+- 2026-03-20: Avoid rounded edges in phone UI layouts when possible; prefer squarer shapes to preserve usable screen space.
+- 2026-03-20: Default to compact icon-only actions when a single image/button is clear and can fit inline with nearby content; treat text buttons as the exception unless the user flags a case.
+- 2026-03-20: Before adding any new localized string resource, always check whether an existing string key already covers the same text/meaning and reuse it instead of creating a duplicate.
+- 2026-03-20: Ingredient references now carry a first-pass internal classification category for normalization, catalog management, and future filtering; pre-MVP, evolve these categories in place without backward-compatibility shims.
+- 2026-03-20: Added a bundled ingredient reference catalog overlay with internal FR/EN aliases plus density and unit-mapping data to support duplicate detection and upcoming user-facing conversions.
+- 2026-03-20: A long-term goal is to clean, normalize, and integrate the contents of docs/exported-recipe-lists; when inconsistencies or typos are found there, fix them rather than preserving them.
+
+
+
+
 

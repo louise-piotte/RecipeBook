@@ -1,0 +1,71 @@
+{
+    "recipeId":  "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8",
+    "title":  "Ragoût au arachides africain/African Peanut Stew",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Arachide/Peanut",
+                       "Modifiable/Customisable",
+                       "Ragout/Stew"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.cottercrunch.com/crock-pot-west-african-peanut-stew/",
+    "yield":  "",
+    "prepTimeIso":  "PT30M",
+    "cookTimeIso":  "PT1H10M",
+    "ingredientLines":  [
+                            "1 tasse de sauce tomate - 1 cup tomato sauce",
+                            "½ tasse de beurre d\u0027arachide crémeux naturel - ½ cup natural creamy peanut butter",
+                            "2 cuillères à thé de paprika - 2 teaspoons paprika",
+                            "½ cuillère à thé de graines de coriandre moulues - ½ teaspoon coriander",
+                            "½ cuillère à thé de piment de cayenne - ½ teaspoon cayenne pepper",
+                            "½ cuillère à thé de sel kosher - ½ teaspoon kosher salt",
+                            "½ cuillère à thé de poivre noir - ½ teaspoon black pepper",
+                            "1 lb de viande de ragoût en dés (poulet, bÅ“uf ou porc) - 1 lb diced stew meat (chicken, beef, or pork)",
+                            "2 tasses de bouillon (2 ½ tasses si vous ajoutez de la viande) - 2 cups broth (2 ½ cups if adding meat)",
+                            "1 tasse d\u0027oignon haché - 1 cup chopped onion",
+                            "3 gousses d\u0027ail hachées - 3 cloves minced garlic",
+                            "1 cuillère à thé de gingembre moulu - 1 teaspoon ground ginger",
+                            "2 petites patates douces, épluchées et coupées en cubes - 2 small sweet potatoes, peeled and diced into cubes",
+                            "â…” tasse de carottes pelées et tranchées, facultatif - â…” cup peeled and sliced carrot, optional",
+                            "3 tasses de pousses d\u0027épinards - 3 cups baby spinach"
+                        ],
+    "directionLines":  [
+                           "Mettre la sauce tomate, le beurre d\u0027arachide, le paprika, le cumin, le sel et le poivre dans un robot culinaire et pulser pour combiner.",
+                           "Put the tomato sauce, the peanut butter, the paprika, the cumin, the salt and pepper in a food processor and pulse to combine.",
+                           "Faites chauffer une grande casserole à fond épais à feu moyen-vif. Faire revenir les oignons et la viande pendant 3-4 minutes, en remuant souvent.",
+                           "Heat a large, heavy bottomed pot over medium-high heat. Saute the onions and the meat for 3-4 minutes, stirring often.",
+                           "Ajouter le gingembre et l\u0027ail et les faire revenir, puis ajouter les patates douces et les carottes et bien mélanger pour combiner le tout. Ajoutez la sauce que vous avez préparée plus tôt, ainsi que les épinards et le bouillon, puis mélangez à nouveau.",
+                           "Add the ginger and garlic and saute them, then add the sweet potatoes and carrots and stir well to combine everything. Add the sauce you made earlier, along with the spinach, and broth, then stir everything again.",
+                           "Laisser mijoter à couvert jusqu\u0027à ce que les patates douces soient tendres et que la viande soit bien cuite. Cela peut prendre entre 40 et 60 minutes, selon la taille de vos morceaux de patates douces.",
+                           "Simmer covered until the sweet potatoes are tender and meat is cooked through. This can take anywhere from 40-60 minutes, depending on the size of your sweet potato chunks.",
+                           "Garnir et servir! Transférer dans des bols de service et garnir d\u0027arachides et de coriandre, si désiré",
+                           "Garnish and serve! Transfer the meal to serving bowls and top with peanuts and cilantro, if desired"
+                       ],
+    "notes":  [
+                  "C\u0027est délicieux sur du riz et nourrit une foule. Compatible avec le congélateur.",
+                  "It\u0027s delicious over rice and feeds a crowd. Freezer friendly.",
+                  "La viande peut être remplacée par des haricots ou des pois chiches pour une variante végétarienne",
+                  "Meat can be replaced with beans or chickpeas for a vegetarian variant"
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/89f89f5e-4afc-4e3a-b37f-e7841ac24ff8_0.jpg"
+                   ]
+}

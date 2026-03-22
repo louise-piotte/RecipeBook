@@ -1,0 +1,65 @@
+{
+    "recipeId":  "d73d6bff-fc0c-4b79-a607-441e546d32ad",
+    "title":  "Brownie au beurre d\u0027arachide/Peanut Butter Brownies",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Déssert/Dessert",
+    "categories":  [
+                       "Arachide/Peanut",
+                       "Barres/Bars",
+                       "Chocolat/Chocolate"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/peanut-butter-brownies/",
+    "yield":  "One 8x8 pan",
+    "prepTimeIso":  "PT10M",
+    "cookTimeIso":  "PT40M",
+    "ingredientLines":  [
+                            "1 tasse (227 g) de beurre non salé - 1 cup (227g) unsalted butter",
+                            "1 tasse (175 g) de pépites de chocolat mi-sucré, divisées - 1 cup (175g) semisweet chocolate chips, divided",
+                            "1¼ tasse (150 g) de farine tout usage - 1¼ cups (150g) all-purpose flour",
+                            "½ tasse (50 g) de cacao en poudre non sucré - ½ cup (50g) unsweetened cocoa powder",
+                            "½ cuillère à thé de sel - ½ teaspoon salt",
+                            "1 tasse (200 g) de sucre - 1 cup (200g) sugar",
+                            "1 tasse (220 g) de cassonade claire bien tassée - 1 cup (220g) firmly packed light brown sugar",
+                            "3 gros Å“ufs - 3 large eggs",
+                            "1 cuillère à soupe d\u0027extrait de vanille - 1 tablespoon vanilla extract",
+                            "½ tasse de beurre d\u0027arachide crémeux - ½ cup creamy peanut butter"
+                        ],
+    "directionLines":  [
+                           "Préchauffer le four à 350°F. Graisser un moule carré de 8 x 8 pouces avec un aérosol de cuisson et tapisser de papier parchemin.",
+                           "Preheat the oven to 350°F. Spray an 8x8-inch square baking pan with baking spray and line with parchment paper.",
+                           "Dans une petite casserole, faire fondre le beurre à feu moyen. Retirer du feu et incorporer ½ tasse de pépites de chocolat. Continuer à fouetter jusqu\u0027à ce qu\u0027il soit complètement fondu. Transférer dans un grand bol et laisser refroidir quelques minutes. (Vous pouvez également faire fondre le beurre dans un grand bol au micro-ondes, puis incorporer le chocolat jusqu\u0027à ce qu\u0027il soit fondu.)",
+                           "In a small saucepan, melt the butter over medium heat. Remove from the heat and whisk in ½ cup chocolate chips. Continue whisking until fully melted. Transfer to a large bowl and let cool for a few minutes. (You can also melt the butter in a large bowl in the microwave, then stir in the chocolate until melted.)",
+                           "Dans un autre bol, tamisez ensemble la farine et la poudre de cacao. Fouetter pour ajouter le sel.",
+                           "In another bowl, sift together the flour and cocoa powder. Whisk in the salt.",
+                           "Au chocolat fondu, incorporer les sucres, les Å“ufs et la vanille jusqu\u0027à consistance lisse. Incorporer le mélange de farine jusqu\u0027à ce qu\u0027il soit bien mélangé. Incorporer la ½ tasse de pépites de chocolat restante. Verser la pâte dans le moule préparé et utiliser une spatule pour étaler la pâte sur les bords du moule.",
+                           "To the melted chocolate, whisk in the sugars, eggs, and vanilla until smooth. Fold in the flour mixture until well combined. Fold in the remaining ½ cup chocolate chips. Pour the batter into the prepared pan and use a spatula to spread the batter to the edges of the pan.",
+                           "Déposez le beurre d\u0027arachide sur le dessus de la pâte par cuillerées à thé. Utilisez la pointe d\u0027un couteau ou d\u0027un tournevis pour le faire tourner dans la pâte.",
+                           "Drop the peanut butter over the top of the batter by teaspoonfuls. Use the tip of a knife or a screwer to swirl it into the batter.",
+                           "Cuire au four pendant 40 à 45 minutes ou jusqu\u0027à ce que le centre ne vacille pas lorsque la casserole est doucement secouée, ou 35 minutes pour un centre super fondant. Couvrir les brownies de papier d\u0027aluminium après 25 minutes si le beurre de cacahuète semble brunir. (Le temps de cuisson peut augmenter de 5 à 10 minutes si couvert.) Laissez les brownies refroidir complètement dans le moule avant de les trancher.",
+                           "Bake for 40 to 45 minutes or until the center doesnâ€™t wobble when the pan is gently shaken, or 35 minutes for a super fudgy center. Cover the brownies with foil after 25 minutes if the peanut butter appears to be browning. (The bake time may increase by 5 to 10 minutes if covered.) Let the brownies cool in the pan completely before slicing."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  "494",
+                      "totalFat":  "28",
+                      "saturatedFat":  "15",
+                      "cholesterol":  "82",
+                      "sodium":  "269",
+                      "totalCarbohydrate":  "57",
+                      "dietaryFiber":  "3",
+                      "sugars":  "41",
+                      "protein":  "7"
+                  },
+    "photoPaths":  [
+                       "images/d73d6bff-fc0c-4b79-a607-441e546d32ad_0.jpg"
+                   ]
+}

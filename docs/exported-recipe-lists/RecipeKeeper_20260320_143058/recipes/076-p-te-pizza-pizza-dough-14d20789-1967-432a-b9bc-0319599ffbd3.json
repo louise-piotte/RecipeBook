@@ -1,0 +1,64 @@
+{
+    "recipeId":  "14d20789-1967-432a-b9bc-0319599ffbd3",
+    "title":  "Pâte à Pizza / Pizza Dough",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "4",
+    "course":  "Ingrédient/Ingredient",
+    "categories":  [
+                       "Pain/Bread",
+                       "Pâte/Dough"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://preppykitchen.com/spring-pizzas/",
+    "yield":  "1 pizza",
+    "prepTimeIso":  "PT15M",
+    "cookTimeIso":  "PT12M",
+    "ingredientLines":  [
+                            "3/4 tasses d\u0027eau (tiède, 180 ml) - 3/4 cups water (warm, 180mL)",
+                            "2 tasses de farine tout usage (240g, ou farine à pain) - 2 cups all-purpose flour (240g, or bread flour)",
+                            "1 sachet de levure (7g) - 1 packet yeast (7g)",
+                            "1 cuillère à soupe de sucre - 1 tbsp sugar",
+                            "3/4 cuillère à café de sel - 3/4 tsp salt",
+                            "1 cuillère à soupe d\u0027huile d\u0027olive - 1 tbsp olive oil"
+                        ],
+    "directionLines":  [
+                           "Dans un bol à mélanger chaud, ajouter l\u0027eau tiède (environ 100F), la levure et la moitié du sucre. Mélangez puis attendez environ 7 minutes ou jusqu\u0027à ce que vous voyiez des bulles se former dans le mélange.",
+                           "In a warm mixing bowl, add warm water (about 100F), yeast and half the sugar. Mix then wait about 7 minutes or until you see bubbles forming in the mixture.",
+                           "Mélanger la farine, le sucre restant et le sel dans un bol. Si vous ajoutez des herbes séchées comme du thym ou du romarin, elles peuvent être mélangées maintenant.",
+                           "Mix the flour, remaining sugar, and salt in a bowl. If you\u0027re adding some dried herbs like thyme or rosemary they can get mixed in now.",
+                           "Fixez un crochet pétrisseur à un batteur sur socle, puis ajoutez la farine et mélangez à feu doux pendant environ 1 minute. Augmenter à vitesse moyenne jusqu\u0027à ce que la pâte se rassemble en boule.",
+                           "Attach a dough hook to a stand mixer then add the flour and mix on low for about 1 minute. Increase to medium speed until the dough comes together in a ball.",
+                           "Farinez légèrement votre plan de travail et pétrissez la pâte jusqu\u0027à ce qu\u0027elle soit lisse et qu\u0027elle reprenne quand on la touche.",
+                           "Lightly flour your work surface and knead the dough until it\u0027s smooth and springs back when poked.",
+                           "Utilisez de l\u0027huile d\u0027olive pour napper la boule de pâte. Placez-le dans un bol graissé. Couvrir d\u0027une pellicule plastique et placer dans un endroit chaud à l\u0027abri des courants d\u0027air pendant environ une heure ou jusqu\u0027à ce que la pâte ait doublé de volume.",
+                           "Use olive oil to coat the dough ball. Place it in a greased bowl. Cover with plastic wrap and place in a warm draft-free place to rise for about an hour or until the dough has doubled in size.",
+                           "Préchauffer le four à 450F degrés. Lorsque la pâte a doublé, tassez-la et façonnez-la en un disque. Vous pouvez le pétrir plusieurs fois si la texture a besoin d\u0027être lissée ou être fantaisiste et le faire tourner dans les airs comme un professionnel.",
+                           "Preheat the oven to 450F degrees. When the dough has doubled, press it down and shape into a disk. You can knead It a few times If the texture needs some smoothing out or be fancy and twirl it in the air like a professional.",
+                           "Une fois votre pâte façonnée, vous pouvez la badigeonner d\u0027huile d\u0027olive, puis ajouter la sauce, le fromage et votre choix de garnitures.",
+                           "After your dough has been shaped you can brush with olive oil then add sauce, cheese and your choice of toppings.",
+                           "Cuire au four à 450F pendant environ 12-15 minutes ou jusqu\u0027à ce qu\u0027ils soient dorés.",
+                           "Bake at 450F for about 12-15 minutes or until golden."
+                       ],
+    "notes":  [
+
+              ],
+    "nutrition":  {
+                      "servingSize":  "1 slice",
+                      "calories":  "210",
+                      "totalFat":  "8",
+                      "saturatedFat":  "3",
+                      "cholesterol":  "16",
+                      "sodium":  "212",
+                      "totalCarbohydrate":  "30",
+                      "dietaryFiber":  "2",
+                      "sugars":  "3",
+                      "protein":  "2"
+                  },
+    "photoPaths":  [
+                       "images/14d20789-1967-432a-b9bc-0319599ffbd3_0.jpg"
+                   ]
+}

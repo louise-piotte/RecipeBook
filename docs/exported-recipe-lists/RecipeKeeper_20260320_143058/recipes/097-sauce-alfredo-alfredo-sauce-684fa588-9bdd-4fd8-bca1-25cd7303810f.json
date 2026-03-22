@@ -1,0 +1,63 @@
+{
+    "recipeId":  "684fa588-9bdd-4fd8-bca1-25cd7303810f",
+    "title":  "Sauce Alfredo/Alfredo Sauce",
+    "recipeShareId":  "",
+    "linkedRecipeId":  null,
+    "isFavourite":  "False",
+    "rating":  "3",
+    "course":  "Plat Principal/Main Dish",
+    "categories":  [
+                       "Pâte/Pasta",
+                       "Végétarien/Vegetarian"
+                   ],
+    "collections":  [
+
+                    ],
+    "sourceUrl":  "https://www.food.com/recipe/reduced-fat-alfredo-sauce-12365",
+    "yield":  "",
+    "prepTimeIso":  "PT0S",
+    "cookTimeIso":  "PT10M",
+    "ingredientLines":  [
+                            "1 tasse de lait écrémé - 1 cup skim milk",
+                            "1½ cuillères à soupe de beurre - 1½ tablespoons butter",
+                            "1½ cuillères à soupe de farine - 1½ tablespoons flour",
+                            "3 cuillères à soupe de parmesan - 3 tablespoons parmesan cheese",
+                            "½ cuillère à thé d\u0027ail haché - ½ teaspoon minced garlic",
+                            "poivre - pepper"
+                        ],
+    "directionLines":  [
+                           "Faire fondre le beurre dans une casserole sur la cuisinière à feu moyen.",
+                           "Melt butter in sauce pan on stove top with medium heat.",
+                           "Incorporer la farine petit à petit. Cela va créer une pâte jaune.",
+                           "Gradually whisk in flour. This will create a yellow paste.",
+                           "Ajouter graduellement le lait en fouettant jusqu\u0027à ce qu\u0027il soit incorporé et qu\u0027il n\u0027y ait plus de grumeaux. Continuer à fouetter jusqu\u0027à ce qu\u0027il soit chaud. Habituellement 3-5 minutes. Plus vous faites cuire la base (sans le fromage) plus la sauce sera épaisse.",
+                           "Gradually add milk, whisking until incorporated and no lumps are present. Continue to whisk until hot. Usually 3-5 minutes. The longer you cook the base (without the cheese) the thicker the sauce will be.",
+                           "Ajouter le parmesan lentement, en fouettant à nouveau jusqu\u0027à ce qu\u0027il soit incorporé.",
+                           "Add parmesan slowly, again whisking until incorporated.",
+                           "Ajouter l\u0027ail écrasé et le poivre. Cuire 2 minutes ou jusqu\u0027à ce que le fromage soit fondu.",
+                           "Add crushed garlic and pepper. Cook for 2 minutes or until cheese is melted."
+                       ],
+    "notes":  [
+                  "La clé ici est la patience, ajoutez tous les ingrédients progressivement.",
+                  "The key here is patience, add all ingredients gradually.",
+                  "C\u0027est une recette de base. Ajoutez des extras, comme des champignons et des fruits de mer.",
+                  "This is a base recipe. Add extras, like mushroom and seafood."
+              ],
+    "nutrition":  {
+                      "servingSize":  null,
+                      "calories":  null,
+                      "totalFat":  null,
+                      "saturatedFat":  null,
+                      "cholesterol":  null,
+                      "sodium":  null,
+                      "totalCarbohydrate":  null,
+                      "dietaryFiber":  null,
+                      "sugars":  null,
+                      "protein":  null
+                  },
+    "photoPaths":  [
+                       "images/684fa588-9bdd-4fd8-bca1-25cd7303810f_0.jpg",
+                       "images/684fa588-9bdd-4fd8-bca1-25cd7303810f_1.jpg",
+                       "images/684fa588-9bdd-4fd8-bca1-25cd7303810f_2.jpg"
+                   ]
+}
