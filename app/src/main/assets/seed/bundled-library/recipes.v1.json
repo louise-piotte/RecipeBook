@@ -11,7 +11,7 @@
       "fr": {
         "title": "Gruau au four \u00e0 la friteuse \u00e0 air",
         "description": "Gruau au four individuel, moelleux et l\u00e9ger, au go\u00fbt de banane, de cannelle et de chocolat.",
-        "instructions": "Pr\u00e9chauffer la friteuse \u00e0 air \u00e0 143\u00b0C/290\u00b0F et graisser un ramequin ou un petit plat de cuisson individuel.\nMettre les flocons d\u0027avoine, l\u0027\u0153uf, la banane, le lait, l\u0027extrait de vanille, la poudre \u00e0 p\u00e2te, la cannelle, le sirop d\u0027\u00e9rable et le beurre d\u0027arachide dans un m\u00e9langeur haute vitesse, puis m\u00e9langer jusqu\u0027\u00e0 consistance lisse pendant 20 sec \u00e0 30 sec.\nIncorporer les brisures de chocolat.\nVerser la p\u00e2te dans le ramequin graiss\u00e9 et garnir de tranches de banane, si d\u00e9sir\u00e9.\nCuire \u00e0 la friteuse \u00e0 air \u00e0 143\u00b0C/290\u00b0F pendant 12 min \u00e0 15 min au total; v\u00e9rifier \u00e0 7 min.\nSi le dessus dore trop vite, couvrir l\u00e9g\u00e8rement d\u0027un morceau de papier d\u0027aluminium.\nLe gruau est pr\u00eat quand le centre est cuit et que le dessus est l\u00e9g\u00e8rement dor\u00e9.",
+        "instructions": "Pr\u00e9chauffer la friteuse \u00e0 air \u00e0 143\u00b0C/290\u00b0F et graisser un ramequin ou un petit plat de cuisson individuel.\nMettre les flocons d'avoine, l'\u0153uf, la banane, le lait, l'extrait de vanille, la poudre \u00e0 p\u00e2te, la cannelle, le sirop d'\u00e9rable et le beurre d'arachide dans un m\u00e9langeur haute vitesse, puis m\u00e9langer jusqu'\u00e0 consistance lisse pendant 20 sec \u00e0 30 sec.\nIncorporer les brisures de chocolat.\nVerser la p\u00e2te dans le ramequin graiss\u00e9 et garnir de tranches de banane, si d\u00e9sir\u00e9.\nCuire \u00e0 la friteuse \u00e0 air \u00e0 143\u00b0C/290\u00b0F pendant 12 min \u00e0 15 min au total; v\u00e9rifier \u00e0 7 min.\nSi le dessus dore trop vite, couvrir l\u00e9g\u00e8rement d'un morceau de papier d'aluminium.\nLe gruau est pr\u00eat quand le centre est cuit et que le dessus est l\u00e9g\u00e8rement dor\u00e9.",
         "notes": "Un ramequin de 8 oz convient bien."
       },
       "en": {
@@ -76,7 +76,7 @@
         "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-7",
         "originalText": "1/2 tsp ground cinnamon",
         "ingredientName": "ground cinnamon",
-        "ingredientRefId": "ingredient-ref-cinnamon",
+        "ingredientRefId": "ingredient-ref-ground-cinnamon",
         "quantity": 0.5,
         "unit": "tsp"
       },
@@ -92,7 +92,7 @@
         "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-9",
         "originalText": "1 tbsp peanut butter",
         "ingredientName": "natural peanut butter",
-        "ingredientRefId": "ingredient-ref-natural-peanut-butter",
+        "ingredientRefId": "ingredient-ref-peanut-butter",
         "quantity": 1,
         "unit": "tbsp"
       },

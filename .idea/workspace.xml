@@ -24,28 +24,22 @@
     <list default="true" id="ec5f3f46-663c-40d4-997b-106decc4c520" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AGENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/seed/boite-de-noel.converted.library.v1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/db/Entities.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/db/Entities.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/db/RecipeBookDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/db/RecipeBookDatabase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/BundledIngredientCatalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/BundledIngredientCatalog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/BundledRecipeLibraryLoader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/BundledRecipeLibraryLoader.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/RecipeKeeperIngredientImport.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/RecipeKeeperIngredientImport.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/RecipeRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/RecipeRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/schema/SchemaDtos.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/schema/SchemaDtos.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/schema/SchemaMappers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/schema/SchemaMappers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/domain/model/LibraryModels.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/domain/model/LibraryModels.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/IngredientTagManagerScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/IngredientTagManagerScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeDetailScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeDetailScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeEditorScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeEditorScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/local/recipes/BundledIngredientCatalogTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/local/recipes/BundledIngredientCatalogTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/local/recipes/RecipeKeeperIngredientImportTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/local/recipes/RecipeKeeperIngredientImportTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/schema/BundledBoiteDeNoelPayloadTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/app/recipebook/ui/recipes/RecipeEditorScreenTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/ui/recipes/RecipeEditorScreenTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/001-air-fryer-baked-oats-0a8b29b8-faf0-4597-8514-e09335de6c03.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/_manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/_manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/recipes/boite-de-noel.converted.library.v1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/schemas/full-library.schema.v1.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/schemas/full-library.schema.v1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/ingredient-references.v1.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/ingredient-references.v1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/recipes.v1.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/recipes.v1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/boite de noel.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/boite de noel.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/bundled-library/collections.v1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/bundled-library/contextual-substitution-rules.v1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/bundled-library/ingredient-forms.v1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/bundled-library/ingredient-references.v1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/bundled-library/manifest.v1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/bundled-library/metadata.v1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/bundled-library/photos/0a8b29b8-faf0-4597-8514-e09335de6c03_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/bundled-library/recipes.v1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/bundled-library/settings.v1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/bundled-library/substitution-rules.v1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/bundled-library/tags.v1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/bundled-library/units.v1.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +49,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[LocalEmulator::path=C:\Users\Louise\.android\avd\Pixel_9a.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[PhysicalDevice::serial=59261JEBF06414]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />

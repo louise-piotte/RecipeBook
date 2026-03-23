@@ -1,859 +1,3064 @@
 [
-    {
-        "id":  "ingredient-ref-all-purpose-flour",
-        "nameFr":  "farine tout usage",
-        "nameEn":  "all-purpose flour",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-almond-extract",
-        "nameFr":  "extrait d\u0027amande",
-        "nameEn":  "almond extract",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-almond-flour",
-        "nameFr":  "farine d\u0027amande",
-        "nameEn":  "almond flour",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-almonds",
-        "nameFr":  "amandes",
-        "nameEn":  "almonds",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-baking-powder",
-        "nameFr":  "poudre \u00e0 p\u00e2te",
-        "nameEn":  "baking powder",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-baking-soda",
-        "nameFr":  "bicarbonate de soude",
-        "nameEn":  "baking soda",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-banana",
-        "nameFr":  "banane",
-        "nameEn":  "banana",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-23T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-bittersweet-chocolate",
-        "nameFr":  "chocolat mi-amer",
-        "nameEn":  "bittersweet chocolate",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-bread-flour",
-        "nameFr":  "farine \u00e0 pain",
-        "nameEn":  "bread flour",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-brown-sugar",
-        "nameFr":  "cassonade",
-        "nameEn":  "brown sugar",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-butter-cookies",
-        "nameFr":  "biscuits au beurre",
-        "nameEn":  "butter cookies",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-cinnamon",
-        "nameFr":  "cannelle",
-        "nameEn":  "cinnamon",
-        "aliasesFr":  [
-                          "cannelle moulue"
-                      ],
-        "aliasesEn":  [
-                          "ground cinnamon"
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-23T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-custard-powder",
-        "nameFr":  "poudre \u00e0 cr\u00e8me p\u00e2tissi\u00e8re",
-        "nameEn":  "custard powder",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-dark-chocolate",
-        "nameFr":  "chocolat noir",
-        "nameEn":  "dark chocolate",
-        "aliasesFr":  [
-                          "unsweetened chocolate",
-                          "70% dark chocolate",
-                          "dark chocolate chips"
-                      ],
-        "aliasesEn":  [
-                          "unsweetened chocolate",
-                          "70% dark chocolate",
-                          "dark chocolate chips"
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-dried-cranberries",
-        "nameFr":  "canneberges s\u00e9ch\u00e9es",
-        "nameEn":  "dried cranberries",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-dutch-process-cocoa-powder",
-        "nameFr":  "cacao trait\u00e9 \u00e0 la hollandaise",
-        "nameEn":  "Dutch-process cocoa powder",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-egg",
-        "nameFr":  "\u0153uf",
-        "nameEn":  "egg",
-        "aliasesFr":  [
-                          "eggs"
-                      ],
-        "aliasesEn":  [
-                          "eggs"
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-egg-white",
-        "nameFr":  "blanc d\u0027\u0153uf",
-        "nameEn":  "egg white",
-        "aliasesFr":  [
-                          "egg whites"
-                      ],
-        "aliasesEn":  [
-                          "egg whites"
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-egg-yolk",
-        "nameFr":  "jaune d\u0027\u0153uf",
-        "nameEn":  "egg yolk",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-flaky-sea-salt",
-        "nameFr":  "fleur de sel",
-        "nameEn":  "flaky sea salt",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-graham-cracker-crumbs",
-        "nameFr":  "chapelure de biscuits graham",
-        "nameEn":  "graham cracker crumbs",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-granulated-sugar",
-        "nameFr":  "sucre granul\u00e9",
-        "nameEn":  "granulated sugar",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-green-gel-food-coloring",
-        "nameFr":  "colorant alimentaire en gel vert",
-        "nameEn":  "green gel food coloring",
-        "aliasesFr":  [
-                          "drops green gel food coloring"
-                      ],
-        "aliasesEn":  [
-                          "drops green gel food coloring"
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-half-and-half",
-        "nameFr":  "demi-cr\u00e8me",
-        "nameEn":  "half-and-half",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-heavy-cream",
-        "nameFr":  "cr\u00e8me 35 %",
-        "nameEn":  "heavy cream",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-icing-sugar",
-        "nameFr":  "sucre \u00e0 glacer",
-        "nameEn":  "icing sugar",
-        "aliasesFr":  [
-                          "confectioners sugar",
-                          "powdered sugar"
-                      ],
-        "aliasesEn":  [
-                          "confectioners sugar",
-                          "powdered sugar"
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-maple-syrup",
-        "nameFr":  "sirop d\u0027\u00e9rable",
-        "nameEn":  "maple syrup",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-maraschino-cherries",
-        "nameFr":  "cerises au marasquin",
-        "nameEn":  "maraschino cherries",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-maraschino-cherry-juice",
-        "nameFr":  "jus de cerises au marasquin",
-        "nameEn":  "maraschino cherry juice",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-marshmallow-creme",
-        "nameFr":  "cr\u00e8me de guimauve",
-        "nameEn":  "marshmallow creme",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-medjool-dates",
-        "nameFr":  "dattes medjool",
-        "nameEn":  "Medjool dates",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-milk",
-        "nameFr":  "lait",
-        "nameEn":  "milk",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-23T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-milk-chocolate",
-        "nameFr":  "chocolat au lait",
-        "nameEn":  "milk chocolate",
-        "aliasesFr":  [
-                          "milk chocolate chips"
-                      ],
-        "aliasesEn":  [
-                          "milk chocolate chips"
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-natural-nut-butter",
-        "nameFr":  "beurre de noix naturel",
-        "nameEn":  "natural nut butter",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-natural-peanut-butter",
-        "nameFr":  "beurre d\u0027arachide naturel",
-        "nameEn":  "natural peanut butter",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-nuts",
-        "nameFr":  "noix",
-        "nameEn":  "nuts",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-pecans",
-        "nameFr":  "pacanes",
-        "nameEn":  "pecans",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-pine-nuts",
-        "nameFr":  "pignons",
-        "nameEn":  "pine nuts",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-pistachio-crumbs",
-        "nameFr":  "miettes de pistaches",
-        "nameEn":  "pistachio crumbs",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-raisins",
-        "nameFr":  "raisins secs",
-        "nameEn":  "raisins",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-red-food-coloring",
-        "nameFr":  "colorant alimentaire rouge",
-        "nameEn":  "red food coloring",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-rolled-oats",
-        "nameFr":  "flocons d\u0027avoine",
-        "nameEn":  "rolled oats",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-                          "old-fashioned rolled oats",
-                          "old fashioned rolled oats"
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-23T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-salt",
-        "nameFr":  "sel",
-        "nameEn":  "salt",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-semisweet-chocolate",
-        "nameFr":  "chocolat mi-sucr\u00e9",
-        "nameEn":  "semisweet chocolate",
-        "aliasesFr":  [
-                          "semisweet baking chocolate",
-                          "semisweet chocolate chips"
-                      ],
-        "aliasesEn":  [
-                          "semisweet baking chocolate",
-                          "semisweet chocolate chips"
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-shredded-coconut",
-        "nameFr":  "noix de coco r\u00e2p\u00e9e",
-        "nameEn":  "shredded coconut",
-        "aliasesFr":  [
-                          "flaked coconut"
-                      ],
-        "aliasesEn":  [
-                          "flaked coconut"
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-sugar",
-        "nameFr":  "sucre",
-        "nameEn":  "sugar",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-sweetened-condensed-milk",
-        "nameFr":  "lait condens\u00e9 sucr\u00e9",
-        "nameEn":  "sweetened condensed milk",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-unsalted-butter",
-        "nameFr":  "beurre non sal\u00e9",
-        "nameEn":  "unsalted butter",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-unsweetened-cocoa-powder",
-        "nameFr":  "cacao non sucr\u00e9",
-        "nameEn":  "unsweetened cocoa powder",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-vanilla",
-        "nameFr":  "vanille",
-        "nameEn":  "vanilla",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-vanilla-extract",
-        "nameFr":  "extrait de vanille",
-        "nameEn":  "vanilla extract",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-white-chocolate",
-        "nameFr":  "chocolat blanc",
-        "nameEn":  "white chocolate",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    },
-    {
-        "id":  "ingredient-ref-white-marshmallows",
-        "nameFr":  "guimauves blanches",
-        "nameEn":  "white marshmallows",
-        "aliasesFr":  [
-
-                      ],
-        "aliasesEn":  [
-
-                      ],
-        "defaultDensity":  null,
-        "unitMappings":  [
-
-                         ],
-        "updatedAt":  "2026-03-16T00:00:00Z"
-    }
+  {
+    "id": "ingredient-ref-all-purpose-flour",
+    "nameFr": "farine tout usage",
+    "nameEn": "all-purpose flour",
+    "aliasesFr": [
+      "farine",
+      "farine blanche",
+      "farine ordinaire",
+      "farine tout usage non blanchie"
+    ],
+    "aliasesEn": [
+      "ap flour",
+      "plain flour"
+    ],
+    "defaultDensity": 0.53,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 120
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-allspice",
+    "nameFr": "quatre-\u00e9pices",
+    "nameEn": "allspice",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-almond-butter",
+    "nameFr": "beurre d'amande",
+    "nameEn": "almond butter",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 1,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 256
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-almond-extract",
+    "nameFr": "extrait d'amande",
+    "nameEn": "almond extract",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 0.93,
+    "unitMappings": [
+      {
+        "fromUnit": "tbsp",
+        "toUnit": "g",
+        "factor": 12.5
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-almond-flour",
+    "nameFr": "farine d'amande",
+    "nameEn": "almond flour",
+    "aliasesFr": [
+      "poudre d'amande"
+    ],
+    "aliasesEn": [
+      "ground almonds"
+    ],
+    "defaultDensity": 0.4,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 96
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-almond-paste",
+    "nameFr": "p\u00e2te d'amande",
+    "nameEn": "almond paste",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-almonds",
+    "nameFr": "amandes",
+    "nameEn": "almonds",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "whole almonds"
+    ],
+    "defaultDensity": 0.6,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 143
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-arrowroot",
+    "nameFr": "arrow-root",
+    "nameEn": "arrowroot",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-asparagus",
+    "nameFr": "asperges",
+    "nameEn": "asparagus",
+    "aliasesFr": [
+      "botte d'asperges"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-azuki-beans",
+    "nameFr": "haricot azuki sec",
+    "nameEn": "azuki beans",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-baby-spinach",
+    "nameFr": "jeunes \u00e9pinards",
+    "nameEn": "baby spinach",
+    "aliasesFr": [
+      "\u00e9pinards"
+    ],
+    "aliasesEn": [
+      "spinach"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-baking-powder",
+    "nameFr": "poudre \u00e0 p\u00e2te",
+    "nameEn": "baking powder",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 0.96,
+    "unitMappings": [
+      {
+        "fromUnit": "tbsp",
+        "toUnit": "g",
+        "factor": 14
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-baking-soda",
+    "nameFr": "bicarbonate de soude",
+    "nameEn": "baking soda",
+    "aliasesFr": [
+      "petite vache"
+    ],
+    "aliasesEn": [
+      "bicarbonate of soda"
+    ],
+    "defaultDensity": 1.04,
+    "unitMappings": [
+      {
+        "fromUnit": "tbsp",
+        "toUnit": "g",
+        "factor": 13.8
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-banana",
+    "nameFr": "banane",
+    "nameEn": "banana",
+    "aliasesFr": [
+      "bananes"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-basil",
+    "nameFr": "basilic",
+    "nameEn": "basil",
+    "aliasesFr": [
+      "feuilles de basilic frais"
+    ],
+    "aliasesEn": [
+      "basil leaves"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-bbq-sauce",
+    "nameFr": "sauce bbq",
+    "nameEn": "BBQ sauce",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 1.1,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 260
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-beef-stock",
+    "nameFr": "bouillon de b\u0153uf",
+    "nameEn": "beef stock",
+    "aliasesFr": [
+      "bouillon de boeuf",
+      "canette de bouillon de b\u0153uf"
+    ],
+    "aliasesEn": [
+      "beef broth"
+    ],
+    "defaultDensity": 1.01,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 240
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-bittersweet-chocolate",
+    "nameFr": "chocolat mi-amer",
+    "nameEn": "bittersweet chocolate",
+    "aliasesFr": [
+      "chocolat aigre-doux",
+      "p\u00e9pites de chocolat aigre-doux"
+    ],
+    "aliasesEn": [
+      "bittersweet chocolate chips"
+    ],
+    "defaultDensity": 0.55,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 170
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-black-pepper",
+    "nameFr": "poivre noir",
+    "nameEn": "black pepper",
+    "aliasesFr": [
+      "poivre",
+      "poivre du moulin"
+    ],
+    "aliasesEn": [
+      "ground black pepper",
+      "ground pepper",
+      "pepper"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-blueberries",
+    "nameFr": "bleuets",
+    "nameEn": "blueberries",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-bone-in-pork-shoulder",
+    "nameFr": "\u00e9paule de porc enti\u00e8re d\u00e9soss\u00e9e ou avec os",
+    "nameEn": "bone-in pork shoulder",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-bread-and-butter-pickle",
+    "nameFr": "cornichon au pain et au beurre",
+    "nameEn": "bread and butter pickle",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-bread-flour",
+    "nameFr": "farine \u00e0 pain",
+    "nameEn": "bread flour",
+    "aliasesFr": [
+      "farine pour pain"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": 0.54,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 127
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-breadcrumbs",
+    "nameFr": "chapelure",
+    "nameEn": "bread crumbs",
+    "aliasesFr": [
+      "chapelure panko",
+      "panko"
+    ],
+    "aliasesEn": [
+      "breadcrumbs",
+      "dried bread crumbs",
+      "panko",
+      "panko breadcrumbs",
+      "panko bread crumbs"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-breakfast-sausage",
+    "nameFr": "saucisse \u00e0 d\u00e9jeuner",
+    "nameEn": "breakfast sausage",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-brioche-bread",
+    "nameFr": "pain brioche",
+    "nameEn": "brioche bread",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-broccoli",
+    "nameFr": "brocoli",
+    "nameEn": "broccoli",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-broth-concentrate",
+    "nameFr": "concentr\u00e9 de bouillon",
+    "nameEn": "broth concentrate",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-brown-sugar",
+    "nameFr": "cassonade",
+    "nameEn": "brown sugar",
+    "aliasesFr": [
+      "cassonade bien tass\u00e9e",
+      "cassonade claire",
+      "cassonade claire bien tass\u00e9e",
+      "sucre brun clair",
+      "sucre brun tass\u00e9"
+    ],
+    "aliasesEn": [
+      "dark brown sugar",
+      "light brown sugar"
+    ],
+    "defaultDensity": 0.72,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 220
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-butter-cookies",
+    "nameFr": "biscuits petits-beurre",
+    "nameEn": "butter cookies",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-buttermilk",
+    "nameFr": "babeurre",
+    "nameEn": "buttermilk",
+    "aliasesFr": [
+      "lait de beurre"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": 1.03,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 243
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cake-flour",
+    "nameFr": "farine \u00e0 g\u00e2teau",
+    "nameEn": "cake flour",
+    "aliasesFr": [
+      "farine \u00e0 p\u00e2tisserie"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": 0.45,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 113
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-calamari",
+    "nameFr": "calamar",
+    "nameEn": "calamari",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-carrot",
+    "nameFr": "carotte",
+    "nameEn": "carrot",
+    "aliasesFr": [
+      "petites carottes"
+    ],
+    "aliasesEn": [
+      "baby carrots"
+    ],
+    "defaultDensity": 0.54,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 128
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cayenne-pepper",
+    "nameFr": "poivre de cayenne",
+    "nameEn": "cayenne pepper",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-celery",
+    "nameFr": "c\u00e9leri",
+    "nameEn": "celery",
+    "aliasesFr": [
+      "branche de c\u00e9leri"
+    ],
+    "aliasesEn": [
+      "celery stalk"
+    ],
+    "defaultDensity": 0.43,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 101
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cerises-au-marasquin",
+    "nameFr": "cerises au marasquin",
+    "nameEn": "marasquino cherries",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cheddar-cheese",
+    "nameFr": "fromage cheddar",
+    "nameEn": "cheddar cheese",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 0.47,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 113
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cherries",
+    "nameFr": "cerises",
+    "nameEn": "cherries",
+    "aliasesFr": [
+      "cerises d\u00e9noyaut\u00e9es"
+    ],
+    "aliasesEn": [
+      "fresh cherries",
+      "frozen cherries",
+      "pitted cherries"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-chia-seeds",
+    "nameEn": "chia seeds",
+    "nameFr": "graines de chia",
+    "aliasesEn": [],
+    "aliasesFr": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-chicken-breast",
+    "nameFr": "poitrine de poulet",
+    "nameEn": "chicken breast",
+    "aliasesFr": [
+      "poitrines de poulet"
+    ],
+    "aliasesEn": [
+      "boneless skinless chicken breast",
+      "chicken breasts"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-chili-powder",
+    "nameFr": "poudre de chili",
+    "nameEn": "chili powder",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-chipotle-in-adobo",
+    "nameFr": "chipotle en adobo",
+    "nameEn": "chipotle in adobo",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-chocolate-shavings",
+    "nameFr": "copeaux de chocolat",
+    "nameEn": "chocolate shavings",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cilantro",
+    "nameFr": "coriandre fra\u00eeche",
+    "nameEn": "cilantro",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-coconut",
+    "nameFr": "noix de coco",
+    "nameEn": "coconut",
+    "aliasesFr": [
+      "chair de noix de coco"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-coconut-milk",
+    "nameFr": "lait de coco",
+    "nameEn": "coconut milk",
+    "aliasesFr": [
+      "lait de coco en canne",
+      "lait de coco en conserve"
+    ],
+    "aliasesEn": [
+      "canned coconut milk"
+    ],
+    "defaultDensity": 0.97,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 230
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-coconut-oil",
+    "nameFr": "huile de coco",
+    "nameEn": "coconut oil",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 0.92,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 218
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-coffee",
+    "nameFr": "caf\u00e9",
+    "nameEn": "coffee",
+    "aliasesFr": [
+      "caf\u00e9 fort"
+    ],
+    "aliasesEn": [
+      "regular coffee",
+      "strong coffee"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cooking-cream",
+    "nameFr": "cr\u00e8me \u00e0 cuisson 15%",
+    "nameEn": "15% cooking cream",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-coriander",
+    "nameFr": "coriandre moulue",
+    "nameEn": "coriander",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-coriander-seed",
+    "nameFr": "graines de coriandre",
+    "nameEn": "coriander seed",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-corn-kernels",
+    "nameFr": "ma\u00efs",
+    "nameEn": "corn kernels",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-corn-on-the-cob",
+    "nameFr": "ma\u00efs en \u00e9pis",
+    "nameEn": "corn on the cob",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-corn-syrup",
+    "nameFr": "sirop de mais",
+    "nameEn": "corn syrup",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "glucose syrup"
+    ],
+    "defaultDensity": 1.48,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 328
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cornstarch",
+    "nameFr": "f\u00e9cule de ma\u00efs",
+    "nameEn": "cornstarch",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "corn flour"
+    ],
+    "defaultDensity": 0.54,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 128
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cranberries",
+    "nameFr": "canneberges",
+    "nameEn": "cranberries",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cream-cheese",
+    "nameFr": "fromage \u00e0 la cr\u00e8me",
+    "nameEn": "cream cheese",
+    "aliasesFr": [
+      "fromage \u00e0 la cr\u00e8me entier en brique"
+    ],
+    "aliasesEn": [
+      "full-fat brick cream cheese"
+    ],
+    "defaultDensity": 0.96,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 225
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cream-of-coconut",
+    "nameFr": "cr\u00e8me de noix de coco",
+    "nameEn": "cream of coconut",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cream-of-tartar",
+    "nameFr": "creme de tartre",
+    "nameEn": "cream of tartar",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-creme-fraiche",
+    "nameEn": "cr\u00e8me fra\u00eeche",
+    "nameFr": "cr\u00e8me fra\u00eeche",
+    "aliasesEn": [],
+    "aliasesFr": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-cucumber",
+    "nameFr": "concombre",
+    "nameEn": "cucumber",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-curry-paste",
+    "nameFr": "p\u00e2te de cari",
+    "nameEn": "curry paste",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-curry-powder",
+    "nameFr": "poudre de cari",
+    "nameEn": "curry powder",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-custard-powder",
+    "nameFr": "poudre \u00e0 cr\u00e8me p\u00e2tissi\u00e8re",
+    "nameEn": "custard powder",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-dark-chocolate",
+    "nameFr": "chocolat 70%",
+    "nameEn": "dark chocolate",
+    "aliasesFr": [
+      "chocolat noir"
+    ],
+    "aliasesEn": [
+      "dark chocolate chips"
+    ],
+    "defaultDensity": 0.55,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 170
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-dijon-mustard",
+    "nameFr": "moutarde de Dijon",
+    "nameEn": "Dijon mustard",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 1,
+    "unitMappings": [
+      {
+        "fromUnit": "tbsp",
+        "toUnit": "g",
+        "factor": 15
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-dill",
+    "nameFr": "aneth",
+    "nameEn": "dill",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-dried-basil",
+    "nameFr": "basilic s\u00e9ch\u00e9",
+    "nameEn": "dried basil",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-dried-cranberries",
+    "nameFr": "canneberges s\u00e9ch\u00e9es",
+    "nameEn": "dried cranberries",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "sweetened dried cranberries"
+    ],
+    "defaultDensity": 0.58,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 120
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-dried-oregano",
+    "nameFr": "origan s\u00e9ch\u00e9",
+    "nameEn": "dried oregano",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "oregano"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-dried-parsley",
+    "nameFr": "persil s\u00e9ch\u00e9",
+    "nameEn": "dried parsley",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "dried parsley leaves"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-dried-rosemary",
+    "nameFr": "romarin s\u00e9ch\u00e9",
+    "nameEn": "dried rosemary",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "dried rosemary leaves"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-dried-thyme",
+    "nameFr": "thym seche",
+    "nameEn": "dried thyme",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-dried-thyme-leaves",
+    "nameFr": "feuilles de thym s\u00e9ch\u00e9es",
+    "nameEn": "dried thyme leaves",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-dutch-process-cocoa-powder",
+    "nameFr": "cacao trait\u00e9 \u00e0 la hollandaise",
+    "nameEn": "dutch-process cocoa powder",
+    "aliasesFr": [
+      "cacao hollandais",
+      "poudre de cacao hollandaise"
+    ],
+    "aliasesEn": [
+      "dutch process cocoa powder"
+    ],
+    "defaultDensity": 0.42,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 85
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-egg",
+    "nameFr": "\u0153uf",
+    "nameEn": "egg",
+    "aliasesFr": [
+      "gros \u0153uf",
+      "gros oeufs",
+      "gros \u0153ufs",
+      "oeuf",
+      "\u0153uf entier",
+      "\u0153ufs entiers",
+      "\u0153uf large",
+      "oeufs",
+      "\u0153ufs",
+      "\u0153ufs moyens"
+    ],
+    "aliasesEn": [
+      "eggs"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [
+      {
+        "fromUnit": "large egg",
+        "toUnit": "g",
+        "factor": 50
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-egg-white",
+    "nameFr": "blanc d'\u0153uf",
+    "nameEn": "egg white",
+    "aliasesFr": [
+      "blanc d'oeuf",
+      "gros blanc d'oeuf",
+      "gros blancs d'oeufs",
+      "gros blancs d'\u0153ufs"
+    ],
+    "aliasesEn": [
+      "egg whites"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [
+      {
+        "fromUnit": "large egg white",
+        "toUnit": "g",
+        "factor": 30
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-egg-yolk",
+    "nameFr": "jaune d'\u0153uf",
+    "nameEn": "egg yolk",
+    "aliasesFr": [
+      "gros jaune d'oeuf",
+      "gros jaunes d'\u0153ufs",
+      "jaune d'oeuf",
+      "jaunes d'\u0153ufs"
+    ],
+    "aliasesEn": [
+      "egg yolks"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [
+      {
+        "fromUnit": "large egg yolk",
+        "toUnit": "g",
+        "factor": 18
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-english-muffin",
+    "nameFr": "muffins anglais",
+    "nameEn": "english muffin",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-evaporated-milk",
+    "nameFr": "lait \u00e9vapor\u00e9",
+    "nameEn": "evaporated milk",
+    "aliasesFr": [
+      "evaporated milk"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": 1.06,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 252
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-expresso-powder",
+    "nameFr": "poudre espresso",
+    "nameEn": "espresso powder",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-fish-sauce",
+    "nameFr": "sauce de poisson",
+    "nameEn": "fish sauce",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 1.18,
+    "unitMappings": [
+      {
+        "fromUnit": "tbsp",
+        "toUnit": "g",
+        "factor": 18
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-food-coloring",
+    "nameFr": "colorant alimentaire",
+    "nameEn": "food coloring",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-frangelico-liqueur",
+    "nameFr": "liqueur Frangelico",
+    "nameEn": "frangelico liqueur",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-freeze-dried-raspberries",
+    "nameFr": "framboises lyophilis\u00e9es",
+    "nameEn": "freeze dried raspberries",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-freeze-dried-strawberries",
+    "nameFr": "fraises lyophilis\u00e9es",
+    "nameEn": "freeze-dried strawberries",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-garam-masala",
+    "nameFr": "garam masala",
+    "nameEn": "garam masala",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-garlic",
+    "nameFr": "ail",
+    "nameEn": "garlic",
+    "aliasesFr": [
+      "gousse d'ail"
+    ],
+    "aliasesEn": [
+      "garlic cloves"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [
+      {
+        "fromUnit": "clove",
+        "toUnit": "g",
+        "factor": 3
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-garlic-powder",
+    "nameFr": "poudre d'ail",
+    "nameEn": "garlic powder",
+    "aliasesFr": [
+      "ail en poudre"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-garlic-salt",
+    "nameFr": "sel d'ail",
+    "nameEn": "garlic salt",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-gelatin",
+    "nameFr": "g\u00e9latine",
+    "nameEn": "gelatin",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-ginger",
+    "nameFr": "gingembre",
+    "nameEn": "ginger",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-graham-cracker-crumbs",
+    "nameFr": "chapelure de biscuits graham",
+    "nameEn": "graham cracker crumbs",
+    "aliasesFr": [
+      "chapelure de gaufrettes Graham"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": 0.51,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 120
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-granulated-sugar",
+    "nameFr": "sucre granul\u00e9",
+    "nameEn": "granulated sugar",
+    "aliasesFr": [
+      "sucre",
+      "sucre blanc",
+      "sucre blanc granul\u00e9"
+    ],
+    "aliasesEn": [
+      "sugar",
+      "table sugar",
+      "white sugar"
+    ],
+    "defaultDensity": 0.85,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 200
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-green-food-coloring",
+    "nameEn": "green food coloring",
+    "nameFr": "colorant alimentaire vert",
+    "aliasesEn": [
+      "gel green food coloring"
+    ],
+    "aliasesFr": [
+      "colorant alimentaire vert en gel"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-green-onions",
+    "nameFr": "oignons verts",
+    "nameEn": "green onions",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "scallions"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-ground-beef",
+    "nameFr": "b\u0153uf hach\u00e9",
+    "nameEn": "ground beef",
+    "aliasesFr": [
+      "boeuf hach\u00e9",
+      "b\u0153uf"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-ground-cardamom",
+    "nameFr": "cardamome moulue",
+    "nameEn": "ground cardamom",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "cardamom"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-ground-cinnamon",
+    "nameFr": "cannelle moulue",
+    "nameEn": "ground cinnamon",
+    "aliasesFr": [
+      "cannelle",
+      "ground cinnamon"
+    ],
+    "aliasesEn": [
+      "cinnamon"
+    ],
+    "defaultDensity": 0.53,
+    "unitMappings": [
+      {
+        "fromUnit": "tbsp",
+        "toUnit": "g",
+        "factor": 7.8
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-ground-cloves",
+    "nameFr": "girofle moulue",
+    "nameEn": "ground cloves",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "cloves"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-ground-cumin",
+    "nameFr": "cumin moulu",
+    "nameEn": "ground cumin",
+    "aliasesFr": [
+      "ground cumin"
+    ],
+    "aliasesEn": [
+      "cumin"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-ground-dried-candy-cap-mushrooms",
+    "nameFr": "lactaire s\u00e9ch\u00e9s et moulu",
+    "nameEn": "ground dried candy cap mushrooms",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-ground-ginger",
+    "nameFr": "gingembre moulu",
+    "nameEn": "ground ginger",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-ground-turkey",
+    "nameFr": "dinde hach\u00e9e",
+    "nameEn": "ground turkey",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-ground-turmeric",
+    "nameFr": "curcuma moulu",
+    "nameEn": "ground turmeric",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-gruyere",
+    "nameFr": "gruy\u00e8re",
+    "nameEn": "gruy\u00e8re",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "gruyere",
+      "gruyere cheese"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-half-and-half",
+    "nameFr": "cr\u00e8me moiti\u00e9-moiti\u00e9",
+    "nameEn": "half-and-half",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "coffee cream",
+      "half and half"
+    ],
+    "defaultDensity": 1.02,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 242
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-ham",
+    "nameFr": "jambon",
+    "nameEn": "ham",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-hazelnut-butter",
+    "nameFr": "beurre de noisettes",
+    "nameEn": "hazelnut butter",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-hazelnuts",
+    "nameFr": "noisettes",
+    "nameEn": "hazelnuts",
+    "aliasesFr": [
+      "Hazelnuts"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-heavy-cream",
+    "nameFr": "cr\u00e8me 35 %",
+    "nameEn": "heavy cream",
+    "aliasesFr": [
+      "cr\u00e8me \u00e0 fouetter"
+    ],
+    "aliasesEn": [
+      "heavy whipping cream",
+      "whipping cream"
+    ],
+    "defaultDensity": 0.99,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 238
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-herbes-de-provence",
+    "nameFr": "herbes de Provence",
+    "nameEn": "herbes de Provence",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-hondashi",
+    "nameFr": "hondashi",
+    "nameEn": "hondashi",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-honey",
+    "nameFr": "miel",
+    "nameEn": "honey",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 1.42,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 340
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-icing-sugar",
+    "nameFr": "sucre \u00e0 glacer",
+    "nameEn": "icing sugar",
+    "aliasesFr": [
+      "sucre en poudre",
+      "sucre glace"
+    ],
+    "aliasesEn": [
+      "confectioners' sugar",
+      "confectionery sugar",
+      "powdered sugar"
+    ],
+    "defaultDensity": 0.48,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 120
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-jalapeno-pepper",
+    "nameFr": "piment jalape\u00f1o",
+    "nameEn": "jalapeno pepper",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-jumbo-lump-crab-meat",
+    "nameFr": "chair de crabe en gros morceaux",
+    "nameEn": "jumbo lump crab meat",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "crab meat"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-jus-du-pot-de-cerises-au-marasquin",
+    "nameFr": "jus du pot de cerises au marasquin",
+    "nameEn": "marasquino cherry juice",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-kale",
+    "nameFr": "chou fris\u00c3\u00a9",
+    "nameEn": "kale",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-ketchup",
+    "nameFr": "ketchup",
+    "nameEn": "ketchup",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 1.15,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 272
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-kidney-beans",
+    "nameFr": "haricots rouges",
+    "nameEn": "kidney beans",
+    "aliasesFr": [
+      "kidney beans"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-leek",
+    "nameFr": "poireau",
+    "nameEn": "leek",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-lemon",
+    "nameFr": "citron",
+    "nameEn": "lemon",
+    "aliasesFr": [
+      "lemon"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-lemon-juice",
+    "nameFr": "jus de citron",
+    "nameEn": "lemon juice",
+    "aliasesFr": [
+      "jus de citron frais",
+      "lemon juice"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": 1.03,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 244
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-lemon-zest",
+    "nameFr": "zeste de citron",
+    "nameEn": "lemon zest",
+    "aliasesFr": [
+      "lemon zest"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-lime-juice",
+    "nameFr": "jus de lime",
+    "nameEn": "lime juice",
+    "aliasesFr": [
+      "jus de citron vert"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": 1.03,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 244
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-liquid-smoke",
+    "nameFr": "fum\u00e9e liquide",
+    "nameEn": "liquid smoke",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-low-salt-chicken-broth",
+    "nameFr": "bouillon de poulet",
+    "nameEn": "chicken broth",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-manchego-cheese",
+    "nameFr": "fromage manchego",
+    "nameEn": "manchego cheese",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-mangos",
+    "nameFr": "mangues",
+    "nameEn": "mangos",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-maple-syrup",
+    "nameFr": "sirop d'\u00e9rable",
+    "nameEn": "maple syrup",
+    "aliasesFr": [
+      "maple syrup"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": 1.33,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 315
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-margarine",
+    "nameFr": "margarine",
+    "nameEn": "margarine",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 0.96,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 227
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-marinara-sauce",
+    "nameFr": "sauce marinara",
+    "nameEn": "marinara sauce",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-marshmallow-creme",
+    "nameFr": "cr\u00e8me de guimauve",
+    "nameEn": "marshmallow creme",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-marshmallows",
+    "nameFr": "guimauves",
+    "nameEn": "marshmallows",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-marzipan-box",
+    "nameFr": "massepain",
+    "nameEn": "marzipan",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-mascarpone",
+    "nameFr": "fromage mascarpone",
+    "nameEn": "mascarpone",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-mayo",
+    "nameFr": "mayonnaise",
+    "nameEn": "mayonnaise",
+    "aliasesFr": [
+      "mayo"
+    ],
+    "aliasesEn": [
+      "mayo"
+    ],
+    "defaultDensity": 0.95,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 220
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-medjool-dates",
+    "nameFr": "dattes medjool",
+    "nameEn": "medjool dates",
+    "aliasesFr": [
+      "dattes"
+    ],
+    "aliasesEn": [
+      "dates"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [
+      {
+        "fromUnit": "date",
+        "toUnit": "g",
+        "factor": 24
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-milk",
+    "nameFr": "lait",
+    "nameEn": "milk",
+    "aliasesFr": [
+      "lait 2%",
+      "lait \u00e9cr\u00e9m\u00e9",
+      "lait entier"
+    ],
+    "aliasesEn": [
+      "whole milk"
+    ],
+    "defaultDensity": 1.03,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 244
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-mint",
+    "nameFr": "menthe",
+    "nameEn": "mint",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-mirin",
+    "nameFr": "mirin",
+    "nameEn": "mirin",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-mozzarella",
+    "nameEn": "mozzarella",
+    "nameFr": "mozzarella",
+    "aliasesEn": [],
+    "aliasesFr": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-mushroom",
+    "nameFr": "champignons",
+    "nameEn": "mushroom",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-mustard-seeds",
+    "nameFr": "graines de moutarde",
+    "nameEn": "mustard seeds",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-nanaimo-frosting",
+    "nameFr": "gla\u00e7age Nanaimo",
+    "nameEn": "nanaimo frosting",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-nutella",
+    "nameFr": "nutella",
+    "nameEn": "nutella",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-nutmeg",
+    "nameFr": "muscade",
+    "nameEn": "nutmeg",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "ground nutmeg"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-nuts",
+    "nameFr": "noix",
+    "nameEn": "nuts",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-old-bay-seasoning",
+    "nameFr": "cuill\u00e8re \u00e0 th\u00e9 d'assaisonnement Old Bay",
+    "nameEn": "old bay seasoning",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-olive-oil",
+    "nameFr": "huile d'olive",
+    "nameEn": "olive oil",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 0.91,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 216
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-onion",
+    "nameFr": "oignon",
+    "nameEn": "onion",
+    "aliasesFr": [
+      "gros oignon",
+      "onion",
+      "yellow onion"
+    ],
+    "aliasesEn": [
+      "yellow onion"
+    ],
+    "defaultDensity": 0.64,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 150
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-onion-powder",
+    "nameFr": "poudre d'oignon",
+    "nameEn": "onion powder",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-parmesan-cheese",
+    "nameFr": "fromage parmesan",
+    "nameEn": "parmesan cheese",
+    "aliasesFr": [
+      "parmesan"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": 0.42,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 100
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-parsley",
+    "nameFr": "persil",
+    "nameEn": "parsley",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-peanut-butter",
+    "nameFr": "beurre d'arachide",
+    "nameEn": "peanut butter",
+    "aliasesFr": [
+      "beurre d'arachide cr\u00e9meux",
+      "beurre d'arachide naturel"
+    ],
+    "aliasesEn": [
+      "natural peanut butter",
+      "smooth peanut butter"
+    ],
+    "defaultDensity": 1,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 256
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-peanuts",
+    "nameFr": "arachides",
+    "nameEn": "peanuts",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-pecans",
+    "nameFr": "pacanes",
+    "nameEn": "pecans",
+    "aliasesFr": [
+      "pacanes en morceaux"
+    ],
+    "aliasesEn": [
+      "pecan halves"
+    ],
+    "defaultDensity": 0.52,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 110
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-pie-crust",
+    "nameFr": "p\u00e2te \u00e0 tarte",
+    "nameEn": "pie crust",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-pine-nuts",
+    "nameFr": "noix de pin",
+    "nameEn": "pine nuts",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-pineapple",
+    "nameFr": "ananas",
+    "nameEn": "pineapple",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-pinto-beans",
+    "nameFr": "haricots pinto",
+    "nameEn": "pinto beans",
+    "aliasesFr": [
+      "of pinto beans"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-pistachio-paste",
+    "nameFr": "p\u00e2te de pistache",
+    "nameEn": "pistachio paste",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-pistachios",
+    "nameFr": "pistaches",
+    "nameEn": "pistachios",
+    "aliasesFr": [
+      "miettes de pistaches sal\u00e9es ou non sal\u00e9es"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-plain-yogurt",
+    "nameFr": "yogourt nature",
+    "nameEn": "plain yogurt",
+    "aliasesFr": [
+      "yaourt grec nature",
+      "yogourt grec nature"
+    ],
+    "aliasesEn": [
+      "plain yoghurt"
+    ],
+    "defaultDensity": 1.04,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 245
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-pork-loin-chops",
+    "nameFr": "c\u00f4telettes de longe de porc d\u00e9soss\u00e9es",
+    "nameEn": "pork loin chops",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-potato",
+    "nameFr": "pomme de terre",
+    "nameEn": "potato",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "russet potato"
+    ],
+    "defaultDensity": 0.76,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 173
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-pumpkin-spice",
+    "nameFr": "'\u00e9pices tarte \u00e0 la citrouille",
+    "nameEn": "pumpkin spice",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-quick-oats",
+    "nameFr": "flocons d'avoine rapides",
+    "nameEn": "quick oats",
+    "aliasesFr": [
+      "avoine rapide",
+      "flocons d'avoine \u00e0 cuisson rapide"
+    ],
+    "aliasesEn": [
+      "instant oats",
+      "quick-cooking oats"
+    ],
+    "defaultDensity": 0.36,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 85
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-quinoa",
+    "nameFr": "quinoa cuit",
+    "nameEn": "quinoa",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-rack-of-ribs",
+    "nameFr": "carr\u00e9 de c\u00f4tes lev\u00e9es",
+    "nameEn": "rack of ribs",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-raisins",
+    "nameFr": "raisins secs",
+    "nameEn": "raisins",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 0.68,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 145
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-raspberries",
+    "nameFr": "framboises",
+    "nameEn": "raspberries",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-raspberry-jam",
+    "nameFr": "confiture de framboises",
+    "nameEn": "raspberry jam",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-red-chili-flakes",
+    "nameFr": "flocons de piment rouge",
+    "nameEn": "red chili flakes",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-red-curry-paste",
+    "nameFr": "p\u00e2te de cari rouge",
+    "nameEn": "red curry paste",
+    "aliasesFr": [
+      "p\u00e2te de cari rouge du commerce"
+    ],
+    "aliasesEn": [
+      "store-bought red curry paste"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-red-food-coloring",
+    "nameFr": "colorant alimentaire rouge",
+    "nameEn": "red food coloring",
+    "aliasesFr": [
+      "1 \u00e0 2 gouttes de colorant alimentaire rouge ou rose",
+      "colorant alimentaire rouge en gel"
+    ],
+    "aliasesEn": [
+      "gel red food coloring",
+      "red"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-rice",
+    "nameFr": "riz cuit",
+    "nameEn": "cooked rice",
+    "aliasesFr": [
+      "riz"
+    ],
+    "aliasesEn": [
+      "rice"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-rice-cereal",
+    "nameFr": "c\u00e9r\u00e9ales de riz",
+    "nameEn": "rice cereal",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-rolled-oats",
+    "nameFr": "flocons d'avoine",
+    "nameEn": "rolled oats",
+    "aliasesFr": [
+      "gros flocons d'avoine"
+    ],
+    "aliasesEn": [
+      "old-fashioned oats"
+    ],
+    "defaultDensity": 0.34,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 80
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-rosemary-sprigs",
+    "nameFr": "romarin frais",
+    "nameEn": "rosemary sprigs",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-salmon-fillets-without-skin",
+    "nameFr": "filet de saumon",
+    "nameEn": "salmon fillets",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-salt",
+    "nameFr": "sel",
+    "nameEn": "salt",
+    "aliasesFr": [
+      "sel fin",
+      "sel kasher"
+    ],
+    "aliasesEn": [
+      "fine salt",
+      "kosher salt",
+      "table salt"
+    ],
+    "defaultDensity": 1.22,
+    "unitMappings": [
+      {
+        "fromUnit": "tbsp",
+        "toUnit": "g",
+        "factor": 18
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-semisweet-chocolate",
+    "nameFr": "chocolat mi-sucr\u00e9",
+    "nameEn": "semisweet chocolate",
+    "aliasesFr": [
+      "chocolat de cuisson mi-sucr\u00e9",
+      "p\u00e9pites de chocolat",
+      "p\u00e9pites de chocolat mi-sucr\u00e9"
+    ],
+    "aliasesEn": [
+      "chocolate chips",
+      "semi-sweet chocolate",
+      "semi-sweet chocolate chips",
+      "semisweet baking chocolate",
+      "semisweet chocolate chips"
+    ],
+    "defaultDensity": 0.55,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 170
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-serrano-pepper",
+    "nameFr": "piment serrano",
+    "nameEn": "serrano pepper",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-sesame-seeds",
+    "nameFr": "graines de s\u00e9same",
+    "nameEn": "sesame seeds",
+    "aliasesFr": [
+      "graines de s\u00e9same blanches grill\u00e9es"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-shredded-coconut",
+    "nameFr": "noix de coco r\u00e2p\u00e9e",
+    "nameEn": "shredded coconut",
+    "aliasesFr": [
+      "noix de coco en flocons",
+      "noix de coco s\u00e9ch\u00e9e"
+    ],
+    "aliasesEn": [
+      "desiccated coconut"
+    ],
+    "defaultDensity": 0.37,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 80
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-smoked-paprika",
+    "nameFr": "paprika fum\u00e9",
+    "nameEn": "smoked paprika",
+    "aliasesFr": [
+      "paprika"
+    ],
+    "aliasesEn": [
+      "paprika"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-sour-cream",
+    "nameFr": "cr\u00e8me s\u00fbre",
+    "nameEn": "sour cream",
+    "aliasesFr": [
+      "cr\u00e8me s\u00fbre enti\u00e8re"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": 0.99,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 230
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-soy-sauce",
+    "nameFr": "sauce soya",
+    "nameEn": "soy sauce",
+    "aliasesFr": [
+      "sauce soja",
+      "tamari"
+    ],
+    "aliasesEn": [
+      "tamari"
+    ],
+    "defaultDensity": 1.2,
+    "unitMappings": [
+      {
+        "fromUnit": "tbsp",
+        "toUnit": "g",
+        "factor": 18
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-sprinkles",
+    "nameFr": "vermicelles d\u00e9coratifs",
+    "nameEn": "sprinkles",
+    "aliasesFr": [
+      "sprinkles"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-sriracha-sauce",
+    "nameFr": "sauce sriracha",
+    "nameEn": "sriracha sauce",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-stew-meat",
+    "nameFr": "viande de rago\u00fbt",
+    "nameEn": "stew meat",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-strawberries",
+    "nameFr": "fraises",
+    "nameEn": "strawberries",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-sweet-potato",
+    "nameFr": "patate douce",
+    "nameEn": "sweet potato",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-sweetened-condensed-milk",
+    "nameFr": "lait condens\u00e9 sucr\u00e9",
+    "nameEn": "sweetened condensed milk",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 1.28,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 306
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-thyme",
+    "nameFr": "thym frais",
+    "nameEn": "fresh thyme",
+    "aliasesFr": [
+      "thym"
+    ],
+    "aliasesEn": [
+      "thyme"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-toasted-sesame-oil",
+    "nameFr": "huile de s\u00e9same",
+    "nameEn": "toasted sesame oil",
+    "aliasesFr": [
+      "huile de s\u00e9same grill\u00e9e"
+    ],
+    "aliasesEn": [
+      "sesame oil"
+    ],
+    "defaultDensity": 0.92,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 218
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-tomato-paste",
+    "nameFr": "p\u00e2te de tomates",
+    "nameEn": "tomato paste",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 1.18,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 265
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-tomato-sauce",
+    "nameFr": "sauce tomate",
+    "nameEn": "tomato sauce",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 1.05,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 250
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-tomatoes",
+    "nameFr": "tomates",
+    "nameEn": "tomatoes",
+    "aliasesFr": [
+      "grosses tomates"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": 0.95,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 180
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-tuna",
+    "nameFr": "thon",
+    "nameEn": "tuna",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-turmeric",
+    "nameFr": "curcuma",
+    "nameEn": "turmeric",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-unsalted-butter",
+    "nameFr": "beurre non sal\u00e9",
+    "nameEn": "unsalted butter",
+    "aliasesFr": [
+      "beurre",
+      "beurre doux"
+    ],
+    "aliasesEn": [
+      "butter"
+    ],
+    "defaultDensity": 0.96,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 227
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-unsweetened-chocolate",
+    "nameFr": "chocolat non sucr\u00e9",
+    "nameEn": "unsweetened chocolate",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 0.55,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 170
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-unsweetened-cocoa-powder",
+    "nameFr": "cacao non sucr\u00e9",
+    "nameEn": "unsweetened cocoa powder",
+    "aliasesFr": [
+      "poudre de cacao",
+      "poudre de cacao non sucr\u00e9e"
+    ],
+    "aliasesEn": [
+      "cocoa powder",
+      "natural cocoa powder",
+      "unsweetened natural cocoa powder"
+    ],
+    "defaultDensity": 0.42,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 85
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-vanilla-extract",
+    "nameFr": "extrait de vanille",
+    "nameEn": "vanilla extract",
+    "aliasesFr": [
+      "vanille liquide"
+    ],
+    "aliasesEn": [],
+    "defaultDensity": 0.95,
+    "unitMappings": [
+      {
+        "fromUnit": "tbsp",
+        "toUnit": "g",
+        "factor": 13
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-vanilla-pod",
+    "nameFr": "gousse de vanille",
+    "nameEn": "vanilla pod",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-vegetable-oil",
+    "nameFr": "huile v\u00e9g\u00e9tale",
+    "nameEn": "vegetable oil",
+    "aliasesFr": [
+      "huile",
+      "huile de canola"
+    ],
+    "aliasesEn": [
+      "canola oil",
+      "neutral oil",
+      "oil"
+    ],
+    "defaultDensity": 0.92,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 218
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-vegetable-stock",
+    "nameFr": "bouillon de l\u00e9gumes",
+    "nameEn": "vegetable stock",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "vegetable broth"
+    ],
+    "defaultDensity": 1.01,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 240
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-vinegar",
+    "nameFr": "vinaigre",
+    "nameEn": "vinegar",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 1.01,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 240
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-walnuts",
+    "nameFr": "noix de grenoble",
+    "nameEn": "walnuts",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 0.53,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 115
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-water",
+    "nameFr": "eau",
+    "nameEn": "water",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 1,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 236.6
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-white-chocolate",
+    "nameFr": "chocolat blanc",
+    "nameEn": "white chocolate",
+    "aliasesFr": [
+      "p\u00e9pites de chocolat blanc"
+    ],
+    "aliasesEn": [
+      "white chocolate chips"
+    ],
+    "defaultDensity": 0.55,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 170
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-white-miso-paste",
+    "nameFr": "p\u00e2te miso blanche",
+    "nameEn": "white miso paste",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-white-vinegar",
+    "nameFr": "vinaigre blanc",
+    "nameEn": "white vinegar",
+    "aliasesFr": [],
+    "aliasesEn": [
+      "distilled white vinegar"
+    ],
+    "defaultDensity": 1.01,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 240
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-white-wine",
+    "nameFr": "vin blanc",
+    "nameEn": "white wine",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-worcestershire-sauce",
+    "nameFr": "sauce worcestershire",
+    "nameEn": "worcestershire sauce",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": 1.17,
+    "unitMappings": [
+      {
+        "fromUnit": "tbsp",
+        "toUnit": "g",
+        "factor": 17.5
+      }
+    ],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-yeast",
+    "nameFr": "levure",
+    "nameEn": "yeast",
+    "aliasesFr": [
+      "sachet de levure"
+    ],
+    "aliasesEn": [
+      "dried yeast"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-yellow-mustard",
+    "nameFr": "moutarde jaune",
+    "nameEn": "yellow mustard",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-03-23T00:00:00Z"
+  }
 ]
