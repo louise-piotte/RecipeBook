@@ -1,0 +1,3 @@
+Change the app database itself. Do not duplicate the database.
+Do not write app runtime conversion code.
+This is a pre MVP database, we want it clean before the first version.
