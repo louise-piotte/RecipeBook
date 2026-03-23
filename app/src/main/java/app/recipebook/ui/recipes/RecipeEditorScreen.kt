@@ -4,11 +4,14 @@ import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
@@ -43,6 +46,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import app.recipebook.R
 import app.recipebook.data.local.recipes.IngredientReferenceDraft
 import app.recipebook.data.local.recipes.PendingRecipePhotoCapture
@@ -58,6 +63,7 @@ import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
 import app.recipebook.domain.model.Tag
+import app.recipebook.domain.model.TagCategory
 import java.time.Instant
 import java.util.UUID
 import kotlinx.coroutines.launch
@@ -593,26 +599,30 @@ private fun IngredientPickerDialog(
         filterIngredientReferences(ingredientReferences, query)
     }
 
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        confirmButton = {
-            TextButton(onClick = onCreateNew) {
-                Icon(Icons.Filled.Add, contentDescription = null)
-                Text(localizedString(R.string.create_ingredient_label, language))
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text(localizedString(R.string.cancel_label, language))
-            }
-        },
-        title = { Text(localizedString(R.string.select_ingredient_label, language)) },
-        text = {
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    PickerDialogContainer(
+        title = localizedString(R.string.select_ingredient_label, language),
+        onDismiss = onDismiss,
+        topAction = {
+            AppIconButton(
+                icon = Icons.Filled.Add,
+                contentDescription = localizedString(R.string.create_ingredient_label, language),
+                onClick = onCreateNew
+            )
+        }
+    ) {
+        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            SearchField(
+                value = query,
+                onValueChange = { query = it },
+                label = localizedString(R.string.search_ingredients_label, language),
+                placeholder = localizedString(R.string.search_ingredients_placeholder, language)
+            )
+            Surface(tonalElevation = 2.dp) {
                 LazyColumn(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .heightIn(max = 280.dp),
+                        .heightIn(max = 320.dp)
+                        .padding(horizontal = 4.dp, vertical = 2.dp),
                     verticalArrangement = Arrangement.spacedBy(2.dp)
                 ) {
                     items(filtered, key = { it.id }) { ingredientReference ->
@@ -621,17 +631,56 @@ private fun IngredientPickerDialog(
                         }
                     }
                 }
-                BottomSearchBar(useNavigationBarPadding = false) {
-                    SearchField(
-                        value = query,
-                        onValueChange = { query = it },
-                        label = localizedString(R.string.search_ingredients_label, language),
-                        placeholder = localizedString(R.string.search_ingredients_placeholder, language)
-                    )
+            }
+        }
+    }
+}
+
+@Composable
+private fun PickerDialogContainer(
+    title: String,
+    onDismiss: () -> Unit,
+    topAction: @Composable () -> Unit = {},
+    content: @Composable () -> Unit
+) {
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(usePlatformDefaultWidth = false)
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .safeDrawingPadding()
+                .imePadding()
+                .padding(horizontal = 12.dp, vertical = 8.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Surface(
+                modifier = Modifier.fillMaxWidth(),
+                shape = MaterialTheme.shapes.medium,
+                tonalElevation = 6.dp
+            ) {
+                Column(
+                    modifier = Modifier.padding(12.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = title,
+                            style = MaterialTheme.typography.titleLarge,
+                            modifier = Modifier.weight(1f)
+                        )
+                        topAction()
+                    }
+                    content()
                 }
             }
         }
-    )
+    }
 }
 
 @Composable
@@ -646,95 +695,88 @@ private fun TagPickerDialog(
     val filtered = remember(query, tags) {
         filterTags(tags, query)
     }
-    val orderedTags = filtered.sortedWith(
-        compareByDescending<Tag> { selectedTagIds.contains(it.id) }
-            .thenBy { it.localizedName(language) }
-    )
+    val groupedTags = remember(filtered, selectedTagIds.toList(), language) {
+        groupTagsForDisplay(
+            tags = filtered,
+            language = language,
+            selectedTagIds = selectedTagIds.toSet()
+        )
+    }
 
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        confirmButton = {},
-        dismissButton = {},
-        title = {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                BackIconButton(
-                    contentDescription = localizedString(R.string.back_label, language),
-                    onClick = onDismiss
-                )
-                Text(
-                    text = localizedString(R.string.select_tags_label, language),
-                    style = MaterialTheme.typography.titleLarge,
-                    modifier = Modifier.weight(1f)
-                )
-                AppIconButton(
-                    icon = Icons.Filled.Add,
-                    contentDescription = localizedString(R.string.create_tag_label, language),
-                    onClick = onCreateNew
-                )
-            }
-        },
-        text = {
-            Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+    PickerDialogContainer(
+        title = localizedString(R.string.select_tags_label, language),
+        onDismiss = onDismiss,
+        topAction = {
+            AppIconButton(
+                icon = Icons.Filled.Add,
+                contentDescription = localizedString(R.string.create_tag_label, language),
+                onClick = onCreateNew
+            )
+        }
+    ) {
+        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            SearchField(
+                value = query,
+                onValueChange = { query = it },
+                label = localizedString(R.string.search_tags_label, language),
+                placeholder = localizedString(R.string.search_tags_placeholder, language)
+            )
+            Surface(tonalElevation = 2.dp) {
                 LazyColumn(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .heightIn(max = 280.dp),
-                    verticalArrangement = Arrangement.spacedBy(0.dp)
+                        .heightIn(max = 320.dp)
+                        .padding(horizontal = 4.dp, vertical = 2.dp),
+                    verticalArrangement = Arrangement.spacedBy(3.dp)
                 ) {
-                    items(orderedTags, key = { it.id }) { tag ->
-                        val isSelected = selectedTagIds.contains(tag.id)
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(vertical = 1.dp),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
+                    for (section in groupedTags) {
+                        item(key = "tag-category-${section.category.name}") {
                             Text(
-                                text = tag.localizedName(language),
-                                style = MaterialTheme.typography.bodyMedium,
-                                fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
-                                modifier = Modifier.weight(1f)
+                                text = section.category.localizedName(language),
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.onSurface,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(vertical = 1.dp)
                             )
-                            if (isSelected) {
-                                AppIconButton(
-                                    icon = Icons.Filled.Delete,
-                                    contentDescription = localizedString(R.string.remove_label, language),
-                                    onClick = { selectedTagIds.remove(tag.id) }
+                        }
+                        items(section.tags, key = { it.id }) { tag ->
+                            val isSelected = selectedTagIds.contains(tag.id)
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(vertical = 1.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    text = tag.localizedName(language),
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
+                                    modifier = Modifier.weight(1f)
                                 )
-                            } else {
-                                AppIconButton(
-                                    icon = Icons.Filled.Add,
-                                    contentDescription = localizedString(R.string.add_tag_label, language),
-                                    onClick = { selectedTagIds.add(tag.id) }
-                                )
+                                if (isSelected) {
+                                    AppIconButton(
+                                        icon = Icons.Filled.Delete,
+                                        contentDescription = localizedString(R.string.remove_label, language),
+                                        onClick = { selectedTagIds.remove(tag.id) }
+                                    )
+                                } else {
+                                    AppIconButton(
+                                        icon = Icons.Filled.Add,
+                                        contentDescription = localizedString(R.string.add_tag_label, language),
+                                        onClick = { selectedTagIds.add(tag.id) }
+                                    )
+                                }
                             }
                         }
                     }
                 }
-                Surface(tonalElevation = 3.dp) {
-                    Column(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 4.dp, vertical = 2.dp)
-                    ) {
-                        SearchField(
-                            value = query,
-                            onValueChange = { query = it },
-                            label = localizedString(R.string.search_tags_label, language),
-                            placeholder = localizedString(R.string.search_tags_placeholder, language)
-                        )
-                    }
-                }
             }
         }
-    )
+    }
 }
-
 @Composable
 private fun CreateIngredientDialog(
     language: AppLanguage,
@@ -969,9 +1011,41 @@ internal fun filterTags(
     val trimmed = query.trim()
     if (trimmed.isEmpty()) return tags
     return tags.filter { tag ->
-        listOf(tag.nameFr, tag.nameEn, tag.slug).any { it.contains(trimmed, ignoreCase = true) }
+        listOf(
+            tag.nameFr,
+            tag.nameEn,
+            tag.slug,
+            tag.category.localizedName(AppLanguage.FR),
+            tag.category.localizedName(AppLanguage.EN)
+        ).any { it.contains(trimmed, ignoreCase = true) }
     }
 }
+
+internal data class TagCategorySection(
+    val category: TagCategory,
+    val tags: List<Tag>
+)
+
+internal fun groupTagsForDisplay(
+    tags: List<Tag>,
+    language: AppLanguage,
+    selectedTagIds: Set<String> = emptySet()
+): List<TagCategorySection> {
+    return TagCategory.entries.mapNotNull { category ->
+        val grouped = tags
+            .filter { it.category == category }
+            .sortedWith(
+                compareByDescending<Tag> { selectedTagIds.contains(it.id) }
+                    .thenBy { it.localizedName(language) }
+            )
+        if (grouped.isEmpty()) {
+            null
+        } else {
+            TagCategorySection(category = category, tags = grouped)
+        }
+    }
+}
+
 private fun IngredientReference.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
     AppLanguage.EN -> nameEn.ifBlank { nameFr }
@@ -997,6 +1071,8 @@ private fun Tag.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
     AppLanguage.EN -> nameEn.ifBlank { nameFr }
 }
+
+
 
 
 

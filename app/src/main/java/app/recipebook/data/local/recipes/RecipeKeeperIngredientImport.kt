@@ -61,14 +61,18 @@ internal object RecipeKeeperIngredientImport {
         "powdered sugar" to "icing sugar",
         "confectioners sugar" to "icing sugar",
         "confectioners' sugar" to "icing sugar",
-        "confectioners’ sugar" to "icing sugar",
+        "confectionersâ€™ sugar" to "icing sugar",
         "light brown sugar" to "brown sugar",
         "packed light brown sugar" to "brown sugar",
         "old-fashion rolled oats" to "rolled oats",
         "old-fashioned rolled oats" to "rolled oats",
         "rolled oat" to "rolled oats",
         "semi-sweet chocolate" to "semisweet chocolate",
-        "semi-sweet chocolate chips" to "semisweet chocolate chips",
+        "semi-sweet chocolate chips" to "semisweet chocolate",
+        "chocolate chips" to "semisweet chocolate",
+        "white chocolate chips" to "white chocolate",
+        "dark chocolate chips" to "dark chocolate",
+        "milk chocolate chips" to "milk chocolate",
         "unsweetened chocolate" to "unsweetened chocolate",
         "garbanzo beans" to "chickpeas",
         "black beans drained" to "black beans",
@@ -325,7 +329,7 @@ internal object RecipeKeeperIngredientImport {
     private fun stripQuantityPrefix(value: String): String {
         var result = value.trim()
         val quantityPrefix = Regex(
-            pattern = "^(?:about\\s+)?(?:[0-9¼½¾??????/.,\\s-]+|one|two|three|four|five|six|seven|eight|nine|ten)+(?:and\\s+[0-9¼½¾??????/.,\\s-]+)?\\s*(?:oz|ounce|ounces|g|kg|ml|l|lb|lbs|cup|cups|tbsp|tablespoon|tablespoons|tsp|teaspoon|teaspoons|large|small|medium|clove|cloves|slice|slices|stick|sticks|can|cans|jar|jars|package|packages)?\\s+",
+            pattern = "^(?:about\\s+)?(?:[0-9Â¼Â½Â¾??????/.,\\s-]+|one|two|three|four|five|six|seven|eight|nine|ten)+(?:and\\s+[0-9Â¼Â½Â¾??????/.,\\s-]+)?\\s*(?:oz|ounce|ounces|g|kg|ml|l|lb|lbs|cup|cups|tbsp|tablespoon|tablespoons|tsp|teaspoon|teaspoons|large|small|medium|clove|cloves|slice|slices|stick|sticks|can|cans|jar|jars|package|packages)?\\s+",
             options = setOf(RegexOption.IGNORE_CASE)
         )
         repeat(3) {

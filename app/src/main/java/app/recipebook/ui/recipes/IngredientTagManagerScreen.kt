@@ -1,6 +1,8 @@
 package app.recipebook.ui.recipes
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -16,7 +18,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -29,6 +30,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import app.recipebook.R
 import app.recipebook.data.local.recipes.IngredientReferenceDraft
@@ -64,14 +66,7 @@ fun IngredientTagManagerScreen(
         filterManagedIngredientReferences(ingredientReferences, ingredientQuery)
     }
     val filteredTags = remember(tags, tagQuery) {
-        val query = tagQuery.trim()
-        if (query.isEmpty()) {
-            tags
-        } else {
-            tags.filter { tag ->
-                listOf(tag.nameFr, tag.nameEn, tag.slug).any { it.contains(query, ignoreCase = true) }
-            }
-        }
+        filterTags(tags, tagQuery)
     }
 
     Scaffold(
@@ -220,7 +215,7 @@ private fun IngredientManagerView(
 ) {
     LazyColumn(
         modifier = modifier,
-        contentPadding = PaddingValues(horizontal = 4.dp, vertical = 4.dp),
+        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp),
         verticalArrangement = Arrangement.spacedBy(2.dp)
     ) {
         if (ingredients.isEmpty()) {
@@ -251,10 +246,14 @@ private fun TagManagerView(
     onEdit: (Tag) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val groupedTags = remember(tags, language) {
+        groupTagsForDisplay(tags = tags, language = language)
+    }
+
     LazyColumn(
         modifier = modifier,
-        contentPadding = PaddingValues(horizontal = 4.dp, vertical = 4.dp),
-        verticalArrangement = Arrangement.spacedBy(2.dp)
+        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp),
+        verticalArrangement = Arrangement.spacedBy(0.dp)
     ) {
         if (tags.isEmpty()) {
             item {
@@ -266,8 +265,21 @@ private fun TagManagerView(
                 }
             }
         } else {
-            items(tags, key = { it.id }) { tag ->
-                TagRow(tag = tag, language = language, onEdit = { onEdit(tag) })
+            for (section in groupedTags) {
+                item(key = "managed-tag-category-${section.category.name}") {
+                    Text(
+                        text = section.category.localizedName(language),
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 3.dp)
+                    )
+                }
+                items(section.tags, key = { it.id }) { tag ->
+                    TagRow(tag = tag, language = language, onEdit = { onEdit(tag) })
+                }
             }
         }
     }
@@ -308,36 +320,27 @@ private fun IngredientReferenceRow(
                 }
             }
         }
-        HorizontalDivider()
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun TagRow(
     tag: Tag,
     language: AppLanguage,
     onEdit: () -> Unit
 ) {
-    Column(modifier = Modifier.fillMaxWidth()) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 2.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = tag.localizedName(language),
-                style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.weight(1f)
+    Text(
+        text = tag.localizedName(language),
+        style = MaterialTheme.typography.bodyMedium,
+        modifier = Modifier
+            .fillMaxWidth()
+            .combinedClickable(
+                onClick = {},
+                onLongClick = onEdit
             )
-            EditIconButton(
-                contentDescription = localizedString(R.string.edit_tag_reference_label, language),
-                onClick = onEdit
-            )
-        }
-        HorizontalDivider()
-    }
+            .padding(vertical = 1.dp)
+    )
 }
 
 @Composable
@@ -513,6 +516,16 @@ private fun Tag.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
     AppLanguage.EN -> nameEn.ifBlank { nameFr }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

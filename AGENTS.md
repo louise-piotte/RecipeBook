@@ -18,8 +18,8 @@
 - Ensure French text uses proper accents and corrected spelling/typos during conversion, even when source text is typed on an English keyboard.
 - Keep bilingual/language logic UI-agnostic (domain/data layer), because UI structure is expected to change multiple times.
 - Preferred Quebec terms for common recipe wording:
-  - Use `cuillère à thé` instead of `cuillère à café`.
-  - Use `cuillère à soupe` instead of `cuillère à table`.
+  - Use `cuillÃƒÂ¨re ÃƒÂ  thÃƒÂ©` instead of `cuillÃƒÂ¨re ÃƒÂ  cafÃƒÂ©`.
+  - Use `cuillÃƒÂ¨re ÃƒÂ  soupe` instead of `cuillÃƒÂ¨re ÃƒÂ  table`.
   - Use `bicarbonate de soude` instead of `levure chimique`.
 
 ## Active Roadmap
@@ -43,9 +43,9 @@
 - 2026-03-02: General project overview was added to `Requirements.md`.
 - 2026-03-02: Freeze schema version upgrades until MVP is complete and real persisted databases exist.
 - 2026-03-02: Schema DTOs and schema tests must always remain consistent with each other and with active schemas.
-- 2026-03-06: French localization should use Quebec naming conventions for recipe instructions with proper accents/spelling (e.g., cuillère à thé, cuillère à soupe, bicarbonate de soude).
-- 2026-03-06: Unit conversion requirements expanded: show temperatures in both C/F, support lb↔g and fl oz↔ml, and allow saved per-ingredient custom density (g/ml).
-- 2026-03-06: Ingredient substitutions should be modeled as form-to-form directed rules (e.g., canned/drained ↔ dried ↔ cooked) with rule type, confidence, rounding policy, and recipe-line substitution links.
+- 2026-03-06: French localization should use Quebec naming conventions for recipe instructions with proper accents/spelling (e.g., cuillÃƒÂ¨re ÃƒÂ  thÃƒÂ©, cuillÃƒÂ¨re ÃƒÂ  soupe, bicarbonate de soude).
+- 2026-03-06: Unit conversion requirements expanded: show temperatures in both C/F, support lbÃ¢â€ â€g and fl ozÃ¢â€ â€ml, and allow saved per-ingredient custom density (g/ml).
+- 2026-03-06: Ingredient substitutions should be modeled as form-to-form directed rules (e.g., canned/drained Ã¢â€ â€ dried Ã¢â€ â€ cooked) with rule type, confidence, rounding policy, and recipe-line substitution links.
 - 2026-03-06: Distinguish global same-ingredient form conversions from contextual ingredient-to-ingredient substitutions; contextual rules must enforce scope (dish type/role/method) with warning/block behavior for risky misuse.
 - 2026-03-06: After MVP, prioritize printable PDF publishing/export as the first nice-to-have feature.
 - 2026-03-06: Added post-MVP nice-to-haves: pantry mode, smart shopping list, dietary/allergen profiles, recipe version history, scale locks, step timers, batch mode, and printable PDF templates. OCR import is tracked separately as a potential (not committed) idea.
@@ -67,8 +67,21 @@
 - 2026-03-20: Ingredient references now carry a first-pass internal classification category for normalization, catalog management, and future filtering; pre-MVP, evolve these categories in place without backward-compatibility shims.
 - 2026-03-20: Added a bundled ingredient reference catalog overlay with internal FR/EN aliases plus density and unit-mapping data to support duplicate detection and upcoming user-facing conversions.
 - 2026-03-20: A long-term goal is to clean, normalize, and integrate the contents of docs/exported-recipe-lists; when inconsistencies or typos are found there, fix them rather than preserving them.
-
-
-
-
-
+- 2026-03-22: Tags now carry a fixed built-in category taxonomy (including OTHER) with stored category values and FR/EN localized category labels; keep categories code-defined rather than user-defined until explicitly changed.
+- 2026-03-22: Default reusable local verification command is .\\gradlew :app:testDebugUnitTest --no-daemon for unit-test-safe changes; use instrumentation-specific Gradle tasks separately when needed.
+- 2026-03-23: Recipe import cleanup work must convert recipes to the current format, normalize wording consistently across recipes, use Quebec French, replace old ingredient-tag assumptions with relevant current tags, add missing translations, and add missing ingredient/tag entries or aliases when needed.
+- 2026-03-23: Consistency is a primary rule for recipe cleanup; keep recurring conventions such as oven temperature wording, unit phrasing, capitalization, punctuation, and bilingual terminology aligned across the whole library rather than deciding case by case.
+- 2026-03-23: Recipe cleanup formatting rules: write temperatures as `xÃ‚Â°C/yÃ‚Â°F`; write times as `xh ymin zsec`, omitting any zero-value parts such as `0 h` or `0 sec`; fill missing structure and translations as accurately as possible without inventing missing factual data such as absent cook times.
+- 2026-03-23: Recipe titles should use direct translations validated against the term actually used in context, and when a source URL exists it should be consulted for translation context only; do not overwrite personalized recipe amounts from the user's saved copy even if the source now differs.
+- 2026-03-23: Recipe import cleanup should also port recipe pictures into the app database/assets flow as part of the same import work whenever source images are available.
+- 2026-03-23: Prefer running verification through the generic approved Gradle command `.\\gradlew test --no-daemon` when possible so test reruns do not require extra approval prompts.
+- 2026-03-23: Once an exported source recipe has been processed into the app format, rename the original export file to append `_processed` before the extension; do not alter that source file's content, and do not carry forward the old `Ãƒâ‚¬ nettoyer/To Clean` source grouping as an imported tag.
+- 2026-03-23: If a source recipe still contains unresolved either/or ingredient choices or variant selections, stop and ask the user instead of importing every option; only import the version the user actually uses.
+- 2026-03-23: When writing recipe JSON, docs, or code that contains accents or degree symbols, explicitly preserve UTF-8 encoding so characters such as `ÃƒÂ `, `ÃƒÂ©`, and `Ã‚Â°` do not turn into mojibake or replacement glyphs.
+- 2026-03-23: If recipe/library text already shows mojibake markers such as `ÃƒÆ’`, `Ãƒâ€š`, broken `Ã‚Â°`, or lost French accents, repair it as UTF-8 text that was misread through Latin-1/ISO-8859-1, then rewrite the file as UTF-8 without BOM. Treat this as the default fix for recurring recipe-import encoding corruption.
+- 2026-03-23: Encoding safety is mandatory, not optional: when editing recipe/code/docs text with accents or symbols, always preserve correct UTF-8 without BOM, and verify the actual saved result before finishing. Never leave mojibake such as `pÃƒÆ’Ã‚Â©pites`, `ÃƒÆ’`, `Ãƒâ€š`, broken `Ã‚Â°`, or damaged accents in the file.
+- 2026-03-23: Normalize pure chocolate chip ingredients to the matching base chocolate ingredient instead of keeping separate `chips` entries: e.g. `chocolate chips`/`semi-sweet chocolate chips` -> `semisweet chocolate`, `white chocolate chips` -> `white chocolate`, and similarly for other plain chocolate variants. Do not apply this rule to non-chocolate baking chips such as peanut butter chips or butterscotch chips.
+- 2026-03-23: Do not add unit tests that lock in individual recipe content details; recipe-entry text/content is not reusable and may change during cleanup. Shared ingredient catalogs, shared tag catalogs, schema shape, and generic structural validation are fine to test.
+- 2026-03-23: Pre-MVP, do not add startup conversion, normalization, migration, or backward-compatibility code for bundled library data. Fix the bundled source library itself instead and load it directly.
+- 2026-03-23: Bundled seed data is now a split seed/bundled-library package with manifest + part files (recipes, ingredient references, tags, etc.); do not reintroduce the removed single-file bundled seed format or old boite-de-noel package/library identifiers.
+- 2026-03-23: For bundled seed/database JSON text, store French accents and symbols as explicit Unicode escapes such as `\u00e0`, `\u00e9`, `\u0153`, and `\u00b0` when editing the data files. Fix the bundled data itself and do not add runtime encoding or conversion code.

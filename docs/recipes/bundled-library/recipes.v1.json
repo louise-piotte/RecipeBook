@@ -1,0 +1,149 @@
+[
+  {
+    "id": "0a8b29b8-faf0-4597-8514-e09335de6c03",
+    "createdAt": "2026-03-23T00:00:00Z",
+    "updatedAt": "2026-03-23T00:00:00Z",
+    "source": {
+      "sourceName": "Healthful Blondie",
+      "sourceUrl": "https://healthfulblondie.com/air-fryer-baked-oats/"
+    },
+    "languages": {
+      "fr": {
+        "title": "Gruau au four \u00e0 la friteuse \u00e0 air",
+        "description": "Gruau au four individuel, moelleux et l\u00e9ger, au go\u00fbt de banane, de cannelle et de chocolat.",
+        "instructions": "Pr\u00e9chauffer la friteuse \u00e0 air \u00e0 143\u00b0C/290\u00b0F et graisser un ramequin ou un petit plat de cuisson individuel.\nMettre les flocons d\u0027avoine, l\u0027\u0153uf, la banane, le lait, l\u0027extrait de vanille, la poudre \u00e0 p\u00e2te, la cannelle, le sirop d\u0027\u00e9rable et le beurre d\u0027arachide dans un m\u00e9langeur haute vitesse, puis m\u00e9langer jusqu\u0027\u00e0 consistance lisse pendant 20 sec \u00e0 30 sec.\nIncorporer les brisures de chocolat.\nVerser la p\u00e2te dans le ramequin graiss\u00e9 et garnir de tranches de banane, si d\u00e9sir\u00e9.\nCuire \u00e0 la friteuse \u00e0 air \u00e0 143\u00b0C/290\u00b0F pendant 12 min \u00e0 15 min au total; v\u00e9rifier \u00e0 7 min.\nSi le dessus dore trop vite, couvrir l\u00e9g\u00e8rement d\u0027un morceau de papier d\u0027aluminium.\nLe gruau est pr\u00eat quand le centre est cuit et que le dessus est l\u00e9g\u00e8rement dor\u00e9.",
+        "notes": "Un ramequin de 8 oz convient bien."
+      },
+      "en": {
+        "title": "Air Fryer Baked Oats",
+        "description": "A single-serve baked oat breakfast with a soft, cakey texture and flavors of banana, cinnamon, and chocolate.",
+        "instructions": "Preheat the air fryer to 143\u00b0C/290\u00b0F and grease a single-serve ramekin or small baking dish.\nAdd the rolled oats, egg, banana, milk, vanilla extract, baking powder, cinnamon, maple syrup, and peanut butter to a high-speed blender, then blend until smooth for 20 sec to 30 sec.\nStir in the chocolate chips.\nPour the batter into the greased ramekin and top with banana slices, if desired.\nAir fry at 143\u00b0C/290\u00b0F for 12 min to 15 min total; check at 7 min.\nIf the top is browning too quickly, loosely cover it with a piece of aluminum foil.\nThe oats are ready when the center is cooked through and the top is lightly browned.",
+        "notes": "An 8-ounce ramekin works well."
+      }
+    },
+    "ingredients": [
+      {
+        "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-1",
+        "originalText": "1/2 cup old-fashion rolled oats",
+        "ingredientName": "rolled oats",
+        "ingredientRefId": "ingredient-ref-rolled-oats",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-2",
+        "originalText": "1 large egg",
+        "ingredientName": "egg",
+        "ingredientRefId": "ingredient-ref-egg",
+        "quantity": 1,
+        "unit": "large egg"
+      },
+      {
+        "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-3",
+        "originalText": "1/2 large over-ripe banana",
+        "ingredientName": "banana",
+        "ingredientRefId": "ingredient-ref-banana",
+        "quantity": 0.5,
+        "unit": "large banana",
+        "preparation": "over-ripe",
+        "notes": "more brown spots = sweeter"
+      },
+      {
+        "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-4",
+        "originalText": "3 tbsp milk",
+        "ingredientName": "milk",
+        "ingredientRefId": "ingredient-ref-milk",
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
+        "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-5",
+        "originalText": "1/2 tsp vanilla extract",
+        "ingredientName": "vanilla extract",
+        "ingredientRefId": "ingredient-ref-vanilla-extract",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-6",
+        "originalText": "1/2 tsp baking powder",
+        "ingredientName": "baking powder",
+        "ingredientRefId": "ingredient-ref-baking-powder",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-7",
+        "originalText": "1/2 tsp ground cinnamon",
+        "ingredientName": "ground cinnamon",
+        "ingredientRefId": "ingredient-ref-cinnamon",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-8",
+        "originalText": "1 tbsp maple syrup",
+        "ingredientName": "maple syrup",
+        "ingredientRefId": "ingredient-ref-maple-syrup",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-9",
+        "originalText": "1 tbsp peanut butter",
+        "ingredientName": "natural peanut butter",
+        "ingredientRefId": "ingredient-ref-natural-peanut-butter",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-10",
+        "originalText": "2 tbsp chocolate chips",
+        "ingredientName": "semisweet chocolate",
+        "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-11",
+        "originalText": "extra banana slices on top (optional)",
+        "ingredientName": "banana",
+        "ingredientRefId": "ingredient-ref-banana",
+        "optional": true,
+        "notes": "for topping"
+      }
+    ],
+    "servings": {
+      "amount": 1,
+      "unit": "serving"
+    },
+    "times": {
+      "prepTimeMinutes": 3,
+      "cookTimeMinutes": 12,
+      "totalTimeMinutes": 15
+    },
+    "tags": [
+      "tag-breakfast",
+      "tag-brunch",
+      "tag-air-fryer",
+      "tag-quick"
+    ],
+    "collections": [],
+    "ratings": {
+      "userRating": 4
+    },
+    "mainPhotoId": "photo-0a8b29b8-faf0-4597-8514-e09335de6c03-0",
+    "photos": [
+      {
+        "id": "photo-0a8b29b8-faf0-4597-8514-e09335de6c03-0",
+        "relativePath": "photos/0a8b29b8-faf0-4597-8514-e09335de6c03_0.jpg"
+      }
+    ],
+    "attachments": [],
+    "importMetadata": {
+      "sourceType": "recipekeeper-manual-cleanup",
+      "parserVersion": "2026-03-23",
+      "originalUnits": "imperial"
+    }
+  }
+]

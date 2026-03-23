@@ -1,0 +1,38 @@
+[
+    {
+        "unitId":  "g",
+        "symbol":  "g",
+        "nameFr":  "gramme",
+        "nameEn":  "gram",
+        "type":  "mass",
+        "baseUnitId":  "g",
+        "toBaseFactor":  1
+    },
+    {
+        "unitId":  "ml",
+        "symbol":  "ml",
+        "nameFr":  "millilitre",
+        "nameEn":  "milliliter",
+        "type":  "volume",
+        "baseUnitId":  "ml",
+        "toBaseFactor":  1
+    },
+    {
+        "unitId":  "cup",
+        "symbol":  "cup",
+        "nameFr":  "tasse",
+        "nameEn":  "cup",
+        "type":  "volume",
+        "baseUnitId":  null,
+        "toBaseFactor":  1
+    },
+    {
+        "unitId":  "count",
+        "symbol":  "x",
+        "nameFr":  "unite",
+        "nameEn":  "count",
+        "type":  "count",
+        "baseUnitId":  "count",
+        "toBaseFactor":  1
+    }
+]

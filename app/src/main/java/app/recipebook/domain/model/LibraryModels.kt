@@ -241,11 +241,33 @@ data class UnitDefinition(
     val toBaseFactor: Double
 )
 
+enum class TagCategory(
+    val nameFr: String,
+    val nameEn: String
+) {
+    CUISINE(nameFr = "Cuisine", nameEn = "Cuisine"),
+    MEAL(nameFr = "Repas", nameEn = "Meal"),
+    DISH_TYPE(nameFr = "Type de plat", nameEn = "Dish Type"),
+    SEASONAL(nameFr = "Saison et f\u00eates", nameEn = "Seasonal"),
+    APPLIANCE(nameFr = "Appareil", nameEn = "Appliance"),
+    SERVING_CONTEXT(nameFr = "Contexte de service", nameEn = "Serving Context"),
+    USE_CASE(nameFr = "Usage", nameEn = "Use Case"),
+    EFFORT(nameFr = "Effort", nameEn = "Effort"),
+    DIETARY(nameFr = "Alimentation", nameEn = "Dietary"),
+    OTHER(nameFr = "Autre", nameEn = "Other");
+
+    fun localizedName(language: AppLanguage): String = when (language) {
+        AppLanguage.FR -> nameFr
+        AppLanguage.EN -> nameEn
+    }
+}
+
 data class Tag(
     val id: String,
     val nameFr: String,
     val nameEn: String,
-    val slug: String
+    val slug: String,
+    val category: TagCategory = TagCategory.OTHER
 )
 
 enum class CollectionSortOrder {

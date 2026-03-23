@@ -58,7 +58,8 @@ data class TagEntity(
     val id: String,
     val nameFr: String,
     val nameEn: String,
-    val slug: String
+    val slug: String,
+    val category: String = "OTHER"
 )
 
 @Entity(tableName = "collections")

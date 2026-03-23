@@ -22,6 +22,7 @@ import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
 import app.recipebook.domain.model.Tag
+import app.recipebook.domain.model.TagCategory
 import java.text.Normalizer
 import java.time.Instant
 import java.util.UUID
@@ -110,7 +111,8 @@ class RecipeRepository(
             id = UUID.randomUUID().toString(),
             nameFr = draft.nameFr.trim(),
             nameEn = draft.nameEn.trim(),
-            slug = slugify(baseName)
+            slug = slugify(baseName),
+            category = draft.category ?: TagCategory.OTHER
         )
         tagDao.upsert(tag.toEntity())
         return tag
@@ -122,7 +124,8 @@ class RecipeRepository(
         val tag = existing.copy(
             nameFr = draft.nameFr.trim(),
             nameEn = draft.nameEn.trim(),
-            slug = slugify(baseName)
+            slug = slugify(baseName),
+            category = draft.category ?: existing.category
         )
         tagDao.upsert(tag.toEntity())
         return tag
@@ -193,7 +196,8 @@ data class IngredientReferenceDraft(
 
 data class TagDraft(
     val nameFr: String,
-    val nameEn: String
+    val nameEn: String,
+    val category: TagCategory? = null
 )
 
 internal fun RecipeEntity.toDomainRecipe(): Recipe = Recipe(
@@ -310,14 +314,16 @@ private fun TagEntity.toDomain(): Tag = Tag(
     id = id,
     nameFr = nameFr,
     nameEn = nameEn,
-    slug = slug
+    slug = slug,
+    category = TagCategory.valueOf(category)
 )
 
 private fun Tag.toEntity(): TagEntity = TagEntity(
     id = id,
     nameFr = nameFr,
     nameEn = nameEn,
-    slug = slug
+    slug = slug,
+    category = category.name
 )
 
 private val storageJson = Json {

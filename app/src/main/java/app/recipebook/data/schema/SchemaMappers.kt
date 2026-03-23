@@ -28,6 +28,7 @@ import app.recipebook.domain.model.SubstitutionConversionType
 import app.recipebook.domain.model.SubstitutionRule
 import app.recipebook.domain.model.SubstitutionSeverity
 import app.recipebook.domain.model.Tag
+import app.recipebook.domain.model.TagCategory
 import app.recipebook.domain.model.UnitDefinition
 import app.recipebook.domain.model.UnitScope
 import app.recipebook.domain.model.UnitType
@@ -467,14 +468,16 @@ private fun TagDto.toDomain(): Tag = Tag(
     id = id,
     nameFr = nameFr,
     nameEn = nameEn,
-    slug = slug
+    slug = slug,
+    category = TagCategory.valueOf(category)
 )
 
 private fun Tag.toDto(): TagDto = TagDto(
     id = id,
     nameFr = nameFr,
     nameEn = nameEn,
-    slug = slug
+    slug = slug,
+    category = category.name
 )
 
 private fun CollectionDto.toDomain(): Collection = Collection(

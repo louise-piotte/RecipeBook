@@ -22,312 +22,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec5f3f46-663c-40d4-997b-106decc4c520" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/app/recipebook/RecipeDetailScreenInteractionTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/BundledIngredientCatalog.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/RecipeKeeperIngredientImport.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/RecipePhotoStore.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipePhotoLifecycle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipePhotoUi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/app_icon_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/recipe_photo_filepaths.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/local/recipes/BundledIngredientCatalogTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/local/recipes/RecipeKeeperIngredientImportTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/ui/recipes/IngredientTagManagerScreenTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/ui/recipes/RecipePhotoLifecycleTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/ui/recipes/ReferenceDraftDialogsTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/AGENTS.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/02721958-323d-47a4-96df-d383ae0994ff_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/04dff954-4213-492a-9194-4bed8553d145_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/04dff954-4213-492a-9194-4bed8553d145_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/04dff954-4213-492a-9194-4bed8553d145_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/05a7ab4d-bf11-40ff-a570-cc0733da292b_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/07d058f7-e609-4ba1-a035-1fb1fff90524_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/0a8b29b8-faf0-4597-8514-e09335de6c03_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/0bc95db3-300b-4594-88ca-ade36c66cde1_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/135813a6-75e2-4596-8c71-ffd450fab0ca_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/14d20789-1967-432a-b9bc-0319599ffbd3_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/166eae41-5c40-4a1c-8c3e-2cec590ab18c_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1882aaf2-bb7a-4c13-bb7d-59ce0836ac48_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1958c47a-95cf-46f1-ab81-fa71435b1ca5_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1d0098bc-da72-40b3-ab68-d128d7ba0c3c_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1d0098bc-da72-40b3-ab68-d128d7ba0c3c_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1d0e8bf3-4792-46f3-8766-5f2ab51af7ca_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1da10533-75ef-41b4-af55-298775c4c9ea_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1da10533-75ef-41b4-af55-298775c4c9ea_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1da10533-75ef-41b4-af55-298775c4c9ea_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1da10533-75ef-41b4-af55-298775c4c9ea_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1da10533-75ef-41b4-af55-298775c4c9ea_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1dca3c8b-ed68-4397-b804-ae62e769ee5e_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/1fb908b6-f079-44f2-916b-1b6c6b55367c_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/2a2a7481-b5dc-45a5-9733-e3885d682131_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/2d1a7685-9425-40ae-bdd5-6eaf2a55792f_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/2d53895b-8bd0-4225-bf63-766d29418eac_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/2ee2dad3-f7d9-4978-af9a-28113a3a56e9_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/30e4274f-19fd-47df-b90b-75a5eefdb2c8_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/35267f47-fcd6-4d69-9124-c6e8ac85aa57_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/382d2080-2492-481c-bd33-2330cc3be65d_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/382d2080-2492-481c-bd33-2330cc3be65d_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/382d2080-2492-481c-bd33-2330cc3be65d_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/382d2080-2492-481c-bd33-2330cc3be65d_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/3e2bd9d9-95fc-43ea-8d33-140de5b7de25_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/41d7331d-2cf7-4a72-b1ce-ac90ffb97f33_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/4207e09a-429f-437f-b7bd-14e862d6d696_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/4207e09a-429f-437f-b7bd-14e862d6d696_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/42ed2176-cd9f-451e-af27-d77cbe85d5da_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/43199cff-7fba-4cd0-8447-2c7265b0bb1c_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/43dd1f6e-ab29-4365-bfee-a7ecb0d6309b_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/43dd1f6e-ab29-4365-bfee-a7ecb0d6309b_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/477572c0-6d31-4ba2-a7ae-20c4dde12e93_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/4a10822e-551d-4738-b0c2-d7492fb5b86f_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/4af3c637-fd51-4344-8695-5dfe3583b237_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/4cbff09a-679f-420c-89e2-4175fb8e8662_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/4d4af0ad-f76b-4562-9956-60070fba7802_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/559fff48-4d46-4922-b1b8-66808cb0715c_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/559fff48-4d46-4922-b1b8-66808cb0715c_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/559fff48-4d46-4922-b1b8-66808cb0715c_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/559fff48-4d46-4922-b1b8-66808cb0715c_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/559fff48-4d46-4922-b1b8-66808cb0715c_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/5719878d-25d9-40df-9f2c-8035a862f9e4_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/583ae5e3-e482-42ba-971f-72d8418ef175_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/583ae5e3-e482-42ba-971f-72d8418ef175_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/5f004db4-2d76-458c-ae72-7f60379430fd_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/5fecccc1-d734-4f2b-9958-ac0c6a960f29_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/607adb61-ff54-49c9-8aaf-d02648a3ae90_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/684fa588-9bdd-4fd8-bca1-25cd7303810f_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/684fa588-9bdd-4fd8-bca1-25cd7303810f_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/684fa588-9bdd-4fd8-bca1-25cd7303810f_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/6cd92702-2256-4fc5-8f41-91ca188b4fbf_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/7239d74f-e895-421d-96e4-09a049546aa1_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/7239d74f-e895-421d-96e4-09a049546aa1_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/7303400a-3535-4c39-9584-051c5b7873e7_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/7303400a-3535-4c39-9584-051c5b7873e7_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/798352ab-d4ad-4e5d-9c90-f0484609bca2_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/7dde7849-5f6e-4e20-b84f-e90fa780d871_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/7dde7849-5f6e-4e20-b84f-e90fa780d871_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/80ae1de5-0430-4ea0-8109-94b0dcc8453e_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/834bade3-bdda-432f-a4a6-1cb0fec6f065_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/89f89f5e-4afc-4e3a-b37f-e7841ac24ff8_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/9015696d-4126-49ee-91f5-578d66061fd9_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/943327bc-3791-4bff-82a4-1a4609d1b118_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/98235299-3e38-4cf6-acbc-cb24bda45509_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/9a714acf-d991-4932-bb4c-63af19051022_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/9a714acf-d991-4932-bb4c-63af19051022_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/9a714acf-d991-4932-bb4c-63af19051022_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/9a714acf-d991-4932-bb4c-63af19051022_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/9ae958d9-1f55-4906-84bc-8f3436ce70ff_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/9c2ee378-3b20-47c0-ae4a-77195a908b07_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/9dc0c02c-ac20-411c-9adf-38095e980487_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/9ec0ba36-1f7e-47d0-aedc-22ca03a5c672_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/9ec0ba36-1f7e-47d0-aedc-22ca03a5c672_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/9ec0ba36-1f7e-47d0-aedc-22ca03a5c672_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/9ec55a0a-92b7-425d-9d7f-1a9a455022bb_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/a1e9ba5d-be5c-447d-a368-3ae4954a0a07_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/a3d38f7e-1c25-402b-a51e-8f99680eb02c_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/a3d38f7e-1c25-402b-a51e-8f99680eb02c_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/a3d38f7e-1c25-402b-a51e-8f99680eb02c_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/a3d38f7e-1c25-402b-a51e-8f99680eb02c_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/a3d38f7e-1c25-402b-a51e-8f99680eb02c_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/a8429c9a-dcc8-4694-b09d-81c62d51af2d_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/ad2f1317-aa4d-4d1e-9aec-0d70a72228af_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/ad2f1317-aa4d-4d1e-9aec-0d70a72228af_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/ad2f1317-aa4d-4d1e-9aec-0d70a72228af_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/ad608924-df31-48be-89c5-721a7f0a2572_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/ad608924-df31-48be-89c5-721a7f0a2572_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/ae0f1410-da1e-478b-98a0-67fa6b420576_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/b109cd15-b162-4825-9479-bbc022bd6cb4_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/b55e38ff-597e-441b-9a89-a4e06c07248a_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/b676257d-c46f-4ddc-bb63-1516307ad18f_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/b699f193-4545-4e7a-98ad-ce092a1e38e4_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/b8cf19ee-618b-495a-9ecb-9a90e88a9dac_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/b8cf19ee-618b-495a-9ecb-9a90e88a9dac_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/b8cf19ee-618b-495a-9ecb-9a90e88a9dac_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/b8e3b67d-3a62-4e68-8842-457c86bbab5f_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/bd3f9152-5ea3-44c3-ad79-8f4d7624f07d_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/c5486a31-4047-4437-ad8b-14a6e776bdd5_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/c5486a31-4047-4437-ad8b-14a6e776bdd5_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/c5486a31-4047-4437-ad8b-14a6e776bdd5_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/c68bebce-c549-4789-a5b4-d023ed58f782_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/c72f5bef-39d8-476c-bf29-56dbe4719841_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/c838fd50-8230-4df7-bc03-a90f3928c39a_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/c9022b89-8181-425a-9141-6a4e6086b5c8_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/c97910fb-2301-40c7-8019-433bb361c44c_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/c97910fb-2301-40c7-8019-433bb361c44c_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/c97910fb-2301-40c7-8019-433bb361c44c_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/c97910fb-2301-40c7-8019-433bb361c44c_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/cfa64319-d4b9-4425-b087-3e30be3cc4a0_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/d21fb531-f3be-49a3-b361-d429150c05b2_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/d2f76a5c-63b6-4dad-b33d-f3270a04f5c2_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/d356eec5-b3c4-4e22-b943-63900317e569_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/d40521c8-874f-4cbb-847a-1c8b7e27b52e_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/d56bc96a-4fe0-43a1-a93f-9439687d38aa_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/d73d6bff-fc0c-4b79-a607-441e546d32ad_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/d9ce5a86-561d-4c36-975f-5f4249aa9df5_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/de2f7507-1126-4c10-a364-320b0e540125_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/dfa44a33-5dff-4304-9308-1d8326055a58_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/e0a437cb-da80-4fd5-954d-87caf3b299e7_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/e0f7bb65-859b-4dc0-8d03-30180b9acdaf_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/e152b749-db75-4a7c-9bbf-3b94f721451d_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/e1e7939b-206f-4839-97d9-2a91febb28eb_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/e2d11309-7775-4efb-981c-2c78a8d03da6_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/e34243f0-f13c-47bf-991f-a8d50e3c67a8_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/eadf54de-0fa2-4ef3-a620-3f6fbeac7c90_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/eea71586-6439-4826-9a3d-b87c5c98a2a6_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/f07ba465-a5c8-4fad-bba3-83941f165410_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/f137bc89-dee6-46e1-b9cd-1bb426bdbdda_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/f2600073-da39-4f35-805e-7df143e47dce_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/f2600073-da39-4f35-805e-7df143e47dce_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/f2600073-da39-4f35-805e-7df143e47dce_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/f2600073-da39-4f35-805e-7df143e47dce_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/f3ce6ed8-0389-457c-92ec-240cf53eacde_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/f3ce6ed8-0389-457c-92ec-240cf53eacde_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/f4807560-d19f-4e2d-aeab-80138564b93f_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/f6d10ccb-a696-4898-813b-a5a01e7f82ce_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/f99dad41-30f8-4294-bbba-4f0b555eda23_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/fcd1d029-7265-4735-83d9-ce8ea7d40c2a_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/fcee6cc1-7a79-48dc-bdce-55a864bc2e41_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/fdb8f001-0f1a-4c73-a916-8721bdc1713f_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/images/ff66e4f7-c719-4203-970b-06993cdb25de_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/001-air-fryer-baked-oats-0a8b29b8-faf0-4597-8514-e09335de6c03.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/002-all-butter-pie-crust-way-better-1882aaf2-bb7a-4c13-bb7d-59ce0836ac48.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/003-amaretti-8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/004-anko-sweet-red-bean-paste-583ae5e3-e482-42ba-971f-72d8418ef175.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/005-bao-buns-vapeur-steamed-bao-buns-559fff48-4d46-4922-b1b8-66808cb0715c.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/006-barres-nanaimo-nanaimo-bars-9a714acf-d991-4932-bb4c-63af19051022.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/007-beans-4392bc3d-9785-43ac-b98e-496f96c1d628.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/008-best-vanilla-cake-41d7331d-2cf7-4a72-b1ce-ac90ffb97f33.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/009-bicuit-aux-brisures-de-chocolat-chocolate-chip-cookies-3e2bd9d9-95fc-43ea-8d33-140de5b7de25.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/010-biscuit-linzer-linzer-cookies-a1e9ba5d-be5c-447d-a368-3ae4954a0a07.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/011-biscuits-bonbons-aux-amandes-almond-bonbon-cookies-2d1a7685-9425-40ae-bdd5-6eaf2a55792f.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/012-biscuits-froiss-s-au-citron-lemon-crinkle-cookies-f07ba465-a5c8-4fad-bba3-83941f165410.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/013-biscuits-tourbillon-biscuits-pinwheel-cookies-4d4af0ad-f76b-4562-9956-60070fba7802.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/014-blueberry-cake-filling-eea71586-6439-4826-9a3d-b87c5c98a2a6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/015-boeuf-stroganov-beef-stroganov-e1e7939b-206f-4839-97d9-2a91febb28eb.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/016-bouch-es-de-quinoa-quinoa-bites-98235299-3e38-4cf6-acbc-cb24bda45509.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/017-boule-de-neige-au-pistaches-pistachio-drop-cookies-f2600073-da39-4f35-805e-7df143e47dce.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/018-boulette-de-dinde-turkey-meatballs-43199cff-7fba-4cd0-8447-2c7265b0bb1c.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/019-boulettes-de-crabe-crab-balls-135813a6-75e2-4596-8c71-ffd450fab0ca.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/020-brownie-au-beurre-d-arachide-peanut-butter-brownies-d73d6bff-fc0c-4b79-a607-441e546d32ad.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/021-b-che-de-no-l-yule-log-30e4274f-19fd-47df-b90b-75a5eefdb2c8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/022-buckeyes-607adb61-ff54-49c9-8aaf-d02648a3ae90.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/023-calamar-frit-l-air-air-fried-calamari-5fecccc1-d734-4f2b-9958-ac0c6a960f29.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/024-carr-aux-dattes-date-square-d2f76a5c-63b6-4dad-b33d-f3270a04f5c2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/025-carr-rable-pacanes-et-canneberges-maple-pecan-cranberry-squares-d56bc96a-4fe0-43a1-a93f-9439687d38aa.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/026-carr-s-magiques-magic-cookie-bars-ff66e4f7-c719-4203-970b-06993cdb25de.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/027-casserole-d-jeun-breakfast-casserole-9015696d-4126-49ee-91f5-578d66061fd9.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/028-cherry-almond-shortbread-cookies-5719878d-25d9-40df-9f2c-8035a862f9e4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/029-cherry-cake-filling-5f004db4-2d76-458c-ae72-7f60379430fd.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/030-chocolat-chaud-nutella-nutella-hot-chocolate-dfa44a33-5dff-4304-9308-1d8326055a58.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/031-chocolate-dates-3-flavors-fdb8f001-0f1a-4c73-a916-8721bdc1713f.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/032-chocolate-drip-cake-1958c47a-95cf-46f1-ab81-fa71435b1ca5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/033-churros-frits-l-air-air-fryer-churros-7303400a-3535-4c39-9584-051c5b7873e7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/034-classic-beef-chili-4cbff09a-679f-420c-89e2-4175fb8e8662.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/035-congolais-coconut-macaroons-f99dad41-30f8-4294-bbba-4f0b555eda23.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/036-c-tes-lev-e-sous-vide-sous-vide-ribs-a8429c9a-dcc8-4694-b09d-81c62d51af2d.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/037-cr-me-de-champignons-cream-of-mushroom-soup-6cd92702-2256-4fc5-8f41-91ca188b4fbf.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/038-cr-pes-au-babeurre-buttermilk-pancakes-c72f5bef-39d8-476c-bf29-56dbe4719841.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/039-cr-pes-pancakes-943327bc-3791-4bff-82a4-1a4609d1b118.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/040-croustillant-chocolate-et-noix-chocolate-nutty-crisp-798352ab-d4ad-4e5d-9c90-f0484609bca2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/041-croute-tarte-pie-crust-1d0e8bf3-4792-46f3-8766-5f2ab51af7ca.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/042-pice-porc-pork-rub-f137bc89-dee6-46e1-b9cd-1bb426bdbdda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/043-pices-italiennes-italian-seasoning-2ee2dad3-f7d9-4978-af9a-28113a3a56e9.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/044-pis-de-ma-s-corn-on-the-cob-e9dfacc1-69f7-47cf-9f4e-c5c79508162f.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/045-fraisier-strawberry-cake-b8cf19ee-618b-495a-9ecb-9a90e88a9dac.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/046-french-buttercream-e0f7bb65-859b-4dc0-8d03-30180b9acdaf.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/047-galettes-au-chocolat-chocolate-galettes-3a206140-a145-4871-92c6-7024ce958858.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/048-garam-masala-de2f7507-1126-4c10-a364-320b0e540125.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/049-g-teau-la-fraise-strawberry-shortcake-1fb908b6-f079-44f2-916b-1b6c6b55367c.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/050-gateau-au-chocolat-devil-s-food-cake-4207e09a-429f-437f-b7bd-14e862d6d696.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/051-g-teau-au-fraises-strawberry-cake-eadf54de-0fa2-4ef3-a620-3f6fbeac7c90.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/052-gateau-au-manges-mango-cake-9ec55a0a-92b7-425d-9d7f-1a9a455022bb.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/053-g-teau-aux-carottes-carrot-cake-1da10533-75ef-41b4-af55-298775c4c9ea.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/054-g-teau-biscuit-cookie-cake-ad2f1317-aa4d-4d1e-9aec-0d70a72228af.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/055-gateau-d-jeun-coffee-cake-f6d10ccb-a696-4898-813b-a5a01e7f82ce.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/056-g-teau-mousse-au-pistache-et-chocolat-pistachio-chocolate-mousse-cake-04dff954-4213-492a-9194-4bed8553d145.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/057-gateau-quadruple-chocolat-chocolate-truffle-cake-f4807560-d19f-4e2d-aeab-80138564b93f.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/058-gateau-reine-elizabeth-queen-elizabeth-cake-a3d38f7e-1c25-402b-a51e-8f99680eb02c.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/059-gauffre-au-babeurre-buttermilk-waffles-b676257d-c46f-4ddc-bb63-1516307ad18f.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/060-gaufres-waffles-9ae958d9-1f55-4906-84bc-8f3436ce70ff.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/061-gla-age-au-chocolat-blanc-white-chocolate-buttercream-c9022b89-8181-425a-9141-6a4e6086b5c8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/062-gla-age-au-faire-strawberry-frosting-e34243f0-f13c-47bf-991f-a8d50e3c67a8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/063-gla-age-au-mascarpone-mascarpone-frosting-4af3c637-fd51-4344-8695-5dfe3583b237.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/064-gla-age-au-massepain-marzipan-frosting-d21fb531-f3be-49a3-b361-d429150c05b2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/065-gruau-sans-cuisson-overnight-oats-7dde7849-5f6e-4e20-b84f-e90fa780d871.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/066-korean-soy-marinated-jammy-eggs-e0a437cb-da80-4fd5-954d-87caf3b299e7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/067-ma-version-des-cherry-blossom-4a10822e-551d-4738-b0c2-d7492fb5b86f.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/068-mousse-au-chocolat-chocolate-mousse-2d53895b-8bd0-4225-bf63-766d29418eac.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/069-muffins-double-chocolat-double-chocolate-muffins-81d376ac-c305-402f-a73d-8bb721045319.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/070-nanaimo-cake-f3ce6ed8-0389-457c-92ec-240cf53eacde.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/071-oeuf-de-p-ques-easter-eggs-fcd1d029-7265-4735-83d9-ce8ea7d40c2a.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/072-pain-hamburger-hamburger-bun-cfa64319-d4b9-4425-b087-3e30be3cc4a0.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/073-pain-au-banane-et-chocolat-chocolate-banana-bread-c5486a31-4047-4437-ad8b-14a6e776bdd5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/074-pain-de-viande-meatloaf-35267f47-fcd6-4d69-9124-c6e8ac85aa57.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/075-pain-dor-french-toast-b3aacc80-d2f6-471d-bf42-85ba5fb8843a.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/076-p-te-pizza-pizza-dough-14d20789-1967-432a-b9bc-0319599ffbd3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/077-p-t-au-saumon-salmon-pot-pie-b8e3b67d-3a62-4e68-8842-457c86bbab5f.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/078-p-t-chinois-shepherd-s-pie-d356eec5-b3c4-4e22-b943-63900317e569.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/079-p-te-d-amande-et-massepain-almond-paste-and-marzipan-1dca3c8b-ed68-4397-b804-ae62e769ee5e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/080-p-te-feuillet-e-puff-pastry-42ed2176-cd9f-451e-af27-d77cbe85d5da.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/081-pistachio-coconut-amaretto-cheesecake-c838fd50-8230-4df7-bc03-a90f3928c39a.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/082-porc-ffiloch-pulled-pork-ad608924-df31-48be-89c5-721a7f0a2572.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/083-poudre-de-cari-curry-powder-fcee6cc1-7a79-48dc-bdce-55a864bc2e41.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/084-poudre-de-chili-chili-powder-d40521c8-874f-4cbb-847a-1c8b7e27b52e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/085-poulet-l-rable-maple-chicken-382d2080-2492-481c-bd33-2330cc3be65d.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/086-poulet-au-beurre-butter-chiken-1d0098bc-da72-40b3-ab68-d128d7ba0c3c.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/087-poulet-parmesan-chicken-parmesan-c68bebce-c549-4789-a5b4-d023ed58f782.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/088-pudding-au-chocolat-chocolate-pudding-d9ce5a86-561d-4c36-975f-5f4249aa9df5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/089-quiche-au-jambon-et-champignons-mushroom-and-ham-quiche-1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/090-rago-t-au-arachides-africain-african-peanut-stew-89f89f5e-4afc-4e3a-b37f-e7841ac24ff8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/091-red-velvet-cake-with-cream-cheese-frosting-0bc95db3-300b-4594-88ca-ade36c66cde1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/092-red-velvet-fudge-recipe-80ae1de5-0430-4ea0-8109-94b0dcc8453e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/093-riz-frit-fried-rice-2a2a7481-b5dc-45a5-9733-e3885d682131.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/094-sandwiches-de-biscuits-brownies-brownie-cookie-sandwiches-c97910fb-2301-40c7-8019-433bb361c44c.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/095-sat-satay-9ec0ba36-1f7e-47d0-aedc-22ca03a5c672.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/096-sauce-pizza-pizza-sauce-7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/097-sauce-alfredo-alfredo-sauce-684fa588-9bdd-4fd8-bca1-25cd7303810f.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/098-sauce-au-canneberges-cranberry-sauce-05a7ab4d-bf11-40ff-a570-cc0733da292b.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/099-sauce-au-jus-gravy-9c2ee378-3b20-47c0-ae4a-77195a908b07.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/100-sauce-au-lactaire-candy-cap-gravy-07d058f7-e609-4ba1-a035-1fb1fff90524.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/101-sauce-bigmac-bigmac-sauce-834bade3-bdda-432f-a4a6-1cb0fec6f065.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/102-saucissons-de-chocolat-chocolate-sausage-bd3f9152-5ea3-44c3-ad79-8f4d7624f07d.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/103-sirop-au-chocolat-chocolate-sirup-43dd1f6e-ab29-4365-bfee-a7ecb0d6309b.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/104-souffl-aux-asperges-asparagus-souffle-7239d74f-e895-421d-96e4-09a049546aa1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/105-soupe-aux-pois-habitant-pea-soup-e152b749-db75-4a7c-9bbf-3b94f721451d.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/106-tarte-au-bleuets-blueberry-pie-477572c0-6d31-4ba2-a7ae-20c4dde12e93.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/107-tarte-au-chocolat-french-silk-pie-ae0f1410-da1e-478b-98a0-67fa6b420576.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/108-tarte-au-framboises-raspberry-pie-166eae41-5c40-4a1c-8c3e-2cec590ab18c.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/109-tarte-au-pacanes-pecan-pie-02721958-323d-47a4-96df-d383ae0994ff.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/110-tartellettes-aux-amandes-frangipane-mini-tarts-b55e38ff-597e-441b-9a89-a4e06c07248a.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/111-thon-sous-vide-sous-vide-tuna-b699f193-4545-4e7a-98ad-ce092a1e38e4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/112-truffles-au-framboises-raspberry-truffles-b109cd15-b162-4825-9479-bbc022bd6cb4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/113-tzatziki-9dc0c02c-ac20-411c-9adf-38095e980487.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/114-upgraded-german-chocolate-cake-e2d11309-7775-4efb-981c-2c78a8d03da6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/_manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/recipekeeper-ingredient-audit.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/recipes/earl grey dessert.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/export_recipekeeper_ingredient_audit.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/split_recipekeeper_export.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AGENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Requirements.md" beforeDir="false" afterPath="$PROJECT_DIR$/Requirements.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/app/recipebook/InstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/app/recipebook/InstrumentedTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/IngredientTagManagerActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/IngredientTagManagerActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/RecipeDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/RecipeDetailActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/RecipeEditorActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/RecipeEditorActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/seed/boite-de-noel.converted.library.v1.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/db/Entities.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/db/Entities.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/db/RecipeBookDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/db/RecipeBookDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/BundledIngredientCatalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/BundledIngredientCatalog.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/BundledRecipeLibraryLoader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/BundledRecipeLibraryLoader.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/RecipeKeeperIngredientImport.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/RecipeKeeperIngredientImport.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/RecipeRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/local/recipes/RecipeRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/schema/SchemaDtos.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/schema/SchemaDtos.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/schema/SchemaMappers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/data/schema/SchemaMappers.kt" afterDir="false" />
@@ -335,20 +38,14 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/IngredientTagManagerScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/IngredientTagManagerScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeDetailScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeDetailScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeEditorScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeEditorScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeLibraryScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeLibraryScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/ReferenceDraftDialogs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/ReferenceDraftDialogs.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/theme/Theme.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/local/recipes/RecipeRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/local/recipes/RecipeRepositoryTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/schema/SchemaRoundTripTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/schema/SchemaRoundTripTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/app/recipebook/ui/recipes/RecipeDetailScreenTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/ui/recipes/RecipeDetailScreenTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/schemas/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/schemas/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/local/recipes/BundledIngredientCatalogTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/local/recipes/BundledIngredientCatalogTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/local/recipes/RecipeKeeperIngredientImportTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/local/recipes/RecipeKeeperIngredientImportTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/schema/BundledBoiteDeNoelPayloadTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/app/recipebook/ui/recipes/RecipeEditorScreenTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/ui/recipes/RecipeEditorScreenTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/001-air-fryer-baked-oats-0a8b29b8-faf0-4597-8514-e09335de6c03.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/_manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/_manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/recipes/boite-de-noel.converted.library.v1.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/schemas/full-library.schema.v1.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/schemas/full-library.schema.v1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/schemas/recipe-creation.schema.v1.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/schemas/recipe-creation.schema.v1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roadmap.md" beforeDir="false" afterPath="$PROJECT_DIR$/roadmap.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -358,7 +55,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[PhysicalDevice::serial=59261JEBF06414]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[LocalEmulator::path=C:\Users\Louise\.android\avd\Pixel_9a.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />

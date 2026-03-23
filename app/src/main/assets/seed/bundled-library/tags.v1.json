@@ -1,0 +1,590 @@
+[
+    {
+        "id":  "tag-dessert",
+        "nameFr":  "Dessert",
+        "nameEn":  "Dessert",
+        "slug":  "dessert",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-appetizer",
+        "nameFr":  "Entr\u00e9e",
+        "nameEn":  "Appetizer",
+        "slug":  "appetizer",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-side-dish",
+        "nameFr":  "Accompagnement",
+        "nameEn":  "Side Dish",
+        "slug":  "side-dish",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-main-dish",
+        "nameFr":  "Plat principal",
+        "nameEn":  "Main Dish",
+        "slug":  "main-dish",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-soup",
+        "nameFr":  "Soupe",
+        "nameEn":  "Soup",
+        "slug":  "soup",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-salad",
+        "nameFr":  "Salade",
+        "nameEn":  "Salad",
+        "slug":  "salad",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-sandwich",
+        "nameFr":  "Sandwich",
+        "nameEn":  "Sandwich",
+        "slug":  "sandwich",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-drink",
+        "nameFr":  "Boisson",
+        "nameEn":  "Drink",
+        "slug":  "drink",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-cookies",
+        "nameFr":  "Biscuits",
+        "nameEn":  "Cookies",
+        "slug":  "cookies",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-bars-squares",
+        "nameFr":  "Barres et carr\u00e9s",
+        "nameEn":  "Bars and Squares",
+        "slug":  "bars-and-squares",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-cake",
+        "nameFr":  "G\u00e2teau",
+        "nameEn":  "Cake",
+        "slug":  "cake",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-tarts",
+        "nameFr":  "Tartes",
+        "nameEn":  "Tarts",
+        "slug":  "tarts",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-fudge",
+        "nameFr":  "Fudge",
+        "nameEn":  "Fudge",
+        "slug":  "fudge",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-sauce",
+        "nameFr":  "Sauce",
+        "nameEn":  "Sauce",
+        "slug":  "sauce",
+        "category":  "DISH_TYPE"
+    },
+    {
+        "id":  "tag-breakfast",
+        "nameFr":  "D\u00e9jeuner",
+        "nameEn":  "Breakfast",
+        "slug":  "breakfast",
+        "category":  "MEAL"
+    },
+    {
+        "id":  "tag-brunch",
+        "nameFr":  "Brunch",
+        "nameEn":  "Brunch",
+        "slug":  "brunch",
+        "category":  "MEAL"
+    },
+    {
+        "id":  "tag-lunch",
+        "nameFr":  "D\u00eener",
+        "nameEn":  "Lunch",
+        "slug":  "lunch",
+        "category":  "MEAL"
+    },
+    {
+        "id":  "tag-dinner",
+        "nameFr":  "Souper",
+        "nameEn":  "Dinner",
+        "slug":  "dinner",
+        "category":  "MEAL"
+    },
+    {
+        "id":  "tag-snack",
+        "nameFr":  "Collation",
+        "nameEn":  "Snack",
+        "slug":  "snack",
+        "category":  "MEAL"
+    },
+    {
+        "id":  "tag-quebec",
+        "nameFr":  "Qu\u00e9b\u00e9cois",
+        "nameEn":  "Quebec",
+        "slug":  "quebec",
+        "category":  "CUISINE"
+    },
+    {
+        "id":  "tag-french",
+        "nameFr":  "Fran\u00e7ais",
+        "nameEn":  "French",
+        "slug":  "french",
+        "category":  "CUISINE"
+    },
+    {
+        "id":  "tag-italian",
+        "nameFr":  "Italien",
+        "nameEn":  "Italian",
+        "slug":  "italian",
+        "category":  "CUISINE"
+    },
+    {
+        "id":  "tag-mexican",
+        "nameFr":  "Mexicain",
+        "nameEn":  "Mexican",
+        "slug":  "mexican",
+        "category":  "CUISINE"
+    },
+    {
+        "id":  "tag-indian",
+        "nameFr":  "Indien",
+        "nameEn":  "Indian",
+        "slug":  "indian",
+        "category":  "CUISINE"
+    },
+    {
+        "id":  "tag-chinese",
+        "nameFr":  "Chinois",
+        "nameEn":  "Chinese",
+        "slug":  "chinese",
+        "category":  "CUISINE"
+    },
+    {
+        "id":  "tag-japanese",
+        "nameFr":  "Japonais",
+        "nameEn":  "Japanese",
+        "slug":  "japanese",
+        "category":  "CUISINE"
+    },
+    {
+        "id":  "tag-korean",
+        "nameFr":  "Cor\u00e9en",
+        "nameEn":  "Korean",
+        "slug":  "korean",
+        "category":  "CUISINE"
+    },
+    {
+        "id":  "tag-thai",
+        "nameFr":  "Tha\u00ef",
+        "nameEn":  "Thai",
+        "slug":  "thai",
+        "category":  "CUISINE"
+    },
+    {
+        "id":  "tag-middle-eastern",
+        "nameFr":  "Moyen-Orient",
+        "nameEn":  "Middle Eastern",
+        "slug":  "middle-eastern",
+        "category":  "CUISINE"
+    },
+    {
+        "id":  "tag-mediterranean",
+        "nameFr":  "M\u00e9diterran\u00e9en",
+        "nameEn":  "Mediterranean",
+        "slug":  "mediterranean",
+        "category":  "CUISINE"
+    },
+    {
+        "id":  "tag-holiday",
+        "nameFr":  "F\u00eates",
+        "nameEn":  "Holiday",
+        "slug":  "holiday",
+        "category":  "SEASONAL"
+    },
+    {
+        "id":  "tag-christmas",
+        "nameFr":  "No\u00ebl",
+        "nameEn":  "Christmas",
+        "slug":  "christmas",
+        "category":  "SEASONAL"
+    },
+    {
+        "id":  "tag-easter",
+        "nameFr":  "P\u00e2ques",
+        "nameEn":  "Easter",
+        "slug":  "easter",
+        "category":  "SEASONAL"
+    },
+    {
+        "id":  "tag-thanksgiving",
+        "nameFr":  "Action de gr\u00e2ce",
+        "nameEn":  "Thanksgiving",
+        "slug":  "thanksgiving",
+        "category":  "SEASONAL"
+    },
+    {
+        "id":  "tag-spring",
+        "nameFr":  "Printemps",
+        "nameEn":  "Spring",
+        "slug":  "spring",
+        "category":  "SEASONAL"
+    },
+    {
+        "id":  "tag-summer",
+        "nameFr":  "\u00c9t\u00e9",
+        "nameEn":  "Summer",
+        "slug":  "summer",
+        "category":  "SEASONAL"
+    },
+    {
+        "id":  "tag-autumn",
+        "nameFr":  "Automne",
+        "nameEn":  "Autumn",
+        "slug":  "autumn",
+        "category":  "SEASONAL"
+    },
+    {
+        "id":  "tag-winter",
+        "nameFr":  "Hiver",
+        "nameEn":  "Winter",
+        "slug":  "winter",
+        "category":  "SEASONAL"
+    },
+    {
+        "id":  "tag-air-fryer",
+        "nameFr":  "Friteuse \u00e0 air",
+        "nameEn":  "Air Fryer",
+        "slug":  "air-fryer",
+        "category":  "APPLIANCE"
+    },
+    {
+        "id":  "tag-oven",
+        "nameFr":  "Four",
+        "nameEn":  "Oven",
+        "slug":  "oven",
+        "category":  "APPLIANCE"
+    },
+    {
+        "id":  "tag-stovetop",
+        "nameFr":  "Cuisini\u00e8re",
+        "nameEn":  "Stovetop",
+        "slug":  "stovetop",
+        "category":  "APPLIANCE"
+    },
+    {
+        "id":  "tag-slow-cooker",
+        "nameFr":  "Mijoteuse",
+        "nameEn":  "Slow Cooker",
+        "slug":  "slow-cooker",
+        "category":  "APPLIANCE"
+    },
+    {
+        "id":  "tag-instant-pot",
+        "nameFr":  "Multicuiseur",
+        "nameEn":  "Instant Pot",
+        "slug":  "instant-pot",
+        "category":  "APPLIANCE"
+    },
+    {
+        "id":  "tag-grill",
+        "nameFr":  "Gril",
+        "nameEn":  "Grill",
+        "slug":  "grill",
+        "category":  "APPLIANCE"
+    },
+    {
+        "id":  "tag-bbq",
+        "nameFr":  "BBQ",
+        "nameEn":  "BBQ",
+        "slug":  "bbq",
+        "category":  "APPLIANCE"
+    },
+    {
+        "id":  "tag-sous-vide",
+        "nameFr":  "Sous-vide",
+        "nameEn":  "Sous Vide",
+        "slug":  "sous-vide",
+        "category":  "APPLIANCE"
+    },
+    {
+        "id":  "tag-blender",
+        "nameFr":  "M\u00e9langeur",
+        "nameEn":  "Blender",
+        "slug":  "blender",
+        "category":  "APPLIANCE"
+    },
+    {
+        "id":  "tag-stand-mixer",
+        "nameFr":  "Batteur sur socle",
+        "nameEn":  "Stand Mixer",
+        "slug":  "stand-mixer",
+        "category":  "APPLIANCE"
+    },
+    {
+        "id":  "tag-ingredient-component",
+        "nameFr":  "Composant",
+        "nameEn":  "Ingredient Component",
+        "slug":  "ingredient-component",
+        "category":  "USE_CASE"
+    },
+    {
+        "id":  "tag-spice-blend",
+        "nameFr":  "M\u00e9lange d\u0027\u00e9pices",
+        "nameEn":  "Spice Blend",
+        "slug":  "spice-blend",
+        "category":  "USE_CASE"
+    },
+    {
+        "id":  "tag-rub",
+        "nameFr":  "Assaisonnement sec",
+        "nameEn":  "Rub",
+        "slug":  "rub",
+        "category":  "USE_CASE"
+    },
+    {
+        "id":  "tag-marinade",
+        "nameFr":  "Marinade",
+        "nameEn":  "Marinade",
+        "slug":  "marinade",
+        "category":  "USE_CASE"
+    },
+    {
+        "id":  "tag-dressing",
+        "nameFr":  "Vinaigrette",
+        "nameEn":  "Dressing",
+        "slug":  "dressing",
+        "category":  "USE_CASE"
+    },
+    {
+        "id":  "tag-filling",
+        "nameFr":  "Garniture",
+        "nameEn":  "Filling",
+        "slug":  "filling",
+        "category":  "USE_CASE"
+    },
+    {
+        "id":  "tag-frosting",
+        "nameFr":  "Gla\u00e7age",
+        "nameEn":  "Frosting",
+        "slug":  "frosting",
+        "category":  "USE_CASE"
+    },
+    {
+        "id":  "tag-dough",
+        "nameFr":  "P\u00e2te",
+        "nameEn":  "Dough",
+        "slug":  "dough",
+        "category":  "USE_CASE"
+    },
+    {
+        "id":  "tag-batter",
+        "nameFr":  "P\u00e2te fluide",
+        "nameEn":  "Batter",
+        "slug":  "batter",
+        "category":  "USE_CASE"
+    },
+    {
+        "id":  "tag-condiment",
+        "nameFr":  "Condiment",
+        "nameEn":  "Condiment",
+        "slug":  "condiment",
+        "category":  "USE_CASE"
+    },
+    {
+        "id":  "tag-pantry-staple",
+        "nameFr":  "Base du garde-manger",
+        "nameEn":  "Pantry Staple",
+        "slug":  "pantry-staple",
+        "category":  "USE_CASE"
+    },
+    {
+        "id":  "tag-easy",
+        "nameFr":  "Facile",
+        "nameEn":  "Easy",
+        "slug":  "easy",
+        "category":  "EFFORT"
+    },
+    {
+        "id":  "tag-quick",
+        "nameFr":  "Rapide",
+        "nameEn":  "Quick",
+        "slug":  "quick",
+        "category":  "EFFORT"
+    },
+    {
+        "id":  "tag-weeknight",
+        "nameFr":  "Soir de semaine",
+        "nameEn":  "Weeknight",
+        "slug":  "weeknight",
+        "category":  "EFFORT"
+    },
+    {
+        "id":  "tag-make-ahead",
+        "nameFr":  "\u00c0 l\u0027avance",
+        "nameEn":  "Make Ahead",
+        "slug":  "make-ahead",
+        "category":  "EFFORT"
+    },
+    {
+        "id":  "tag-project",
+        "nameFr":  "Projet cuisine",
+        "nameEn":  "Project",
+        "slug":  "project",
+        "category":  "EFFORT"
+    },
+    {
+        "id":  "tag-vegetarian",
+        "nameFr":  "V\u00e9g\u00e9tarien",
+        "nameEn":  "Vegetarian",
+        "slug":  "vegetarian",
+        "category":  "DIETARY"
+    },
+    {
+        "id":  "tag-vegan",
+        "nameFr":  "V\u00e9gane",
+        "nameEn":  "Vegan",
+        "slug":  "vegan",
+        "category":  "DIETARY"
+    },
+    {
+        "id":  "tag-gluten-free",
+        "nameFr":  "Sans gluten",
+        "nameEn":  "Gluten-Free",
+        "slug":  "gluten-free",
+        "category":  "DIETARY"
+    },
+    {
+        "id":  "tag-dairy-free",
+        "nameFr":  "Sans produits laitiers",
+        "nameEn":  "Dairy-Free",
+        "slug":  "dairy-free",
+        "category":  "DIETARY"
+    },
+    {
+        "id":  "tag-nut-free",
+        "nameFr":  "Sans noix",
+        "nameEn":  "Nut-Free",
+        "slug":  "nut-free",
+        "category":  "DIETARY"
+    },
+    {
+        "id":  "tag-high-protein",
+        "nameFr":  "Riche en prot\u00e9ines",
+        "nameEn":  "High Protein",
+        "slug":  "high-protein",
+        "category":  "DIETARY"
+    },
+    {
+        "id":  "tag-party-food",
+        "nameFr":  "Buffet",
+        "nameEn":  "Party Food",
+        "slug":  "party-food",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-potluck",
+        "nameFr":  "Potluck",
+        "nameEn":  "Potluck",
+        "slug":  "potluck",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-picnic",
+        "nameFr":  "Pique-nique",
+        "nameEn":  "Picnic",
+        "slug":  "picnic",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-lunchbox",
+        "nameFr":  "Bo\u00eete \u00e0 lunch",
+        "nameEn":  "Lunchbox",
+        "slug":  "lunchbox",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-meal-prep",
+        "nameFr":  "Pr\u00e9paration de repas",
+        "nameEn":  "Meal Prep",
+        "slug":  "meal-prep",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-date-night",
+        "nameFr":  "Souper en t\u00eate-\u00e0-t\u00eate",
+        "nameEn":  "Date Night",
+        "slug":  "date-night",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-game-day",
+        "nameFr":  "Jour de match",
+        "nameEn":  "Game Day",
+        "slug":  "game-day",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-crowd-pleaser",
+        "nameFr":  "Pour la gang",
+        "nameEn":  "Crowd Pleaser",
+        "slug":  "crowd-pleaser",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-bake-sale",
+        "nameFr":  "Vente de p\u00e2tisseries",
+        "nameEn":  "Bake Sale",
+        "slug":  "bake-sale",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-bbq-side",
+        "nameFr":  "\u00c0 servir au BBQ",
+        "nameEn":  "BBQ Side",
+        "slug":  "bbq-side",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-holiday-table",
+        "nameFr":  "Table des f\u00eates",
+        "nameEn":  "Holiday Table",
+        "slug":  "holiday-table",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-road-trip",
+        "nameFr":  "Sur la route",
+        "nameEn":  "Road Trip",
+        "slug":  "road-trip",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-packable",
+        "nameFr":  "Transportable",
+        "nameEn":  "Packable",
+        "slug":  "packable",
+        "category":  "SERVING_CONTEXT"
+    },
+    {
+        "id":  "tag-shareable",
+        "nameFr":  "\u00c0 partager",
+        "nameEn":  "Shareable",
+        "slug":  "shareable",
+        "category":  "SERVING_CONTEXT"
+    }
+]

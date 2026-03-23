@@ -3,6 +3,7 @@ package app.recipebook.ui.recipes
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.Tag
+import app.recipebook.domain.model.TagCategory
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -33,7 +34,8 @@ class RecipeEditorScreenTest {
                 id = "tag-$index",
                 nameFr = "Tag $index",
                 nameEn = "Tag $index",
-                slug = "tag-$index"
+                slug = "tag-$index",
+                category = TagCategory.OTHER
             )
         }
 
@@ -41,6 +43,59 @@ class RecipeEditorScreenTest {
 
         assertEquals(15, filtered.size)
         assertEquals("tag-15", filtered.last().id)
+    }
+
+    @Test
+    fun filterTags_matchesLocalizedCategoryNames() {
+        val tags = listOf(
+            Tag(
+                id = "tag-air-fryer",
+                nameFr = "Friteuse a air",
+                nameEn = "Air Fryer",
+                slug = "air-fryer",
+                category = TagCategory.APPLIANCE
+            )
+        )
+
+        assertEquals(1, filterTags(tags, "appliance").size)
+        assertEquals(1, filterTags(tags, "appareil").size)
+    }
+
+    @Test
+    fun groupTagsForDisplay_ordersByCategoryThenSelectedThenName() {
+        val tags = listOf(
+            Tag(
+                id = "tag-dinner",
+                nameFr = "Souper",
+                nameEn = "Dinner",
+                slug = "dinner",
+                category = TagCategory.MEAL
+            ),
+            Tag(
+                id = "tag-breakfast",
+                nameFr = "Dejeuner",
+                nameEn = "Breakfast",
+                slug = "breakfast",
+                category = TagCategory.MEAL
+            ),
+            Tag(
+                id = "tag-french",
+                nameFr = "Francais",
+                nameEn = "French",
+                slug = "french",
+                category = TagCategory.CUISINE
+            )
+        )
+
+        val grouped = groupTagsForDisplay(
+            tags = tags,
+            language = AppLanguage.EN,
+            selectedTagIds = setOf("tag-dinner")
+        )
+
+        assertEquals(listOf(TagCategory.CUISINE, TagCategory.MEAL), grouped.map { it.category })
+        assertEquals(listOf("tag-french"), grouped[0].tags.map { it.id })
+        assertEquals(listOf("tag-dinner", "tag-breakfast"), grouped[1].tags.map { it.id })
     }
 
     @Test
@@ -81,4 +136,3 @@ class RecipeEditorScreenTest {
         assertEquals("Butter", reference.canonicalName())
     }
 }
-

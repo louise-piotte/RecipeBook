@@ -290,15 +290,20 @@
         "toBaseFactor": { "type": "number", "exclusiveMinimum": 0 }
       }
     },
+    "TagCategory": {
+      "type": "string",
+      "enum": ["CUISINE", "MEAL", "DISH_TYPE", "SEASONAL", "APPLIANCE", "SERVING_CONTEXT", "USE_CASE", "EFFORT", "DIETARY", "OTHER"]
+    },
     "Tag": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "nameFr", "nameEn", "slug"],
+      "required": ["id", "nameFr", "nameEn", "slug", "category"],
       "properties": {
         "id": { "$ref": "#/$defs/Uuid" },
         "nameFr": { "type": "string" },
         "nameEn": { "type": "string" },
-        "slug": { "type": "string" }
+        "slug": { "type": "string" },
+        "category": { "$ref": "#/$defs/TagCategory" }
       }
     },
     "Collection": {

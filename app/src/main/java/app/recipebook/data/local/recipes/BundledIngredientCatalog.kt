@@ -1,9 +1,8 @@
-﻿package app.recipebook.data.local.recipes
+package app.recipebook.data.local.recipes
 
 import app.recipebook.domain.model.IngredientCategory
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
-import app.recipebook.domain.model.Recipe
 
 internal object BundledIngredientCatalog {
 
@@ -446,7 +445,8 @@ internal object BundledIngredientCatalog {
             id = "ingredient-ref-semisweet-chocolate",
             nameFr = "chocolat mi-sucré",
             nameEn = "semisweet chocolate",
-            aliasesEn = listOf("semi-sweet chocolate"),
+            aliasesFr = listOf("pépites de chocolat", "pépites de chocolat mi-sucré"),
+            aliasesEn = listOf("semi-sweet chocolate", "chocolate chips", "semi-sweet chocolate chips", "semisweet chocolate chips"),
             defaultDensity = 0.55,
             unitMappings = listOf(mapping("cup", "g", 170.0), mapping("tbsp", "g", 10.6))
         ),
@@ -454,6 +454,7 @@ internal object BundledIngredientCatalog {
             id = "ingredient-ref-dark-chocolate",
             nameFr = "chocolat noir",
             nameEn = "dark chocolate",
+            aliasesEn = listOf("dark chocolate chips"),
             defaultDensity = 0.55,
             unitMappings = listOf(mapping("cup", "g", 170.0), mapping("tbsp", "g", 10.6))
         ),
@@ -468,6 +469,8 @@ internal object BundledIngredientCatalog {
             id = "ingredient-ref-white-chocolate",
             nameFr = "chocolat blanc",
             nameEn = "white chocolate",
+            aliasesFr = listOf("pépites de chocolat blanc"),
+            aliasesEn = listOf("white chocolate chips"),
             defaultDensity = 0.55,
             unitMappings = listOf(mapping("cup", "g", 170.0), mapping("tbsp", "g", 10.6))
         ),
@@ -475,6 +478,7 @@ internal object BundledIngredientCatalog {
             id = "ingredient-ref-milk-chocolate",
             nameFr = "chocolat au lait",
             nameEn = "milk chocolate",
+            aliasesEn = listOf("milk chocolate chips"),
             defaultDensity = 0.55,
             unitMappings = listOf(mapping("cup", "g", 170.0), mapping("tbsp", "g", 10.6))
         ),
@@ -746,17 +750,6 @@ internal object BundledIngredientCatalog {
             unitMappings = listOf(mapping("tbsp", "g", 17.5), mapping("tsp", "g", 5.8))
         ),
         ingredient(
-            id = "ingredient-ref-semisweet-chocolate-chips",
-            nameFr = "pepites de chocolat mi-sucré",
-            nameEn = "semisweet chocolate chips",
-            aliasesEn = listOf("semi-sweet chocolate chips")
-        ),
-        ingredient(
-            id = "ingredient-ref-white-chocolate-chips",
-            nameFr = "pepites de chocolat blanc",
-            nameEn = "white chocolate chips"
-        ),
-        ingredient(
             id = "ingredient-ref-almond-milk",
             nameFr = "lait d'amande",
             nameEn = "almond milk",
@@ -775,11 +768,6 @@ internal object BundledIngredientCatalog {
             nameFr = "banane",
             nameEn = "banana",
             aliasesEn = listOf("over-ripe banana", "banana slices")
-        ),
-        ingredient(
-            id = "ingredient-ref-chocolate-chips",
-            nameFr = "pepites de chocolat",
-            nameEn = "chocolate chips"
         ),
         ingredient(
             id = "ingredient-ref-coconut-oil",
@@ -1608,38 +1596,6 @@ internal object BundledIngredientCatalog {
     )
 }
 
-private val canonicalIngredientReferenceIds = mapOf(
-    "ingredient-ref-light-brown-sugar" to "ingredient-ref-brown-sugar",
-    "ingredient-ref-fine-salt" to "ingredient-ref-salt",
-    "ingredient-ref-kosher-salt" to "ingredient-ref-salt",
-    "ingredient-ref-butter" to "ingredient-ref-unsalted-butter",
-    "ingredient-ref-cold-unsalted-butter" to "ingredient-ref-unsalted-butter",
-    "ingredient-ref-cheddar-cheese-shredded" to "ingredient-ref-cheddar-cheese",
-    "ingredient-ref-parmesan-cheese-grated" to "ingredient-ref-parmesan-cheese",
-    "ingredient-ref-canned-black-beans" to "ingredient-ref-black-beans",
-    "ingredient-ref-canned-chickpeas" to "ingredient-ref-chickpeas"
-)
-
-internal fun normalizeBundledRecipes(recipes: List<Recipe>): List<Recipe> = recipes.map { recipe ->
-    recipe.copy(
-        ingredients = recipe.ingredients.map { ingredient ->
-            ingredient.copy(ingredientRefId = canonicalIngredientReferenceIds[ingredient.ingredientRefId] ?: ingredient.ingredientRefId)
-        }
-    )
-}
-
-internal fun mergeBundledIngredientReferences(
-    bundledReferences: List<IngredientReference>,
-    curatedReferences: List<IngredientReference> = BundledIngredientCatalog.references
-): List<IngredientReference> {
-    val merged = linkedMapOf<String, IngredientReference>()
-    bundledReferences
-        .filterNot { canonicalIngredientReferenceIds.containsKey(it.id) }
-        .forEach { merged[it.id] = it }
-    curatedReferences.forEach { merged[it.id] = it }
-    return merged.values.toList()
-}
-
 private fun categoryForIngredientId(id: String): IngredientCategory = when (id) {
     in setOf(
         "ingredient-ref-all-purpose-flour",
@@ -1736,9 +1692,9 @@ private fun categoryForIngredientId(id: String): IngredientCategory = when (id) 
         "ingredient-ref-white-chocolate",
         "ingredient-ref-milk-chocolate",
         "ingredient-ref-unsweetened-chocolate",
-        "ingredient-ref-semisweet-chocolate-chips",
-        "ingredient-ref-white-chocolate-chips",
-        "ingredient-ref-chocolate-chips",
+
+
+
         "ingredient-ref-sprinkles",
         "ingredient-ref-marshmallow-creme",
         "ingredient-ref-peanut-butter-chips",

@@ -389,7 +389,9 @@ data class TagDto(
     @SerialName("nameEn")
     val nameEn: String,
     @SerialName("slug")
-    val slug: String
+    val slug: String,
+    @SerialName("category")
+    val category: String = "OTHER"
 )
 
 @Serializable

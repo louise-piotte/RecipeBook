@@ -224,7 +224,7 @@ private fun RecipeDetailCard(
             style = MaterialTheme.typography.bodyLarge
         )
 
-        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
             recipe.servings?.let { servings ->
                 Text(
                     text = localizedString(
@@ -338,7 +338,7 @@ private fun DetailSection(
     label: String,
     content: @Composable () -> Unit
 ) {
-    Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+    Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
         Text(text = label, style = MaterialTheme.typography.titleMedium)
         content()
     }
@@ -359,6 +359,7 @@ private fun DetailIngredientRow(
     }
     Text(
         text = ingredient.text,
+        style = MaterialTheme.typography.bodyMedium,
         color = if (ingredient.isDone) {
             DoneIngredientTextColor
         } else {
@@ -372,7 +373,7 @@ private fun DetailIngredientRow(
                 onClick = onToggleDone,
                 onLongClick = onOpenConversion
             )
-            .padding(vertical = 2.dp)
+            .padding(vertical = 1.dp)
     )
 }
 
@@ -430,7 +431,7 @@ private fun IngredientConversionDialog(
                                 .fillMaxWidth()
                                 .testTag("ingredient-convert-$unit")
                                 .combinedClickable(onClick = { onSelectUnit(unit) })
-                                .padding(vertical = 2.dp),
+                                .padding(vertical = 1.dp),
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
                             Text(
@@ -671,8 +672,8 @@ private fun String.localizedMeasurementUnit(language: AppLanguage, quantity: Dou
         }
         AppLanguage.FR -> when (normalized) {
             "cup" -> if (isSingular) "tasse" else "tasses"
-            "tbsp" -> if (isSingular) "cuillère à soupe" else "cuillères à soupe"
-            "tsp" -> if (isSingular) "cuillère à thé" else "cuillères à thé"
+            "tbsp" -> if (isSingular) "cuill\u00e8re \u00e0 soupe" else "cuill\u00e8res \u00e0 soupe"
+            "tsp" -> if (isSingular) "cuill\u00e8re \u00e0 th\u00e9" else "cuill\u00e8res \u00e0 th\u00e9"
             else -> localizedIngredientUnit(language)
         }
     }
