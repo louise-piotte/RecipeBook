@@ -62,6 +62,7 @@ import app.recipebook.domain.localization.BilingualText
 import app.recipebook.domain.localization.BilingualTextResolver
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.Recipe
+import app.recipebook.ui.theme.PopupShape
 import java.util.Locale
 
 @Composable
@@ -336,7 +337,8 @@ internal fun RecipeBookTopBar(
             )
             DropdownMenu(
                 expanded = menuExpanded,
-                onDismissRequest = { menuExpanded = false }
+                onDismissRequest = { menuExpanded = false },
+                shape = PopupShape
             ) {
                 MainMenuDestination.entries.forEach { destination ->
                     DropdownMenuItem(

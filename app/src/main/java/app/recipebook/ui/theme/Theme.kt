@@ -12,6 +12,7 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.material3.Shapes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -26,6 +27,8 @@ private val CompactShapes = Shapes(
     large = RoundedCornerShape(0),
     extraLarge = RoundedCornerShape(0)
 )
+
+val PopupShape = RoundedCornerShape(4.dp)
 
 private val LightColorScheme = lightColorScheme(
     primary = Purple40,

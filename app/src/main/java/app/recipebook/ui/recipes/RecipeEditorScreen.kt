@@ -64,6 +64,7 @@ import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.TagCategory
+import app.recipebook.ui.theme.PopupShape
 import java.time.Instant
 import java.util.UUID
 import kotlinx.coroutines.launch
@@ -657,7 +658,7 @@ private fun PickerDialogContainer(
         ) {
             Surface(
                 modifier = Modifier.fillMaxWidth(),
-                shape = MaterialTheme.shapes.medium,
+                shape = PopupShape,
                 tonalElevation = 6.dp
             ) {
                 Column(

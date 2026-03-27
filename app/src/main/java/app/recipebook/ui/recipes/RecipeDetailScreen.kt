@@ -40,6 +40,7 @@ import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.Tag
+import app.recipebook.ui.theme.PopupShape
 import kotlin.math.abs
 import kotlin.math.floor
 import kotlin.math.round
@@ -394,6 +395,7 @@ private fun IngredientConversionDialog(
         ?: ingredient.ingredientName
     AlertDialog(
         onDismissRequest = onDismiss,
+        shape = PopupShape,
         confirmButton = {
             TextButton(onClick = onDismiss) {
                 Text(localizedString(R.string.close_label, language))

@@ -15,3 +15,4 @@
 local.properties
 debug-runtime
 .codex-temp
+.gradle-user-home

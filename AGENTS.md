@@ -86,3 +86,4 @@
 - If you preferred tooling is not available, stop and return to the user to install it.
 - Bundled ingredient reference maintenance uses `tools/ingredient_catalog/normalize_seed_ingredient_references.py` to normalize the live seed JSON in place with stable formatting and no duplicated database or runtime conversion layer.
 - Bundled seed package maintenance also uses `tools/seed_package/normalize_bundled_seed_package.py` to normalize and validate the full `app/src/main/assets/seed/bundled-library` package in place. The ingredient-only script remains a compatibility entry point backed by the same shared seed-package module.
+- On explicit user request only, `tools/deploy_to_pixel9a.sh` may be used to run `./gradlew test --no-daemon`, build the debug APK, uninstall and reinstall `app.recipebook` on the connected physical Pixel 9a, and launch the app. Do not use it automatically.

@@ -38,6 +38,7 @@ import app.recipebook.data.local.recipes.TagDraft
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.Tag
+import app.recipebook.ui.theme.PopupShape
 
 @Composable
 fun IngredientTagManagerScreen(
@@ -352,6 +353,7 @@ private fun IngredientReferenceDetailDialog(
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
+        shape = PopupShape,
         confirmButton = {
             TextButton(onClick = onEdit) {
                 Text(localizedString(R.string.edit_ingredient_reference_label, language))

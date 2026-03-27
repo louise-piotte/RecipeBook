@@ -35,6 +35,7 @@ import app.recipebook.data.local.recipes.IngredientReferenceDraft
 import app.recipebook.data.local.recipes.TagDraft
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.IngredientUnitMapping
+import app.recipebook.ui.theme.PopupShape
 
 @Composable
 internal fun IngredientDraftDialog(
@@ -219,7 +220,7 @@ private fun EditorDialogContainer(
         ) {
             Surface(
                 modifier = Modifier.fillMaxWidth(),
-                shape = MaterialTheme.shapes.medium,
+                shape = PopupShape,
                 tonalElevation = 6.dp
             ) {
                 Column(

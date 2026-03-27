@@ -22,20 +22,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec5f3f46-663c-40d4-997b-106decc4c520" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AGENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/ingredient-references.v1.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/ingredient-references.v1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/manifest.v1.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/manifest.v1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/metadata.v1.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/metadata.v1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/settings.v1.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/settings.v1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/tags.v1.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/tags.v1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/units.v1.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/seed/bundled-library/units.v1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/schema/BundledSeedPackageTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/app/recipebook/data/schema/BundledSeedPackageTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/IngredientTagManagerScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/IngredientTagManagerScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeDetailScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeDetailScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeEditorScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeEditorScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeLibraryScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/RecipeLibraryScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/ReferenceDraftDialogs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/recipes/ReferenceDraftDialogs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/recipebook/ui/theme/Theme.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/codex-command-trail" beforeDir="false" afterPath="$PROJECT_DIR$/docs/codex-command-trail" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/exported-recipe-lists/AGENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/AGENTS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/001-air-fryer-baked-oats-0a8b29b8-faf0-4597-8514-e09335de6c03_processed.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/exported-recipe-lists/RecipeKeeper_20260320_143058/recipes/processed_001-air-fryer-baked-oats-0a8b29b8-faf0-4597-8514-e09335de6c03.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +43,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[LocalEmulator::path=C:\Users\Louise\.android\avd\Pixel_9a.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[PhysicalDevice::serial=59261JEBF06414]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -92,26 +90,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Git/RecipeBook&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;device.screenshot&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Git/RecipeBook",
+    "project.structure.last.edited": "SDK Location",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Git\RecipeBook\docs\recipes" />
