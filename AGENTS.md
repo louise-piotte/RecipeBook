@@ -16,6 +16,7 @@
   - `.\\gradlew test --no-daemon` when a generic approved test run is sufficient.
   - `.\\gradlew :app:testDebugUnitTest --no-daemon` for unit-test-safe changes when a narrower run is more practical.
   - Use instrumentation-specific Gradle tasks separately when instrumentation coverage is needed.
+- After the tests succeed, use `tools/deploy_to_pixel9a.sh` to upload it to the user phone. If this fails because the device is not there, that's acceptable.
 
 ## Localization
 - Localize all user-facing strings in both English and French.
@@ -70,6 +71,8 @@
 - A long-term goal is to clean, normalize, and integrate the contents of `docs/exported-recipe-lists`; when inconsistencies or typos or just bad formulation are found there, fix them rather than preserving them.
 - Always review the language, in both French and English and fix it when cleaning a recipe.
 - Do not add unit tests that lock in individual recipe content details. Shared ingredient catalogs, shared tag catalogs, schema shape, and generic structural validation are fine to test.
+- If the source gives both volume and weight, weight is always preferred.
+- Add numbers the instructions.
 
 ### Encoding And Text Safety
 - When writing recipe JSON, docs, or code that contains accents or degree symbols, preserve correct UTF-8 without BOM and verify the saved result before finishing.

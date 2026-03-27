@@ -180,6 +180,7 @@
     "nameFr": "bicarbonate de soude",
     "nameEn": "baking soda",
     "aliasesFr": [
+      "soda \u00e0 p\u00e2te",
       "petite vache"
     ],
     "aliasesEn": [
@@ -193,7 +194,7 @@
         "factor": 13.8
       }
     ],
-    "updatedAt": "2026-03-23T00:00:00Z"
+    "updatedAt": "2026-03-27T00:00:00Z"
   },
   {
     "id": "ingredient-ref-banana",
@@ -223,9 +224,11 @@
   },
   {
     "id": "ingredient-ref-bbq-sauce",
-    "nameFr": "sauce bbq",
+    "nameFr": "sauce barbecue",
     "nameEn": "BBQ sauce",
-    "aliasesFr": [],
+    "aliasesFr": [
+      "sauce bbq"
+    ],
     "aliasesEn": [],
     "defaultDensity": 1.1,
     "unitMappings": [
@@ -235,7 +238,7 @@
         "factor": 260
       }
     ],
-    "updatedAt": "2026-03-23T00:00:00Z"
+    "updatedAt": "2026-03-27T00:00:00Z"
   },
   {
     "id": "ingredient-ref-beef-stock",
@@ -308,23 +311,25 @@
   },
   {
     "id": "ingredient-ref-bone-in-pork-shoulder",
-    "nameFr": "\u00e9paule de porc enti\u00e8re d\u00e9soss\u00e9e ou avec os",
+    "nameFr": "\u00e9paule de porc enti\u00e8re avec os",
     "nameEn": "bone-in pork shoulder",
     "aliasesFr": [],
     "aliasesEn": [],
     "defaultDensity": null,
     "unitMappings": [],
-    "updatedAt": "2026-03-23T00:00:00Z"
+    "updatedAt": "2026-03-27T00:00:00Z"
   },
   {
     "id": "ingredient-ref-bread-and-butter-pickle",
-    "nameFr": "cornichon au pain et au beurre",
+    "nameFr": "cornichons sucr\u00e9s",
     "nameEn": "bread and butter pickle",
-    "aliasesFr": [],
+    "aliasesFr": [
+      "cornichons bread and butter"
+    ],
     "aliasesEn": [],
     "defaultDensity": null,
     "unitMappings": [],
-    "updatedAt": "2026-03-23T00:00:00Z"
+    "updatedAt": "2026-03-27T00:00:00Z"
   },
   {
     "id": "ingredient-ref-bread-flour",
@@ -835,13 +840,13 @@
   },
   {
     "id": "ingredient-ref-cream-of-tartar",
-    "nameFr": "creme de tartre",
+    "nameFr": "cr\u00e8me de tartre",
     "nameEn": "cream of tartar",
     "aliasesFr": [],
     "aliasesEn": [],
     "defaultDensity": null,
     "unitMappings": [],
-    "updatedAt": "2026-03-23T00:00:00Z"
+    "updatedAt": "2026-03-27T00:00:00Z"
   },
   {
     "id": "ingredient-ref-creme-fraiche",
@@ -1506,13 +1511,21 @@
   },
   {
     "id": "ingredient-ref-hazelnut-butter",
-    "nameFr": "beurre de noisettes",
+    "nameFr": "beurre de noisette",
     "nameEn": "hazelnut butter",
-    "aliasesFr": [],
+    "aliasesFr": [
+      "beurre de noisettes"
+    ],
     "aliasesEn": [],
-    "defaultDensity": null,
-    "unitMappings": [],
-    "updatedAt": "2026-03-23T00:00:00Z"
+    "defaultDensity": 1,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 256
+      }
+    ],
+    "updatedAt": "2026-03-27T00:00:00Z"
   },
   {
     "id": "ingredient-ref-hazelnuts",
@@ -1818,9 +1831,15 @@
     "nameEn": "marinara sauce",
     "aliasesFr": [],
     "aliasesEn": [],
-    "defaultDensity": null,
-    "unitMappings": [],
-    "updatedAt": "2026-03-23T00:00:00Z"
+    "defaultDensity": 1.05,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 250
+      }
+    ],
+    "updatedAt": "2026-03-27T00:00:00Z"
   },
   {
     "id": "ingredient-ref-marshmallow-creme",
@@ -2621,9 +2640,15 @@
     "nameEn": "sriracha sauce",
     "aliasesFr": [],
     "aliasesEn": [],
-    "defaultDensity": null,
-    "unitMappings": [],
-    "updatedAt": "2026-03-23T00:00:00Z"
+    "defaultDensity": 1.2,
+    "unitMappings": [
+      {
+        "fromUnit": "tbsp",
+        "toUnit": "g",
+        "factor": 18
+      }
+    ],
+    "updatedAt": "2026-03-27T00:00:00Z"
   },
   {
     "id": "ingredient-ref-stew-meat",

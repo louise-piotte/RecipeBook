@@ -85,7 +85,7 @@ data class LocalizedSystemTextDto(
     @SerialName("instructions")
     val instructions: String,
     @SerialName("notes")
-    val notes: String
+    val notes: String = ""
 )
 
 @Serializable

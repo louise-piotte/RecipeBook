@@ -1,6 +1,7 @@
 package app.recipebook.data.local.recipes
 
 import android.content.Context
+import android.util.Log
 import app.recipebook.data.schema.CollectionDto
 import app.recipebook.data.schema.ContextualSubstitutionRuleDto
 import app.recipebook.data.schema.FullLibraryPayloadDto
@@ -26,6 +27,7 @@ import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
 
 object BundledRecipeLibraryLoader {
+    private const val TAG = "BundledSeedLoader"
     private const val SEED_PACKAGE_ROOT = "seed/bundled-library"
     private const val SEED_MANIFEST_PATH = "$SEED_PACKAGE_ROOT/manifest.v1.json"
     private const val SEED_PACKAGE_SCHEMA_VERSION = "bundled-seed-package/v1"
@@ -83,6 +85,7 @@ object BundledRecipeLibraryLoader {
             tags = library.tags
         )
     }.getOrElse {
+        Log.e(TAG, "Failed to load bundled seed library", it)
         SeedLibraryData()
     }
 

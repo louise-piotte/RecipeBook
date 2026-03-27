@@ -1,5 +1,6 @@
 # RecipeBook Roadmap (Active To-Do)
 
+- Review whether recipes should stay in one shared file or move to one file per recipe.
 - Build MVP functional screens:
   - Basic collections management
 - Implement enhanced unit conversion behavior:
@@ -15,6 +16,9 @@
   - Recipe search across ingredients and instructions
   - Tag and collection filtering support in the local data layer
   - Ingredient reference search across French/English names and aliases
+- Review recipe-to-recipe links:
+  - Decide whether linked recipes should be part of the product requirements
+  - If yes, add the requirement to `Requirements.md` and plan the supporting seed/schema model
 - Implement full-library export/import (replace mode first).
 - Add export/import integrity tests.
 - Implement basic Google Drive sync:

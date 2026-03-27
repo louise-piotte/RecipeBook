@@ -1,5 +1,6 @@
 package app.recipebook.data.local.recipes
 
+import android.util.Log
 import app.recipebook.data.local.db.IngredientReferenceDao
 import app.recipebook.data.local.db.IngredientReferenceEntity
 import app.recipebook.data.local.db.RecipeDao
@@ -37,8 +38,11 @@ class RecipeRepository(
     private val recipeDao: RecipeDao,
     private val ingredientReferenceDao: IngredientReferenceDao = EmptyIngredientReferenceDao,
     private val tagDao: TagDao = EmptyTagDao,
-    private val seedLibrary: SeedLibraryData = SeedLibraryData()
+    private val seedLibrary: SeedLibraryData = SeedLibraryData(),
+    private val seedLibraryLoader: (() -> SeedLibraryData)? = null
 ) {
+    private var cachedSeedLibrary: SeedLibraryData = seedLibrary
+
     fun observeRecipes(): Flow<List<Recipe>> = recipeDao.observeAll().map { recipes ->
         recipes.map(RecipeEntity::toDomainRecipe)
     }
@@ -137,7 +141,13 @@ class RecipeRepository(
 
 
     suspend fun seedBundledLibraryIfMissing() {
-        seedLibrary.recipes
+        val resolvedSeedLibrary = resolveSeedLibrary()
+        if (resolvedSeedLibrary.isEmpty()) {
+            Log.e(TAG, "Bundled library seeding skipped because no seed data could be loaded")
+            return
+        }
+
+        resolvedSeedLibrary.recipes
             .distinctBy(Recipe::id)
             .forEach { seedRecipe ->
                 if (recipeDao.getById(seedRecipe.id) == null) {
@@ -145,7 +155,7 @@ class RecipeRepository(
                 }
             }
 
-        seedLibrary.ingredientReferences
+        resolvedSeedLibrary.ingredientReferences
             .distinctBy(IngredientReference::id)
             .forEach { ingredientReference ->
                 if (ingredientReferenceDao.getById(ingredientReference.id) == null) {
@@ -153,13 +163,25 @@ class RecipeRepository(
                 }
             }
 
-        seedLibrary.tags
+        resolvedSeedLibrary.tags
             .distinctBy(Tag::id)
             .forEach { tag ->
                 if (tagDao.getById(tag.id) == null) {
                     tagDao.upsert(tag.toEntity())
                 }
             }
+    }
+
+    private fun resolveSeedLibrary(): SeedLibraryData {
+        if (!cachedSeedLibrary.isEmpty()) {
+            return cachedSeedLibrary
+        }
+
+        val loadedSeedLibrary = seedLibraryLoader?.invoke() ?: SeedLibraryData()
+        if (!loadedSeedLibrary.isEmpty()) {
+            cachedSeedLibrary = loadedSeedLibrary
+        }
+        return loadedSeedLibrary
     }
 
     fun createBlankRecipe(now: String = Instant.now().toString()): Recipe = Recipe(
@@ -184,6 +206,8 @@ class RecipeRepository(
     )
 }
 
+private const val TAG = "RecipeRepository"
+
 data class IngredientReferenceDraft(
     val nameFr: String,
     val nameEn: String,
@@ -199,6 +223,9 @@ data class TagDraft(
     val nameEn: String,
     val category: TagCategory? = null
 )
+
+private fun SeedLibraryData.isEmpty(): Boolean =
+    recipes.isEmpty() && ingredientReferences.isEmpty() && tags.isEmpty()
 
 internal fun RecipeEntity.toDomainRecipe(): Recipe = Recipe(
     id = id,

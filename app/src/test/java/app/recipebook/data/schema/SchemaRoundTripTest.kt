@@ -71,6 +71,39 @@ class SchemaRoundTripTest {
 
         assertEquals(library, roundTrip)
     }
+
+    @Test
+    fun recipeCreation_decodeTreatsMissingNotesAsEmptyText() {
+        val payload = json.decodeFromString(
+            RecipeCreationPayloadDto.serializer(),
+            """
+            {
+              "schemaVersion": "recipe-creation/v1",
+              "recipe": {
+                "id": "recipe-missing-notes",
+                "createdAt": "2026-03-27T00:00:00Z",
+                "updatedAt": "2026-03-27T00:00:00Z",
+                "languages": {
+                  "fr": {
+                    "title": "Titre",
+                    "description": "Description",
+                    "instructions": "Instructions"
+                  },
+                  "en": {
+                    "title": "Title",
+                    "description": "Description",
+                    "instructions": "Instructions"
+                  }
+                },
+                "ingredients": []
+              }
+            }
+            """.trimIndent()
+        )
+
+        assertEquals("", payload.recipe.languages.fr.notes)
+        assertEquals("", payload.recipe.languages.en.notes)
+    }
     @Test
     fun fullLibrary_export_rewritesAbsoluteMediaPathsToPortableRelativePaths() {
         val recipe = sampleRecipe().copy(

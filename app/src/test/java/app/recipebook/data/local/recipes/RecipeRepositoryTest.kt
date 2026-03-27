@@ -142,6 +142,41 @@ class RecipeRepositoryTest {
     }
 
     @Test
+    fun seedBundledLibraryIfMissing_loadsSeedLibraryOnDemandWhenInitialSeedIsEmpty() = runBlocking {
+        val fakeDao = FakeRecipeDao()
+        val ingredientDao = FakeIngredientReferenceDao()
+        val tagDao = FakeTagDao()
+        var loaderCalls = 0
+        val repository = RecipeRepository(
+            recipeDao = fakeDao,
+            ingredientReferenceDao = ingredientDao,
+            tagDao = tagDao,
+            seedLibraryLoader = {
+                loaderCalls += 1
+                SeedLibraryData(
+                    recipes = listOf(sampleRecipe(id = "recipe-loaded", titleEn = "Loaded recipe")),
+                    ingredientReferences = listOf(
+                        IngredientReference(
+                            id = "ingredient-ref-loaded",
+                            nameFr = "Sucre",
+                            nameEn = "Sugar",
+                            updatedAt = "2026-03-27T00:00:00Z"
+                        )
+                    ),
+                    tags = listOf(Tag(id = "tag-loaded", nameFr = "Dessert", nameEn = "Dessert", slug = "dessert"))
+                )
+            }
+        )
+
+        repository.seedBundledLibraryIfMissing()
+
+        assertEquals(1, loaderCalls)
+        assertEquals("Loaded recipe", fakeDao.stored("recipe-loaded")?.titleEn)
+        assertTrue(ingredientDao.items.containsKey("ingredient-ref-loaded"))
+        assertTrue(tagDao.items.containsKey("tag-loaded"))
+    }
+
+    @Test
     fun recipeEntityRoundTrip_preservesUrlOnlySource() {
         val original = sampleRecipe(id = "recipe-source-only").copy(
             source = app.recipebook.domain.model.RecipeSource(
