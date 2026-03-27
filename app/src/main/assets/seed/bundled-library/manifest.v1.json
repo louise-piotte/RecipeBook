@@ -1,14 +1,14 @@
 {
-    "schemaVersion":  "bundled-seed-package/v1",
-    "packageId":  "bundled-library",
-    "metadataFile":  "metadata.v1.json",
-    "recipesFile":  "recipes.v1.json",
-    "ingredientReferencesFile":  "ingredient-references.v1.json",
-    "ingredientFormsFile":  "ingredient-forms.v1.json",
-    "substitutionRulesFile":  "substitution-rules.v1.json",
-    "contextualSubstitutionRulesFile":  "contextual-substitution-rules.v1.json",
-    "unitsFile":  "units.v1.json",
-    "tagsFile":  "tags.v1.json",
-    "collectionsFile":  "collections.v1.json",
-    "settingsFile":  "settings.v1.json"
+  "schemaVersion": "bundled-seed-package/v1",
+  "packageId": "bundled-library",
+  "metadataFile": "metadata.v1.json",
+  "recipesFile": "recipes.v1.json",
+  "ingredientReferencesFile": "ingredient-references.v1.json",
+  "ingredientFormsFile": "ingredient-forms.v1.json",
+  "substitutionRulesFile": "substitution-rules.v1.json",
+  "contextualSubstitutionRulesFile": "contextual-substitution-rules.v1.json",
+  "unitsFile": "units.v1.json",
+  "tagsFile": "tags.v1.json",
+  "collectionsFile": "collections.v1.json",
+  "settingsFile": "settings.v1.json"
 }

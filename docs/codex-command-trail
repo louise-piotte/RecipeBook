@@ -1,3 +1,15 @@
+@AGENTS.md
+
 Change the app database itself. Do not duplicate the database.
-Do not write app runtime conversion code.
+Do not write cellphone app runtime conversion code.
 This is a pre MVP database, we want it clean before the first version.
+
+
+Please cleanup your agents.md files.
+
+remove the stuff in memory logs and put in into categories.
+Fix the broken french characters in the examples. The substitution is wrong.
+It should be using the \u code for special characters
+You are currently in wsl. converts the path to wsl path (C:\ became /mnt/c/)
+Remove the duplicate information.
+Write a sumary of then changes

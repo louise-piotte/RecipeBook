@@ -1,7 +1,7 @@
 {
-    "language":  "en",
-    "driveSyncEnabled":  false,
-    "driveFileName":  null,
-    "driveFolderId":  null,
-    "openSourceInAppBrowser":  true
+  "language": "en",
+  "driveSyncEnabled": false,
+  "driveFileName": null,
+  "driveFolderId": null,
+  "openSourceInAppBrowser": true
 }

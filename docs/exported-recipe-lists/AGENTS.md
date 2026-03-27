@@ -3,7 +3,7 @@
 ## Purpose
 - This folder stores raw and derived exports from external recipe apps/sites for cleanup and integration into RecipeBook.
 - Treat these exports as source material to normalize, not as canonical final data.
-- One major use of this folder is language cleanup and normalization across bilingual recipe content.
+- Use this folder for export-specific cleanup guidance only; project-wide rules live in the repository root `AGENTS.md`.
 
 ## Working Rules
 - Prefer fixing typos, inconsistent naming, malformed characters, and mixed-language formatting instead of preserving them.
@@ -11,7 +11,6 @@
 - Keep split per-recipe files reproducible from the original export when possible.
 - Keep image references associated with each recipe during transforms.
 - Ingredient cleanup should favor canonical ingredient references plus aliases rather than adding duplicate near-match ingredients.
-- Language cleanup should normalize both English and French text, with French leaning toward Quebec usage where applicable.
 
 ## Current Structure
 - `RecipeKeeper_20260320_143058/recipes.html`: original RecipeKeeper HTML export.

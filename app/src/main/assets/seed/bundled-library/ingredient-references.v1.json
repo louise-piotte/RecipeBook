@@ -537,9 +537,11 @@
   {
     "id": "ingredient-ref-cerises-au-marasquin",
     "nameFr": "cerises au marasquin",
-    "nameEn": "marasquino cherries",
+    "nameEn": "maraschino cherries",
     "aliasesFr": [],
-    "aliasesEn": [],
+    "aliasesEn": [
+      "marasquino cherries"
+    ],
     "defaultDensity": null,
     "unitMappings": [],
     "updatedAt": "2026-03-23T00:00:00Z"
@@ -843,7 +845,7 @@
   },
   {
     "id": "ingredient-ref-creme-fraiche",
-    "nameEn": "cr\u00e8me fra\u00eeche",
+    "nameEn": "creme fraiche",
     "nameFr": "cr\u00e8me fra\u00eeche",
     "aliasesEn": [],
     "aliasesFr": [],
@@ -1131,9 +1133,7 @@
     "id": "ingredient-ref-evaporated-milk",
     "nameFr": "lait \u00e9vapor\u00e9",
     "nameEn": "evaporated milk",
-    "aliasesFr": [
-      "evaporated milk"
-    ],
+    "aliasesFr": [],
     "aliasesEn": [],
     "defaultDensity": 1.06,
     "unitMappings": [
@@ -1381,8 +1381,7 @@
     "nameFr": "cannelle moulue",
     "nameEn": "ground cinnamon",
     "aliasesFr": [
-      "cannelle",
-      "ground cinnamon"
+      "cannelle"
     ],
     "aliasesEn": [
       "cinnamon"
@@ -1413,9 +1412,7 @@
     "id": "ingredient-ref-ground-cumin",
     "nameFr": "cumin moulu",
     "nameEn": "ground cumin",
-    "aliasesFr": [
-      "ground cumin"
-    ],
+    "aliasesFr": [],
     "aliasesEn": [
       "cumin"
     ],
@@ -1425,9 +1422,11 @@
   },
   {
     "id": "ingredient-ref-ground-dried-candy-cap-mushrooms",
-    "nameFr": "lactaire s\u00e9ch\u00e9s et moulu",
+    "nameFr": "lactaires s\u00e9ch\u00e9s moulus",
     "nameEn": "ground dried candy cap mushrooms",
-    "aliasesFr": [],
+    "aliasesFr": [
+      "lactaires s\u00e9ch\u00e9s et moulus"
+    ],
     "aliasesEn": [],
     "defaultDensity": null,
     "unitMappings": [],
@@ -1466,11 +1465,11 @@
   {
     "id": "ingredient-ref-gruyere",
     "nameFr": "gruy\u00e8re",
-    "nameEn": "gruy\u00e8re",
+    "nameEn": "gruyere",
     "aliasesFr": [],
     "aliasesEn": [
-      "gruyere",
-      "gruyere cheese"
+      "gruyere cheese",
+      "gruy\u00e8re cheese"
     ],
     "defaultDensity": null,
     "unitMappings": [],
@@ -1519,9 +1518,7 @@
     "id": "ingredient-ref-hazelnuts",
     "nameFr": "noisettes",
     "nameEn": "hazelnuts",
-    "aliasesFr": [
-      "Hazelnuts"
-    ],
+    "aliasesFr": [],
     "aliasesEn": [],
     "defaultDensity": null,
     "unitMappings": [],
@@ -1632,9 +1629,11 @@
   {
     "id": "ingredient-ref-jus-du-pot-de-cerises-au-marasquin",
     "nameFr": "jus du pot de cerises au marasquin",
-    "nameEn": "marasquino cherry juice",
+    "nameEn": "maraschino cherry juice",
     "aliasesFr": [],
-    "aliasesEn": [],
+    "aliasesEn": [
+      "marasquino cherry juice"
+    ],
     "defaultDensity": null,
     "unitMappings": [],
     "updatedAt": "2026-03-23T00:00:00Z"
@@ -1669,9 +1668,7 @@
     "id": "ingredient-ref-kidney-beans",
     "nameFr": "haricots rouges",
     "nameEn": "kidney beans",
-    "aliasesFr": [
-      "kidney beans"
-    ],
+    "aliasesFr": [],
     "aliasesEn": [],
     "defaultDensity": null,
     "unitMappings": [],
@@ -1691,9 +1688,7 @@
     "id": "ingredient-ref-lemon",
     "nameFr": "citron",
     "nameEn": "lemon",
-    "aliasesFr": [
-      "lemon"
-    ],
+    "aliasesFr": [],
     "aliasesEn": [],
     "defaultDensity": null,
     "unitMappings": [],
@@ -1704,8 +1699,7 @@
     "nameFr": "jus de citron",
     "nameEn": "lemon juice",
     "aliasesFr": [
-      "jus de citron frais",
-      "lemon juice"
+      "jus de citron frais"
     ],
     "aliasesEn": [],
     "defaultDensity": 1.03,
@@ -1722,9 +1716,7 @@
     "id": "ingredient-ref-lemon-zest",
     "nameFr": "zeste de citron",
     "nameEn": "lemon zest",
-    "aliasesFr": [
-      "lemon zest"
-    ],
+    "aliasesFr": [],
     "aliasesEn": [],
     "defaultDensity": null,
     "unitMappings": [],
@@ -1792,9 +1784,7 @@
     "id": "ingredient-ref-maple-syrup",
     "nameFr": "sirop d'\u00e9rable",
     "nameEn": "maple syrup",
-    "aliasesFr": [
-      "maple syrup"
-    ],
+    "aliasesFr": [],
     "aliasesEn": [],
     "defaultDensity": 1.33,
     "unitMappings": [
@@ -2058,7 +2048,6 @@
     "nameEn": "onion",
     "aliasesFr": [
       "gros oignon",
-      "onion",
       "yellow onion"
     ],
     "aliasesEn": [
@@ -2232,10 +2221,7 @@
     "id": "ingredient-ref-plain-yogurt",
     "nameFr": "yogourt nature",
     "nameEn": "plain yogurt",
-    "aliasesFr": [
-      "yaourt grec nature",
-      "yogourt grec nature"
-    ],
+    "aliasesFr": [],
     "aliasesEn": [
       "plain yoghurt"
     ],
@@ -2451,10 +2437,15 @@
   },
   {
     "id": "ingredient-ref-rosemary-sprigs",
-    "nameFr": "romarin frais",
-    "nameEn": "rosemary sprigs",
-    "aliasesFr": [],
-    "aliasesEn": [],
+    "nameFr": "romarin",
+    "nameEn": "rosemary",
+    "aliasesFr": [
+      "romarin frais"
+    ],
+    "aliasesEn": [
+      "rosemary sprigs",
+      "fresh rosemary"
+    ],
     "defaultDensity": null,
     "unitMappings": [],
     "updatedAt": "2026-03-23T00:00:00Z"
@@ -2618,9 +2609,7 @@
     "id": "ingredient-ref-sprinkles",
     "nameFr": "vermicelles d\u00e9coratifs",
     "nameEn": "sprinkles",
-    "aliasesFr": [
-      "sprinkles"
-    ],
+    "aliasesFr": [],
     "aliasesEn": [],
     "defaultDensity": null,
     "unitMappings": [],
@@ -2684,13 +2673,13 @@
   },
   {
     "id": "ingredient-ref-thyme",
-    "nameFr": "thym frais",
-    "nameEn": "fresh thyme",
+    "nameFr": "thym",
+    "nameEn": "thyme",
     "aliasesFr": [
-      "thym"
+      "thym frais"
     ],
     "aliasesEn": [
-      "thyme"
+      "fresh thyme"
     ],
     "defaultDensity": null,
     "unitMappings": [],
