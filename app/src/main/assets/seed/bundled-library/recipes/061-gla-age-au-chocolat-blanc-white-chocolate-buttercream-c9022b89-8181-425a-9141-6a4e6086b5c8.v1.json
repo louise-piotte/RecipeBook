@@ -1,0 +1,103 @@
+{
+  "id": "c9022b89-8181-425a-9141-6a4e6086b5c8",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-03-27T00:00:00Z",
+  "source": {
+    "sourceName": "Sugar Spun Run",
+    "sourceUrl": "https://sugarspunrun.com/white-chocolate-buttercream/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Cr\u00e8me au beurre au chocolat blanc",
+      "description": "Une cr\u00e8me au beurre au chocolat blanc lisse et soyeuse, peu sucr\u00e9e, pour glacer ou garnir des g\u00e2teaux et des cupcakes.",
+      "instructions": "Faire fondre le chocolat blanc au micro-ondes par intervalles courts ou au bain-marie, en remuant souvent, jusqu'\u00e0 ce qu'il soit compl\u00e8tement lisse.\nLaisser refroidir au moins 15 min, jusqu'\u00e0 ce qu'il ne soit plus chaud au toucher, sinon il fera fondre le beurre.\nPendant ce temps, battre le beurre ramolli dans le bol d'un batteur sur socle, ou dans un grand bol avec un batteur \u00e9lectrique, jusqu'\u00e0 ce qu'il soit cr\u00e9meux et bien fouett\u00e9.\n\u00c0 basse vitesse, ajouter graduellement le chocolat fondu refroidi et bien m\u00e9langer.\nAjouter graduellement le sucre \u00e0 glacer en raclant les parois et le fond du bol au besoin, jusqu'\u00e0 ce que le tout soit bien incorpor\u00e9.\nAjouter le sel et la vanille, puis bien m\u00e9langer.\nToujours \u00e0 basse vitesse, incorporer graduellement la cr\u00e8me 35 %. Augmenter ensuite la vitesse \u00e9lev\u00e9e et fouetter de 30 sec \u00e0 60 sec, jusqu'\u00e0 ce que le gla\u00e7age soit l\u00e9ger, cr\u00e9meux et mousseux.\nUtiliser pour glacer ou garnir des p\u00e2tisseries compl\u00e8tement refroidies."
+    },
+    "en": {
+      "title": "White Chocolate Buttercream",
+      "description": "A silky, not-too-sweet white chocolate buttercream for frosting or filling cakes and cupcakes.",
+      "instructions": "Melt the white chocolate in the microwave in short bursts or over a double boiler, stirring often, until completely smooth.\nSet it aside to cool for at least 15 min, until it is no longer warm to the touch, otherwise it will melt the butter.\nMeanwhile, beat the softened butter in the bowl of a stand mixer, or in a large bowl with an electric mixer, until creamy and well whipped.\nWith the mixer on low speed, gradually add the cooled melted white chocolate and mix well.\nGradually add the icing sugar, scraping down the sides and bottom of the bowl as needed, until everything is well combined.\nAdd the salt and vanilla, then mix well.\nWith the mixer still on low speed, gradually add the heavy cream. Increase to high speed and beat for 30 sec to 60 sec, until the frosting is light, creamy, and fluffy.\nUse to frost or fill completely cooled baked goods."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "c9022b89-8181-425a-9141-6a4e6086b5c8-ingredient-1",
+      "originalText": "170 g white chocolate, chopped into small pieces",
+      "ingredientName": "white chocolate",
+      "ingredientRefId": "ingredient-ref-white-chocolate",
+      "quantity": 170,
+      "unit": "g",
+      "preparation": "chopped into small pieces"
+    },
+    {
+      "id": "c9022b89-8181-425a-9141-6a4e6086b5c8-ingredient-2",
+      "originalText": "226 g unsalted butter, softened to room temperature",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 226,
+      "unit": "g",
+      "preparation": "softened to room temperature"
+    },
+    {
+      "id": "c9022b89-8181-425a-9141-6a4e6086b5c8-ingredient-3",
+      "originalText": "250 g icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 250,
+      "unit": "g"
+    },
+    {
+      "id": "c9022b89-8181-425a-9141-6a4e6086b5c8-ingredient-4",
+      "originalText": "\u00bd tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "c9022b89-8181-425a-9141-6a4e6086b5c8-ingredient-5",
+      "originalText": "\u215b tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "id": "c9022b89-8181-425a-9141-6a4e6086b5c8-ingredient-6",
+      "originalText": "2 tbsp heavy cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 25,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 25
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-frosting"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-c9022b89-8181-425a-9141-6a4e6086b5c8-0",
+  "photos": [
+    {
+      "id": "photo-c9022b89-8181-425a-9141-6a4e6086b5c8-0",
+      "relativePath": "photos/c9022b89-8181-425a-9141-6a4e6086b5c8_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-03-27",
+    "originalUnits": "imperial"
+  }
+}

@@ -32,11 +32,23 @@ def main() -> int:
             print(error)
         return 1
 
+    seed_root = part_paths["manifest"].parent
+    recipe_paths = [seed_root / recipe_file for recipe_file in normalized_payload["manifest"]["recipeFiles"]]
+    recipes_changed = (
+        len(part_paths["recipes"]) != len(recipe_paths) or
+        any(current_path != expected_path for current_path, expected_path in zip(part_paths["recipes"], recipe_paths)) or
+        any(
+            not path.exists() or path.read_text(encoding="utf-8") != serialize_json(recipe)
+            for path, recipe in zip(recipe_paths, normalized_payload["recipes"])
+        )
+    )
     changed_parts = [
         part_name
         for part_name, path in part_paths.items()
-        if path.read_text(encoding="utf-8") != serialize_json(normalized_payload[part_name])
+        if part_name != "recipes" and path.read_text(encoding="utf-8") != serialize_json(normalized_payload[part_name])
     ]
+    if recipes_changed:
+        changed_parts.append("recipes")
 
     if args.validate_only:
         print("bundled seed package is valid")

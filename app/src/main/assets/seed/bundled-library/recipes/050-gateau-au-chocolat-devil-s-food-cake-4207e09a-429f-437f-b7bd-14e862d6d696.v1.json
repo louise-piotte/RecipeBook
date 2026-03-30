@@ -1,0 +1,177 @@
+{
+  "id": "4207e09a-429f-437f-b7bd-14e862d6d696",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-03-27T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/devils-food-cake/#recipe"
+  },
+  "languages": {
+    "fr": {
+      "title": "G\u00e2teau au chocolat style Devil's Food",
+      "description": "Un g\u00e2teau au chocolat riche et moelleux en deux \u00e9tages, au cacao hollandais, \u00e0 la cr\u00e8me sure et au caf\u00e9 chaud.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F. Beurrer et fariner 2 moules ronds de 9 po, ou les vaporiser l\u00e9g\u00e8rement d'enduit \u00e0 cuisson, puis tapisser le fond de papier parchemin.\nDans un grand bol, tamiser ensemble la farine, le bicarbonate de soude, le sel et la poudre \u00e0 p\u00e2te.\nDans un grand bol \u00e0 m\u00e9langer, ou dans le bol d'un batteur sur socle muni de la palette, battre le beurre \u00e0 vitesse moyenne jusqu'\u00e0 consistance cr\u00e9meuse.\nDans un bol moyen, fouetter ensemble le cacao et l'huile. Ajouter ce m\u00e9lange au beurre avec le sucre granul\u00e9 et la cassonade, puis battre \u00e0 vitesse moyenne jusqu'\u00e0 l\u00e9ger et mousseux, environ 5 min.\nAvec le m\u00e9langeur en marche, ajouter les \u0153ufs un \u00e0 la fois en battant bien apr\u00e8s chaque ajout. Racler le bol au besoin, puis incorporer la vanille.\n\u00c0 basse vitesse, ajouter le tiers du m\u00e9lange de farine, puis la moiti\u00e9 du lait et la moiti\u00e9 de la cr\u00e8me sure. Continuer en alternant avec un autre tiers de farine, le reste du lait et de la cr\u00e8me sure, puis le reste de la farine jusqu'\u00e0 ce que la p\u00e2te soit homog\u00e8ne. Racler le bol.\nAjouter le caf\u00e9 chaud et fouetter d\u00e9licatement jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9. R\u00e9partir la p\u00e2te dans les moules pr\u00e9par\u00e9s.\nCuire de 40 min \u00e0 45 min, jusqu'\u00e0 ce que les g\u00e2teaux commencent \u00e0 se d\u00e9tacher des parois et que le centre reprenne sa forme sous une l\u00e9g\u00e8re pression.\nLaisser refroidir compl\u00e8tement dans les moules, puis d\u00e9mouler d\u00e9licatement et retirer le papier parchemin. Les g\u00e2teaux sont tr\u00e8s tendres, alors les manipuler avec soin.",
+      "notes": "Le rendement enregistr\u00e9 dans la recette export\u00e9e est de 24 portions. Le caf\u00e9 est pr\u00e9par\u00e9 en ajoutant 1\u00bd cuill\u00e8re \u00e0 soupe de poudre espresso dans de l'eau chaude."
+    },
+    "en": {
+      "title": "Devil's Food Cake",
+      "description": "A rich, moist two-layer chocolate cake made with Dutch-process cocoa, sour cream, and hot coffee.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F. Butter and flour two 9-inch round cake pans, or lightly coat them with baking spray, then line the bottoms with parchment paper.\nIn a large bowl, sift together the flour, baking soda, salt, and baking powder.\nIn a large mixing bowl, or in the bowl of a stand mixer fitted with the paddle attachment, beat the butter on medium speed until creamy.\nIn a medium bowl, whisk together the cocoa powder and oil. Add that mixture to the butter with the granulated sugar and brown sugar, then beat on medium speed until very light and fluffy, about 5 min.\nWith the mixer running, add the eggs one at a time, beating well after each addition. Scrape down the bowl as needed, then beat in the vanilla.\nWith the mixer on low speed, add one third of the flour mixture, then half of the milk and half of the sour cream. Continue alternating with another third of the flour, the remaining milk and sour cream, and the remaining flour until the batter is combined. Scrape down the bowl.\nAdd the hot coffee and whisk gently until fully combined. Divide the batter between the prepared pans.\nBake for 40 min to 45 min, until the cakes begin to pull away from the sides and the center springs back when lightly pressed.\nLet the cakes cool completely in the pans, then carefully invert them and remove the parchment paper. The cakes are very tender, so handle them gently.",
+      "notes": "The saved exported recipe records a yield of 24 servings. The coffee is made by adding 1\u00bd tablespoon of espresso powder in hot water."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-1",
+      "originalText": "240 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 240,
+      "unit": "g"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-2",
+      "originalText": "2 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-3",
+      "originalText": "1 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-4",
+      "originalText": "1/2 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-5",
+      "originalText": "113 g unsalted butter, room temperature",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 113,
+      "unit": "g",
+      "preparation": "room temperature"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-6",
+      "originalText": "100 g Dutch-process cocoa powder, sifted",
+      "ingredientName": "dutch-process cocoa powder",
+      "ingredientRefId": "ingredient-ref-dutch-process-cocoa-powder",
+      "quantity": 100,
+      "unit": "g",
+      "preparation": "sifted"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-7",
+      "originalText": "1/2 cup (120 ml) vegetable oil",
+      "ingredientName": "vegetable oil",
+      "ingredientRefId": "ingredient-ref-vegetable-oil",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-8",
+      "originalText": "300 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 300,
+      "unit": "g"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-9",
+      "originalText": "110 g packed light brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 110,
+      "unit": "g",
+      "preparation": "packed"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-10",
+      "originalText": "3 large eggs, room temperature",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 3,
+      "unit": "large egg",
+      "preparation": "room temperature"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-11",
+      "originalText": "1 tbsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-12",
+      "originalText": "120 g sour cream, room temperature",
+      "ingredientName": "sour cream",
+      "ingredientRefId": "ingredient-ref-sour-cream",
+      "quantity": 120,
+      "unit": "g",
+      "preparation": "room temperature"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-13",
+      "originalText": "120 ml whole milk, room temperature",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 120,
+      "unit": "ml",
+      "preparation": "room temperature"
+    },
+    {
+      "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-14",
+      "originalText": "240 ml hot coffee",
+      "ingredientName": "coffee",
+      "quantity": 240,
+      "unit": "ml",
+      "preparation": "hot"
+    }
+  ],
+  "servings": {
+    "amount": 24,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 40,
+    "totalTimeMinutes": 60
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-4207e09a-429f-437f-b7bd-14e862d6d696-0",
+  "photos": [
+    {
+      "id": "photo-4207e09a-429f-437f-b7bd-14e862d6d696-0",
+      "relativePath": "photos/4207e09a-429f-437f-b7bd-14e862d6d696_0.jpg"
+    },
+    {
+      "id": "photo-4207e09a-429f-437f-b7bd-14e862d6d696-1",
+      "relativePath": "photos/4207e09a-429f-437f-b7bd-14e862d6d696_1.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-03-27",
+    "originalUnits": "imperial"
+  }
+}

@@ -1,6 +1,5 @@
 # RecipeBook Roadmap (Active To-Do)
 
-- Review whether recipes should stay in one shared file or move to one file per recipe.
 - Build MVP functional screens:
   - Basic collections management
 - Implement enhanced unit conversion behavior:

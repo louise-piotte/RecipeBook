@@ -10,10 +10,11 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 SEED_ROOT = REPO_ROOT / "app" / "src" / "main" / "assets" / "seed" / "bundled-library"
 MANIFEST_PATH = SEED_ROOT / "manifest.v1.json"
 SEED_PACKAGE_SCHEMA_VERSION = "bundled-seed-package/v1"
+RECIPES_DIR = SEED_ROOT / "recipes"
 
 PART_KEY_ORDER = (
     "metadataFile",
-    "recipesFile",
+    "recipeFiles",
     "ingredientReferencesFile",
     "ingredientFormsFile",
     "substitutionRulesFile",
@@ -23,6 +24,24 @@ PART_KEY_ORDER = (
     "collectionsFile",
     "settingsFile",
 )
+
+STATIC_PARTS = (
+    "metadata",
+    "ingredientReferences",
+    "ingredientForms",
+    "substitutionRules",
+    "contextualSubstitutionRules",
+    "units",
+    "tags",
+    "collections",
+    "settings",
+)
+
+CANONICAL_RECIPE_FILE_STEMS_BY_ID = {
+    "0a8b29b8-faf0-4597-8514-e09335de6c03": "001-air-fryer-baked-oats-0a8b29b8-faf0-4597-8514-e09335de6c03",
+    "4207e09a-429f-437f-b7bd-14e862d6d696": "050-gateau-au-chocolat-devil-s-food-cake-4207e09a-429f-437f-b7bd-14e862d6d696",
+    "c9022b89-8181-425a-9141-6a4e6086b5c8": "061-gla-age-au-chocolat-blanc-white-chocolate-buttercream-c9022b89-8181-425a-9141-6a4e6086b5c8",
+}
 
 
 def dedupe_preserve_order(values: list[str]) -> list[str]:
@@ -97,43 +116,47 @@ def normalize_ingredient_references(data: list[dict[str, Any]]) -> list[dict[str
     return data
 
 
+def normalize_recipe(recipe: dict[str, Any]) -> dict[str, Any]:
+    recipe["id"] = recipe["id"].strip()
+    recipe["tags"] = dedupe_preserve_order(recipe.get("tags", []))
+    recipe["collections"] = dedupe_preserve_order(recipe.get("collections", []))
+    if "photos" in recipe:
+        seen_photo_ids: set[str] = set()
+        normalized_photos: list[dict[str, Any]] = []
+        for photo in recipe.get("photos", []):
+            photo_id = photo["id"].strip()
+            if photo_id in seen_photo_ids:
+                continue
+            seen_photo_ids.add(photo_id)
+            normalized_photos.append(
+                {
+                    **photo,
+                    "id": photo_id,
+                    "relativePath": photo["relativePath"].strip().replace("\\", "/"),
+                }
+            )
+        recipe["photos"] = normalized_photos
+    if "attachments" in recipe:
+        seen_attachment_ids: set[str] = set()
+        normalized_attachments: list[dict[str, Any]] = []
+        for attachment in recipe.get("attachments", []):
+            attachment_id = attachment["id"].strip()
+            if attachment_id in seen_attachment_ids:
+                continue
+            seen_attachment_ids.add(attachment_id)
+            normalized_attachments.append(
+                {
+                    **attachment,
+                    "id": attachment_id,
+                    "relativePath": attachment["relativePath"].strip().replace("\\", "/"),
+                }
+            )
+        recipe["attachments"] = normalized_attachments
+    return recipe
+
+
 def normalize_recipes(data: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    for recipe in data:
-        recipe["tags"] = dedupe_preserve_order(recipe.get("tags", []))
-        recipe["collections"] = dedupe_preserve_order(recipe.get("collections", []))
-        if "photos" in recipe:
-            seen_photo_ids: set[str] = set()
-            normalized_photos: list[dict[str, Any]] = []
-            for photo in recipe.get("photos", []):
-                photo_id = photo["id"].strip()
-                if photo_id in seen_photo_ids:
-                    continue
-                seen_photo_ids.add(photo_id)
-                normalized_photos.append(
-                    {
-                        **photo,
-                        "id": photo_id,
-                        "relativePath": photo["relativePath"].strip().replace("\\", "/"),
-                    }
-                )
-            recipe["photos"] = normalized_photos
-        if "attachments" in recipe:
-            seen_attachment_ids: set[str] = set()
-            normalized_attachments: list[dict[str, Any]] = []
-            for attachment in recipe.get("attachments", []):
-                attachment_id = attachment["id"].strip()
-                if attachment_id in seen_attachment_ids:
-                    continue
-                seen_attachment_ids.add(attachment_id)
-                normalized_attachments.append(
-                    {
-                        **attachment,
-                        "id": attachment_id,
-                        "relativePath": attachment["relativePath"].strip().replace("\\", "/"),
-                    }
-                )
-            recipe["attachments"] = normalized_attachments
-    return data
+    return [normalize_recipe(recipe) for recipe in data]
 
 
 def normalize_tags(data: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -188,7 +211,12 @@ def normalize_manifest(data: dict[str, Any]) -> dict[str, Any]:
     normalized = dict(data)
     normalized["schemaVersion"] = normalized["schemaVersion"].strip()
     normalized["packageId"] = normalized["packageId"].strip()
+    normalized["recipeFiles"] = dedupe_preserve_order(
+        [recipe_file.strip().replace("\\", "/") for recipe_file in normalized.get("recipeFiles", [])]
+    )
     for key in PART_KEY_ORDER:
+        if key == "recipeFiles":
+            continue
         normalized[key] = normalized[key].strip().replace("\\", "/")
     return normalized
 
@@ -227,12 +255,19 @@ def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def load_seed_package() -> tuple[dict[str, Any], dict[str, Path], dict[str, Any]]:
+def recipe_relative_path(recipe: dict[str, Any]) -> str:
+    recipe_id = recipe["id"].strip()
+    recipe_file_stem = CANONICAL_RECIPE_FILE_STEMS_BY_ID.get(recipe_id, recipe_id)
+    return f"recipes/{recipe_file_stem}.v1.json"
+
+
+def load_seed_package() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
     manifest = normalize_manifest(load_json(MANIFEST_PATH))
-    part_paths = {
+    recipe_paths = [SEED_ROOT / recipe_file for recipe_file in manifest["recipeFiles"]]
+    part_paths: dict[str, Any] = {
         "manifest": MANIFEST_PATH,
         "metadata": SEED_ROOT / manifest["metadataFile"],
-        "recipes": SEED_ROOT / manifest["recipesFile"],
+        "recipes": recipe_paths,
         "ingredientReferences": SEED_ROOT / manifest["ingredientReferencesFile"],
         "ingredientForms": SEED_ROOT / manifest["ingredientFormsFile"],
         "substitutionRules": SEED_ROOT / manifest["substitutionRulesFile"],
@@ -242,12 +277,26 @@ def load_seed_package() -> tuple[dict[str, Any], dict[str, Path], dict[str, Any]
         "collections": SEED_ROOT / manifest["collectionsFile"],
         "settings": SEED_ROOT / manifest["settingsFile"],
     }
-    payload = {part_name: load_json(path) for part_name, path in part_paths.items()}
+    payload = {
+        "manifest": load_json(MANIFEST_PATH),
+        "metadata": load_json(part_paths["metadata"]),
+        "recipes": [load_json(path) for path in recipe_paths],
+        "ingredientReferences": load_json(part_paths["ingredientReferences"]),
+        "ingredientForms": load_json(part_paths["ingredientForms"]),
+        "substitutionRules": load_json(part_paths["substitutionRules"]),
+        "contextualSubstitutionRules": load_json(part_paths["contextualSubstitutionRules"]),
+        "units": load_json(part_paths["units"]),
+        "tags": load_json(part_paths["tags"]),
+        "collections": load_json(part_paths["collections"]),
+        "settings": load_json(part_paths["settings"]),
+    }
     return manifest, part_paths, payload
 
 
 def normalize_seed_package(payload: dict[str, Any]) -> dict[str, Any]:
-    return {part_name: normalize_part(part_name, data) for part_name, data in payload.items()}
+    normalized = {part_name: normalize_part(part_name, data) for part_name, data in payload.items()}
+    normalized["manifest"]["recipeFiles"] = [recipe_relative_path(recipe) for recipe in normalized["recipes"]]
+    return normalized
 
 
 def validate_unique_ids(items: list[dict[str, Any]], id_key: str, label: str) -> list[str]:
@@ -257,7 +306,7 @@ def validate_unique_ids(items: list[dict[str, Any]], id_key: str, label: str) ->
     return [f"duplicate {label} id: {item_id}" for item_id, count in counts.items() if count > 1]
 
 
-def validate_seed_package(payload: dict[str, Any], part_paths: dict[str, Path]) -> list[str]:
+def validate_seed_package(payload: dict[str, Any], part_paths: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     manifest = payload["manifest"]
 
@@ -265,8 +314,20 @@ def validate_seed_package(payload: dict[str, Any], part_paths: dict[str, Path]) 
         errors.append(f"unexpected manifest schemaVersion: {manifest['schemaVersion']}")
 
     for part_name, path in part_paths.items():
+        if part_name == "recipes":
+            for recipe_path in path:
+                if not recipe_path.exists():
+                    errors.append(f"missing seed package part: recipes -> {recipe_path}")
+            continue
         if not path.exists():
             errors.append(f"missing seed package part: {part_name} -> {path}")
+
+    if len(manifest["recipeFiles"]) != len(payload["recipes"]):
+        errors.append("manifest recipeFiles count does not match loaded recipe count")
+
+    expected_recipe_files = [recipe_relative_path(recipe) for recipe in payload["recipes"]]
+    if manifest["recipeFiles"] != expected_recipe_files:
+        errors.append("manifest recipeFiles do not match the canonical recipe file naming")
 
     ingredient_references = payload["ingredientReferences"]
     ingredient_reference_ids = {item["id"] for item in ingredient_references}
@@ -426,6 +487,19 @@ def validate_seed_package(payload: dict[str, Any], part_paths: dict[str, Path]) 
     return errors
 
 
-def write_seed_package(part_paths: dict[str, Path], payload: dict[str, Any]) -> None:
-    for part_name, path in part_paths.items():
+def write_seed_package(part_paths: dict[str, Any], payload: dict[str, Any]) -> None:
+    for part_name in ("manifest", *STATIC_PARTS):
+        path = part_paths[part_name]
         path.write_text(serialize_json(payload[part_name]), encoding="utf-8", newline="\n")
+
+    recipe_paths = [SEED_ROOT / recipe_file for recipe_file in payload["manifest"]["recipeFiles"]]
+    RECIPES_DIR.mkdir(parents=True, exist_ok=True)
+
+    for recipe_path, recipe in zip(recipe_paths, payload["recipes"], strict=True):
+        recipe_path.parent.mkdir(parents=True, exist_ok=True)
+        recipe_path.write_text(serialize_json(recipe), encoding="utf-8", newline="\n")
+
+    referenced_recipe_paths = {path.resolve() for path in recipe_paths}
+    for existing_path in RECIPES_DIR.glob("*.json"):
+        if existing_path.resolve() not in referenced_recipe_paths:
+            existing_path.unlink()

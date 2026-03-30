@@ -2,7 +2,6 @@
   "schemaVersion": "bundled-seed-package/v1",
   "packageId": "bundled-library",
   "metadataFile": "metadata.v1.json",
-  "recipesFile": "recipes.v1.json",
   "ingredientReferencesFile": "ingredient-references.v1.json",
   "ingredientFormsFile": "ingredient-forms.v1.json",
   "substitutionRulesFile": "substitution-rules.v1.json",
@@ -10,5 +9,10 @@
   "unitsFile": "units.v1.json",
   "tagsFile": "tags.v1.json",
   "collectionsFile": "collections.v1.json",
-  "settingsFile": "settings.v1.json"
+  "settingsFile": "settings.v1.json",
+  "recipeFiles": [
+    "recipes/001-air-fryer-baked-oats-0a8b29b8-faf0-4597-8514-e09335de6c03.v1.json",
+    "recipes/050-gateau-au-chocolat-devil-s-food-cake-4207e09a-429f-437f-b7bd-14e862d6d696.v1.json",
+    "recipes/061-gla-age-au-chocolat-blanc-white-chocolate-buttercream-c9022b89-8181-425a-9141-6a4e6086b5c8.v1.json"
+  ]
 }

@@ -47,7 +47,9 @@ object BundledRecipeLibraryLoader {
             schemaVersion = SchemaVersions.FULL_LIBRARY_V1,
             library = LibraryDto(
                 metadata = loadAssetJson(context, manifest.assetPath(manifest.metadataFile), LibraryMetadataDto.serializer()),
-                recipes = loadAssetJson(context, manifest.assetPath(manifest.recipesFile), ListSerializer(RecipeDto.serializer())),
+                recipes = manifest.recipeFiles.map { recipeFile ->
+                    loadAssetJson(context, manifest.assetPath(recipeFile), RecipeDto.serializer())
+                },
                 ingredientReferences = loadAssetJson(
                     context,
                     manifest.assetPath(manifest.ingredientReferencesFile),
@@ -143,7 +145,7 @@ private data class BundledSeedManifestDto(
     val schemaVersion: String,
     val packageId: String,
     val metadataFile: String,
-    val recipesFile: String,
+    val recipeFiles: List<String>,
     val ingredientReferencesFile: String,
     val ingredientFormsFile: String,
     val substitutionRulesFile: String,

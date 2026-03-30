@@ -151,7 +151,9 @@ class BundledSeedPackageTest {
             schemaVersion = SchemaVersions.FULL_LIBRARY_V1,
             library = LibraryDto(
                 metadata = json.decodeFromString(LibraryMetadataDto.serializer(), File(root, manifest.metadataFile).readText()),
-                recipes = json.decodeFromString(ListSerializer(RecipeDto.serializer()), File(root, manifest.recipesFile).readText()),
+                recipes = manifest.recipeFiles.map { recipeFile ->
+                    json.decodeFromString(RecipeDto.serializer(), File(root, recipeFile).readText())
+                },
                 ingredientReferences = json.decodeFromString(
                     ListSerializer(IngredientReferenceDto.serializer()),
                     File(root, manifest.ingredientReferencesFile).readText()
@@ -188,7 +190,7 @@ private data class BundledSeedManifestTestDto(
     val schemaVersion: String,
     val packageId: String,
     val metadataFile: String,
-    val recipesFile: String,
+    val recipeFiles: List<String>,
     val ingredientReferencesFile: String,
     val ingredientFormsFile: String,
     val substitutionRulesFile: String,

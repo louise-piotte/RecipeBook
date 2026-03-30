@@ -41,7 +41,7 @@
 ### Schema And Data Rules
 - Keep schema DTOs, mappers, round-trip tests, schema files, schema docs, and examples consistent with each other whenever any one of them changes.
 - During MVP, evolve schema contents in place within v1. Start schema version upgrades only when real user databases are in circulation and backward compatibility matters.
-- Bundled seed data uses the split `seed/bundled-library` package format with a manifest plus part files.
+- Bundled seed data uses the split `seed/bundled-library` package format with a manifest plus part files; recipes live one per file under `seed/bundled-library/recipes`.
 - For bundled seed/database JSON text, store French accents and symbols as explicit Unicode escapes such as `\u00e0`, `\u00e9`, `\u0153`, and `\u00b0`. Fix the bundled data itself rather than adding runtime encoding or conversion code.
 - Ingredient references carry an internal classification category for normalization, catalog management, and future filtering; pre-MVP, evolve these categories in place without compatibility shims.
 - Tags use a fixed built-in category taxonomy, including `OTHER`, with stored category values and localized FR/EN labels; keep categories code-defined rather than user-defined unless explicitly changed.
