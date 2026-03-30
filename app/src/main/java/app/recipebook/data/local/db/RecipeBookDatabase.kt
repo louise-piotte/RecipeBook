@@ -8,13 +8,17 @@ import androidx.room.RoomDatabase
 @Database(
     entities = [
         RecipeEntity::class,
+        RecipeIngredientLineEntity::class,
+        IngredientLineSubstitutionEntity::class,
         IngredientReferenceEntity::class,
         TagEntity::class,
+        RecipeTagCrossRef::class,
         CollectionEntity::class,
+        RecipeCollectionCrossRef::class,
         LibrarySettingsEntity::class,
         LibraryMetadataEntity::class
     ],
-    version = 4,
+    version = 5,
     exportSchema = false
 )
 abstract class RecipeBookDatabase : RoomDatabase() {

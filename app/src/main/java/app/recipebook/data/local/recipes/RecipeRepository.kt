@@ -1,10 +1,16 @@
 package app.recipebook.data.local.recipes
 
 import android.util.Log
+import app.recipebook.data.local.db.IngredientLineSubstitutionEntity
 import app.recipebook.data.local.db.IngredientReferenceDao
 import app.recipebook.data.local.db.IngredientReferenceEntity
+import app.recipebook.data.local.db.IngredientLineWithSubstitutions
 import app.recipebook.data.local.db.RecipeDao
+import app.recipebook.data.local.db.RecipeIngredientLineEntity
+import app.recipebook.data.local.db.RecipeCollectionCrossRef
 import app.recipebook.data.local.db.RecipeEntity
+import app.recipebook.data.local.db.RecipeTagCrossRef
+import app.recipebook.data.local.db.RecipeWithRelations
 import app.recipebook.data.local.db.TagDao
 import app.recipebook.data.local.db.TagEntity
 import app.recipebook.domain.model.AttachmentRef
@@ -44,7 +50,7 @@ class RecipeRepository(
     private var cachedSeedLibrary: SeedLibraryData = seedLibrary
 
     fun observeRecipes(): Flow<List<Recipe>> = recipeDao.observeAll().map { recipes ->
-        recipes.map(RecipeEntity::toDomainRecipe)
+        recipes.map(RecipeWithRelations::toDomainRecipe)
     }
 
     fun observeRecipeById(id: String): Flow<Recipe?> = recipeDao.observeById(id).map { entity ->
@@ -59,10 +65,17 @@ class RecipeRepository(
         tags.map(TagEntity::toDomain)
     }
 
-    suspend fun getRecipeById(id: String): Recipe? = recipeDao.getById(id)?.toDomainRecipe()
+    suspend fun getRecipeById(id: String): Recipe? = recipeDao.getByIdWithRelations(id)?.toDomainRecipe()
 
     suspend fun upsertRecipe(recipe: Recipe) {
-        recipeDao.upsert(recipe.toEntity())
+        val storage = recipe.toStorageGraph()
+        recipeDao.replaceRecipeGraph(
+            recipe = storage.recipe,
+            ingredientLines = storage.ingredientLines,
+            ingredientLineSubstitutions = storage.ingredientLineSubstitutions,
+            tagRefs = storage.tagRefs,
+            collectionRefs = storage.collectionRefs
+        )
     }
 
     suspend fun createIngredientReference(
@@ -151,7 +164,14 @@ class RecipeRepository(
             .distinctBy(Recipe::id)
             .forEach { seedRecipe ->
                 if (recipeDao.getById(seedRecipe.id) == null) {
-                    recipeDao.upsert(seedRecipe.toEntity())
+                    val storage = seedRecipe.toStorageGraph()
+                    recipeDao.replaceRecipeGraph(
+                        recipe = storage.recipe,
+                        ingredientLines = storage.ingredientLines,
+                        ingredientLineSubstitutions = storage.ingredientLineSubstitutions,
+                        tagRefs = storage.tagRefs,
+                        collectionRefs = storage.collectionRefs
+                    )
                 }
             }
 
@@ -227,58 +247,60 @@ data class TagDraft(
 private fun SeedLibraryData.isEmpty(): Boolean =
     recipes.isEmpty() && ingredientReferences.isEmpty() && tags.isEmpty()
 
-internal fun RecipeEntity.toDomainRecipe(): Recipe = Recipe(
-    id = id,
-    createdAt = createdAt,
-    updatedAt = updatedAt,
-    source = if (sourceUrl != null) {
-        RecipeSource(sourceUrl = sourceUrl, sourceName = sourceName.orEmpty())
+internal fun RecipeWithRelations.toDomainRecipe(): Recipe = Recipe(
+    id = recipe.id,
+    createdAt = recipe.createdAt,
+    updatedAt = recipe.updatedAt,
+    source = if (recipe.sourceUrl != null) {
+        RecipeSource(sourceUrl = recipe.sourceUrl, sourceName = recipe.sourceName.orEmpty())
     } else {
         null
     },
     languages = BilingualText(
         fr = LocalizedSystemText(
-            title = titleFr,
-            description = descriptionFr,
-            instructions = instructionsFr,
-            notes = notesFr
+            title = recipe.titleFr,
+            description = recipe.descriptionFr,
+            instructions = recipe.instructionsFr,
+            notes = recipe.notesFr
         ),
         en = LocalizedSystemText(
-            title = titleEn,
-            description = descriptionEn,
-            instructions = instructionsEn,
-            notes = notesEn
+            title = recipe.titleEn,
+            description = recipe.descriptionEn,
+            instructions = recipe.instructionsEn,
+            notes = recipe.notesEn
         )
     ),
-    ingredients = storageJson.decodeFromString<List<StoredIngredientLine>>(ingredientLinesJson).map(StoredIngredientLine::toDomain),
-    servings = if (servingsAmount != null) {
-        Servings(amount = servingsAmount, unit = servingsUnit)
+    ingredients = ingredientLines
+        .sortedBy { it.ingredientLine.position }
+        .map(IngredientLineWithSubstitutions::toDomain),
+    servings = if (recipe.servingsAmount != null) {
+        Servings(amount = recipe.servingsAmount, unit = recipe.servingsUnit)
     } else {
         null
     },
-    times = if (prepTimeMinutes != null || cookTimeMinutes != null || totalTimeMinutes != null) {
+    times = if (recipe.prepTimeMinutes != null || recipe.cookTimeMinutes != null || recipe.totalTimeMinutes != null) {
         RecipeTimes(
-            prepTimeMinutes = prepTimeMinutes,
-            cookTimeMinutes = cookTimeMinutes,
-            totalTimeMinutes = totalTimeMinutes
+            prepTimeMinutes = recipe.prepTimeMinutes,
+            cookTimeMinutes = recipe.cookTimeMinutes,
+            totalTimeMinutes = recipe.totalTimeMinutes
         )
     } else {
         null
     },
-    tagIds = storageJson.decodeFromString(tagIdsJson),
-    collectionIds = storageJson.decodeFromString(collectionIdsJson),
-    ratings = if (userRating != null || madeCount != null || lastMadeAt != null) {
-        Ratings(userRating = userRating, madeCount = madeCount, lastMadeAt = lastMadeAt)
+    tagIds = tagRefs.sortedBy(RecipeTagCrossRef::position).map(RecipeTagCrossRef::tagId),
+    collectionIds = collectionRefs.sortedBy(RecipeCollectionCrossRef::position).map(RecipeCollectionCrossRef::collectionId),
+    ratings = if (recipe.userRating != null || recipe.madeCount != null || recipe.lastMadeAt != null) {
+        Ratings(userRating = recipe.userRating, madeCount = recipe.madeCount, lastMadeAt = recipe.lastMadeAt)
     } else {
         null
     },
-    mainPhotoId = mainPhotoId,
-    photos = storageJson.decodeFromString<List<StoredPhotoRef>>(photosJson).map(StoredPhotoRef::toDomain),
-    attachments = storageJson.decodeFromString<List<StoredAttachmentRef>>(attachmentsJson).map(StoredAttachmentRef::toDomain),
-    importMetadata = importMetadataJson?.let {
+    mainPhotoId = recipe.mainPhotoId,
+    photos = storageJson.decodeFromString<List<StoredPhotoRef>>(recipe.photosJson).map(StoredPhotoRef::toDomain),
+    attachments = storageJson.decodeFromString<List<StoredAttachmentRef>>(recipe.attachmentsJson).map(StoredAttachmentRef::toDomain),
+    importMetadata = recipe.importMetadataJson?.let {
         storageJson.decodeFromString<StoredImportMetadata>(it).toDomain()
     },
-    deletedAt = deletedAt
+    deletedAt = recipe.deletedAt
 )
 
 internal fun Recipe.toEntity(): RecipeEntity = RecipeEntity(
@@ -305,13 +327,43 @@ internal fun Recipe.toEntity(): RecipeEntity = RecipeEntity(
     lastMadeAt = ratings?.lastMadeAt,
     mainPhotoId = mainPhotoId,
     deletedAt = deletedAt,
-    ingredientLinesJson = storageJson.encodeToString(ingredients.map(IngredientLine::toStored)),
-    tagIdsJson = storageJson.encodeToString(tagIds),
-    collectionIdsJson = storageJson.encodeToString(collectionIds),
     photosJson = storageJson.encodeToString(photos.map(PhotoRef::toStored)),
     attachmentsJson = storageJson.encodeToString(attachments.map(AttachmentRef::toStored)),
     importMetadataJson = importMetadata?.let { storageJson.encodeToString(it.toStored()) }
 )
+
+private data class RecipeStorageGraph(
+    val recipe: RecipeEntity,
+    val ingredientLines: List<RecipeIngredientLineEntity>,
+    val ingredientLineSubstitutions: List<IngredientLineSubstitutionEntity>,
+    val tagRefs: List<RecipeTagCrossRef>,
+    val collectionRefs: List<RecipeCollectionCrossRef>
+)
+
+private fun Recipe.toStorageGraph(): RecipeStorageGraph {
+    val ingredientLines = ingredients.mapIndexed { index, ingredient ->
+        ingredient.toEntity(recipeId = id, position = index)
+    }
+    val substitutions = ingredients.flatMap { ingredient ->
+        ingredient.substitutions.mapIndexed { index, substitution ->
+            substitution.toEntity(position = index)
+        }
+    }
+    val tagRefs = tagIds.distinct().mapIndexed { index, tagId ->
+        RecipeTagCrossRef(recipeId = id, tagId = tagId, position = index)
+    }
+    val collectionRefs = collectionIds.distinct().mapIndexed { index, collectionId ->
+        RecipeCollectionCrossRef(recipeId = id, collectionId = collectionId, position = index)
+    }
+
+    return RecipeStorageGraph(
+        recipe = toEntity(),
+        ingredientLines = ingredientLines,
+        ingredientLineSubstitutions = substitutions,
+        tagRefs = tagRefs,
+        collectionRefs = collectionRefs
+    )
+}
 
 private fun IngredientReferenceEntity.toDomain(): IngredientReference = IngredientReference(
     id = id,
@@ -358,37 +410,26 @@ private val storageJson = Json {
     encodeDefaults = true
 }
 
-@Serializable
-private data class StoredIngredientLine(
-    val id: String,
-    val ingredientRefId: String? = null,
-    val originalText: String,
-    val quantity: Double? = null,
-    val unit: String? = null,
-    val ingredientName: String,
-    val preparation: String? = null,
-    val optional: Boolean = false,
-    val notes: String? = null,
-    val group: String? = null,
-    val substitutions: List<StoredIngredientLineSubstitution> = emptyList()
-) {
-    fun toDomain(): IngredientLine = IngredientLine(
-        id = id,
-        ingredientRefId = ingredientRefId,
-        originalText = originalText,
-        quantity = quantity,
-        unit = unit,
-        ingredientName = ingredientName,
-        preparation = preparation,
-        optional = optional,
-        notes = notes,
-        group = group,
-        substitutions = substitutions.map(StoredIngredientLineSubstitution::toDomain)
-    )
-}
+private fun IngredientLineWithSubstitutions.toDomain(): IngredientLine = IngredientLine(
+    id = ingredientLine.id,
+    ingredientRefId = ingredientLine.ingredientRefId,
+    originalText = ingredientLine.originalText,
+    quantity = ingredientLine.quantity,
+    unit = ingredientLine.unit,
+    ingredientName = ingredientLine.ingredientName,
+    preparation = ingredientLine.preparation,
+    optional = ingredientLine.optional,
+    notes = ingredientLine.notes,
+    group = ingredientLine.group,
+    substitutions = substitutions
+        .sortedBy(IngredientLineSubstitutionEntity::position)
+        .map(IngredientLineSubstitutionEntity::toDomain)
+)
 
-private fun IngredientLine.toStored(): StoredIngredientLine = StoredIngredientLine(
+private fun IngredientLine.toEntity(recipeId: String, position: Int): RecipeIngredientLineEntity = RecipeIngredientLineEntity(
     id = id,
+    recipeId = recipeId,
+    position = position,
     ingredientRefId = ingredientRefId,
     originalText = originalText,
     quantity = quantity,
@@ -397,38 +438,25 @@ private fun IngredientLine.toStored(): StoredIngredientLine = StoredIngredientLi
     preparation = preparation,
     optional = optional,
     notes = notes,
-    group = group,
-    substitutions = substitutions.map(IngredientLineSubstitution::toStored)
+    group = group
 )
 
-@Serializable
-private data class StoredIngredientLineSubstitution(
-    val id: String,
-    val ingredientLineId: String,
-    val substitutionRuleId: String? = null,
-    val contextualSubstitutionRuleId: String? = null,
-    val isPreferred: Boolean = false,
-    val customLabelFr: String? = null,
-    val customLabelEn: String? = null,
-    val createdAt: String,
-    val updatedAt: String
-) {
-    fun toDomain(): IngredientLineSubstitution = IngredientLineSubstitution(
-        id = id,
-        ingredientLineId = ingredientLineId,
-        substitutionRuleId = substitutionRuleId,
-        contextualSubstitutionRuleId = contextualSubstitutionRuleId,
-        isPreferred = isPreferred,
-        customLabelFr = customLabelFr,
-        customLabelEn = customLabelEn,
-        createdAt = createdAt,
-        updatedAt = updatedAt
-    )
-}
-
-private fun IngredientLineSubstitution.toStored(): StoredIngredientLineSubstitution = StoredIngredientLineSubstitution(
+private fun IngredientLineSubstitutionEntity.toDomain(): IngredientLineSubstitution = IngredientLineSubstitution(
     id = id,
     ingredientLineId = ingredientLineId,
+    substitutionRuleId = substitutionRuleId,
+    contextualSubstitutionRuleId = contextualSubstitutionRuleId,
+    isPreferred = isPreferred,
+    customLabelFr = customLabelFr,
+    customLabelEn = customLabelEn,
+    createdAt = createdAt,
+    updatedAt = updatedAt
+)
+
+private fun IngredientLineSubstitution.toEntity(position: Int): IngredientLineSubstitutionEntity = IngredientLineSubstitutionEntity(
+    id = id,
+    ingredientLineId = ingredientLineId,
+    position = position,
     substitutionRuleId = substitutionRuleId,
     contextualSubstitutionRuleId = contextualSubstitutionRuleId,
     isPreferred = isPreferred,

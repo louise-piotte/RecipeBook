@@ -1,22 +1,31 @@
 package app.recipebook.data.local.recipes
 
+import app.recipebook.data.local.db.IngredientLineSubstitutionEntity
 import app.recipebook.data.local.db.IngredientReferenceDao
 import app.recipebook.data.local.db.IngredientReferenceEntity
+import app.recipebook.data.local.db.IngredientLineWithSubstitutions
+import app.recipebook.data.local.db.RecipeCollectionCrossRef
 import app.recipebook.data.local.db.RecipeDao
 import app.recipebook.data.local.db.RecipeEntity
+import app.recipebook.data.local.db.RecipeIngredientLineEntity
+import app.recipebook.data.local.db.RecipeTagCrossRef
+import app.recipebook.data.local.db.RecipeWithRelations
 import app.recipebook.data.local.db.TagDao
 import app.recipebook.data.local.db.TagEntity
 import app.recipebook.domain.model.BilingualText
-import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientCategory
+import app.recipebook.domain.model.IngredientLine
+import app.recipebook.domain.model.IngredientLineSubstitution
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.Tag
 import app.recipebook.ui.recipes.normalizeMultilineText
 import app.recipebook.ui.recipes.parseIngredients
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
@@ -28,7 +37,8 @@ import org.junit.Test
 class RecipeRepositoryTest {
 
     @Test
-    fun recipeEntityRoundTrip_preservesRecipeDetails() {
+    fun recipeStorageRoundTrip_preservesRecipeDetails() = runBlocking {
+        val repository = RecipeRepository(FakeRecipeDao())
         val original = sampleRecipe(
             id = "recipe-round-trip",
             ingredient = IngredientLine(
@@ -37,17 +47,36 @@ class RecipeRepositoryTest {
                 originalText = "2 cups flour",
                 quantity = 2.0,
                 unit = "cups",
-                ingredientName = "all-purpose flour"
+                ingredientName = "all-purpose flour",
+                substitutions = listOf(
+                    IngredientLineSubstitution(
+                        id = "substitution-1",
+                        ingredientLineId = "ingredient-1",
+                        substitutionRuleId = "rule-1",
+                        isPreferred = true,
+                        createdAt = "2026-03-13T10:00:00Z",
+                        updatedAt = "2026-03-13T10:00:00Z"
+                    )
+                )
             )
-        ).copy(languages = sampleRecipe(id = "recipe-round-trip").languages.copy(en = sampleRecipe(id = "recipe-round-trip").languages.en.copy(notes = "Note")))
+        ).copy(
+            languages = sampleRecipe(id = "recipe-round-trip").languages.copy(
+                en = sampleRecipe(id = "recipe-round-trip").languages.en.copy(notes = "Note")
+            ),
+            collectionIds = listOf("collection-desserts")
+        )
 
-        val roundTrip = original.toEntity().toDomainRecipe()
+        repository.upsertRecipe(original)
+        val roundTrip = repository.getRecipeById(original.id)!!
 
         assertEquals(original.languages.fr.title, roundTrip.languages.fr.title)
         assertEquals(original.ingredients.first().ingredientRefId, roundTrip.ingredients.first().ingredientRefId)
         assertEquals(original.ingredients.first().quantity, roundTrip.ingredients.first().quantity)
+        assertEquals(original.ingredients.first().substitutions.single().substitutionRuleId, roundTrip.ingredients.first().substitutions.single().substitutionRuleId)
         assertEquals(original.languages.en.notes, roundTrip.languages.en.notes)
         assertEquals(original.mainPhotoId, roundTrip.mainPhotoId)
+        assertEquals(original.tagIds, roundTrip.tagIds)
+        assertEquals(original.collectionIds, roundTrip.collectionIds)
     }
 
     @Test
@@ -66,31 +95,32 @@ class RecipeRepositoryTest {
         val fakeDao = FakeRecipeDao()
         val ingredientDao = FakeIngredientReferenceDao()
         val tagDao = FakeTagDao()
-        val existingRecipe = sampleRecipe(id = "recipe-existing")
-        fakeDao.upsert(existingRecipe.toEntity())
-        val missingRecipe = sampleRecipe(id = "recipe-missing", titleEn = "Missing recipe")
-        val ingredientReference = IngredientReference(
-            id = "ingredient-ref-all-purpose-flour",
-            nameFr = "all-purpose flour",
-            nameEn = "all-purpose flour",
-            updatedAt = "2026-03-16T00:00:00Z"
-        )
-        val tag = Tag(id = "tag-dessert", nameFr = "Dessert", nameEn = "Dessert", slug = "dessert")
         val repository = RecipeRepository(
             recipeDao = fakeDao,
             ingredientReferenceDao = ingredientDao,
             tagDao = tagDao,
             seedLibrary = SeedLibraryData(
-                recipes = listOf(existingRecipe, missingRecipe),
-                ingredientReferences = listOf(ingredientReference),
-                tags = listOf(tag)
+                recipes = listOf(
+                    sampleRecipe(id = "recipe-existing"),
+                    sampleRecipe(id = "recipe-missing", titleEn = "Missing recipe")
+                ),
+                ingredientReferences = listOf(
+                    IngredientReference(
+                        id = "ingredient-ref-all-purpose-flour",
+                        nameFr = "all-purpose flour",
+                        nameEn = "all-purpose flour",
+                        updatedAt = "2026-03-16T00:00:00Z"
+                    )
+                ),
+                tags = listOf(Tag(id = "tag-dessert", nameFr = "Dessert", nameEn = "Dessert", slug = "dessert"))
             )
         )
 
+        repository.upsertRecipe(sampleRecipe(id = "recipe-existing"))
         repository.seedBundledLibraryIfMissing()
 
         assertEquals(2, fakeDao.size())
-        assertEquals("Missing recipe", fakeDao.stored("recipe-missing")?.titleEn)
+        assertEquals("Missing recipe", fakeDao.stored("recipe-missing")?.recipe?.titleEn)
         assertTrue(ingredientDao.items.containsKey("ingredient-ref-all-purpose-flour"))
         assertTrue(tagDao.items.containsKey("tag-dessert"))
     }
@@ -111,7 +141,6 @@ class RecipeRepositoryTest {
             ),
             tagIds = listOf("tag-user")
         )
-        fakeDao.upsert(existingRecipe.toEntity())
         val repository = RecipeRepository(
             recipeDao = fakeDao,
             seedLibrary = SeedLibraryData(
@@ -133,9 +162,10 @@ class RecipeRepositoryTest {
             )
         )
 
+        repository.upsertRecipe(existingRecipe)
         repository.seedBundledLibraryIfMissing()
 
-        val stored = fakeDao.getById("seed-existing")!!.toDomainRecipe()
+        val stored = repository.getRecipeById("seed-existing")!!
         assertEquals("User recipe", stored.languages.en.title)
         assertEquals("ingredient-ref-user-choice", stored.ingredients.first().ingredientRefId)
         assertEquals(listOf("tag-user"), stored.tagIds)
@@ -171,21 +201,23 @@ class RecipeRepositoryTest {
         repository.seedBundledLibraryIfMissing()
 
         assertEquals(1, loaderCalls)
-        assertEquals("Loaded recipe", fakeDao.stored("recipe-loaded")?.titleEn)
+        assertEquals("Loaded recipe", fakeDao.stored("recipe-loaded")?.recipe?.titleEn)
         assertTrue(ingredientDao.items.containsKey("ingredient-ref-loaded"))
         assertTrue(tagDao.items.containsKey("tag-loaded"))
     }
 
     @Test
-    fun recipeEntityRoundTrip_preservesUrlOnlySource() {
+    fun recipeStorageRoundTrip_preservesUrlOnlySource() = runBlocking {
+        val repository = RecipeRepository(FakeRecipeDao())
         val original = sampleRecipe(id = "recipe-source-only").copy(
-            source = app.recipebook.domain.model.RecipeSource(
+            source = RecipeSource(
                 sourceUrl = "https://example.com/recipe",
                 sourceName = ""
             )
         )
 
-        val roundTrip = original.toEntity().toDomainRecipe()
+        repository.upsertRecipe(original)
+        val roundTrip = repository.getRecipeById(original.id)!!
 
         assertEquals("https://example.com/recipe", roundTrip.source?.sourceUrl)
         assertEquals("", roundTrip.source?.sourceName)
@@ -321,38 +353,123 @@ private fun sampleRecipe(
     tagIds = tagIds
 )
 
-private class FakeRecipeDao : RecipeDao {
+private class FakeRecipeDao : RecipeDao() {
     private val recipes = linkedMapOf<String, RecipeEntity>()
+    private val ingredientLines = linkedMapOf<String, RecipeIngredientLineEntity>()
+    private val substitutions = linkedMapOf<String, IngredientLineSubstitutionEntity>()
+    private val tagRefs = linkedMapOf<String, MutableList<RecipeTagCrossRef>>()
+    private val collectionRefs = linkedMapOf<String, MutableList<RecipeCollectionCrossRef>>()
 
     override suspend fun upsert(recipe: RecipeEntity) {
         recipes[recipe.id] = recipe
     }
 
     override suspend fun upsertAll(recipes: List<RecipeEntity>) {
-        recipes.forEach { recipe ->
-            this.recipes[recipe.id] = recipe
+        recipes.forEach { recipe -> this.recipes[recipe.id] = recipe }
+    }
+
+    override suspend fun upsertIngredientLines(lines: List<RecipeIngredientLineEntity>) {
+        lines.forEach { line -> ingredientLines[line.id] = line }
+    }
+
+    override suspend fun upsertIngredientLineSubstitutions(substitutions: List<IngredientLineSubstitutionEntity>) {
+        substitutions.forEach { substitution -> this.substitutions[substitution.id] = substitution }
+    }
+
+    override suspend fun upsertRecipeTagRefs(tagRefs: List<RecipeTagCrossRef>) {
+        tagRefs.groupBy(RecipeTagCrossRef::recipeId).forEach { (recipeId, refs) ->
+            this.tagRefs[recipeId] = refs.sortedBy(RecipeTagCrossRef::position).toMutableList()
         }
+    }
+
+    override suspend fun upsertRecipeCollectionRefs(collectionRefs: List<RecipeCollectionCrossRef>) {
+        collectionRefs.groupBy(RecipeCollectionCrossRef::recipeId).forEach { (recipeId, refs) ->
+            this.collectionRefs[recipeId] = refs.sortedBy(RecipeCollectionCrossRef::position).toMutableList()
+        }
+    }
+
+    override suspend fun deleteTagRefsByRecipeId(recipeId: String) {
+        tagRefs.remove(recipeId)
+    }
+
+    override suspend fun deleteCollectionRefsByRecipeId(recipeId: String) {
+        collectionRefs.remove(recipeId)
+    }
+
+    override suspend fun deleteIngredientLinesByRecipeId(recipeId: String) {
+        val deletedLineIds = ingredientLines.values
+            .filter { it.recipeId == recipeId }
+            .map(RecipeIngredientLineEntity::id)
+            .toSet()
+        ingredientLines.entries.removeIf { it.value.recipeId == recipeId }
+        substitutions.entries.removeIf { it.value.ingredientLineId in deletedLineIds }
     }
 
     override suspend fun getById(id: String): RecipeEntity? = recipes[id]
 
-    override fun observeById(id: String) = flowOf(recipes[id])
+    override suspend fun getByIdWithRelations(id: String): RecipeWithRelations? = relationFor(id)
 
-    override fun observeAll() = flowOf(recipes.values.toList())
+    override fun observeById(id: String): Flow<RecipeWithRelations?> = flowOf(relationFor(id))
 
-    override fun observeByTitle(query: String) = flowOf(recipes.values.filter {
-        it.titleFr.contains(query, ignoreCase = true) || it.titleEn.contains(query, ignoreCase = true)
-    })
+    override fun observeAll(): Flow<List<RecipeWithRelations>> = flowOf(
+        recipes.values
+            .filter { it.deletedAt == null }
+            .sortedByDescending(RecipeEntity::updatedAt)
+            .mapNotNull { relationFor(it.id) }
+    )
+
+    override fun observeByTitle(query: String): Flow<List<RecipeWithRelations>> = flowOf(
+        recipes.values
+            .filter { it.deletedAt == null }
+            .filter { recipe ->
+                recipe.titleFr.contains(query, ignoreCase = true) ||
+                    recipe.titleEn.contains(query, ignoreCase = true) ||
+                    recipe.instructionsFr.contains(query, ignoreCase = true) ||
+                    recipe.instructionsEn.contains(query, ignoreCase = true) ||
+                    ingredientLines.values
+                        .filter { it.recipeId == recipe.id }
+                        .any { line ->
+                            line.originalText.contains(query, ignoreCase = true) ||
+                                line.ingredientName.contains(query, ignoreCase = true)
+                        }
+            }
+            .sortedByDescending(RecipeEntity::updatedAt)
+            .mapNotNull { relationFor(it.id) }
+    )
 
     override suspend fun countActive(): Int = recipes.values.count { it.deletedAt == null }
 
     override suspend fun deleteById(id: String) {
         recipes.remove(id)
+        deleteIngredientLinesByRecipeId(id)
+        deleteTagRefsByRecipeId(id)
+        deleteCollectionRefsByRecipeId(id)
     }
 
-    fun stored(id: String): RecipeEntity? = recipes[id]
+    fun stored(id: String): RecipeWithRelations? = relationFor(id)
 
     fun size(): Int = recipes.size
+
+    private fun relationFor(id: String): RecipeWithRelations? {
+        val recipe = recipes[id] ?: return null
+        val ingredientLineRelations = ingredientLines.values
+            .filter { it.recipeId == id }
+            .sortedBy(RecipeIngredientLineEntity::position)
+            .map { line ->
+                IngredientLineWithSubstitutions(
+                    ingredientLine = line,
+                    substitutions = substitutions.values
+                        .filter { it.ingredientLineId == line.id }
+                        .sortedBy(IngredientLineSubstitutionEntity::position)
+                )
+            }
+        return RecipeWithRelations(
+            recipe = recipe,
+            ingredientLines = ingredientLineRelations,
+            tagRefs = tagRefs[id].orEmpty().sortedBy(RecipeTagCrossRef::position),
+            collectionRefs = collectionRefs[id].orEmpty().sortedBy(RecipeCollectionCrossRef::position)
+        )
+    }
 }
 
 private class FakeIngredientReferenceDao : IngredientReferenceDao {
@@ -366,7 +483,7 @@ private class FakeIngredientReferenceDao : IngredientReferenceDao {
         ingredientReferences.forEach { items[it.id] = it }
     }
 
-    override fun observeAll() = flowOf(items.values.toList())
+    override fun observeAll(): Flow<List<IngredientReferenceEntity>> = flowOf(items.values.toList())
 
     override suspend fun getById(id: String): IngredientReferenceEntity? = items[id]
 }
@@ -382,9 +499,7 @@ private class FakeTagDao : TagDao {
         tags.forEach { items[it.id] = it }
     }
 
-    override fun observeAll() = flowOf(items.values.toList())
+    override fun observeAll(): Flow<List<TagEntity>> = flowOf(items.values.toList())
 
     override suspend fun getById(id: String): TagEntity? = items[id]
 }
-
-

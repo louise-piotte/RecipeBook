@@ -4,10 +4,14 @@ import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import app.recipebook.data.local.db.RecipeBookDatabase
+import app.recipebook.data.local.db.RecipeCollectionCrossRef
 import app.recipebook.data.local.db.RecipeEntity
+import app.recipebook.data.local.db.RecipeIngredientLineEntity
+import app.recipebook.data.local.db.RecipeTagCrossRef
 import app.recipebook.data.local.recipes.RecipeRepository
 import app.recipebook.data.local.recipes.SeedLibraryData
 import app.recipebook.domain.model.BilingualText
+import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.LocalizedSystemText
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -38,33 +42,58 @@ class InstrumentedTest {
     }
 
     @Test
-    fun recipeDao_upsertAndReadById_roundTrips() = runBlocking {
-        val recipe = RecipeEntity(
-            id = "recipe-1",
-            createdAt = "2026-03-06T10:00:00Z",
-            updatedAt = "2026-03-06T10:00:00Z",
-            titleFr = "Crepes",
-            titleEn = "Crepes",
-            descriptionFr = "Description FR",
-            descriptionEn = "EN description",
-            instructionsFr = "Cuire 2 minutes",
-            instructionsEn = "Cook 2 minutes",
-            notesFr = "",
-            notesEn = "",
-            ingredientLinesJson = "[]",
-            tagIdsJson = "[\"tag-1\"]",
-            collectionIdsJson = "[]",
-            photosJson = "[]",
-            attachmentsJson = "[]"
+    fun recipeDao_replaceRecipeGraphAndReadById_roundTrips() = runBlocking {
+        db.recipeDao().replaceRecipeGraph(
+            recipe = RecipeEntity(
+                id = "recipe-1",
+                createdAt = "2026-03-06T10:00:00Z",
+                updatedAt = "2026-03-06T10:00:00Z",
+                titleFr = "Crepes",
+                titleEn = "Crepes",
+                descriptionFr = "Description FR",
+                descriptionEn = "EN description",
+                instructionsFr = "Cuire 2 minutes",
+                instructionsEn = "Cook 2 minutes",
+                notesFr = "",
+                notesEn = "",
+                photosJson = "[]",
+                attachmentsJson = "[]"
+            ),
+            ingredientLines = listOf(
+                RecipeIngredientLineEntity(
+                    id = "recipe-1-ingredient-1",
+                    recipeId = "recipe-1",
+                    position = 0,
+                    originalText = "2 eggs",
+                    quantity = 2.0,
+                    unit = "egg",
+                    ingredientName = "eggs"
+                )
+            ),
+            ingredientLineSubstitutions = emptyList(),
+            tagRefs = listOf(
+                RecipeTagCrossRef(
+                    recipeId = "recipe-1",
+                    tagId = "tag-1",
+                    position = 0
+                )
+            ),
+            collectionRefs = listOf(
+                RecipeCollectionCrossRef(
+                    recipeId = "recipe-1",
+                    collectionId = "collection-1",
+                    position = 0
+                )
+            )
         )
 
-        db.recipeDao().upsert(recipe)
-
-        val stored = db.recipeDao().getById("recipe-1")
+        val stored = db.recipeDao().getByIdWithRelations("recipe-1")
 
         assertNotNull(stored)
-        assertEquals("Crepes", stored?.titleFr)
-        assertEquals("[\"tag-1\"]", stored?.tagIdsJson)
+        assertEquals("Crepes", stored?.recipe?.titleFr)
+        assertEquals("2 eggs", stored?.ingredientLines?.single()?.ingredientLine?.originalText)
+        assertEquals("tag-1", stored?.tagRefs?.single()?.tagId)
+        assertEquals("collection-1", stored?.collectionRefs?.single()?.collectionId)
     }
 
     @Test
@@ -91,7 +120,7 @@ class InstrumentedTest {
         repository.seedBundledLibraryIfMissing()
         repository.seedBundledLibraryIfMissing()
 
-        val storedRecipes = db.recipeDao().observeAll().first()
+        val storedRecipes = repository.observeRecipes().first()
 
         assertEquals(2, db.recipeDao().countActive())
         assertEquals(2, storedRecipes.size)
@@ -99,36 +128,33 @@ class InstrumentedTest {
 
     @Test
     fun recipeRepository_seedBundledLibraryIfMissing_addsOnlyMissingRecipes() = runBlocking {
-        val existing = RecipeEntity(
-            id = "seed-existing",
-            createdAt = "2026-03-13T10:00:00Z",
-            updatedAt = "2026-03-13T10:00:00Z",
-            titleFr = "Recette deja stockee",
-            titleEn = "Already Stored Recipe",
-            descriptionFr = "Description FR",
-            descriptionEn = "EN description",
-            instructionsFr = "Une etape",
-            instructionsEn = "One step",
-            notesFr = "",
-            notesEn = "",
-            ingredientLinesJson = "[]",
-            tagIdsJson = "[]",
-            collectionIdsJson = "[]",
-            photosJson = "[]",
-            attachmentsJson = "[]"
+        val repository = RecipeRepository(db.recipeDao())
+        repository.upsertRecipe(
+            repository.createBlankRecipe("2026-03-13T10:00:00Z").copy(
+                id = "seed-existing",
+                languages = BilingualText(
+                    fr = LocalizedSystemText("Recette deja stockee", "", "", ""),
+                    en = LocalizedSystemText("Already Stored Recipe", "", "", "")
+                ),
+                ingredients = listOf(
+                    IngredientLine(
+                        id = "seed-existing-ingredient-1",
+                        originalText = "2 cups flour",
+                        ingredientName = "flour"
+                    )
+                )
+            )
         )
-        db.recipeDao().upsert(existing)
 
-        val factoryRepository = RecipeRepository(db.recipeDao())
         val bundledRecipes = listOf(
-            factoryRepository.createBlankRecipe("2026-03-13T10:00:00Z").copy(
+            repository.createBlankRecipe("2026-03-13T10:00:00Z").copy(
                 id = "seed-existing",
                 languages = BilingualText(
                     fr = LocalizedSystemText("Remplacement", "", "", ""),
                     en = LocalizedSystemText("Replacement", "", "", "")
                 )
             ),
-            factoryRepository.createBlankRecipe("2026-03-13T10:05:00Z").copy(
+            repository.createBlankRecipe("2026-03-13T10:05:00Z").copy(
                 id = "seed-missing",
                 languages = BilingualText(
                     fr = LocalizedSystemText("Nouvelle graine", "", "", ""),
@@ -136,15 +162,15 @@ class InstrumentedTest {
                 )
             )
         )
-        val repository = RecipeRepository(db.recipeDao(), seedLibrary = SeedLibraryData(recipes = bundledRecipes))
+        val seededRepository = RecipeRepository(db.recipeDao(), seedLibrary = SeedLibraryData(recipes = bundledRecipes))
 
-        repository.seedBundledLibraryIfMissing()
+        seededRepository.seedBundledLibraryIfMissing()
 
-        val storedRecipes = db.recipeDao().observeAll().first()
+        val storedRecipes = seededRepository.observeRecipes().first()
 
         assertEquals(2, storedRecipes.size)
-        assertEquals("Already Stored Recipe", db.recipeDao().getById("seed-existing")?.titleEn)
-        assertEquals("New Seed", db.recipeDao().getById("seed-missing")?.titleEn)
+        assertEquals("Already Stored Recipe", seededRepository.getRecipeById("seed-existing")?.languages?.en?.title)
+        assertEquals("New Seed", seededRepository.getRecipeById("seed-missing")?.languages?.en?.title)
     }
 
     @Test
@@ -169,7 +195,3 @@ class InstrumentedTest {
         assertTrue(storedAfterDelete.isEmpty())
     }
 }
-
-
-
-

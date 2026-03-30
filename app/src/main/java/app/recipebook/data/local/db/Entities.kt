@@ -1,6 +1,9 @@
 package app.recipebook.data.local.db
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.ForeignKey
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import app.recipebook.domain.model.IngredientCategory
 
@@ -30,12 +33,71 @@ data class RecipeEntity(
     val lastMadeAt: String? = null,
     val mainPhotoId: String? = null,
     val deletedAt: String? = null,
-    val ingredientLinesJson: String = "[]",
-    val tagIdsJson: String = "[]",
-    val collectionIdsJson: String = "[]",
     val photosJson: String = "[]",
     val attachmentsJson: String = "[]",
     val importMetadataJson: String? = null
+)
+
+@Entity(
+    tableName = "recipe_ingredient_lines",
+    foreignKeys = [
+        ForeignKey(
+            entity = RecipeEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["recipeId"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ],
+    indices = [
+        Index(value = ["recipeId", "position"], unique = true),
+        Index(value = ["recipeId"]),
+        Index(value = ["ingredientRefId"])
+    ]
+)
+data class RecipeIngredientLineEntity(
+    @PrimaryKey
+    val id: String,
+    val recipeId: String,
+    val position: Int,
+    val ingredientRefId: String? = null,
+    val originalText: String,
+    val quantity: Double? = null,
+    val unit: String? = null,
+    val ingredientName: String,
+    val preparation: String? = null,
+    val optional: Boolean = false,
+    val notes: String? = null,
+    @ColumnInfo(name = "groupName")
+    val group: String? = null
+)
+
+@Entity(
+    tableName = "recipe_ingredient_line_substitutions",
+    foreignKeys = [
+        ForeignKey(
+            entity = RecipeIngredientLineEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["ingredientLineId"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ],
+    indices = [
+        Index(value = ["ingredientLineId", "position"], unique = true),
+        Index(value = ["ingredientLineId"])
+    ]
+)
+data class IngredientLineSubstitutionEntity(
+    @PrimaryKey
+    val id: String,
+    val ingredientLineId: String,
+    val position: Int,
+    val substitutionRuleId: String? = null,
+    val contextualSubstitutionRuleId: String? = null,
+    val isPreferred: Boolean = false,
+    val customLabelFr: String? = null,
+    val customLabelEn: String? = null,
+    val createdAt: String,
+    val updatedAt: String
 )
 
 @Entity(tableName = "ingredient_references")
@@ -62,6 +124,28 @@ data class TagEntity(
     val category: String = "OTHER"
 )
 
+@Entity(
+    tableName = "recipe_tag_cross_refs",
+    primaryKeys = ["recipeId", "tagId"],
+    foreignKeys = [
+        ForeignKey(
+            entity = RecipeEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["recipeId"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ],
+    indices = [
+        Index(value = ["recipeId", "position"], unique = true),
+        Index(value = ["tagId"])
+    ]
+)
+data class RecipeTagCrossRef(
+    val recipeId: String,
+    val tagId: String,
+    val position: Int
+)
+
 @Entity(tableName = "collections")
 data class CollectionEntity(
     @PrimaryKey
@@ -72,6 +156,28 @@ data class CollectionEntity(
     val descriptionEn: String? = null,
     val recipeIdsJson: String = "[]",
     val sortOrder: String? = null
+)
+
+@Entity(
+    tableName = "recipe_collection_cross_refs",
+    primaryKeys = ["recipeId", "collectionId"],
+    foreignKeys = [
+        ForeignKey(
+            entity = RecipeEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["recipeId"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ],
+    indices = [
+        Index(value = ["recipeId", "position"], unique = true),
+        Index(value = ["collectionId"])
+    ]
+)
+data class RecipeCollectionCrossRef(
+    val recipeId: String,
+    val collectionId: String,
+    val position: Int
 )
 
 @Entity(tableName = "library_settings")
