@@ -1,5 +1,6 @@
 *.iml
 .gradle
+/.gradle-user
 /local.properties
 /.idea/caches
 /.idea/libraries
@@ -9,10 +10,7 @@
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
-/captures
 .externalNativeBuild
 .cxx
 local.properties
-debug-runtime
-.codex-temp
-.gradle-user-home
+/tmp

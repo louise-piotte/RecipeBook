@@ -11,6 +11,8 @@
 ## Testing Requirements
 - Maintain both unit tests and Android instrumentation tests.
 - Keep tests aligned with the Pixel 9a profile where relevant.
+- Test implemented changes on the Android emulator as part of verification.
+  - `powershell.exe -NoProfile -Command '& "$env:LOCALAPPDATA\Android\Sdk\emulator\emulator.exe" -avd Pixel_9a'` to start emulator.
 - Remove placeholder/stub tests once real coverage is implemented.
 - Default reusable verification commands:
   - `.\\gradlew test --no-daemon` when a generic approved test run is sufficient.
