@@ -1,0 +1,138 @@
+{
+  "id": "a1e9ba5d-be5c-447d-a368-3ae4954a0a07",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/linzer-cookies/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Biscuits Linzer",
+      "description": "Des biscuits Linzer tendres garnis de confiture de framboises, parfaits pour les f\u00eates.",
+      "instructions": "Dans un grand bol, m\u00e9langer la farine tout usage, la farine d'amande, la cannelle et le sel.\nDans le bol d'un batteur sur socle muni d'une palette, battre le beurre, le sucre et le zeste de citron \u00e0 vitesse moyenne jusqu'\u00e0 consistance l\u00e9g\u00e8re et mousseuse, environ 3 min. Ajouter les jaunes d'\u0153ufs, un \u00e0 la fois, en battant juste assez pour les incorporer. Ajouter la vanille.\n\u00c0 basse vitesse, incorporer graduellement le m\u00e9lange de farine jusqu'\u00e0 ce qu'il soit combin\u00e9. Diviser la p\u00e2te en deux disques, bien emballer et r\u00e9frig\u00e9rer environ 1 h, jusqu'\u00e0 ce qu'elle soit ferme.\nPr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F et tapisser deux plaques de papier parchemin.\nLaisser reposer la p\u00e2te environ 5 min \u00e0 temp\u00e9rature ambiante pour l'assouplir l\u00e9g\u00e8rement. Sur une surface l\u00e9g\u00e8rement farin\u00e9e, abaisser un disque \u00e0 1/4 po d'\u00e9paisseur. D\u00e9couper 36 biscuits avec un emporte-pi\u00e8ce rond de 2 po, en abaissant de nouveau les retailles au besoin. D\u00e9poser les biscuits sur les plaques en laissant environ 2 po entre eux.\nPerforer le centre de 18 biscuits avec un petit emporte-pi\u00e8ce rond, en diamant ou en \u00e9toile de 1/2 po \u00e0 3/4 po. R\u00e9frig\u00e9rer pendant 30 min.\nCuire de 8 min \u00e0 10 min, jusqu'\u00e0 ce que les bords soient l\u00e9g\u00e8rement dor\u00e9s. Laisser refroidir 5 min sur la plaque, puis transf\u00e9rer sur une grille jusqu'\u00e0 complet refroidissement. R\u00e9p\u00e9ter avec le reste de la p\u00e2te.\nPasser la confiture de framboises au tamis fin en pressant avec le dos d'une cuill\u00e8re, puis jeter les graines.\nRetourner les biscuits pleins, d\u00e9poser environ 1/2 cuill\u00e8re \u00e0 th\u00e9 de confiture au centre, puis couvrir avec les biscuits perc\u00e9s en pressant doucement. Conserver \u00e0 plat dans un contenant herm\u00e9tique jusqu'\u00e0 5 jours.",
+      "notes": "Laisser reposer la p\u00e2te \u00e0 temp\u00e9rature ambiante avant de l'abaisser aide \u00e0 \u00e9viter que les bords ne fissurent.\nLe plus simple pour transf\u00e9rer les biscuits d\u00e9coup\u00e9s est de glisser une spatule coud\u00e9e dessous plut\u00f4t que de les soulever avec les mains."
+    },
+    "en": {
+      "title": "Linzer Cookies",
+      "description": "Tender Linzer cookies filled with raspberry jam, perfect for the holiday season.",
+      "instructions": "In a large bowl, whisk together the all-purpose flour, almond flour, cinnamon, and salt.\nIn the bowl of a stand mixer fitted with a paddle attachment, beat the butter, sugar, and lemon zest on medium speed until light and fluffy, about 3 min. Add the egg yolks one at a time, beating just until combined. Beat in the vanilla.\nWith the mixer on low speed, gradually add the flour mixture until combined. Divide the dough into two discs, wrap well, and refrigerate for about 1 h until firm.\nPreheat the oven to 177\u00b0C/350\u00b0F and line two baking sheets with parchment paper.\nLet the dough sit at room temperature for about 5 min to soften slightly. On a lightly floured surface, roll one disc to 1/4-inch thickness. Cut out 36 cookies with a 2-inch round cutter, rerolling scraps as needed. Place the cookies on the baking sheets about 2 inches apart.\nPunch out the center of 18 cookies using a 1/2-inch to 3/4-inch round, diamond, or star cutter. Refrigerate for 30 min.\nBake for 8 min to 10 min, until the edges are lightly golden. Cool on the pan for 5 min, then transfer to a wire rack to cool completely. Repeat with the remaining dough.\nPress the raspberry jam through a fine-mesh sieve using the back of a spoon, then discard the seeds.\nTurn the whole cookies flat side up, place about 1/2 teaspoon of jam in the center, then top with the cutout cookies and press gently. Store flat in an airtight container for up to 5 days.",
+      "notes": "Letting the dough rest at room temperature before rolling helps prevent the edges from cracking.\nThe easiest way to transfer the cut cookies is to slide an offset spatula underneath them instead of lifting them with your hands."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "a1e9ba5d-be5c-447d-a368-3ae4954a0a07-ingredient-1",
+      "originalText": "320 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 320,
+      "unit": "g"
+    },
+    {
+      "id": "a1e9ba5d-be5c-447d-a368-3ae4954a0a07-ingredient-2",
+      "originalText": "150 g almond flour",
+      "ingredientName": "almond flour",
+      "ingredientRefId": "ingredient-ref-almond-flour",
+      "quantity": 150,
+      "unit": "g"
+    },
+    {
+      "id": "a1e9ba5d-be5c-447d-a368-3ae4954a0a07-ingredient-3",
+      "originalText": "1/2 tsp ground cinnamon",
+      "ingredientName": "ground cinnamon",
+      "ingredientRefId": "ingredient-ref-ground-cinnamon",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "a1e9ba5d-be5c-447d-a368-3ae4954a0a07-ingredient-4",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "a1e9ba5d-be5c-447d-a368-3ae4954a0a07-ingredient-5",
+      "originalText": "340 g unsalted butter, softened",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 340,
+      "unit": "g",
+      "preparation": "softened"
+    },
+    {
+      "id": "a1e9ba5d-be5c-447d-a368-3ae4954a0a07-ingredient-6",
+      "originalText": "200 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 200,
+      "unit": "g"
+    },
+    {
+      "id": "a1e9ba5d-be5c-447d-a368-3ae4954a0a07-ingredient-7",
+      "originalText": "1 tsp lemon zest",
+      "ingredientName": "lemon zest",
+      "ingredientRefId": "ingredient-ref-lemon-zest",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "a1e9ba5d-be5c-447d-a368-3ae4954a0a07-ingredient-8",
+      "originalText": "2 large egg yolks",
+      "ingredientName": "egg yolk",
+      "ingredientRefId": "ingredient-ref-egg-yolk",
+      "quantity": 2,
+      "unit": "large egg yolk"
+    },
+    {
+      "id": "a1e9ba5d-be5c-447d-a368-3ae4954a0a07-ingredient-9",
+      "originalText": "2 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "a1e9ba5d-be5c-447d-a368-3ae4954a0a07-ingredient-10",
+      "originalText": "120 ml raspberry jam",
+      "ingredientName": "raspberry jam",
+      "ingredientRefId": "ingredient-ref-raspberry-jam",
+      "quantity": 120,
+      "unit": "ml"
+    }
+  ],
+  "servings": {
+    "amount": 36,
+    "unit": "cookies"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 25
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cookies",
+    "tag-christmas",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-a1e9ba5d-be5c-447d-a368-3ae4954a0a07-0",
+  "photos": [
+    {
+      "id": "photo-a1e9ba5d-be5c-447d-a368-3ae4954a0a07-0",
+      "relativePath": "photos/a1e9ba5d-be5c-447d-a368-3ae4954a0a07_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "imperial"
+  }
+}

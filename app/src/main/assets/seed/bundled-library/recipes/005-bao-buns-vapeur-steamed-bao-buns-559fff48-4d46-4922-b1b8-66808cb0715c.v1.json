@@ -1,0 +1,122 @@
+{
+  "id": "559fff48-4d46-4922-b1b8-66808cb0715c",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Red House Spice",
+    "sourceUrl": "https://redhousespice.com/steamed-bao-buns/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Bao buns vapeur",
+      "description": "Des bao buns moelleux cuits \u00e0 la vapeur, pr\u00eats \u00e0 \u00eatre garnis d'une garniture en sauce.",
+      "instructions": "M\u00e9langer la farine, la levure, le sucre et l'huile dans un bol. Verser l'eau ti\u00e8de petit \u00e0 petit en m\u00e9langeant jusqu'\u00e0 l'obtention d'une p\u00e2te.\nP\u00e9trir la p\u00e2te \u00e0 la main jusqu'\u00e0 ce qu'elle devienne tr\u00e8s lisse.\nCouvrir le bol d'un linge humide et laisser lever dans un endroit chaud jusqu'\u00e0 ce que la p\u00e2te double de volume, de 40 min \u00e0 1 h 30 min.\nP\u00e9trir de nouveau la p\u00e2te jusqu'\u00e0 ce qu'elle revienne \u00e0 sa taille initiale.\nDiviser la p\u00e2te en 12 portions \u00e9gales et abaisser chaque portion en disque.\nD\u00e9poser un peu de garniture au centre d'un disque et le replier pour former un bao.\nLaisser reposer les bao assembl\u00e9s pendant encore 15 min.\nD\u00e9poser chaque bao sur un carr\u00e9 de papier sulfuris\u00e9 dans le panier vapeur en laissant environ 2 cm entre chaque bao et la paroi du panier.\nCommencer la cuisson \u00e0 la vapeur avec de l'eau froide \u00e0 feu vif. Quand l'eau commence \u00e0 bouillir, baisser \u00e0 feu moyen-doux et cuire de 15 min \u00e0 18 min.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Steamed Bao Buns",
+      "description": "Soft steamed bao buns ready to be filled with any saucy filling.",
+      "instructions": "Mix the flour, yeast, sugar, and oil in a bowl. Pour in the lukewarm water a little at a time while mixing until a dough forms.\nKnead the dough by hand until it becomes very smooth.\nCover the bowl with a damp cloth and let the dough rise in a warm place until doubled in size, 40 min to 1 h 30 min.\nKnead the dough again until it returns to its original size.\nDivide the dough into 12 equal portions and roll each portion into a disk.\nPlace a little filling in the center of a disk and fold it to form a bao.\nLet the assembled buns rest for another 15 min.\nPlace each bun on a square of parchment paper in the steamer basket, leaving about 2 cm between the buns and the side of the basket.\nStart steaming with cold water over high heat. When the water begins to boil, reduce the heat to medium-low and steam for 15 min to 18 min.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "559fff48-4d46-4922-b1b8-66808cb0715c-ingredient-1",
+      "originalText": "300 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 300,
+      "unit": "g"
+    },
+    {
+      "id": "559fff48-4d46-4922-b1b8-66808cb0715c-ingredient-2",
+      "originalText": "1 tsp dried yeast",
+      "ingredientName": "yeast",
+      "ingredientRefId": "ingredient-ref-yeast",
+      "quantity": 1,
+      "unit": "tsp",
+      "preparation": "dried"
+    },
+    {
+      "id": "559fff48-4d46-4922-b1b8-66808cb0715c-ingredient-3",
+      "originalText": "1 tsp sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "559fff48-4d46-4922-b1b8-66808cb0715c-ingredient-4",
+      "originalText": "1 tbsp vegetable oil",
+      "ingredientName": "vegetable oil",
+      "ingredientRefId": "ingredient-ref-vegetable-oil",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "559fff48-4d46-4922-b1b8-66808cb0715c-ingredient-5",
+      "originalText": "140 ml lukewarm water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 140,
+      "unit": "ml",
+      "preparation": "lukewarm"
+    },
+    {
+      "id": "559fff48-4d46-4922-b1b8-66808cb0715c-ingredient-6",
+      "originalText": "Any saucy filling",
+      "ingredientName": "saucy filling",
+      "group": "Filling",
+      "optional": true
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "bao buns"
+  },
+  "times": {
+    "prepTimeMinutes": 120,
+    "cookTimeMinutes": 20,
+    "totalTimeMinutes": 140
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-chinese",
+    "tag-dough",
+    "tag-project"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-559fff48-4d46-4922-b1b8-66808cb0715c-0",
+  "photos": [
+    {
+      "id": "photo-559fff48-4d46-4922-b1b8-66808cb0715c-0",
+      "relativePath": "photos/559fff48-4d46-4922-b1b8-66808cb0715c_0.jpg"
+    },
+    {
+      "id": "photo-559fff48-4d46-4922-b1b8-66808cb0715c-1",
+      "relativePath": "photos/559fff48-4d46-4922-b1b8-66808cb0715c_1.jpg"
+    },
+    {
+      "id": "photo-559fff48-4d46-4922-b1b8-66808cb0715c-2",
+      "relativePath": "photos/559fff48-4d46-4922-b1b8-66808cb0715c_2.jpg"
+    },
+    {
+      "id": "photo-559fff48-4d46-4922-b1b8-66808cb0715c-3",
+      "relativePath": "photos/559fff48-4d46-4922-b1b8-66808cb0715c_3.jpg"
+    },
+    {
+      "id": "photo-559fff48-4d46-4922-b1b8-66808cb0715c-4",
+      "relativePath": "photos/559fff48-4d46-4922-b1b8-66808cb0715c_4.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "metric"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Sally's Baking Addiction",
+    "sourceUrl": "https://sallysbakingaddiction.com/vanilla-cake/"
+  },
+  "languages": {
+    "fr": {
+      "title": "G\u00e2teau \u00e0 la vanille",
+      "description": "Un g\u00e2teau \u00e0 la vanille moelleux \u00e0 trois \u00e9tages, garni d'un gla\u00e7age classique \u00e0 la vanille.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F. Beurrer trois moules \u00e0 g\u00e2teau de 9 po, les tapisser de cercles de papier parchemin, puis beurrer le papier.\nM\u00e9langer au fouet la farine \u00e0 g\u00e2teau, le sel, la poudre \u00e0 p\u00e2te et le bicarbonate de soude. R\u00e9server.\nAu batteur \u00e0 main ou sur socle muni d'une palette ou d'un fouet, battre le beurre et le sucre \u00e0 vitesse \u00e9lev\u00e9e jusqu'\u00e0 ce que le m\u00e9lange soit lisse et cr\u00e9meux, environ 3 min. Ajouter les 3 \u0153ufs, les 2 blancs d'\u0153ufs et la vanille, puis battre environ 2 min, jusqu'\u00e0 ce que le tout soit combin\u00e9. Racler le bol au besoin.\n\u00c0 basse vitesse, incorporer les ingr\u00e9dients secs juste assez pour les combiner. Toujours \u00e0 basse vitesse, verser le babeurre et m\u00e9langer juste assez pour obtenir une p\u00e2te homog\u00e8ne. Finir au fouet \u00e0 la main si n\u00e9cessaire pour enlever les grumeaux au fond du bol.\nR\u00e9partir la p\u00e2te uniform\u00e9ment dans les moules. Cuire de 23 min \u00e0 26 min, jusqu'\u00e0 ce qu'un cure-dent ins\u00e9r\u00e9 au centre ressorte propre. Laisser refroidir compl\u00e8tement dans les moules sur une grille.\nPour le gla\u00e7age, battre le beurre \u00e0 vitesse moyenne jusqu'\u00e0 ce qu'il soit cr\u00e9meux, environ 2 min. Ajouter le sucre \u00e0 glacer, le lait, la vanille et le sel \u00e0 basse vitesse, puis augmenter \u00e0 vitesse \u00e9lev\u00e9e et battre 2 min. Ajuster avec plus de sucre \u00e0 glacer, de lait ou une pinc\u00e9e de sel au besoin.\nSi n\u00e9cessaire, niveler les g\u00e2teaux refroidis en coupant une mince couche sur le dessus. D\u00e9poser un premier \u00e9tage sur un support, couvrir d'environ 1\u00bd tasse de gla\u00e7age, puis r\u00e9p\u00e9ter avec le deuxi\u00e8me \u00e9tage. D\u00e9poser le troisi\u00e8me \u00e9tage et couvrir le dessus et les c\u00f4t\u00e9s avec le reste du gla\u00e7age.\nR\u00e9frig\u00e9rer le g\u00e2teau au moins 1 h avant de le trancher. Conserver les restes bien couverts au r\u00e9frig\u00e9rateur jusqu'\u00e0 5 jours.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Vanilla Cake",
+      "description": "A soft three-layer vanilla cake finished with a classic vanilla frosting.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F. Grease three 9-inch cake pans, line them with parchment paper rounds, then grease the parchment.\nWhisk together the cake flour, salt, baking powder, and baking soda. Set aside.\nUsing a hand mixer or stand mixer fitted with a paddle or whisk attachment, beat the butter and sugar on high speed until smooth and creamy, about 3 min. Add the 3 eggs, 2 egg whites, and vanilla, then beat for about 2 min until combined. Scrape down the bowl as needed.\nWith the mixer on low speed, add the dry ingredients just until combined. With the mixer still on low, pour in the buttermilk and mix until the batter is just combined. Finish by hand with a whisk if needed to remove any lumps at the bottom of the bowl.\nDivide the batter evenly between the pans. Bake for 23 min to 26 min, until a toothpick inserted in the center comes out clean. Let the cakes cool completely in the pans set on a wire rack.\nFor the frosting, beat the butter on medium speed until creamy, about 2 min. Add the confectioners' sugar, milk, vanilla, and salt on low speed, then increase to high speed and beat for 2 min. Adjust with more confectioners' sugar, milk, or a pinch of salt if needed.\nIf needed, level the cooled cakes by slicing a thin layer off the tops. Place one cake layer on a stand, spread about 1.5 cups of frosting on top, then repeat with the second layer. Add the third layer and spread the remaining frosting over the top and sides.\nRefrigerate the cake for at least 1 h before slicing. Store leftovers tightly covered in the refrigerator for up to 5 days.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-1",
+      "originalText": "433 g cake flour",
+      "ingredientName": "cake flour",
+      "ingredientRefId": "ingredient-ref-cake-flour",
+      "quantity": 433,
+      "unit": "g",
+      "group": "Cake"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-2",
+      "originalText": "1 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-3",
+      "originalText": "2 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 2,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-4",
+      "originalText": "3/4 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 0.75,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-5",
+      "originalText": "340 g unsalted butter, softened to room temperature",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 340,
+      "unit": "g",
+      "preparation": "softened to room temperature",
+      "group": "Cake"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-6",
+      "originalText": "400 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 400,
+      "unit": "g",
+      "group": "Cake"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-7",
+      "originalText": "3 large eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 3,
+      "unit": "large egg",
+      "preparation": "room temperature",
+      "group": "Cake"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-8",
+      "originalText": "2 large egg whites",
+      "ingredientName": "egg white",
+      "ingredientRefId": "ingredient-ref-egg-white",
+      "quantity": 2,
+      "unit": "large egg white",
+      "preparation": "room temperature",
+      "group": "Cake"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-9",
+      "originalText": "1 tbsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tbsp",
+      "group": "Cake"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-10",
+      "originalText": "360 ml buttermilk, room temperature",
+      "ingredientName": "buttermilk",
+      "ingredientRefId": "ingredient-ref-buttermilk",
+      "quantity": 360,
+      "unit": "ml",
+      "preparation": "room temperature",
+      "group": "Cake"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-11",
+      "originalText": "340 g unsalted butter, softened to room temperature",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 340,
+      "unit": "g",
+      "preparation": "softened to room temperature",
+      "group": "Frosting"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-12",
+      "originalText": "650 g confectioners' sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 650,
+      "unit": "g",
+      "group": "Frosting"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-13",
+      "originalText": "80 ml whole milk or heavy cream",
+      "ingredientName": "whole milk or heavy cream",
+      "quantity": 80,
+      "unit": "ml",
+      "group": "Frosting"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-14",
+      "originalText": "1.5 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1.5,
+      "unit": "tsp",
+      "group": "Frosting"
+    },
+    {
+      "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-ingredient-15",
+      "originalText": "1/8 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.125,
+      "unit": "tsp",
+      "group": "Frosting"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 35,
+    "cookTimeMinutes": 25,
+    "totalTimeMinutes": 60
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake",
+    "tag-stand-mixer",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 0
+  },
+  "mainPhotoId": "photo-41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-0",
+  "photos": [
+    {
+      "id": "photo-41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-0",
+      "relativePath": "photos/41d7331d-2cf7-4a72-b1ce-ac90ffb97f33_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "imperial"
+  }
+}

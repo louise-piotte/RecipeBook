@@ -1,0 +1,109 @@
+{
+  "id": "3e2bd9d9-95fc-43ea-8d33-140de5b7de25",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Biscuits aux brisures de chocolat",
+      "description": "Des biscuits classiques aux brisures de chocolat, tir\u00e9s d'une recette familiale.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F.\nBattre la margarine et la cassonade au malaxeur \u00e0 vitesse moyenne jusqu'\u00e0 ce que le m\u00e9lange soit cr\u00e9meux.\nAjouter l'\u0153uf et la vanille, puis battre jusqu'\u00e0 ce que l'\u0153uf soit bien incorpor\u00e9.\nM\u00e9langer le bicarbonate de soude \u00e0 la farine, puis ajouter graduellement les ingr\u00e9dients secs au m\u00e9lange en continuant de battre.\nArr\u00eater de m\u00e9langer d\u00e8s que la p\u00e2te est tout juste incorpor\u00e9e.\nRetirer le bol du malaxeur, ajouter les brisures de chocolat et m\u00e9langer \u00e0 la spatule.\nD\u00e9poser la p\u00e2te en portions sur une plaque recouverte de papier parchemin.\nCuire au four pendant 9 min.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Chocolate Chip Cookies",
+      "description": "Classic chocolate chip cookies from a family recipe.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F.\nCream the margarine and brown sugar with a mixer on medium speed until creamy.\nAdd the egg and vanilla, then continue mixing until the egg is fully incorporated.\nMix the baking soda into the flour, then gradually add the dry ingredients to the mixture while continuing to mix.\nStop mixing as soon as the dough is just combined.\nRemove the bowl from the mixer, add the chocolate chips, and fold them in with a spatula.\nPortion the dough onto a baking sheet lined with parchment paper.\nBake for 9 min.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "3e2bd9d9-95fc-43ea-8d33-140de5b7de25-ingredient-1",
+      "originalText": "1/2 cup margarine",
+      "ingredientName": "margarine",
+      "ingredientRefId": "ingredient-ref-margarine",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "3e2bd9d9-95fc-43ea-8d33-140de5b7de25-ingredient-2",
+      "originalText": "3/4 cup firmly packed brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 0.75,
+      "unit": "cup",
+      "preparation": "firmly packed"
+    },
+    {
+      "id": "3e2bd9d9-95fc-43ea-8d33-140de5b7de25-ingredient-3",
+      "originalText": "1 egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "large egg"
+    },
+    {
+      "id": "3e2bd9d9-95fc-43ea-8d33-140de5b7de25-ingredient-4",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "3e2bd9d9-95fc-43ea-8d33-140de5b7de25-ingredient-5",
+      "originalText": "240 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 240,
+      "unit": "g"
+    },
+    {
+      "id": "3e2bd9d9-95fc-43ea-8d33-140de5b7de25-ingredient-6",
+      "originalText": "1 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "3e2bd9d9-95fc-43ea-8d33-140de5b7de25-ingredient-7",
+      "originalText": "1 cup chocolate chips",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 1,
+      "unit": "cup"
+    }
+  ],
+  "servings": {
+    "amount": 24,
+    "unit": "cookies"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 25
+  },
+  "tags": [
+    "tag-cookies",
+    "tag-snack",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-3e2bd9d9-95fc-43ea-8d33-140de5b7de25-0",
+  "photos": [
+    {
+      "id": "photo-3e2bd9d9-95fc-43ea-8d33-140de5b7de25-0",
+      "relativePath": "photos/3e2bd9d9-95fc-43ea-8d33-140de5b7de25_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

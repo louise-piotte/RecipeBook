@@ -61,6 +61,7 @@
 
 ### Recipe Import And Library Cleanup
 - Recipe import cleanup means converting recipes into the app's bundled startup-import files under `app/src/main/assets/seed/bundled-library` so they are imported by the app on first load; normalize wording consistently across recipes, use Quebec French, replace outdated ingredient-tag assumptions with current tags, add missing translations, and add missing ingredient/tag entries or aliases when needed.
+- Bundled seed recipe filenames must keep the original recipe-name slug before the UUID, for example `005-bao-buns-vapeur-steamed-bao-buns-<uuid>.v1.json`, instead of collapsing to a UUID-only filename.
 - Consistency is a primary rule for recipe cleanup. Keep recurring conventions such as oven temperature wording, unit phrasing, capitalization, punctuation, and bilingual terminology aligned across the whole library.
 - Recipe cleanup formatting rules:
   - Write temperatures as `x\u00b0C/y\u00b0F`.
@@ -89,7 +90,6 @@
 - Default to compact icon-only actions when a single image or button is clear and fits inline with nearby content; use text buttons only when they add real clarity.
 
 ### Tooling And Local Environment
-- If you preferred tooling is not available, stop and return to the user to install it.
+- If your preferred tooling is not available, stop and return to the user to install it.
 - Bundled ingredient reference maintenance uses `tools/ingredient_catalog/normalize_seed_ingredient_references.py` to normalize the live seed JSON in place with stable formatting and no duplicated database or runtime conversion layer.
 - Bundled seed package maintenance also uses `tools/seed_package/normalize_bundled_seed_package.py` to normalize and validate the full `app/src/main/assets/seed/bundled-library` package in place. The ingredient-only script remains a compatibility entry point backed by the same shared seed-package module.
-- On explicit user request only, `tools/deploy_to_pixel9a.sh` may be used to run `./gradlew test --no-daemon`, build the debug APK, uninstall and reinstall `app.recipebook` on the connected physical Pixel 9a, and launch the app. Do not use it automatically.

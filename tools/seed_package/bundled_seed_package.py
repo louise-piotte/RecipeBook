@@ -42,6 +42,12 @@ CANONICAL_RECIPE_FILE_STEMS_BY_ID = {
     "1882aaf2-bb7a-4c13-bb7d-59ce0836ac48": "002-all-butter-pie-crust-1882aaf2-bb7a-4c13-bb7d-59ce0836ac48",
     "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d": "003-amaretti-8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d",
     "583ae5e3-e482-42ba-971f-72d8418ef175": "004-anko-sweet-red-bean-paste-583ae5e3-e482-42ba-971f-72d8418ef175",
+    "559fff48-4d46-4922-b1b8-66808cb0715c": "005-bao-buns-vapeur-steamed-bao-buns-559fff48-4d46-4922-b1b8-66808cb0715c",
+    "9a714acf-d991-4932-bb4c-63af19051022": "006-barres-nanaimo-nanaimo-bars-9a714acf-d991-4932-bb4c-63af19051022",
+    "4392bc3d-9785-43ac-b98e-496f96c1d628": "007-haricots-pinto-refrits-refried-pinto-beans-4392bc3d-9785-43ac-b98e-496f96c1d628",
+    "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33": "008-best-vanilla-cake-41d7331d-2cf7-4a72-b1ce-ac90ffb97f33",
+    "3e2bd9d9-95fc-43ea-8d33-140de5b7de25": "009-bicuit-aux-brisures-de-chocolat-chocolate-chip-cookies-3e2bd9d9-95fc-43ea-8d33-140de5b7de25",
+    "a1e9ba5d-be5c-447d-a368-3ae4954a0a07": "010-biscuit-linzer-linzer-cookies-a1e9ba5d-be5c-447d-a368-3ae4954a0a07",
     "4207e09a-429f-437f-b7bd-14e862d6d696": "050-gateau-au-chocolat-devil-s-food-cake-4207e09a-429f-437f-b7bd-14e862d6d696",
     "c9022b89-8181-425a-9141-6a4e6086b5c8": "061-gla-age-au-chocolat-blanc-white-chocolate-buttercream-c9022b89-8181-425a-9141-6a4e6086b5c8",
 }

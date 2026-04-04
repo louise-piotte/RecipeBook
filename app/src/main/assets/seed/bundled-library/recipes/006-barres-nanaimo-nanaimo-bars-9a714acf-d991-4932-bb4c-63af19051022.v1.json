@@ -1,0 +1,190 @@
+{
+  "id": "9a714acf-d991-4932-bb4c-63af19051022",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Allrecipes",
+    "sourceUrl": "https://www.allrecipes.com/recipe/25095/nanaimo-bars-iii/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Barres Nanaimo",
+      "description": "Des carr\u00e9s Nanaimo riches et chocolat\u00e9s, avec une base croustillante, une garniture cr\u00e9meuse et une couverture au chocolat.",
+      "instructions": "Pour la base, faire fondre 113,5 g de beurre avec le cacao et le sucre au bain-marie en remuant jusqu'\u00e0 l'obtention d'un m\u00e9lange lisse. Retirer du feu, temp\u00e9rer l'\u0153uf battu, puis remettre sur le feu et remuer de 2 min \u00e0 3 min, jusqu'\u00e0 ce que le m\u00e9lange \u00e9paississe.\nRetirer du feu et incorporer la chapelure de biscuits graham, la noix de coco et les amandes. Presser le tout au fond d'un moule carr\u00e9 de 8 x 8 po chemis\u00e9.\nPour la couche du milieu, battre les 113,5 g de beurre restants avec la cr\u00e8me 35 % et la poudre \u00e0 cr\u00e8me p\u00e2tissi\u00e8re jusqu'\u00e0 ce que le m\u00e9lange soit l\u00e9ger. Incorporer le sucre \u00e0 glacer jusqu'\u00e0 l'obtention d'une texture lisse. \u00c9tendre sur la base et r\u00e9frig\u00e9rer jusqu'\u00e0 ce que la couche prenne.\nFaire fondre le chocolat mi-sucr\u00e9 avec 2\u00bd cuill\u00e8res \u00e0 soupe de beurre au micro-ondes ou \u00e0 feu doux.\n\u00c9tendre la couche de chocolat sur les barres refroidies.\nLaisser le chocolat prendre avant de couper en 16 carr\u00e9s.",
+      "notes": "Premi\u00e8re couche : temp\u00e9rer l'\u0153uf et retirer le m\u00e9lange du feu avant de l'ajouter.\nTroisi\u00e8me couche : ne pas trop attendre avant d'ajouter le chocolat. Si la deuxi\u00e8me couche est trop froide, le chocolat figera avant de pouvoir \u00eatre \u00e9tal\u00e9."
+    },
+    "en": {
+      "title": "Nanaimo Bars",
+      "description": "Rich chocolate Nanaimo bars with a crunchy base, a creamy custard layer, and a chocolate topping.",
+      "instructions": "For the base, melt 113.5 g butter with the cocoa powder and sugar over a double boiler, stirring until smooth. Remove from the heat, temper in the beaten egg, then return to the heat and stir for 2 min to 3 min until thickened.\nRemove from the heat and mix in the graham cracker crumbs, coconut, and almonds. Press the mixture into the bottom of a lined 8 x 8-inch pan.\nFor the middle layer, beat the remaining 113.5 g butter with the heavy cream and custard powder until light. Mix in the icing sugar until smooth. Spread over the base and chill until set.\nMelt the semisweet chocolate with 2.5 tablespoons butter in the microwave or over low heat.\nSpread the chocolate layer over the chilled bars.\nLet the chocolate set before cutting into 16 squares.",
+      "notes": "First layer: temper the egg and remove the mixture from the heat before adding it.\nThird layer: do not wait too long before adding the chocolate. If the second layer is too cold, the chocolate will set before it can be spread."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-1",
+      "originalText": "113.5 g unsalted butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 113.5,
+      "unit": "g",
+      "group": "Base"
+    },
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-2",
+      "originalText": "5 tbsp unsweetened cocoa powder",
+      "ingredientName": "unsweetened cocoa powder",
+      "ingredientRefId": "ingredient-ref-unsweetened-cocoa-powder",
+      "quantity": 5,
+      "unit": "tbsp",
+      "group": "Base"
+    },
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-3",
+      "originalText": "50 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 50,
+      "unit": "g",
+      "group": "Base"
+    },
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-4",
+      "originalText": "1 egg, beaten",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "large egg",
+      "preparation": "beaten",
+      "group": "Base"
+    },
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-5",
+      "originalText": "175 g graham cracker crumbs",
+      "ingredientName": "graham cracker crumbs",
+      "ingredientRefId": "ingredient-ref-graham-cracker-crumbs",
+      "quantity": 175,
+      "unit": "g",
+      "group": "Base"
+    },
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-6",
+      "originalText": "120 g flaked coconut",
+      "ingredientName": "coconut",
+      "ingredientRefId": "ingredient-ref-coconut",
+      "quantity": 120,
+      "unit": "g",
+      "preparation": "flaked",
+      "group": "Base"
+    },
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-7",
+      "originalText": "40 g almonds, finely chopped",
+      "ingredientName": "almonds",
+      "ingredientRefId": "ingredient-ref-almonds",
+      "quantity": 40,
+      "unit": "g",
+      "preparation": "finely chopped",
+      "group": "Base"
+    },
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-8",
+      "originalText": "113.5 g unsalted butter, softened",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 113.5,
+      "unit": "g",
+      "preparation": "softened",
+      "group": "Middle Layer"
+    },
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-9",
+      "originalText": "3 tbsp heavy cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 3,
+      "unit": "tbsp",
+      "group": "Middle Layer"
+    },
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-10",
+      "originalText": "3 tbsp custard powder",
+      "ingredientName": "custard powder",
+      "ingredientRefId": "ingredient-ref-custard-powder",
+      "quantity": 3,
+      "unit": "tbsp",
+      "group": "Middle Layer"
+    },
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-11",
+      "originalText": "240 g icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 240,
+      "unit": "g",
+      "group": "Middle Layer"
+    },
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-12",
+      "originalText": "5 oz semisweet chocolate",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 5,
+      "unit": "oz",
+      "group": "Chocolate Topping"
+    },
+    {
+      "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-13",
+      "originalText": "2.5 tbsp unsalted butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 2.5,
+      "unit": "tbsp",
+      "group": "Chocolate Topping"
+    }
+  ],
+  "servings": {
+    "amount": 16,
+    "unit": "squares"
+  },
+  "times": {
+    "prepTimeMinutes": 30,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 30
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-bars-squares",
+    "tag-christmas",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-9a714acf-d991-4932-bb4c-63af19051022-0",
+  "photos": [
+    {
+      "id": "photo-9a714acf-d991-4932-bb4c-63af19051022-0",
+      "relativePath": "photos/9a714acf-d991-4932-bb4c-63af19051022_0.jpg"
+    },
+    {
+      "id": "photo-9a714acf-d991-4932-bb4c-63af19051022-1",
+      "relativePath": "photos/9a714acf-d991-4932-bb4c-63af19051022_1.jpg"
+    },
+    {
+      "id": "photo-9a714acf-d991-4932-bb4c-63af19051022-2",
+      "relativePath": "photos/9a714acf-d991-4932-bb4c-63af19051022_2.jpg"
+    },
+    {
+      "id": "photo-9a714acf-d991-4932-bb4c-63af19051022-3",
+      "relativePath": "photos/9a714acf-d991-4932-bb4c-63af19051022_3.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "imperial"
+  }
+}

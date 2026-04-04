@@ -1,0 +1,99 @@
+{
+  "id": "4392bc3d-9785-43ac-b98e-496f96c1d628",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Ethan Chlebowski",
+    "sourceUrl": "https://www.ethanchlebowski.com/cooking-techniques-recipes/mexican-inspired-bento-box-lunch"
+  },
+  "languages": {
+    "fr": {
+      "title": "Haricots pinto refrits",
+      "description": "Des haricots pinto refrits rapides, relev\u00e9s au chipotle en adobo, pour accompagner un repas ou garnir des plats mexicains.",
+      "instructions": "Chauffer l'huile dans une petite casserole ou une po\u00eale. Ajouter l'ail et le chipotle en adobo, puis cuire de 30 sec \u00e0 60 sec, jusqu'\u00e0 ce que le tout soit parfum\u00e9.\nAjouter les haricots pinto avec leur liquide et porter \u00e0 fr\u00e9missement.\n\u00c9craser les haricots jusqu'\u00e0 obtenir la texture d\u00e9sir\u00e9e.\nGo\u00fbter, puis ajuster avec le vinaigre ou le jus de lime et du sel.",
+      "notes": "Les portions et le temps sont estim\u00e9s \u00e0 partir de la recette source, o\u00f9 cette pr\u00e9paration est pr\u00e9sent\u00e9e comme une composante d'un lunch bento."
+    },
+    "en": {
+      "title": "Refried Pinto Beans",
+      "description": "Quick refried pinto beans with chipotle in adobo, useful as a side dish or a filling for Mexican-inspired meals.",
+      "instructions": "Heat the oil in a small saucepan or skillet. Add the garlic and chipotle in adobo, then cook for 30 sec to 60 sec until fragrant.\nAdd the pinto beans with their liquid and bring to a simmer.\nMash the beans until they reach your desired texture.\nTaste and adjust with the vinegar or lime juice and salt.",
+      "notes": "The servings and timing are estimated from the source recipe, where this preparation appears as one component of a bento lunch."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "4392bc3d-9785-43ac-b98e-496f96c1d628-ingredient-1",
+      "originalText": "10 g vegetable oil",
+      "ingredientName": "vegetable oil",
+      "ingredientRefId": "ingredient-ref-vegetable-oil",
+      "quantity": 10,
+      "unit": "g"
+    },
+    {
+      "id": "4392bc3d-9785-43ac-b98e-496f96c1d628-ingredient-2",
+      "originalText": "1 clove garlic, minced",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 1,
+      "unit": "clove",
+      "preparation": "minced"
+    },
+    {
+      "id": "4392bc3d-9785-43ac-b98e-496f96c1d628-ingredient-3",
+      "originalText": "1 chipotle in adobo, minced",
+      "ingredientName": "chipotle in adobo",
+      "ingredientRefId": "ingredient-ref-chipotle-in-adobo",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "minced"
+    },
+    {
+      "id": "4392bc3d-9785-43ac-b98e-496f96c1d628-ingredient-4",
+      "originalText": "1 can pinto beans with liquid",
+      "ingredientName": "pinto beans",
+      "ingredientRefId": "ingredient-ref-pinto-beans",
+      "quantity": 1,
+      "unit": "can",
+      "preparation": "with liquid"
+    },
+    {
+      "id": "4392bc3d-9785-43ac-b98e-496f96c1d628-ingredient-5",
+      "originalText": "5 g vinegar or lime juice",
+      "ingredientName": "vinegar or lime juice",
+      "quantity": 5,
+      "unit": "g"
+    },
+    {
+      "id": "4392bc3d-9785-43ac-b98e-496f96c1d628-ingredient-6",
+      "originalText": "Salt to taste",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt"
+    }
+  ],
+  "servings": {
+    "amount": 3,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 15
+  },
+  "tags": [
+    "tag-side-dish",
+    "tag-mexican",
+    "tag-stovetop",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "photos": [],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}
