@@ -1,0 +1,76 @@
+{
+  "id": "dfa44a33-5dff-4304-9308-1d8326055a58",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Celebrating Sweets",
+    "sourceUrl": "https://celebratingsweets.com/nutella-hot-chocolate/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Chocolat chaud au Nutella",
+      "description": "Un chocolat chaud riche et cr\u00e9meux au Nutella et au cacao non sucr\u00e9.",
+      "instructions": "Mettre le lait, le Nutella et le cacao non sucr\u00e9 dans une petite casserole.\nChauffer \u00e0 feu moyen en fouettant jusqu'\u00e0 ce que le m\u00e9lange soit homog\u00e8ne et bien chaud.\nPorter doucement \u00e0 fr\u00e9missement sans laisser bouillir fortement.\nServir chaud.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Nutella Hot Chocolate",
+      "description": "A rich, creamy hot chocolate made with Nutella and unsweetened cocoa powder.",
+      "instructions": "Place the milk, Nutella, and unsweetened cocoa powder in a small saucepan.\nHeat over medium heat, whisking until smooth and fully combined.\nBring to a gentle simmer without letting it boil hard.\nServe warm.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "dfa44a33-5dff-4304-9308-1d8326055a58-ingredient-1",
+      "originalText": "2 cups milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "id": "dfa44a33-5dff-4304-9308-1d8326055a58-ingredient-2",
+      "originalText": "1/3 cup Nutella",
+      "ingredientName": "nutella",
+      "ingredientRefId": "ingredient-ref-nutella",
+      "quantity": 0.3333333333,
+      "unit": "cup"
+    },
+    {
+      "id": "dfa44a33-5dff-4304-9308-1d8326055a58-ingredient-3",
+      "originalText": "2 tbsp unsweetened cocoa powder",
+      "ingredientName": "unsweetened cocoa powder",
+      "ingredientRefId": "ingredient-ref-unsweetened-cocoa-powder",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "times": {
+    "prepTimeMinutes": 0,
+    "cookTimeMinutes": 5,
+    "totalTimeMinutes": 5
+  },
+  "tags": [
+    "tag-drink",
+    "tag-dessert",
+    "tag-quick"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-dfa44a33-5dff-4304-9308-1d8326055a58-0",
+  "photos": [
+    {
+      "id": "photo-dfa44a33-5dff-4304-9308-1d8326055a58-0",
+      "relativePath": "photos/dfa44a33-5dff-4304-9308-1d8326055a58_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

@@ -63,6 +63,11 @@ CANONICAL_RECIPE_FILE_STEMS_BY_ID = {
     "30e4274f-19fd-47df-b90b-75a5eefdb2c8": "021-buche-de-noel-yule-log-30e4274f-19fd-47df-b90b-75a5eefdb2c8",
     "607adb61-ff54-49c9-8aaf-d02648a3ae90": "022-buckeyes-607adb61-ff54-49c9-8aaf-d02648a3ae90",
     "5fecccc1-d734-4f2b-9958-ac0c6a960f29": "023-calamar-frit-a-l-air-air-fried-calamari-5fecccc1-d734-4f2b-9958-ac0c6a960f29",
+    "5f004db4-2d76-458c-ae72-7f60379430fd": "029-garniture-aux-cerises-pour-gateau-cherry-cake-filling-5f004db4-2d76-458c-ae72-7f60379430fd",
+    "dfa44a33-5dff-4304-9308-1d8326055a58": "030-chocolat-chaud-au-nutella-nutella-hot-chocolate-dfa44a33-5dff-4304-9308-1d8326055a58",
+    "fdb8f001-0f1a-4c73-a916-8721bdc1713f": "031-dattes-au-chocolat-3-saveurs-chocolate-dates-3-flavors-fdb8f001-0f1a-4c73-a916-8721bdc1713f",
+    "1958c47a-95cf-46f1-ab81-fa71435b1ca5": "032-nappage-coulant-au-chocolat-pour-gateau-chocolate-drip-cake-1958c47a-95cf-46f1-ab81-fa71435b1ca5",
+    "7303400a-3535-4c39-9584-051c5b7873e7": "033-churros-a-la-friteuse-a-air-air-fryer-churros-7303400a-3535-4c39-9584-051c5b7873e7",
     "4207e09a-429f-437f-b7bd-14e862d6d696": "050-gateau-au-chocolat-devil-s-food-cake-4207e09a-429f-437f-b7bd-14e862d6d696",
     "c9022b89-8181-425a-9141-6a4e6086b5c8": "061-gla-age-au-chocolat-blanc-white-chocolate-buttercream-c9022b89-8181-425a-9141-6a4e6086b5c8",
 }

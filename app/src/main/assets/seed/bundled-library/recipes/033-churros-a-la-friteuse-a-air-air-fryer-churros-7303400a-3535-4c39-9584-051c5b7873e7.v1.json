@@ -1,0 +1,148 @@
+{
+  "id": "7303400a-3535-4c39-9584-051c5b7873e7",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Plated Cravings",
+    "sourceUrl": "https://platedcravings.com/air-fryer-churros/#wprm-recipe-container-7808"
+  },
+  "languages": {
+    "fr": {
+      "title": "Churros \u00e0 la friteuse \u00e0 air",
+      "description": "Des churros croustillants \u00e0 l'ext\u00e9rieur et tendres \u00e0 l'int\u00e9rieur, cuits \u00e0 la friteuse \u00e0 air puis roul\u00e9s dans le sucre \u00e0 la cannelle.",
+      "instructions": "Tapisser une plaque de cuisson d'un tapis en silicone ou de papier parchemin, puis vaporiser l\u00e9g\u00e8rement d'enduit \u00e0 cuisson.\nDans une casserole moyenne, m\u00e9langer l'eau, le beurre, le sucre et le sel. Porter \u00e0 \u00e9bullition \u00e0 feu moyen-vif.\nR\u00e9duire \u00e0 feu moyen-doux, ajouter la farine et remuer constamment avec une spatule jusqu'\u00e0 ce que la p\u00e2te se rassemble et devienne lisse.\nRetirer du feu, transf\u00e9rer la p\u00e2te dans un bol et laisser ti\u00e9dir 4 min.\nAjouter l'\u0153uf et l'extrait de vanille, puis battre jusqu'\u00e0 ce que la p\u00e2te soit homog\u00e8ne. Transf\u00e9rer dans une grande poche \u00e0 douille munie d'une grosse douille \u00e9toil\u00e9e.\nPocher des churros d'environ 4 po sur la plaque pr\u00e9par\u00e9e et couper l'extr\u00e9mit\u00e9 avec des ciseaux.\nR\u00e9frig\u00e9rer la plaque 1 h.\nTransf\u00e9rer d\u00e9licatement les churros dans le panier de la friteuse \u00e0 air en laissant environ 1/2 po entre eux, puis vaporiser d'huile. Cuire \u00e0 190\u00b0C/375\u00b0F de 10 min \u00e0 12 min, jusqu'\u00e0 ce qu'ils soient bien dor\u00e9s.\nM\u00e9langer le sucre et la cannelle dans un bol peu profond.\nRouler imm\u00e9diatement les churros chauds dans le sucre \u00e0 la cannelle. Servir chaud, avec du Nutella ou une sauce au chocolat si d\u00e9sir\u00e9.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Air Fryer Churros",
+      "description": "Churros that are crisp outside and tender inside, cooked in the air fryer and finished in cinnamon sugar.",
+      "instructions": "Line a baking sheet with a silicone mat or parchment paper, then lightly coat it with cooking spray.\nIn a medium saucepan, combine the water, butter, sugar, and salt. Bring to a boil over medium-high heat.\nReduce the heat to medium-low, add the flour, and stir constantly with a spatula until the dough comes together and looks smooth.\nRemove from the heat, transfer the dough to a bowl, and let it cool for 4 min.\nAdd the egg and vanilla extract, then beat until the dough is combined. Transfer it to a large piping bag fitted with a large star tip.\nPipe 4-inch churros onto the prepared sheet and cut the ends with scissors.\nRefrigerate the tray for 1 h.\nCarefully transfer the churros to the air fryer basket, leaving about 1/2 inch between them, then spray with oil. Air fry at 190\u00b0C/375\u00b0F for 10 min to 12 min, until deeply golden.\nCombine the sugar and cinnamon in a shallow bowl.\nImmediately roll the warm churros in the cinnamon sugar. Serve warm, with Nutella or chocolate sauce if desired.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "7303400a-3535-4c39-9584-051c5b7873e7-ingredient-1",
+      "originalText": "1/2 cup water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 0.5,
+      "unit": "cup",
+      "group": "Dough"
+    },
+    {
+      "id": "7303400a-3535-4c39-9584-051c5b7873e7-ingredient-2",
+      "originalText": "1/6 cup unsalted butter, cut into cubes",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 0.1666666667,
+      "unit": "cup",
+      "preparation": "cut into cubes",
+      "group": "Dough"
+    },
+    {
+      "id": "7303400a-3535-4c39-9584-051c5b7873e7-ingredient-3",
+      "originalText": "1 tbsp granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 1,
+      "unit": "tbsp",
+      "group": "Dough"
+    },
+    {
+      "id": "7303400a-3535-4c39-9584-051c5b7873e7-ingredient-4",
+      "originalText": "1/8 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.125,
+      "unit": "tsp",
+      "group": "Dough"
+    },
+    {
+      "id": "7303400a-3535-4c39-9584-051c5b7873e7-ingredient-5",
+      "originalText": "1/2 cup all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 0.5,
+      "unit": "cup",
+      "group": "Dough"
+    },
+    {
+      "id": "7303400a-3535-4c39-9584-051c5b7873e7-ingredient-6",
+      "originalText": "1 large egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "large egg",
+      "group": "Dough"
+    },
+    {
+      "id": "7303400a-3535-4c39-9584-051c5b7873e7-ingredient-7",
+      "originalText": "1/2 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Dough"
+    },
+    {
+      "id": "7303400a-3535-4c39-9584-051c5b7873e7-ingredient-8",
+      "originalText": "oil spray",
+      "ingredientName": "oil spray",
+      "group": "Dough"
+    },
+    {
+      "id": "7303400a-3535-4c39-9584-051c5b7873e7-ingredient-9",
+      "originalText": "1/4 cup granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 0.25,
+      "unit": "cup",
+      "group": "Cinnamon Sugar"
+    },
+    {
+      "id": "7303400a-3535-4c39-9584-051c5b7873e7-ingredient-10",
+      "originalText": "1/2 tsp ground cinnamon",
+      "ingredientName": "ground cinnamon",
+      "ingredientRefId": "ingredient-ref-ground-cinnamon",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Cinnamon Sugar"
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 80
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-air-fryer",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-7303400a-3535-4c39-9584-051c5b7873e7-0",
+  "photos": [
+    {
+      "id": "photo-7303400a-3535-4c39-9584-051c5b7873e7-0",
+      "relativePath": "photos/7303400a-3535-4c39-9584-051c5b7873e7_0.jpg"
+    },
+    {
+      "id": "photo-7303400a-3535-4c39-9584-051c5b7873e7-1",
+      "relativePath": "photos/7303400a-3535-4c39-9584-051c5b7873e7_1.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Cooking With Ayeh",
+    "sourceUrl": "https://cookingwithayeh.com/chocolate-dates/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Dattes au chocolat, 3 saveurs",
+      "description": "Des dattes Medjool farcies, enrob\u00e9es de chocolat, avec trois combinaisons de saveurs aux noix.",
+      "instructions": "Faire fondre le chocolat au bain-marie ou au micro-ondes.\n\u00c0 l'aide d'un couteau ou des doigts, fendre chaque datte sur la longueur et retirer le noyau sans la couper compl\u00e8tement.\nFarcir chaque datte avec environ 1 cuill\u00e8re \u00e0 th\u00e9 de beurre de noix, puis ajouter une noix enti\u00e8re au centre selon la combinaison choisie.\nRefermer la datte et l'enrober de chocolat fondu avec les doigts, un cure-dent ou une fourchette. Laisser \u00e9goutter l'exc\u00e9dent, puis d\u00e9poser sur une plaque tapiss\u00e9e de papier parchemin.\nGarnir de noix concass\u00e9es et d'un peu de fleur de sel. Congeler de 20 min \u00e0 30 min, jusqu'\u00e0 ce que le chocolat soit pris.",
+      "notes": "Les ingr\u00e9dients sont list\u00e9s par variantes de saveur pour conserver les trois options de la recette."
+    },
+    "en": {
+      "title": "Chocolate Dates (3 Flavors)",
+      "description": "Stuffed Medjool dates coated in chocolate, with three nut-based flavour combinations.",
+      "instructions": "Melt the chocolate using a double boiler or the microwave.\nUsing a knife or your fingers, slice each date lengthwise and remove the pit without cutting all the way through.\nFill each date with about 1 teaspoon of nut butter, then place one whole nut inside according to the flavour combination you want.\nClose the date and dip it into the melted chocolate using your fingers, a toothpick, or a fork. Let the excess drip off, then place it on a tray lined with parchment paper.\nTop with crushed nuts and a little flaky sea salt. Freeze for 20 min to 30 min, until the chocolate is set.",
+      "notes": "The ingredient list keeps the recipe's three flavour variants grouped as separate options."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f-ingredient-1",
+      "originalText": "20 Medjool dates",
+      "ingredientName": "medjool dates",
+      "ingredientRefId": "ingredient-ref-medjool-dates",
+      "quantity": 20,
+      "unit": "date",
+      "group": "Base"
+    },
+    {
+      "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f-ingredient-2",
+      "originalText": "100 g dark chocolate",
+      "ingredientName": "dark chocolate",
+      "ingredientRefId": "ingredient-ref-dark-chocolate",
+      "quantity": 100,
+      "unit": "g",
+      "notes": "or preferred chocolate",
+      "group": "Base"
+    },
+    {
+      "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f-ingredient-3",
+      "originalText": "flaky sea salt, for topping",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "optional": true,
+      "notes": "flaky sea salt, for topping",
+      "group": "Base"
+    },
+    {
+      "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f-ingredient-4",
+      "originalText": "crushed nuts, for topping",
+      "ingredientName": "crushed nuts",
+      "optional": true,
+      "group": "Base"
+    },
+    {
+      "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f-ingredient-5",
+      "originalText": "peanut butter",
+      "ingredientName": "peanut butter",
+      "ingredientRefId": "ingredient-ref-peanut-butter",
+      "group": "Peanut Version"
+    },
+    {
+      "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f-ingredient-6",
+      "originalText": "peanuts",
+      "ingredientName": "peanuts",
+      "ingredientRefId": "ingredient-ref-peanuts",
+      "group": "Peanut Version"
+    },
+    {
+      "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f-ingredient-7",
+      "originalText": "hazelnut butter",
+      "ingredientName": "hazelnut butter",
+      "ingredientRefId": "ingredient-ref-hazelnut-butter",
+      "group": "Hazelnut Version"
+    },
+    {
+      "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f-ingredient-8",
+      "originalText": "hazelnuts",
+      "ingredientName": "hazelnuts",
+      "ingredientRefId": "ingredient-ref-hazelnuts",
+      "group": "Hazelnut Version"
+    },
+    {
+      "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f-ingredient-9",
+      "originalText": "almond butter",
+      "ingredientName": "almond butter",
+      "ingredientRefId": "ingredient-ref-almond-butter",
+      "group": "Almond Version"
+    },
+    {
+      "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f-ingredient-10",
+      "originalText": "almonds",
+      "ingredientName": "almonds",
+      "ingredientRefId": "ingredient-ref-almonds",
+      "group": "Almond Version"
+    }
+  ],
+  "servings": {
+    "amount": 20,
+    "unit": "dates"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 50
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-snack",
+    "tag-christmas",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-fdb8f001-0f1a-4c73-a916-8721bdc1713f-0",
+  "photos": [
+    {
+      "id": "photo-fdb8f001-0f1a-4c73-a916-8721bdc1713f-0",
+      "relativePath": "photos/fdb8f001-0f1a-4c73-a916-8721bdc1713f_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

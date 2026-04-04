@@ -1,0 +1,89 @@
+{
+  "id": "1958c47a-95cf-46f1-ab81-fa71435b1ca5",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Life Love and Sugar",
+    "sourceUrl": "https://www.lifeloveandsugar.com/how-to-make-a-chocolate-drip-cake/#tasty-recipes-36958"
+  },
+  "languages": {
+    "fr": {
+      "title": "Nappage coulant au chocolat pour g\u00e2teau",
+      "description": "Un nappage coulant simple pour d\u00e9corer les g\u00e2teaux, avec une version au chocolat mi-sucr\u00e9 et une version au chocolat blanc.",
+      "instructions": "Mettre le chocolat dans un bol moyen et r\u00e9server.\nVerser la cr\u00e8me 35 % dans un bol ou une tasse \u00e0 mesurer allant au micro-ondes et chauffer environ 1 min, juste avant qu'elle ne commence \u00e0 bouillir.\nVerser la cr\u00e8me chaude sur le chocolat et laisser reposer de 3 min \u00e0 5 min. Couvrir au besoin pour garder la chaleur.\nRemuer doucement jusqu'\u00e0 l'obtention d'une ganache lisse. \u00c9viter de fouetter vigoureusement pour ne pas cr\u00e9er de bulles d'air.\nPour la version au chocolat blanc, si des morceaux restent, chauffer par intervalles de 10 sec en remuant entre chaque passage jusqu'\u00e0 ce que la ganache soit lisse.\nLaisser ti\u00e9dir environ 10 min avant de l'utiliser sur un g\u00e2teau.",
+      "notes": "Les ingr\u00e9dients sont regroup\u00e9s pour deux versions: chocolat mi-sucr\u00e9 et chocolat blanc."
+    },
+    "en": {
+      "title": "Chocolate Drip for Cakes",
+      "description": "An easy drip topping for cakes, with one version made with semisweet chocolate and another made with white chocolate.",
+      "instructions": "Place the chocolate in a medium bowl and set aside.\nPour the heavy cream into a microwave-safe bowl or measuring cup and heat it for about 1 min, just before it starts to boil.\nPour the hot cream over the chocolate and let it sit for 3 min to 5 min. Cover if needed to hold in the heat.\nStir gently until the ganache is smooth. Avoid whisking vigorously so you do not create air bubbles.\nFor the white chocolate version, if any pieces remain, heat in 10-second bursts, stirring between each burst, until smooth.\nLet it cool for about 10 min before using it on a cake.",
+      "notes": "The ingredients are grouped into semisweet chocolate and white chocolate versions."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "1958c47a-95cf-46f1-ab81-fa71435b1ca5-ingredient-1",
+      "originalText": "6 oz semisweet chocolate",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 6,
+      "unit": "oz",
+      "group": "Semisweet Chocolate Version"
+    },
+    {
+      "id": "1958c47a-95cf-46f1-ab81-fa71435b1ca5-ingredient-2",
+      "originalText": "1/2 cup heavy cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 0.5,
+      "unit": "cup",
+      "group": "Semisweet Chocolate Version"
+    },
+    {
+      "id": "1958c47a-95cf-46f1-ab81-fa71435b1ca5-ingredient-3",
+      "originalText": "6 oz white chocolate",
+      "ingredientName": "white chocolate",
+      "ingredientRefId": "ingredient-ref-white-chocolate",
+      "quantity": 6,
+      "unit": "oz",
+      "group": "White Chocolate Version"
+    },
+    {
+      "id": "1958c47a-95cf-46f1-ab81-fa71435b1ca5-ingredient-4",
+      "originalText": "3 tbsp heavy cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 3,
+      "unit": "tbsp",
+      "group": "White Chocolate Version"
+    }
+  ],
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 5
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake",
+    "tag-frosting",
+    "tag-ingredient-component"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 0
+  },
+  "mainPhotoId": "photo-1958c47a-95cf-46f1-ab81-fa71435b1ca5-0",
+  "photos": [
+    {
+      "id": "photo-1958c47a-95cf-46f1-ab81-fa71435b1ca5-0",
+      "relativePath": "photos/1958c47a-95cf-46f1-ab81-fa71435b1ca5_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "imperial"
+  }
+}

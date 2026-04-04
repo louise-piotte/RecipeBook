@@ -18,7 +18,7 @@
   - `.\\gradlew test --no-daemon` when a generic approved test run is sufficient.
   - `.\\gradlew :app:testDebugUnitTest --no-daemon` for unit-test-safe changes when a narrower run is more practical.
   - Use instrumentation-specific Gradle tasks separately when instrumentation coverage is needed.
-- After the tests succeed, use `tools/deploy_to_pixel9a.sh` to upload it to the user phone. If this fails because the device is not there, that's acceptable.
+- After the tests succeed, use `tools/deploy_to_pixel9a_emulator.sh` to upload it to the emulator and use navigation and screenshots to validate the change was correctly implemented.
 
 ## Localization
 - Localize all user-facing strings in both English and French.

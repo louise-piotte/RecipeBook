@@ -1,0 +1,116 @@
+{
+  "id": "5f004db4-2d76-458c-ae72-7f60379430fd",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Baking With Butter",
+    "sourceUrl": "https://bakingwithbutter.com/cherry-cake-filling/#mv-creation-197-jtr"
+  },
+  "languages": {
+    "fr": {
+      "title": "Garniture aux cerises pour g\u00e2teau",
+      "description": "Une garniture aux cerises \u00e9paisse et brillante pour garnir un g\u00e2teau ou d'autres desserts.",
+      "instructions": "Dans une casserole moyenne, m\u00e9langer la f\u00e9cule de ma\u00efs avec 2 1/2 cuill\u00e8res \u00e0 soupe d'eau froide pour former une bouillie lisse.\nAjouter les cerises, le sucre granul\u00e9, le sel, le jus de citron, l'extrait de vanille et l'extrait d'amande.\nCuire \u00e0 feu moyen-doux en remuant r\u00e9guli\u00e8rement jusqu'\u00e0 ce que le m\u00e9lange commence \u00e0 chauffer et que les cerises rendent leur jus.\nAugmenter \u00e0 feu moyen et porter \u00e0 \u00e9bullition en remuant r\u00e9guli\u00e8rement. Quand la garniture bout, elle \u00e9paissit, devient g\u00e9lifi\u00e9e et cesse d'\u00eatre trouble.\nBaisser le feu et laisser bouillir environ 5 min en remuant constamment.\nRetirer du feu et laisser refroidir. Une fois \u00e0 temp\u00e9rature ambiante, conserver au r\u00e9frig\u00e9rateur dans un contenant herm\u00e9tique jusqu'au moment de l'utiliser.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Cherry Cake Filling",
+      "description": "A thick, glossy cherry filling for cakes and other desserts.",
+      "instructions": "In a medium saucepan, mix the cornstarch with 2 1/2 tablespoons of cold water to make a smooth slurry.\nAdd the cherries, granulated sugar, salt, lemon juice, vanilla extract, and almond extract.\nCook over medium-low heat, stirring regularly, until the mixture starts to warm and the cherries release their juices.\nIncrease the heat to medium and bring the mixture to a boil, stirring regularly. As it boils, the filling will thicken, turn glossy and jelly-like, and lose its cloudy appearance.\nReduce the heat and let it boil for about 5 min, stirring constantly.\nRemove from the heat and let cool. Once it reaches room temperature, refrigerate in an airtight container until needed.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "5f004db4-2d76-458c-ae72-7f60379430fd-ingredient-1",
+      "originalText": "460 g pitted cherries, fresh or frozen",
+      "ingredientName": "cherries",
+      "ingredientRefId": "ingredient-ref-cherries",
+      "quantity": 460,
+      "unit": "g",
+      "preparation": "pitted, fresh or frozen"
+    },
+    {
+      "id": "5f004db4-2d76-458c-ae72-7f60379430fd-ingredient-2",
+      "originalText": "65 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 65,
+      "unit": "g",
+      "notes": "add more if the cherries are tart"
+    },
+    {
+      "id": "5f004db4-2d76-458c-ae72-7f60379430fd-ingredient-3",
+      "originalText": "2 tbsp cornstarch or arrowroot",
+      "ingredientName": "cornstarch",
+      "ingredientRefId": "ingredient-ref-cornstarch",
+      "quantity": 2,
+      "unit": "tbsp",
+      "notes": "or arrowroot"
+    },
+    {
+      "id": "5f004db4-2d76-458c-ae72-7f60379430fd-ingredient-4",
+      "originalText": "1 tbsp lemon juice",
+      "ingredientName": "lemon juice",
+      "ingredientRefId": "ingredient-ref-lemon-juice",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "5f004db4-2d76-458c-ae72-7f60379430fd-ingredient-5",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "5f004db4-2d76-458c-ae72-7f60379430fd-ingredient-6",
+      "originalText": "1/8 tsp almond extract",
+      "ingredientName": "almond extract",
+      "ingredientRefId": "ingredient-ref-almond-extract",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "id": "5f004db4-2d76-458c-ae72-7f60379430fd-ingredient-7",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
+  ],
+  "servings": {
+    "amount": 2,
+    "unit": "cups"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 15
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake",
+    "tag-filling",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-5f004db4-2d76-458c-ae72-7f60379430fd-0",
+  "photos": [
+    {
+      "id": "photo-5f004db4-2d76-458c-ae72-7f60379430fd-0",
+      "relativePath": "photos/5f004db4-2d76-458c-ae72-7f60379430fd_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}
