@@ -28,6 +28,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import app.recipebook.R
@@ -63,6 +64,7 @@ internal fun RecipeDetailScreen(
         missingInEnglish = localizedString(R.string.placeholder_missing_en, AppLanguage.EN)
     )
     var doneIngredientIds by remember { mutableStateOf(setOf<String>()) }
+    var emphasizedInstructionIndexes by remember { mutableStateOf(setOf<Int>()) }
     var convertedUnits by remember { mutableStateOf<Map<String, String>>(emptyMap()) }
     var conversionDialogIngredientId by remember { mutableStateOf<String?>(null) }
 
@@ -111,6 +113,7 @@ internal fun RecipeDetailScreen(
                     resolver = resolver,
                     placeholders = placeholders,
                     doneIngredientIds = doneIngredientIds,
+                    emphasizedInstructionIndexes = emphasizedInstructionIndexes,
                     convertedUnits = convertedUnits,
                     conversionDialogIngredientId = conversionDialogIngredientId,
                     onToggleIngredientDone = { ingredientId ->
@@ -118,6 +121,13 @@ internal fun RecipeDetailScreen(
                             doneIngredientIds - ingredientId
                         } else {
                             doneIngredientIds + ingredientId
+                        }
+                    },
+                    onToggleInstructionEmphasis = { instructionIndex ->
+                        emphasizedInstructionIndexes = if (instructionIndex in emphasizedInstructionIndexes) {
+                            emphasizedInstructionIndexes - instructionIndex
+                        } else {
+                            emphasizedInstructionIndexes + instructionIndex
                         }
                     },
                     onOpenIngredientConversion = { ingredientId ->
@@ -150,9 +160,11 @@ private fun RecipeDetailCard(
     resolver: BilingualTextResolver,
     placeholders: MissingTextPlaceholders,
     doneIngredientIds: Set<String>,
+    emphasizedInstructionIndexes: Set<Int>,
     convertedUnits: Map<String, String>,
     conversionDialogIngredientId: String?,
     onToggleIngredientDone: (String) -> Unit,
+    onToggleInstructionEmphasis: (Int) -> Unit,
     onOpenIngredientConversion: (String) -> Unit,
     onDismissIngredientConversion: () -> Unit,
     onSelectIngredientConversion: (String, String?) -> Unit
@@ -282,7 +294,13 @@ private fun RecipeDetailCard(
 
         DetailSection(localizedString(R.string.instructions_label, language)) {
             instructions.forEachIndexed { index, instruction ->
-                Text(text = "${index + 1}. $instruction")
+                DetailInstructionRow(
+                    index = index,
+                    instruction = instruction,
+                    isEmphasized = index in emphasizedInstructionIndexes,
+                    language = language,
+                    onToggleEmphasis = { onToggleInstructionEmphasis(index) }
+                )
             }
         }
 
@@ -343,6 +361,32 @@ private fun DetailSection(
         Text(text = label, style = MaterialTheme.typography.titleMedium)
         content()
     }
+}
+
+@Composable
+private fun DetailInstructionRow(
+    index: Int,
+    instruction: String,
+    isEmphasized: Boolean,
+    language: AppLanguage,
+    onToggleEmphasis: () -> Unit
+) {
+    val stateLabel = if (isEmphasized) {
+        localizedString(R.string.instruction_state_emphasized, language)
+    } else {
+        localizedString(R.string.instruction_state_normal, language)
+    }
+    Text(
+        text = "${index + 1}. $instruction",
+        style = MaterialTheme.typography.bodyMedium,
+        fontWeight = if (isEmphasized) FontWeight.Bold else FontWeight.Normal,
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag("instruction-row-$index")
+            .semantics { stateDescription = stateLabel }
+            .clickable(onClick = onToggleEmphasis)
+            .padding(vertical = 1.dp)
+    )
 }
 
 @OptIn(ExperimentalFoundationApi::class)

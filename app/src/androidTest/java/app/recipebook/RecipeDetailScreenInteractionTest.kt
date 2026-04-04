@@ -82,6 +82,44 @@ class RecipeDetailScreenInteractionTest {
         composeRule.onNodeWithText("200 g sugar").assert(hasText("200 g sugar"))
     }
 
+    @Test
+    fun instructionTapTogglesEmphasisStateBackAndForth() {
+        val recipe = Recipe(
+            id = "recipe-1",
+            createdAt = "2026-03-21T00:00:00Z",
+            updatedAt = "2026-03-21T00:00:00Z",
+            languages = BilingualText(
+                fr = LocalizedSystemText("Crepes", "", "Melanger\nCuire", ""),
+                en = LocalizedSystemText("Crepes", "", "Mix\nCook", "")
+            ),
+            ingredients = emptyList()
+        )
+
+        composeRule.setContent {
+            RecipeDetailScreen(
+                recipe = recipe,
+                ingredientReferences = emptyList(),
+                tags = emptyList(),
+                language = AppLanguage.EN,
+                onLanguageChange = {},
+                onBack = {},
+                onNavigate = {},
+                onEdit = {}
+            )
+        }
+
+        composeRule.onNodeWithTag("instruction-row-0")
+            .assert(hasStateDescription("Normal"))
+            .performClick()
+
+        composeRule.onNodeWithTag("instruction-row-0")
+            .assert(hasStateDescription("Bold"))
+            .performClick()
+
+        composeRule.onNodeWithTag("instruction-row-0")
+            .assert(hasStateDescription("Normal"))
+    }
+
     private fun hasStateDescription(expected: String): SemanticsMatcher =
         SemanticsMatcher.expectValue(SemanticsProperties.StateDescription, expected)
 }

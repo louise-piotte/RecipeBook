@@ -16,6 +16,7 @@ import kotlinx.coroutines.launch
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        keepScreenOnWhileInUse()
         WindowCompat.setDecorFitsSystemWindows(window, true)
 
         val repository = RecipeRepositoryProvider.create(this)

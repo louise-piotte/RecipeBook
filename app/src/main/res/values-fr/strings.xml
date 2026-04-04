@@ -37,6 +37,8 @@
     <string name="total_minutes_label">Minutes totales</string>
     <string name="ingredients_label">Ingr&#233;dients</string>
     <string name="instructions_label">Instructions</string>
+    <string name="instruction_state_normal">Normal</string>
+    <string name="instruction_state_emphasized">Gras</string>
     <string name="source_label">Source</string>
     <string name="tags_label">Tags</string>
     <string name="no_tags_selected_label">Aucun tag s&#233;lectionn&#233;.</string>

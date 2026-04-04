@@ -30,6 +30,7 @@ class RecipeEditorActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        keepScreenOnWhileInUse()
         WindowCompat.setDecorFitsSystemWindows(window, true)
 
         photoStore = RecipePhotoStore(this)
