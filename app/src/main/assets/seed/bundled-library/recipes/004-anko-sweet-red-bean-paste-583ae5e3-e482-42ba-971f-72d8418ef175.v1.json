@@ -1,0 +1,75 @@
+{
+  "id": "583ae5e3-e482-42ba-971f-72d8418ef175",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Just One Cookbook",
+    "sourceUrl": "https://www.justonecookbook.com/how-to-make-anko-red-bean-paste/#wprm-recipe-container-61000"
+  },
+  "languages": {
+    "fr": {
+      "title": "Anko",
+      "description": "Une p\u00e2te sucr\u00e9e de haricots azuki, classique de la p\u00e2tisserie japonaise, \u00e0 utiliser comme garniture ou composant de desserts.",
+      "instructions": "Rincer les haricots azuki et jeter ceux qui sont cass\u00e9s.\nMettre les haricots dans une grande casserole, couvrir d'eau et porter \u00e0 \u00e9bullition \u00e0 feu moyen-vif. \u00c9goutter dans une passoire fine et remettre les haricots dans la casserole. R\u00e9p\u00e9ter cette \u00e9tape deux fois.\nAjouter de nouveau de l'eau dans la casserole. Porter \u00e0 \u00e9bullition, baisser \u00e0 feu moyen-doux et laisser mijoter pendant 1 h \u00e0 1 h 30 min. Ajouter de l'eau au besoin pour garder les haricots immerg\u00e9s.\nApr\u00e8s 1 h, v\u00e9rifier la cuisson en \u00e9crasant un haricot entre les doigts. Lorsqu'il s'\u00e9crase facilement, \u00e9goutter les haricots en r\u00e9servant un peu du liquide de cuisson.\nTransf\u00e9rer les haricots dans un robot culinaire. Ajouter 1 \u00e0 2 cuill\u00e8res \u00e0 soupe de liquide de cuisson si n\u00e9cessaire et m\u00e9langer jusqu'\u00e0 l'obtention d'une p\u00e2te fine.\nRemettre la p\u00e2te dans la casserole, chauffer \u00e0 feu moyen-doux et ajouter le sucre graduellement en remuant.\nLorsque la spatule laisse une trace nette au fond de la casserole, retirer du feu. L'anko \u00e9paissira encore en refroidissant.",
+      "notes": "Toute quantit\u00e9 peut \u00eatre pr\u00e9par\u00e9e en conservant un ratio de poids de 1:1 entre les haricots azuki secs et le sucre."
+    },
+    "en": {
+      "title": "Anko",
+      "description": "A sweet azuki bean paste used in Japanese desserts as a filling or component.",
+      "instructions": "Rinse the azuki beans and discard any broken beans.\nPlace the beans in a large pot, cover with water, and bring to a boil over medium-high heat. Drain them through a fine-mesh sieve and return them to the pot. Repeat this step twice.\nAdd fresh water to the pot. Bring it to a boil, reduce to medium-low, and simmer for 1 h to 1 h 30 min. Add more water as needed to keep the beans submerged.\nAfter 1 h, check doneness by mashing a bean between your fingers. Once it mashes easily, drain the beans and reserve some of the cooking liquid.\nTransfer the beans to a food processor. Add 1 to 2 tablespoons of the cooking liquid if needed and process until smooth.\nReturn the paste to the pot, cook over medium-low heat, and add the sugar gradually while stirring.\nWhen the spatula leaves a clear line on the bottom of the pot, remove it from the heat. The anko will continue to thicken as it cools.",
+      "notes": "Any quantity can be made as long as you keep a 1:1 weight ratio between the dried azuki beans and the sugar."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "583ae5e3-e482-42ba-971f-72d8418ef175-ingredient-1",
+      "originalText": "200 g dried azuki beans",
+      "ingredientName": "azuki beans",
+      "ingredientRefId": "ingredient-ref-azuki-beans",
+      "quantity": 200,
+      "unit": "g",
+      "preparation": "dried"
+    },
+    {
+      "id": "583ae5e3-e482-42ba-971f-72d8418ef175-ingredient-2",
+      "originalText": "200 g sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 200,
+      "unit": "g"
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "tbsp"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 90,
+    "totalTimeMinutes": 100
+  },
+  "tags": [
+    "tag-japanese"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-583ae5e3-e482-42ba-971f-72d8418ef175-0",
+  "photos": [
+    {
+      "id": "photo-583ae5e3-e482-42ba-971f-72d8418ef175-0",
+      "relativePath": "photos/583ae5e3-e482-42ba-971f-72d8418ef175_0.jpg"
+    },
+    {
+      "id": "photo-583ae5e3-e482-42ba-971f-72d8418ef175-1",
+      "relativePath": "photos/583ae5e3-e482-42ba-971f-72d8418ef175_1.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "metric"
+  }
+}

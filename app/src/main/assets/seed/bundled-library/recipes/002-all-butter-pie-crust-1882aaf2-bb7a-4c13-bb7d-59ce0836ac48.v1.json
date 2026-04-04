@@ -1,0 +1,98 @@
+{
+  "id": "1882aaf2-bb7a-4c13-bb7d-59ce0836ac48",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Sally's Baking Addiction",
+    "sourceUrl": "https://sallysbakingaddiction.com/all-butter-pie-crust/"
+  },
+  "languages": {
+    "fr": {
+      "title": "P\u00e2te bris\u00e9e tout beurre",
+      "description": "Une p\u00e2te \u00e0 tarte riche et feuillet\u00e9e faite enti\u00e8rement au beurre, \u00e0 pr\u00e9parer d'avance et \u00e0 abaisser pour des tartes sucr\u00e9es ou sal\u00e9es.",
+      "instructions": "M\u00e9langer la farine, le sucre et le sel dans un grand bol. Ajouter le beurre froid en cubes sur le dessus.\n\u00c0 l'aide d'un coupe-p\u00e2te, d'un robot culinaire ou de deux fourchettes, couper le beurre dans les ingr\u00e9dients secs jusqu'\u00e0 ce que la farine soit enrob\u00e9e et que le m\u00e9lange forme des morceaux de la taille de pois.\nMesurer 120 ml d'eau, ajouter de la glace et remuer. Utiliser ensuite 120 ml de cette eau bien froide et l'arroser sur la p\u00e2te 30 ml \u00e0 la fois, en remuant apr\u00e8s chaque ajout, jusqu'\u00e0 ce que la p\u00e2te se rassemble en gros amas humides sans devenir trop mouill\u00e9e.\nD\u00e9poser la p\u00e2te sur un plan de travail l\u00e9g\u00e8rement farin\u00e9. Avec les mains farin\u00e9es, la replier sur elle-m\u00eame jusqu'\u00e0 ce que la farine soit incorpor\u00e9e. Former une boule, diviser en deux portions, puis aplatir chaque portion en disque d'environ 1 po d'\u00e9paisseur.\nEnvelopper chaque disque herm\u00e9tiquement et r\u00e9frig\u00e9rer au moins 2 h et jusqu'\u00e0 5 jours.\nAu moment d'abaisser la p\u00e2te, utiliser une pression douce, partir du centre et rouler vers l'ext\u00e9rieur dans toutes les directions en tournant la p\u00e2te entre chaque passage. Si les bords fissurent, les lisser doucement et garder le plan de travail, le rouleau et les mains l\u00e9g\u00e8rement farin\u00e9s.\nUtiliser ensuite la p\u00e2te selon les instructions de la recette de tarte choisie.",
+      "notes": ""
+    },
+    "en": {
+      "title": "All Butter Pie Crust",
+      "description": "A rich, flaky all-butter pie crust that can be made ahead and rolled out for sweet or savory pies.",
+      "instructions": "Mix the flour, sugar, and salt together in a large bowl. Add the cold cubed butter on top.\nUsing a pastry cutter, food processor, or two forks, cut the butter into the dry ingredients until the flour is coated and the mixture forms pea-sized pieces.\nMeasure 120 ml of water, add ice, and stir. Use 120 ml of that very cold water and drizzle it into the dough 30 ml at a time, stirring after each addition, until the dough comes together in large moist clumps without becoming overly wet.\nTurn the dough out onto a lightly floured work surface. With floured hands, fold it into itself until the flour is incorporated. Form a ball, divide it into 2 portions, and flatten each portion into a disc about 1 inch thick.\nWrap each disc tightly and refrigerate for at least 2 h and up to 5 days.\nWhen rolling out the dough, use gentle pressure, start from the center, and roll outward in all directions while turning the dough between passes. If the edges crack, smooth them gently and keep the work surface, rolling pin, and hands lightly floured.\nUse the dough according to the instructions for your chosen pie recipe.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "1882aaf2-bb7a-4c13-bb7d-59ce0836ac48-ingredient-1",
+      "originalText": "313 g all-purpose flour, plus more as needed",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 313,
+      "unit": "g",
+      "notes": "plus more as needed for dusting"
+    },
+    {
+      "id": "1882aaf2-bb7a-4c13-bb7d-59ce0836ac48-ingredient-2",
+      "originalText": "2 tsp granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "1882aaf2-bb7a-4c13-bb7d-59ce0836ac48-ingredient-3",
+      "originalText": "1 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "1882aaf2-bb7a-4c13-bb7d-59ce0836ac48-ingredient-4",
+      "originalText": "226 g unsalted butter, chilled and cubed",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 226,
+      "unit": "g",
+      "preparation": "chilled and cubed"
+    },
+    {
+      "id": "1882aaf2-bb7a-4c13-bb7d-59ce0836ac48-ingredient-5",
+      "originalText": "120 ml ice water, plus more as needed",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 120,
+      "unit": "ml",
+      "preparation": "ice cold",
+      "notes": "plus more as needed"
+    }
+  ],
+  "servings": {
+    "amount": 2,
+    "unit": "pie crusts"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 120,
+    "totalTimeMinutes": 140
+  },
+  "tags": [
+    "tag-tarts"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-1882aaf2-bb7a-4c13-bb7d-59ce0836ac48-0",
+  "photos": [
+    {
+      "id": "photo-1882aaf2-bb7a-4c13-bb7d-59ce0836ac48-0",
+      "relativePath": "photos/1882aaf2-bb7a-4c13-bb7d-59ce0836ac48_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "imperial"
+  }
+}

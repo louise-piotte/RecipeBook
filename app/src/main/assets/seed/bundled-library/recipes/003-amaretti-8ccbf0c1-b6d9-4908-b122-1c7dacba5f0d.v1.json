@@ -1,0 +1,117 @@
+{
+  "id": "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Foodtasia",
+    "sourceUrl": "https://foodtasia.com/almond-paste-cookies/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Amaretti",
+      "description": "Des biscuits italiens moelleux \u00e0 la p\u00e2te d'amande, roul\u00e9s dans les amandes tranch\u00e9es et saupoudr\u00e9s de sucre en poudre, si d\u00e9sir\u00e9.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F.\nCasser la p\u00e2te d'amande en morceaux de 1 po et la mettre dans le bol d'un robot culinaire. Ajouter le sucre, le sel, les blancs d'\u0153ufs et l'extrait d'amande, puis m\u00e9langer jusqu'\u00e0 l'obtention d'une p\u00e2te lisse.\nR\u00e9frig\u00e9rer la p\u00e2te pendant 1 h ou jusqu'\u00e0 3 jours.\nPr\u00e9lever des cuill\u00e8res \u00e0 soupe combles de p\u00e2te et les rouler en boules de 1 po, d'environ 25 g chacune.\nPresser les amandes tranch\u00e9es sur les c\u00f4t\u00e9s de chaque biscuit.\nD\u00e9poser les biscuits sur une plaque recouverte de papier parchemin en laissant 2 po entre eux.\nCuire environ 15 min \u00e0 18 min, jusqu'\u00e0 ce que le dessous des bords commence \u00e0 dorer. Ne pas trop cuire.\nLaisser refroidir sur une grille.\nSaupoudrer de sucre en poudre, si d\u00e9sir\u00e9.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Amaretti",
+      "description": "Soft Italian almond paste cookies rolled in sliced almonds and optionally dusted with powdered sugar.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F.\nBreak the almond paste into 1-inch pieces and place it in the bowl of a food processor. Add the sugar, salt, egg whites, and almond extract, then process until smooth.\nChill the dough for 1 h or up to 3 days.\nScoop rounded tablespoons of dough and roll them into 1-inch balls, about 25 g each.\nPress sliced almonds onto the sides of each cookie.\nPlace the cookies on a parchment-lined baking sheet, spacing them 2 inches apart.\nBake for about 15 min to 18 min, until the bottom edges begin to turn golden. Do not overbake.\nCool on a rack.\nDust with powdered sugar, if desired.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-ingredient-1",
+      "originalText": "16 oz homemade almond paste",
+      "ingredientName": "almond paste",
+      "ingredientRefId": "ingredient-ref-almond-paste",
+      "quantity": 16,
+      "unit": "oz",
+      "notes": "1 batch"
+    },
+    {
+      "id": "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-ingredient-2",
+      "originalText": "198 g sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 198,
+      "unit": "g"
+    },
+    {
+      "id": "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-ingredient-3",
+      "originalText": "1/4 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "id": "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-ingredient-4",
+      "originalText": "2 large egg whites (60 g), lightly beaten",
+      "ingredientName": "egg white",
+      "ingredientRefId": "ingredient-ref-egg-white",
+      "quantity": 2,
+      "unit": "large egg white",
+      "preparation": "lightly beaten"
+    },
+    {
+      "id": "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-ingredient-5",
+      "originalText": "1 tsp almond extract",
+      "ingredientName": "almond extract",
+      "ingredientRefId": "ingredient-ref-almond-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-ingredient-6",
+      "originalText": "sliced almonds for rolling",
+      "ingredientName": "almonds",
+      "ingredientRefId": "ingredient-ref-almonds",
+      "notes": "sliced, for rolling"
+    },
+    {
+      "id": "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-ingredient-7",
+      "originalText": "powdered sugar for dusting (optional)",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "optional": true,
+      "notes": "for dusting"
+    }
+  ],
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 20,
+    "totalTimeMinutes": 25
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cookies",
+    "tag-italian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-0",
+  "photos": [
+    {
+      "id": "photo-8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-0",
+      "relativePath": "photos/8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d_0.jpg"
+    },
+    {
+      "id": "photo-8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-1",
+      "relativePath": "photos/8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d_1.jpg"
+    },
+    {
+      "id": "photo-8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-2",
+      "relativePath": "photos/8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d_2.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

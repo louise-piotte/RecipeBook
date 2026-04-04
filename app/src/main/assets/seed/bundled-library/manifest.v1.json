@@ -12,6 +12,9 @@
   "settingsFile": "settings.v1.json",
   "recipeFiles": [
     "recipes/001-air-fryer-baked-oats-0a8b29b8-faf0-4597-8514-e09335de6c03.v1.json",
+    "recipes/002-all-butter-pie-crust-1882aaf2-bb7a-4c13-bb7d-59ce0836ac48.v1.json",
+    "recipes/003-amaretti-8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d.v1.json",
+    "recipes/004-anko-sweet-red-bean-paste-583ae5e3-e482-42ba-971f-72d8418ef175.v1.json",
     "recipes/050-gateau-au-chocolat-devil-s-food-cake-4207e09a-429f-437f-b7bd-14e862d6d696.v1.json",
     "recipes/061-gla-age-au-chocolat-blanc-white-chocolate-buttercream-c9022b89-8181-425a-9141-6a4e6086b5c8.v1.json"
   ]
