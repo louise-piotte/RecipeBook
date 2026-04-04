@@ -51,6 +51,11 @@ CANONICAL_RECIPE_FILE_STEMS_BY_ID = {
     "2d1a7685-9425-40ae-bdd5-6eaf2a55792f": "011-biscuits-bonbons-aux-amandes-almond-bonbon-cookies-2d1a7685-9425-40ae-bdd5-6eaf2a55792f",
     "f07ba465-a5c8-4fad-bba3-83941f165410": "012-biscuits-froiss-s-au-citron-lemon-crinkle-cookies-f07ba465-a5c8-4fad-bba3-83941f165410",
     "4d4af0ad-f76b-4562-9956-60070fba7802": "013-biscuits-tourbillon-biscuits-pinwheel-cookies-4d4af0ad-f76b-4562-9956-60070fba7802",
+    "eea71586-6439-4826-9a3d-b87c5c98a2a6": "014-blueberry-cake-filling-eea71586-6439-4826-9a3d-b87c5c98a2a6",
+    "e1e7939b-206f-4839-97d9-2a91febb28eb": "015-boeuf-stroganov-beef-stroganov-e1e7939b-206f-4839-97d9-2a91febb28eb",
+    "98235299-3e38-4cf6-acbc-cb24bda45509": "016-bouch-es-de-quinoa-quinoa-bites-98235299-3e38-4cf6-acbc-cb24bda45509",
+    "f2600073-da39-4f35-805e-7df143e47dce": "017-boule-de-neige-au-pistaches-pistachio-drop-cookies-f2600073-da39-4f35-805e-7df143e47dce",
+    "43199cff-7fba-4cd0-8447-2c7265b0bb1c": "018-boulette-de-dinde-turkey-meatballs-43199cff-7fba-4cd0-8447-2c7265b0bb1c",
     "4207e09a-429f-437f-b7bd-14e862d6d696": "050-gateau-au-chocolat-devil-s-food-cake-4207e09a-429f-437f-b7bd-14e862d6d696",
     "c9022b89-8181-425a-9141-6a4e6086b5c8": "061-gla-age-au-chocolat-blanc-white-chocolate-buttercream-c9022b89-8181-425a-9141-6a4e6086b5c8",
 }

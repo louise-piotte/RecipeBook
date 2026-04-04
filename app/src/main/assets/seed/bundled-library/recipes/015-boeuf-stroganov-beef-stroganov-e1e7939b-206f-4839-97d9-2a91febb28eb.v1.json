@@ -1,0 +1,106 @@
+{
+  "id": "e1e7939b-206f-4839-97d9-2a91febb28eb",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "B\u0153uf Stroganov",
+      "description": "Un b\u0153uf Stroganov familial mijot\u00e9 avec oignons, paprika et sauce au lait.",
+      "instructions": "Faire revenir les oignons dans la margarine jusqu'\u00e0 ce qu'ils commencent \u00e0 dorer.\nAjouter le b\u0153uf, puis saupoudrer de paprika et de poivre.\nCuire jusqu'\u00e0 ce que le b\u0153uf change de couleur, puis ajouter le bouillon de b\u0153uf.\nLaisser mijoter \u00e0 feu moyen environ 45 min, en ajoutant un peu d'eau au besoin.\nDans un bol, d\u00e9layer la farine dans le lait en \u00e9crasant les grumeaux le plus possible.\nVerser le m\u00e9lange de lait dans la casserole, augmenter le feu et remuer jusqu'\u00e0 ce que la sauce bouille et \u00e9paississe. Surveiller de pr\u00e8s, car le lait colle facilement au fond.\nRetirer du feu et servir avec du riz ou des nouilles."
+    },
+    "en": {
+      "title": "Beef Stroganov",
+      "description": "A family beef Stroganov simmered with onions, paprika, and a milk-based sauce.",
+      "instructions": "Cook the onions in the margarine until they start to brown.\nAdd the beef, then sprinkle with paprika and pepper.\nCook until the beef changes color, then add the beef broth.\nSimmer over medium heat for about 45 min, adding a little water as needed.\nIn a bowl, whisk the flour into the milk, crushing any lumps as much as possible.\nPour the milk mixture into the pan, increase the heat, and stir until the sauce comes to a boil and thickens. Watch closely because the milk can stick to the bottom easily.\nRemove from the heat and serve with rice or noodles."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "e1e7939b-206f-4839-97d9-2a91febb28eb-ingredient-1",
+      "originalText": "400 g beef",
+      "ingredientName": "beef",
+      "quantity": 400,
+      "unit": "g"
+    },
+    {
+      "id": "e1e7939b-206f-4839-97d9-2a91febb28eb-ingredient-2",
+      "originalText": "2 onions",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 2,
+      "unit": "medium onion"
+    },
+    {
+      "id": "e1e7939b-206f-4839-97d9-2a91febb28eb-ingredient-3",
+      "originalText": "2 tbsp margarine",
+      "ingredientName": "margarine",
+      "ingredientRefId": "ingredient-ref-margarine",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "e1e7939b-206f-4839-97d9-2a91febb28eb-ingredient-4",
+      "originalText": "1 can beef broth",
+      "ingredientName": "beef broth",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "id": "e1e7939b-206f-4839-97d9-2a91febb28eb-ingredient-5",
+      "originalText": "black pepper to taste",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 1,
+      "unit": "to taste"
+    },
+    {
+      "id": "e1e7939b-206f-4839-97d9-2a91febb28eb-ingredient-6",
+      "originalText": "1 tbsp paprika",
+      "ingredientName": "paprika",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "e1e7939b-206f-4839-97d9-2a91febb28eb-ingredient-7",
+      "originalText": "1 cup milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "e1e7939b-206f-4839-97d9-2a91febb28eb-ingredient-8",
+      "originalText": "2 tbsp all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 55,
+    "totalTimeMinutes": 65
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-e1e7939b-206f-4839-97d9-2a91febb28eb-0",
+  "photos": [
+    {
+      "id": "photo-e1e7939b-206f-4839-97d9-2a91febb28eb-0",
+      "relativePath": "photos/e1e7939b-206f-4839-97d9-2a91febb28eb_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

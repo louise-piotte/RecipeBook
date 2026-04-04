@@ -1,0 +1,135 @@
+{
+  "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/turkey-meatballs/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Boulettes de dinde",
+      "description": "Des boulettes de dinde au paprika fum\u00e9, bonnes avec du couscous, du quinoa ou une salade.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 218\u00b0C/425\u00b0F.\nDans un grand bol, m\u00e9langer la dinde, la chapelure, le fromage manchego, l'oignon rouge, l'ail, les \u0153ufs, le paprika fum\u00e9, le sel et le poivre.\nTapisser deux plaques \u00e0 cuisson \u00e0 rebord de papier d'aluminium, puis les graisser l\u00e9g\u00e8rement.\nFa\u00e7onner les boulettes \u00e0 l'aide d'une petite cuill\u00e8re \u00e0 portion ou d'une cuill\u00e8re \u00e0 soupe, puis les d\u00e9poser sur les plaques.\nArroser d'huile d'olive et cuire environ 15 min, jusqu'\u00e0 ce que les boulettes soient bien cuites.\nServir sur du couscous, du quinoa ou une salade verte, avec un peu de fromage et de persil suppl\u00e9mentaires si d\u00e9sir\u00e9."
+    },
+    "en": {
+      "title": "Turkey Meatballs",
+      "description": "Smoky turkey meatballs that pair well with couscous, quinoa, or salad greens.",
+      "instructions": "Preheat the oven to 218\u00b0C/425\u00b0F.\nIn a large bowl, stir together the turkey, bread crumbs, manchego cheese, red onion, garlic, eggs, smoked paprika, salt, and pepper.\nLine two rimmed baking sheets with foil, then lightly grease them.\nShape the meatballs using a small scoop or a tablespoon and place them on the prepared baking sheets.\nDrizzle with olive oil and bake for about 15 min, until the meatballs are cooked through.\nServe over couscous, quinoa, or salad greens with extra cheese and parsley if desired."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-1",
+      "originalText": "2 lb lean ground turkey",
+      "ingredientName": "ground turkey",
+      "ingredientRefId": "ingredient-ref-ground-turkey",
+      "quantity": 2,
+      "unit": "lb",
+      "preparation": "lean"
+    },
+    {
+      "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-2",
+      "originalText": "125 g bread crumbs",
+      "ingredientName": "bread crumbs",
+      "ingredientRefId": "ingredient-ref-breadcrumbs",
+      "quantity": 125,
+      "unit": "g"
+    },
+    {
+      "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-3",
+      "originalText": "113 g manchego cheese, grated",
+      "ingredientName": "manchego cheese",
+      "ingredientRefId": "ingredient-ref-manchego-cheese",
+      "quantity": 113,
+      "unit": "g",
+      "preparation": "grated"
+    },
+    {
+      "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-4",
+      "originalText": "75 g red onion, minced",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 75,
+      "unit": "g",
+      "preparation": "red, minced"
+    },
+    {
+      "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-5",
+      "originalText": "1 tbsp fresh garlic, minced",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 1,
+      "unit": "tbsp",
+      "preparation": "fresh, minced"
+    },
+    {
+      "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-6",
+      "originalText": "2 large eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 2,
+      "unit": "large egg"
+    },
+    {
+      "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-7",
+      "originalText": "4 tsp smoked paprika",
+      "ingredientName": "smoked paprika",
+      "ingredientRefId": "ingredient-ref-smoked-paprika",
+      "quantity": 4,
+      "unit": "tsp"
+    },
+    {
+      "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-8",
+      "originalText": "1 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-9",
+      "originalText": "1 tsp ground black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 1,
+      "unit": "tsp",
+      "preparation": "ground"
+    },
+    {
+      "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-10",
+      "originalText": "2 tbsp olive oil",
+      "ingredientName": "olive oil",
+      "ingredientRefId": "ingredient-ref-olive-oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 15,
+    "totalTimeMinutes": 35
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-meal-prep",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-43199cff-7fba-4cd0-8447-2c7265b0bb1c-0",
+  "photos": [
+    {
+      "id": "photo-43199cff-7fba-4cd0-8447-2c7265b0bb1c-0",
+      "relativePath": "photos/43199cff-7fba-4cd0-8447-2c7265b0bb1c_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

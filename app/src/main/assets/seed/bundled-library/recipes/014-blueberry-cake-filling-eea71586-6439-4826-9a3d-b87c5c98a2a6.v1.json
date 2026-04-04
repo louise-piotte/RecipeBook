@@ -1,0 +1,112 @@
+{
+  "id": "eea71586-6439-4826-9a3d-b87c5c98a2a6",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Baking With Butter",
+    "sourceUrl": "https://bakingwithbutter.com/blueberry-cake-filling/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Garniture aux bleuets",
+      "description": "Une garniture aux bleuets \u00e9paisse et brillante pour garnir un g\u00e2teau ou d'autres desserts.",
+      "instructions": "Dans une casserole moyenne, m\u00e9langer la f\u00e9cule de ma\u00efs avec 2 cuill\u00e8res \u00e0 soupe d'eau froide pour former une bouillie lisse.\nAjouter les bleuets, le sucre, le jus de citron, le zeste de citron, la vanille et le sel.\nCuire \u00e0 feu moyen-doux en remuant r\u00e9guli\u00e8rement jusqu'\u00e0 ce que le m\u00e9lange commence \u00e0 mijoter.\nLaisser bouillir environ 2 min en remuant constamment, jusqu'\u00e0 ce que la garniture soit \u00e9paisse, g\u00e9lifi\u00e9e et qu'elle ne soit plus trouble.\nTransf\u00e9rer dans un bol. D\u00e9poser une pellicule plastique directement sur la surface pendant le refroidissement pour \u00e9viter qu'une peau se forme.\nLaisser refroidir \u00e0 temp\u00e9rature ambiante, puis conserver au r\u00e9frig\u00e9rateur dans un contenant herm\u00e9tique jusqu'au moment de l'utiliser."
+    },
+    "en": {
+      "title": "Blueberry Cake Filling",
+      "description": "A thick, glossy blueberry filling for cakes and other desserts.",
+      "instructions": "In a medium saucepan, whisk the cornstarch with 2 tablespoons of cold water to make a smooth slurry.\nAdd the blueberries, sugar, lemon juice, lemon zest, vanilla, and salt.\nCook over medium-low heat, stirring regularly, until the mixture starts to simmer.\nLet it boil for about 2 min, stirring constantly, until the filling is thick, glossy, and no longer cloudy.\nTransfer to a bowl. Press plastic wrap directly onto the surface while it cools so a skin does not form.\nCool to room temperature, then refrigerate in an airtight container until needed."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "eea71586-6439-4826-9a3d-b87c5c98a2a6-ingredient-1",
+      "originalText": "450 g blueberries, fresh or frozen",
+      "ingredientName": "blueberries",
+      "ingredientRefId": "ingredient-ref-blueberries",
+      "quantity": 450,
+      "unit": "g",
+      "preparation": "fresh or frozen"
+    },
+    {
+      "id": "eea71586-6439-4826-9a3d-b87c5c98a2a6-ingredient-2",
+      "originalText": "50 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 50,
+      "unit": "g"
+    },
+    {
+      "id": "eea71586-6439-4826-9a3d-b87c5c98a2a6-ingredient-3",
+      "originalText": "2 tbsp cornstarch",
+      "ingredientName": "cornstarch",
+      "ingredientRefId": "ingredient-ref-cornstarch",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "eea71586-6439-4826-9a3d-b87c5c98a2a6-ingredient-4",
+      "originalText": "1 tbsp lemon juice",
+      "ingredientName": "lemon juice",
+      "ingredientRefId": "ingredient-ref-lemon-juice",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "eea71586-6439-4826-9a3d-b87c5c98a2a6-ingredient-5",
+      "originalText": "1 tsp lemon zest",
+      "ingredientName": "lemon zest",
+      "ingredientRefId": "ingredient-ref-lemon-zest",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "eea71586-6439-4826-9a3d-b87c5c98a2a6-ingredient-6",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "eea71586-6439-4826-9a3d-b87c5c98a2a6-ingredient-7",
+      "originalText": "1/4 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    }
+  ],
+  "servings": {
+    "amount": 2,
+    "unit": "cups"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 15,
+    "totalTimeMinutes": 20
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake",
+    "tag-filling",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 0
+  },
+  "mainPhotoId": "photo-eea71586-6439-4826-9a3d-b87c5c98a2a6-0",
+  "photos": [
+    {
+      "id": "photo-eea71586-6439-4826-9a3d-b87c5c98a2a6-0",
+      "relativePath": "photos/eea71586-6439-4826-9a3d-b87c5c98a2a6_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

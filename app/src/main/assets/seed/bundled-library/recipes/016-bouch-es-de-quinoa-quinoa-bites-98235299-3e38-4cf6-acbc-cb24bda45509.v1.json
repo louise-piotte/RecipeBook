@@ -1,0 +1,107 @@
+{
+  "id": "98235299-3e38-4cf6-acbc-cb24bda45509",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Eat Yourself Skinny",
+    "sourceUrl": "https://www.eatyourselfskinny.com/cheesy-broccoli-quinoa-bites/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Bouch\u00e9es de quinoa",
+      "description": "Des bouch\u00e9es de quinoa au brocoli et au cheddar, pratiques pour une collation ou un accompagnement.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F.\nAu robot culinaire, hacher finement le brocoli et la carotte.\nDans un grand bol, m\u00e9langer les l\u00e9gumes hach\u00e9s, le quinoa cuit, les \u0153ufs, le cheddar r\u00e2p\u00e9 et le sel.\nR\u00e9partir le m\u00e9lange dans deux moules \u00e0 mini muffins graiss\u00e9s, en pressant bien pour que les bouch\u00e9es se tiennent.\nCuire de 15 min \u00e0 20 min, jusqu'\u00e0 ce que les bouch\u00e9es soient l\u00e9g\u00e8rement dor\u00e9es.\nLaisser refroidir 5 min avant de servir."
+    },
+    "en": {
+      "title": "Quinoa Bites",
+      "description": "Cheesy broccoli quinoa bites that work well as a snack or side dish.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F.\nIn a food processor, finely chop the broccoli and carrot.\nIn a large bowl, mix together the chopped vegetables, cooked quinoa, eggs, shredded cheddar, and salt.\nDivide the mixture between two greased mini muffin pans, pressing firmly so the bites hold together.\nBake for 15 min to 20 min, until the bites are lightly browned.\nLet cool for 5 min before serving."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "98235299-3e38-4cf6-acbc-cb24bda45509-ingredient-1",
+      "originalText": "2 cups cooked quinoa",
+      "ingredientName": "quinoa",
+      "ingredientRefId": "ingredient-ref-quinoa",
+      "quantity": 2,
+      "unit": "cup",
+      "preparation": "cooked"
+    },
+    {
+      "id": "98235299-3e38-4cf6-acbc-cb24bda45509-ingredient-2",
+      "originalText": "2 eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 2,
+      "unit": "large egg"
+    },
+    {
+      "id": "98235299-3e38-4cf6-acbc-cb24bda45509-ingredient-3",
+      "originalText": "1 cup shredded cheddar cheese",
+      "ingredientName": "cheddar cheese",
+      "ingredientRefId": "ingredient-ref-cheddar-cheese",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "shredded"
+    },
+    {
+      "id": "98235299-3e38-4cf6-acbc-cb24bda45509-ingredient-4",
+      "originalText": "1/4 cup grated carrot",
+      "ingredientName": "carrot",
+      "ingredientRefId": "ingredient-ref-carrot",
+      "quantity": 0.25,
+      "unit": "cup",
+      "preparation": "grated"
+    },
+    {
+      "id": "98235299-3e38-4cf6-acbc-cb24bda45509-ingredient-5",
+      "originalText": "1.5 cups chopped broccoli",
+      "ingredientName": "broccoli",
+      "ingredientRefId": "ingredient-ref-broccoli",
+      "quantity": 1.5,
+      "unit": "cup",
+      "preparation": "chopped"
+    },
+    {
+      "id": "98235299-3e38-4cf6-acbc-cb24bda45509-ingredient-6",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
+  ],
+  "servings": {
+    "amount": 10,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 20,
+    "totalTimeMinutes": 25
+  },
+  "tags": [
+    "tag-side-dish",
+    "tag-snack",
+    "tag-vegetarian",
+    "tag-meal-prep"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-98235299-3e38-4cf6-acbc-cb24bda45509-0",
+  "photos": [
+    {
+      "id": "photo-98235299-3e38-4cf6-acbc-cb24bda45509-0",
+      "relativePath": "photos/98235299-3e38-4cf6-acbc-cb24bda45509_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

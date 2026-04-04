@@ -1,0 +1,125 @@
+{
+  "id": "f2600073-da39-4f35-805e-7df143e47dce",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Sally's Baking Addiction",
+    "sourceUrl": "https://sallysbakingaddiction.com/pistachio-cookies/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Boules de neige aux pistaches",
+      "description": "Des biscuits sabl\u00e9s aux pistaches, d\u00e9licats et parfaits pour la bo\u00eete de No\u00ebl.",
+      "instructions": "Dans un grand bol, battre le beurre pendant 1 min \u00e0 vitesse moyenne jusqu'\u00e0 ce qu'il soit lisse et cr\u00e9meux.\nAjouter le sucre \u00e0 glacer, l'extrait de vanille et l'extrait d'amande, puis battre jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9.\nAjouter la farine, les pistaches finement moulues et le colorant alimentaire, si utilis\u00e9, puis m\u00e9langer jusqu'\u00e0 l'obtention d'une p\u00e2te \u00e9paisse.\nCouvrir la p\u00e2te et r\u00e9frig\u00e9rer 30 min. Si elle repose plus de 2 h, la laisser temp\u00e9rer 30 min avant de la fa\u00e7onner.\nPr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F. Tapisser de grandes plaques \u00e0 biscuits de papier parchemin.\nFa\u00e7onner des boules d'environ 1 cuill\u00e8re \u00e0 soupe de p\u00e2te chacune et les d\u00e9poser sur les plaques en laissant environ 2 po entre elles. Si la p\u00e2te est friable, continuer \u00e0 la rouler entre les mains pour qu'elle se tienne.\nCuire de 14 min \u00e0 15 min, jusqu'\u00e0 ce que les biscuits soient l\u00e9g\u00e8rement dor\u00e9s dessous et juste un peu sur le dessus.\nLaisser refroidir 5 min sur la plaque, puis transf\u00e9rer sur une grille."
+    },
+    "en": {
+      "title": "Pistachio Drop Cookies",
+      "description": "Delicate pistachio shortbread-style cookies that fit perfectly in a Christmas cookie box.",
+      "instructions": "In a large bowl, beat the butter on medium speed for 1 min until smooth and creamy.\nAdd the confectioners' sugar, vanilla extract, and almond extract, then beat until combined.\nAdd the flour, finely ground pistachios, and food coloring, if using, and mix until a thick dough forms.\nCover the dough and chill for 30 min. If it chills for longer than 2 h, let it sit at room temperature for 30 min before shaping.\nPreheat the oven to 177\u00b0C/350\u00b0F. Line large baking sheets with parchment paper.\nShape the dough into balls using about 1 tablespoon of dough each and place them on the baking sheets about 2 inches apart. If the dough is crumbly, keep rolling it between your hands until it holds together.\nBake for 14 min to 15 min, until the cookies are lightly browned on the bottom and just barely colored on top.\nCool on the baking sheets for 5 min, then transfer to a wire rack."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "f2600073-da39-4f35-805e-7df143e47dce-ingredient-1",
+      "originalText": "130 g pistachios, finely ground",
+      "ingredientName": "pistachios",
+      "ingredientRefId": "ingredient-ref-pistachios",
+      "quantity": 130,
+      "unit": "g",
+      "preparation": "finely ground"
+    },
+    {
+      "id": "f2600073-da39-4f35-805e-7df143e47dce-ingredient-2",
+      "originalText": "230 g unsalted butter, softened",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 230,
+      "unit": "g",
+      "preparation": "softened"
+    },
+    {
+      "id": "f2600073-da39-4f35-805e-7df143e47dce-ingredient-3",
+      "originalText": "90 g confectioners' sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 90,
+      "unit": "g"
+    },
+    {
+      "id": "f2600073-da39-4f35-805e-7df143e47dce-ingredient-4",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "f2600073-da39-4f35-805e-7df143e47dce-ingredient-5",
+      "originalText": "1 tsp almond extract",
+      "ingredientName": "almond extract",
+      "ingredientRefId": "ingredient-ref-almond-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "f2600073-da39-4f35-805e-7df143e47dce-ingredient-6",
+      "originalText": "281 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 281,
+      "unit": "g"
+    },
+    {
+      "id": "f2600073-da39-4f35-805e-7df143e47dce-ingredient-7",
+      "originalText": "1 to 2 drops green gel food coloring",
+      "ingredientName": "green gel food coloring",
+      "quantity": 1,
+      "unit": "optional",
+      "preparation": "1 to 2 drops"
+    }
+  ],
+  "servings": {
+    "amount": 36,
+    "unit": "cookies"
+  },
+  "times": {
+    "prepTimeMinutes": 45,
+    "cookTimeMinutes": 15,
+    "totalTimeMinutes": 60
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cookies",
+    "tag-christmas",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-f2600073-da39-4f35-805e-7df143e47dce-0",
+  "photos": [
+    {
+      "id": "photo-f2600073-da39-4f35-805e-7df143e47dce-0",
+      "relativePath": "photos/f2600073-da39-4f35-805e-7df143e47dce_0.jpg"
+    },
+    {
+      "id": "photo-f2600073-da39-4f35-805e-7df143e47dce-1",
+      "relativePath": "photos/f2600073-da39-4f35-805e-7df143e47dce_1.jpg"
+    },
+    {
+      "id": "photo-f2600073-da39-4f35-805e-7df143e47dce-2",
+      "relativePath": "photos/f2600073-da39-4f35-805e-7df143e47dce_2.jpg"
+    },
+    {
+      "id": "photo-f2600073-da39-4f35-805e-7df143e47dce-3",
+      "relativePath": "photos/f2600073-da39-4f35-805e-7df143e47dce_3.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}
