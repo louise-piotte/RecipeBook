@@ -1,0 +1,139 @@
+{
+  "id": "f07ba465-a5c8-4fad-bba3-83941f165410",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/lemon-crinkle-cookies/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Biscuits froiss\u00e9s au citron",
+      "description": "Des biscuits au citron tendres et bien citronn\u00e9s, recouverts de sucre \u00e0 glacer et craquel\u00e9s \u00e0 la cuisson.",
+      "instructions": "Dans un grand bol, fouetter le sucre, le zeste de citron et le sel. Pour plus de saveur, frotter le zeste et le sucre du bout des doigts jusqu'\u00e0 ce que le m\u00e9lange ressemble \u00e0 du sable humide. Ajouter le beurre fondu, les \u0153ufs, le jus de citron et la vanille, puis fouetter jusqu'\u00e0 ce que le tout soit homog\u00e8ne.\nDans un petit bol, m\u00e9langer la farine et le bicarbonate de soude. Incorporer les ingr\u00e9dients secs au m\u00e9lange au citron jusqu'\u00e0 ce qu'ils soient bien combin\u00e9s. Couvrir et r\u00e9frig\u00e9rer pendant au moins 4 h, ou jusqu'\u00e0 12 h.\nPr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F. Tapisser 2 plaques \u00e0 biscuits de papier parchemin.\nMettre le sucre \u00e0 glacer dans un petit bol.\nPr\u00e9lever 12 portions de p\u00e2te froide \u00e0 l'aide d'une cuill\u00e8re \u00e0 ressort de 1\u00bd cuill\u00e8re \u00e0 soupe, ou d'une grosse cuill\u00e8re \u00e0 soupe. Couvrir et remettre le reste de la p\u00e2te au r\u00e9frig\u00e9rateur.\nRouler les portions entre les paumes pour former des boules lisses. Pour une meilleure cro\u00fbte, rouler d'abord les boules dans le sucre granul\u00e9, puis les enrober g\u00e9n\u00e9reusement de sucre \u00e0 glacer. D\u00e9poser sur les plaques en laissant environ 1\u00bd po entre chaque biscuit.\nCuire de 12 min \u00e0 14 min, jusqu'\u00e0 ce que le dessus se fissure et que les bords du dessous commencent \u00e0 dorer. Laisser refroidir 2 min sur la plaque, puis transf\u00e9rer sur une grille jusqu'\u00e0 complet refroidissement. R\u00e9p\u00e9ter avec le reste de la p\u00e2te.\nConserver dans un contenant herm\u00e9tique jusqu'\u00e0 5 jours.",
+      "notes": "Avant de rouler les biscuits dans le sucre en poudre, les rouler d'abord dans le sucre blanc donne une meilleure cro\u00fbte."
+    },
+    "en": {
+      "title": "Lemon Crinkle Cookies",
+      "description": "Tender, bright lemon cookies coated in icing sugar and crackled on top after baking.",
+      "instructions": "In a large bowl, whisk together the sugar, lemon zest, and salt. For extra flavor, rub the zest and sugar together with your fingertips until the mixture feels like wet sand. Whisk in the melted butter, eggs, lemon juice, and vanilla until well combined.\nIn a small bowl, whisk together the flour and baking soda. Fold the dry ingredients into the lemon mixture until well combined. Cover and refrigerate for at least 4 h, or up to 12 h.\nPreheat the oven to 177\u00b0C/350\u00b0F. Line 2 cookie sheets with parchment paper.\nPlace the confectioners' sugar in a small bowl.\nScoop 12 portions of chilled dough using a 1.5-tablespoon spring-loaded scoop, or a heaping tablespoon. Cover and return the remaining dough to the refrigerator.\nRoll the scoops between your palms to make smooth balls. For a better crust, roll each ball in granulated sugar first, then coat generously in confectioners' sugar. Place them on the baking sheets about 1.5 inches apart.\nBake for 12 min to 14 min, until the tops crack and the bottom edges are just starting to brown. Let cool on the pans for 2 min, then transfer to a wire rack to cool completely. Repeat with the remaining dough.\nStore in an airtight container for up to 5 days.",
+      "notes": "Before rolling the cookies in powdered sugar, rolling them in granulated sugar first makes a better crust."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-1",
+      "originalText": "200 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 200,
+      "unit": "g"
+    },
+    {
+      "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-2",
+      "originalText": "1 tbsp grated lemon zest",
+      "ingredientName": "lemon zest",
+      "ingredientRefId": "ingredient-ref-lemon-zest",
+      "quantity": 1,
+      "unit": "tbsp",
+      "preparation": "grated"
+    },
+    {
+      "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-3",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-4",
+      "originalText": "113 g unsalted butter, melted",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 113,
+      "unit": "g",
+      "preparation": "melted"
+    },
+    {
+      "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-5",
+      "originalText": "2 large eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 2,
+      "unit": "large egg"
+    },
+    {
+      "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-6",
+      "originalText": "60 ml fresh lemon juice",
+      "ingredientName": "lemon juice",
+      "ingredientRefId": "ingredient-ref-lemon-juice",
+      "quantity": 60,
+      "unit": "ml",
+      "preparation": "fresh"
+    },
+    {
+      "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-7",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-8",
+      "originalText": "280 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 280,
+      "unit": "g"
+    },
+    {
+      "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-9",
+      "originalText": "1/2 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-10",
+      "originalText": "98 g confectioners' sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 98,
+      "unit": "g"
+    }
+  ],
+  "servings": {
+    "amount": 24,
+    "unit": "cookies"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 12,
+    "totalTimeMinutes": 32
+  },
+  "tags": [
+    "tag-cookies",
+    "tag-snack",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-f07ba465-a5c8-4fad-bba3-83941f165410-0",
+  "photos": [
+    {
+      "id": "photo-f07ba465-a5c8-4fad-bba3-83941f165410-0",
+      "relativePath": "photos/f07ba465-a5c8-4fad-bba3-83941f165410_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}
