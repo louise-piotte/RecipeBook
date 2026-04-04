@@ -61,6 +61,7 @@
 
 ### Recipe Import And Library Cleanup
 - Recipe import cleanup means converting recipes into the app's bundled startup-import files under `app/src/main/assets/seed/bundled-library` so they are imported by the app on first load; normalize wording consistently across recipes, use Quebec French, replace outdated ingredient-tag assumptions with current tags, add missing translations, and add missing ingredient/tag entries or aliases when needed.
+- After adding recipes to the seed, validate that the app is still correctly populated with the recipes and that the new ones are present using the emulator.
 - Bundled seed recipe filenames must keep the original recipe-name slug before the UUID, for example `005-bao-buns-vapeur-steamed-bao-buns-<uuid>.v1.json`, instead of collapsing to a UUID-only filename.
 - Consistency is a primary rule for recipe cleanup. Keep recurring conventions such as oven temperature wording, unit phrasing, capitalization, punctuation, and bilingual terminology aligned across the whole library.
 - Recipe cleanup formatting rules:
@@ -77,7 +78,6 @@
 - Do not add unit tests that lock in individual recipe content details. Shared ingredient catalogs, shared tag catalogs, schema shape, and generic structural validation are fine to test.
 - If the source gives both volume and weight, weight is always preferred.
 - Remove numbers for the instructions steps.
-- After adding a recipe, validate using the emulator that the recipes have loaded correctly.
 
 ### Encoding And Text Safety
 - When writing recipe JSON, docs, or code that contains accents or degree symbols, preserve correct UTF-8 without BOM and verify the saved result before finishing.

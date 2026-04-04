@@ -1,0 +1,106 @@
+{
+  "id": "607adb61-ff54-49c9-8aaf-d02648a3ae90",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/buckeyes/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Buckeyes",
+      "description": "Des boules de beurre d'arachide tremp\u00e9es dans le chocolat, classiques des f\u00eates.",
+      "instructions": "Cr\u00e9mer le beurre d'arachide, le beurre et la vanille jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9.\nAjouter le sucre \u00e0 glacer et m\u00e9langer \u00e0 basse vitesse jusqu'\u00e0 ce que la p\u00e2te soit uniforme. Racler le bol et rem\u00e9langer.\nPr\u00e9lever des portions d'environ 1 cuill\u00e8re \u00e0 soupe, soit autour de 20 g chacune, puis les rouler en boules.\nD\u00e9poser les boules sur une plaque et r\u00e9frig\u00e9rer au moins 20 min, jusqu'\u00e0 ce qu'elles soient fermes.\nFaire fondre le chocolat avec l'huile de noix de coco au micro-ondes \u00e0 50 % de puissance. Remuer jusqu'\u00e0 ce que le m\u00e9lange soit lisse, puis laisser ti\u00e9dir.\nAvec une brochette ou un cure-dent, tremper chaque boule dans le chocolat en laissant un petit cercle de garniture au beurre d'arachide visible sur le dessus.\nRemettre au froid jusqu'\u00e0 ce que le chocolat soit fig\u00e9. Si vous voulez lisser les petits trous laiss\u00e9s par les brochettes, les refermer avec un petit couteau ou une spatule.",
+      "notes": "L'huile de noix de coco est facultative, mais elle aide \u00e0 fluidifier le chocolat pour le trempage."
+    },
+    "en": {
+      "title": "Buckeyes",
+      "description": "Classic peanut butter balls dipped in chocolate for a holiday treat.",
+      "instructions": "Cream the peanut butter, butter, and vanilla together until smooth.\nAdd the icing sugar and mix on low speed until evenly combined. Scrape down the bowl and mix again.\nPortion the mixture into tablespoon-sized pieces, about 20 g each, and roll them into balls.\nPlace the balls on a baking sheet and chill for at least 20 min, until firm.\nMelt the chocolate with the coconut oil in the microwave at 50% power. Stir until smooth, then let it cool slightly.\nUsing a skewer or toothpick, dip each ball into the chocolate, leaving a small circle of peanut butter filling visible on top.\nChill again until the chocolate is set. If you want to smooth the small holes from the skewers, close them with a small knife or spatula.",
+      "notes": "The coconut oil is optional, but it helps thin the chocolate for dipping."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "607adb61-ff54-49c9-8aaf-d02648a3ae90-ingredient-1",
+      "originalText": "240 g smooth peanut butter",
+      "ingredientName": "peanut butter",
+      "ingredientRefId": "ingredient-ref-peanut-butter",
+      "quantity": 240,
+      "unit": "g",
+      "preparation": "smooth"
+    },
+    {
+      "id": "607adb61-ff54-49c9-8aaf-d02648a3ae90-ingredient-2",
+      "originalText": "70 g unsalted butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 70,
+      "unit": "g"
+    },
+    {
+      "id": "607adb61-ff54-49c9-8aaf-d02648a3ae90-ingredient-3",
+      "originalText": "240 g icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 240,
+      "unit": "g"
+    },
+    {
+      "id": "607adb61-ff54-49c9-8aaf-d02648a3ae90-ingredient-4",
+      "originalText": "5 ml vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 5,
+      "unit": "ml"
+    },
+    {
+      "id": "607adb61-ff54-49c9-8aaf-d02648a3ae90-ingredient-5",
+      "originalText": "340 g semisweet chocolate",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 340,
+      "unit": "g"
+    },
+    {
+      "id": "607adb61-ff54-49c9-8aaf-d02648a3ae90-ingredient-6",
+      "originalText": "30 ml coconut oil",
+      "ingredientName": "coconut oil",
+      "ingredientRefId": "ingredient-ref-coconut-oil",
+      "quantity": 30,
+      "unit": "ml",
+      "optional": true
+    }
+  ],
+  "servings": {
+    "amount": 24,
+    "unit": "buckeyes"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 35
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-snack",
+    "tag-christmas"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-607adb61-ff54-49c9-8aaf-d02648a3ae90-0",
+  "photos": [
+    {
+      "id": "photo-607adb61-ff54-49c9-8aaf-d02648a3ae90-0",
+      "relativePath": "photos/607adb61-ff54-49c9-8aaf-d02648a3ae90_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

@@ -2037,7 +2037,7 @@
   },
   {
     "id": "ingredient-ref-old-bay-seasoning",
-    "nameFr": "cuill\u00e8re \u00e0 th\u00e9 d'assaisonnement Old Bay",
+    "nameFr": "assaisonnement Old Bay",
     "nameEn": "old bay seasoning",
     "aliasesFr": [],
     "aliasesEn": [],
@@ -2091,6 +2091,16 @@
     "defaultDensity": null,
     "unitMappings": [],
     "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-paprika",
+    "nameFr": "paprika",
+    "nameEn": "paprika",
+    "aliasesFr": [],
+    "aliasesEn": [],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-04-04T00:00:00Z"
   },
   {
     "id": "ingredient-ref-parmesan-cheese",
@@ -2575,12 +2585,8 @@
     "id": "ingredient-ref-smoked-paprika",
     "nameFr": "paprika fum\u00e9",
     "nameEn": "smoked paprika",
-    "aliasesFr": [
-      "paprika"
-    ],
-    "aliasesEn": [
-      "paprika"
-    ],
+    "aliasesFr": [],
+    "aliasesEn": [],
     "defaultDensity": null,
     "unitMappings": [],
     "updatedAt": "2026-03-23T00:00:00Z"

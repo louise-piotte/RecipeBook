@@ -1,0 +1,138 @@
+{
+  "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/peanut-butter-brownies/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Brownies au beurre d'arachide",
+      "description": "Des brownies riches et fondants au chocolat, avec des marbrures de beurre d'arachide.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F. Vaporiser un moule carr\u00e9 de 20 cm sur 20 cm d'enduit \u00e0 cuisson et le tapisser de papier parchemin.\nDans une petite casserole, faire fondre le beurre \u00e0 feu moyen. Retirer du feu et fouetter 85 g de chocolat mi-sucr\u00e9 jusqu'\u00e0 ce qu'il soit compl\u00e8tement fondu. Transf\u00e9rer dans un grand bol et laisser ti\u00e9dir quelques minutes.\nDans un autre bol, tamiser ensemble la farine et le cacao, puis incorporer le sel au fouet.\nAu m\u00e9lange au chocolat fondu, ajouter les deux sucres, les \u0153ufs et la vanille, puis fouetter jusqu'\u00e0 consistance lisse. Incorporer les ingr\u00e9dients secs, puis le reste du chocolat mi-sucr\u00e9. \u00c9taler la p\u00e2te dans le moule.\nD\u00e9poser le beurre d'arachide sur le dessus par petites cuiller\u00e9es \u00e0 th\u00e9 et le marbrer dans la p\u00e2te avec la pointe d'un couteau ou d'une brochette.\nCuire de 40 min \u00e0 45 min, jusqu'\u00e0 ce que le centre ne vacille presque plus quand on secoue doucement le moule. Pour un centre tr\u00e8s fondant, cuire environ 35 min. Couvrir de papier d'aluminium apr\u00e8s 25 min si le beurre d'arachide brunit trop. Laisser refroidir compl\u00e8tement avant de couper.",
+      "notes": "Le rendement source est de 12 portions dans un moule de 20 cm sur 20 cm."
+    },
+    "en": {
+      "title": "Peanut Butter Brownies",
+      "description": "Rich, fudgy chocolate brownies with peanut butter swirled throughout.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F. Spray an 8x8-inch baking pan with baking spray and line it with parchment paper.\nIn a small saucepan, melt the butter over medium heat. Remove from the heat and whisk in 85 g of the semisweet chocolate until fully melted. Transfer to a large bowl and let it cool for a few minutes.\nIn another bowl, sift together the flour and cocoa powder, then whisk in the salt.\nWhisk the granulated sugar, brown sugar, eggs, and vanilla into the melted chocolate mixture until smooth. Fold in the dry ingredients, then the remaining semisweet chocolate. Spread the batter into the prepared pan.\nDrop the peanut butter over the batter by teaspoonfuls and swirl it in with the tip of a knife or skewer.\nBake for 40 min to 45 min, until the center barely wobbles when the pan is gently shaken. For a very fudgy center, bake for about 35 min. Cover with foil after 25 min if the peanut butter is browning too quickly. Cool completely before slicing.",
+      "notes": "The source yield is 12 servings in an 8x8-inch pan."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-1",
+      "originalText": "227 g unsalted butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 227,
+      "unit": "g"
+    },
+    {
+      "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-2",
+      "originalText": "175 g semisweet chocolate, divided",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 175,
+      "unit": "g",
+      "preparation": "divided"
+    },
+    {
+      "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-3",
+      "originalText": "150 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 150,
+      "unit": "g"
+    },
+    {
+      "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-4",
+      "originalText": "50 g unsweetened cocoa powder",
+      "ingredientName": "unsweetened cocoa powder",
+      "ingredientRefId": "ingredient-ref-unsweetened-cocoa-powder",
+      "quantity": 50,
+      "unit": "g"
+    },
+    {
+      "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-5",
+      "originalText": "1 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-6",
+      "originalText": "200 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 200,
+      "unit": "g"
+    },
+    {
+      "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-7",
+      "originalText": "220 g packed light brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 220,
+      "unit": "g",
+      "preparation": "packed light"
+    },
+    {
+      "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-8",
+      "originalText": "3 large eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 3,
+      "unit": "large egg"
+    },
+    {
+      "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-9",
+      "originalText": "1 tbsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-10",
+      "originalText": "1/2 cup creamy peanut butter",
+      "ingredientName": "peanut butter",
+      "ingredientRefId": "ingredient-ref-peanut-butter",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "creamy"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 40,
+    "totalTimeMinutes": 50
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-bars-squares"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-d73d6bff-fc0c-4b79-a607-441e546d32ad-0",
+  "photos": [
+    {
+      "id": "photo-d73d6bff-fc0c-4b79-a607-441e546d32ad-0",
+      "relativePath": "photos/d73d6bff-fc0c-4b79-a607-441e546d32ad_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

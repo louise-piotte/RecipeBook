@@ -1,0 +1,121 @@
+{
+  "id": "5fecccc1-d734-4f2b-9958-ac0c6a960f29",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Calamar frit \u00e0 l'air",
+      "description": "Des rondelles de calamar pan\u00e9es au panko, croustillantes sans friture profonde.",
+      "instructions": "Pr\u00e9chauffer la friteuse \u00e0 air \u00e0 204\u00b0C/400\u00b0F.\nPr\u00e9parer trois bols. Dans un grand plat peu profond, m\u00e9langer le panko, le poivre, le sel, le paprika et l'origan. Mettre la farine dans un deuxi\u00e8me bol. Dans un troisi\u00e8me bol, battre l'\u0153uf avec le lait.\nPasser les rondelles de calamar dans la farine et secouer l'exc\u00e9dent. Les tremper dans le m\u00e9lange d'\u0153uf, puis les enrober de panko assaisonn\u00e9.\nD\u00e9poser les rondelles dans le panier de la friteuse \u00e0 air et vaporiser l\u00e9g\u00e8rement d'enduit \u00e0 cuisson.\nCuire 4 min, retourner les rondelles, puis poursuivre la cuisson 3 min, jusqu'\u00e0 ce qu'elles soient dor\u00e9es et croustillantes.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Air Fried Calamari",
+      "description": "Panko-crusted calamari rings that crisp up in the air fryer without deep frying.",
+      "instructions": "Preheat the air fryer to 204\u00b0C/400\u00b0F.\nSet up three bowls. In a large shallow dish, combine the panko, pepper, salt, paprika, and oregano. Put the flour in a second bowl. In a third bowl, beat the egg with the milk.\nCoat the calamari rings in flour and shake off the excess. Dip them in the egg mixture, then coat them in the seasoned panko.\nArrange the rings in the air fryer basket and lightly spray them with cooking spray.\nCook for 4 min, flip the rings, then cook for 3 min more, until golden and crisp.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "5fecccc1-d734-4f2b-9958-ac0c6a960f29-ingredient-1",
+      "originalText": "140 g sliced calamari",
+      "ingredientName": "calamari",
+      "ingredientRefId": "ingredient-ref-calamari",
+      "quantity": 140,
+      "unit": "g",
+      "preparation": "sliced into rings"
+    },
+    {
+      "id": "5fecccc1-d734-4f2b-9958-ac0c6a960f29-ingredient-2",
+      "originalText": "1/2 cup panko",
+      "ingredientName": "bread crumbs",
+      "ingredientRefId": "ingredient-ref-breadcrumbs",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "panko"
+    },
+    {
+      "id": "5fecccc1-d734-4f2b-9958-ac0c6a960f29-ingredient-3",
+      "originalText": "1/2 tsp black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "5fecccc1-d734-4f2b-9958-ac0c6a960f29-ingredient-4",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "5fecccc1-d734-4f2b-9958-ac0c6a960f29-ingredient-5",
+      "originalText": "1/2 tsp paprika",
+      "ingredientName": "paprika",
+      "ingredientRefId": "ingredient-ref-paprika",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "5fecccc1-d734-4f2b-9958-ac0c6a960f29-ingredient-6",
+      "originalText": "1/2 tsp dried oregano",
+      "ingredientName": "dried oregano",
+      "ingredientRefId": "ingredient-ref-dried-oregano",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "5fecccc1-d734-4f2b-9958-ac0c6a960f29-ingredient-7",
+      "originalText": "1 egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "large egg"
+    },
+    {
+      "id": "5fecccc1-d734-4f2b-9958-ac0c6a960f29-ingredient-8",
+      "originalText": "1/2 cup milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "5fecccc1-d734-4f2b-9958-ac0c6a960f29-ingredient-9",
+      "originalText": "2 tbsp all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 7,
+    "totalTimeMinutes": 22
+  },
+  "tags": [
+    "tag-appetizer",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-5fecccc1-d734-4f2b-9958-ac0c6a960f29-0",
+  "photos": [
+    {
+      "id": "photo-5fecccc1-d734-4f2b-9958-ac0c6a960f29-0",
+      "relativePath": "photos/5fecccc1-d734-4f2b-9958-ac0c6a960f29_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

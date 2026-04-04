@@ -1,0 +1,186 @@
+{
+  "id": "135813a6-75e2-4596-8c71-ffd450fab0ca",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Eat Yourself Skinny",
+    "sourceUrl": "https://www.eatyourselfskinny.com/baked-crab-cake-bites-with-sriracha-dipping-sauce/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Boulettes de crabe",
+      "description": "Des boulettes de crabe croustillantes servies avec une trempette au yogourt et \u00e0 la sriracha, parfaites pour un buffet ou une entr\u00e9e \u00e0 partager.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F si vous utilisez le four.\nRincer d\u00e9licatement la chair de crabe et retirer les morceaux de coquille sans trop briser les gros morceaux.\nDans un grand bol, fouetter l'\u0153uf, le yogourt, la moutarde de Dijon, la sriracha, le jus de citron, les oignons verts et l'assaisonnement Old Bay jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9. Incorporer la chair de crabe, puis la chapelure panko, le sel d'ail et le poivre.\nFa\u00e7onner 24 boulettes d'environ 2,5 cm et les d\u00e9poser sur une plaque. Couvrir et r\u00e9frig\u00e9rer 30 min, ou toute une nuit si vous les pr\u00e9parez d'avance.\nPour la cuisson au four, vaporiser l\u00e9g\u00e8rement les boulettes d'enduit \u00e0 cuisson et cuire de 20 min \u00e0 25 min, jusqu'\u00e0 ce qu'elles soient dor\u00e9es et bien chaudes.\nPour la cuisson \u00e0 la friteuse \u00e0 air, disposer les boulettes en une seule couche dans le panier et cuire \u00e0 188\u00b0C/370\u00b0F environ 5 min. Les retourner, puis poursuivre la cuisson environ 5 min, jusqu'\u00e0 ce qu'elles soient dor\u00e9es et croustillantes. Proc\u00e9der en plusieurs fourn\u00e9es au besoin.\nPendant la cuisson, fouetter le yogourt, la mayonnaise et la sriracha pour faire la trempette. Servir avec les boulettes de crabe.",
+      "notes": "La recette source donne environ 24 boulettes, soit 8 portions. La chapelure panko de bl\u00e9 entier de la source a \u00e9t\u00e9 normalis\u00e9e comme chapelure panko."
+    },
+    "en": {
+      "title": "Crab Balls",
+      "description": "Crispy crab balls served with a yogurt sriracha dipping sauce, ideal for a party platter or appetizer.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F if baking.\nGently rinse the crab meat and remove any shell pieces without breaking up the large lumps too much.\nIn a large bowl, whisk together the egg, yogurt, Dijon mustard, sriracha, lemon juice, green onions, and Old Bay seasoning until combined. Fold in the crab meat, then add the panko bread crumbs, garlic salt, and black pepper.\nShape the mixture into 24 balls about 1 inch wide and place them on a baking sheet. Cover and refrigerate for 30 min, or overnight if making ahead.\nFor oven baking, lightly coat the crab balls with cooking spray and bake for 20 min to 25 min, until golden and heated through.\nFor air frying, place the crab balls in a single layer in the basket and cook at 188\u00b0C/370\u00b0F for about 5 min. Turn them over and continue cooking for about 5 min more, until golden and crisp. Work in batches if needed.\nWhile the crab balls cook, whisk together the yogurt, mayonnaise, and sriracha for the dipping sauce. Serve alongside the crab balls.",
+      "notes": "The source recipe yields about 24 balls, or 8 servings. The whole wheat panko from the source was normalized as panko bread crumbs."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-1",
+      "originalText": "1 egg, lightly whisked",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "large egg",
+      "preparation": "lightly whisked",
+      "group": "Crab balls"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-2",
+      "originalText": "1/4 cup plain Greek yogurt",
+      "ingredientName": "plain yogurt",
+      "ingredientRefId": "ingredient-ref-plain-yogurt",
+      "quantity": 0.25,
+      "unit": "cup",
+      "preparation": "Greek",
+      "group": "Crab balls"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-3",
+      "originalText": "1 tbsp Dijon mustard",
+      "ingredientName": "Dijon mustard",
+      "ingredientRefId": "ingredient-ref-dijon-mustard",
+      "quantity": 1,
+      "unit": "tbsp",
+      "group": "Crab balls"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-4",
+      "originalText": "1/4 tsp sriracha sauce",
+      "ingredientName": "sriracha sauce",
+      "ingredientRefId": "ingredient-ref-sriracha-sauce",
+      "quantity": 0.25,
+      "unit": "tsp",
+      "group": "Crab balls"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-5",
+      "originalText": "2 tsp fresh lemon juice",
+      "ingredientName": "lemon juice",
+      "ingredientRefId": "ingredient-ref-lemon-juice",
+      "quantity": 2,
+      "unit": "tsp",
+      "preparation": "fresh",
+      "group": "Crab balls"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-6",
+      "originalText": "2 green onions, chopped",
+      "ingredientName": "green onions",
+      "ingredientRefId": "ingredient-ref-green-onions",
+      "quantity": 2,
+      "unit": "count",
+      "preparation": "chopped",
+      "group": "Crab balls"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-7",
+      "originalText": "1 1/2 tsp Old Bay seasoning",
+      "ingredientName": "old bay seasoning",
+      "ingredientRefId": "ingredient-ref-old-bay-seasoning",
+      "quantity": 1.5,
+      "unit": "tsp",
+      "group": "Crab balls"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-8",
+      "originalText": "1 lb jumbo lump crab meat",
+      "ingredientName": "jumbo lump crab meat",
+      "ingredientRefId": "ingredient-ref-jumbo-lump-crab-meat",
+      "quantity": 1,
+      "unit": "lb",
+      "group": "Crab balls"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-9",
+      "originalText": "1 cup panko bread crumbs",
+      "ingredientName": "bread crumbs",
+      "ingredientRefId": "ingredient-ref-breadcrumbs",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "panko",
+      "group": "Crab balls"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-10",
+      "originalText": "1/4 tsp garlic salt",
+      "ingredientName": "garlic salt",
+      "ingredientRefId": "ingredient-ref-garlic-salt",
+      "quantity": 0.25,
+      "unit": "tsp",
+      "group": "Crab balls"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-11",
+      "originalText": "1/8 tsp black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 0.125,
+      "unit": "tsp",
+      "group": "Crab balls"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-12",
+      "originalText": "1/4 cup plain Greek yogurt",
+      "ingredientName": "plain yogurt",
+      "ingredientRefId": "ingredient-ref-plain-yogurt",
+      "quantity": 0.25,
+      "unit": "cup",
+      "preparation": "Greek",
+      "group": "Sriracha dipping sauce"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-13",
+      "originalText": "1/4 cup mayonnaise",
+      "ingredientName": "mayonnaise",
+      "quantity": 0.25,
+      "unit": "cup",
+      "group": "Sriracha dipping sauce"
+    },
+    {
+      "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-14",
+      "originalText": "2 tbsp sriracha sauce",
+      "ingredientName": "sriracha sauce",
+      "ingredientRefId": "ingredient-ref-sriracha-sauce",
+      "quantity": 2,
+      "unit": "tbsp",
+      "group": "Sriracha dipping sauce"
+    }
+  ],
+  "servings": {
+    "amount": 24,
+    "unit": "balls"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 25,
+    "totalTimeMinutes": 40
+  },
+  "tags": [
+    "tag-appetizer",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-135813a6-75e2-4596-8c71-ffd450fab0ca-0",
+  "photos": [
+    {
+      "id": "photo-135813a6-75e2-4596-8c71-ffd450fab0ca-0",
+      "relativePath": "photos/135813a6-75e2-4596-8c71-ffd450fab0ca_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

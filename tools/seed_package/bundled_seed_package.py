@@ -56,6 +56,11 @@ CANONICAL_RECIPE_FILE_STEMS_BY_ID = {
     "98235299-3e38-4cf6-acbc-cb24bda45509": "016-bouch-es-de-quinoa-quinoa-bites-98235299-3e38-4cf6-acbc-cb24bda45509",
     "f2600073-da39-4f35-805e-7df143e47dce": "017-boule-de-neige-au-pistaches-pistachio-drop-cookies-f2600073-da39-4f35-805e-7df143e47dce",
     "43199cff-7fba-4cd0-8447-2c7265b0bb1c": "018-boulette-de-dinde-turkey-meatballs-43199cff-7fba-4cd0-8447-2c7265b0bb1c",
+    "135813a6-75e2-4596-8c71-ffd450fab0ca": "019-boulettes-de-crabe-crab-balls-135813a6-75e2-4596-8c71-ffd450fab0ca",
+    "d73d6bff-fc0c-4b79-a607-441e546d32ad": "020-brownie-au-beurre-d-arachide-peanut-butter-brownies-d73d6bff-fc0c-4b79-a607-441e546d32ad",
+    "30e4274f-19fd-47df-b90b-75a5eefdb2c8": "021-buche-de-noel-yule-log-30e4274f-19fd-47df-b90b-75a5eefdb2c8",
+    "607adb61-ff54-49c9-8aaf-d02648a3ae90": "022-buckeyes-607adb61-ff54-49c9-8aaf-d02648a3ae90",
+    "5fecccc1-d734-4f2b-9958-ac0c6a960f29": "023-calamar-frit-a-l-air-air-fried-calamari-5fecccc1-d734-4f2b-9958-ac0c6a960f29",
     "4207e09a-429f-437f-b7bd-14e862d6d696": "050-gateau-au-chocolat-devil-s-food-cake-4207e09a-429f-437f-b7bd-14e862d6d696",
     "c9022b89-8181-425a-9141-6a4e6086b5c8": "061-gla-age-au-chocolat-blanc-white-chocolate-buttercream-c9022b89-8181-425a-9141-6a4e6086b5c8",
 }
