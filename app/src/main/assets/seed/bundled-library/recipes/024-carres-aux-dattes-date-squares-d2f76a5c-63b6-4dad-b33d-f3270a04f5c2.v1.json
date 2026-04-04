@@ -1,0 +1,146 @@
+{
+  "id": "d2f76a5c-63b6-4dad-b33d-f3270a04f5c2",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Ricardo Cuisine",
+    "sourceUrl": "https://www.ricardocuisine.com/recettes/5263-carre-aux-dattes-le-meilleur"
+  },
+  "languages": {
+    "fr": {
+      "title": "Carr\u00e9s aux dattes",
+      "description": "Des carr\u00e9s aux dattes tendres et croustillants, avec une garniture de dattes citronn\u00e9e entre deux couches d'avoine beurr\u00e9es.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 180\u00b0C/350\u00b0F. Beurrer un moule carr\u00e9 de 20 cm (8 po) et le chemiser d'une bande de papier parchemin en laissant d\u00e9passer deux c\u00f4t\u00e9s.\nPour la garniture, porter \u00e0 \u00e9bullition les dattes, l'eau, le jus de citron et la cassonade dans une casserole. Ajouter le bicarbonate de soude et laisser mijoter 5 min en remuant constamment, jusqu'\u00e0 ce que les dattes soient r\u00e9duites en pur\u00e9e. Laisser ti\u00e9dir.\nPour le croustillant, m\u00e9langer les flocons d'avoine, la farine, la cassonade et la poudre \u00e0 p\u00e2te dans un bol. Ajouter le beurre demi-sel ramolli et m\u00e9langer jusqu'\u00e0 ce que la texture soit homog\u00e8ne.\nPresser fermement la moiti\u00e9 du croustillant dans le moule. \u00c9taler la garniture aux dattes par-dessus, puis couvrir avec le reste du croustillant en pressant l\u00e9g\u00e8rement.\nCuire 55 min, jusqu'\u00e0 ce que le dessus soit bien dor\u00e9.\nLaisser refroidir compl\u00e8tement sur une grille, environ 4 h, puis d\u00e9mouler et couper en 16 carr\u00e9s.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Date Squares",
+      "description": "Tender, crumbly date squares with a lemony date filling layered between buttery oat crumbs.",
+      "instructions": "Preheat the oven to 180\u00b0C/350\u00b0F. Butter an 8-inch square pan and line it with a strip of parchment paper, leaving an overhang on two sides.\nFor the filling, bring the dates, water, lemon juice, and brown sugar to a boil in a saucepan. Add the baking soda and simmer for 5 min, stirring constantly, until the dates break down into a puree. Let cool slightly.\nFor the crumb mixture, combine the quick oats, flour, brown sugar, and baking powder in a bowl. Add the softened semi-salted butter and mix until evenly combined.\nPress half of the crumb mixture firmly into the pan. Spread the date filling over top, then cover with the remaining crumb mixture and press lightly.\nBake for 55 min, until the top is nicely golden.\nCool completely on a wire rack, about 4 h, then unmould and cut into 16 squares.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-ingredient-1",
+      "originalText": "425 g Medjool dates, pitted and chopped",
+      "ingredientName": "medjool dates",
+      "ingredientRefId": "ingredient-ref-medjool-dates",
+      "quantity": 425,
+      "unit": "g",
+      "preparation": "pitted and chopped",
+      "group": "Date Filling"
+    },
+    {
+      "id": "d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-ingredient-2",
+      "originalText": "1 cup water",
+      "ingredientName": "water",
+      "quantity": 1,
+      "unit": "cup",
+      "group": "Date Filling"
+    },
+    {
+      "id": "d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-ingredient-3",
+      "originalText": "2 tbsp lemon juice",
+      "ingredientName": "lemon juice",
+      "ingredientRefId": "ingredient-ref-lemon-juice",
+      "quantity": 2,
+      "unit": "tbsp",
+      "group": "Date Filling"
+    },
+    {
+      "id": "d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-ingredient-4",
+      "originalText": "2 tbsp brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 2,
+      "unit": "tbsp",
+      "group": "Date Filling"
+    },
+    {
+      "id": "d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-ingredient-5",
+      "originalText": "1/4 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 0.25,
+      "unit": "tsp",
+      "group": "Date Filling"
+    },
+    {
+      "id": "d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-ingredient-6",
+      "originalText": "175 g quick oats",
+      "ingredientName": "quick oats",
+      "ingredientRefId": "ingredient-ref-quick-oats",
+      "quantity": 175,
+      "unit": "g",
+      "group": "Crumb Mixture"
+    },
+    {
+      "id": "d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-ingredient-7",
+      "originalText": "150 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 150,
+      "unit": "g",
+      "group": "Crumb Mixture"
+    },
+    {
+      "id": "d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-ingredient-8",
+      "originalText": "160 g brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 160,
+      "unit": "g",
+      "group": "Crumb Mixture"
+    },
+    {
+      "id": "d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-ingredient-9",
+      "originalText": "1/4 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 0.25,
+      "unit": "tsp",
+      "group": "Crumb Mixture"
+    },
+    {
+      "id": "d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-ingredient-10",
+      "originalText": "170 g semi-salted butter, softened",
+      "ingredientName": "semi-salted butter",
+      "quantity": 170,
+      "unit": "g",
+      "preparation": "softened",
+      "group": "Crumb Mixture"
+    }
+  ],
+  "servings": {
+    "amount": 16,
+    "unit": "squares"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 65,
+    "totalTimeMinutes": 85
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-bars-squares",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-0",
+  "photos": [
+    {
+      "id": "photo-d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-0",
+      "relativePath": "photos/d2f76a5c-63b6-4dad-b33d-f3270a04f5c2_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
@@ -79,6 +81,61 @@ def dedupe_preserve_order(values: list[str]) -> list[str]:
         seen.add(key)
         result.append(normalized)
     return result
+
+
+def slugify_filename_part(value: str) -> str:
+    normalized = unicodedata.normalize("NFKD", value)
+    ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
+    slug = re.sub(r"[^a-z0-9]+", "-", ascii_text.lower()).strip("-")
+    return slug
+
+
+def recipe_title_slug(recipe: dict[str, Any]) -> str:
+    languages = recipe.get("languages", {})
+    candidate_titles = [
+        languages.get("fr", {}).get("title", ""),
+        languages.get("en", {}).get("title", ""),
+    ]
+    slug_parts: list[str] = []
+    seen: set[str] = set()
+    for title in candidate_titles:
+        slug = slugify_filename_part(title.strip())
+        if not slug or slug in seen:
+            continue
+        seen.add(slug)
+        slug_parts.append(slug)
+    return "-".join(slug_parts)
+
+
+def preserve_existing_recipe_file_stem(recipe_id: str, existing_recipe_file: str | None) -> str | None:
+    if not existing_recipe_file:
+        return None
+    normalized_path = existing_recipe_file.strip().replace("\\", "/")
+    path = Path(normalized_path)
+    if path.parent.as_posix() != "recipes" or path.suffixes != [".v1", ".json"]:
+        return None
+    stem = path.name.removesuffix(".v1.json")
+    if not stem.endswith(f"-{recipe_id}"):
+        return None
+    if stem == recipe_id:
+        return None
+    return stem
+
+
+def recipe_file_stem(recipe: dict[str, Any], existing_recipe_file: str | None = None) -> str:
+    recipe_id = recipe["id"].strip()
+    curated_stem = CANONICAL_RECIPE_FILE_STEMS_BY_ID.get(recipe_id)
+    if curated_stem is not None:
+        return curated_stem
+
+    preserved_stem = preserve_existing_recipe_file_stem(recipe_id, existing_recipe_file)
+    if preserved_stem is not None:
+        return preserved_stem
+
+    title_slug = recipe_title_slug(recipe)
+    if title_slug:
+        return f"{title_slug}-{recipe_id}"
+    return recipe_id
 
 
 def normalize_ingredient_reference_entry(entry: dict[str, Any]) -> None:
@@ -277,10 +334,8 @@ def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def recipe_relative_path(recipe: dict[str, Any]) -> str:
-    recipe_id = recipe["id"].strip()
-    recipe_file_stem = CANONICAL_RECIPE_FILE_STEMS_BY_ID.get(recipe_id, recipe_id)
-    return f"recipes/{recipe_file_stem}.v1.json"
+def recipe_relative_path(recipe: dict[str, Any], existing_recipe_file: str | None = None) -> str:
+    return f"recipes/{recipe_file_stem(recipe, existing_recipe_file)}.v1.json"
 
 
 def load_seed_package() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
@@ -317,7 +372,10 @@ def load_seed_package() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]
 
 def normalize_seed_package(payload: dict[str, Any]) -> dict[str, Any]:
     normalized = {part_name: normalize_part(part_name, data) for part_name, data in payload.items()}
-    normalized["manifest"]["recipeFiles"] = [recipe_relative_path(recipe) for recipe in normalized["recipes"]]
+    normalized["manifest"]["recipeFiles"] = [
+        recipe_relative_path(recipe, existing_recipe_file)
+        for recipe, existing_recipe_file in zip(normalized["recipes"], normalized["manifest"]["recipeFiles"])
+    ]
     return normalized
 
 
@@ -347,7 +405,10 @@ def validate_seed_package(payload: dict[str, Any], part_paths: dict[str, Any]) -
     if len(manifest["recipeFiles"]) != len(payload["recipes"]):
         errors.append("manifest recipeFiles count does not match loaded recipe count")
 
-    expected_recipe_files = [recipe_relative_path(recipe) for recipe in payload["recipes"]]
+    expected_recipe_files = [
+        recipe_relative_path(recipe, existing_recipe_file)
+        for recipe, existing_recipe_file in zip(payload["recipes"], manifest["recipeFiles"])
+    ]
     if manifest["recipeFiles"] != expected_recipe_files:
         errors.append("manifest recipeFiles do not match the canonical recipe file naming")
 

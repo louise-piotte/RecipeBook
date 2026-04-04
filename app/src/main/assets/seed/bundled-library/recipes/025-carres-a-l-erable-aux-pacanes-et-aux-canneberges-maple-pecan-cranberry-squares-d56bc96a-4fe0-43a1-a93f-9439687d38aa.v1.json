@@ -1,0 +1,150 @@
+{
+  "id": "d56bc96a-4fe0-43a1-a93f-9439687d38aa",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "The Hungary Soul",
+    "sourceUrl": "https://thehungarysoul.com/maple-pecan-cranberry-squares-2/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Carr\u00e9s \u00e0 l'\u00e9rable, aux pacanes et aux canneberges",
+      "description": "Des carr\u00e9s riches et fondants avec une cro\u00fbte sabl\u00e9e et une garniture \u00e0 l'\u00e9rable, aux pacanes et aux canneberges s\u00e9ch\u00e9es.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 180\u00b0C/350\u00b0F. Chemiser un moule carr\u00e9 de 8 x 8 po de papier parchemin ou de papier d'aluminium.\nPour la cro\u00fbte, mettre la farine, le sucre et le sel dans le bol d'un robot culinaire. Pulser 3 ou 4 fois, juste assez pour combiner les ingr\u00e9dients secs. Ajouter le beurre froid et pulser 8 \u00e0 10 fois, jusqu'\u00e0 l'obtention de miettes de la taille de petits pois.\nPresser le m\u00e9lange dans le moule et cuire 15 min \u00e0 17 min, jusqu'\u00e0 ce que les bords soient l\u00e9g\u00e8rement dor\u00e9s.\nPour la garniture, faire fondre le beurre, le sirop d'\u00e9rable et la cassonade dans une petite casserole \u00e0 feu moyen en remuant jusqu'\u00e0 dissolution. Augmenter le feu et laisser bouillir environ 2 min. Retirer du feu, incorporer la cr\u00e8me, puis les pacanes et les canneberges.\nVerser la garniture chaude sur la cro\u00fbte et l'\u00e9taler uniform\u00e9ment jusqu'aux bords.\nCuire de 20 min \u00e0 25 min, jusqu'\u00e0 ce que la garniture bouillonne et prenne une couleur caramel.\nLaisser refroidir compl\u00e8tement. Soulever le carr\u00e9 hors du moule \u00e0 l'aide du papier et couper en 16 carr\u00e9s de 2 po.\nConserver dans un contenant herm\u00e9tique \u00e0 temp\u00e9rature ambiante jusqu'\u00e0 3 jours.",
+      "notes": "Ces carr\u00e9s se cong\u00e8lent jusqu'\u00e0 3 mois dans un contenant herm\u00e9tique."
+    },
+    "en": {
+      "title": "Maple Pecan Cranberry Squares",
+      "description": "Rich, chewy squares with a short crust and a maple filling packed with pecans and dried cranberries.",
+      "instructions": "Preheat the oven to 180\u00b0C/350\u00b0F. Line an 8 x 8-inch pan with parchment paper or foil.\nFor the crust, place the flour, sugar, and salt in a food processor. Pulse 3 or 4 times, just until the dry ingredients are combined. Add the cold butter and pulse 8 to 10 times, until the mixture forms pea-sized crumbs.\nPress the crust mixture into the pan and bake for 15 min to 17 min, until the edges are lightly browned.\nFor the filling, melt the butter, maple syrup, and brown sugar in a small saucepan over medium heat, stirring until dissolved. Increase the heat and boil for about 2 min. Remove from the heat, stir in the cream, then add the pecans and cranberries.\nPour the hot filling over the crust and spread it evenly to the edges.\nBake for 20 min to 25 min, until the filling is bubbling and caramel coloured.\nCool completely. Lift the slab out of the pan using the paper and cut into 16 2-inch squares.\nStore in an airtight container at room temperature for up to 3 days.",
+      "notes": "These squares can be frozen in an airtight container for up to 3 months."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "d56bc96a-4fe0-43a1-a93f-9439687d38aa-ingredient-1",
+      "originalText": "1.5 cups all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 1.5,
+      "unit": "cup",
+      "group": "Crust"
+    },
+    {
+      "id": "d56bc96a-4fe0-43a1-a93f-9439687d38aa-ingredient-2",
+      "originalText": "1/4 cup granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 0.25,
+      "unit": "cup",
+      "group": "Crust"
+    },
+    {
+      "id": "d56bc96a-4fe0-43a1-a93f-9439687d38aa-ingredient-3",
+      "originalText": "1/4 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.25,
+      "unit": "tsp",
+      "group": "Crust"
+    },
+    {
+      "id": "d56bc96a-4fe0-43a1-a93f-9439687d38aa-ingredient-4",
+      "originalText": "1/2 cup unsalted butter, cold and cut into pieces",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "cold and cut into pieces",
+      "group": "Crust"
+    },
+    {
+      "id": "d56bc96a-4fe0-43a1-a93f-9439687d38aa-ingredient-5",
+      "originalText": "1/3 cup unsalted butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 0.333,
+      "unit": "cup",
+      "group": "Filling"
+    },
+    {
+      "id": "d56bc96a-4fe0-43a1-a93f-9439687d38aa-ingredient-6",
+      "originalText": "1/2 cup maple syrup",
+      "ingredientName": "maple syrup",
+      "ingredientRefId": "ingredient-ref-maple-syrup",
+      "quantity": 0.5,
+      "unit": "cup",
+      "group": "Filling"
+    },
+    {
+      "id": "d56bc96a-4fe0-43a1-a93f-9439687d38aa-ingredient-7",
+      "originalText": "3 tbsp brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 3,
+      "unit": "tbsp",
+      "group": "Filling"
+    },
+    {
+      "id": "d56bc96a-4fe0-43a1-a93f-9439687d38aa-ingredient-8",
+      "originalText": "1/3 cup 35% cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 0.333,
+      "unit": "cup",
+      "group": "Filling"
+    },
+    {
+      "id": "d56bc96a-4fe0-43a1-a93f-9439687d38aa-ingredient-9",
+      "originalText": "1/2 cup dried cranberries, chopped",
+      "ingredientName": "dried cranberries",
+      "ingredientRefId": "ingredient-ref-dried-cranberries",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "chopped",
+      "group": "Filling"
+    },
+    {
+      "id": "d56bc96a-4fe0-43a1-a93f-9439687d38aa-ingredient-10",
+      "originalText": "1.5 cups pecans, chopped",
+      "ingredientName": "pecans",
+      "ingredientRefId": "ingredient-ref-pecans",
+      "quantity": 1.5,
+      "unit": "cup",
+      "preparation": "chopped",
+      "group": "Filling"
+    }
+  ],
+  "servings": {
+    "amount": 16,
+    "unit": "squares"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 40,
+    "totalTimeMinutes": 60
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-bars-squares",
+    "tag-christmas",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-d56bc96a-4fe0-43a1-a93f-9439687d38aa-0",
+  "photos": [
+    {
+      "id": "photo-d56bc96a-4fe0-43a1-a93f-9439687d38aa-0",
+      "relativePath": "photos/d56bc96a-4fe0-43a1-a93f-9439687d38aa_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "imperial"
+  }
+}

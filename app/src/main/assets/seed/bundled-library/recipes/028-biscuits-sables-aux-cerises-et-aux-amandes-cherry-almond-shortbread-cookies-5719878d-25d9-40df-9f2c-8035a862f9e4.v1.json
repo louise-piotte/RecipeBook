@@ -1,0 +1,124 @@
+{
+  "id": "5719878d-25d9-40df-9f2c-8035a862f9e4",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Sally's Baking Addiction",
+    "sourceUrl": "https://sallysbakingaddiction.com/cherry-almond-shortbread-cookies/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Biscuits sabl\u00e9s aux cerises et aux amandes",
+      "description": "Des biscuits sabl\u00e9s tendres au go\u00fbt d'amande, garnis de cerises au marasquin et finis d'un filet de chocolat blanc en option.",
+      "instructions": "Battre le beurre \u00e0 vitesse \u00e9lev\u00e9e jusqu'\u00e0 ce qu'il soit cr\u00e9meux, environ 1 min. R\u00e9duire \u00e0 vitesse moyenne et ajouter le sucre, la vanille et l'extrait d'amande. Racler le bol au besoin. Toujours au batteur, verser lentement 1 cuill\u00e8re \u00e0 soupe de jus de cerises au marasquin et battre 1 min.\nAjouter la farine et m\u00e9langer \u00e0 basse vitesse jusqu'\u00e0 l'obtention d'une p\u00e2te tr\u00e8s souple. Incorporer les cerises hach\u00e9es juste assez pour les r\u00e9partir. Presser la p\u00e2te pour la compacter, couvrir herm\u00e9tiquement et r\u00e9frig\u00e9rer au moins 4 h, ou jusqu'\u00e0 3 jours.\nPr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F. Tapisser 2 plaques \u00e0 biscuits de papier parchemin.\nFa\u00e7onner la p\u00e2te froide en boules d'environ 1 cuill\u00e8re \u00e0 soupe chacune. Si la p\u00e2te ramollit, remettre les boules au r\u00e9frig\u00e9rateur quelques minutes pour les raffermir.\nCuire de 11 min \u00e0 12 min, jusqu'\u00e0 ce que les bords soient \u00e0 peine dor\u00e9s. Laisser refroidir 5 min sur la plaque, puis transf\u00e9rer sur une grille et laisser refroidir au moins 30 min.\nSi d\u00e9sir\u00e9, faire fondre le chocolat blanc au bain-marie ou au micro-ondes par intervalles de 20 sec en remuant entre chaque passage, puis en arroser les biscuits refroidis.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Cherry Almond Shortbread Cookies",
+      "description": "Tender almond shortbread cookies studded with maraschino cherries and finished with an optional drizzle of white chocolate.",
+      "instructions": "Beat the butter on high speed until creamy, about 1 min. Reduce to medium speed and add the sugar, vanilla, and almond extract. Scrape down the bowl as needed. With the mixer running, slowly drizzle in 1 tablespoon of maraschino cherry juice and beat for 1 min.\nAdd the flour and mix on low speed until a very soft dough forms. Mix in the chopped cherries just until they are distributed. Press the dough together, cover tightly, and refrigerate for at least 4 h, or up to 3 days.\nPreheat the oven to 177\u00b0C/350\u00b0F. Line 2 baking sheets with parchment paper.\nShape the chilled dough into balls using about 1 tablespoon of dough for each cookie. If the dough softens, return the balls to the refrigerator for a few minutes to firm up.\nBake for 11 min to 12 min, until the edges are only lightly browned. Cool on the baking sheet for 5 min, then transfer to a wire rack and cool for at least 30 min.\nIf desired, melt the white chocolate in a double boiler or in the microwave in 20-second bursts, stirring between each burst, then drizzle it over the cooled cookies.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "5719878d-25d9-40df-9f2c-8035a862f9e4-ingredient-1",
+      "originalText": "170 g unsalted butter, softened to room temperature",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 170,
+      "unit": "g",
+      "preparation": "softened to room temperature"
+    },
+    {
+      "id": "5719878d-25d9-40df-9f2c-8035a862f9e4-ingredient-2",
+      "originalText": "134 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 134,
+      "unit": "g"
+    },
+    {
+      "id": "5719878d-25d9-40df-9f2c-8035a862f9e4-ingredient-3",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "5719878d-25d9-40df-9f2c-8035a862f9e4-ingredient-4",
+      "originalText": "1/2 tsp almond extract",
+      "ingredientName": "almond extract",
+      "ingredientRefId": "ingredient-ref-almond-extract",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "5719878d-25d9-40df-9f2c-8035a862f9e4-ingredient-5",
+      "originalText": "1 tbsp maraschino cherry juice",
+      "ingredientName": "maraschino cherry juice",
+      "ingredientRefId": "ingredient-ref-jus-du-pot-de-cerises-au-marasquin",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "5719878d-25d9-40df-9f2c-8035a862f9e4-ingredient-6",
+      "originalText": "250 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 250,
+      "unit": "g"
+    },
+    {
+      "id": "5719878d-25d9-40df-9f2c-8035a862f9e4-ingredient-7",
+      "originalText": "16 maraschino cherries, drained and chopped",
+      "ingredientName": "maraschino cherries",
+      "ingredientRefId": "ingredient-ref-cerises-au-marasquin",
+      "quantity": 16,
+      "unit": "item",
+      "preparation": "drained and chopped"
+    },
+    {
+      "id": "5719878d-25d9-40df-9f2c-8035a862f9e4-ingredient-8",
+      "originalText": "4 oz white chocolate",
+      "ingredientName": "white chocolate",
+      "ingredientRefId": "ingredient-ref-white-chocolate",
+      "quantity": 4,
+      "unit": "oz",
+      "optional": true
+    }
+  ],
+  "servings": {
+    "amount": 24,
+    "unit": "cookies"
+  },
+  "times": {
+    "prepTimeMinutes": 255,
+    "cookTimeMinutes": 11,
+    "totalTimeMinutes": 266
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cookies",
+    "tag-christmas",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-5719878d-25d9-40df-9f2c-8035a862f9e4-0",
+  "photos": [
+    {
+      "id": "photo-5719878d-25d9-40df-9f2c-8035a862f9e4-0",
+      "relativePath": "photos/5719878d-25d9-40df-9f2c-8035a862f9e4_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

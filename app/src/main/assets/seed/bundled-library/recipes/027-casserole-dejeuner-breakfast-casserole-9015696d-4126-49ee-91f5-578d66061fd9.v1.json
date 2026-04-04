@@ -1,0 +1,132 @@
+{
+  "id": "9015696d-4126-49ee-91f5-578d66061fd9",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/breakfast-casserole/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Casserole d\u00e9jeuner",
+      "description": "Une casserole d\u00e9jeuner copieuse aux saucisses, aux \u0153ufs, au chou fris\u00e9, aux muffins anglais et au fromage, pratique pour nourrir une gang.",
+      "instructions": "Dans une grande po\u00eale, cuire la saucisse \u00e0 d\u00e9jeuner \u00e0 feu moyen jusqu'\u00e0 ce qu'elle soit bien dor\u00e9e et \u00e9miett\u00e9e, environ 8 min.\nAjouter l'oignon et cuire environ 5 min, jusqu'\u00e0 ce qu'il soit attendri.\nIncorporer le chou fris\u00e9 et cuire 2 min de plus. Retirer du feu.\nTransf\u00e9rer le m\u00e9lange dans un plat de cuisson de 13 x 9 po. Ajouter les cubes de muffins anglais grill\u00e9s et 1 tasse de fromage r\u00e2p\u00e9.\nDans un bol moyen, battre les \u0153ufs jusqu'\u00e0 ce qu'ils soient lisses. Fouetter avec le lait, puis incorporer le sel et le poivre.\nVerser le m\u00e9lange d'\u0153ufs sur le m\u00e9lange de saucisse et garnir avec la tasse de fromage restante.\nCouvrir de papier d'aluminium et r\u00e9frig\u00e9rer pendant 2 h ou toute la nuit.\nPr\u00e9chauffer le four \u00e0 180\u00b0C/350\u00b0F.\nCuire 20 min \u00e0 couvert. D\u00e9couvrir et poursuivre la cuisson de 15 min \u00e0 20 min, jusqu'\u00e0 ce que le dessus soit dor\u00e9. Garnir de persil au service, si d\u00e9sir\u00e9.",
+      "notes": "Pour griller les muffins anglais, les cuire au four \u00e0 205\u00b0C/400\u00b0F pendant 10 min."
+    },
+    "en": {
+      "title": "Breakfast Casserole",
+      "description": "A hearty breakfast casserole with sausage, eggs, kale, English muffins, and cheese that works well for feeding a crowd.",
+      "instructions": "In a large skillet, cook the breakfast sausage over medium heat until browned and crumbly, about 8 min.\nAdd the onion and cook for about 5 min, until softened.\nStir in the kale and cook for 2 min more. Remove from the heat.\nTransfer the mixture to a 13 x 9-inch baking dish. Add the toasted English muffin cubes and 1 cup of the shredded cheese.\nIn a medium bowl, beat the eggs until smooth. Whisk in the milk, then stir in the salt and pepper.\nPour the egg mixture over the sausage mixture and top with the remaining 1 cup cheese.\nCover with foil and refrigerate for 2 h or overnight.\nPreheat the oven to 180\u00b0C/350\u00b0F.\nBake covered for 20 min. Uncover and continue baking for 15 min to 20 min, until the top is toasted. Garnish with parsley before serving, if desired.",
+      "notes": "To toast the English muffins, bake them at 205\u00b0C/400\u00b0F for 10 min."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-1",
+      "originalText": "1 lb breakfast sausage",
+      "ingredientName": "breakfast sausage",
+      "ingredientRefId": "ingredient-ref-breakfast-sausage",
+      "quantity": 1,
+      "unit": "lb"
+    },
+    {
+      "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-2",
+      "originalText": "1 cup yellow onion, chopped",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "yellow and chopped"
+    },
+    {
+      "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-3",
+      "originalText": "3 cups fresh kale, chopped",
+      "ingredientName": "kale",
+      "ingredientRefId": "ingredient-ref-kale",
+      "quantity": 3,
+      "unit": "cup",
+      "preparation": "fresh and chopped"
+    },
+    {
+      "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-4",
+      "originalText": "12 oz English muffins, cubed and toasted",
+      "ingredientName": "english muffin",
+      "ingredientRefId": "ingredient-ref-english-muffin",
+      "quantity": 12,
+      "unit": "oz",
+      "preparation": "cubed and toasted"
+    },
+    {
+      "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-5",
+      "originalText": "2 cups shredded cheese, divided",
+      "ingredientName": "shredded cheese",
+      "quantity": 2,
+      "unit": "cup",
+      "preparation": "divided"
+    },
+    {
+      "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-6",
+      "originalText": "10 eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 10,
+      "unit": "large egg"
+    },
+    {
+      "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-7",
+      "originalText": "2 cups milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-8",
+      "originalText": "1 tsp kosher salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "tsp",
+      "preparation": "kosher"
+    },
+    {
+      "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-9",
+      "originalText": "1/4 tsp black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    }
+  ],
+  "servings": {
+    "amount": 8,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 55,
+    "totalTimeMinutes": 65
+  },
+  "tags": [
+    "tag-breakfast",
+    "tag-brunch",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-9015696d-4126-49ee-91f5-578d66061fd9-0",
+  "photos": [
+    {
+      "id": "photo-9015696d-4126-49ee-91f5-578d66061fd9-0",
+      "relativePath": "photos/9015696d-4126-49ee-91f5-578d66061fd9_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "imperial"
+  }
+}
