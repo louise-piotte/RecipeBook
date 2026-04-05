@@ -1,0 +1,235 @@
+{
+  "id": "1da10533-75ef-41b4-af55-298775c4c9ea",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "G\u00e2teau aux carottes",
+      "description": "Un g\u00e2teau aux carottes garni d'ananas, de pacanes et d'un gla\u00e7age au fromage \u00e0 la cr\u00e8me.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F.\n\u00c9taler les pacanes sur une plaque et les griller 8 min en les remuant \u00e0 mi-cuisson. Laisser le four allum\u00e9.\nTamiser la farine, la poudre \u00e0 p\u00e2te, le bicarbonate de soude, le sel, la cannelle, la muscade et le quatre-\u00e9pices.\nDans un autre bol, m\u00e9langer l'huile, la cassonade et le sucre, puis ajouter les \u0153ufs. M\u00e9langer jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9.\nVerser les ingr\u00e9dients liquides dans les ingr\u00e9dients secs et m\u00e9langer doucement juste avant que la farine soit compl\u00e8tement incorpor\u00e9e.\nAjouter les carottes r\u00e2p\u00e9es, les pacanes et l'ananas \u00e9goutt\u00e9, puis finir de m\u00e9langer sans trop travailler la p\u00e2te.\nR\u00e9partir dans 3 moules ronds de 8 po munis de bandes de cuisson, ou dans 2 moules carr\u00e9s de 9 po. Cuire environ 35 min.\nLaisser ti\u00e9dir, puis r\u00e9frig\u00e9rer les g\u00e2teaux dans leurs moules jusqu'\u00e0 refroidissement complet.\nPour le gla\u00e7age, battre le fromage \u00e0 la cr\u00e8me avec le lait et la vanille. Ajouter le sucre \u00e0 glacer une tasse \u00e0 la fois. Ajuster la consistance avec quelques gouttes de lait au besoin.\nGlacer le g\u00e2teau refroidi et d\u00e9corer avec des pacanes suppl\u00e9mentaires si d\u00e9sir\u00e9.",
+      "notes": "Tous les ingr\u00e9dients devraient \u00eatre \u00e0 temp\u00e9rature ambiante, surtout les carottes, les \u0153ufs et le fromage \u00e0 la cr\u00e8me. Le g\u00e2teau peut aussi \u00eatre cuit dans 2 moules carr\u00e9s de 9 po."
+    },
+    "en": {
+      "title": "Carrot Cake",
+      "description": "A carrot cake with pineapple, pecans, and cream cheese frosting.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F.\nSpread the pecans on a baking sheet and toast them for 8 min, stirring halfway through. Keep the oven on.\nSift together the flour, baking powder, baking soda, salt, cinnamon, nutmeg, and allspice.\nIn another bowl, mix the oil, brown sugar, and granulated sugar, then add the eggs. Mix until smooth.\nPour the wet ingredients into the dry ingredients and stir gently just before the flour is fully incorporated.\nAdd the grated carrots, pecans, and drained pineapple, then finish mixing without overworking the batter.\nDivide the batter among 3 greased 8-inch round pans fitted with cake strips, or use 2 greased 9-inch square pans. Bake for about 35 min.\nLet the cakes cool, then refrigerate them in their pans until completely chilled.\nFor the frosting, beat the cream cheese with the milk and vanilla. Add the icing sugar one cup at a time. Adjust the consistency with a few drops of milk if needed.\nFrost the cooled cake and decorate with extra pecans if desired.",
+      "notes": "All ingredients should be at room temperature, especially the carrots, eggs, and cream cheese. The cake can also be baked in 2 9-inch square pans."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-1",
+      "originalText": "250 g brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 250,
+      "unit": "g",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-2",
+      "originalText": "50 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 50,
+      "unit": "g",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-3",
+      "originalText": "1 1/2 cups vegetable oil",
+      "ingredientName": "vegetable oil",
+      "ingredientRefId": "ingredient-ref-vegetable-oil",
+      "quantity": 1.5,
+      "unit": "cup",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-4",
+      "originalText": "4 eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 4,
+      "unit": "large egg",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-5",
+      "originalText": "300 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 300,
+      "unit": "g",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-6",
+      "originalText": "2 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 2,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-7",
+      "originalText": "1 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-8",
+      "originalText": "2 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 2,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-9",
+      "originalText": "1 1/2 tsp cinnamon",
+      "ingredientName": "cinnamon",
+      "ingredientRefId": "ingredient-ref-ground-cinnamon",
+      "quantity": 1.5,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-10",
+      "originalText": "1/2 tsp nutmeg",
+      "ingredientName": "nutmeg",
+      "ingredientRefId": "ingredient-ref-nutmeg",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-11",
+      "originalText": "1/2 tsp allspice",
+      "ingredientName": "allspice",
+      "ingredientRefId": "ingredient-ref-allspice",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-12",
+      "originalText": "3 cups grated carrots",
+      "ingredientName": "carrot",
+      "ingredientRefId": "ingredient-ref-carrot",
+      "quantity": 3,
+      "unit": "cup",
+      "preparation": "grated",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-13",
+      "originalText": "1 1/2 cups chopped pecans, plus more for garnish",
+      "ingredientName": "pecans",
+      "ingredientRefId": "ingredient-ref-pecans",
+      "quantity": 1.5,
+      "unit": "cup",
+      "preparation": "chopped",
+      "notes": "Plus more for garnish",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-14",
+      "originalText": "1 cup crushed pineapple, drained",
+      "ingredientName": "pineapple",
+      "ingredientRefId": "ingredient-ref-pineapple",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "crushed and drained",
+      "group": "Cake"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-15",
+      "originalText": "8 oz cream cheese",
+      "ingredientName": "cream cheese",
+      "ingredientRefId": "ingredient-ref-cream-cheese",
+      "quantity": 8,
+      "unit": "oz",
+      "group": "Frosting"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-16",
+      "originalText": "2 tbsp milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 2,
+      "unit": "tbsp",
+      "group": "Frosting"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-17",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Frosting"
+    },
+    {
+      "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-18",
+      "originalText": "6 cups icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 6,
+      "unit": "cup",
+      "group": "Frosting"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 0,
+    "cookTimeMinutes": 43,
+    "totalTimeMinutes": 43
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake",
+    "tag-autumn",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-1da10533-75ef-41b4-af55-298775c4c9ea-0",
+  "photos": [
+    {
+      "id": "photo-1da10533-75ef-41b4-af55-298775c4c9ea-0",
+      "relativePath": "photos/1da10533-75ef-41b4-af55-298775c4c9ea_0.jpg"
+    },
+    {
+      "id": "photo-1da10533-75ef-41b4-af55-298775c4c9ea-1",
+      "relativePath": "photos/1da10533-75ef-41b4-af55-298775c4c9ea_1.jpg"
+    },
+    {
+      "id": "photo-1da10533-75ef-41b4-af55-298775c4c9ea-2",
+      "relativePath": "photos/1da10533-75ef-41b4-af55-298775c4c9ea_2.jpg"
+    },
+    {
+      "id": "photo-1da10533-75ef-41b4-af55-298775c4c9ea-3",
+      "relativePath": "photos/1da10533-75ef-41b4-af55-298775c4c9ea_3.jpg"
+    },
+    {
+      "id": "photo-1da10533-75ef-41b4-af55-298775c4c9ea-4",
+      "relativePath": "photos/1da10533-75ef-41b4-af55-298775c4c9ea_4.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

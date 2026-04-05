@@ -1,0 +1,203 @@
+{
+  "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/cookie-cake/"
+  },
+  "languages": {
+    "fr": {
+      "title": "G\u00e2teau biscuit",
+      "description": "Un gros biscuit moelleux aux p\u00e9pites de chocolat, d\u00e9cor\u00e9 d'un gla\u00e7age au chocolat.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F. Beurrer un moule rond de 9 po ou le vaporiser l\u00e9g\u00e8rement d'enduit \u00e0 cuisson.\nTamiser ensemble la farine, le bicarbonate de soude et le sel.\nBattre le beurre jusqu'\u00e0 consistance lisse. Ajouter la cassonade et le sucre granul\u00e9, puis battre environ 2 min jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9. \u00c9viter de trop a\u00e9rer le m\u00e9lange.\nAjouter l'\u0153uf et la vanille. Racler le bol au besoin. \u00c0 basse vitesse, ajouter les ingr\u00e9dients secs juste assez pour les incorporer, puis incorporer le chocolat mi-sucr\u00e9 \u00e0 la spatule.\nPresser la p\u00e2te uniform\u00e9ment dans le moule. Ajouter un peu plus de chocolat sur le dessus si d\u00e9sir\u00e9.\nCuire de 20 min \u00e0 25 min, jusqu'\u00e0 ce que le biscuit soit l\u00e9g\u00e8rement dor\u00e9 et sec en surface. Laisser refroidir compl\u00e8tement dans le moule.\nPour le gla\u00e7age, battre le beurre jusqu'\u00e0 consistance lisse. Ajouter le sucre \u00e0 glacer, le cacao, le lait et la vanille. Battre d'abord \u00e0 basse vitesse jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9, puis \u00e0 vitesse moyenne jusqu'\u00e0 l\u00e9ger et mousseux.\nD\u00e9mouler le biscuit sur une assiette de service. Dresser le gla\u00e7age sur le pourtour et d\u00e9corer de vermicelles si d\u00e9sir\u00e9.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Cookie Cake",
+      "description": "A giant soft chocolate chip cookie finished with chocolate frosting.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F. Butter a 9-inch round cake pan or lightly coat it with baking spray.\nSift together the flour, baking soda, and salt.\nBeat the butter until smooth. Add the brown sugar and granulated sugar, then beat for about 2 min until well combined. Do not over-aerate the mixture.\nAdd the egg and vanilla, scraping down the bowl as needed. With the mixer on low speed, add the dry ingredients just until combined, then fold in the semisweet chocolate by hand.\nPress the dough evenly into the prepared pan. Sprinkle a little extra chocolate on top if desired.\nBake for 20 min to 25 min, until the cookie is lightly browned and dry on the surface. Cool completely in the pan.\nFor the frosting, beat the butter until smooth. Add the icing sugar, cocoa powder, milk, and vanilla. Beat on low speed until combined, then on medium speed until light and fluffy.\nTurn the cookie out onto a serving plate. Pipe the frosting around the edge and decorate with sprinkles if desired.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-1",
+      "originalText": "210 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 210,
+      "unit": "g",
+      "group": "Cookie Cake"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-2",
+      "originalText": "3/4 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 0.75,
+      "unit": "tsp",
+      "group": "Cookie Cake"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-3",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Cookie Cake"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-4",
+      "originalText": "113 g unsalted butter, softened",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 113,
+      "unit": "g",
+      "preparation": "softened",
+      "group": "Cookie Cake"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-5",
+      "originalText": "165 g light brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 165,
+      "unit": "g",
+      "notes": "Light brown sugar",
+      "group": "Cookie Cake"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-6",
+      "originalText": "50 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 50,
+      "unit": "g",
+      "group": "Cookie Cake"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-7",
+      "originalText": "1 large egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "large egg",
+      "group": "Cookie Cake"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-8",
+      "originalText": "2 1/2 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 2.5,
+      "unit": "tsp",
+      "group": "Cookie Cake"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-9",
+      "originalText": "270 g semisweet chocolate chips, plus more for decorating",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 270,
+      "unit": "g",
+      "notes": "Plus more for decorating",
+      "group": "Cookie Cake"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-10",
+      "originalText": "85 g unsalted butter, softened",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 85,
+      "unit": "g",
+      "preparation": "softened",
+      "group": "Frosting"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-11",
+      "originalText": "150 g icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 150,
+      "unit": "g",
+      "group": "Frosting"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-12",
+      "originalText": "3 tbsp cocoa powder",
+      "ingredientName": "cocoa powder",
+      "ingredientRefId": "ingredient-ref-unsweetened-cocoa-powder",
+      "quantity": 3,
+      "unit": "tbsp",
+      "group": "Frosting"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-13",
+      "originalText": "2 tbsp milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 2,
+      "unit": "tbsp",
+      "group": "Frosting"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-14",
+      "originalText": "1/2 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Frosting"
+    },
+    {
+      "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-15",
+      "originalText": "Sprinkles",
+      "ingredientName": "sprinkles",
+      "ingredientRefId": "ingredient-ref-sprinkles",
+      "optional": true,
+      "group": "Decoration"
+    }
+  ],
+  "servings": {
+    "amount": 16,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 20,
+    "totalTimeMinutes": 40
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake",
+    "tag-shareable",
+    "tag-snack"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-ad2f1317-aa4d-4d1e-9aec-0d70a72228af-0",
+  "photos": [
+    {
+      "id": "photo-ad2f1317-aa4d-4d1e-9aec-0d70a72228af-0",
+      "relativePath": "photos/ad2f1317-aa4d-4d1e-9aec-0d70a72228af_0.jpg"
+    },
+    {
+      "id": "photo-ad2f1317-aa4d-4d1e-9aec-0d70a72228af-1",
+      "relativePath": "photos/ad2f1317-aa4d-4d1e-9aec-0d70a72228af_1.jpg"
+    },
+    {
+      "id": "photo-ad2f1317-aa4d-4d1e-9aec-0d70a72228af-2",
+      "relativePath": "photos/ad2f1317-aa4d-4d1e-9aec-0d70a72228af_2.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

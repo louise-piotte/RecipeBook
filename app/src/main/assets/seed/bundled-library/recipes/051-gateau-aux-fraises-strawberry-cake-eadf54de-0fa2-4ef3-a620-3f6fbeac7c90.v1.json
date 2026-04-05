@@ -1,0 +1,179 @@
+{
+  "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Sally's Baking Addiction",
+    "sourceUrl": "https://sallysbakingaddiction.com/strawberry-cake/#tasty-recipes-66510"
+  },
+  "languages": {
+    "fr": {
+      "title": "G\u00e2teau aux fraises",
+      "description": "Un g\u00e2teau moelleux parfum\u00e9 \u00e0 la pur\u00e9e de fraises r\u00e9duite.",
+      "instructions": "R\u00e9duire les fraises en pur\u00e9e lisse au m\u00e9langeur. Faire mijoter la pur\u00e9e \u00e0 feu moyen-doux en remuant de temps en temps jusqu'\u00e0 obtenir environ 1/2 tasse de pur\u00e9e r\u00e9duite. Laisser refroidir compl\u00e8tement.\nPr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F. Beurrer deux moules ronds de 9 po, les tapisser de papier parchemin, puis beurrer le papier.\nFouetter la farine \u00e0 g\u00e2teau, la poudre \u00e0 p\u00e2te, le bicarbonate de soude et le sel. R\u00e9server.\nBattre le beurre et le sucre jusqu'\u00e0 consistance lisse et cr\u00e9meuse. Ajouter les blancs d'\u0153ufs et battre jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9, puis incorporer la cr\u00e8me sure ou le yogourt et la vanille.\n\u00c0 basse vitesse, ajouter les ingr\u00e9dients secs juste assez pour les incorporer. Toujours \u00e0 basse vitesse, verser le lait et m\u00e9langer juste assez pour obtenir une p\u00e2te homog\u00e8ne.\nIncorporer la pur\u00e9e de fraises r\u00e9duite refroidie. Ajouter 1 \u00e0 2 gouttes de colorant alimentaire au besoin.\nR\u00e9partir la p\u00e2te dans les moules et cuire de 24 min \u00e0 25 min, jusqu'\u00e0 ce qu'un cure-dent ins\u00e9r\u00e9 au centre ressorte propre. Laisser refroidir compl\u00e8tement avant l'assemblage.",
+      "notes": "La recette export\u00e9e enregistr\u00e9e ici couvre les g\u00e2teaux seulement et n'inclut pas le gla\u00e7age aux fraises de la recette source."
+    },
+    "en": {
+      "title": "Strawberry Cake",
+      "description": "A soft cake flavored with reduced strawberry puree.",
+      "instructions": "Blend the strawberries into a smooth puree. Simmer the puree over medium-low heat, stirring occasionally, until you have about 1/2 cup of reduced puree. Let it cool completely.\nPreheat the oven to 177\u00b0C/350\u00b0F. Grease two 9-inch round cake pans, line them with parchment paper, then grease the parchment.\nWhisk together the cake flour, baking powder, baking soda, and salt. Set aside.\nBeat the butter and sugar until smooth and creamy. Beat in the egg whites until combined, then mix in the sour cream or yogurt and the vanilla.\nWith the mixer on low speed, add the dry ingredients just until incorporated. With the mixer still on low, pour in the milk and mix just until combined.\nWhisk in the cooled reduced strawberry puree. Add 1 to 2 drops of food coloring if desired.\nDivide the batter between the pans and bake for 24 min to 25 min, until a toothpick inserted in the center comes out clean. Cool completely before assembling.",
+      "notes": "The saved export used here includes the cake layers only and does not include the strawberry frosting from the source recipe."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-1",
+      "originalText": "454 g fresh strawberries",
+      "ingredientName": "strawberries",
+      "ingredientRefId": "ingredient-ref-strawberries",
+      "quantity": 454,
+      "unit": "g",
+      "group": "Reduced Strawberry Puree"
+    },
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-2",
+      "originalText": "285 g cake flour",
+      "ingredientName": "cake flour",
+      "ingredientRefId": "ingredient-ref-cake-flour",
+      "quantity": 285,
+      "unit": "g",
+      "group": "Cake"
+    },
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-3",
+      "originalText": "2 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 2,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-4",
+      "originalText": "1/2 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-5",
+      "originalText": "1 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-6",
+      "originalText": "170 g unsalted butter, room temperature",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 170,
+      "unit": "g",
+      "preparation": "room temperature",
+      "group": "Cake"
+    },
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-7",
+      "originalText": "350 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 350,
+      "unit": "g",
+      "group": "Cake"
+    },
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-8",
+      "originalText": "5 large egg whites, room temperature",
+      "ingredientName": "egg white",
+      "ingredientRefId": "ingredient-ref-egg-white",
+      "quantity": 5,
+      "unit": "large egg white",
+      "preparation": "room temperature",
+      "group": "Cake"
+    },
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-9",
+      "originalText": "75 g sour cream or plain yogurt, room temperature",
+      "ingredientName": "sour cream or plain yogurt",
+      "quantity": 75,
+      "unit": "g",
+      "preparation": "room temperature",
+      "group": "Cake"
+    },
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-10",
+      "originalText": "2 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 2,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-11",
+      "originalText": "120 ml whole milk, room temperature",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 120,
+      "unit": "ml",
+      "preparation": "room temperature",
+      "group": "Cake"
+    },
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-12",
+      "originalText": "1/2 cup reduced strawberry puree",
+      "ingredientName": "reduced strawberry puree",
+      "quantity": 0.5,
+      "unit": "cup",
+      "group": "Cake"
+    },
+    {
+      "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-13",
+      "originalText": "1 to 2 drops red or pink food coloring",
+      "ingredientName": "food coloring",
+      "ingredientRefId": "ingredient-ref-food-coloring",
+      "quantity": 1,
+      "unit": "drop",
+      "optional": true,
+      "notes": "Use 1 to 2 drops",
+      "group": "Cake"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 90,
+    "cookTimeMinutes": 25,
+    "totalTimeMinutes": 115
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake",
+    "tag-spring",
+    "tag-summer",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-0",
+  "photos": [
+    {
+      "id": "photo-eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-0",
+      "relativePath": "photos/eadf54de-0fa2-4ef3-a620-3f6fbeac7c90_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

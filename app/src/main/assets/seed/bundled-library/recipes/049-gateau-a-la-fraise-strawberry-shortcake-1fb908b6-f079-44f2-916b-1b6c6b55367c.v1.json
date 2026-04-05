@@ -1,0 +1,185 @@
+{
+  "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Sally's Baking Addiction",
+    "sourceUrl": "https://sallysbakingaddiction.com/easy-homemade-strawberry-shortcake/#tasty-recipes-68038"
+  },
+  "languages": {
+    "fr": {
+      "title": "Shortcake aux fraises",
+      "description": "Des biscuits sabl\u00e9s tendres garnis de fraises mac\u00e9r\u00e9es et de cr\u00e8me fouett\u00e9e.",
+      "instructions": "M\u00e9langer les fraises avec 50 g de sucre granul\u00e9 dans un grand bol. Couvrir et r\u00e9frig\u00e9rer pendant la pr\u00e9paration des biscuits pour laisser les fraises d\u00e9gorger.\nPr\u00e9chauffer le four \u00e0 204\u00b0C/400\u00b0F. M\u00e9langer la farine, 50 g de sucre, la poudre \u00e0 p\u00e2te, le bicarbonate de soude et le sel.\nAjouter le beurre froid en cubes et le couper dans les ingr\u00e9dients secs jusqu'\u00e0 l'obtention de grosses miettes.\nVerser le babeurre et m\u00e9langer juste assez pour former une p\u00e2te hirsute. D\u00e9poser la p\u00e2te sur un plan de travail farin\u00e9 et la rassembler d\u00e9licatement avec les mains farin\u00e9es.\nAbaisser la p\u00e2te en un rectangle d'environ 2 cm d'\u00e9paisseur, plier les deux c\u00f4t\u00e9s vers le centre, tourner la p\u00e2te et r\u00e9p\u00e9ter encore 2 fois. Abaisser une derni\u00e8re fois \u00e0 environ 2 cm d'\u00e9paisseur.\nCouper des cercles de 7 \u00e0 7,5 cm. Rassembler les retailles au besoin pour obtenir environ 10 \u00e0 12 biscuits. D\u00e9poser les biscuits bien serr\u00e9s sur une plaque tapiss\u00e9e de papier parchemin ou dans un moule en fonte de 10 po.\nBadigeonner le dessus avec la cr\u00e8me 35 % ou le babeurre, puis saupoudrer de sucre grossier. Cuire de 18 min \u00e0 22 min, jusqu'\u00e0 ce que les biscuits soient dor\u00e9s. Laisser ti\u00e9dir au moins 10 min.\nFouetter la cr\u00e8me 35 %, 25 g de sucre et la vanille jusqu'\u00e0 l'obtention de pics souples \u00e0 moyens.\nCouper les biscuits en deux et les garnir de fraises et de cr\u00e8me fouett\u00e9e. Servir imm\u00e9diatement.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Strawberry Shortcake",
+      "description": "Tender shortcake biscuits layered with macerated strawberries and whipped cream.",
+      "instructions": "Stir the strawberries with 50 g granulated sugar in a large bowl. Cover and refrigerate while you prepare the biscuits so the berries can release their juices.\nPreheat the oven to 204\u00b0C/400\u00b0F. Whisk together the flour, 50 g sugar, baking powder, baking soda, and salt.\nAdd the cold cubed butter and cut it into the dry ingredients until coarse crumbs form.\nPour in the buttermilk and mix just until a shaggy dough forms. Turn the dough out onto a floured work surface and gently bring it together with floured hands.\nPat the dough into a rectangle about 2 cm thick, fold both sides toward the center, rotate the dough, and repeat 2 more times. Flatten it one last time to about 2 cm thick.\nCut into 2.75- to 3-inch rounds. Gather the scraps as needed to make about 10 to 12 biscuits. Arrange the biscuits close together on a parchment-lined baking sheet or in a 10-inch cast-iron pan.\nBrush the tops with heavy cream or buttermilk and sprinkle with coarse sugar. Bake for 18 min to 22 min, until golden on top. Let cool for at least 10 min.\nWhip the heavy cream with 25 g sugar and vanilla until soft to medium peaks form.\nSplit the biscuits and fill them with strawberries and whipped cream. Serve immediately.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-1",
+      "originalText": "6 1/2 cups quartered strawberries",
+      "ingredientName": "strawberries",
+      "ingredientRefId": "ingredient-ref-strawberries",
+      "quantity": 6.5,
+      "unit": "cup",
+      "preparation": "quartered",
+      "group": "Strawberries"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-2",
+      "originalText": "50 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 50,
+      "unit": "g",
+      "group": "Strawberries"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-3",
+      "originalText": "345 g all-purpose flour, plus extra for the work surface",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 345,
+      "unit": "g",
+      "notes": "Plus extra for the work surface",
+      "group": "Biscuits"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-4",
+      "originalText": "50 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 50,
+      "unit": "g",
+      "group": "Biscuits"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-5",
+      "originalText": "4 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 4,
+      "unit": "tsp",
+      "group": "Biscuits"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-6",
+      "originalText": "1/2 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Biscuits"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-7",
+      "originalText": "1 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Biscuits"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-8",
+      "originalText": "180 g unsalted butter, cold and cubed",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 180,
+      "unit": "g",
+      "preparation": "cold and cubed",
+      "group": "Biscuits"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-9",
+      "originalText": "240 ml buttermilk, cold",
+      "ingredientName": "buttermilk",
+      "ingredientRefId": "ingredient-ref-buttermilk",
+      "quantity": 240,
+      "unit": "ml",
+      "preparation": "cold",
+      "group": "Biscuits"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-10",
+      "originalText": "30 ml heavy cream or buttermilk",
+      "ingredientName": "heavy cream or buttermilk",
+      "quantity": 30,
+      "unit": "ml",
+      "group": "Biscuits"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-11",
+      "originalText": "Coarse sugar, for sprinkling",
+      "ingredientName": "coarse sugar",
+      "notes": "For sprinkling",
+      "group": "Biscuits"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-12",
+      "originalText": "240 ml heavy cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 240,
+      "unit": "ml",
+      "group": "Whipped Cream"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-13",
+      "originalText": "25 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 25,
+      "unit": "g",
+      "group": "Whipped Cream"
+    },
+    {
+      "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-14",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Whipped Cream"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 30,
+    "cookTimeMinutes": 15,
+    "totalTimeMinutes": 45
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake",
+    "tag-spring",
+    "tag-summer",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-1fb908b6-f079-44f2-916b-1b6c6b55367c-0",
+  "photos": [
+    {
+      "id": "photo-1fb908b6-f079-44f2-916b-1b6c6b55367c-0",
+      "relativePath": "photos/1fb908b6-f079-44f2-916b-1b6c6b55367c_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

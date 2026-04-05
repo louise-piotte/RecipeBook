@@ -1,0 +1,146 @@
+{
+  "id": "9ec55a0a-92b7-425d-9d7f-1a9a455022bb",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Allrecipes",
+    "sourceUrl": "https://www.allrecipes.com/recipe/242162/delightfully-exotic-mango-cake/"
+  },
+  "languages": {
+    "fr": {
+      "title": "G\u00e2teau \u00e0 la mangue",
+      "description": "Un g\u00e2teau moelleux \u00e0 la mangue avec une garniture d'amandes.",
+      "instructions": "Mettre les mangues, le sucre \u00e0 glacer et le lait dans un m\u00e9langeur ou un robot culinaire. Mixer jusqu'\u00e0 l'obtention d'une pur\u00e9e lisse.\nPr\u00e9chauffer le four \u00e0 190\u00b0C/375\u00b0F. Beurrer un plat de cuisson de 9 x 13 po.\nBattre la pur\u00e9e de mangue, le sucre, la margarine et les \u0153ufs \u00e0 vitesse moyenne jusqu'\u00e0 ce que le m\u00e9lange soit p\u00e2le et homog\u00e8ne.\nTamiser ensemble la farine, la poudre \u00e0 p\u00e2te et le bicarbonate de soude. Incorporer les ingr\u00e9dients secs au m\u00e9lange de mangue juste assez pour obtenir une p\u00e2te homog\u00e8ne. Verser dans le plat.\nCuire 15 min, puis presser d\u00e9licatement les amandes sur le dessus. Poursuivre la cuisson environ 20 min, jusqu'\u00e0 ce qu'un cure-dent ins\u00e9r\u00e9 au centre ressorte propre.",
+      "notes": "Cette version enregistr\u00e9e pr\u00e9pare la pur\u00e9e de mangue avec des mangues fra\u00eeches, du sucre \u00e0 glacer et du lait."
+    },
+    "en": {
+      "title": "Mango Cake",
+      "description": "A moist mango cake finished with almonds on top.",
+      "instructions": "Place the mangos, icing sugar, and milk in a blender or food processor. Blend until smooth.\nPreheat the oven to 190\u00b0C/375\u00b0F. Grease a 9x13-inch baking dish.\nBeat the mango puree, sugar, margarine, and eggs on medium speed until pale and well combined.\nSift together the flour, baking powder, and baking soda. Stir the dry ingredients into the mango mixture just until the batter comes together. Pour into the prepared dish.\nBake for 15 min, then gently press the almonds onto the top. Continue baking for about 20 min, until a toothpick inserted in the center comes out clean.",
+      "notes": "This saved version makes the mango puree with fresh mangos, icing sugar, and milk."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "9ec55a0a-92b7-425d-9d7f-1a9a455022bb-ingredient-1",
+      "originalText": "3 mangos",
+      "ingredientName": "mangos",
+      "ingredientRefId": "ingredient-ref-mangos",
+      "quantity": 3,
+      "group": "Mango Puree"
+    },
+    {
+      "id": "9ec55a0a-92b7-425d-9d7f-1a9a455022bb-ingredient-2",
+      "originalText": "2 tbsp icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 2,
+      "unit": "tbsp",
+      "group": "Mango Puree"
+    },
+    {
+      "id": "9ec55a0a-92b7-425d-9d7f-1a9a455022bb-ingredient-3",
+      "originalText": "60 ml milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 60,
+      "unit": "ml",
+      "group": "Mango Puree"
+    },
+    {
+      "id": "9ec55a0a-92b7-425d-9d7f-1a9a455022bb-ingredient-4",
+      "originalText": "1 cup granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 1,
+      "unit": "cup",
+      "group": "Cake"
+    },
+    {
+      "id": "9ec55a0a-92b7-425d-9d7f-1a9a455022bb-ingredient-5",
+      "originalText": "1/2 cup margarine",
+      "ingredientName": "margarine",
+      "ingredientRefId": "ingredient-ref-margarine",
+      "quantity": 0.5,
+      "unit": "cup",
+      "group": "Cake"
+    },
+    {
+      "id": "9ec55a0a-92b7-425d-9d7f-1a9a455022bb-ingredient-6",
+      "originalText": "2 medium eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 2,
+      "group": "Cake"
+    },
+    {
+      "id": "9ec55a0a-92b7-425d-9d7f-1a9a455022bb-ingredient-7",
+      "originalText": "2 cups all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 2,
+      "unit": "cup",
+      "group": "Cake"
+    },
+    {
+      "id": "9ec55a0a-92b7-425d-9d7f-1a9a455022bb-ingredient-8",
+      "originalText": "1 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "9ec55a0a-92b7-425d-9d7f-1a9a455022bb-ingredient-9",
+      "originalText": "1 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "9ec55a0a-92b7-425d-9d7f-1a9a455022bb-ingredient-10",
+      "originalText": "2 tbsp whole almonds",
+      "ingredientName": "almonds",
+      "ingredientRefId": "ingredient-ref-almonds",
+      "quantity": 2,
+      "unit": "tbsp",
+      "optional": true,
+      "group": "Topping"
+    }
+  ],
+  "servings": {
+    "amount": 10,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 25,
+    "cookTimeMinutes": 35,
+    "totalTimeMinutes": 60
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake",
+    "tag-summer",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-9ec55a0a-92b7-425d-9d7f-1a9a455022bb-0",
+  "photos": [
+    {
+      "id": "photo-9ec55a0a-92b7-425d-9d7f-1a9a455022bb-0",
+      "relativePath": "photos/9ec55a0a-92b7-425d-9d7f-1a9a455022bb_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}
