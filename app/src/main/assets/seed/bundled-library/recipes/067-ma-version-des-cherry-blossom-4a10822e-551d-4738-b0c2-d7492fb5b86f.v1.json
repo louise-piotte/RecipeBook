@@ -1,0 +1,123 @@
+{
+  "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Ma version des Cherry Blossom",
+      "description": "Des chocolats maison au beurre d'arachide, aux pacanes et aux cerises au marasquin, \u00e0 conserver bien froids.",
+      "instructions": "Tapisser l'int\u00e9rieur d'un carton d'\u0153ufs de 18 cavit\u00e9s avec une pellicule plastique en l'ajustant bien dans chaque cavit\u00e9.\nDans un bol, faire fondre le chocolat noir et le chocolat au lait au micro-ondes en remuant toutes les 30 sec, jusqu'\u00e0 ce que le m\u00e9lange soit lisse.\nIncorporer le beurre d'arachide, puis les pacanes et la noix de coco.\nR\u00e9partir environ 15 ml/1 c. \u00e0 soupe du m\u00e9lange au chocolat dans chaque cavit\u00e9 en remontant un peu sur les parois. R\u00e9frig\u00e9rer.\nDans un autre bol, fouetter le jus des cerises au marasquin avec le sucre \u00e0 glacer jusqu'\u00e0 l'obtention d'une garniture \u00e9paisse mais coulante. Ajouter un peu plus de sucre \u00e0 glacer au besoin.\nD\u00e9poser 1 cerise au marasquin dans chaque cavit\u00e9. R\u00e9partir un peu de garniture sur les cerises sans trop remplir les cavit\u00e9s.\nRecouvrir du reste du m\u00e9lange au chocolat pour bien sceller chaque chocolat. R\u00e9frig\u00e9rer environ 30 min, jusqu'\u00e0 ce que le chocolat soit fig\u00e9.\nConserver les Cherry Blossom au r\u00e9frig\u00e9rateur, t\u00eate en bas, pour limiter les fuites si un chocolat est moins bien scell\u00e9.",
+      "notes": "La variante retenue pour cette version utilise des pacanes.\nCette recette fait partie de la Bo\u00eete de No\u00ebl."
+    },
+    "en": {
+      "title": "My Cherry Blossom Version",
+      "description": "Homemade cherry chocolates with peanut butter, pecans, and maraschino cherries, best kept cold.",
+      "instructions": "Line the inside of an 18-cavity egg carton with plastic wrap, shaping it tightly into each cavity.\nIn a bowl, melt the dark chocolate and milk chocolate in the microwave, stirring every 30 sec until smooth.\nStir in the peanut butter, then the pecans and coconut.\nPortion about 15 ml/1 tbsp of the chocolate mixture into each cavity, pushing some of it up the sides. Refrigerate.\nIn another bowl, whisk together the maraschino cherry juice and icing sugar until the filling is thick but pourable. Add a little more icing sugar if needed.\nPlace 1 maraschino cherry in each cavity. Spoon a little filling over the cherries without overfilling the cavities.\nCover with the remaining chocolate mixture to seal each candy. Refrigerate for about 30 min, until firm.\nStore the Cherry Blossoms upside down in the refrigerator to reduce leaks if any candy is not fully sealed.",
+      "notes": "This version uses pecans.\nThis recipe belongs to the Christmas Box collection."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-1",
+      "originalText": "1 cup dark chocolate chips",
+      "ingredientName": "dark chocolate",
+      "ingredientRefId": "ingredient-ref-dark-chocolate",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "chips"
+    },
+    {
+      "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-2",
+      "originalText": "1 cup milk chocolate chips",
+      "ingredientName": "milk chocolate",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "chips"
+    },
+    {
+      "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-3",
+      "originalText": "1/2 cup natural peanut butter",
+      "ingredientName": "peanut butter",
+      "ingredientRefId": "ingredient-ref-peanut-butter",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "natural"
+    },
+    {
+      "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-4",
+      "originalText": "1 cup finely chopped pecans",
+      "ingredientName": "pecans",
+      "ingredientRefId": "ingredient-ref-pecans",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "finely chopped"
+    },
+    {
+      "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-5",
+      "originalText": "1/2 cup unsweetened shredded coconut",
+      "ingredientName": "shredded coconut",
+      "ingredientRefId": "ingredient-ref-shredded-coconut",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "unsweetened"
+    },
+    {
+      "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-6",
+      "originalText": "2 tbsp maraschino cherry juice",
+      "ingredientName": "maraschino cherry juice",
+      "ingredientRefId": "ingredient-ref-jus-du-pot-de-cerises-au-marasquin",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-7",
+      "originalText": "160 ml icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 160,
+      "unit": "ml"
+    },
+    {
+      "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-8",
+      "originalText": "18 maraschino cherries",
+      "ingredientName": "maraschino cherries",
+      "ingredientRefId": "ingredient-ref-cerises-au-marasquin",
+      "quantity": 18,
+      "unit": "item"
+    }
+  ],
+  "servings": {
+    "amount": 18,
+    "unit": "candies"
+  },
+  "times": {
+    "prepTimeMinutes": 30,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 60
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-christmas",
+    "tag-shareable",
+    "tag-make-ahead"
+  ],
+  "collections": [
+    "collection-christmas-box"
+  ],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-4a10822e-551d-4738-b0c2-d7492fb5b86f-0",
+  "photos": [
+    {
+      "id": "photo-4a10822e-551d-4738-b0c2-d7492fb5b86f-0",
+      "relativePath": "photos/4a10822e-551d-4738-b0c2-d7492fb5b86f_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

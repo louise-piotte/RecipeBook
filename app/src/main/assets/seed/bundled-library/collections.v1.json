@@ -4,7 +4,16 @@
     "nameFr": "Bo\u00eete de No\u00ebl",
     "nameEn": "Christmas Box",
     "recipeIds": [
+      "4a10822e-551d-4738-b0c2-d7492fb5b86f",
       "f99dad41-30f8-4294-bbba-4f0b555eda23"
+    ]
+  },
+  {
+    "id": "collection-mom-and-dad-recipes",
+    "nameFr": "Recettes de Maman et Papa",
+    "nameEn": "Mom and Dad Recipes",
+    "recipeIds": [
+      "81d376ac-c305-402f-a73d-8bb721045319"
     ]
   }
 ]

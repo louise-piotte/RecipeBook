@@ -1,0 +1,175 @@
+{
+  "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "The Kitchn",
+    "sourceUrl": "https://www.thekitchn.com/korean-soy-marinated-eggs-recipe-23636937"
+  },
+  "languages": {
+    "fr": {
+      "title": "\u0152ufs mollets marin\u00e9s \u00e0 la sauce soya \u00e0 la cor\u00e9enne",
+      "description": "Des \u0153ufs mollets marin\u00e9s dans une sauce soya parfum\u00e9e aux oignons verts, au s\u00e9same et au citron, \u00e0 servir sur du riz.",
+      "instructions": "Remplir une grande casserole d'eau froide aux trois quarts et porter \u00e0 \u00e9bullition \u00e0 feu moyen-\u00e9lev\u00e9. D\u00e9poser d\u00e9licatement les \u0153ufs dans l'eau bouillante et cuire 6 min 30 sec pour des jaunes plus coulants, ou 8 min pour des \u0153ufs mollets plus fermes.\nPendant ce temps, pr\u00e9parer un bain d'eau glac\u00e9e dans un grand bol.\nTransf\u00e9rer les \u0153ufs dans l'eau glac\u00e9e et laisser refroidir environ 8 min. Les \u00e9caler, puis les d\u00e9poser dans un contenant plat assez grand pour les tenir en une seule couche.\nDans un grand bol, m\u00e9langer l'oignon finement coup\u00e9, les oignons verts \u00e9minc\u00e9s, le piment serrano \u00e9minc\u00e9 si utilis\u00e9, et l'ail hach\u00e9.\nAjouter la sauce soya, l'eau, le sucre, le mirin, l'huile de s\u00e9same, les graines de s\u00e9same et le hondashi. Fouetter jusqu'\u00e0 ce que le sucre soit dissous, puis verser la marinade sur les \u0153ufs.\nR\u00e9partir les tranches de citron sur le dessus. Couvrir et r\u00e9frig\u00e9rer au moins 6 h ou toute la nuit.\nServir les \u0153ufs sur du riz blanc chaud avec un peu de marinade, si d\u00e9sir\u00e9.",
+      "notes": "Le piment serrano est facultatif.\nLa marinade gagne en saveur apr\u00e8s une nuit au r\u00e9frig\u00e9rateur."
+    },
+    "en": {
+      "title": "Korean Soy-Marinated Jammy Eggs",
+      "description": "Jammy eggs marinated in a savory soy mixture with scallions, sesame, and lemon, meant to be served over rice.",
+      "instructions": "Fill a large saucepan about three-quarters full with cold water and bring it to a boil over medium-high heat. Gently lower in the eggs and cook for 6 min 30 sec for runnier yolks, or 8 min for firmer jammy eggs.\nMeanwhile, prepare an ice bath in a large bowl.\nTransfer the eggs to the ice bath and let them cool for about 8 min. Peel them and place them in a flat container that holds them snugly in a single layer.\nIn a large bowl, combine the finely diced onion, sliced green onions, sliced serrano pepper if using, and chopped garlic.\nAdd the soy sauce, water, sugar, mirin, toasted sesame oil, sesame seeds, and hondashi. Whisk until the sugar dissolves, then pour the marinade over the eggs.\nArrange the lemon slices over the top. Cover and refrigerate for at least 6 h or overnight.\nServe the eggs over hot white rice with a little of the marinade, if desired.",
+      "notes": "The serrano pepper is optional.\nThe marinade develops more flavor after an overnight rest."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-1",
+      "originalText": "10 large eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 10,
+      "unit": "large egg"
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-2",
+      "originalText": "1/4 medium yellow onion, finely diced",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 0.25,
+      "unit": "item",
+      "preparation": "medium yellow, finely diced"
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-3",
+      "originalText": "3 green onions, thinly sliced",
+      "ingredientName": "green onions",
+      "ingredientRefId": "ingredient-ref-green-onions",
+      "quantity": 3,
+      "unit": "item",
+      "preparation": "thinly sliced"
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-4",
+      "originalText": "1 serrano pepper, thinly sliced",
+      "ingredientName": "serrano pepper",
+      "ingredientRefId": "ingredient-ref-serrano-pepper",
+      "quantity": 1,
+      "unit": "item",
+      "preparation": "thinly sliced",
+      "optional": true
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-5",
+      "originalText": "3 cloves garlic, chopped",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 3,
+      "unit": "clove",
+      "preparation": "chopped"
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-6",
+      "originalText": "1 cup soy sauce or tamari",
+      "ingredientName": "soy sauce",
+      "ingredientRefId": "ingredient-ref-soy-sauce",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-7",
+      "originalText": "1 cup water",
+      "ingredientName": "water",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-8",
+      "originalText": "1/4 cup granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-9",
+      "originalText": "3 tbsp mirin",
+      "ingredientName": "mirin",
+      "ingredientRefId": "ingredient-ref-mirin",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-10",
+      "originalText": "1 tbsp toasted sesame oil",
+      "ingredientName": "toasted sesame oil",
+      "ingredientRefId": "ingredient-ref-toasted-sesame-oil",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-11",
+      "originalText": "1 tbsp toasted white sesame seeds",
+      "ingredientName": "sesame seeds",
+      "ingredientRefId": "ingredient-ref-sesame-seeds",
+      "quantity": 1,
+      "unit": "tbsp",
+      "preparation": "toasted white"
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-12",
+      "originalText": "1 tsp hondashi",
+      "ingredientName": "hondashi",
+      "ingredientRefId": "ingredient-ref-hondashi",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-13",
+      "originalText": "1/2 lemon, thinly sliced",
+      "ingredientName": "lemon",
+      "ingredientRefId": "ingredient-ref-lemon",
+      "quantity": 0.5,
+      "unit": "item",
+      "preparation": "thinly sliced"
+    },
+    {
+      "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-14",
+      "originalText": "Cooked white rice, for serving",
+      "ingredientName": "cooked white rice",
+      "quantity": 1,
+      "unit": "for serving",
+      "optional": true
+    }
+  ],
+  "servings": {
+    "amount": 10,
+    "unit": "eggs"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 8,
+    "totalTimeMinutes": 383
+  },
+  "tags": [
+    "tag-side-dish",
+    "tag-korean",
+    "tag-make-ahead",
+    "tag-stovetop"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 0
+  },
+  "mainPhotoId": "photo-e0a437cb-da80-4fd5-954d-87caf3b299e7-0",
+  "photos": [
+    {
+      "id": "photo-e0a437cb-da80-4fd5-954d-87caf3b299e7-0",
+      "relativePath": "photos/e0a437cb-da80-4fd5-954d-87caf3b299e7_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": "81d376ac-c305-402f-a73d-8bb721045319",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Muffins double chocolat",
+      "description": "Des muffins au cacao garnis de chocolat blanc, tir\u00e9s des recettes de famille.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F.\nDans un bol, m\u00e9langer la poudre \u00e0 p\u00e2te, le bicarbonate de soude et le cacao.\nDans un deuxi\u00e8me bol, m\u00e9langer la margarine, l'\u0153uf et la cassonade.\nVerser les ingr\u00e9dients liquides dans les ingr\u00e9dients secs.\nAjouter le lait et la farine en alternance, en m\u00e9langeant juste assez pour obtenir une p\u00e2te homog\u00e8ne.\nIncorporer les morceaux de chocolat blanc.\nR\u00e9partir la p\u00e2te dans un moule \u00e0 muffins.\nCuire environ 30 min, jusqu'\u00e0 ce qu'un cure-dent ins\u00e9r\u00e9 au centre ressorte propre.",
+      "notes": "Le rendement n'\u00e9tait pas indiqu\u00e9 dans l'export d'origine.\nRecette conserv\u00e9e dans la collection familiale Recettes de Maman et Papa."
+    },
+    "en": {
+      "title": "Double Chocolate Muffins",
+      "description": "Family-style cocoa muffins packed with white chocolate.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F.\nIn one bowl, combine the baking powder, baking soda, and cocoa powder.\nIn a second bowl, combine the margarine, egg, and brown sugar.\nPour the wet ingredients into the dry ingredients.\nAdd the milk and flour alternately, mixing just until the batter is uniform.\nFold in the white chocolate pieces.\nPortion the batter into a muffin tin.\nBake for about 30 min, until a toothpick inserted in the center comes out clean.",
+      "notes": "The original export did not include a stated yield.\nThis recipe is kept in the family collection Mom and Dad Recipes."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "81d376ac-c305-402f-a73d-8bb721045319-ingredient-1",
+      "originalText": "1 egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "large egg"
+    },
+    {
+      "id": "81d376ac-c305-402f-a73d-8bb721045319-ingredient-2",
+      "originalText": "1 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "81d376ac-c305-402f-a73d-8bb721045319-ingredient-3",
+      "originalText": "1 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "81d376ac-c305-402f-a73d-8bb721045319-ingredient-4",
+      "originalText": "1 cup all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "81d376ac-c305-402f-a73d-8bb721045319-ingredient-5",
+      "originalText": "1 1/3 tbsp margarine",
+      "ingredientName": "margarine",
+      "quantity": 1.3333333333,
+      "unit": "tbsp"
+    },
+    {
+      "id": "81d376ac-c305-402f-a73d-8bb721045319-ingredient-6",
+      "originalText": "1/2 cup milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "81d376ac-c305-402f-a73d-8bb721045319-ingredient-7",
+      "originalText": "1/2 cup brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "81d376ac-c305-402f-a73d-8bb721045319-ingredient-8",
+      "originalText": "1/3 cup unsweetened cocoa powder",
+      "ingredientName": "unsweetened cocoa powder",
+      "ingredientRefId": "ingredient-ref-unsweetened-cocoa-powder",
+      "quantity": 0.3333333333,
+      "unit": "cup"
+    },
+    {
+      "id": "81d376ac-c305-402f-a73d-8bb721045319-ingredient-9",
+      "originalText": "1 cup white chocolate chips",
+      "ingredientName": "white chocolate",
+      "ingredientRefId": "ingredient-ref-white-chocolate",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "chips"
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "batch"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 30,
+    "totalTimeMinutes": 40
+  },
+  "tags": [
+    "tag-breakfast",
+    "tag-snack",
+    "tag-oven",
+    "tag-shareable"
+  ],
+  "collections": [
+    "collection-mom-and-dad-recipes"
+  ],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": null,
+  "photos": [],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

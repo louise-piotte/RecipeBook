@@ -1,0 +1,154 @@
+{
+  "id": "2d53895b-8bd0-4225-bf63-766d29418eac",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Once Upon a Chef",
+    "sourceUrl": "https://www.onceuponachef.com/recipes/chocolate-mousse.html"
+  },
+  "languages": {
+    "fr": {
+      "title": "Mousse au chocolat",
+      "description": "Une mousse au chocolat classique, riche et a\u00e9rienne, servie avec de la cr\u00e8me fouett\u00e9e et des copeaux de chocolat.",
+      "instructions": "D\u00e9poser le beurre et le chocolat dans un bol r\u00e9sistant \u00e0 la chaleur. Faire fondre au bain-marie ou au micro-ondes par courtes impulsions, en remuant jusqu'\u00e0 l'obtention d'un m\u00e9lange lisse. Laisser ti\u00e9dir quelques minutes.\nIncorporer les jaunes d'\u0153ufs un \u00e0 la fois en fouettant jusqu'\u00e0 consistance lisse apr\u00e8s chaque ajout. R\u00e9server.\nDans un autre bol, battre les blancs d'\u0153ufs jusqu'\u00e0 ce qu'ils soient mousseux. Ajouter la cr\u00e8me de tartre, puis battre jusqu'\u00e0 la formation de pics mous. Incorporer graduellement 50 g de sucre et continuer \u00e0 battre jusqu'\u00e0 l'obtention de pics fermes.\nIncorporer d\u00e9licatement les blancs d'\u0153ufs au m\u00e9lange de chocolat \u00e0 l'aide d'une grande spatule. R\u00e9server.\nDans un autre bol, battre 125 ml/1/2 tasse de cr\u00e8me 35 % jusqu'\u00e0 ce qu'elle commence \u00e0 \u00e9paissir. Ajouter le reste du sucre du m\u00e9lange, soit 25 g/2 c. \u00e0 soupe, ainsi que la vanille, puis continuer \u00e0 battre jusqu'\u00e0 l'obtention de pics moyens.\nIncorporer la cr\u00e8me fouett\u00e9e au m\u00e9lange de chocolat jusqu'\u00e0 ce que la mousse soit homog\u00e8ne. R\u00e9partir dans 6 verres individuels, couvrir et r\u00e9frig\u00e9rer au moins 2 h.\nQuelques heures avant le service, fouetter les 125 ml/1/2 tasse de cr\u00e8me restants avec 2 c. \u00e0 th\u00e9 de sucre jusqu'\u00e0 l'obtention de pics moyens. Garnir chaque portion de mousse de cr\u00e8me fouett\u00e9e et de copeaux de chocolat.",
+      "notes": "La recette contient des \u0153ufs crus; utiliser des \u0153ufs pasteuris\u00e9s au besoin.\nLa mousse peut \u00eatre pr\u00e9par\u00e9e 1 jour \u00e0 l'avance, puis garnie quelques heures avant le service."
+    },
+    "en": {
+      "title": "Chocolate Mousse",
+      "description": "A classic chocolate mousse that stays rich yet airy, finished with whipped cream and chocolate shavings.",
+      "instructions": "Place the butter and chocolate in a heatproof bowl. Melt them over barely simmering water or in the microwave in short bursts, stirring until smooth. Let the mixture cool for a few minutes.\nWhisk in the egg yolks one at a time, mixing until smooth after each addition. Set aside.\nIn another bowl, beat the egg whites until foamy. Add the cream of tartar and continue beating until soft peaks form. Gradually add 50 g/1/4 cup of the sugar and keep beating until stiff peaks form.\nUsing a large spatula, gently fold the egg whites into the chocolate mixture. Set aside.\nIn a separate bowl, beat 125 ml/1/2 cup of the heavy cream until it begins to thicken. Add the remaining sugar for the mousse, 25 g/2 tbsp, along with the vanilla, then continue beating until medium peaks form.\nFold the whipped cream into the chocolate mixture until the mousse is uniform. Divide it among 6 individual glasses, cover, and chill for at least 2 h.\nA few hours before serving, whip the remaining 125 ml/1/2 cup heavy cream with 2 tsp sugar to medium peaks. Spoon the whipped cream over the mousse and finish with chocolate shavings.",
+      "notes": "This recipe contains raw eggs; use pasteurized eggs if needed.\nThe mousse can be made 1 day ahead and topped a few hours before serving."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "2d53895b-8bd0-4225-bf63-766d29418eac-ingredient-1",
+      "originalText": "3 tbsp unsalted butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "id": "2d53895b-8bd0-4225-bf63-766d29418eac-ingredient-2",
+      "originalText": "6 oz semisweet chocolate",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 6,
+      "unit": "oz"
+    },
+    {
+      "id": "2d53895b-8bd0-4225-bf63-766d29418eac-ingredient-3",
+      "originalText": "3 large eggs, separated",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 3,
+      "unit": "large egg",
+      "preparation": "separated"
+    },
+    {
+      "id": "2d53895b-8bd0-4225-bf63-766d29418eac-ingredient-4",
+      "originalText": "1/2 tsp cream of tartar",
+      "ingredientName": "cream of tartar",
+      "ingredientRefId": "ingredient-ref-cream-of-tartar",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "2d53895b-8bd0-4225-bf63-766d29418eac-ingredient-5",
+      "originalText": "1/4 cup sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 0.25,
+      "unit": "cup",
+      "group": "Mousse"
+    },
+    {
+      "id": "2d53895b-8bd0-4225-bf63-766d29418eac-ingredient-6",
+      "originalText": "2 tbsp sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 2,
+      "unit": "tbsp",
+      "group": "Mousse"
+    },
+    {
+      "id": "2d53895b-8bd0-4225-bf63-766d29418eac-ingredient-7",
+      "originalText": "1/2 cup heavy cream, cold",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "cold",
+      "group": "Mousse"
+    },
+    {
+      "id": "2d53895b-8bd0-4225-bf63-766d29418eac-ingredient-8",
+      "originalText": "1/2 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "2d53895b-8bd0-4225-bf63-766d29418eac-ingredient-9",
+      "originalText": "1/2 cup heavy cream, cold",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "cold",
+      "group": "For serving"
+    },
+    {
+      "id": "2d53895b-8bd0-4225-bf63-766d29418eac-ingredient-10",
+      "originalText": "2 tsp sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 2,
+      "unit": "tsp",
+      "group": "For serving"
+    },
+    {
+      "id": "2d53895b-8bd0-4225-bf63-766d29418eac-ingredient-11",
+      "originalText": "Chocolate shavings",
+      "ingredientName": "chocolate shavings",
+      "quantity": 1,
+      "unit": "for garnish",
+      "optional": true,
+      "group": "For serving"
+    }
+  ],
+  "servings": {
+    "amount": 6,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 140
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-french",
+    "tag-make-ahead",
+    "tag-stand-mixer"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-2d53895b-8bd0-4225-bf63-766d29418eac-0",
+  "photos": [
+    {
+      "id": "photo-2d53895b-8bd0-4225-bf63-766d29418eac-0",
+      "relativePath": "photos/2d53895b-8bd0-4225-bf63-766d29418eac_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}
