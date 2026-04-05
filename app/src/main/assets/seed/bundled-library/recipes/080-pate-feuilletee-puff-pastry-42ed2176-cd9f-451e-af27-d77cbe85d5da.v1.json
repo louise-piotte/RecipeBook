@@ -1,0 +1,100 @@
+{
+  "id": "42ed2176-cd9f-451e-af27-d77cbe85d5da",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/puff-pastry/"
+  },
+  "languages": {
+    "fr": {
+      "title": "P\u00e2te feuillet\u00e9e",
+      "description": "Une p\u00e2te feuillet\u00e9e rapide faite au beurre, \u00e0 plier et refroidir avant utilisation.",
+      "instructions": "Mettre le beurre au cong\u00e9lateur pendant 10 min.\nDans un grand bol, fouetter la farine, le sucre et le sel.\nR\u00e2per le beurre froid dans le m\u00e9lange de farine, puis m\u00e9langer avec les mains jusqu'\u00e0 ce que les morceaux soient bien enrob\u00e9s. Couper en petits d\u00e9s le bout de beurre qu'on ne peut pas r\u00e2per et l'ajouter au bol.\nVerser d'abord 90 ml d'eau froide sur le m\u00e9lange et replier d\u00e9licatement. Ajouter ensuite un peu d'eau, 1 cuill\u00e8re \u00e0 soupe \u00e0 la fois, jusqu'\u00e0 l'obtention d'une p\u00e2te l\u00e2che et friable qui se tient quand on la presse.\nP\u00e9trir doucement quelques fois dans le bol jusqu'\u00e0 ce qu'une masse coh\u00e9sive se forme. Fa\u00e7onner en carr\u00e9 d'environ 1/2 po d'\u00e9paisseur, envelopper et r\u00e9frig\u00e9rer 1 h.\nSur une surface l\u00e9g\u00e8rement farin\u00e9e, abaisser la p\u00e2te en rectangle d'environ 1/2 po d'\u00e9paisseur. Plier en trois comme une lettre, tourner de 90 degr\u00e9s, puis r\u00e9p\u00e9ter l'op\u00e9ration 3 autres fois.\nReplier la p\u00e2te en trois, envelopper herm\u00e9tiquement et r\u00e9frig\u00e9rer au moins 2 h avant utilisation. Elle peut aussi se conserver jusqu'\u00e0 2 jours au r\u00e9frig\u00e9rateur ou 2 mois au cong\u00e9lateur.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Puff Pastry",
+      "description": "A quick all-butter puff pastry that is folded and chilled before use.",
+      "instructions": "Place the butter in the freezer for 10 min.\nIn a large bowl, whisk together the flour, sugar, and salt.\nGrate the cold butter into the flour mixture, then toss it with your hands until the pieces are well coated. Dice the end of the butter that cannot be grated and add it to the bowl.\nDrizzle 90 ml of cold water over the mixture first and fold gently. Add more water, 1 tablespoon at a time, until you have a loose, crumbly dough that holds together when squeezed.\nKnead the dough gently a few times in the bowl until it forms a cohesive mass. Shape it into a square about 1/2 inch thick, wrap it, and chill for 1 h.\nOn a lightly floured surface, roll the dough into a rectangle about 1/2 inch thick. Fold it in thirds like a letter, turn it 90 degrees, and repeat the rolling and folding 3 more times.\nFold the dough in thirds once more, wrap tightly, and chill for at least 2 h before using. It can also be refrigerated for up to 2 days or frozen for up to 2 months.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "42ed2176-cd9f-451e-af27-d77cbe85d5da-ingredient-1",
+      "originalText": "227 g unsalted butter, cold",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 227,
+      "unit": "g",
+      "preparation": "cold"
+    },
+    {
+      "id": "42ed2176-cd9f-451e-af27-d77cbe85d5da-ingredient-2",
+      "originalText": "240 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 240,
+      "unit": "g"
+    },
+    {
+      "id": "42ed2176-cd9f-451e-af27-d77cbe85d5da-ingredient-3",
+      "originalText": "12 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 12,
+      "unit": "g"
+    },
+    {
+      "id": "42ed2176-cd9f-451e-af27-d77cbe85d5da-ingredient-4",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "42ed2176-cd9f-451e-af27-d77cbe85d5da-ingredient-5",
+      "originalText": "120 to 150 ml cold water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 120,
+      "unit": "ml",
+      "preparation": "cold",
+      "notes": "up to 150 ml as needed"
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "batch"
+  },
+  "times": {
+    "prepTimeMinutes": 220,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 220
+  },
+  "tags": [
+    "tag-dough",
+    "tag-french",
+    "tag-ingredient-component",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-42ed2176-cd9f-451e-af27-d77cbe85d5da-0",
+  "photos": [
+    {
+      "id": "photo-42ed2176-cd9f-451e-af27-d77cbe85d5da-0",
+      "relativePath": "photos/42ed2176-cd9f-451e-af27-d77cbe85d5da_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

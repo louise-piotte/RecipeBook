@@ -1,0 +1,135 @@
+{
+  "id": "1dca3c8b-ed68-4397-b804-ae62e769ee5e",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Foodtasia",
+    "sourceUrl": "https://foodtasia.com/almond-paste-and-marzipan/"
+  },
+  "languages": {
+    "fr": {
+      "title": "P\u00e2te d'amande et massepain",
+      "description": "Une base pour pr\u00e9parer soit une p\u00e2te d'amande, soit un massepain lisse et mall\u00e9able.",
+      "instructions": "Pour la p\u00e2te d'amande, moudre finement les amandes avec 60 g de sucre \u00e0 glacer au robot culinaire.\nAjouter le reste du sucre \u00e0 glacer de la p\u00e2te d'amande et pulser pour combiner.\nAjouter le blanc d'oeuf, le sel et l'extrait d'amande. M\u00e9langer jusqu'\u00e0 ce que la p\u00e2te se rassemble en boule. Si elle colle trop, ajouter un peu de sucre \u00e0 glacer.\nFormer une b\u00fbche, emballer herm\u00e9tiquement et r\u00e9frig\u00e9rer jusqu'au moment d'utiliser.\nPour le massepain, reprendre la base d'amandes moulues et ajouter les ingr\u00e9dients suppl\u00e9mentaires pour le massepain. Ajouter le blanc d'oeuf progressivement, car toute la quantit\u00e9 n'est pas toujours n\u00e9cessaire.\nM\u00e9langer jusqu'\u00e0 ce que le tout forme une boule. Si le m\u00e9lange colle trop, ajouter un peu de sucre \u00e0 glacer.\nSaupoudrer le plan de travail de sucre \u00e0 glacer et p\u00e9trir jusqu'\u00e0 l'obtention d'une texture lisse et mall\u00e9able.\nFormer une b\u00fbche, emballer herm\u00e9tiquement et r\u00e9frig\u00e9rer jusqu'au moment d'utiliser.",
+      "notes": "Les ingr\u00e9dients de la premi\u00e8re section donnent une p\u00e2te d'amande. Ajouter aussi les ingr\u00e9dients de la section massepain pour obtenir un massepain plus sucr\u00e9 et plus souple."
+    },
+    "en": {
+      "title": "Almond Paste and Marzipan",
+      "description": "A base recipe that can be finished either as almond paste or as smooth, pliable marzipan.",
+      "instructions": "For the almond paste, grind the almonds with 60 g of the icing sugar in a food processor until very fine.\nAdd the remaining icing sugar for the almond paste and pulse to combine.\nAdd the egg white, salt, and almond extract. Process until the mixture comes together in a ball. If it is too sticky, add a little more icing sugar.\nShape into a log, wrap tightly, and refrigerate until needed.\nFor the marzipan, start from the same ground almond base and add the additional marzipan ingredients. Add the egg white gradually because you may not need it all.\nProcess until the mixture forms a ball. If it is too sticky, add a little more icing sugar.\nDust the work surface with icing sugar and knead until smooth and pliable.\nShape into a log, wrap tightly, and refrigerate until needed.",
+      "notes": "The first section makes almond paste. Add the marzipan section ingredients as well if you want a sweeter, softer marzipan."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "1dca3c8b-ed68-4397-b804-ae62e769ee5e-ingredient-1",
+      "originalText": "210 g blanched almonds",
+      "ingredientName": "almonds",
+      "ingredientRefId": "ingredient-ref-almonds",
+      "quantity": 210,
+      "unit": "g",
+      "preparation": "blanched",
+      "group": "Almond Paste Base"
+    },
+    {
+      "id": "1dca3c8b-ed68-4397-b804-ae62e769ee5e-ingredient-2",
+      "originalText": "180 g icing sugar, divided",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 180,
+      "unit": "g",
+      "group": "Almond Paste Base",
+      "notes": "divided"
+    },
+    {
+      "id": "1dca3c8b-ed68-4397-b804-ae62e769ee5e-ingredient-3",
+      "originalText": "1 egg white, lightly beaten, at room temperature",
+      "ingredientName": "egg white",
+      "ingredientRefId": "ingredient-ref-egg-white",
+      "quantity": 1,
+      "unit": "count",
+      "group": "Almond Paste Base",
+      "preparation": "lightly beaten, at room temperature"
+    },
+    {
+      "id": "1dca3c8b-ed68-4397-b804-ae62e769ee5e-ingredient-4",
+      "originalText": "1/8 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.125,
+      "unit": "tsp",
+      "group": "Almond Paste Base"
+    },
+    {
+      "id": "1dca3c8b-ed68-4397-b804-ae62e769ee5e-ingredient-5",
+      "originalText": "1/2 tsp almond extract, optional",
+      "ingredientName": "almond extract",
+      "ingredientRefId": "ingredient-ref-almond-extract",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Almond Paste Base",
+      "optional": true
+    },
+    {
+      "id": "1dca3c8b-ed68-4397-b804-ae62e769ee5e-ingredient-6",
+      "originalText": "180 g icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 180,
+      "unit": "g",
+      "group": "For Marzipan"
+    },
+    {
+      "id": "1dca3c8b-ed68-4397-b804-ae62e769ee5e-ingredient-7",
+      "originalText": "1 egg white, lightly beaten, at room temperature",
+      "ingredientName": "egg white",
+      "ingredientRefId": "ingredient-ref-egg-white",
+      "quantity": 1,
+      "unit": "count",
+      "group": "For Marzipan",
+      "preparation": "lightly beaten, at room temperature",
+      "notes": "add gradually; you may not need it all"
+    },
+    {
+      "id": "1dca3c8b-ed68-4397-b804-ae62e769ee5e-ingredient-8",
+      "originalText": "1/2 tsp almond extract, optional",
+      "ingredientName": "almond extract",
+      "ingredientRefId": "ingredient-ref-almond-extract",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "For Marzipan",
+      "optional": true
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "batch"
+  },
+  "times": {
+    "prepTimeMinutes": 3,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 3
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-ingredient-component",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-1dca3c8b-ed68-4397-b804-ae62e769ee5e-0",
+  "photos": [
+    {
+      "id": "photo-1dca3c8b-ed68-4397-b804-ae62e769ee5e-0",
+      "relativePath": "photos/1dca3c8b-ed68-4397-b804-ae62e769ee5e_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

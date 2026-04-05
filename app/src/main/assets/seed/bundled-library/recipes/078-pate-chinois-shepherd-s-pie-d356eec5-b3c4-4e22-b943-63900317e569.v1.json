@@ -1,0 +1,249 @@
+{
+  "id": "d356eec5-b3c4-4e22-b943-63900317e569",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "The Wholesome Dish",
+    "sourceUrl": "https://www.thewholesomedish.com/the-best-classic-shepherds-pie/"
+  },
+  "languages": {
+    "fr": {
+      "title": "P\u00e2t\u00e9 chinois",
+      "description": "Un p\u00e2t\u00e9 chinois au boeuf hach\u00e9 avec une garniture cr\u00e9meuse de pommes de terre et de parmesan.",
+      "instructions": "Chauffer l'huile dans une grande po\u00eale \u00e0 feu moyen-\u00e9lev\u00e9. Ajouter l'oignon et cuire 5 min en remuant de temps en temps.\nAjouter le boeuf hach\u00e9 et le d\u00e9faire \u00e0 la cuill\u00e8re. Ajouter le persil, le romarin, le thym, le sel et le poivre. Cuire 6 min \u00e0 8 min, jusqu'\u00e0 ce que la viande soit dor\u00e9e.\nAjouter la sauce Worcestershire et l'ail. Cuire 1 min.\nAjouter la farine et la p\u00e2te de tomate. Remuer jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9.\nVerser le bouillon, puis ajouter les pois, les carottes et le ma\u00efs. Porter \u00e0 \u00e9bullition, r\u00e9duire le feu et laisser mijoter 5 min. R\u00e9server.\nPr\u00e9chauffer le four \u00e0 205\u00b0C/400\u00b0F.\nMettre les pommes de terre dans une grande casserole et couvrir d'eau. Porter \u00e0 \u00e9bullition, r\u00e9duire \u00e0 feu doux et cuire 10 min \u00e0 15 min, jusqu'\u00e0 tendret\u00e9.\n\u00c9goutter les pommes de terre et les remettre dans la casserole chaude pendant 1 min pour faire \u00e9vaporer l'exc\u00e9dent d'humidit\u00e9.\nAjouter le beurre, la cr\u00e8me moiti\u00e9-moiti\u00e9, la poudre d'ail, le sel et le poivre. Piler les pommes de terre, puis incorporer le parmesan.\nR\u00e9partir le m\u00e9lange de viande dans un plat de cuisson de 9 x 9 po ou de 7 x 11 po. \u00c9taler la pur\u00e9e sur le dessus en couche uniforme.\nSi le plat est tr\u00e8s plein, le d\u00e9poser sur une plaque \u00e0 p\u00e2tisserie \u00e0 rebords. Cuire \u00e0 d\u00e9couvert 25 min \u00e0 30 min. Laisser reposer 15 min avant de servir.",
+      "notes": "Le texte source indique que de l'agneau hach\u00e9 peut remplacer le boeuf hach\u00e9."
+    },
+    "en": {
+      "title": "Shepherd's Pie",
+      "description": "A baked ground beef pie topped with creamy mashed potatoes and Parmesan.",
+      "instructions": "Heat the oil in a large skillet over medium-high heat. Add the onion and cook for 5 min, stirring occasionally.\nAdd the ground beef and break it up with a spoon. Add the parsley, rosemary, thyme, salt, and pepper. Cook for 6 min to 8 min, until browned.\nAdd the Worcestershire sauce and garlic. Cook for 1 min.\nAdd the flour and tomato paste. Stir until evenly combined.\nPour in the broth, then add the peas, carrots, and corn. Bring to a boil, reduce the heat, and simmer for 5 min. Set aside.\nPreheat the oven to 205\u00b0C/400\u00b0F.\nPlace the potatoes in a large saucepan and cover with water. Bring to a boil, reduce to a simmer, and cook for 10 min to 15 min, until tender.\nDrain the potatoes and return them to the hot pot for 1 min so excess moisture can evaporate.\nAdd the butter, half-and-half, garlic powder, salt, and pepper. Mash the potatoes, then stir in the Parmesan.\nSpread the meat mixture in a 9 x 9-inch or 7 x 11-inch baking dish. Spread the mashed potatoes evenly over the top.\nIf the dish is very full, set it on a rimmed baking sheet. Bake uncovered for 25 min to 30 min. Let rest for 15 min before serving.",
+      "notes": "The source notes that ground lamb can be used instead of ground beef."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-1",
+      "originalText": "2 tbsp olive oil",
+      "ingredientName": "olive oil",
+      "ingredientRefId": "ingredient-ref-olive-oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-2",
+      "originalText": "1 cup yellow onion, chopped",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "yellow, chopped"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-3",
+      "originalText": "1 lb lean ground beef",
+      "ingredientName": "ground beef",
+      "ingredientRefId": "ingredient-ref-ground-beef",
+      "quantity": 1,
+      "unit": "lb",
+      "notes": "ground lamb can be used instead"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-4",
+      "originalText": "2 tsp dried parsley",
+      "ingredientName": "parsley",
+      "ingredientRefId": "ingredient-ref-parsley",
+      "quantity": 2,
+      "unit": "tsp",
+      "preparation": "dried"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-5",
+      "originalText": "1 tsp dried rosemary",
+      "ingredientName": "dried rosemary",
+      "ingredientRefId": "ingredient-ref-dried-rosemary",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-6",
+      "originalText": "1 tsp dried thyme",
+      "ingredientName": "dried thyme",
+      "ingredientRefId": "ingredient-ref-dried-thyme",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-7",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-8",
+      "originalText": "1/2 tsp black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-9",
+      "originalText": "1 tbsp Worcestershire sauce",
+      "ingredientName": "Worcestershire sauce",
+      "ingredientRefId": "ingredient-ref-worcestershire-sauce",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-10",
+      "originalText": "2 garlic cloves, minced",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 2,
+      "unit": "count",
+      "preparation": "minced"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-11",
+      "originalText": "2 tbsp all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-12",
+      "originalText": "2 tbsp tomato paste",
+      "ingredientName": "tomato paste",
+      "ingredientRefId": "ingredient-ref-tomato-paste",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-13",
+      "originalText": "1 cup beef broth",
+      "ingredientName": "beef stock",
+      "ingredientRefId": "ingredient-ref-beef-stock",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-14",
+      "originalText": "1 cup frozen peas and carrots",
+      "ingredientName": "peas and carrots",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "frozen"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-15",
+      "originalText": "1/2 cup frozen corn kernels",
+      "ingredientName": "corn kernels",
+      "ingredientRefId": "ingredient-ref-corn-kernels",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "frozen"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-16",
+      "originalText": "1 1/2 to 2 lb russet potatoes, peeled and cut into 1-inch cubes",
+      "ingredientName": "potato",
+      "ingredientRefId": "ingredient-ref-potato",
+      "quantity": 1.5,
+      "unit": "lb",
+      "group": "Mashed Potato Topping",
+      "preparation": "russet, peeled and cut into 1-inch cubes",
+      "notes": "up to 2 lb"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-17",
+      "originalText": "8 tbsp unsalted butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 8,
+      "unit": "tbsp",
+      "group": "Mashed Potato Topping"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-18",
+      "originalText": "1/3 cup half-and-half",
+      "ingredientName": "half-and-half",
+      "ingredientRefId": "ingredient-ref-half-and-half",
+      "quantity": 0.3333333333,
+      "unit": "cup",
+      "group": "Mashed Potato Topping"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-19",
+      "originalText": "1/2 tsp garlic powder",
+      "ingredientName": "garlic powder",
+      "ingredientRefId": "ingredient-ref-garlic-powder",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Mashed Potato Topping"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-20",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Mashed Potato Topping"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-21",
+      "originalText": "1/4 tsp black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 0.25,
+      "unit": "tsp",
+      "group": "Mashed Potato Topping"
+    },
+    {
+      "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-22",
+      "originalText": "1/4 cup Parmesan cheese",
+      "ingredientName": "Parmesan cheese",
+      "ingredientRefId": "ingredient-ref-parmesan-cheese",
+      "quantity": 0.25,
+      "unit": "cup",
+      "group": "Mashed Potato Topping"
+    }
+  ],
+  "servings": {
+    "amount": 6,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 50,
+    "totalTimeMinutes": 70
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-oven",
+    "tag-quebec",
+    "tag-shareable"
+  ],
+  "collections": [
+    "collection-gab-favorites"
+  ],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-d356eec5-b3c4-4e22-b943-63900317e569-0",
+  "photos": [
+    {
+      "id": "photo-d356eec5-b3c4-4e22-b943-63900317e569-0",
+      "relativePath": "photos/d356eec5-b3c4-4e22-b943-63900317e569_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

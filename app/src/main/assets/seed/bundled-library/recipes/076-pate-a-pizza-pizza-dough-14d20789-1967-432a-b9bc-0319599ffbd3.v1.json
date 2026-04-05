@@ -1,0 +1,108 @@
+{
+  "id": "14d20789-1967-432a-b9bc-0319599ffbd3",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/spring-pizzas/"
+  },
+  "languages": {
+    "fr": {
+      "title": "P\u00e2te \u00e0 pizza",
+      "description": "Une p\u00e2te \u00e0 pizza simple et souple pour une pizza de format moyen.",
+      "instructions": "Dans un bol ti\u00e8de, m\u00e9langer l'eau ti\u00e8de, la levure et la moiti\u00e9 du sucre. Laisser reposer environ 7 min, jusqu'\u00e0 ce que le m\u00e9lange mousse.\nDans le bol d'un batteur sur socle, m\u00e9langer la farine, le reste du sucre et le sel.\nAjouter le m\u00e9lange de levure et l'huile d'olive. P\u00e9trir avec le crochet \u00e0 basse vitesse pendant 1 min, puis \u00e0 vitesse moyenne jusqu'\u00e0 l'obtention d'une boule de p\u00e2te lisse.\nD\u00e9poser la p\u00e2te sur un plan de travail l\u00e9g\u00e8rement farin\u00e9 et p\u00e9trir bri\u00e8vement jusqu'\u00e0 ce qu'elle soit souple et \u00e9lastique.\nHuiler l\u00e9g\u00e8rement la boule de p\u00e2te, la d\u00e9poser dans un bol graiss\u00e9, couvrir et laisser lever dans un endroit chaud \u00e0 l'abri des courants d'air pendant environ 1 h, jusqu'\u00e0 ce qu'elle double de volume.\nPr\u00e9chauffer le four \u00e0 230\u00b0C/450\u00b0F.\nD\u00e9gonfler la p\u00e2te et l'abaisser en disque. Badigeonner d'un peu d'huile d'olive, puis garnir de sauce, de fromage et des garnitures de votre choix.\nCuire 12 min \u00e0 15 min, jusqu'\u00e0 ce que la cro\u00fbte soit dor\u00e9e.",
+      "notes": "Le texte source sugg\u00e8re qu'on peut ajouter des herbes s\u00e9ch\u00e9es comme du thym ou du romarin \u00e0 la farine."
+    },
+    "en": {
+      "title": "Pizza Dough",
+      "description": "A simple, pliable pizza dough for one medium pizza.",
+      "instructions": "In a warm bowl, combine the warm water, yeast, and half of the sugar. Let sit for about 7 min, until the mixture looks foamy.\nIn the bowl of a stand mixer, combine the flour, remaining sugar, and salt.\nAdd the yeast mixture and olive oil. Knead with the dough hook on low speed for 1 min, then on medium speed until a smooth dough ball forms.\nTurn the dough out onto a lightly floured work surface and knead briefly until it feels smooth and elastic.\nLightly coat the dough ball with oil, place it in a greased bowl, cover, and let rise in a warm draft-free spot for about 1 h, until doubled in size.\nPreheat the oven to 230\u00b0C/450\u00b0F.\nPunch down the dough and shape it into a round. Brush with a little olive oil, then top with sauce, cheese, and the toppings of your choice.\nBake for 12 min to 15 min, until the crust is golden.",
+      "notes": "The source notes that dried herbs such as thyme or rosemary can be mixed into the flour."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "14d20789-1967-432a-b9bc-0319599ffbd3-ingredient-1",
+      "originalText": "180 ml warm water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 180,
+      "unit": "ml",
+      "preparation": "warm"
+    },
+    {
+      "id": "14d20789-1967-432a-b9bc-0319599ffbd3-ingredient-2",
+      "originalText": "240 g all-purpose flour or bread flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 240,
+      "unit": "g",
+      "notes": "bread flour can be used instead"
+    },
+    {
+      "id": "14d20789-1967-432a-b9bc-0319599ffbd3-ingredient-3",
+      "originalText": "7 g yeast",
+      "ingredientName": "yeast",
+      "ingredientRefId": "ingredient-ref-yeast",
+      "quantity": 7,
+      "unit": "g"
+    },
+    {
+      "id": "14d20789-1967-432a-b9bc-0319599ffbd3-ingredient-4",
+      "originalText": "1 tbsp granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "14d20789-1967-432a-b9bc-0319599ffbd3-ingredient-5",
+      "originalText": "3/4 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "id": "14d20789-1967-432a-b9bc-0319599ffbd3-ingredient-6",
+      "originalText": "1 tbsp olive oil",
+      "ingredientName": "olive oil",
+      "ingredientRefId": "ingredient-ref-olive-oil",
+      "quantity": 1,
+      "unit": "tbsp"
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "pizza"
+  },
+  "times": {
+    "prepTimeMinutes": 75,
+    "cookTimeMinutes": 12,
+    "totalTimeMinutes": 87
+  },
+  "tags": [
+    "tag-dough",
+    "tag-ingredient-component",
+    "tag-italian",
+    "tag-oven",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-14d20789-1967-432a-b9bc-0319599ffbd3-0",
+  "photos": [
+    {
+      "id": "photo-14d20789-1967-432a-b9bc-0319599ffbd3-0",
+      "relativePath": "photos/14d20789-1967-432a-b9bc-0319599ffbd3_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

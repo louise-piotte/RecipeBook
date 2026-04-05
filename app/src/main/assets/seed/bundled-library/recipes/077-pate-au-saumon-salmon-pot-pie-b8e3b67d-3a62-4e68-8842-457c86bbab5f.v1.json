@@ -1,0 +1,148 @@
+{
+  "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Ricardo Cuisine",
+    "sourceUrl": "https://www.ricardocuisine.com/recettes/6174-pate-au-saumon-style-pot-en-pot-de-ricardo"
+  },
+  "languages": {
+    "fr": {
+      "title": "P\u00e2t\u00e9 au saumon",
+      "description": "Des petites tourtes au saumon avec pommes de terre, poireau et une sauce cr\u00e9meuse.",
+      "instructions": "Mettre les pommes de terre dans une petite casserole et couvrir d'eau froide. Saler, porter \u00e0 \u00e9bullition et cuire jusqu'\u00e0 tendret\u00e9. \u00c9goutter et r\u00e9server.\nDans un petit bol, d\u00e9layer la f\u00e9cule de ma\u00efs dans l'eau. R\u00e9server.\nDans une grande casserole, attendrir le poireau et le c\u00e9leri dans le beurre. Saler et poivrer. Saupoudrer de farine et cuire 1 min en remuant.\nAjouter le lait et la cr\u00e8me. Porter \u00e0 \u00e9bullition en fouettant.\nAjouter 450 g du saumon. Ramener \u00e0 \u00e9bullition, puis laisser mijoter 2 min en remuant pour d\u00e9faire le saumon en morceaux. Retirer du feu.\nIncorporer les pommes de terre, le m\u00e9lange de f\u00e9cule et le reste du saumon. Rectifier l'assaisonnement.\nPlacer la grille dans le bas du four et pr\u00e9chauffer le four \u00e0 200\u00b0C/400\u00b0F.\nSur un plan de travail l\u00e9g\u00e8rement farin\u00e9, abaisser la p\u00e2te en 8 disques pour 4 tartelettes de 5 po: 4 abaisses pour le fond et 4 pour le dessus. Foncer 4 moules de 5 po et y r\u00e9partir la garniture.\nBadigeonner les bords avec un peu de lait et couvrir avec les abaisses du dessus. Tailler l'exc\u00e9dent de p\u00e2te au besoin, replier les bords sous la base et sceller avec une fourchette ou avec les doigts. Badigeonner le dessus de lait.\nCuire 40 min, jusqu'\u00e0 ce que la p\u00e2te soit bien dor\u00e9e. Laisser reposer 15 min avant de servir.",
+      "notes": "Utiliser une p\u00e2te \u00e0 tarte maison ou du commerce."
+    },
+    "en": {
+      "title": "Salmon Pot Pie",
+      "description": "Individual salmon pies with potatoes, leek, and a creamy sauce.",
+      "instructions": "Place the potatoes in a small saucepan and cover with cold water. Season with salt, bring to a boil, and cook until tender. Drain and set aside.\nIn a small bowl, stir the cornstarch and water together until smooth. Set aside.\nIn a large saucepan, soften the leek and celery in the butter. Season with salt and pepper. Sprinkle in the flour and cook for 1 min, stirring.\nAdd the milk and cream. Bring to a boil while whisking.\nAdd 450 g of the salmon. Return to a boil, then simmer for 2 min, stirring to break the salmon into flakes. Remove from the heat.\nStir in the potatoes, the cornstarch mixture, and the remaining salmon. Adjust the seasoning.\nPlace the rack in the lowest position and preheat the oven to 200\u00b0C/400\u00b0F.\nOn a lightly floured work surface, roll the dough into 8 rounds for 4 individual 5-inch pies: 4 rounds for the bottoms and 4 for the tops. Line 4 pie tins and divide the filling among them.\nBrush the edges with a little milk and top with the remaining rounds. Trim the excess dough if needed, tuck the edges under, and seal with a fork or your fingers. Brush the tops with milk.\nBake for 40 min, until the crust is deeply golden. Let rest for 15 min before serving.",
+      "notes": "Use homemade or store-bought pie crust."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-1",
+      "originalText": "160 g potatoes, peeled and cut into small dice",
+      "ingredientName": "potato",
+      "ingredientRefId": "ingredient-ref-potato",
+      "quantity": 160,
+      "unit": "g",
+      "preparation": "peeled and cut into small dice"
+    },
+    {
+      "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-2",
+      "originalText": "1 tbsp cornstarch",
+      "ingredientName": "cornstarch",
+      "ingredientRefId": "ingredient-ref-cornstarch",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-3",
+      "originalText": "1 tbsp water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-4",
+      "originalText": "95 g leek, chopped",
+      "ingredientName": "leek",
+      "ingredientRefId": "ingredient-ref-leek",
+      "quantity": 95,
+      "unit": "g",
+      "preparation": "chopped"
+    },
+    {
+      "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-5",
+      "originalText": "1 celery stalk, cut into small dice",
+      "ingredientName": "celery",
+      "ingredientRefId": "ingredient-ref-celery",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "cut into small dice"
+    },
+    {
+      "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-6",
+      "originalText": "85 g unsalted butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 85,
+      "unit": "g"
+    },
+    {
+      "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-7",
+      "originalText": "30 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 30,
+      "unit": "g"
+    },
+    {
+      "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-8",
+      "originalText": "250 ml milk, plus more for brushing",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 250,
+      "unit": "ml",
+      "notes": "plus more for brushing"
+    },
+    {
+      "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-9",
+      "originalText": "60 ml heavy cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 60,
+      "unit": "ml"
+    },
+    {
+      "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-10",
+      "originalText": "675 g salmon fillets without skin, cut into cubes",
+      "ingredientName": "salmon fillets",
+      "ingredientRefId": "ingredient-ref-salmon-fillets-without-skin",
+      "quantity": 675,
+      "unit": "g",
+      "preparation": "without skin, cut into cubes"
+    },
+    {
+      "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-11",
+      "originalText": "Pie crust",
+      "ingredientName": "pie crust",
+      "ingredientRefId": "ingredient-ref-pie-crust",
+      "notes": "enough for 4 individual 5-inch pies with tops and bottoms"
+    }
+  ],
+  "servings": {
+    "amount": 6,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 40,
+    "cookTimeMinutes": 75,
+    "totalTimeMinutes": 115
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-oven",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-b8e3b67d-3a62-4e68-8842-457c86bbab5f-0",
+  "photos": [
+    {
+      "id": "photo-b8e3b67d-3a62-4e68-8842-457c86bbab5f-0",
+      "relativePath": "photos/b8e3b67d-3a62-4e68-8842-457c86bbab5f_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

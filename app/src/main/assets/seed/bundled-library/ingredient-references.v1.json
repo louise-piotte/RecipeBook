@@ -2163,6 +2163,27 @@
     "updatedAt": "2026-03-23T00:00:00Z"
   },
   {
+    "id": "ingredient-ref-peas",
+    "nameFr": "pois",
+    "nameEn": "peas",
+    "aliasesFr": [
+      "petits pois"
+    ],
+    "aliasesEn": [
+      "green peas",
+      "frozen peas"
+    ],
+    "defaultDensity": 0.64,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 145
+      }
+    ],
+    "updatedAt": "2026-04-05T00:00:00Z"
+  },
+  {
     "id": "ingredient-ref-pecans",
     "nameFr": "pacanes",
     "nameEn": "pecans",
