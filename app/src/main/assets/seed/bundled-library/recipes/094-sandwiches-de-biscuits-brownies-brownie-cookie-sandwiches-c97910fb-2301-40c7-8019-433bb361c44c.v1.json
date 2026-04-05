@@ -1,0 +1,247 @@
+{
+  "id": "c97910fb-2301-40c7-8019-433bb361c44c",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Browned Butter Blondie",
+    "sourceUrl": "https://brownedbutterblondie.com/brownie-cookie-sandwiches-with-cookie-dough-buttercream/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Sandwiches de biscuits brownies",
+      "description": "Des biscuits style brownie garnis d'une cr\u00e8me au beurre \u00e0 saveur de p\u00e2te \u00e0 biscuits.",
+      "instructions": "Faire fondre le beurre et le chocolat ensemble au bain-marie \u00e0 feu moyen, en remuant souvent, jusqu'\u00e0 l'obtention d'un m\u00e9lange lisse. Verser dans le bol d'un batteur sur socle muni du fouet et laisser ti\u00e9dir.\nDans un autre bol, fouetter la farine tout usage, la farine \u00e0 pain, le cacao, la poudre \u00e0 p\u00e2te, le bicarbonate de soude et le sel. R\u00e9server.\nAjouter les oeufs, la cassonade et le sucre granul\u00e9 au m\u00e9lange de chocolat. M\u00e9langer \u00e0 vitesse moyenne-douce jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9, puis ajouter la vanille.\nIncorporer les ingr\u00e9dients secs et m\u00e9langer juste assez pour ne plus voir de farine. Couvrir et r\u00e9frig\u00e9rer 30 min.\nPr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F. Tapisser 2 plaques de papier parchemin.\nFormer des portions de p\u00e2te \u00e0 l'aide d'une petite cuill\u00e8re \u00e0 biscuits ou d'une balance, puis les d\u00e9poser sur les plaques en laissant environ 5 cm entre chaque portion.\nCuire de 8 min \u00e0 10 min, jusqu'\u00e0 ce que les bords soient pris et que le centre soit l\u00e9g\u00e8rement gonfl\u00e9 et fendill\u00e9. Laisser refroidir 8 min \u00e0 10 min sur la plaque avant de transf\u00e9rer sur une grille.\nAu besoin, pendant que les biscuits sont encore chauds, utiliser une fourchette ou un emporte-pi\u00e8ce rond pour leur redonner une forme bien circulaire.\nPour la garniture, battre le beurre et la cassonade avec la palette jusqu'\u00e0 consistance l\u00e9g\u00e8re et mousseuse.\nDans un petit bol, fouetter ensemble le sucre \u00e0 glacer et la farine. Ajouter ce m\u00e9lange au beurre un peu \u00e0 la fois en battant \u00e0 basse vitesse. Quand tout est incorpor\u00e9, battre 1 min \u00e0 vitesse moyenne.\nAjouter la vanille et le sel, puis incorporer la cr\u00e8me 35 % 1 cuill\u00e8re \u00e0 soupe \u00e0 la fois jusqu'\u00e0 obtenir une cr\u00e8me lisse et assez ferme pour \u00eatre poch\u00e9e.\nPocher ou tartiner la garniture sur le c\u00f4t\u00e9 plat d'un biscuit et couvrir avec un deuxi\u00e8me biscuit. R\u00e9frig\u00e9rer bri\u00e8vement si les sandwichs ont besoin de raffermir avant le service.",
+      "notes": "Pour une farine s\u00e9curitaire dans la garniture, la source recommande de la traiter thermiquement avant usage.\nLe rendement correspond \u00e0 environ 18 \u00e0 20 biscuits, soit 9 \u00e0 10 sandwichs."
+    },
+    "en": {
+      "title": "Brownie Cookie Sandwiches",
+      "description": "Brownie-style cookies filled with a cookie-dough buttercream.",
+      "instructions": "Melt the butter and chocolate together over a double boiler on medium heat, stirring often, until smooth. Pour the mixture into the bowl of a stand mixer fitted with the whisk attachment and let it cool slightly.\nIn another bowl, whisk together the all-purpose flour, bread flour, cocoa powder, baking powder, baking soda, and salt. Set aside.\nAdd the eggs, brown sugar, and granulated sugar to the chocolate mixture. Mix on medium-low speed until combined, then add the vanilla.\nAdd the dry ingredients and mix just until no streaks of flour remain. Cover and chill for 30 min.\nPreheat the oven to 177\u00b0C/350\u00b0F. Line 2 baking sheets with parchment paper.\nPortion the dough with a small cookie scoop or scale, then place the dough balls on the baking sheets about 2 inches apart.\nBake for 8 min to 10 min, until the edges are set and the centers are slightly puffed and cracked. Cool on the baking sheets for 8 min to 10 min before transferring to a wire rack.\nIf needed, while the cookies are still warm, use a fork or a round cutter to nudge them into neat circles.\nFor the filling, beat the butter and brown sugar with the paddle attachment until light and fluffy.\nIn a small bowl, whisk together the confectioners' sugar and flour. Add the mixture to the butter a little at a time on low speed. Once everything is incorporated, beat for 1 min on medium speed.\nAdd the vanilla and salt, then add the heavy cream 1 tablespoon at a time until the buttercream is smooth and firm enough to pipe.\nPipe or spread the filling onto the flat side of one cookie and top with a second cookie. Chill briefly if the sandwiches need to firm up before serving.",
+      "notes": "For a food-safe filling, the source recommends heat-treating the flour before using it.\nThis makes about 18 to 20 cookies, or 9 to 10 sandwiches."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-1",
+      "originalText": "113 g unsalted butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 113,
+      "unit": "g",
+      "group": "Cookies"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-2",
+      "originalText": "9 oz bittersweet chocolate",
+      "ingredientName": "bittersweet chocolate",
+      "ingredientRefId": "ingredient-ref-bittersweet-chocolate",
+      "quantity": 9,
+      "unit": "oz",
+      "notes": "Chocolate chips or chopped chocolate",
+      "group": "Cookies"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-3",
+      "originalText": "175 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 175,
+      "unit": "g",
+      "group": "Cookies"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-4",
+      "originalText": "100 g light brown sugar, packed",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 100,
+      "unit": "g",
+      "preparation": "packed",
+      "group": "Cookies"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-5",
+      "originalText": "3 large eggs, room temperature",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 3,
+      "unit": "large egg",
+      "preparation": "room temperature",
+      "group": "Cookies"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-6",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Cookies"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-7",
+      "originalText": "125 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 125,
+      "unit": "g",
+      "group": "Cookies"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-8",
+      "originalText": "95 g bread flour",
+      "ingredientName": "bread flour",
+      "ingredientRefId": "ingredient-ref-bread-flour",
+      "quantity": 95,
+      "unit": "g",
+      "group": "Cookies"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-9",
+      "originalText": "25 g Dutch-process cocoa powder, sifted",
+      "ingredientName": "dutch-process cocoa powder",
+      "ingredientRefId": "ingredient-ref-dutch-process-cocoa-powder",
+      "quantity": 25,
+      "unit": "g",
+      "preparation": "sifted",
+      "group": "Cookies"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-10",
+      "originalText": "1 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Cookies"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-11",
+      "originalText": "1 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Cookies"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-12",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Cookies"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-13",
+      "originalText": "170 g unsalted butter, room temperature",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 170,
+      "unit": "g",
+      "preparation": "room temperature",
+      "group": "Filling"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-14",
+      "originalText": "100 g brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 100,
+      "unit": "g",
+      "group": "Filling"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-15",
+      "originalText": "300 g icing sugar, sifted",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 300,
+      "unit": "g",
+      "preparation": "sifted",
+      "group": "Filling"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-16",
+      "originalText": "65 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 65,
+      "unit": "g",
+      "group": "Filling"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-17",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Filling"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-18",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Filling"
+    },
+    {
+      "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-19",
+      "originalText": "3 to 4 tbsp heavy cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 3,
+      "unit": "tbsp",
+      "notes": "Add up to 4 tbsp as needed",
+      "group": "Filling"
+    }
+  ],
+  "servings": {
+    "amount": 10,
+    "unit": "sandwiches"
+  },
+  "times": {
+    "prepTimeMinutes": 30,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 40
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cookies",
+    "tag-stand-mixer",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-c97910fb-2301-40c7-8019-433bb361c44c-0",
+  "photos": [
+    {
+      "id": "photo-c97910fb-2301-40c7-8019-433bb361c44c-0",
+      "relativePath": "photos/c97910fb-2301-40c7-8019-433bb361c44c_0.jpg"
+    },
+    {
+      "id": "photo-c97910fb-2301-40c7-8019-433bb361c44c-1",
+      "relativePath": "photos/c97910fb-2301-40c7-8019-433bb361c44c_1.jpg"
+    },
+    {
+      "id": "photo-c97910fb-2301-40c7-8019-433bb361c44c-2",
+      "relativePath": "photos/c97910fb-2301-40c7-8019-433bb361c44c_2.jpg"
+    },
+    {
+      "id": "photo-c97910fb-2301-40c7-8019-433bb361c44c-3",
+      "relativePath": "photos/c97910fb-2301-40c7-8019-433bb361c44c_3.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

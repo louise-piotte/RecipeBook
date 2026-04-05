@@ -1,0 +1,216 @@
+{
+  "id": "0bc95db3-300b-4594-88ca-ade36c66cde1",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Sally's Baking Addiction",
+    "sourceUrl": "https://sallysbakingaddiction.com/red-velvet-layer-cake-with-cream-cheese-frosting/"
+  },
+  "languages": {
+    "fr": {
+      "title": "G\u00e2teau Red Velvet au gla\u00e7age au fromage \u00e0 la cr\u00e8me",
+      "description": "Un g\u00e2teau Red Velvet moelleux en deux \u00e9tages, au babeurre et au cacao, garni d'un gla\u00e7age au fromage \u00e0 la cr\u00e8me.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F. Beurrer 2 moules ronds de 9 po, les tapisser de cercles de papier parchemin, puis beurrer le papier.\nDans un grand bol, fouetter la farine \u00e0 g\u00e2teau, le bicarbonate de soude, le cacao et le sel. R\u00e9server.\nAu batteur \u00e0 main ou sur socle muni d'une palette, battre le beurre et le sucre \u00e0 vitesse moyenne-\u00e9lev\u00e9e pendant environ 1 min, juste assez pour bien les combiner.\nAjouter l'huile, les jaunes d'\u0153ufs, la vanille et le vinaigre, puis battre \u00e0 haute vitesse pendant 2 min. Racler le bol au besoin.\n\u00c0 basse vitesse, incorporer les ingr\u00e9dients secs en 2 ou 3 ajouts en alternant avec le babeurre. Ajouter le colorant alimentaire jusqu'\u00e0 l'obtention d'une couleur rouge soutenue.\nDans un autre bol, fouetter les blancs d'\u0153ufs jusqu'\u00e0 la formation de pics mousseux, environ 3 min. Les incorporer d\u00e9licatement \u00e0 la p\u00e2te.\nR\u00e9partir la p\u00e2te entre les moules. Cuire de 30 min \u00e0 32 min, jusqu'\u00e0 ce que le dessus reprenne sa forme sous une l\u00e9g\u00e8re pression et qu'un cure-dent ins\u00e9r\u00e9 au centre en ressorte propre. Laisser refroidir compl\u00e8tement dans les moules sur une grille.\nPour le gla\u00e7age, battre le fromage \u00e0 la cr\u00e8me et le beurre jusqu'\u00e0 consistance lisse, environ 2 min. Ajouter le sucre \u00e0 glacer, la vanille et une pinc\u00e9e de sel. Battre 30 sec \u00e0 basse vitesse, puis 3 min \u00e0 haute vitesse jusqu'\u00e0 consistance cr\u00e9meuse. Ajuster avec plus de sucre \u00e0 glacer ou une autre pinc\u00e9e de sel au besoin.\nAu besoin, niveler le dessus des g\u00e2teaux refroidis. D\u00e9poser un \u00e9tage sur une assiette, couvrir le dessus de gla\u00e7age, ajouter le deuxi\u00e8me \u00e9tage, puis glacer le dessus et les c\u00f4t\u00e9s.\nR\u00e9frig\u00e9rer le g\u00e2teau de 30 min \u00e0 60 min avant de le trancher. Conserver les restes bien couverts au r\u00e9frig\u00e9rateur jusqu'\u00e0 5 jours.",
+      "notes": "Utiliser du colorant rouge liquide ou en gel selon ce qui est disponible.\nLes blancs d'\u0153ufs fouett\u00e9s gardent la mie plus l\u00e9g\u00e8re."
+    },
+    "en": {
+      "title": "Red Velvet Cake with Cream Cheese Frosting",
+      "description": "A soft two-layer red velvet cake with buttermilk and cocoa, finished with cream cheese frosting.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F. Grease 2 nine-inch round cake pans, line them with parchment paper rounds, then grease the parchment.\nIn a large bowl, whisk together the cake flour, baking soda, cocoa powder, and salt. Set aside.\nUsing a hand mixer or stand mixer fitted with a paddle attachment, beat the butter and sugar on medium-high speed for about 1 min, just until combined.\nAdd the oil, egg yolks, vanilla, and vinegar, then beat on high speed for 2 min. Scrape down the bowl as needed.\nWith the mixer on low speed, add the dry ingredients in 2 or 3 additions alternating with the buttermilk. Add the food coloring until the batter reaches a deep red color.\nIn another bowl, whisk the egg whites until fluffy peaks form, about 3 min. Gently fold them into the batter.\nDivide the batter between the pans. Bake for 30 min to 32 min, until the tops spring back when lightly touched and a toothpick inserted in the center comes out clean. Cool completely in the pans set on a wire rack.\nFor the frosting, beat the cream cheese and butter together until smooth, about 2 min. Add the confectioners' sugar, vanilla, and a pinch of salt. Beat on low speed for 30 sec, then on high speed for 3 min until creamy. Adjust with more confectioners' sugar or another pinch of salt if needed.\nIf needed, level the cooled cakes. Place one layer on a serving plate, spread frosting over the top, add the second layer, then frost the top and sides.\nRefrigerate the cake for 30 min to 60 min before slicing. Store leftovers tightly covered in the refrigerator for up to 5 days.",
+      "notes": "Use liquid or gel red food coloring depending on what you have.\nWhipped egg whites help keep the crumb lighter."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-1",
+      "originalText": "360 g cake flour",
+      "ingredientName": "cake flour",
+      "ingredientRefId": "ingredient-ref-cake-flour",
+      "quantity": 360,
+      "unit": "g",
+      "group": "Cake"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-2",
+      "originalText": "1 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-3",
+      "originalText": "10 g unsweetened natural cocoa powder",
+      "ingredientName": "unsweetened cocoa powder",
+      "ingredientRefId": "ingredient-ref-unsweetened-cocoa-powder",
+      "quantity": 10,
+      "unit": "g",
+      "notes": "Natural cocoa powder",
+      "group": "Cake"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-4",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-5",
+      "originalText": "113 g unsalted butter, softened to room temperature",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 113,
+      "unit": "g",
+      "preparation": "softened to room temperature",
+      "group": "Cake"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-6",
+      "originalText": "400 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 400,
+      "unit": "g",
+      "group": "Cake"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-7",
+      "originalText": "240 ml vegetable oil",
+      "ingredientName": "vegetable oil",
+      "ingredientRefId": "ingredient-ref-vegetable-oil",
+      "quantity": 240,
+      "unit": "ml",
+      "notes": "Canola oil also works",
+      "group": "Cake"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-8",
+      "originalText": "4 large eggs, separated",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 4,
+      "unit": "large egg",
+      "preparation": "separated",
+      "group": "Cake"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-9",
+      "originalText": "1 tbsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tbsp",
+      "group": "Cake"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-10",
+      "originalText": "1 tsp white vinegar",
+      "ingredientName": "white vinegar",
+      "ingredientRefId": "ingredient-ref-white-vinegar",
+      "quantity": 1,
+      "unit": "tsp",
+      "notes": "Distilled white vinegar",
+      "group": "Cake"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-11",
+      "originalText": "Red food coloring, as needed",
+      "ingredientName": "food coloring",
+      "ingredientRefId": "ingredient-ref-food-coloring",
+      "notes": "Liquid or gel red food coloring, to desired color",
+      "group": "Cake"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-12",
+      "originalText": "240 ml buttermilk, room temperature",
+      "ingredientName": "buttermilk",
+      "ingredientRefId": "ingredient-ref-buttermilk",
+      "quantity": 240,
+      "unit": "ml",
+      "preparation": "room temperature",
+      "group": "Cake"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-13",
+      "originalText": "452 g cream cheese, softened to room temperature",
+      "ingredientName": "cream cheese",
+      "ingredientRefId": "ingredient-ref-cream-cheese",
+      "quantity": 452,
+      "unit": "g",
+      "preparation": "softened to room temperature",
+      "group": "Frosting"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-14",
+      "originalText": "170 g unsalted butter, softened to room temperature",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 170,
+      "unit": "g",
+      "preparation": "softened to room temperature",
+      "group": "Frosting"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-15",
+      "originalText": "600 g icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 600,
+      "unit": "g",
+      "group": "Frosting"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-16",
+      "originalText": "1 1/2 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1.5,
+      "unit": "tsp",
+      "group": "Frosting"
+    },
+    {
+      "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-17",
+      "originalText": "Pinch of salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "notes": "To taste",
+      "group": "Frosting"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 30,
+    "cookTimeMinutes": 30,
+    "totalTimeMinutes": 60
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake",
+    "tag-stand-mixer",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 0
+  },
+  "mainPhotoId": "photo-0bc95db3-300b-4594-88ca-ade36c66cde1-0",
+  "photos": [
+    {
+      "id": "photo-0bc95db3-300b-4594-88ca-ade36c66cde1-0",
+      "relativePath": "photos/0bc95db3-300b-4594-88ca-ade36c66cde1_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

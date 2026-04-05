@@ -1,0 +1,121 @@
+{
+  "id": "80ae1de5-0430-4ea0-8109-94b0dcc8453e",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "That Skinny Chick Can Bake",
+    "sourceUrl": "https://www.thatskinnychickcanbake.com/red-velvet-fudge/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Fudge Red Velvet",
+      "description": "Un fudge Red Velvet marbr\u00e9 au chocolat blanc et au chocolat mi-sucr\u00e9.",
+      "instructions": "Tapisser un moule carr\u00e9 de 9 po de papier d'aluminium antiadh\u00e9sif ou de papier parchemin. R\u00e9server.\nD\u00e9poser le chocolat mi-sucr\u00e9 et le colorant alimentaire rouge dans un bol r\u00e9sistant \u00e0 la chaleur. R\u00e9server.\nDans une grande casserole \u00e0 fond \u00e9pais, m\u00e9langer le sucre, le beurre et la cr\u00e8me moiti\u00e9-moiti\u00e9. Cuire en remuant de temps en temps jusqu'\u00e0 112\u00b0C/234\u00b0F.\nRetirer du feu et ajouter imm\u00e9diatement le chocolat blanc, la cr\u00e8me de guimauve et la vanille. Remuer jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9.\nVerser la moiti\u00e9 du m\u00e9lange dans le bol contenant le chocolat mi-sucr\u00e9 et le colorant, puis m\u00e9langer jusqu'\u00e0 ce que le chocolat soit fondu et lisse.\nD\u00e9poser des cuiller\u00e9es du fudge rouge et du fudge blanc dans le moule pr\u00e9par\u00e9 en alternant les couleurs.\nLaisser tomber doucement le moule sur le comptoir \u00e0 quelques reprises pour chasser les bulles d'air. Marbrer d\u00e9licatement avec un couteau.\nLaisser refroidir \u00e0 temp\u00e9rature ambiante. D\u00e9mouler, puis couper en carr\u00e9s.",
+      "notes": "La recette donne un grand plateau de petits carr\u00e9s.\nCouper en plus gros morceaux si le fudge est servi en dessert plut\u00f4t qu'en assortiment."
+    },
+    "en": {
+      "title": "Red Velvet Fudge",
+      "description": "A marbled red velvet fudge with white chocolate and semisweet chocolate.",
+      "instructions": "Line a 9-inch square pan with nonstick foil or parchment paper. Set aside.\nPlace the semisweet chocolate and red food coloring in a heatproof bowl. Set aside.\nIn a large heavy-bottomed saucepan, combine the sugar, butter, and half-and-half. Cook, stirring occasionally, until the mixture reaches 112\u00b0C/234\u00b0F.\nRemove from the heat and immediately add the white chocolate, marshmallow creme, and vanilla. Stir until smooth.\nPour half of the mixture into the bowl with the semisweet chocolate and food coloring, then stir until the chocolate is melted and smooth.\nDrop spoonfuls of the red and white fudge into the prepared pan, alternating the colors.\nGently drop the pan on the counter a few times to remove air pockets. Swirl lightly with a knife for a marbled finish.\nCool at room temperature. Lift out of the pan and cut into squares.",
+      "notes": "This makes a full tray of small squares.\nCut larger pieces if you are serving it as dessert instead of as part of a holiday assortment."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "80ae1de5-0430-4ea0-8109-94b0dcc8453e-ingredient-1",
+      "originalText": "3 cups sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 3,
+      "unit": "cup"
+    },
+    {
+      "id": "80ae1de5-0430-4ea0-8109-94b0dcc8453e-ingredient-2",
+      "originalText": "1/2 cup butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "80ae1de5-0430-4ea0-8109-94b0dcc8453e-ingredient-3",
+      "originalText": "2/3 cup half-and-half",
+      "ingredientName": "half-and-half",
+      "ingredientRefId": "ingredient-ref-half-and-half",
+      "quantity": 0.6667,
+      "unit": "cup"
+    },
+    {
+      "id": "80ae1de5-0430-4ea0-8109-94b0dcc8453e-ingredient-4",
+      "originalText": "12 oz white chocolate",
+      "ingredientName": "white chocolate",
+      "ingredientRefId": "ingredient-ref-white-chocolate",
+      "quantity": 12,
+      "unit": "oz"
+    },
+    {
+      "id": "80ae1de5-0430-4ea0-8109-94b0dcc8453e-ingredient-5",
+      "originalText": "7 oz marshmallow creme",
+      "ingredientName": "marshmallow creme",
+      "ingredientRefId": "ingredient-ref-marshmallow-creme",
+      "quantity": 7,
+      "unit": "oz"
+    },
+    {
+      "id": "80ae1de5-0430-4ea0-8109-94b0dcc8453e-ingredient-6",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "80ae1de5-0430-4ea0-8109-94b0dcc8453e-ingredient-7",
+      "originalText": "1 cup semisweet chocolate",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "80ae1de5-0430-4ea0-8109-94b0dcc8453e-ingredient-8",
+      "originalText": "3 tbsp red food coloring",
+      "ingredientName": "food coloring",
+      "ingredientRefId": "ingredient-ref-food-coloring",
+      "quantity": 3,
+      "unit": "tbsp",
+      "notes": "Red"
+    }
+  ],
+  "servings": {
+    "amount": 81,
+    "unit": "squares"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 30,
+    "totalTimeMinutes": 45
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-fudge",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-80ae1de5-0430-4ea0-8109-94b0dcc8453e-0",
+  "photos": [
+    {
+      "id": "photo-80ae1de5-0430-4ea0-8109-94b0dcc8453e-0",
+      "relativePath": "photos/80ae1de5-0430-4ea0-8109-94b0dcc8453e_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

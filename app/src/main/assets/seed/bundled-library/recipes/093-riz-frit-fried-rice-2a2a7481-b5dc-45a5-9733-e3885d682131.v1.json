@@ -1,0 +1,96 @@
+{
+  "id": "2a2a7481-b5dc-45a5-9733-e3885d682131",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Riz frit",
+      "description": "Un riz frit simple pour utiliser du riz cuit, des l\u00e9gumes et des restes de viande ou de fruits de mer.",
+      "instructions": "Chauffer un wok ou une grande po\u00eale \u00e0 feu moyen-vif. Faire revenir l'oignon et les l\u00e9gumes jusqu'\u00e0 ce qu'ils soient tendres et l\u00e9g\u00e8rement dor\u00e9s.\nAjouter la viande pr\u00e9cuite et le riz cuit. Cuire jusqu'\u00e0 ce que le tout soit bien chaud et commence \u00e0 griller un peu.\nAjouter l'oeuf et m\u00e9langer imm\u00e9diatement pour qu'il enrobe le plus possible le m\u00e9lange, sans former de gros morceaux.\nAjouter la sauce de poisson et poursuivre la cuisson jusqu'\u00e0 ce que l'oeuf soit compl\u00e8tement cuit.\nServir d\u00e8s que le riz est bien chaud et que les grains sont l\u00e9g\u00e8rement grill\u00e9s.",
+      "notes": "Le meilleur r\u00e9sultat se fait avec du riz cuit la veille ou laiss\u00e9 au frigo plusieurs heures.\nUtiliser les l\u00e9gumes qui se sautent bien. \u00c9viter les tomates, qui rendent le m\u00e9lange trop humide.\nDes restes de viande ou des fruits de mer fonctionnent bien. Ajouter d'autres assaisonnements au besoin selon les ingr\u00e9dients choisis."
+    },
+    "en": {
+      "title": "Fried Rice",
+      "description": "A simple fried rice for using cooked rice, vegetables, and leftover meat or seafood.",
+      "instructions": "Heat a wok or large skillet over medium-high heat. Cook the onion and vegetables until tender and lightly browned.\nAdd the cooked meat and cooked rice. Stir-fry until everything is hot and starts to toast a little.\nAdd the egg and mix immediately so it coats as much of the mixture as possible without forming large egg pieces.\nAdd the fish sauce and keep cooking until the egg is fully cooked.\nServe as soon as the rice is hot and the grains are lightly toasted.",
+      "notes": "This works best with rice cooked the day before or chilled for several hours.\nUse vegetables that saute well. Avoid tomatoes because they add too much moisture.\nLeftover meat or seafood both work well. Add extra seasoning as needed to match the ingredients you chose."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "2a2a7481-b5dc-45a5-9733-e3885d682131-ingredient-1",
+      "originalText": "1/3 cup cooked rice",
+      "ingredientName": "rice",
+      "ingredientRefId": "ingredient-ref-rice",
+      "quantity": 0.3333,
+      "unit": "cup",
+      "notes": "Cooked"
+    },
+    {
+      "id": "2a2a7481-b5dc-45a5-9733-e3885d682131-ingredient-2",
+      "originalText": "1/2 onion",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 0.5,
+      "unit": "count"
+    },
+    {
+      "id": "2a2a7481-b5dc-45a5-9733-e3885d682131-ingredient-3",
+      "originalText": "Vegetables, to taste",
+      "ingredientName": "vegetables",
+      "notes": "Use vegetables that saute well"
+    },
+    {
+      "id": "2a2a7481-b5dc-45a5-9733-e3885d682131-ingredient-4",
+      "originalText": "Cooked meat or seafood, to taste",
+      "ingredientName": "cooked meat or seafood",
+      "notes": "Use leftovers if available"
+    },
+    {
+      "id": "2a2a7481-b5dc-45a5-9733-e3885d682131-ingredient-5",
+      "originalText": "1 egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "large egg"
+    },
+    {
+      "id": "2a2a7481-b5dc-45a5-9733-e3885d682131-ingredient-6",
+      "originalText": "2 tbsp fish sauce",
+      "ingredientName": "fish sauce",
+      "ingredientRefId": "ingredient-ref-fish-sauce",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "servings": {
+    "amount": 2,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 0,
+    "cookTimeMinutes": 15,
+    "totalTimeMinutes": 15
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-chinese"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-2a2a7481-b5dc-45a5-9733-e3885d682131-0",
+  "photos": [
+    {
+      "id": "photo-2a2a7481-b5dc-45a5-9733-e3885d682131-0",
+      "relativePath": "photos/2a2a7481-b5dc-45a5-9733-e3885d682131_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

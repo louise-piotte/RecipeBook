@@ -1,0 +1,151 @@
+{
+  "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Satay",
+      "description": "Des brochettes de porc marin\u00e9es cuites sous vide, servies avec une sauce aux arachides.",
+      "instructions": "Pr\u00e9chauffer le bain-marie sous vide \u00e0 57\u00b0C/134.6\u00b0F.\nDans une grande tasse \u00e0 mesurer, fouetter le lait de coco, la cassonade, la p\u00e2te de cari rouge, la sauce de poisson, la sauce soja, le jus de lime, le curcuma, le cumin et la coriandre.\nD\u00e9poser le porc et la marinade dans un grand sac refermable allant au cong\u00e9lateur. Bien masser pour enrober la viande, puis sceller avec la m\u00e9thode du d\u00e9placement d'eau en gardant le porc en une couche aussi uniforme que possible.\nQuand l'eau a atteint la temp\u00e9rature, cuire le sac compl\u00e8tement immerg\u00e9 pendant 1 h 30 min.\nRetirer le sac du bain-marie et laisser reposer 5 min. Verser le liquide dans une petite casserole et transf\u00e9rer le porc dans une assiette. Enfiler les morceaux sur des brochettes.\nPorter le liquide \u00e0 fr\u00e9missement \u00e0 feu moyen, puis fouetter le beurre d'arachide. Cuire en remuant souvent jusqu'\u00e0 ce que la sauce \u00e9paississe, environ 4 min. R\u00e9server.\nPr\u00e9chauffer une po\u00eale \u00e0 griller \u00e0 feu moyen-vif et l'huiler l\u00e9g\u00e8rement.\nFaire griller les brochettes environ 2 min de chaque c\u00f4t\u00e9, jusqu'\u00e0 ce qu'elles soient bien dor\u00e9es. Servir avec la sauce.",
+      "notes": "Variante poulet : remplacer le porc par des poitrines de poulet d\u00e9soss\u00e9es et sans peau coup\u00e9es contre le grain en lani\u00e8res de 1 po, puis cuire sous vide \u00e0 60\u00b0C/140\u00b0F pendant 1 h 30 min.\nVariante tempeh : remplacer le porc par du tempeh coup\u00e9 en lani\u00e8res de 1 po, puis cuire sous vide \u00e0 88\u00b0C/190\u00b0F pendant 3 h."
+    },
+    "en": {
+      "title": "Satay",
+      "description": "Sous vide marinated pork skewers served with a peanut dipping sauce.",
+      "instructions": "Preheat the sous vide water bath to 57\u00b0C/134.6\u00b0F.\nIn a large measuring cup, whisk together the coconut milk, brown sugar, red curry paste, fish sauce, soy sauce, lime juice, turmeric, cumin, and coriander.\nPlace the pork and marinade in a large freezer-safe zip bag. Massage well to coat the meat, then seal using the water displacement method while keeping the pork in as even a layer as possible.\nWhen the water is at temperature, cook the fully submerged bag for 1 h 30 min.\nRemove the bag from the water bath and let it rest for 5 min. Pour the cooking liquid into a small saucepan and transfer the pork to a plate. Thread the pieces onto skewers.\nBring the liquid to a simmer over medium heat, then whisk in the peanut butter. Cook, stirring often, until the sauce thickens, about 4 min. Set aside.\nPreheat a grill pan over medium-high heat and lightly oil it.\nGrill the skewers for about 2 min per side, until deeply browned. Serve with the sauce.",
+      "notes": "Chicken variation: replace the pork with skinless boneless chicken breasts cut across the grain into 1-inch strips, then cook sous vide at 60\u00b0C/140\u00b0F for 1 h 30 min.\nTempeh variation: replace the pork with tempeh cut into 1-inch strips, then cook sous vide at 88\u00b0C/190\u00b0F for 3 h."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-1",
+      "originalText": "1 lb boneless pork loin chops, cut into diagonal strips",
+      "ingredientName": "pork loin chops",
+      "ingredientRefId": "ingredient-ref-pork-loin-chops",
+      "quantity": 1,
+      "unit": "lb",
+      "preparation": "boneless and cut into diagonal strips"
+    },
+    {
+      "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-2",
+      "originalText": "1/2 cup canned coconut milk",
+      "ingredientName": "coconut milk",
+      "ingredientRefId": "ingredient-ref-coconut-milk",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-3",
+      "originalText": "2 tbsp brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-4",
+      "originalText": "1 to 2 tbsp red curry paste",
+      "ingredientName": "red curry paste",
+      "ingredientRefId": "ingredient-ref-red-curry-paste",
+      "quantity": 1,
+      "unit": "tbsp",
+      "notes": "Use up to 2 tbsp to taste"
+    },
+    {
+      "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-5",
+      "originalText": "1 tbsp fish sauce",
+      "ingredientName": "fish sauce",
+      "ingredientRefId": "ingredient-ref-fish-sauce",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-6",
+      "originalText": "1 tbsp soy sauce",
+      "ingredientName": "soy sauce",
+      "ingredientRefId": "ingredient-ref-soy-sauce",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-7",
+      "originalText": "1 tbsp fresh lime juice",
+      "ingredientName": "lime juice",
+      "ingredientRefId": "ingredient-ref-lime-juice",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-8",
+      "originalText": "1 1/2 tsp ground turmeric",
+      "ingredientName": "turmeric",
+      "ingredientRefId": "ingredient-ref-turmeric",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-9",
+      "originalText": "1/2 tsp ground cumin",
+      "ingredientName": "ground cumin",
+      "ingredientRefId": "ingredient-ref-ground-cumin",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-10",
+      "originalText": "1/2 tsp ground coriander",
+      "ingredientName": "coriander",
+      "ingredientRefId": "ingredient-ref-coriander",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "notes": "Ground"
+    },
+    {
+      "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-11",
+      "originalText": "2 tbsp peanut butter",
+      "ingredientName": "peanut butter",
+      "ingredientRefId": "ingredient-ref-peanut-butter",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 90,
+    "totalTimeMinutes": 110
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-sous-vide",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-0",
+  "photos": [
+    {
+      "id": "photo-9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-0",
+      "relativePath": "photos/9ec0ba36-1f7e-47d0-aedc-22ca03a5c672_0.jpg"
+    },
+    {
+      "id": "photo-9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-1",
+      "relativePath": "photos/9ec0ba36-1f7e-47d0-aedc-22ca03a5c672_1.jpg"
+    },
+    {
+      "id": "photo-9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-2",
+      "relativePath": "photos/9ec0ba36-1f7e-47d0-aedc-22ca03a5c672_2.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}
