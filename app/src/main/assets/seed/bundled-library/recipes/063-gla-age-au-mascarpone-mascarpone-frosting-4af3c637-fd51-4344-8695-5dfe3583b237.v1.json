@@ -1,0 +1,96 @@
+{
+  "id": "4af3c637-fd51-4344-8695-5dfe3583b237",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Self Proclaimed Foodie",
+    "sourceUrl": "https://selfproclaimedfoodie.com/mascarpone-frosting/#wprm-recipe-container-35652"
+  },
+  "languages": {
+    "fr": {
+      "title": "Gla\u00e7age au mascarpone",
+      "description": "Un gla\u00e7age au mascarpone riche et l\u00e9ger, parfum\u00e9 \u00e0 la vanille et \u00e0 l'amande.",
+      "instructions": "Mettre le mascarpone dans le bol d'un batteur muni du fouet et battre \u00e0 vitesse moyenne.\nAjouter l'extrait d'amande, la vanille et le sucre \u00e0 glacer, puis racler les parois du bol au besoin. Continuer \u00e0 battre jusqu'\u00e0 ce que le m\u00e9lange soit l\u00e9ger et mousseux.\nAvec le batteur \u00e0 haute vitesse, verser lentement la cr\u00e8me \u00e0 fouetter froide et battre de 1 min \u00e0 3 min, jusqu'\u00e0 ce que le gla\u00e7age soit l\u00e9ger et bien fouett\u00e9.",
+      "notes": "Ne pas trop m\u00e9langer."
+    },
+    "en": {
+      "title": "Mascarpone Frosting",
+      "description": "A rich yet airy mascarpone frosting flavored with vanilla and almond.",
+      "instructions": "Place the mascarpone in the bowl of a mixer fitted with the whisk attachment and beat on medium speed.\nAdd the almond extract, vanilla, and icing sugar, scraping down the bowl as needed. Continue beating until the mixture is light and fluffy.\nWith the mixer running on high speed, slowly pour in the cold whipping cream and beat for 1 min to 3 min, until the frosting is light and whipped.",
+      "notes": "Do not overmix."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "4af3c637-fd51-4344-8695-5dfe3583b237-ingredient-1",
+      "originalText": "8 oz mascarpone",
+      "ingredientName": "mascarpone",
+      "ingredientRefId": "ingredient-ref-mascarpone",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "id": "4af3c637-fd51-4344-8695-5dfe3583b237-ingredient-2",
+      "originalText": "1 cup icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "4af3c637-fd51-4344-8695-5dfe3583b237-ingredient-3",
+      "originalText": "1 cup cold heavy whipping cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "cold"
+    },
+    {
+      "id": "4af3c637-fd51-4344-8695-5dfe3583b237-ingredient-4",
+      "originalText": "1/2 tsp almond extract",
+      "ingredientName": "almond extract",
+      "ingredientRefId": "ingredient-ref-almond-extract",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "4af3c637-fd51-4344-8695-5dfe3583b237-ingredient-5",
+      "originalText": "1 tbsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tbsp"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 5,
+    "totalTimeMinutes": 10
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-frosting"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-4af3c637-fd51-4344-8695-5dfe3583b237-0",
+  "photos": [
+    {
+      "id": "photo-4af3c637-fd51-4344-8695-5dfe3583b237-0",
+      "relativePath": "photos/4af3c637-fd51-4344-8695-5dfe3583b237_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

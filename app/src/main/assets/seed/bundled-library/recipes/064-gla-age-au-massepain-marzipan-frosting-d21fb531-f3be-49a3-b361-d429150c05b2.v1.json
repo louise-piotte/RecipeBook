@@ -1,0 +1,90 @@
+{
+  "id": "d21fb531-f3be-49a3-b361-d429150c05b2",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Odense",
+    "sourceUrl": "https://odense.com/odense-recipes/marzipan-frosting-recipe/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Gla\u00e7age au massepain",
+      "description": "Un gla\u00e7age au massepain lisse et souple au go\u00fbt d'amande.",
+      "instructions": "Mettre le massepain r\u00e2p\u00e9 et le beurre dans un bol moyen. Battre \u00e0 basse vitesse jusqu'\u00e0 ce que le tout soit combin\u00e9, puis augmenter la vitesse et battre jusqu'\u00e0 l'obtention d'une p\u00e2te lisse.\nAjouter le sucre \u00e0 glacer et l'eau chaude. Battre \u00e0 basse vitesse jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9, puis \u00e0 haute vitesse jusqu'\u00e0 ce que le gla\u00e7age soit lisse.\nSi le gla\u00e7age est trop ferme, ajouter de l'eau chaude 1 cuill\u00e8re \u00e0 th\u00e9 \u00e0 la fois jusqu'\u00e0 obtenir la consistance voulue.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Marzipan Frosting",
+      "description": "A smooth, spreadable almond-flavored marzipan frosting.",
+      "instructions": "Add the grated marzipan and butter to a medium bowl. Beat on low speed until combined, then increase the speed and beat until the mixture forms a smooth paste.\nAdd the icing sugar and hot water. Beat on low speed until combined, then on high speed until the frosting is smooth.\nIf the frosting is too stiff, add hot water 1 teaspoon at a time until it reaches the desired consistency.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "d21fb531-f3be-49a3-b361-d429150c05b2-ingredient-1",
+      "originalText": "198 g marzipan, grated",
+      "ingredientName": "marzipan",
+      "ingredientRefId": "ingredient-ref-marzipan-box",
+      "quantity": 198,
+      "unit": "g",
+      "preparation": "grated"
+    },
+    {
+      "id": "d21fb531-f3be-49a3-b361-d429150c05b2-ingredient-2",
+      "originalText": "113 g salted butter, softened",
+      "ingredientName": "salted butter",
+      "ingredientRefId": "ingredient-ref-salted-butter",
+      "quantity": 113,
+      "unit": "g",
+      "preparation": "softened"
+    },
+    {
+      "id": "d21fb531-f3be-49a3-b361-d429150c05b2-ingredient-3",
+      "originalText": "3 cups confectioners' sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 3,
+      "unit": "cup"
+    },
+    {
+      "id": "d21fb531-f3be-49a3-b361-d429150c05b2-ingredient-4",
+      "originalText": "2 tbsp hot water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 2,
+      "unit": "tbsp",
+      "preparation": "hot"
+    }
+  ],
+  "servings": {
+    "amount": 2.5,
+    "unit": "cups"
+  },
+  "times": {
+    "prepTimeMinutes": 0,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 0
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-frosting"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-d21fb531-f3be-49a3-b361-d429150c05b2-0",
+  "photos": [
+    {
+      "id": "photo-d21fb531-f3be-49a3-b361-d429150c05b2-0",
+      "relativePath": "photos/d21fb531-f3be-49a3-b361-d429150c05b2_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "id": "e34243f0-f13c-47bf-991f-a8d50e3c67a8",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Sally's Baking Addiction",
+    "sourceUrl": "https://sallysbakingaddiction.com/strawberry-frosting/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Gla\u00e7age aux fraises",
+      "description": "Un gla\u00e7age aux fraises fait avec des fraises lyophilis\u00e9es, lisse et intens\u00e9ment fruit\u00e9.",
+      "instructions": "Au robot culinaire ou au m\u00e9langeur, r\u00e9duire les fraises lyophilis\u00e9es en poudre fine. Si n\u00e9cessaire, tamiser pour retirer les plus gros morceaux et les graines.\nDans un grand bol, battre le beurre jusqu'\u00e0 ce qu'il soit cr\u00e9meux. Ajouter le sucre \u00e0 glacer, la poudre de fraises, la cr\u00e8me 35 % et la vanille.\nBattre d'abord \u00e0 basse vitesse pendant 30 sec, puis \u00e0 haute vitesse pendant 2 min.\nGo\u00fbter et ajouter un peu plus de cr\u00e8me 35 % au besoin pour assouplir la texture. Ajouter une pinc\u00e9e de sel si le gla\u00e7age est trop sucr\u00e9.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Strawberry Frosting",
+      "description": "A smooth, intensely fruity strawberry frosting made with freeze-dried strawberries.",
+      "instructions": "Using a food processor or blender, process the freeze-dried strawberries into a fine powder. If needed, sift it to remove larger pieces and seeds.\nIn a large bowl, beat the butter until creamy. Add the icing sugar, strawberry powder, heavy cream, and vanilla.\nBeat on low speed for 30 sec, then on high speed for 2 min.\nTaste and add a little more heavy cream if needed to loosen the frosting. Add a pinch of salt if the frosting is too sweet.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "e34243f0-f13c-47bf-991f-a8d50e3c67a8-ingredient-1",
+      "originalText": "25 g freeze-dried strawberries",
+      "ingredientName": "freeze-dried strawberries",
+      "ingredientRefId": "ingredient-ref-freeze-dried-strawberries",
+      "quantity": 25,
+      "unit": "g"
+    },
+    {
+      "id": "e34243f0-f13c-47bf-991f-a8d50e3c67a8-ingredient-2",
+      "originalText": "226 g unsalted butter, softened to room temperature",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 226,
+      "unit": "g",
+      "preparation": "softened to room temperature"
+    },
+    {
+      "id": "e34243f0-f13c-47bf-991f-a8d50e3c67a8-ingredient-3",
+      "originalText": "480 g icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 480,
+      "unit": "g"
+    },
+    {
+      "id": "e34243f0-f13c-47bf-991f-a8d50e3c67a8-ingredient-4",
+      "originalText": "60 ml heavy cream, room temperature",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 60,
+      "unit": "ml",
+      "preparation": "room temperature"
+    },
+    {
+      "id": "e34243f0-f13c-47bf-991f-a8d50e3c67a8-ingredient-5",
+      "originalText": "1 tsp pure vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "e34243f0-f13c-47bf-991f-a8d50e3c67a8-ingredient-6",
+      "originalText": "salt, to taste",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "to taste"
+    }
+  ],
+  "servings": {
+    "amount": 3,
+    "unit": "cups"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 10
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-frosting"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-e34243f0-f13c-47bf-991f-a8d50e3c67a8-0",
+  "photos": [
+    {
+      "id": "photo-e34243f0-f13c-47bf-991f-a8d50e3c67a8-0",
+      "relativePath": "photos/e34243f0-f13c-47bf-991f-a8d50e3c67a8_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

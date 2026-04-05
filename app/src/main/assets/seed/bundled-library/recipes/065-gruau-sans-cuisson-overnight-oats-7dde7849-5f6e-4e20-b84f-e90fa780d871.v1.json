@@ -1,0 +1,113 @@
+{
+  "id": "7dde7849-5f6e-4e20-b84f-e90fa780d871",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Gruau sans cuisson",
+      "description": "Une base de gruau sans cuisson \u00e0 personnaliser avec sucrants, saveurs, garnitures et noix.",
+      "instructions": "Dans un pot Mason, m\u00e9langer les flocons d'avoine, les graines de chia et le lait.\nAjouter le sucrant et les saveurs choisies, puis rem\u00e9langer jusqu'\u00e0 ce que le m\u00e9lange soit uniforme.\nAjouter les garnitures en m\u00e9langeant au fur et \u00e0 mesure.\nR\u00e9frig\u00e9rer toute la nuit.\nAjouter les noix juste avant de servir. Servir froid ou chaud, au go\u00fbt.",
+      "notes": "Base flexible: 1 portion de flocons d'avoine, 1 portion de lait et 1/8 portion de graines de chia.\nId\u00e9es de sucrants: anko, sirop d'\u00e9rable.\nId\u00e9es de saveurs: vanille, cacao, beurre d'arachide.\nId\u00e9es de garnitures: dattes, bananes, bleuets, sauce aux canneberges.\nId\u00e9es de noix: amandes, pacanes, noix de Grenoble, arachides.\nCombinaisons sugg\u00e9r\u00e9es:\nBanane supr\u00eame: sirop d'\u00e9rable, vanille, cacao, beurre d'arachide, bananes, pacanes.\nSurprise pourpre: anko, vanille, dattes, amandes.\nExplosion de canneberges: sirop d'\u00e9rable, vanille, sauce aux canneberges, canneberges s\u00e9ch\u00e9es, amandes.\nTemp\u00eate tropicale: sirop d'\u00e9rable, essence d'amande, noix de coco en flocons, mangue, amandes."
+    },
+    "en": {
+      "title": "Overnight Oats",
+      "description": "A customizable overnight oats base with mix-and-match sweeteners, flavors, toppings, and nuts.",
+      "instructions": "In a Mason jar, combine the rolled oats, chia seeds, and milk.\nAdd the sweetener and chosen flavorings, then mix again until the color and texture are uniform.\nAdd the toppings, mixing as you go.\nRefrigerate overnight.\nAdd the nuts just before serving. Serve cold or warm, as desired.",
+      "notes": "Flexible base: 1 part rolled oats, 1 part milk, and 1/8 part chia seeds.\nSweetener ideas: anko, maple syrup.\nFlavor ideas: vanilla, cocoa, peanut butter.\nTopping ideas: dates, bananas, blueberries, cranberry sauce.\nNut ideas: almonds, pecans, walnuts, peanuts.\nSuggested combinations:\nBanana Supreme: maple syrup, vanilla, cocoa, peanut butter, bananas, pecans.\nPurple Surprise: anko, vanilla, dates, almonds.\nCranberry Burst: maple syrup, vanilla, cranberry sauce, dried cranberries, almonds.\nTropical Storm: maple syrup, almond extract, flaked coconut, mango, almonds."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "7dde7849-5f6e-4e20-b84f-e90fa780d871-ingredient-1",
+      "originalText": "1 part rolled oats",
+      "ingredientName": "rolled oats",
+      "ingredientRefId": "ingredient-ref-rolled-oats",
+      "quantity": 1
+    },
+    {
+      "id": "7dde7849-5f6e-4e20-b84f-e90fa780d871-ingredient-2",
+      "originalText": "1 part milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 1
+    },
+    {
+      "id": "7dde7849-5f6e-4e20-b84f-e90fa780d871-ingredient-3",
+      "originalText": "1/8 part chia seeds",
+      "ingredientName": "chia seeds",
+      "ingredientRefId": "ingredient-ref-chia-seeds",
+      "quantity": 0.125
+    },
+    {
+      "id": "7dde7849-5f6e-4e20-b84f-e90fa780d871-ingredient-4",
+      "originalText": "Sweetener, to taste",
+      "ingredientName": "sweetener",
+      "quantity": 1,
+      "unit": "to taste",
+      "optional": true,
+      "notes": "Examples: anko or maple syrup"
+    },
+    {
+      "id": "7dde7849-5f6e-4e20-b84f-e90fa780d871-ingredient-5",
+      "originalText": "Flavoring, to taste",
+      "ingredientName": "flavoring",
+      "quantity": 1,
+      "unit": "to taste",
+      "optional": true,
+      "notes": "Examples: vanilla, cocoa, or peanut butter"
+    },
+    {
+      "id": "7dde7849-5f6e-4e20-b84f-e90fa780d871-ingredient-6",
+      "originalText": "Toppings, to taste",
+      "ingredientName": "toppings",
+      "quantity": 1,
+      "unit": "to taste",
+      "optional": true,
+      "notes": "Examples: dates, bananas, blueberries, or cranberry sauce"
+    },
+    {
+      "id": "7dde7849-5f6e-4e20-b84f-e90fa780d871-ingredient-7",
+      "originalText": "Nuts, to taste",
+      "ingredientName": "nuts",
+      "quantity": 1,
+      "unit": "to taste",
+      "optional": true,
+      "notes": "Add just before serving"
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 15
+  },
+  "tags": [
+    "tag-breakfast",
+    "tag-snack",
+    "tag-quick"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-7dde7849-5f6e-4e20-b84f-e90fa780d871-0",
+  "photos": [
+    {
+      "id": "photo-7dde7849-5f6e-4e20-b84f-e90fa780d871-0",
+      "relativePath": "photos/7dde7849-5f6e-4e20-b84f-e90fa780d871_0.jpg"
+    },
+    {
+      "id": "photo-7dde7849-5f6e-4e20-b84f-e90fa780d871-1",
+      "relativePath": "photos/7dde7849-5f6e-4e20-b84f-e90fa780d871_1.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

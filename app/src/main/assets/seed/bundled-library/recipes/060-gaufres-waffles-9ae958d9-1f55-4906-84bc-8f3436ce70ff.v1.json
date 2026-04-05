@@ -1,0 +1,109 @@
+{
+  "id": "9ae958d9-1f55-4906-84bc-8f3436ce70ff",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Gaufres",
+      "description": "Des gaufres simples et rapides, parfum\u00e9es \u00e0 la vanille.",
+      "instructions": "Dans un bol, m\u00e9langer la farine, le sucre et la poudre \u00e0 p\u00e2te.\nDans un deuxi\u00e8me bol, fouetter l'\u0153uf avec le lait, l'huile et la vanille.\nAjouter les ingr\u00e9dients liquides aux ingr\u00e9dients secs et m\u00e9langer juste assez pour combiner.\nCuire dans un gaufrier jusqu'\u00e0 ce que les gaufres soient bien dor\u00e9es.",
+      "notes": "Pour 2 portions."
+    },
+    "en": {
+      "title": "Waffles",
+      "description": "Simple, quick vanilla waffles.",
+      "instructions": "In a bowl, combine the flour, sugar, and baking powder.\nIn a second bowl, whisk together the egg, milk, oil, and vanilla.\nAdd the wet ingredients to the dry ingredients and mix just until combined.\nCook in a waffle iron until the waffles are nicely golden.",
+      "notes": "Makes 2 servings."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "9ae958d9-1f55-4906-84bc-8f3436ce70ff-ingredient-1",
+      "originalText": "1 large egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "large egg"
+    },
+    {
+      "id": "9ae958d9-1f55-4906-84bc-8f3436ce70ff-ingredient-2",
+      "originalText": "1 cup all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "9ae958d9-1f55-4906-84bc-8f3436ce70ff-ingredient-3",
+      "originalText": "1/2 cup milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "9ae958d9-1f55-4906-84bc-8f3436ce70ff-ingredient-4",
+      "originalText": "1/2 cup vegetable oil",
+      "ingredientName": "vegetable oil",
+      "ingredientRefId": "ingredient-ref-vegetable-oil",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "9ae958d9-1f55-4906-84bc-8f3436ce70ff-ingredient-5",
+      "originalText": "2 tbsp granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "9ae958d9-1f55-4906-84bc-8f3436ce70ff-ingredient-6",
+      "originalText": "2 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "9ae958d9-1f55-4906-84bc-8f3436ce70ff-ingredient-7",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "servings": {
+    "amount": 2,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 0,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 0
+  },
+  "tags": [
+    "tag-breakfast",
+    "tag-brunch",
+    "tag-batter",
+    "tag-quick"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-9ae958d9-1f55-4906-84bc-8f3436ce70ff-0",
+  "photos": [
+    {
+      "id": "photo-9ae958d9-1f55-4906-84bc-8f3436ce70ff-0",
+      "relativePath": "photos/9ae958d9-1f55-4906-84bc-8f3436ce70ff_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}
