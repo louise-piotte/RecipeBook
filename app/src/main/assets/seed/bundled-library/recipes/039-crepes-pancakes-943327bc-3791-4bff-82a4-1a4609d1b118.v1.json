@@ -1,0 +1,125 @@
+{
+  "id": "943327bc-3791-4bff-82a4-1a4609d1b118",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "One Dish Kitchen",
+    "sourceUrl": "https://onedishkitchen.com/how-to-make-pancakes-for-one/#recipe"
+  },
+  "languages": {
+    "fr": {
+      "title": "Pancakes",
+      "description": "Des pancakes classiques cuits \u00e0 la po\u00eale, avec une p\u00e2te simple \u00e0 m\u00e9langer juste avant la cuisson.",
+      "instructions": "Dans un grand bol, fouetter la farine, la poudre \u00e0 p\u00e2te, le sucre et le sel.\nDans un autre bol, battre l'\u0153uf, puis incorporer le lait, la vanille et le beurre sal\u00e9 fondu.\nVerser les ingr\u00e9dients liquides dans les ingr\u00e9dients secs et m\u00e9langer juste assez pour combiner. Si la p\u00e2te semble trop \u00e9paisse, ajouter un peu plus de lait, une petite quantit\u00e9 \u00e0 la fois.\nFaire chauffer une grande po\u00eale ou une plaque chauffante \u00e0 feu moyen et la beurrer l\u00e9g\u00e8rement au besoin.\nVerser environ 1/4 tasse de p\u00e2te par pancake.\nCuire jusqu'\u00e0 ce que des bulles remontent \u00e0 la surface et que le dessous soit dor\u00e9, environ 3 min.\nRetourner \u00e0 l'aide d'une spatule et cuire environ 1 min de plus sur l'autre face. Servir imm\u00e9diatement.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Pancakes",
+      "description": "Classic skillet pancakes made from a simple batter mixed just before cooking.",
+      "instructions": "In a large bowl, whisk together the flour, baking powder, sugar, and salt.\nIn another bowl, beat the egg, then whisk in the milk, vanilla, and melted salted butter.\nPour the wet ingredients into the dry ingredients and mix just until combined. If the batter seems too thick, add a little more milk a small amount at a time.\nHeat a large skillet or griddle over medium heat and lightly butter it if needed.\nPour about 1/4 cup of batter for each pancake.\nCook until bubbles rise to the surface and the underside is golden, about 3 min.\nFlip with a spatula and cook for about 1 min more on the second side. Serve right away.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "943327bc-3791-4bff-82a4-1a4609d1b118-ingredient-1",
+      "originalText": "1 cup all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "943327bc-3791-4bff-82a4-1a4609d1b118-ingredient-2",
+      "originalText": "1 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "943327bc-3791-4bff-82a4-1a4609d1b118-ingredient-3",
+      "originalText": "1/2 tbsp sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 0.5,
+      "unit": "tbsp"
+    },
+    {
+      "id": "943327bc-3791-4bff-82a4-1a4609d1b118-ingredient-4",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "943327bc-3791-4bff-82a4-1a4609d1b118-ingredient-5",
+      "originalText": "1 large egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "large"
+    },
+    {
+      "id": "943327bc-3791-4bff-82a4-1a4609d1b118-ingredient-6",
+      "originalText": "3/4 cup milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "id": "943327bc-3791-4bff-82a4-1a4609d1b118-ingredient-7",
+      "originalText": "1/2 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "943327bc-3791-4bff-82a4-1a4609d1b118-ingredient-8",
+      "originalText": "1 tbsp salted butter, melted",
+      "ingredientName": "salted butter",
+      "ingredientRefId": "ingredient-ref-salted-butter",
+      "quantity": 1,
+      "unit": "tbsp",
+      "preparation": "melted"
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "serving"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 20
+  },
+  "tags": [
+    "tag-breakfast",
+    "tag-brunch",
+    "tag-batter",
+    "tag-stovetop",
+    "tag-quick",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-943327bc-3791-4bff-82a4-1a4609d1b118-0",
+  "photos": [
+    {
+      "id": "photo-943327bc-3791-4bff-82a4-1a4609d1b118-0",
+      "relativePath": "photos/943327bc-3791-4bff-82a4-1a4609d1b118_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

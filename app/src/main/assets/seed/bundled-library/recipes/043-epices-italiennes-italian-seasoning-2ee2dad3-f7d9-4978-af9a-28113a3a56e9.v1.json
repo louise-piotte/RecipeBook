@@ -1,0 +1,113 @@
+{
+  "id": "2ee2dad3-f7d9-4978-af9a-28113a3a56e9",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Spend With Pennies",
+    "sourceUrl": "https://www.spendwithpennies.com/homemade-italian-seasoning-recipe/"
+  },
+  "languages": {
+    "fr": {
+      "title": "\u00c9pices italiennes",
+      "description": "Un m\u00e9lange d'herbes s\u00e9ch\u00e9es \u00e0 utiliser dans les sauces, marinades et plats italiens.",
+      "instructions": "M\u00e9langer tous les ingr\u00e9dients dans un petit bol.\nVerser dans un contenant herm\u00e9tique.\nConserver dans un endroit frais et sombre jusqu'\u00e0 6 mois.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Italian Seasoning",
+      "description": "A dried herb blend to use in sauces, marinades, and Italian dishes.",
+      "instructions": "Combine all of the ingredients in a small bowl.\nTransfer to an airtight container.\nStore in a cool, dark place for up to 6 months.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "2ee2dad3-f7d9-4978-af9a-28113a3a56e9-ingredient-1",
+      "originalText": "2 tbsp dried basil",
+      "ingredientName": "dried basil",
+      "ingredientRefId": "ingredient-ref-dried-basil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "2ee2dad3-f7d9-4978-af9a-28113a3a56e9-ingredient-2",
+      "originalText": "2 tbsp dried oregano",
+      "ingredientName": "dried oregano",
+      "ingredientRefId": "ingredient-ref-dried-oregano",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "2ee2dad3-f7d9-4978-af9a-28113a3a56e9-ingredient-3",
+      "originalText": "1 tbsp dried rosemary",
+      "ingredientName": "dried rosemary",
+      "ingredientRefId": "ingredient-ref-dried-rosemary",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "2ee2dad3-f7d9-4978-af9a-28113a3a56e9-ingredient-4",
+      "originalText": "2 tbsp dried parsley",
+      "ingredientName": "dried parsley",
+      "ingredientRefId": "ingredient-ref-dried-parsley",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "2ee2dad3-f7d9-4978-af9a-28113a3a56e9-ingredient-5",
+      "originalText": "1 tbsp dried thyme",
+      "ingredientName": "dried thyme",
+      "ingredientRefId": "ingredient-ref-dried-thyme",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "2ee2dad3-f7d9-4978-af9a-28113a3a56e9-ingredient-6",
+      "originalText": "1 tbsp red chili flakes",
+      "ingredientName": "red chili flakes",
+      "ingredientRefId": "ingredient-ref-red-chili-flakes",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "2ee2dad3-f7d9-4978-af9a-28113a3a56e9-ingredient-7",
+      "originalText": "1 tsp garlic powder",
+      "ingredientName": "garlic powder",
+      "ingredientRefId": "ingredient-ref-garlic-powder",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "servings": {
+    "amount": 8,
+    "unit": "tbsp"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 5
+  },
+  "tags": [
+    "tag-spice-blend",
+    "tag-pantry-staple",
+    "tag-italian",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-2ee2dad3-f7d9-4978-af9a-28113a3a56e9-0",
+  "photos": [
+    {
+      "id": "photo-2ee2dad3-f7d9-4978-af9a-28113a3a56e9-0",
+      "relativePath": "photos/2ee2dad3-f7d9-4978-af9a-28113a3a56e9_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

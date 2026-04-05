@@ -1,0 +1,113 @@
+{
+  "id": "f137bc89-dee6-46e1-b9cd-1bb426bdbdda",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Fit Foodie Finds",
+    "sourceUrl": "https://fitfoodiefinds.com/best-dry-rub-for-pork/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Assaisonnement sec pour porc",
+      "description": "Un m\u00e9lange d'\u00e9pices sucr\u00e9-sal\u00e9 \u00e0 garder sous la main pour assaisonner le porc.",
+      "instructions": "Mettre tous les ingr\u00e9dients dans un pot ou un contenant herm\u00e9tique.\nRemuer ou secouer jusqu'\u00e0 ce que le m\u00e9lange soit homog\u00e8ne.\nConserver dans un endroit frais et sec.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Pork Rub",
+      "description": "A sweet-savory spice blend to keep on hand for seasoning pork.",
+      "instructions": "Place all of the ingredients in a jar or airtight container.\nStir or shake until the mixture is evenly combined.\nStore in a cool, dry place.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "f137bc89-dee6-46e1-b9cd-1bb426bdbdda-ingredient-1",
+      "originalText": "1/2 cup brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "f137bc89-dee6-46e1-b9cd-1bb426bdbdda-ingredient-2",
+      "originalText": "2 tbsp garlic powder",
+      "ingredientName": "garlic powder",
+      "ingredientRefId": "ingredient-ref-garlic-powder",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "f137bc89-dee6-46e1-b9cd-1bb426bdbdda-ingredient-3",
+      "originalText": "4 tsp onion powder",
+      "ingredientName": "onion powder",
+      "ingredientRefId": "ingredient-ref-onion-powder",
+      "quantity": 4,
+      "unit": "tsp"
+    },
+    {
+      "id": "f137bc89-dee6-46e1-b9cd-1bb426bdbdda-ingredient-4",
+      "originalText": "2 tbsp coarse salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 2,
+      "unit": "tbsp",
+      "notes": "coarse salt"
+    },
+    {
+      "id": "f137bc89-dee6-46e1-b9cd-1bb426bdbdda-ingredient-5",
+      "originalText": "2 tsp cinnamon",
+      "ingredientName": "cinnamon",
+      "ingredientRefId": "ingredient-ref-ground-cinnamon",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "f137bc89-dee6-46e1-b9cd-1bb426bdbdda-ingredient-6",
+      "originalText": "4 tsp dried thyme",
+      "ingredientName": "dried thyme",
+      "ingredientRefId": "ingredient-ref-dried-thyme",
+      "quantity": 4,
+      "unit": "tsp"
+    },
+    {
+      "id": "f137bc89-dee6-46e1-b9cd-1bb426bdbdda-ingredient-7",
+      "originalText": "2 tsp black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 2,
+      "unit": "tsp"
+    }
+  ],
+  "servings": {
+    "amount": 16,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 10
+  },
+  "tags": [
+    "tag-spice-blend",
+    "tag-rub",
+    "tag-pantry-staple"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 2
+  },
+  "mainPhotoId": "photo-f137bc89-dee6-46e1-b9cd-1bb426bdbdda-0",
+  "photos": [
+    {
+      "id": "photo-f137bc89-dee6-46e1-b9cd-1bb426bdbdda-0",
+      "relativePath": "photos/f137bc89-dee6-46e1-b9cd-1bb426bdbdda_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

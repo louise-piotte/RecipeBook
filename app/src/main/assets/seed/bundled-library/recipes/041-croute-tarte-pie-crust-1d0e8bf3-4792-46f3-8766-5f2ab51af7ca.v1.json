@@ -1,0 +1,101 @@
+{
+  "id": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/classic-pastry-crust/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Cro\u00fbte \u00e0 tarte",
+      "description": "Une p\u00e2te \u00e0 tarte au beurre pour quatre petites tartes ou tartelettes, \u00e0 utiliser cuite ou pr\u00e9cuite.",
+      "instructions": "Dans le bol d'un robot culinaire, m\u00e9langer la farine, le sucre et le sel. Pulser quelques fois pour combiner.\nAjouter le beurre froid et pulser jusqu'\u00e0 ce que le m\u00e9lange soit tr\u00e8s friable.\nVerser 4 cuill\u00e8res \u00e0 soupe d'eau glac\u00e9e pendant que le robot pulse. Ajouter de l'eau suppl\u00e9mentaire, 1 cuill\u00e8re \u00e0 soupe \u00e0 la fois, au besoin, jusqu'\u00e0 ce que la p\u00e2te se tienne lorsqu'on la presse sans \u00eatre mouill\u00e9e.\nD\u00e9poser la p\u00e2te sur le comptoir, former une boule, puis la diviser en 4 portions. Presser chaque portion en disque, envelopper herm\u00e9tiquement et r\u00e9frig\u00e9rer au moins 1 h ou jusqu'\u00e0 2 jours.\nAbaisser chaque portion et foncer quatre moules \u00e0 tarte de 5 po. Pincer les bords. Si la cro\u00fbte n'a pas besoin d'\u00eatre pr\u00e9cuite, suivre ensuite la recette de tarte choisie.\nPour une pr\u00e9cuisson, piquer le fond \u00e0 la fourchette et r\u00e9frig\u00e9rer encore 30 min.\nPr\u00e9chauffer le four \u00e0 205\u00b0C/400\u00b0F.\nCouvrir la cro\u00fbte de papier parchemin ou de papier d'aluminium et la remplir de poids \u00e0 tarte ou de haricots secs. Cuire 15 min.\nRetirer les poids et poursuivre la cuisson \u00e0 d\u00e9couvert pendant 5 min.",
+      "notes": "La quantit\u00e9 de sucre varie selon l'usage: utiliser la plus grande quantit\u00e9 pour une tarte sucr\u00e9e et l'omettre pour une quiche.\nVariation pour quiche: ajouter 1 cuill\u00e8re \u00e0 th\u00e9 de thym, 1/2 cuill\u00e8re \u00e0 th\u00e9 d'ail en poudre et 1/4 cuill\u00e8re \u00e0 th\u00e9 de poivre."
+    },
+    "en": {
+      "title": "Pie Crust",
+      "description": "A buttery pastry crust for four small pies or tartlets, to use baked or parbaked.",
+      "instructions": "In the bowl of a food processor, combine the flour, sugar, and salt. Pulse a few times to mix.\nAdd the cold butter and process until the mixture is very crumbly.\nDrizzle in 4 tablespoons of ice water while pulsing. Add more water, 1 tablespoon at a time, if needed, until the dough holds together when pressed without feeling wet.\nTurn the dough out onto the counter, form it into a ball, then divide it into 4 portions. Press each portion into a disc, wrap tightly, and refrigerate for at least 1 h or up to 2 days.\nRoll out each portion and line four 5-inch pie pans. Crimp the edges. If the crust does not need to be prebaked, continue with the pie recipe.\nFor a prebaked crust, prick the bottom with a fork and chill for another 30 min.\nPreheat the oven to 205\u00b0C/400\u00b0F.\nLine the crust with parchment paper or foil and fill it with pie weights or dried beans. Bake for 15 min.\nRemove the weights and bake uncovered for 5 min more.",
+      "notes": "The amount of sugar depends on the pie: use the higher amount for a sweet pie and skip it for quiche.\nQuiche variation: add 1 teaspoon thyme, 1/2 teaspoon garlic powder, and 1/4 teaspoon pepper."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca-ingredient-1",
+      "originalText": "300 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 300,
+      "unit": "g"
+    },
+    {
+      "id": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca-ingredient-2",
+      "originalText": "0 to 4 tbsp sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 4,
+      "unit": "tbsp",
+      "notes": "optional; use up to 4 tablespoons depending on the pie"
+    },
+    {
+      "id": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca-ingredient-3",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca-ingredient-4",
+      "originalText": "227 g unsalted butter, cold and cubed",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 227,
+      "unit": "g",
+      "preparation": "cold and cubed"
+    },
+    {
+      "id": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca-ingredient-5",
+      "originalText": "60 ml ice water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 60,
+      "unit": "ml",
+      "preparation": "ice cold",
+      "notes": "add more as needed, 1 tablespoon at a time"
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "5-inch tart shells"
+  },
+  "times": {
+    "prepTimeMinutes": 70,
+    "cookTimeMinutes": 20,
+    "totalTimeMinutes": 90
+  },
+  "tags": [
+    "tag-tarts",
+    "tag-dough",
+    "tag-ingredient-component",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-1d0e8bf3-4792-46f3-8766-5f2ab51af7ca-0",
+  "photos": [
+    {
+      "id": "photo-1d0e8bf3-4792-46f3-8766-5f2ab51af7ca-0",
+      "relativePath": "photos/1d0e8bf3-4792-46f3-8766-5f2ab51af7ca_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

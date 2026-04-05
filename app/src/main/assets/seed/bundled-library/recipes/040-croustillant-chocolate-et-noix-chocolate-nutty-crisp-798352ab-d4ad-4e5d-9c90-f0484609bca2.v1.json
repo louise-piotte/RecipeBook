@@ -1,0 +1,98 @@
+{
+  "id": "798352ab-d4ad-4e5d-9c90-f0484609bca2",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Allrecipes",
+    "sourceUrl": "https://www.allrecipes.com/recipe/258753/chocolate-nutty-crispy-treats/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Croustillant au chocolat et aux noix",
+      "description": "Des carr\u00e9s croustillants au chocolat, au beurre d'amande et aux c\u00e9r\u00e9ales de riz.",
+      "instructions": "Dans une casserole, chauffer le sirop de ma\u00efs et le sucre \u00e0 feu moyen jusqu'au premier bouillonnement, environ 5 min.\nRetirer du feu, puis incorporer le chocolat noir et le beurre d'amande jusqu'\u00e0 ce que le m\u00e9lange soit lisse et fondu.\nMettre les c\u00e9r\u00e9ales de riz dans un grand bol et verser le m\u00e9lange au chocolat par-dessus. Remuer pour bien enrober.\nPresser le m\u00e9lange dans un moule de 9 x 13 po.\nLaisser refroidir environ 1 h avant de couper et de servir.",
+      "notes": "Devient trop dur lorsqu'il est congel\u00e9."
+    },
+    "en": {
+      "title": "Chocolate Nutty Crisp",
+      "description": "Crispy bars made with chocolate, almond butter, and rice cereal.",
+      "instructions": "In a saucepan, heat the corn syrup and sugar over medium heat until it starts to bubble, about 5 min.\nRemove from the heat, then stir in the dark chocolate and almond butter until smooth and melted.\nPlace the rice cereal in a large bowl and pour the chocolate mixture over it. Stir to coat well.\nPress the mixture into a 9 x 13-inch pan.\nLet cool for about 1 h before cutting and serving.",
+      "notes": "It becomes too hard when frozen."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "798352ab-d4ad-4e5d-9c90-f0484609bca2-ingredient-1",
+      "originalText": "1 cup corn syrup",
+      "ingredientName": "corn syrup",
+      "ingredientRefId": "ingredient-ref-corn-syrup",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "798352ab-d4ad-4e5d-9c90-f0484609bca2-ingredient-2",
+      "originalText": "1 cup granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "798352ab-d4ad-4e5d-9c90-f0484609bca2-ingredient-3",
+      "originalText": "2 cups dark chocolate chips",
+      "ingredientName": "dark chocolate",
+      "ingredientRefId": "ingredient-ref-dark-chocolate",
+      "quantity": 2,
+      "unit": "cup",
+      "notes": "from dark chocolate chips"
+    },
+    {
+      "id": "798352ab-d4ad-4e5d-9c90-f0484609bca2-ingredient-4",
+      "originalText": "1 cup almond butter",
+      "ingredientName": "almond butter",
+      "ingredientRefId": "ingredient-ref-almond-butter",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "798352ab-d4ad-4e5d-9c90-f0484609bca2-ingredient-5",
+      "originalText": "6 cups rice cereal",
+      "ingredientName": "rice cereal",
+      "ingredientRefId": "ingredient-ref-rice-cereal",
+      "quantity": 6,
+      "unit": "cup"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "bars"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 5,
+    "totalTimeMinutes": 15
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-snack",
+    "tag-bars-squares",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-798352ab-d4ad-4e5d-9c90-f0484609bca2-0",
+  "photos": [
+    {
+      "id": "photo-798352ab-d4ad-4e5d-9c90-f0484609bca2-0",
+      "relativePath": "photos/798352ab-d4ad-4e5d-9c90-f0484609bca2_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}
