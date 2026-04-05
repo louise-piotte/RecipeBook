@@ -1,0 +1,159 @@
+{
+  "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Roxanne Cuisine",
+    "sourceUrl": "https://roxannecuisine.com/recette/creme-de-champignons/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Cr\u00e8me de champignons",
+      "description": "Une soupe cr\u00e9meuse aux champignons, \u00e0 l'oignon, \u00e0 la pomme de terre et au bouillon de poulet.",
+      "instructions": "Dans une grande casserole, faire fondre le beurre avec l'huile d'olive. Faire suer l'oignon jusqu'\u00e0 ce qu'il soit translucide.\nAjouter les champignons, la pomme de terre, l'ail, le thym et l'origan. Cuire \u00e0 feu moyen de 5 min \u00e0 7 min.\nVerser le bouillon de poulet et porter \u00e0 \u00e9bullition. Couvrir, r\u00e9duire \u00e0 feu moyen et cuire de 10 min \u00e0 15 min, jusqu'\u00e0 ce que la pomme de terre soit tr\u00e8s tendre.\nTransf\u00e9rer la pr\u00e9paration au m\u00e9langeur ou au robot culinaire. Ajouter la cr\u00e8me, saler et poivrer, puis m\u00e9langer jusqu'\u00e0 l'obtention d'une texture lisse.\nRemettre la soupe dans la casserole si n\u00e9cessaire, ajouter les champignons grill\u00e9s r\u00e9serv\u00e9s pour obtenir quelques morceaux, puis servir.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Cream of Mushroom Soup",
+      "description": "A creamy mushroom soup with onion, potato, and chicken broth.",
+      "instructions": "In a large saucepan, melt the butter with the olive oil. Sweat the onion until translucent.\nAdd the mushrooms, potato, garlic, thyme, and oregano. Cook over medium heat for 5 min to 7 min.\nPour in the chicken broth and bring to a boil. Cover, reduce to medium heat, and cook for 10 min to 15 min, until the potato is very tender.\nTransfer the mixture to a blender or food processor. Add the cream, season with salt and pepper, and blend until smooth.\nReturn the soup to the pot if needed, add the reserved sauteed mushrooms for texture, and serve.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-1",
+      "originalText": "2 tbsp olive oil",
+      "ingredientName": "olive oil",
+      "ingredientRefId": "ingredient-ref-olive-oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-2",
+      "originalText": "1 tbsp butter",
+      "ingredientName": "butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-3",
+      "originalText": "1 yellow onion, chopped",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "yellow, chopped"
+    },
+    {
+      "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-4",
+      "originalText": "1/2 tsp thyme",
+      "ingredientName": "thyme",
+      "ingredientRefId": "ingredient-ref-thyme",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-5",
+      "originalText": "1/2 tsp oregano",
+      "ingredientName": "oregano",
+      "ingredientRefId": "ingredient-ref-dried-oregano",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-6",
+      "originalText": "2 cloves garlic, chopped",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 2,
+      "unit": "clove",
+      "preparation": "chopped"
+    },
+    {
+      "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-7",
+      "originalText": "1 lb white mushrooms, sliced",
+      "ingredientName": "mushroom",
+      "ingredientRefId": "ingredient-ref-mushroom",
+      "quantity": 1,
+      "unit": "lb",
+      "preparation": "white, sliced"
+    },
+    {
+      "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-8",
+      "originalText": "1 potato, peeled and diced",
+      "ingredientName": "potato",
+      "ingredientRefId": "ingredient-ref-potato",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "peeled and diced"
+    },
+    {
+      "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-9",
+      "originalText": "4 cups low-salt chicken broth",
+      "ingredientName": "chicken broth",
+      "ingredientRefId": "ingredient-ref-low-salt-chicken-broth",
+      "quantity": 4,
+      "unit": "cup"
+    },
+    {
+      "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-10",
+      "originalText": "1/3 cup 15% cooking cream",
+      "ingredientName": "cooking cream",
+      "ingredientRefId": "ingredient-ref-cooking-cream",
+      "quantity": 0.33,
+      "unit": "cup",
+      "preparation": "15% fat"
+    },
+    {
+      "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-11",
+      "originalText": "black pepper to taste",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 1,
+      "unit": "to taste"
+    },
+    {
+      "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-12",
+      "originalText": "extra sauteed mushrooms, to taste",
+      "ingredientName": "mushroom",
+      "ingredientRefId": "ingredient-ref-mushroom",
+      "quantity": 1,
+      "unit": "to taste",
+      "preparation": "sliced and sauteed",
+      "notes": "For garnish and added texture."
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 30,
+    "totalTimeMinutes": 50
+  },
+  "tags": [
+    "tag-soup",
+    "tag-appetizer",
+    "tag-stovetop"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-6cd92702-2256-4fc5-8f41-91ca188b4fbf-0",
+  "photos": [
+    {
+      "id": "photo-6cd92702-2256-4fc5-8f41-91ca188b4fbf-0",
+      "relativePath": "photos/6cd92702-2256-4fc5-8f41-91ca188b4fbf_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

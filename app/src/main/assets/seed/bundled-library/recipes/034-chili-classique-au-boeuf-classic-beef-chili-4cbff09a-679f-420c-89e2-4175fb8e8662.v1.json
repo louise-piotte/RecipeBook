@@ -1,0 +1,177 @@
+{
+  "id": "4cbff09a-679f-420c-89e2-4175fb8e8662",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Ricardo Cuisine",
+    "sourceUrl": "https://www.ricardocuisine.com/en/recipes/5762-classic-beef-chili"
+  },
+  "languages": {
+    "fr": {
+      "title": "Chili classique au b\u0153uf",
+      "description": "Un chili au b\u0153uf hach\u00e9 avec tomates, haricots rouges, caf\u00e9, lime et coriandre.",
+      "instructions": "Dans une grande casserole, faire revenir l'oignon et le piment jalape\u00f1o dans le beurre. Ajouter le b\u0153uf hach\u00e9 et le faire bien dorer. Saler et poivrer. Ajouter l'ail, la poudre de chili et le cumin, puis cuire 2 min en remuant.\nAjouter les tomates, les haricots rouges, le caf\u00e9, le bouillon de b\u0153uf, le ketchup et le jus de lime, puis porter \u00e0 \u00e9bullition.\nLaisser mijoter \u00e0 demi couvert pendant 45 min, jusqu'\u00e0 ce que le chili \u00e9paississe.\nAjouter la coriandre, puis rectifier l'assaisonnement avant de servir.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Classic Beef Chili",
+      "description": "A beef chili with tomatoes, kidney beans, coffee, lime, and fresh cilantro.",
+      "instructions": "In a large saucepan, brown the onion and jalapeno pepper in the butter. Add the ground beef and cook until well browned. Season with salt and pepper. Add the garlic, chili powder, and cumin, then cook for 2 min while stirring.\nAdd the tomatoes, kidney beans, coffee, beef broth, ketchup, and lime juice, then bring to a boil.\nSimmer half-covered for 45 min, until the chili thickens.\nStir in the cilantro, then adjust the seasoning before serving.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-1",
+      "originalText": "1 onion, finely chopped",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "finely chopped"
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-2",
+      "originalText": "1 jalapeno pepper, finely chopped",
+      "ingredientName": "jalapeno pepper",
+      "ingredientRefId": "ingredient-ref-jalapeno-pepper",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "seeded if desired, finely chopped"
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-3",
+      "originalText": "2 tbsp butter",
+      "ingredientName": "butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-4",
+      "originalText": "1 kg ground beef",
+      "ingredientName": "ground beef",
+      "ingredientRefId": "ingredient-ref-ground-beef",
+      "quantity": 1,
+      "unit": "kg"
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-5",
+      "originalText": "2 cloves garlic, finely chopped",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 2,
+      "unit": "clove",
+      "preparation": "finely chopped"
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-6",
+      "originalText": "2 tbsp chili powder",
+      "ingredientName": "chili powder",
+      "ingredientRefId": "ingredient-ref-chili-powder",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-7",
+      "originalText": "1 tsp ground cumin",
+      "ingredientName": "ground cumin",
+      "ingredientRefId": "ingredient-ref-ground-cumin",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-8",
+      "originalText": "798 ml canned diced tomatoes",
+      "ingredientName": "tomatoes",
+      "ingredientRefId": "ingredient-ref-tomatoes",
+      "quantity": 798,
+      "unit": "ml",
+      "preparation": "canned, diced"
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-9",
+      "originalText": "540 ml kidney beans, rinsed and drained",
+      "ingredientName": "kidney beans",
+      "ingredientRefId": "ingredient-ref-kidney-beans",
+      "quantity": 540,
+      "unit": "ml",
+      "preparation": "rinsed and drained"
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-10",
+      "originalText": "1 cup strong coffee",
+      "ingredientName": "coffee",
+      "ingredientRefId": "ingredient-ref-coffee",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "regular or strong"
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-11",
+      "originalText": "1/4 cup beef broth",
+      "ingredientName": "beef broth",
+      "ingredientRefId": "ingredient-ref-beef-stock",
+      "quantity": 0.25,
+      "unit": "cup",
+      "notes": "Water can be used instead."
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-12",
+      "originalText": "1/4 cup ketchup",
+      "ingredientName": "ketchup",
+      "ingredientRefId": "ingredient-ref-ketchup",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-13",
+      "originalText": "3 tbsp lime juice",
+      "ingredientName": "lime juice",
+      "ingredientRefId": "ingredient-ref-lime-juice",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-14",
+      "originalText": "10 g fresh cilantro, chopped",
+      "ingredientName": "cilantro",
+      "ingredientRefId": "ingredient-ref-cilantro",
+      "quantity": 10,
+      "unit": "g",
+      "preparation": "fresh, chopped"
+    }
+  ],
+  "servings": {
+    "amount": 6,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 60,
+    "totalTimeMinutes": 75
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-mexican",
+    "tag-stovetop",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 0
+  },
+  "mainPhotoId": "photo-4cbff09a-679f-420c-89e2-4175fb8e8662-0",
+  "photos": [
+    {
+      "id": "photo-4cbff09a-679f-420c-89e2-4175fb8e8662-0",
+      "relativePath": "photos/4cbff09a-679f-420c-89e2-4175fb8e8662_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

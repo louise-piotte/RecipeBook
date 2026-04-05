@@ -1,0 +1,124 @@
+{
+  "id": "c72f5bef-39d8-476c-bf29-56dbe4719841",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "NYT Cooking",
+    "sourceUrl": "https://cooking.nytimes.com/recipes/1018180-perfect-buttermilk-pancakes"
+  },
+  "languages": {
+    "fr": {
+      "title": "Cr\u00eapes au babeurre",
+      "description": "Des cr\u00eapes \u00e9paisses au babeurre, dor\u00e9es \u00e0 la po\u00eale.",
+      "instructions": "Dans un bol, fouetter la farine, le sucre, la poudre \u00e0 p\u00e2te, le bicarbonate de soude et le sel. Former un puits au centre.\nVerser le babeurre dans le puits, ajouter l'\u0153uf et le beurre fondu, puis fouetter juste assez pour incorporer les ingr\u00e9dients. Il est normal qu'il reste quelques grumeaux. La p\u00e2te peut reposer au r\u00e9frig\u00e9rateur jusqu'\u00e0 1 h.\nFaire chauffer une grande plaque chauffante ou une po\u00eale antiadh\u00e9sive, id\u00e9alement en fonte, \u00e0 feu doux pendant environ 5 min. Ajouter un peu d'huile si d\u00e9sir\u00e9.\nVerser environ 1/3 tasse de p\u00e2te par cr\u00eape.\nRetourner lorsque des bulles remontent \u00e0 la surface et que le dessous est bien dor\u00e9, apr\u00e8s 2 min \u00e0 4 min. Cuire l'autre c\u00f4t\u00e9 jusqu'\u00e0 ce qu'il soit l\u00e9g\u00e8rement dor\u00e9.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Buttermilk Pancakes",
+      "description": "Thick buttermilk pancakes browned on the stovetop.",
+      "instructions": "In a bowl, whisk together the flour, sugar, baking powder, baking soda, and salt. Make a well in the center.\nPour the buttermilk into the well, add the egg and melted butter, and whisk just until combined. A few lumps are fine. The batter can rest in the refrigerator for up to 1 h.\nHeat a large griddle or nonstick skillet, ideally cast iron, over low heat for about 5 min. Add a little oil if desired.\nPour about 1/3 cup of batter for each pancake.\nFlip when bubbles rise to the surface and the bottom is well browned, after 2 min to 4 min. Cook the second side until lightly browned.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "c72f5bef-39d8-476c-bf29-56dbe4719841-ingredient-1",
+      "originalText": "1 cup all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "c72f5bef-39d8-476c-bf29-56dbe4719841-ingredient-2",
+      "originalText": "1 1/2 tbsp sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 1.5,
+      "unit": "tbsp"
+    },
+    {
+      "id": "c72f5bef-39d8-476c-bf29-56dbe4719841-ingredient-3",
+      "originalText": "1/2 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "c72f5bef-39d8-476c-bf29-56dbe4719841-ingredient-4",
+      "originalText": "1/2 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "c72f5bef-39d8-476c-bf29-56dbe4719841-ingredient-5",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "c72f5bef-39d8-476c-bf29-56dbe4719841-ingredient-6",
+      "originalText": "1 1/4 cups buttermilk",
+      "ingredientName": "buttermilk",
+      "ingredientRefId": "ingredient-ref-buttermilk",
+      "quantity": 1.25,
+      "unit": "cup"
+    },
+    {
+      "id": "c72f5bef-39d8-476c-bf29-56dbe4719841-ingredient-7",
+      "originalText": "1 large egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "large"
+    },
+    {
+      "id": "c72f5bef-39d8-476c-bf29-56dbe4719841-ingredient-8",
+      "originalText": "1 1/2 tbsp unsalted butter, melted",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 1.5,
+      "unit": "tbsp",
+      "preparation": "melted"
+    }
+  ],
+  "servings": {
+    "amount": 2,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 0,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 10
+  },
+  "tags": [
+    "tag-brunch",
+    "tag-breakfast",
+    "tag-batter",
+    "tag-stovetop",
+    "tag-quick"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-c72f5bef-39d8-476c-bf29-56dbe4719841-0",
+  "photos": [
+    {
+      "id": "photo-c72f5bef-39d8-476c-bf29-56dbe4719841-0",
+      "relativePath": "photos/c72f5bef-39d8-476c-bf29-56dbe4719841_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

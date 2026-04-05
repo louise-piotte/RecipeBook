@@ -1,0 +1,109 @@
+{
+  "id": "f99dad41-30f8-4294-bbba-4f0b555eda23",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/coconut-macaroons/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Congolais",
+      "description": "Des congolais \u00e0 la noix de coco avec une base tremp\u00e9e dans le chocolat mi-sucr\u00e9.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 163\u00b0C/325\u00b0F. Tapisser 2 plaques \u00e0 cuisson \u00e0 rebord de papier parchemin.\nDans un grand bol, m\u00e9langer la noix de coco r\u00e2p\u00e9e, le lait condens\u00e9 sucr\u00e9, la vanille et le sel.\nDans un autre bol, battre les blancs d'\u0153ufs \u00e0 vitesse \u00e9lev\u00e9e jusqu'\u00e0 l'obtention de pics fermes, environ 3 min. Incorporer d\u00e9licatement les blancs d'\u0153ufs au m\u00e9lange de noix de coco.\n\u00c0 l'aide d'une cuill\u00e8re \u00e0 soupe de cr\u00e8me glac\u00e9e de 1 1/2 c. \u00e0 soupe, d\u00e9poser la p\u00e2te sur les plaques en laissant environ 1 po entre chaque congolais.\nCuire 1 plaque \u00e0 la fois de 20 min \u00e0 25 min, jusqu'\u00e0 ce que le dessus et le dessous soient dor\u00e9s. Laisser refroidir compl\u00e8tement sur la plaque.\nFaire fondre le chocolat au micro-ondes par intervalles de 15 sec \u00e0 30 sec en remuant entre chaque passage, jusqu'\u00e0 ce qu'il soit lisse.\nTremper le dessous des congolais dans le chocolat, puis les remettre sur les plaques chemis\u00e9es. Laisser le chocolat prendre \u00e0 temp\u00e9rature ambiante avant de servir.",
+      "notes": "Les \u0153ufs sont plus faciles \u00e0 s\u00e9parer quand ils sont froids, mais les blancs montent mieux lorsqu'ils sont revenus pr\u00e8s de la temp\u00e9rature ambiante.\nPlier les blancs doucement pour \u00e9viter de les faire retomber.\nLe papier parchemin ou un tapis de silicone aide \u00e0 \u00e9viter que le dessous brunisse trop.\nOn peut aussi arroser le chocolat sur le dessus au lieu de tremper les biscuits.\nPour un r\u00e9sultat plus fondant, utiliser la totalit\u00e9 de la bo\u00eete de lait condens\u00e9 sucr\u00e9, en sachant que les biscuits s'\u00e9taleront un peu plus."
+    },
+    "en": {
+      "title": "Coconut Macaroons",
+      "description": "Coconut macaroons with semisweet chocolate on the bottom.",
+      "instructions": "Preheat the oven to 163\u00b0C/325\u00b0F. Line 2 rimmed baking sheets with parchment paper.\nIn a large bowl, stir together the shredded coconut, sweetened condensed milk, vanilla, and salt.\nIn another bowl, beat the egg whites on high speed until stiff peaks form, about 3 min. Gently fold the egg whites into the coconut mixture.\nUsing a 1 1/2-tablespoon scoop, portion the batter onto the prepared baking sheets, leaving about 1 inch between each macaroon.\nBake 1 sheet at a time for 20 min to 25 min, until the tops and bottoms are golden. Let cool completely on the pan.\nMelt the chocolate in the microwave in 15-second to 30-second bursts, stirring between each burst, until smooth.\nDip the bottoms of the macaroons in the chocolate, then return them to the lined baking sheets. Let the chocolate set at room temperature before serving.",
+      "notes": "Eggs are easier to separate when cold, but the whites whip more easily when they have warmed closer to room temperature.\nFold gently so the egg whites do not deflate.\nParchment paper or a silicone liner helps keep the bottoms from browning too much.\nThe chocolate can be drizzled over the tops instead of dipping the bottoms.\nFor a gooier macaroon, use the whole can of sweetened condensed milk, knowing the cookies will spread a little more."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "f99dad41-30f8-4294-bbba-4f0b555eda23-ingredient-1",
+      "originalText": "396 g sweetened shredded coconut",
+      "ingredientName": "shredded coconut",
+      "ingredientRefId": "ingredient-ref-shredded-coconut",
+      "quantity": 396,
+      "unit": "g",
+      "preparation": "sweetened"
+    },
+    {
+      "id": "f99dad41-30f8-4294-bbba-4f0b555eda23-ingredient-2",
+      "originalText": "2/3 cup sweetened condensed milk",
+      "ingredientName": "sweetened condensed milk",
+      "ingredientRefId": "ingredient-ref-sweetened-condensed-milk",
+      "quantity": 0.67,
+      "unit": "cup"
+    },
+    {
+      "id": "f99dad41-30f8-4294-bbba-4f0b555eda23-ingredient-3",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "f99dad41-30f8-4294-bbba-4f0b555eda23-ingredient-4",
+      "originalText": "1/4 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "id": "f99dad41-30f8-4294-bbba-4f0b555eda23-ingredient-5",
+      "originalText": "2 large egg whites",
+      "ingredientName": "egg white",
+      "ingredientRefId": "ingredient-ref-egg-white",
+      "quantity": 2,
+      "unit": "count",
+      "preparation": "large, room temperature"
+    },
+    {
+      "id": "f99dad41-30f8-4294-bbba-4f0b555eda23-ingredient-6",
+      "originalText": "170 g semisweet chocolate",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 170,
+      "unit": "g"
+    }
+  ],
+  "servings": {
+    "amount": 24,
+    "unit": "cookies"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 20,
+    "totalTimeMinutes": 40
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cookies",
+    "tag-christmas",
+    "tag-shareable"
+  ],
+  "collections": [
+    "collection-christmas-box"
+  ],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-f99dad41-30f8-4294-bbba-4f0b555eda23-0",
+  "photos": [
+    {
+      "id": "photo-f99dad41-30f8-4294-bbba-4f0b555eda23-0",
+      "relativePath": "photos/f99dad41-30f8-4294-bbba-4f0b555eda23_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

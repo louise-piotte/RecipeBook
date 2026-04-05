@@ -22,7 +22,7 @@ class BundledSeedPackageTest {
         assertFalse(library.metadata.libraryId.contains("boite", ignoreCase = true))
         assertFalse(library.ingredientReferences.isEmpty())
         assertTrue(library.tags.size >= 12)
-        assertTrue(library.collections.isEmpty())
+        assertTrue(library.collections.any { it.nameEn == "Christmas Box" })
         assertTrue(library.ingredientReferences.any { it.nameEn == "all-purpose flour" })
         assertTrue(library.ingredientReferences.any { it.nameEn == "icing sugar" })
         assertTrue(library.recipes.all { recipe ->

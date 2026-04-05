@@ -1,0 +1,90 @@
+{
+  "id": "a8429c9a-dcc8-4694-b09d-81c62d51af2d",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-04T00:00:00Z",
+  "source": {
+    "sourceName": "Fit Foodie Finds",
+    "sourceUrl": "https://fitfoodiefinds.com/24-hour-sous-vide-ribs/"
+  },
+  "languages": {
+    "fr": {
+      "title": "C\u00f4tes lev\u00e9es sous vide",
+      "description": "Des c\u00f4tes lev\u00e9es de porc cuites sous vide, puis grill\u00e9es avec sauce BBQ et assaisonnement sec.",
+      "instructions": "Remplir une grande casserole d'eau et pr\u00e9chauffer le bain-marie sous vide \u00e0 67\u00b0C/152\u00b0F.\nSortir les c\u00f4tes lev\u00e9es de l'emballage et les d\u00e9poser sur une grande plaque. Couper le carr\u00e9 en 2 si n\u00e9cessaire, puis retirer la membrane blanche au dos.\nFrotter les c\u00f4tes avec l'huile d'olive, puis assaisonner g\u00e9n\u00e9reusement avec environ 1/2 tasse d'assaisonnement sec pour porc en massant des 2 c\u00f4t\u00e9s.\nSceller les c\u00f4tes dans des sacs adapt\u00e9s au sous-vide et cuire 24 h.\nRetirer les sacs du bain-marie, jeter le liquide de cuisson et \u00e9ponger les c\u00f4tes avec du papier absorbant.\nPr\u00e9chauffer le four \u00e0 gril.\nAssaisonner de nouveau avec environ 1/4 tasse d'assaisonnement sec. D\u00e9poser les c\u00f4tes c\u00f4t\u00e9 viande vers le bas et badigeonner d'une couche de sauce BBQ.\nFaire griller 2 min \u00e0 3 min, retourner les c\u00f4tes, badigeonner le c\u00f4t\u00e9 viande de sauce BBQ et faire griller encore 2 min \u00e0 3 min.",
+      "notes": "La recette source utilise la recette de l'assaisonnement sec au porc li\u00e9e dans l'export. Utiliser votre m\u00e9lange pr\u00e9f\u00e9r\u00e9 si l'assaisonnement n'est pas d\u00e9j\u00e0 pr\u00eat."
+    },
+    "en": {
+      "title": "Sous Vide Ribs",
+      "description": "Pork ribs cooked sous vide, then broiled with barbecue sauce and dry rub.",
+      "instructions": "Fill a large pot with water and preheat the sous vide bath to 67\u00b0C/152\u00b0F.\nRemove the ribs from the package and place them on a large baking sheet. Cut the rack in half if needed, then remove the white membrane from the back.\nRub the ribs with the olive oil, then season generously with about 1/2 cup pork dry rub, massaging both sides.\nSeal the ribs in sous vide bags and cook for 24 h.\nRemove the bags from the water bath, discard the cooking liquid, and pat the ribs dry with paper towels.\nPreheat the oven to broil.\nSeason again with about 1/4 cup of dry rub. Place the ribs meat-side down and brush with a layer of barbecue sauce.\nBroil for 2 min to 3 min, flip the ribs, brush the meat side with barbecue sauce, and broil for another 2 min to 3 min.",
+      "notes": "The source recipe uses the linked pork dry rub recipe from the export. Use your preferred rub if it is not already prepared."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "a8429c9a-dcc8-4694-b09d-81c62d51af2d-ingredient-1",
+      "originalText": "1 rack pork ribs",
+      "ingredientName": "pork ribs",
+      "ingredientRefId": "ingredient-ref-rack-of-ribs",
+      "quantity": 1,
+      "unit": "rack"
+    },
+    {
+      "id": "a8429c9a-dcc8-4694-b09d-81c62d51af2d-ingredient-2",
+      "originalText": "1/2 tbsp olive oil",
+      "ingredientName": "olive oil",
+      "ingredientRefId": "ingredient-ref-olive-oil",
+      "quantity": 0.5,
+      "unit": "tbsp"
+    },
+    {
+      "id": "a8429c9a-dcc8-4694-b09d-81c62d51af2d-ingredient-3",
+      "originalText": "3/4 cup pork dry rub, divided",
+      "ingredientName": "pork dry rub",
+      "quantity": 0.75,
+      "unit": "cup",
+      "preparation": "divided"
+    },
+    {
+      "id": "a8429c9a-dcc8-4694-b09d-81c62d51af2d-ingredient-4",
+      "originalText": "1/2 cup barbecue sauce",
+      "ingredientName": "barbecue sauce",
+      "ingredientRefId": "ingredient-ref-bbq-sauce",
+      "quantity": 0.5,
+      "unit": "cup"
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 1440,
+    "totalTimeMinutes": 1460
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-sous-vide",
+    "tag-bbq",
+    "tag-project",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-a8429c9a-dcc8-4694-b09d-81c62d51af2d-0",
+  "photos": [
+    {
+      "id": "photo-a8429c9a-dcc8-4694-b09d-81c62d51af2d-0",
+      "relativePath": "photos/a8429c9a-dcc8-4694-b09d-81c62d51af2d_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-04",
+    "originalUnits": "mixed"
+  }
+}

@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "collection-christmas-box",
+    "nameFr": "Bo\u00eete de No\u00ebl",
+    "nameEn": "Christmas Box",
+    "recipeIds": [
+      "f99dad41-30f8-4294-bbba-4f0b555eda23"
+    ]
+  }
+]
