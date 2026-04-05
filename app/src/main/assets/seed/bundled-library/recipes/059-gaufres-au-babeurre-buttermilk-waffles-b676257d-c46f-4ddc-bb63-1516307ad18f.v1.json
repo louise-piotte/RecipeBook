@@ -1,0 +1,131 @@
+{
+  "id": "b676257d-c46f-4ddc-bb63-1516307ad18f",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Allrecipes",
+    "sourceUrl": "https://www.allrecipes.com/recipe/233920/tender-and-easy-buttermilk-waffles/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Gaufres au babeurre",
+      "description": "Des gaufres au babeurre tendres \u00e0 l'int\u00e9rieur et dor\u00e9es \u00e0 l'ext\u00e9rieur.",
+      "instructions": "Pr\u00e9chauffer le gaufrier.\nDans un bol, fouetter la farine, le sucre, la poudre \u00e0 p\u00e2te, le bicarbonate de soude et le sel.\nDans un autre bol, fouetter le babeurre avec le beurre fondu, puis incorporer les \u0153ufs et la vanille.\nVerser les ingr\u00e9dients liquides dans les ingr\u00e9dients secs et m\u00e9langer juste assez pour combiner. Il est normal que la p\u00e2te reste l\u00e9g\u00e8rement grumeleuse.\nCuire dans le gaufrier pr\u00e9chauff\u00e9 jusqu'\u00e0 ce que les gaufres soient bien dor\u00e9es.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Buttermilk Waffles",
+      "description": "Buttermilk waffles that are tender inside and crisp on the outside.",
+      "instructions": "Preheat the waffle iron.\nIn a bowl, whisk together the flour, sugar, baking powder, baking soda, and salt.\nIn another bowl, whisk together the buttermilk and melted butter, then whisk in the eggs and vanilla.\nPour the wet ingredients into the dry ingredients and stir just until combined. A slightly lumpy batter is fine.\nCook in the preheated waffle iron until the waffles are deeply golden.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "b676257d-c46f-4ddc-bb63-1516307ad18f-ingredient-1",
+      "originalText": "2 cups all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "id": "b676257d-c46f-4ddc-bb63-1516307ad18f-ingredient-2",
+      "originalText": "2 tbsp granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "b676257d-c46f-4ddc-bb63-1516307ad18f-ingredient-3",
+      "originalText": "2 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "b676257d-c46f-4ddc-bb63-1516307ad18f-ingredient-4",
+      "originalText": "1 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "b676257d-c46f-4ddc-bb63-1516307ad18f-ingredient-5",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "b676257d-c46f-4ddc-bb63-1516307ad18f-ingredient-6",
+      "originalText": "2 cups buttermilk",
+      "ingredientName": "buttermilk",
+      "ingredientRefId": "ingredient-ref-buttermilk",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "id": "b676257d-c46f-4ddc-bb63-1516307ad18f-ingredient-7",
+      "originalText": "76 g unsalted butter, melted",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 76,
+      "unit": "g",
+      "preparation": "melted"
+    },
+    {
+      "id": "b676257d-c46f-4ddc-bb63-1516307ad18f-ingredient-8",
+      "originalText": "2 large eggs, lightly beaten",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 2,
+      "unit": "large egg",
+      "preparation": "lightly beaten"
+    },
+    {
+      "id": "b676257d-c46f-4ddc-bb63-1516307ad18f-ingredient-9",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "servings": {
+    "amount": 6,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 25
+  },
+  "tags": [
+    "tag-breakfast",
+    "tag-brunch",
+    "tag-batter",
+    "tag-quick"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-b676257d-c46f-4ddc-bb63-1516307ad18f-0",
+  "photos": [
+    {
+      "id": "photo-b676257d-c46f-4ddc-bb63-1516307ad18f-0",
+      "relativePath": "photos/b676257d-c46f-4ddc-bb63-1516307ad18f_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/coffee-cake/#recipe"
+  },
+  "languages": {
+    "fr": {
+      "title": "G\u00e2teau d\u00e9jeuner",
+      "description": "Un g\u00e2teau d\u00e9jeuner \u00e0 la cr\u00e8me sure avec une garniture \u00e0 la cannelle, un streusel aux noix et un gla\u00e7age \u00e0 la vanille.",
+      "instructions": "Dans un petit bol, fouetter la cassonade claire, la farine et la cannelle pour la garniture \u00e0 la cannelle. R\u00e9server.\nDans un bol moyen, fouetter la farine, la cassonade, le sucre, la cannelle et le sel pour le streusel. Ajouter le beurre froid et l'\u00e9craser avec les doigts ou une fourchette jusqu'\u00e0 l'obtention de grosses miettes, puis incorporer les noix de Grenoble. R\u00e9server.\nPr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F. Graisser l\u00e9g\u00e8rement un moule carr\u00e9 de 8 po et le tapisser de papier parchemin.\nDans un bol moyen, fouetter la farine, la poudre \u00e0 p\u00e2te et le sel.\nDans un grand bol, ou dans le bol d'un batteur sur socle muni de la palette, battre le beurre avec les deux sucres \u00e0 vitesse moyenne jusqu'\u00e0 ce que le m\u00e9lange soit l\u00e9ger et mousseux, environ 3 min. Ajouter les \u0153ufs un \u00e0 un, puis incorporer la cr\u00e8me sure et la vanille.\nAjouter les ingr\u00e9dients secs au m\u00e9lange humide et battre \u00e0 basse vitesse juste assez pour les incorporer. Racler le bol et terminer \u00e0 la spatule si n\u00e9cessaire.\n\u00c9taler la moiti\u00e9 de la p\u00e2te dans le moule pr\u00e9par\u00e9. Saupoudrer la garniture \u00e0 la cannelle, puis d\u00e9poser le reste de la p\u00e2te par cuiller\u00e9es et l'\u00e9taler d\u00e9licatement jusqu'aux bords.\nR\u00e9partir le streusel sur le dessus en commen\u00e7ant par les bords. Cuire 55 min, ou jusqu'\u00e0 ce qu'un cure-dent ins\u00e9r\u00e9 au centre en ressorte propre. Laisser ti\u00e9dir au moins 30 min dans le moule.\nSi d\u00e9sir\u00e9, fouetter le sucre \u00e0 glacer, le lait et la vanille jusqu'\u00e0 consistance lisse, puis arroser le g\u00e2teau avant ou apr\u00e8s le tranchage.",
+      "notes": "Version enregistr\u00e9e avec des noix de Grenoble dans le streusel.\nPour un moule \u00e0 chemin\u00e9e, cuire \u00e0 163\u00b0C/325\u00b0F pendant 40 min \u00e0 50 min.\nLe streusel s'inspire aussi d'une variation not\u00e9e dans la recette enregistr\u00e9e: https://bakedbree.com/blue-ribbon-coffee-cake#recipe"
+    },
+    "en": {
+      "title": "Coffee Cake",
+      "description": "A sour cream coffee cake with a cinnamon ribbon, walnut streusel topping, and optional vanilla glaze.",
+      "instructions": "In a small bowl, whisk together the light brown sugar, flour, and cinnamon for the cinnamon filling. Set aside.\nIn a medium bowl, whisk together the flour, brown sugar, granulated sugar, cinnamon, and salt for the streusel. Add the cold butter and work it in with your fingers or a fork until coarse crumbs form, then stir in the walnuts. Set aside.\nPreheat the oven to 177\u00b0C/350\u00b0F. Lightly grease an 8-inch square pan and line it with parchment paper.\nIn a medium bowl, whisk together the flour, baking powder, and salt.\nIn a large bowl, or in the bowl of a stand mixer fitted with the paddle attachment, beat the butter and both sugars on medium speed until light and fluffy, about 3 min. Add the eggs one at a time, then mix in the sour cream and vanilla.\nAdd the dry ingredients to the wet ingredients and mix on low speed just until combined. Scrape down the bowl and finish folding by hand if needed.\nSpread half of the batter into the prepared pan. Sprinkle the cinnamon filling over top, then dollop on the remaining batter and carefully spread it to the edges.\nSprinkle the streusel over the top, starting at the edges. Bake for 55 min, or until a toothpick inserted in the center comes out clean. Let the cake cool in the pan for at least 30 min.\nIf desired, whisk together the icing sugar, milk, and vanilla until smooth, then drizzle over the cake before or after slicing.",
+      "notes": "Saved version uses walnuts in the streusel topping.\nFor a bundt pan, bake at 163\u00b0C/325\u00b0F for 40 min to 50 min.\nThe saved recipe also notes a streusel variation from https://bakedbree.com/blue-ribbon-coffee-cake#recipe"
+    }
+  },
+  "ingredients": [
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-1",
+      "originalText": "147 g packed light brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 147,
+      "unit": "g",
+      "preparation": "packed light",
+      "group": "Cinnamon filling"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-2",
+      "originalText": "30 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 30,
+      "unit": "g",
+      "group": "Cinnamon filling"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-3",
+      "originalText": "2 tsp ground cinnamon",
+      "ingredientName": "cinnamon",
+      "ingredientRefId": "ingredient-ref-ground-cinnamon",
+      "quantity": 2,
+      "unit": "tsp",
+      "group": "Cinnamon filling"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-4",
+      "originalText": "90 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 90,
+      "unit": "g",
+      "group": "Streusel topping"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-5",
+      "originalText": "110 g packed brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 110,
+      "unit": "g",
+      "preparation": "packed",
+      "group": "Streusel topping"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-6",
+      "originalText": "100 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 100,
+      "unit": "g",
+      "group": "Streusel topping"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-7",
+      "originalText": "2 tsp ground cinnamon",
+      "ingredientName": "cinnamon",
+      "ingredientRefId": "ingredient-ref-ground-cinnamon",
+      "quantity": 2,
+      "unit": "tsp",
+      "group": "Streusel topping"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-8",
+      "originalText": "1/4 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.25,
+      "unit": "tsp",
+      "group": "Streusel topping"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-9",
+      "originalText": "85 g unsalted butter, cold and diced",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 85,
+      "unit": "g",
+      "preparation": "cold and diced",
+      "group": "Streusel topping"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-10",
+      "originalText": "1 cup walnuts, chopped",
+      "ingredientName": "walnuts",
+      "ingredientRefId": "ingredient-ref-walnuts",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "chopped",
+      "group": "Streusel topping"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-11",
+      "originalText": "210 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 210,
+      "unit": "g",
+      "group": "Cake"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-12",
+      "originalText": "2 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 2,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-13",
+      "originalText": "3/4 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.75,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-14",
+      "originalText": "142 g unsalted butter, softened",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 142,
+      "unit": "g",
+      "preparation": "softened",
+      "group": "Cake"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-15",
+      "originalText": "150 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 150,
+      "unit": "g",
+      "group": "Cake"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-16",
+      "originalText": "55 g packed light brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 55,
+      "unit": "g",
+      "preparation": "packed light",
+      "group": "Cake"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-17",
+      "originalText": "2 large eggs, room temperature",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 2,
+      "unit": "large egg",
+      "preparation": "room temperature",
+      "group": "Cake"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-18",
+      "originalText": "160 g sour cream, room temperature",
+      "ingredientName": "sour cream",
+      "ingredientRefId": "ingredient-ref-sour-cream",
+      "quantity": 160,
+      "unit": "g",
+      "preparation": "room temperature",
+      "group": "Cake"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-19",
+      "originalText": "2 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 2,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-20",
+      "originalText": "120 g icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 120,
+      "unit": "g",
+      "group": "Vanilla glaze"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-21",
+      "originalText": "2 tbsp whole milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 2,
+      "unit": "tbsp",
+      "preparation": "whole",
+      "group": "Vanilla glaze"
+    },
+    {
+      "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-22",
+      "originalText": "1/2 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Vanilla glaze"
+    }
+  ],
+  "servings": {
+    "amount": 9,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 55,
+    "totalTimeMinutes": 70
+  },
+  "tags": [
+    "tag-breakfast",
+    "tag-cake",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 0
+  },
+  "mainPhotoId": "photo-f6d10ccb-a696-4898-813b-a5a01e7f82ce-0",
+  "photos": [
+    {
+      "id": "photo-f6d10ccb-a696-4898-813b-a5a01e7f82ce-0",
+      "relativePath": "photos/f6d10ccb-a696-4898-813b-a5a01e7f82ce_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

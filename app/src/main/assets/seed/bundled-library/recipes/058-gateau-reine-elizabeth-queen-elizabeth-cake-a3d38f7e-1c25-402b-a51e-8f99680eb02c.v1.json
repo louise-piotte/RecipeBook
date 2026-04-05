@@ -1,0 +1,218 @@
+{
+  "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Allrecipes",
+    "sourceUrl": "https://www.allrecipes.com/recipe/7666/queen-elizabeth-cake-i/"
+  },
+  "languages": {
+    "fr": {
+      "title": "G\u00e2teau Reine Elizabeth",
+      "description": "Un g\u00e2teau moelleux aux dattes garni d'un nappage \u00e0 la noix de coco et \u00e0 la cassonade.",
+      "instructions": "Verser l'eau bouillante sur les dattes hach\u00e9es et laisser reposer jusqu'\u00e0 temp\u00e9rature ambiante. Cela peut prendre plusieurs heures.\nPr\u00e9chauffer le four \u00e0 175\u00b0C/350\u00b0F. Beurrer deux moules ronds de 8 po.\nDans un bol, m\u00e9langer la farine, le bicarbonate de soude, la poudre \u00e0 p\u00e2te, le sel et les noix de Grenoble.\nDans un autre bol, cr\u00e9mer le beurre et le sucre. Incorporer l'\u0153uf et la vanille.\nAjouter les ingr\u00e9dients secs au m\u00e9lange cr\u00e9m\u00e9 en trois fois, en alternant avec le m\u00e9lange de dattes en deux fois et en commen\u00e7ant puis en finissant par les ingr\u00e9dients secs. R\u00e9partir la p\u00e2te dans les moules.\nCuire de 30 min \u00e0 40 min, ou jusqu'\u00e0 ce qu'un cure-dent ins\u00e9r\u00e9 au centre ressorte propre. Laisser refroidir.\nPour la garniture, m\u00e9langer la noix de coco, la cassonade, le beurre et la cr\u00e8me dans une petite casserole. Porter \u00e0 \u00e9bullition et cuire 3 min. Laisser ti\u00e9dir jusqu'\u00e0 ce que la garniture soit tartinable.\nTartiner le dessus de la premi\u00e8re couche, poser la seconde par-dessus, puis couvrir le dessus et les c\u00f4t\u00e9s du reste de garniture. Presser la noix de coco grill\u00e9e sur les surfaces visibles pour d\u00e9corer.",
+      "notes": "Le m\u00e9lange de dattes doit refroidir compl\u00e8tement avant d'\u00eatre incorpor\u00e9 \u00e0 la p\u00e2te."
+    },
+    "en": {
+      "title": "Queen Elizabeth Cake",
+      "description": "A moist date cake finished with a brown sugar coconut topping.",
+      "instructions": "Pour the boiling water over the chopped dates and let them stand until they reach room temperature. This can take several hours.\nPreheat the oven to 175\u00b0C/350\u00b0F. Grease two 8-inch round pans.\nIn a bowl, stir together the flour, baking soda, baking powder, salt, and walnuts.\nIn another bowl, cream the butter and sugar together. Beat in the egg and vanilla.\nAdd the dry ingredients to the creamed mixture in three additions, alternating with the date mixture in two additions and beginning and ending with the dry ingredients. Divide the batter between the pans.\nBake for 30 min to 40 min, or until a toothpick inserted in the center comes out clean. Let the cakes cool.\nFor the topping, combine the coconut, brown sugar, butter, and cream in a small saucepan. Bring to a boil and cook for 3 min. Let it cool until spreadable.\nSpread some topping over the first layer, set the second layer on top, then cover the top and sides with the remaining topping. Press the toasted coconut onto the exposed topping to decorate.",
+      "notes": "The date mixture needs to cool completely before it is added to the batter."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-1",
+      "originalText": "1 1/4 cups boiling water",
+      "ingredientName": "water",
+      "quantity": 1.25,
+      "unit": "cup",
+      "preparation": "boiling",
+      "group": "Cake"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-2",
+      "originalText": "1 1/4 cups dates, pitted and chopped",
+      "ingredientName": "dates",
+      "quantity": 1.25,
+      "unit": "cup",
+      "preparation": "pitted and chopped",
+      "group": "Cake"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-3",
+      "originalText": "57 g butter, softened",
+      "ingredientName": "butter",
+      "quantity": 57,
+      "unit": "g",
+      "preparation": "softened",
+      "group": "Cake"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-4",
+      "originalText": "1 cup granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 1,
+      "unit": "cup",
+      "group": "Cake"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-5",
+      "originalText": "1 egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "count",
+      "group": "Cake"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-6",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-7",
+      "originalText": "1 1/2 cups all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 1.5,
+      "unit": "cup",
+      "group": "Cake"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-8",
+      "originalText": "1 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-9",
+      "originalText": "1 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-10",
+      "originalText": "1/4 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.25,
+      "unit": "tsp",
+      "group": "Cake"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-11",
+      "originalText": "1/2 cup walnuts, chopped",
+      "ingredientName": "walnuts",
+      "ingredientRefId": "ingredient-ref-walnuts",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "chopped",
+      "group": "Cake"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-12",
+      "originalText": "1 cup flaked coconut",
+      "ingredientName": "coconut",
+      "ingredientRefId": "ingredient-ref-coconut",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "flaked",
+      "group": "Topping"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-13",
+      "originalText": "1 cup packed brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "packed",
+      "group": "Topping"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-14",
+      "originalText": "128 g butter",
+      "ingredientName": "butter",
+      "quantity": 128,
+      "unit": "g",
+      "group": "Topping"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-15",
+      "originalText": "90 ml cream",
+      "ingredientName": "cream",
+      "quantity": 90,
+      "unit": "ml",
+      "group": "Topping"
+    },
+    {
+      "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-16",
+      "originalText": "1/2 cup toasted coconut",
+      "ingredientName": "coconut",
+      "ingredientRefId": "ingredient-ref-coconut",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "toasted",
+      "group": "Topping"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 30,
+    "cookTimeMinutes": 40,
+    "totalTimeMinutes": 70
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-a3d38f7e-1c25-402b-a51e-8f99680eb02c-0",
+  "photos": [
+    {
+      "id": "photo-a3d38f7e-1c25-402b-a51e-8f99680eb02c-0",
+      "relativePath": "photos/a3d38f7e-1c25-402b-a51e-8f99680eb02c_0.jpg"
+    },
+    {
+      "id": "photo-a3d38f7e-1c25-402b-a51e-8f99680eb02c-1",
+      "relativePath": "photos/a3d38f7e-1c25-402b-a51e-8f99680eb02c_1.jpg"
+    },
+    {
+      "id": "photo-a3d38f7e-1c25-402b-a51e-8f99680eb02c-2",
+      "relativePath": "photos/a3d38f7e-1c25-402b-a51e-8f99680eb02c_2.jpg"
+    },
+    {
+      "id": "photo-a3d38f7e-1c25-402b-a51e-8f99680eb02c-3",
+      "relativePath": "photos/a3d38f7e-1c25-402b-a51e-8f99680eb02c_3.jpg"
+    },
+    {
+      "id": "photo-a3d38f7e-1c25-402b-a51e-8f99680eb02c-4",
+      "relativePath": "photos/a3d38f7e-1c25-402b-a51e-8f99680eb02c_4.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}
