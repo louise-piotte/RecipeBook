@@ -1,0 +1,179 @@
+{
+  "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Allrecipes",
+    "sourceUrl": "https://www.allrecipes.com/recipe/16354/easy-meatloaf/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Pain de viande",
+      "description": "Un pain de viande classique napp\u00e9 d'un gla\u00e7age au ketchup et \u00e0 la sauce BBQ.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 175\u00b0C/350\u00b0F. Graisser l\u00e9g\u00e8rement un moule \u00e0 pain de 9 x 5 po.\nDans un grand bol, m\u00e9langer le boeuf hach\u00e9, l'oeuf, l'oignon, le lait, la chapelure, la sauce Worcestershire, l'ail en poudre, le basilic s\u00e9ch\u00e9, l'origan s\u00e9ch\u00e9 et le paprika fum\u00e9.\nAssaisonner de sel et de poivre au go\u00fbt, puis transf\u00e9rer dans le moule pr\u00e9par\u00e9.\nDans un petit bol, m\u00e9langer le ketchup, la sauce BBQ, la cassonade et le vinaigre jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9.\n\u00c9taler le gla\u00e7age sur le dessus du pain de viande.\nCuire environ 1 h, jusqu'\u00e0 ce que le centre soit bien cuit.\nLaisser reposer quelques minutes avant de trancher.",
+      "notes": "Doubler les \u00e9pices."
+    },
+    "en": {
+      "title": "Meatloaf",
+      "description": "A classic meatloaf topped with a ketchup and BBQ sauce glaze.",
+      "instructions": "Preheat the oven to 175\u00b0C/350\u00b0F. Lightly grease a 9 x 5-inch loaf pan.\nIn a large bowl, combine the ground beef, egg, onion, milk, bread crumbs, Worcestershire sauce, garlic powder, dried basil, dried oregano, and smoked paprika.\nSeason with salt and pepper to taste, then transfer the mixture to the prepared pan.\nIn a small bowl, stir together the ketchup, BBQ sauce, brown sugar, and vinegar until smooth.\nSpread the glaze over the top of the meatloaf.\nBake for about 1 h, until the center is cooked through.\nLet rest for a few minutes before slicing.",
+      "notes": "Double the spices."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-1",
+      "originalText": "1 1/2 lb ground beef",
+      "ingredientName": "ground beef",
+      "ingredientRefId": "ingredient-ref-ground-beef",
+      "quantity": 1.5,
+      "unit": "lb"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-2",
+      "originalText": "1 egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "count"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-3",
+      "originalText": "1 onion, chopped",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "chopped"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-4",
+      "originalText": "1 cup milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-5",
+      "originalText": "1 cup dried bread crumbs",
+      "ingredientName": "bread crumbs",
+      "ingredientRefId": "ingredient-ref-breadcrumbs",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "dried"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-6",
+      "originalText": "1 tbsp Worcestershire sauce",
+      "ingredientName": "Worcestershire sauce",
+      "ingredientRefId": "ingredient-ref-worcestershire-sauce",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-7",
+      "originalText": "1 tsp garlic powder",
+      "ingredientName": "garlic powder",
+      "ingredientRefId": "ingredient-ref-garlic-powder",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-8",
+      "originalText": "1 tsp dried basil",
+      "ingredientName": "dried basil",
+      "ingredientRefId": "ingredient-ref-dried-basil",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-9",
+      "originalText": "1 tsp dried oregano",
+      "ingredientName": "dried oregano",
+      "ingredientRefId": "ingredient-ref-dried-oregano",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-10",
+      "originalText": "1/2 tsp smoked paprika",
+      "ingredientName": "smoked paprika",
+      "ingredientRefId": "ingredient-ref-smoked-paprika",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-11",
+      "originalText": "Salt and black pepper, to taste",
+      "ingredientName": "salt and black pepper"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-12",
+      "originalText": "1/3 cup ketchup",
+      "ingredientName": "ketchup",
+      "ingredientRefId": "ingredient-ref-ketchup",
+      "quantity": 0.3333333333,
+      "unit": "cup",
+      "group": "Glaze"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-13",
+      "originalText": "1/3 cup BBQ sauce",
+      "ingredientName": "BBQ sauce",
+      "ingredientRefId": "ingredient-ref-bbq-sauce",
+      "quantity": 0.3333333333,
+      "unit": "cup",
+      "group": "Glaze"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-14",
+      "originalText": "1 tbsp brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 1,
+      "unit": "tbsp",
+      "group": "Glaze"
+    },
+    {
+      "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-15",
+      "originalText": "1 tbsp vinegar",
+      "ingredientName": "vinegar",
+      "ingredientRefId": "ingredient-ref-vinegar",
+      "quantity": 1,
+      "unit": "tbsp",
+      "group": "Glaze"
+    }
+  ],
+  "servings": {
+    "amount": 8,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 60,
+    "totalTimeMinutes": 75
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-oven",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-35267f47-fcd6-4d69-9124-c6e8ac85aa57-0",
+  "photos": [
+    {
+      "id": "photo-35267f47-fcd6-4d69-9124-c6e8ac85aa57-0",
+      "relativePath": "photos/35267f47-fcd6-4d69-9124-c6e8ac85aa57_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

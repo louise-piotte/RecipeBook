@@ -1,0 +1,163 @@
+{
+  "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/chocolate-chip-banana-bread/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Pain aux bananes et au chocolat",
+      "description": "Un pain aux bananes moelleux parfum\u00e9 \u00e0 la cannelle et garni de chocolat mi-sucr\u00e9.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F et graisser un moule \u00e0 pain.\nDans un bol, fouetter la farine, le bicarbonate de soude, la poudre \u00e0 p\u00e2te, le sel, la cannelle et les \u00e9pices \u00e0 tarte \u00e0 la citrouille.\nCr\u00e9mer le beurre, puis ajouter la cassonade et battre environ 3 min jusqu'\u00e0 ce que le m\u00e9lange p\u00e2lisse.\nAjouter les oeufs un \u00e0 la fois, puis incorporer la vanille et les bananes \u00e9cras\u00e9es.\nAjouter les ingr\u00e9dients secs et m\u00e9langer juste assez pour presque combiner.\nR\u00e9server une poign\u00e9e de chocolat pour le dessus et incorporer le reste \u00e0 la p\u00e2te.\nVerser la p\u00e2te dans le moule, parsemer du chocolat r\u00e9serv\u00e9 et cuire environ 60 min, jusqu'\u00e0 ce qu'un cure-dent ins\u00e9r\u00e9 au centre ressorte propre.\nLaisser ti\u00e9dir avant de d\u00e9mouler et de trancher.",
+      "notes": "On peut remplacer une partie ou la totalit\u00e9 du chocolat par des pacanes."
+    },
+    "en": {
+      "title": "Chocolate Banana Bread",
+      "description": "A moist banana bread flavored with cinnamon and filled with semisweet chocolate.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F and grease a loaf pan.\nIn a bowl, whisk together the flour, baking soda, baking powder, salt, cinnamon, and pumpkin pie spice.\nCream the butter, then add the brown sugar and beat for about 3 min until lighter in color.\nBeat in the eggs one at a time, then mix in the vanilla and mashed bananas.\nAdd the dry ingredients and mix just until almost combined.\nReserve a handful of the chocolate for the top and fold the rest into the batter.\nTransfer the batter to the pan, sprinkle with the reserved chocolate, and bake for about 60 min, until a toothpick inserted in the center comes out clean.\nLet the loaf cool before unmolding and slicing.",
+      "notes": "Part or all of the chocolate can be replaced with pecans."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-1",
+      "originalText": "215 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 215,
+      "unit": "g"
+    },
+    {
+      "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-2",
+      "originalText": "1/2 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-3",
+      "originalText": "1 tsp baking powder",
+      "ingredientName": "baking powder",
+      "ingredientRefId": "ingredient-ref-baking-powder",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-4",
+      "originalText": "1 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-5",
+      "originalText": "1 tsp cinnamon",
+      "ingredientName": "ground cinnamon",
+      "ingredientRefId": "ingredient-ref-ground-cinnamon",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-6",
+      "originalText": "1 tsp pumpkin pie spice",
+      "ingredientName": "pumpkin spice",
+      "ingredientRefId": "ingredient-ref-pumpkin-spice",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-7",
+      "originalText": "150 g brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 150,
+      "unit": "g"
+    },
+    {
+      "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-8",
+      "originalText": "113 g unsalted butter, room temperature",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 113,
+      "unit": "g",
+      "preparation": "room temperature"
+    },
+    {
+      "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-9",
+      "originalText": "2 large eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 2,
+      "unit": "large egg"
+    },
+    {
+      "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-10",
+      "originalText": "3 bananas, mashed",
+      "ingredientName": "banana",
+      "ingredientRefId": "ingredient-ref-banana",
+      "quantity": 3,
+      "unit": "count",
+      "preparation": "very ripe, mashed"
+    },
+    {
+      "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-11",
+      "originalText": "270 g semisweet chocolate",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 270,
+      "unit": "g"
+    },
+    {
+      "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-12",
+      "originalText": "5 ml vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 5,
+      "unit": "ml"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "slices"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 60,
+    "totalTimeMinutes": 75
+  },
+  "tags": [
+    "tag-breakfast",
+    "tag-snack",
+    "tag-vegetarian",
+    "tag-oven"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-c5486a31-4047-4437-ad8b-14a6e776bdd5-0",
+  "photos": [
+    {
+      "id": "photo-c5486a31-4047-4437-ad8b-14a6e776bdd5-0",
+      "relativePath": "photos/c5486a31-4047-4437-ad8b-14a6e776bdd5_0.jpg"
+    },
+    {
+      "id": "photo-c5486a31-4047-4437-ad8b-14a6e776bdd5-1",
+      "relativePath": "photos/c5486a31-4047-4437-ad8b-14a6e776bdd5_1.jpg"
+    },
+    {
+      "id": "photo-c5486a31-4047-4437-ad8b-14a6e776bdd5-2",
+      "relativePath": "photos/c5486a31-4047-4437-ad8b-14a6e776bdd5_2.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

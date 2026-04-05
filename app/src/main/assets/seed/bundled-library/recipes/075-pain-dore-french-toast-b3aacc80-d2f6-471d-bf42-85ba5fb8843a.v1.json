@@ -1,0 +1,81 @@
+{
+  "id": "b3aacc80-d2f6-471d-bf42-85ba5fb8843a",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Pain dor\u00e9",
+      "description": "Un pain dor\u00e9 simple \u00e0 base de brioche, pr\u00eat en quelques minutes.",
+      "instructions": "Fouetter les oeufs, le lait et la vanille dans un bol.\nHuiler l\u00e9g\u00e8rement une po\u00eale et la faire chauffer \u00e0 feu moyen-vif.\nTremper chaque tranche de brioche dans le m\u00e9lange d'oeufs.\nFaire cuire les tranches dans la po\u00eale des deux c\u00f4t\u00e9s jusqu'\u00e0 ce qu'elles soient bien dor\u00e9es.\nR\u00e9p\u00e9ter avec le reste du pain et servir chaud.",
+      "notes": "La quantit\u00e9 de m\u00e9lange suffit pour environ 5 \u00e0 8 tranches de brioche, selon leur \u00e9paisseur."
+    },
+    "en": {
+      "title": "French Toast",
+      "description": "A simple brioche French toast ready in just a few minutes.",
+      "instructions": "Whisk the eggs, milk, and vanilla together in a bowl.\nLightly oil a skillet and heat it over medium-high heat.\nDip each slice of brioche into the egg mixture.\nCook the slices in the skillet on both sides until nicely golden.\nRepeat with the remaining bread and serve hot.",
+      "notes": "The mixture is enough for about 5 to 8 slices of brioche depending on their thickness."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "b3aacc80-d2f6-471d-bf42-85ba5fb8843a-ingredient-1",
+      "originalText": "2 eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 2,
+      "unit": "count"
+    },
+    {
+      "id": "b3aacc80-d2f6-471d-bf42-85ba5fb8843a-ingredient-2",
+      "originalText": "1/4 cup milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "id": "b3aacc80-d2f6-471d-bf42-85ba5fb8843a-ingredient-3",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "b3aacc80-d2f6-471d-bf42-85ba5fb8843a-ingredient-4",
+      "originalText": "5 to 8 slices brioche bread",
+      "ingredientName": "brioche bread",
+      "ingredientRefId": "ingredient-ref-brioche-bread",
+      "quantity": 8,
+      "unit": "count"
+    }
+  ],
+  "servings": {
+    "amount": 8,
+    "unit": "slices"
+  },
+  "times": {
+    "prepTimeMinutes": 2,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 12
+  },
+  "tags": [
+    "tag-breakfast",
+    "tag-brunch",
+    "tag-vegetarian"
+  ],
+  "collections": [
+    "collection-gab-favorites"
+  ],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": null,
+  "photos": [],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

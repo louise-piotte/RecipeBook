@@ -1,0 +1,188 @@
+{
+  "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Joshua Weissman",
+    "sourceUrl": "https://www.joshuaweissman.com/post/mcdonald-s-big-mac-but-better"
+  },
+  "languages": {
+    "fr": {
+      "title": "Pains \u00e0 hamburger",
+      "description": "Des pains \u00e0 hamburger moelleux faits avec un tangzhong pour une mie tr\u00e8s tendre.",
+      "instructions": "Pour le tangzhong, fouetter la farine, le lait entier et l'eau dans une petite casserole jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9. Cuire \u00e0 feu moyen en remuant jusqu'\u00e0 ce que le m\u00e9lange \u00e9paississe, puis laisser ti\u00e9dir.\nM\u00e9langer le lait et l'eau du p\u00e2ton principal, puis chauffer jusqu'\u00e0 35\u00b0C/95\u00b0F. Incorporer le sucre et la levure, puis laisser reposer jusqu'\u00e0 ce que le m\u00e9lange soit mousseux.\nDans le bol d'un batteur sur socle, m\u00e9langer la farine \u00e0 pain et le sel.\nAjouter le m\u00e9lange de levure, le tangzhong, l'oeuf entier et le jaune d'oeuf. P\u00e9trir \u00e0 vitesse moyenne-basse pendant 2 min \u00e0 3 min, jusqu'\u00e0 ce qu'une p\u00e2te lisse commence \u00e0 se former.\nAjouter le beurre un peu \u00e0 la fois et continuer \u00e0 p\u00e9trir jusqu'\u00e0 ce qu'il soit bien incorpor\u00e9 et que la p\u00e2te soit souple.\nFormer une boule, d\u00e9poser dans un grand bol graiss\u00e9, couvrir et laisser lever 1 h \u00e0 temp\u00e9rature ambiante.\nD\u00e9gazer la p\u00e2te, puis la diviser en 12 portions \u00e9gales. Fa\u00e7onner chaque portion en boule serr\u00e9e et d\u00e9poser sur une plaque tapiss\u00e9e de papier parchemin.\nCouvrir l\u00e9g\u00e8rement et laisser lever encore 30 min.\nPr\u00e9chauffer le four \u00e0 190\u00b0C/375\u00b0F.\nBadigeonner les pains de dorure \u00e0 l'oeuf et parsemer de graines de s\u00e9same.\nCuire 17 min, jusqu'\u00e0 ce que les pains soient bien dor\u00e9s.\nBadigeonner imm\u00e9diatement de beurre fondu, puis laisser ti\u00e9dir sur une grille.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Hamburger Buns",
+      "description": "Soft hamburger buns made with a tangzhong for an extra tender crumb.",
+      "instructions": "For the tangzhong, whisk the flour, whole milk, and water together in a small saucepan until smooth. Cook over medium heat, stirring, until thickened, then let it cool slightly.\nCombine the milk and water for the dough and warm them to 35\u00b0C/95\u00b0F. Stir in the sugar and yeast, then let the mixture sit until frothy.\nIn the bowl of a stand mixer, combine the bread flour and salt.\nAdd the yeast mixture, tangzhong, whole egg, and egg yolk. Mix on medium-low speed for 2 min to 3 min until a smooth dough starts to form.\nAdd the butter a little at a time and keep mixing until fully incorporated and the dough is supple.\nShape the dough into a ball, place it in a greased bowl, cover, and let it rise at room temperature for 1 h.\nPunch down the dough, then divide it into 12 equal portions. Shape each portion into a tight ball and place them on a parchment-lined baking sheet.\nCover loosely and let the buns proof for 30 min.\nPreheat the oven to 190\u00b0C/375\u00b0F.\nBrush the buns with egg wash and sprinkle with sesame seeds.\nBake for 17 min, until the buns are deeply golden.\nBrush immediately with melted butter, then let cool on a rack.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-1",
+      "originalText": "18 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 18,
+      "unit": "g",
+      "group": "Tangzhong"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-2",
+      "originalText": "60 ml whole milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 60,
+      "unit": "ml",
+      "group": "Tangzhong",
+      "preparation": "whole"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-3",
+      "originalText": "30 ml water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 30,
+      "unit": "ml",
+      "group": "Tangzhong"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-4",
+      "originalText": "125 ml whole milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 125,
+      "unit": "ml",
+      "group": "Dough",
+      "preparation": "whole"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-5",
+      "originalText": "150 ml water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 150,
+      "unit": "ml",
+      "group": "Dough"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-6",
+      "originalText": "8 g instant yeast",
+      "ingredientName": "yeast",
+      "ingredientRefId": "ingredient-ref-yeast",
+      "quantity": 8,
+      "unit": "g",
+      "group": "Dough",
+      "preparation": "instant"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-7",
+      "originalText": "420 g bread flour",
+      "ingredientName": "bread flour",
+      "ingredientRefId": "ingredient-ref-bread-flour",
+      "quantity": 420,
+      "unit": "g",
+      "group": "Dough"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-8",
+      "originalText": "21 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 21,
+      "unit": "g",
+      "group": "Dough"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-9",
+      "originalText": "7 g salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 7,
+      "unit": "g",
+      "group": "Dough"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-10",
+      "originalText": "1 whole egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "count",
+      "group": "Dough"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-11",
+      "originalText": "1 egg yolk",
+      "ingredientName": "egg yolk",
+      "quantity": 1,
+      "unit": "count",
+      "group": "Dough"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-12",
+      "originalText": "3 tbsp unsalted butter, softened",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 3,
+      "unit": "tbsp",
+      "group": "Dough",
+      "preparation": "softened"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-13",
+      "originalText": "Egg wash",
+      "ingredientName": "egg wash",
+      "group": "Topping"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-14",
+      "originalText": "Sesame seeds, toasted",
+      "ingredientName": "sesame seeds",
+      "ingredientRefId": "ingredient-ref-sesame-seeds",
+      "group": "Topping",
+      "preparation": "toasted"
+    },
+    {
+      "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-15",
+      "originalText": "Melted butter",
+      "ingredientName": "butter",
+      "group": "Topping",
+      "preparation": "melted"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "buns"
+  },
+  "times": {
+    "prepTimeMinutes": 125,
+    "cookTimeMinutes": 17,
+    "totalTimeMinutes": 142
+  },
+  "tags": [
+    "tag-side-dish",
+    "tag-oven",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-cfa64319-d4b9-4425-b087-3e30be3cc4a0-0",
+  "photos": [
+    {
+      "id": "photo-cfa64319-d4b9-4425-b087-3e30be3cc4a0-0",
+      "relativePath": "photos/cfa64319-d4b9-4425-b087-3e30be3cc4a0_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

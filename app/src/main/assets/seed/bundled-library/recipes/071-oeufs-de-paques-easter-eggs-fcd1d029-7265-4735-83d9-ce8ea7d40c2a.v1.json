@@ -1,0 +1,112 @@
+{
+  "id": "fcd1d029-7265-4735-83d9-ce8ea7d40c2a",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Eagle Brand",
+    "sourceUrl": "https://www.eaglebrand.ca/En/Recipes/Sunny-Chocolate-Easter-Eggs"
+  },
+  "languages": {
+    "fr": {
+      "title": "Oeufs de P\u00e2ques",
+      "description": "Des oeufs de P\u00e2ques fondants enrob\u00e9s de chocolat mi-sucr\u00e9.",
+      "instructions": "Cr\u00e9mer le beurre et le sel jusqu'\u00e0 ce que le m\u00e9lange soit l\u00e9ger.\nIncorporer graduellement le lait condens\u00e9 sucr\u00e9, l'extrait de vanille et quelques gouttes de colorant alimentaire si d\u00e9sir\u00e9.\nAjouter le sucre \u00e0 glacer petit \u00e0 petit, puis p\u00e9trir le m\u00e9lange avec les mains jusqu'\u00e0 ce qu'il soit lisse et mall\u00e9able.\nFa\u00e7onner le m\u00e9lange en environ 30 oeufs. D\u00e9poser sur une plaque tapiss\u00e9e de papier cir\u00e9, couvrir et r\u00e9frig\u00e9rer 4 h jusqu'\u00e0 ce qu'ils soient fermes.\nFaire fondre le chocolat.\nD\u00e9poser chaque oeuf sur une fourchette \u00e0 2 dents, le tremper dans le chocolat fondu et laisser \u00e9goutter l'exc\u00e9dent.\nRemettre les oeufs sur la plaque tapiss\u00e9e et laisser le chocolat figer.\nConserver couvert \u00e0 temp\u00e9rature ambiante ou au r\u00e9frig\u00e9rateur.",
+      "notes": "On peut remplacer l'extrait de vanille par de l'extrait d'amande."
+    },
+    "en": {
+      "title": "Easter Eggs",
+      "description": "Soft fondant-style Easter eggs coated in semisweet chocolate.",
+      "instructions": "Cream the butter and salt until light and fluffy.\nGradually beat in the sweetened condensed milk, vanilla extract, and a few drops of food coloring if desired.\nAdd the icing sugar a little at a time, then knead the mixture by hand until it is smooth and pliable.\nShape the mixture into about 30 eggs. Place them on a wax paper-lined tray, cover, and chill for 4 h until firm.\nMelt the chocolate.\nRest each egg on a 2-pronged fork, dip it into the melted chocolate, and let the excess drip off.\nReturn the eggs to the lined tray and let the chocolate set.\nStore covered at room temperature or in the refrigerator.",
+      "notes": "Almond extract can be used instead of the vanilla extract."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "fcd1d029-7265-4735-83d9-ce8ea7d40c2a-ingredient-1",
+      "originalText": "1/2 cup butter, softened",
+      "ingredientName": "butter",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "softened"
+    },
+    {
+      "id": "fcd1d029-7265-4735-83d9-ce8ea7d40c2a-ingredient-2",
+      "originalText": "1 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "fcd1d029-7265-4735-83d9-ce8ea7d40c2a-ingredient-3",
+      "originalText": "300 ml sweetened condensed milk",
+      "ingredientName": "sweetened condensed milk",
+      "ingredientRefId": "ingredient-ref-sweetened-condensed-milk",
+      "quantity": 300,
+      "unit": "ml"
+    },
+    {
+      "id": "fcd1d029-7265-4735-83d9-ce8ea7d40c2a-ingredient-4",
+      "originalText": "5 ml vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 5,
+      "unit": "ml"
+    },
+    {
+      "id": "fcd1d029-7265-4735-83d9-ce8ea7d40c2a-ingredient-5",
+      "originalText": "Food coloring, optional",
+      "ingredientName": "food coloring",
+      "ingredientRefId": "ingredient-ref-food-coloring",
+      "optional": true
+    },
+    {
+      "id": "fcd1d029-7265-4735-83d9-ce8ea7d40c2a-ingredient-6",
+      "originalText": "1 kg icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 1,
+      "unit": "kg"
+    },
+    {
+      "id": "fcd1d029-7265-4735-83d9-ce8ea7d40c2a-ingredient-7",
+      "originalText": "680 g semisweet chocolate, melted",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 680,
+      "unit": "g",
+      "preparation": "melted"
+    }
+  ],
+  "servings": {
+    "amount": 30,
+    "unit": "eggs"
+  },
+  "times": {
+    "prepTimeMinutes": 280,
+    "cookTimeMinutes": 5,
+    "totalTimeMinutes": 285
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-snack",
+    "tag-easter"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-fcd1d029-7265-4735-83d9-ce8ea7d40c2a-0",
+  "photos": [
+    {
+      "id": "photo-fcd1d029-7265-4735-83d9-ce8ea7d40c2a-0",
+      "relativePath": "photos/fcd1d029-7265-4735-83d9-ce8ea7d40c2a_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

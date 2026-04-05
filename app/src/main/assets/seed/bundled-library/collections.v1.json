@@ -15,5 +15,13 @@
     "recipeIds": [
       "81d376ac-c305-402f-a73d-8bb721045319"
     ]
+  },
+  {
+    "id": "collection-gab-favorites",
+    "nameFr": "Favoris \u00e0 Gab",
+    "nameEn": "Gab's Favorites",
+    "recipeIds": [
+      "b3aacc80-d2f6-471d-bf42-85ba5fb8843a"
+    ]
   }
 ]
