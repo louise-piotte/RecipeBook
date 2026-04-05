@@ -1,0 +1,100 @@
+{
+  "id": "e9dfacc1-69f7-47cf-9f4e-c5c79508162f",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "\u00c9pis de ma\u00efs",
+      "description": "Des \u00e9pis de ma\u00efs bouillis dans un bouillon au lait, au beurre et \u00e0 l'ail, avec le liquide conserv\u00e9 comme base de soupe.",
+      "instructions": "Faire bouillir l'eau avec le concentr\u00e9 de bouillon et l'ail.\nAjouter le lait, la cassonade et le beurre, puis ramener \u00e0 \u00e9bullition.\nAjouter les \u00e9pis de ma\u00efs et faire bouillir 5 min.\nServir le ma\u00efs et conserver le liquide pour l'utiliser comme base de soupe.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Corn on the Cob",
+      "description": "Corn on the cob simmered in a buttery milk broth with garlic and bouillon, with the cooking liquid saved for soup.",
+      "instructions": "Bring the water to a boil with the broth concentrate and garlic.\nAdd the milk, brown sugar, and butter, then bring it back to a boil.\nAdd the corn on the cob and boil for 5 min.\nServe the corn and keep the liquid to use as a soup base.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "e9dfacc1-69f7-47cf-9f4e-c5c79508162f-ingredient-1",
+      "originalText": "2 cups water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "id": "e9dfacc1-69f7-47cf-9f4e-c5c79508162f-ingredient-2",
+      "originalText": "1 cup milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "e9dfacc1-69f7-47cf-9f4e-c5c79508162f-ingredient-3",
+      "originalText": "1/4 cup unsalted butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "id": "e9dfacc1-69f7-47cf-9f4e-c5c79508162f-ingredient-4",
+      "originalText": "1/8 cup brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 0.125,
+      "unit": "cup"
+    },
+    {
+      "id": "e9dfacc1-69f7-47cf-9f4e-c5c79508162f-ingredient-5",
+      "originalText": "2 tsp broth concentrate",
+      "ingredientName": "broth concentrate",
+      "ingredientRefId": "ingredient-ref-broth-concentrate",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "e9dfacc1-69f7-47cf-9f4e-c5c79508162f-ingredient-6",
+      "originalText": "Garlic powder or fresh garlic, to taste",
+      "ingredientName": "garlic powder",
+      "ingredientRefId": "ingredient-ref-garlic-powder",
+      "notes": "Garlic powder or fresh garlic, to taste"
+    },
+    {
+      "id": "e9dfacc1-69f7-47cf-9f4e-c5c79508162f-ingredient-7",
+      "originalText": "2 ears corn on the cob",
+      "ingredientName": "corn on the cob",
+      "ingredientRefId": "ingredient-ref-corn-on-the-cob",
+      "quantity": 2
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "serving"
+  },
+  "times": {
+    "prepTimeMinutes": 0,
+    "cookTimeMinutes": 5,
+    "totalTimeMinutes": 5
+  },
+  "tags": [
+    "tag-side-dish",
+    "tag-summer",
+    "tag-stovetop"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "photos": [],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

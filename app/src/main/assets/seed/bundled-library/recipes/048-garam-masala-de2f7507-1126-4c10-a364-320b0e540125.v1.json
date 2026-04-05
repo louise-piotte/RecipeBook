@@ -1,0 +1,114 @@
+{
+  "id": "de2f7507-1126-4c10-a364-320b0e540125",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "L'\u00cele aux \u00e9pices",
+    "sourceUrl": "https://ileauxepices.com/blog/2015/01/21/recette-garam-masala-maison/wpid7279/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Garam masala",
+      "description": "Un m\u00e9lange d'\u00e9pices indien chaud et parfum\u00e9 \u00e0 pr\u00e9parer en quelques minutes.",
+      "instructions": "M\u00e9langer toutes les \u00e9pices dans un petit bol jusqu'\u00e0 l'obtention d'une poudre de couleur uniforme.\nTransf\u00e9rer dans un contenant herm\u00e9tique.\nConserver dans un endroit frais et sec.",
+      "notes": "La recette source pr\u00e9sente cette version comme un m\u00e9lange rapide fait avec des \u00e9pices moulues."
+    },
+    "en": {
+      "title": "Garam Masala",
+      "description": "A warm, fragrant Indian spice blend that comes together in just a few minutes.",
+      "instructions": "Mix all of the spices in a small bowl until the blend is an even color.\nTransfer to an airtight container.\nStore in a cool, dry place.",
+      "notes": "The source presents this as a quick version made with ground spices."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "de2f7507-1126-4c10-a364-320b0e540125-ingredient-1",
+      "originalText": "2 tsp ground cumin",
+      "ingredientName": "ground cumin",
+      "ingredientRefId": "ingredient-ref-ground-cumin",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "de2f7507-1126-4c10-a364-320b0e540125-ingredient-2",
+      "originalText": "1 1/2 tsp coriander",
+      "ingredientName": "coriander",
+      "ingredientRefId": "ingredient-ref-coriander",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "de2f7507-1126-4c10-a364-320b0e540125-ingredient-3",
+      "originalText": "1 1/2 tsp ground cardamom",
+      "ingredientName": "ground cardamom",
+      "ingredientRefId": "ingredient-ref-ground-cardamom",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "de2f7507-1126-4c10-a364-320b0e540125-ingredient-4",
+      "originalText": "1 1/2 tsp black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "de2f7507-1126-4c10-a364-320b0e540125-ingredient-5",
+      "originalText": "1 tsp cinnamon",
+      "ingredientName": "cinnamon",
+      "ingredientRefId": "ingredient-ref-ground-cinnamon",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "de2f7507-1126-4c10-a364-320b0e540125-ingredient-6",
+      "originalText": "1/2 tsp ground cloves",
+      "ingredientName": "ground cloves",
+      "ingredientRefId": "ingredient-ref-ground-cloves",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "de2f7507-1126-4c10-a364-320b0e540125-ingredient-7",
+      "originalText": "1/2 tsp nutmeg",
+      "ingredientName": "nutmeg",
+      "ingredientRefId": "ingredient-ref-nutmeg",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
+  ],
+  "servings": {
+    "amount": 8,
+    "unit": "tsp"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 5
+  },
+  "tags": [
+    "tag-indian",
+    "tag-spice-blend",
+    "tag-pantry-staple",
+    "tag-vegetarian",
+    "tag-ingredient-component"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-de2f7507-1126-4c10-a364-320b0e540125-0",
+  "photos": [
+    {
+      "id": "photo-de2f7507-1126-4c10-a364-320b0e540125-0",
+      "relativePath": "photos/de2f7507-1126-4c10-a364-320b0e540125_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

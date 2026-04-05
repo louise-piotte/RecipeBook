@@ -1,0 +1,110 @@
+{
+  "id": "3a206140-a145-4871-92c6-7024ce958858",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Galettes au chocolat",
+      "description": "De grosses galettes moelleuses \u00e0 l'avoine, \u00e0 la cassonade et au chocolat.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F.\nM\u00e9langer l'\u0153uf, la cassonade, la margarine, l'huile et le bicarbonate de soude.\nAjouter la farine et l'avoine rapide en alternant 1/2 tasse \u00e0 la fois.\nIncorporer les p\u00e9pites de chocolat.\nDiviser la p\u00e2te en 6 portions et les aplatir en disques sur une plaque \u00e0 biscuits.\nCuire 15 min.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Chocolate Galettes",
+      "description": "Large soft oat cookies with brown sugar and chocolate chips.",
+      "instructions": "Preheat the oven to 177\u00b0C/350\u00b0F.\nMix the egg, brown sugar, margarine, oil, and baking soda.\nAdd the flour and quick oats, alternating in 1/2-cup additions.\nFold in the chocolate chips.\nDivide the dough into 6 portions and flatten them into disks on a baking sheet.\nBake for 15 min.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "3a206140-a145-4871-92c6-7024ce958858-ingredient-1",
+      "originalText": "1 egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "large egg"
+    },
+    {
+      "id": "3a206140-a145-4871-92c6-7024ce958858-ingredient-2",
+      "originalText": "1 1/2 cups brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "id": "3a206140-a145-4871-92c6-7024ce958858-ingredient-3",
+      "originalText": "1 1/2 cups all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "id": "3a206140-a145-4871-92c6-7024ce958858-ingredient-4",
+      "originalText": "1 1/2 cups quick oats",
+      "ingredientName": "quick oats",
+      "ingredientRefId": "ingredient-ref-quick-oats",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "id": "3a206140-a145-4871-92c6-7024ce958858-ingredient-5",
+      "originalText": "1/2 cup margarine",
+      "ingredientName": "margarine",
+      "ingredientRefId": "ingredient-ref-margarine",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "3a206140-a145-4871-92c6-7024ce958858-ingredient-6",
+      "originalText": "1/2 cup vegetable oil",
+      "ingredientName": "vegetable oil",
+      "ingredientRefId": "ingredient-ref-vegetable-oil",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "3a206140-a145-4871-92c6-7024ce958858-ingredient-7",
+      "originalText": "1/2 tsp baking soda",
+      "ingredientName": "baking soda",
+      "ingredientRefId": "ingredient-ref-baking-soda",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "3a206140-a145-4871-92c6-7024ce958858-ingredient-8",
+      "originalText": "1 cup semisweet chocolate chips",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 1,
+      "unit": "cup"
+    }
+  ],
+  "servings": {
+    "amount": 6,
+    "unit": "cookies"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 15,
+    "totalTimeMinutes": 30
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cookies",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "photos": [],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

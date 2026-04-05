@@ -1,0 +1,106 @@
+{
+  "id": "e0f7bb65-859b-4dc0-8d03-30180b9acdaf",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/how-to-make-french-buttercream/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Cr\u00e8me au beurre fran\u00e7aise",
+      "description": "Une cr\u00e8me au beurre riche et soyeuse \u00e0 base de jaunes d'\u0153uf, pour glacer ou garnir des g\u00e2teaux et des cupcakes.",
+      "instructions": "Mettre le sucre et l'eau dans une casserole moyenne. Chauffer \u00e0 feu doux en remuant jusqu'\u00e0 dissolution du sucre, puis augmenter \u00e0 feu moyen et porter \u00e0 \u00e9bullition.\nMettre les jaunes d'\u0153uf dans le bol d'un batteur sur socle muni du fouet et battre jusqu'\u00e0 ce qu'ils soient \u00e9pais et mousseux.\nCuire le sirop jusqu'\u00e0 116\u00b0C/240\u00b0F. Retirer imm\u00e9diatement du feu. Avec le batteur en marche \u00e0 basse vitesse, verser tr\u00e8s lentement le sirop chaud sur les jaunes.\nContinuer de fouetter jusqu'\u00e0 ce que le bol soit frais au toucher et que le m\u00e9lange soit revenu \u00e0 temp\u00e9rature pi\u00e8ce.\nAjouter le beurre un cube \u00e0 la fois en laissant chaque ajout s'incorporer avant le suivant. Ajouter la vanille et le sel, puis continuer de fouetter jusqu'\u00e0 ce que la cr\u00e8me au beurre soit lisse et cr\u00e9meuse, environ 5 min \u00e0 6 min.",
+      "notes": "Le rendement de la recette source est d'environ 2 1/4 tasses, soit 375 g. Utiliser un beurre ramolli, mais pas trop mou, pour une texture stable."
+    },
+    "en": {
+      "title": "French Buttercream",
+      "description": "A rich, silky yolk-based buttercream for frosting or filling cakes and cupcakes.",
+      "instructions": "Combine the sugar and water in a medium saucepan. Heat over low heat, stirring until the sugar dissolves, then increase the heat to medium and bring it to a boil.\nPlace the egg yolks in the bowl of a stand mixer fitted with the whisk attachment and beat until thick and foamy.\nCook the syrup until it reaches 116\u00b0C/240\u00b0F. Remove it from the heat immediately. With the mixer running on low speed, very slowly drizzle the hot syrup into the yolks.\nContinue mixing until the bowl is cool to the touch and the yolk mixture has come to room temperature.\nAdd the butter one cube at a time, letting each addition incorporate before adding the next. Add the vanilla and salt, then continue mixing until the buttercream is smooth and creamy, about 5 min to 6 min.",
+      "notes": "The source recipe yields about 2 1/4 cups, or 375 g. Use butter that is softened but not overly soft for the best texture."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "e0f7bb65-859b-4dc0-8d03-30180b9acdaf-ingredient-1",
+      "originalText": "100 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 100,
+      "unit": "g"
+    },
+    {
+      "id": "e0f7bb65-859b-4dc0-8d03-30180b9acdaf-ingredient-2",
+      "originalText": "3 tbsp water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "id": "e0f7bb65-859b-4dc0-8d03-30180b9acdaf-ingredient-3",
+      "originalText": "5 large egg yolks",
+      "ingredientName": "egg yolk",
+      "ingredientRefId": "ingredient-ref-egg-yolk",
+      "quantity": 5,
+      "unit": "large egg yolk"
+    },
+    {
+      "id": "e0f7bb65-859b-4dc0-8d03-30180b9acdaf-ingredient-4",
+      "originalText": "227 g unsalted butter, room temperature, cubed",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 227,
+      "unit": "g",
+      "preparation": "room temperature, cubed"
+    },
+    {
+      "id": "e0f7bb65-859b-4dc0-8d03-30180b9acdaf-ingredient-5",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "e0f7bb65-859b-4dc0-8d03-30180b9acdaf-ingredient-6",
+      "originalText": "Pinch of salt (optional)",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "optional": true
+    }
+  ],
+  "servings": {
+    "amount": 375,
+    "unit": "g"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 5,
+    "totalTimeMinutes": 10
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-frosting",
+    "tag-french",
+    "tag-ingredient-component",
+    "tag-stand-mixer"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 0
+  },
+  "mainPhotoId": "photo-e0f7bb65-859b-4dc0-8d03-30180b9acdaf-0",
+  "photos": [
+    {
+      "id": "photo-e0f7bb65-859b-4dc0-8d03-30180b9acdaf-0",
+      "relativePath": "photos/e0f7bb65-859b-4dc0-8d03-30180b9acdaf_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}
