@@ -1,0 +1,92 @@
+{
+  "id": "9c2ee378-3b20-47c0-ae4a-77195a908b07",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Sauce au jus",
+      "description": "Une sauce rapide \u00e0 base de roux, de concentr\u00e9 de bouillon et d'eau bouillante.",
+      "instructions": "Faire fondre le beurre dans une casserole \u00e0 feu moyen.\nAjouter la farine et cuire 1 min en fouettant pour faire un roux.\nAjouter le concentr\u00e9 de bouillon et bien m\u00e9langer.\nVerser l'eau bouillante et les \u00e9pices, puis remuer jusqu'\u00e0 ce que la sauce \u00e9paississe.\nLaisser reposer un peu avant de servir pour qu'elle \u00e9paississe davantage.",
+      "notes": "N'importe quelle saveur de Better Than Bouillon peut \u00eatre utilis\u00e9e pour varier le go\u00fbt."
+    },
+    "en": {
+      "title": "Gravy",
+      "description": "A quick gravy made from a roux, broth concentrate, and boiling water.",
+      "instructions": "Melt the butter in a saucepan over medium heat.\nAdd the flour and cook for 1 min, whisking to make a roux.\nAdd the broth concentrate and mix well.\nPour in the boiling water and spices, then stir until the gravy thickens.\nLet it rest briefly before serving so it thickens a little more.",
+      "notes": "Any Better Than Bouillon flavor can be used to change the taste."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "9c2ee378-3b20-47c0-ae4a-77195a908b07-ingredient-1",
+      "originalText": "3 tbsp butter",
+      "ingredientName": "butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "id": "9c2ee378-3b20-47c0-ae4a-77195a908b07-ingredient-2",
+      "originalText": "1/2 cup flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "9c2ee378-3b20-47c0-ae4a-77195a908b07-ingredient-3",
+      "originalText": "1 tbsp Better Than Bouillon",
+      "ingredientName": "broth concentrate",
+      "ingredientRefId": "ingredient-ref-broth-concentrate",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "9c2ee378-3b20-47c0-ae4a-77195a908b07-ingredient-4",
+      "originalText": "2 cups boiling water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 2,
+      "unit": "cup",
+      "preparation": "boiling"
+    },
+    {
+      "id": "9c2ee378-3b20-47c0-ae4a-77195a908b07-ingredient-5",
+      "originalText": "Spices, to taste",
+      "ingredientName": "spices",
+      "quantity": 1,
+      "unit": "to taste"
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 15
+  },
+  "tags": [
+    "tag-sauce",
+    "tag-side-dish",
+    "tag-stovetop"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 0
+  },
+  "mainPhotoId": "photo-9c2ee378-3b20-47c0-ae4a-77195a908b07-0",
+  "photos": [
+    {
+      "id": "photo-9c2ee378-3b20-47c0-ae4a-77195a908b07-0",
+      "relativePath": "photos/9c2ee378-3b20-47c0-ae4a-77195a908b07_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

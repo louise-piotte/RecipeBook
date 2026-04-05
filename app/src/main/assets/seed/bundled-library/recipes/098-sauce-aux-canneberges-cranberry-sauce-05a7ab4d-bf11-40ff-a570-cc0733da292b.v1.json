@@ -1,0 +1,79 @@
+{
+  "id": "05a7ab4d-bf11-40ff-a570-cc0733da292b",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Sauce aux canneberges",
+      "description": "Une sauce aux canneberges simple, \u00e0 servir froide.",
+      "instructions": "Mettre les canneberges et l'eau dans un chaudron.\nPorter \u00e0 \u00e9bullition et cuire 5 min pour ramollir les canneberges.\n\u00c9craser les canneberges au pilon \u00e0 pommes de terre ou avec une cuill\u00e8re en bois jusqu'\u00e0 ce qu'il ne reste presque plus de fruits entiers.\nAjouter le sucre et remuer jusqu'\u00e0 ce que la sauce devienne plus liquide.\nRetirer du feu, transf\u00e9rer dans des pots Mason et laisser refroidir.\nServir froid.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Cranberry Sauce",
+      "description": "A simple cranberry sauce meant to be served cold.",
+      "instructions": "Place the cranberries and water in a pot.\nBring to a boil and cook for 5 min to soften the cranberries.\nMash the cranberries with a potato masher or wooden spoon until almost no whole berries remain.\nAdd the sugar and stir until the sauce loosens.\nRemove from the heat, transfer to Mason jars, and let cool.\nServe cold.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "05a7ab4d-bf11-40ff-a570-cc0733da292b-ingredient-1",
+      "originalText": "1 box cranberries",
+      "ingredientName": "cranberries",
+      "ingredientRefId": "ingredient-ref-cranberries",
+      "quantity": 1,
+      "unit": "count",
+      "notes": "box"
+    },
+    {
+      "id": "05a7ab4d-bf11-40ff-a570-cc0733da292b-ingredient-2",
+      "originalText": "1/2 cup water",
+      "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "05a7ab4d-bf11-40ff-a570-cc0733da292b-ingredient-3",
+      "originalText": "2/3 cup sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 0.6667,
+      "unit": "cup"
+    }
+  ],
+  "servings": {
+    "amount": 6,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 0,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 10
+  },
+  "tags": [
+    "tag-sauce",
+    "tag-ingredient-component",
+    "tag-thanksgiving"
+  ],
+  "collections": [
+    "collection-mom-and-dad-recipes"
+  ],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-05a7ab4d-bf11-40ff-a570-cc0733da292b-0",
+  "photos": [
+    {
+      "id": "photo-05a7ab4d-bf11-40ff-a570-cc0733da292b-0",
+      "relativePath": "photos/05a7ab4d-bf11-40ff-a570-cc0733da292b_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

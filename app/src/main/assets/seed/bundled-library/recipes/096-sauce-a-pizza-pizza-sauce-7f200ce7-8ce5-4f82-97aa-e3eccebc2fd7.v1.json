@@ -1,0 +1,142 @@
+{
+  "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Le Coup de Grace",
+    "sourceUrl": "https://lecoupdegrace.ca/recette/sauce-a-pizza-maison/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Sauce \u00e0 pizza",
+      "description": "Une sauce \u00e0 pizza maison aux tomates fra\u00eeches, \u00e0 l'oignon, \u00e0 l'ail et aux fines herbes.",
+      "instructions": "Dans un chaudron \u00e0 feu moyen, chauffer l'huile d'olive et faire revenir l'oignon et l'ail de 3 min \u00e0 4 min.\nAjouter le vin blanc et poursuivre la cuisson 1 min.\nAjouter les tomates, l'origan, le basilic s\u00e9ch\u00e9, le sel, le basilic frais et du poivre. Bien m\u00e9langer.\nLaisser mijoter 15 min en remuant de temps en temps.\nRetirer du feu et r\u00e9duire en pur\u00e9e.\nLaisser refroidir compl\u00e8tement avant d'utiliser sur une pizza.",
+      "notes": "La sauce se cong\u00e8le bien dans des bacs \u00e0 gla\u00e7ons. Un cube donne environ 1 cuill\u00e8re \u00e0 soupe."
+    },
+    "en": {
+      "title": "Pizza Sauce",
+      "description": "A homemade pizza sauce with fresh tomatoes, onion, garlic, and herbs.",
+      "instructions": "In a pot over medium heat, warm the olive oil and saute the onion and garlic for 3 min to 4 min.\nAdd the white wine and cook for 1 min more.\nAdd the tomatoes, oregano, dried basil, salt, fresh basil, and pepper. Mix well.\nSimmer for 15 min, stirring from time to time.\nRemove from the heat and puree.\nLet cool completely before using on pizza.",
+      "notes": "The sauce freezes well in ice cube trays. One cube makes about 1 tablespoon."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-1",
+      "originalText": "4 large tomatoes, diced",
+      "ingredientName": "tomatoes",
+      "ingredientRefId": "ingredient-ref-tomatoes",
+      "quantity": 4,
+      "unit": "count",
+      "preparation": "large, diced"
+    },
+    {
+      "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-2",
+      "originalText": "2 tsp olive oil",
+      "ingredientName": "olive oil",
+      "ingredientRefId": "ingredient-ref-olive-oil",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-3",
+      "originalText": "1 Spanish onion, finely chopped",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "Spanish, finely chopped"
+    },
+    {
+      "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-4",
+      "originalText": "1 tbsp white wine",
+      "ingredientName": "white wine",
+      "ingredientRefId": "ingredient-ref-white-wine",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-5",
+      "originalText": "2 large garlic cloves, finely chopped",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 2,
+      "unit": "clove",
+      "preparation": "large, finely chopped"
+    },
+    {
+      "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-6",
+      "originalText": "1 tsp dried oregano",
+      "ingredientName": "dried oregano",
+      "ingredientRefId": "ingredient-ref-dried-oregano",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-7",
+      "originalText": "1 tsp dried basil",
+      "ingredientName": "dried basil",
+      "ingredientRefId": "ingredient-ref-dried-basil",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-8",
+      "originalText": "1 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-9",
+      "originalText": "10 fresh basil leaves",
+      "ingredientName": "basil",
+      "ingredientRefId": "ingredient-ref-basil",
+      "quantity": 10,
+      "unit": "count",
+      "preparation": "fresh leaves"
+    },
+    {
+      "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-10",
+      "originalText": "Ground pepper, to taste",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 1,
+      "unit": "to taste"
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "batch"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 20,
+    "totalTimeMinutes": 30
+  },
+  "tags": [
+    "tag-sauce",
+    "tag-ingredient-component",
+    "tag-italian",
+    "tag-stovetop",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-0",
+  "photos": [
+    {
+      "id": "photo-7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-0",
+      "relativePath": "photos/7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

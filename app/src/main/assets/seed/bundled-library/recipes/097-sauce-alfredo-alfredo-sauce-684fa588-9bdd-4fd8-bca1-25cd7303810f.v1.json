@@ -1,0 +1,116 @@
+{
+  "id": "684fa588-9bdd-4fd8-bca1-25cd7303810f",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Food.com",
+    "sourceUrl": "https://www.food.com/recipe/reduced-fat-alfredo-sauce-12365"
+  },
+  "languages": {
+    "fr": {
+      "title": "Sauce Alfredo",
+      "description": "Une sauce Alfredo l\u00e9g\u00e8re \u00e0 base de lait, de parmesan et d'ail.",
+      "instructions": "Faire fondre le beurre dans une casserole \u00e0 feu moyen.\nIncorporer la farine graduellement en fouettant pour former un roux lisse.\nAjouter le lait peu \u00e0 peu en fouettant jusqu'\u00e0 ce que le m\u00e9lange soit chaud et sans grumeaux, environ 3 min \u00e0 5 min.\nAjouter le parmesan lentement en fouettant jusqu'\u00e0 ce qu'il soit incorpor\u00e9.\nAjouter l'ail et le poivre, puis cuire encore 2 min ou jusqu'\u00e0 ce que le fromage soit fondu.",
+      "notes": "La cl\u00e9 est la patience: ajouter chaque ingr\u00e9dient graduellement.\nC'est une bonne base pour ajouter des champignons, des fruits de mer ou d'autres garnitures."
+    },
+    "en": {
+      "title": "Alfredo Sauce",
+      "description": "A lighter Alfredo sauce made with milk, Parmesan, and garlic.",
+      "instructions": "Melt the butter in a saucepan over medium heat.\nGradually whisk in the flour to make a smooth roux.\nAdd the milk little by little, whisking until the mixture is hot and lump-free, about 3 min to 5 min.\nAdd the Parmesan slowly, whisking until it is incorporated.\nAdd the garlic and pepper, then cook for 2 min more or until the cheese is melted.",
+      "notes": "The key is patience: add each ingredient gradually.\nThis is a good base for mushrooms, seafood, or other add-ins."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "684fa588-9bdd-4fd8-bca1-25cd7303810f-ingredient-1",
+      "originalText": "1 cup skim milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "skim"
+    },
+    {
+      "id": "684fa588-9bdd-4fd8-bca1-25cd7303810f-ingredient-2",
+      "originalText": "1 1/2 tbsp butter",
+      "ingredientName": "butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 1.5,
+      "unit": "tbsp"
+    },
+    {
+      "id": "684fa588-9bdd-4fd8-bca1-25cd7303810f-ingredient-3",
+      "originalText": "1 1/2 tbsp flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 1.5,
+      "unit": "tbsp"
+    },
+    {
+      "id": "684fa588-9bdd-4fd8-bca1-25cd7303810f-ingredient-4",
+      "originalText": "3 tbsp Parmesan cheese",
+      "ingredientName": "Parmesan cheese",
+      "ingredientRefId": "ingredient-ref-parmesan-cheese",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "id": "684fa588-9bdd-4fd8-bca1-25cd7303810f-ingredient-5",
+      "originalText": "1/2 tsp minced garlic",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "preparation": "minced"
+    },
+    {
+      "id": "684fa588-9bdd-4fd8-bca1-25cd7303810f-ingredient-6",
+      "originalText": "Pepper, to taste",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 1,
+      "unit": "to taste"
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 15
+  },
+  "tags": [
+    "tag-sauce",
+    "tag-ingredient-component",
+    "tag-italian",
+    "tag-stovetop",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-684fa588-9bdd-4fd8-bca1-25cd7303810f-0",
+  "photos": [
+    {
+      "id": "photo-684fa588-9bdd-4fd8-bca1-25cd7303810f-0",
+      "relativePath": "photos/684fa588-9bdd-4fd8-bca1-25cd7303810f_0.jpg"
+    },
+    {
+      "id": "photo-684fa588-9bdd-4fd8-bca1-25cd7303810f-1",
+      "relativePath": "photos/684fa588-9bdd-4fd8-bca1-25cd7303810f_1.jpg"
+    },
+    {
+      "id": "photo-684fa588-9bdd-4fd8-bca1-25cd7303810f-2",
+      "relativePath": "photos/684fa588-9bdd-4fd8-bca1-25cd7303810f_2.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

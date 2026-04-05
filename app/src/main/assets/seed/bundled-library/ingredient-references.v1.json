@@ -416,8 +416,12 @@
     "id": "ingredient-ref-broth-concentrate",
     "nameFr": "concentr\u00e9 de bouillon",
     "nameEn": "broth concentrate",
-    "aliasesFr": [],
-    "aliasesEn": [],
+    "aliasesFr": [
+      "better than bouillon"
+    ],
+    "aliasesEn": [
+      "better than bouillon"
+    ],
     "defaultDensity": null,
     "unitMappings": [],
     "updatedAt": "2026-03-23T00:00:00Z"
@@ -1446,7 +1450,9 @@
     "aliasesFr": [
       "lactaires s\u00e9ch\u00e9s et moulus"
     ],
-    "aliasesEn": [],
+    "aliasesEn": [
+      "ground candy cap mushrooms"
+    ],
     "defaultDensity": null,
     "unitMappings": [],
     "updatedAt": "2026-03-23T00:00:00Z"

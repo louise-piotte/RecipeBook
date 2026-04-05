@@ -1,0 +1,113 @@
+{
+  "id": "07d058f7-e609-4ba1-a035-1fb1fff90524",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Bittersweet Blog",
+    "sourceUrl": "https://bittersweetblog.com/2022/11/07/candy-cap-mushrooms/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Sauce aux lactaires",
+      "description": "Une sauce sucr\u00e9e aux lactaires s\u00e9ch\u00e9s moulus, au lait, \u00e0 la vanille et au miso blanc.",
+      "instructions": "Dans une casserole moyenne, fouetter le sucre, les lactaires s\u00e9ch\u00e9s moulus et la farine.\nVerser le lait lentement en fouettant jusqu'\u00e0 ce que le m\u00e9lange soit lisse.\nCuire \u00e0 feu moyen de 8 min \u00e0 10 min en remuant constamment, jusqu'\u00e0 \u00e9bullition et jusqu'\u00e0 ce que la sauce \u00e9paississe.\nRetirer du feu, puis incorporer le beurre, l'extrait de vanille et le miso blanc.\nBattre vigoureusement jusqu'\u00e0 ce que tout soit bien incorpor\u00e9.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Candy Cap Gravy",
+      "description": "A sweet sauce made with ground dried candy cap mushrooms, milk, vanilla, and white miso.",
+      "instructions": "In a medium saucepan, whisk together the sugar, ground dried candy cap mushrooms, and flour.\nSlowly pour in the milk while whisking until smooth.\nCook over medium heat for 8 min to 10 min, stirring constantly, until it comes to a boil and thickens.\nRemove from the heat, then stir in the butter, vanilla extract, and white miso.\nBeat vigorously until fully incorporated.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "07d058f7-e609-4ba1-a035-1fb1fff90524-ingredient-1",
+      "originalText": "1/2 cup granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "07d058f7-e609-4ba1-a035-1fb1fff90524-ingredient-2",
+      "originalText": "7 g ground dried candy cap mushrooms",
+      "ingredientName": "ground dried candy cap mushrooms",
+      "ingredientRefId": "ingredient-ref-ground-dried-candy-cap-mushrooms",
+      "quantity": 7,
+      "unit": "g"
+    },
+    {
+      "id": "07d058f7-e609-4ba1-a035-1fb1fff90524-ingredient-3",
+      "originalText": "2 tbsp flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "07d058f7-e609-4ba1-a035-1fb1fff90524-ingredient-4",
+      "originalText": "1 1/2 cups milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "id": "07d058f7-e609-4ba1-a035-1fb1fff90524-ingredient-5",
+      "originalText": "2 tbsp butter",
+      "ingredientName": "butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "07d058f7-e609-4ba1-a035-1fb1fff90524-ingredient-6",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "07d058f7-e609-4ba1-a035-1fb1fff90524-ingredient-7",
+      "originalText": "1 tsp white miso paste",
+      "ingredientName": "white miso paste",
+      "ingredientRefId": "ingredient-ref-white-miso-paste",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "servings": {
+    "amount": 6,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 15
+  },
+  "tags": [
+    "tag-sauce",
+    "tag-dessert",
+    "tag-stovetop",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-07d058f7-e609-4ba1-a035-1fb1fff90524-0",
+  "photos": [
+    {
+      "id": "photo-07d058f7-e609-4ba1-a035-1fb1fff90524-0",
+      "relativePath": "photos/07d058f7-e609-4ba1-a035-1fb1fff90524_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}
