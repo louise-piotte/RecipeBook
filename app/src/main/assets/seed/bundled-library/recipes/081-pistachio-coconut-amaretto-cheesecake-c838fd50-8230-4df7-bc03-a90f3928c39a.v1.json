@@ -1,0 +1,197 @@
+{
+  "id": "c838fd50-8230-4df7-bc03-a90f3928c39a",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Just A Pinch",
+    "sourceUrl": "https://www.justapinch.com/recipes/dessert/cake/pistachio-coconut-amaretto-cheesecake.html"
+  },
+  "languages": {
+    "fr": {
+      "title": "G\u00e2teau au fromage aux pistaches, \u00e0 la noix de coco et \u00e0 l'amande",
+      "description": "Un g\u00e2teau au fromage riche avec une cro\u00fbte aux biscuits Graham, \u00e0 la noix de coco grill\u00e9e, aux pistaches et aux amandes.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 163\u00b0C/325\u00b0F. Envelopper l'ext\u00e9rieur d'un moule \u00e0 charni\u00e8re de 9 po de papier d'aluminium et le graisser l\u00e9g\u00e8rement.\nPour la cro\u00fbte, m\u00e9langer les biscuits Graham, la noix de coco grill\u00e9e, les pistaches et les amandes. Ajouter le beurre fondu et remuer jusqu'\u00e0 ce que le m\u00e9lange soit humidifi\u00e9.\nPresser fermement le m\u00e9lange dans le fond du moule et sur environ 1 po de hauteur sur les c\u00f4t\u00e9s. R\u00e9server.\nPour la garniture, hacher finement les pistaches, les amandes et la noix de coco grill\u00e9e, puis r\u00e9server.\nBattre le fromage \u00e0 la cr\u00e8me avec le sucre jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9. Ajouter les \u0153ufs un \u00e0 la fois en battant bien apr\u00e8s chaque ajout.\nAjouter la cr\u00e8me de noix de coco, la cr\u00e8me \u00e0 fouetter, le m\u00e9lange de noix, l'extrait de vanille et l'extrait d'amande, puis battre juste assez pour obtenir une garniture lisse.\nVerser la garniture sur la cro\u00fbte. D\u00e9poser le moule dans un bain-marie et cuire environ 1 h 25 min, jusqu'\u00e0 ce que le centre soit pris.\nLaisser refroidir compl\u00e8tement sur une grille. Couvrir et r\u00e9frig\u00e9rer toute la nuit.\nPasser un petit couteau sur le pourtour du g\u00e2teau au fromage avant de retirer le cerclage du moule.",
+      "notes": "La recette source mentionne l'amaretto comme option, mais cette version utilise l'extrait d'amande. La garniture remplit beaucoup un moule de 9 po; au besoin, garder toute la cro\u00fbte et utiliser environ les 3/4 de la garniture."
+    },
+    "en": {
+      "title": "Pistachio Coconut Almond Cheesecake",
+      "description": "A rich cheesecake with a graham cracker crust and plenty of toasted coconut, pistachios, and almonds.",
+      "instructions": "Preheat the oven to 163\u00b0C/325\u00b0F. Wrap the outside of a 9-inch springform pan with foil and grease it lightly.\nFor the crust, combine the graham cracker crumbs, toasted coconut, pistachios, and almonds. Add the melted butter and stir until the mixture is evenly moistened.\nPress the crust firmly into the bottom of the pan and about 1 inch up the sides. Set aside.\nFor the filling, finely chop the pistachios, almonds, and toasted coconut, then set them aside.\nBeat the cream cheese with the sugar until smooth. Add the eggs one at a time, beating well after each addition.\nAdd the cream of coconut, heavy cream, chopped nut mixture, vanilla extract, and almond extract, then beat just until the filling is smooth.\nPour the filling over the crust. Place the pan in a water bath and bake for about 1 h 25 min, until the center is set.\nCool completely on a wire rack. Cover and refrigerate overnight.\nRun a small knife around the edge before removing the sides of the pan.",
+      "notes": "The source mentions amaretto as an option, but this version uses almond extract. The filling is generous for a 9-inch pan, so keep the full crust and use about three quarters of the filling if needed."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-1",
+      "originalText": "1 1/2 cups graham cracker crumbs",
+      "ingredientName": "graham cracker crumbs",
+      "ingredientRefId": "ingredient-ref-graham-cracker-crumbs",
+      "quantity": 1.5,
+      "unit": "cup",
+      "group": "Crust"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-2",
+      "originalText": "1 cup toasted coconut flakes",
+      "ingredientName": "toasted coconut flakes",
+      "ingredientRefId": "ingredient-ref-coconut",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "toasted",
+      "notes": "flakes",
+      "group": "Crust"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-3",
+      "originalText": "1/2 cup pistachios",
+      "ingredientName": "pistachios",
+      "ingredientRefId": "ingredient-ref-pistachios",
+      "quantity": 0.5,
+      "unit": "cup",
+      "group": "Crust"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-4",
+      "originalText": "1/2 cup almonds",
+      "ingredientName": "almonds",
+      "ingredientRefId": "ingredient-ref-almonds",
+      "quantity": 0.5,
+      "unit": "cup",
+      "group": "Crust"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-5",
+      "originalText": "1 cup melted butter",
+      "ingredientName": "salted butter",
+      "ingredientRefId": "ingredient-ref-salted-butter",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "melted",
+      "group": "Crust"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-6",
+      "originalText": "1 cup toasted coconut flakes",
+      "ingredientName": "toasted coconut flakes",
+      "ingredientRefId": "ingredient-ref-coconut",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "toasted",
+      "notes": "flakes",
+      "group": "Filling"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-7",
+      "originalText": "1 cup pistachios",
+      "ingredientName": "pistachios",
+      "ingredientRefId": "ingredient-ref-pistachios",
+      "quantity": 1,
+      "unit": "cup",
+      "group": "Filling"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-8",
+      "originalText": "1 cup almonds",
+      "ingredientName": "almonds",
+      "ingredientRefId": "ingredient-ref-almonds",
+      "quantity": 1,
+      "unit": "cup",
+      "group": "Filling"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-9",
+      "originalText": "2 lb cream cheese",
+      "ingredientName": "cream cheese",
+      "ingredientRefId": "ingredient-ref-cream-cheese",
+      "quantity": 2,
+      "unit": "lb",
+      "group": "Filling"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-10",
+      "originalText": "4 large eggs",
+      "ingredientName": "eggs",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 4,
+      "group": "Filling",
+      "notes": "large"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-11",
+      "originalText": "1/2 cup granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 0.5,
+      "unit": "cup",
+      "group": "Filling"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-12",
+      "originalText": "1 can cream of coconut",
+      "ingredientName": "cream of coconut",
+      "ingredientRefId": "ingredient-ref-cream-of-coconut",
+      "quantity": 1,
+      "unit": "can",
+      "group": "Filling",
+      "notes": "15 oz can"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-13",
+      "originalText": "1 cup heavy cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 1,
+      "unit": "cup",
+      "group": "Filling"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-14",
+      "originalText": "1 tsp almond extract",
+      "ingredientName": "almond extract",
+      "ingredientRefId": "ingredient-ref-almond-extract",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Filling"
+    },
+    {
+      "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-15",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Filling"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 30,
+    "cookTimeMinutes": 85,
+    "totalTimeMinutes": 115
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-cake",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-c838fd50-8230-4df7-bc03-a90f3928c39a-0",
+  "photos": [
+    {
+      "id": "photo-c838fd50-8230-4df7-bc03-a90f3928c39a-0",
+      "relativePath": "photos/c838fd50-8230-4df7-bc03-a90f3928c39a_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "id": "d40521c8-874f-4cbb-847a-1c8b7e27b52e",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Allrecipes",
+    "sourceUrl": "https://www.allrecipes.com/recipe/237172/chili-powder/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Poudre de chili",
+      "description": "Un m\u00e9lange d'\u00e9pices rapide \u00e0 pr\u00e9parer pour relever les chilis, sauces et marinades.",
+      "instructions": "Fouetter le paprika, l'origan, le cumin, la poudre d'ail, la poudre d'oignon et le poivre de Cayenne dans un petit bol jusqu'\u00e0 ce que le m\u00e9lange soit homog\u00e8ne.\nTransf\u00e9rer dans un contenant herm\u00e9tique.\nConserver dans un endroit frais et sec.",
+      "notes": "Ajuster le poivre de Cayenne au go\u00fbt."
+    },
+    "en": {
+      "title": "Chili Powder",
+      "description": "A quick spice blend for adding heat and depth to chili, sauces, and marinades.",
+      "instructions": "Whisk the paprika, oregano, cumin, garlic powder, onion powder, and cayenne pepper together in a small bowl until evenly combined.\nTransfer to an airtight container.\nStore in a cool, dry place.",
+      "notes": "Adjust the cayenne pepper to taste."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "d40521c8-874f-4cbb-847a-1c8b7e27b52e-ingredient-1",
+      "originalText": "2 tbsp paprika",
+      "ingredientName": "paprika",
+      "ingredientRefId": "ingredient-ref-paprika",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "d40521c8-874f-4cbb-847a-1c8b7e27b52e-ingredient-2",
+      "originalText": "2 tsp oregano",
+      "ingredientName": "dried oregano",
+      "ingredientRefId": "ingredient-ref-dried-oregano",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "d40521c8-874f-4cbb-847a-1c8b7e27b52e-ingredient-3",
+      "originalText": "1 1/2 tsp ground cumin",
+      "ingredientName": "ground cumin",
+      "ingredientRefId": "ingredient-ref-ground-cumin",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "d40521c8-874f-4cbb-847a-1c8b7e27b52e-ingredient-4",
+      "originalText": "1 1/2 tsp garlic powder",
+      "ingredientName": "garlic powder",
+      "ingredientRefId": "ingredient-ref-garlic-powder",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "d40521c8-874f-4cbb-847a-1c8b7e27b52e-ingredient-5",
+      "originalText": "1/2 tsp onion powder",
+      "ingredientName": "onion powder",
+      "ingredientRefId": "ingredient-ref-onion-powder",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "d40521c8-874f-4cbb-847a-1c8b7e27b52e-ingredient-6",
+      "originalText": "1/2 tsp cayenne pepper",
+      "ingredientName": "cayenne pepper",
+      "ingredientRefId": "ingredient-ref-cayenne-pepper",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "notes": "or to taste"
+    }
+  ],
+  "servings": {
+    "amount": 6,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 5
+  },
+  "tags": [
+    "tag-spice-blend",
+    "tag-pantry-staple",
+    "tag-ingredient-component",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-d40521c8-874f-4cbb-847a-1c8b7e27b52e-0",
+  "photos": [
+    {
+      "id": "photo-d40521c8-874f-4cbb-847a-1c8b7e27b52e-0",
+      "relativePath": "photos/d40521c8-874f-4cbb-847a-1c8b7e27b52e_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

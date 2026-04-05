@@ -1,0 +1,137 @@
+{
+  "id": "382d2080-2492-481c-bd33-2330cc3be65d",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Foodie Badge",
+    "sourceUrl": "https://foodiebadge.com/one-pan-butter-garlic-chicken-korean-soy-sauce-chicken-chicken-breast-recipe/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Poulet \u00e0 l'\u00e9rable",
+      "description": "Des morceaux de poulet enrob\u00e9s de f\u00e9cule de ma\u00efs, puis napp\u00e9s d'une sauce \u00e0 l'\u00e9rable, au soja et \u00e0 l'ail.",
+      "instructions": "Couper la poitrine de poulet en morceaux de la taille d'un doigt et assaisonner de poivre.\nEnrober le poulet de f\u00e9cule de ma\u00efs pour bien couvrir tous les morceaux.\nDans un petit bol, m\u00e9langer la sauce soja, le sirop d'\u00e9rable et le vinaigre.\nChauffer un peu d'huile dans une po\u00eale et cuire le poulet jusqu'\u00e0 ce qu'il soit blanchi de tous les c\u00f4t\u00e9s, sans le cuire compl\u00e8tement.\nAjouter le beurre et l'ail. Cuire bri\u00e8vement jusqu'\u00e0 ce que l'ail soit parfum\u00e9.\nVerser la sauce dans la po\u00eale et poursuivre la cuisson en retournant le poulet pour bien l'enrober, jusqu'\u00e0 ce qu'il soit cuit et que la sauce soit r\u00e9duite et collante.\nAjouter les arachides si d\u00e9sir\u00e9 et les r\u00e9chauffer dans la sauce.\nServir imm\u00e9diatement.",
+      "notes": "Des champignons peuvent \u00eatre ajout\u00e9s en m\u00eame temps que la sauce."
+    },
+    "en": {
+      "title": "Maple Chicken",
+      "description": "Chicken pieces coated in cornstarch and finished in a maple, soy, and garlic sauce.",
+      "instructions": "Cut the chicken breast into finger-sized pieces and season with black pepper.\nCoat the chicken with cornstarch so every piece is well covered.\nIn a small bowl, mix the soy sauce, maple syrup, and vinegar.\nHeat a little oil in a skillet and cook the chicken until it turns white on all sides without cooking it through.\nAdd the butter and garlic. Cook briefly until the garlic is fragrant.\nPour the sauce into the skillet and continue cooking, turning the chicken to coat it well, until the chicken is cooked through and the sauce is reduced and sticky.\nAdd the peanuts if desired and warm them through in the sauce.\nServe right away.",
+      "notes": "Mushrooms can be added at the same time as the sauce."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "382d2080-2492-481c-bd33-2330cc3be65d-ingredient-1",
+      "originalText": "1 chicken breast",
+      "ingredientName": "chicken breast",
+      "ingredientRefId": "ingredient-ref-chicken-breast",
+      "quantity": 1
+    },
+    {
+      "id": "382d2080-2492-481c-bd33-2330cc3be65d-ingredient-2",
+      "originalText": "black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper"
+    },
+    {
+      "id": "382d2080-2492-481c-bd33-2330cc3be65d-ingredient-3",
+      "originalText": "3 tbsp cornstarch",
+      "ingredientName": "cornstarch",
+      "ingredientRefId": "ingredient-ref-cornstarch",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "id": "382d2080-2492-481c-bd33-2330cc3be65d-ingredient-4",
+      "originalText": "1 tbsp unsalted butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "382d2080-2492-481c-bd33-2330cc3be65d-ingredient-5",
+      "originalText": "1 tbsp minced garlic",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 1,
+      "unit": "tbsp",
+      "preparation": "minced",
+      "notes": "about 2 or 3 cloves"
+    },
+    {
+      "id": "382d2080-2492-481c-bd33-2330cc3be65d-ingredient-6",
+      "originalText": "2 1/2 tbsp soy sauce",
+      "ingredientName": "soy sauce",
+      "ingredientRefId": "ingredient-ref-soy-sauce",
+      "quantity": 2.5,
+      "unit": "tbsp"
+    },
+    {
+      "id": "382d2080-2492-481c-bd33-2330cc3be65d-ingredient-7",
+      "originalText": "3 1/2 tbsp maple syrup",
+      "ingredientName": "maple syrup",
+      "ingredientRefId": "ingredient-ref-maple-syrup",
+      "quantity": 3.5,
+      "unit": "tbsp"
+    },
+    {
+      "id": "382d2080-2492-481c-bd33-2330cc3be65d-ingredient-8",
+      "originalText": "1 tbsp vinegar",
+      "ingredientName": "vinegar",
+      "ingredientRefId": "ingredient-ref-vinegar",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "382d2080-2492-481c-bd33-2330cc3be65d-ingredient-9",
+      "originalText": "chopped roasted peanuts",
+      "ingredientName": "peanuts",
+      "ingredientRefId": "ingredient-ref-peanuts",
+      "preparation": "chopped roasted",
+      "optional": true
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "batch"
+  },
+  "times": {
+    "prepTimeMinutes": 0,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 0
+  },
+  "tags": [
+    "tag-main-dish"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-382d2080-2492-481c-bd33-2330cc3be65d-0",
+  "photos": [
+    {
+      "id": "photo-382d2080-2492-481c-bd33-2330cc3be65d-0",
+      "relativePath": "photos/382d2080-2492-481c-bd33-2330cc3be65d_0.jpg"
+    },
+    {
+      "id": "photo-382d2080-2492-481c-bd33-2330cc3be65d-1",
+      "relativePath": "photos/382d2080-2492-481c-bd33-2330cc3be65d_1.jpg"
+    },
+    {
+      "id": "photo-382d2080-2492-481c-bd33-2330cc3be65d-2",
+      "relativePath": "photos/382d2080-2492-481c-bd33-2330cc3be65d_2.jpg"
+    },
+    {
+      "id": "photo-382d2080-2492-481c-bd33-2330cc3be65d-3",
+      "relativePath": "photos/382d2080-2492-481c-bd33-2330cc3be65d_3.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

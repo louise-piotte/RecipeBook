@@ -1,0 +1,135 @@
+{
+  "id": "ad608924-df31-48be-89c5-721a7f0a2572",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Anova Culinary",
+    "sourceUrl": "https://recipes.anovaculinary.com/recipe/sous-vide-bbq-pork-shoulder"
+  },
+  "languages": {
+    "fr": {
+      "title": "Porc effiloch\u00e9 sous vide",
+      "description": "Une \u00e9paule de porc assaisonn\u00e9e, cuite longtemps sous vide puis finie au four pour former une cro\u00fbte fonc\u00e9e.",
+      "instructions": "R\u00e9gler le thermocirculateur \u00e0 74\u00b0C/165\u00b0F.\nPendant que l'eau chauffe, moudre ou bien m\u00e9langer le paprika, la cassonade, le sel, le poivre noir, les graines de moutarde moulues, la poudre d'ail, l'origan s\u00e9ch\u00e9 et les graines de coriandre jusqu'\u00e0 l'obtention d'un assaisonnement homog\u00e8ne.\nR\u00e9server 3 cuill\u00e8res \u00e0 soupe de ce m\u00e9lange pour la finition, puis frotter le reste partout sur l'\u00e9paule de porc.\nMettre le porc dans un sac refermable et retirer l'air avec la m\u00e9thode de d\u00e9placement, ou sceller sous vide.\nCuire sous vide pendant 18 h \u00e0 24 h. Pour une longue cuisson, couvrir le contenant afin de limiter l'\u00e9vaporation.\nRetirer le porc du sac. Garder les jus si d\u00e9sir\u00e9 pour les ajouter \u00e0 une sauce barbecue. \u00c9ponger soigneusement la viande.\nFrotter le porc avec le m\u00e9lange d'\u00e9pices r\u00e9serv\u00e9.\nPr\u00e9chauffer le four \u00e0 149\u00b0C/300\u00b0F. D\u00e9poser le porc sur une grille plac\u00e9e dans une plaque recouverte de papier d'aluminium.\nCuire environ 1 h, jusqu'\u00e0 ce que l'ext\u00e9rieur soit fonc\u00e9 et bien caram\u00e9lis\u00e9.\nEffilocher la viande avec deux fourchettes ou avec les mains prot\u00e9g\u00e9es par des gants r\u00e9sistants \u00e0 la chaleur. Servir avec la sauce barbecue de votre choix.",
+      "notes": "Cette version utilise une \u00e9paule de porc d\u00e9soss\u00e9e, mais une \u00e9paule avec os fonctionne aussi. La recette source mentionne aussi des flocons de piment rouge dans l'assaisonnement, mais ils ne figurent pas dans la liste d'ingr\u00e9dients export\u00e9e."
+    },
+    "en": {
+      "title": "Sous Vide Pulled Pork",
+      "description": "A seasoned pork shoulder cooked low and slow sous vide, then finished in the oven to build a dark bark.",
+      "instructions": "Set the immersion circulator to 74\u00b0C/165\u00b0F.\nWhile the water heats, grind or mix the paprika, brown sugar, salt, black pepper, ground mustard seeds, garlic powder, dried oregano, and coriander seeds until the rub is evenly blended.\nSet aside 3 tablespoons of the rub for finishing, then coat the pork shoulder all over with the rest.\nPlace the pork in a resealable bag and remove the air using the displacement method, or vacuum seal it.\nCook sous vide for 18 h to 24 h. For a long cook, cover the container to reduce evaporation.\nRemove the pork from the bag. Save the juices if desired to enrich barbecue sauce. Pat the meat very dry.\nRub the pork with the reserved seasoning.\nPreheat the oven to 149\u00b0C/300\u00b0F. Set the pork on a rack placed in a foil-lined baking sheet.\nBake for about 1 h, until the exterior is dark and well caramelized.\nShred the meat with two forks or with gloved hands. Serve with your preferred barbecue sauce.",
+      "notes": "This version uses a boneless pork shoulder, but a bone-in shoulder works too. The source also mentions red pepper flakes in the rub, but they are not present in the exported ingredient list."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "ad608924-df31-48be-89c5-721a7f0a2572-ingredient-1",
+      "originalText": "1 boneless pork shoulder",
+      "ingredientName": "boneless pork shoulder",
+      "ingredientRefId": "ingredient-ref-boneless-pork-shoulder",
+      "quantity": 1
+    },
+    {
+      "id": "ad608924-df31-48be-89c5-721a7f0a2572-ingredient-2",
+      "originalText": "50 g paprika",
+      "ingredientName": "paprika",
+      "ingredientRefId": "ingredient-ref-paprika",
+      "quantity": 50,
+      "unit": "g"
+    },
+    {
+      "id": "ad608924-df31-48be-89c5-721a7f0a2572-ingredient-3",
+      "originalText": "50 g brown sugar",
+      "ingredientName": "brown sugar",
+      "ingredientRefId": "ingredient-ref-brown-sugar",
+      "quantity": 50,
+      "unit": "g"
+    },
+    {
+      "id": "ad608924-df31-48be-89c5-721a7f0a2572-ingredient-4",
+      "originalText": "1 1/2 tbsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 1.5,
+      "unit": "tbsp"
+    },
+    {
+      "id": "ad608924-df31-48be-89c5-721a7f0a2572-ingredient-5",
+      "originalText": "1 tbsp freshly ground black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 1,
+      "unit": "tbsp",
+      "notes": "freshly ground"
+    },
+    {
+      "id": "ad608924-df31-48be-89c5-721a7f0a2572-ingredient-6",
+      "originalText": "1 tbsp ground yellow mustard seeds",
+      "ingredientName": "mustard seeds",
+      "ingredientRefId": "ingredient-ref-mustard-seeds",
+      "quantity": 1,
+      "unit": "tbsp",
+      "preparation": "ground"
+    },
+    {
+      "id": "ad608924-df31-48be-89c5-721a7f0a2572-ingredient-7",
+      "originalText": "2 tbsp granulated garlic powder",
+      "ingredientName": "garlic powder",
+      "ingredientRefId": "ingredient-ref-garlic-powder",
+      "quantity": 2,
+      "unit": "tbsp",
+      "notes": "granulated"
+    },
+    {
+      "id": "ad608924-df31-48be-89c5-721a7f0a2572-ingredient-8",
+      "originalText": "1 tbsp dried oregano",
+      "ingredientName": "dried oregano",
+      "ingredientRefId": "ingredient-ref-dried-oregano",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "ad608924-df31-48be-89c5-721a7f0a2572-ingredient-9",
+      "originalText": "1 tbsp coriander seeds",
+      "ingredientName": "coriander seeds",
+      "ingredientRefId": "ingredient-ref-coriander-seed",
+      "quantity": 1,
+      "unit": "tbsp"
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 1439,
+    "totalTimeMinutes": 1454
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-sous-vide"
+  ],
+  "collections": [
+    "collection-gab-favorites"
+  ],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-ad608924-df31-48be-89c5-721a7f0a2572-0",
+  "photos": [
+    {
+      "id": "photo-ad608924-df31-48be-89c5-721a7f0a2572-0",
+      "relativePath": "photos/ad608924-df31-48be-89c5-721a7f0a2572_0.jpg"
+    },
+    {
+      "id": "photo-ad608924-df31-48be-89c5-721a7f0a2572-1",
+      "relativePath": "photos/ad608924-df31-48be-89c5-721a7f0a2572_1.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

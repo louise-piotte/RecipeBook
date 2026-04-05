@@ -1,0 +1,107 @@
+{
+  "id": "fcee6cc1-7a79-48dc-bdce-55a864bc2e41",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "L'\u00cele aux \u00e9pices",
+    "sourceUrl": "https://ileauxepices.com/blog/2014/11/03/comment-faire-ses-propres-melanges-depices/wpid6390/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Poudre de cari",
+      "description": "Un m\u00e9lange de base parfum\u00e9 pour ajouter rapidement une saveur de cari aux sauces, soupes et marinades.",
+      "instructions": "M\u00e9langer le curcuma, le cumin, la coriandre moulue, le poivre noir, les graines de moutarde moulues et le gingembre dans un petit bol jusqu'\u00e0 l'obtention d'une poudre de couleur uniforme.\nTransf\u00e9rer dans un contenant herm\u00e9tique.\nConserver dans un endroit frais et sec.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Curry Powder",
+      "description": "A fragrant base spice blend for quickly adding curry flavor to sauces, soups, and marinades.",
+      "instructions": "Mix the turmeric, cumin, ground coriander, black pepper, ground mustard seeds, and ginger in a small bowl until the color is uniform.\nTransfer to an airtight container.\nStore in a cool, dry place.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "fcee6cc1-7a79-48dc-bdce-55a864bc2e41-ingredient-1",
+      "originalText": "3 tsp turmeric",
+      "ingredientName": "turmeric",
+      "ingredientRefId": "ingredient-ref-turmeric",
+      "quantity": 3,
+      "unit": "tsp"
+    },
+    {
+      "id": "fcee6cc1-7a79-48dc-bdce-55a864bc2e41-ingredient-2",
+      "originalText": "2 tbsp ground cumin",
+      "ingredientName": "ground cumin",
+      "ingredientRefId": "ingredient-ref-ground-cumin",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "fcee6cc1-7a79-48dc-bdce-55a864bc2e41-ingredient-3",
+      "originalText": "2 tbsp coriander",
+      "ingredientName": "coriander",
+      "ingredientRefId": "ingredient-ref-coriander",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "fcee6cc1-7a79-48dc-bdce-55a864bc2e41-ingredient-4",
+      "originalText": "1/2 tsp ground black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "fcee6cc1-7a79-48dc-bdce-55a864bc2e41-ingredient-5",
+      "originalText": "1/2 tsp ground mustard seeds",
+      "ingredientName": "mustard seeds",
+      "ingredientRefId": "ingredient-ref-mustard-seeds",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "preparation": "ground"
+    },
+    {
+      "id": "fcee6cc1-7a79-48dc-bdce-55a864bc2e41-ingredient-6",
+      "originalText": "1/2 tsp ground ginger",
+      "ingredientName": "ginger",
+      "ingredientRefId": "ingredient-ref-ginger",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "preparation": "ground"
+    }
+  ],
+  "servings": {
+    "amount": 16.5,
+    "unit": "tsp"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 5
+  },
+  "tags": [
+    "tag-spice-blend",
+    "tag-pantry-staple",
+    "tag-ingredient-component",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-fcee6cc1-7a79-48dc-bdce-55a864bc2e41-0",
+  "photos": [
+    {
+      "id": "photo-fcee6cc1-7a79-48dc-bdce-55a864bc2e41-0",
+      "relativePath": "photos/fcee6cc1-7a79-48dc-bdce-55a864bc2e41_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

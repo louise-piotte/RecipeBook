@@ -300,6 +300,20 @@
     "updatedAt": "2026-03-23T00:00:00Z"
   },
   {
+    "id": "ingredient-ref-boneless-pork-shoulder",
+    "nameFr": "\u00e9paule de porc d\u00e9soss\u00e9e",
+    "nameEn": "boneless pork shoulder",
+    "aliasesFr": [
+      "\u00e9paule de porc enti\u00e8re d\u00e9soss\u00e9e"
+    ],
+    "aliasesEn": [
+      "whole boneless pork shoulder"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-04-05T00:00:00Z"
+  },
+  {
     "id": "ingredient-ref-blueberries",
     "nameFr": "bleuets",
     "nameEn": "blueberries",
