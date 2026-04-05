@@ -1,0 +1,158 @@
+{
+  "id": "c68bebce-c549-4789-a5b4-d023ed58f782",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Fox and Briar",
+    "sourceUrl": "https://www.foxandbriar.com/baked-chicken-parmesan-recipe/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Poulet parmesan",
+      "description": "Des poitrines de poulet pan\u00e9es, cuites au four, puis garnies de sauce marinara et de mozzarella.",
+      "instructions": "Tapisser une plaque de cuisson de papier d'aluminium et badigeonner l'aluminium d'huile d'olive. Placer la grille du four au deuxi\u00e8me niveau \u00e0 partir du haut et pr\u00e9chauffer le four \u00e0 200\u00b0C/400\u00b0F.\nCouper chaque poitrine de poulet en deux sur l'\u00e9paisseur pour obtenir 4 morceaux. Ass\u00e9cher le poulet avec un essuie-tout et assaisonner l\u00e9g\u00e8rement.\nDans une assiette creuse, m\u00e9langer la chapelure panko, le parmesan, l'origan, la poudre d'ail, le sel et le poivre noir.\nDans une deuxi\u00e8me assiette creuse, fouetter l'oeuf.\nTremper chaque morceau de poulet dans l'oeuf, puis dans le m\u00e9lange de chapelure en pressant doucement pour bien faire adh\u00e9rer la panure. D\u00e9poser sur la plaque pr\u00e9par\u00e9e.\nCuire 15 min, jusqu'\u00e0 ce que le poulet soit presque cuit.\nRetourner les morceaux, r\u00e9partir la sauce marinara, puis garnir de mozzarella.\nRemettre au four et faire griller 2 \u00e0 4 min, jusqu'\u00e0 ce que le fromage soit fondu et bouillonnant.\nGarnir de persil si d\u00e9sir\u00e9 et servir.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Chicken Parmesan",
+      "description": "Breaded chicken breasts baked until crisp, then finished with marinara sauce and mozzarella.",
+      "instructions": "Line a baking sheet with foil and brush the foil with olive oil. Position the oven rack in the second slot from the top and preheat the oven to 200\u00b0C/400\u00b0F.\nSlice each chicken breast horizontally to make 4 pieces total. Pat the chicken dry with paper towels and season lightly.\nIn a shallow dish, combine the panko bread crumbs, Parmesan, oregano, garlic powder, salt, and black pepper.\nIn a second shallow dish, whisk the egg.\nDip each piece of chicken in the egg, then in the crumb mixture, pressing gently so the coating sticks well. Place on the prepared baking sheet.\nBake for 15 min, until the chicken is nearly cooked through.\nFlip the chicken, spoon over the marinara sauce, and top with the mozzarella.\nReturn to the oven and broil for 2 to 4 min, until the cheese is melted and bubbly.\nFinish with parsley if desired and serve.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-1",
+      "originalText": "2 tbsp olive oil",
+      "ingredientName": "olive oil",
+      "ingredientRefId": "ingredient-ref-olive-oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-2",
+      "originalText": "2 chicken breasts",
+      "ingredientName": "chicken breast",
+      "ingredientRefId": "ingredient-ref-chicken-breast",
+      "quantity": 2,
+      "unit": "count"
+    },
+    {
+      "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-3",
+      "originalText": "1 egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "count"
+    },
+    {
+      "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-4",
+      "originalText": "1 cup panko bread crumbs",
+      "ingredientName": "bread crumbs",
+      "ingredientRefId": "ingredient-ref-breadcrumbs",
+      "quantity": 1,
+      "unit": "cup",
+      "notes": "panko"
+    },
+    {
+      "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-5",
+      "originalText": "1/2 cup freshly grated Parmesan cheese",
+      "ingredientName": "parmesan cheese",
+      "ingredientRefId": "ingredient-ref-parmesan-cheese",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "freshly grated"
+    },
+    {
+      "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-6",
+      "originalText": "1 tsp dried oregano",
+      "ingredientName": "dried oregano",
+      "ingredientRefId": "ingredient-ref-dried-oregano",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-7",
+      "originalText": "1/2 tsp garlic powder",
+      "ingredientName": "garlic powder",
+      "ingredientRefId": "ingredient-ref-garlic-powder",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-8",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-9",
+      "originalText": "1/2 tsp black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-10",
+      "originalText": "1 cup marinara sauce",
+      "ingredientName": "marinara sauce",
+      "ingredientRefId": "ingredient-ref-marinara-sauce",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-11",
+      "originalText": "1 1/2 cups shredded mozzarella",
+      "ingredientName": "mozzarella",
+      "ingredientRefId": "ingredient-ref-mozzarella",
+      "quantity": 1.5,
+      "unit": "cup",
+      "preparation": "shredded"
+    },
+    {
+      "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-12",
+      "originalText": "2 tbsp minced parsley",
+      "ingredientName": "parsley",
+      "ingredientRefId": "ingredient-ref-parsley",
+      "quantity": 2,
+      "unit": "tbsp",
+      "preparation": "minced",
+      "optional": true,
+      "notes": "for garnish"
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 20,
+    "totalTimeMinutes": 40
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-italian",
+    "tag-oven"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-c68bebce-c549-4789-a5b4-d023ed58f782-0",
+  "photos": [
+    {
+      "id": "photo-c68bebce-c549-4789-a5b4-d023ed58f782-0",
+      "relativePath": "photos/c68bebce-c549-4789-a5b4-d023ed58f782_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

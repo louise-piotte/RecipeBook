@@ -1,0 +1,129 @@
+{
+  "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Five Heart Home",
+    "sourceUrl": "https://www.fivehearthome.com/easy-classic-homemade-chocolate-pudding/#recipe"
+  },
+  "languages": {
+    "fr": {
+      "title": "Pudding au chocolat",
+      "description": "Un pouding au chocolat maison riche et lisse, cuit sur la cuisini\u00e8re puis refroidi jusqu'\u00e0 prise compl\u00e8te.",
+      "instructions": "Tamiser la poudre de cacao dans une casserole moyenne et incorporer le sucre.\nAjouter graduellement 1 1/2 tasse de lait en fouettant jusqu'\u00e0 ce que le m\u00e9lange soit lisse. Chauffer \u00e0 feu moyen-vif et porter doucement \u00e0 \u00e9bullition en remuant sans arr\u00eat. Retirer du feu.\nDans un grand bol, fouetter la 1/2 tasse de lait restante avec la f\u00e9cule de ma\u00efs, les jaunes d'oeufs et le sel jusqu'\u00e0 consistance lisse.\nToujours en fouettant, verser tr\u00e8s lentement le m\u00e9lange chaud au cacao dans le m\u00e9lange aux jaunes.\nRemettre le tout dans la casserole et cuire \u00e0 feu moyen-vif en fouettant constamment, jusqu'\u00e0 \u00e9bullition. Baisser imm\u00e9diatement le feu et laisser mijoter 2 \u00e0 3 min, jusqu'\u00e0 \u00e9paississement.\nRetirer du feu et incorporer le chocolat mi-sucr\u00e9 fondu, le beurre et la vanille jusqu'\u00e0 ce que le pouding soit lisse.\nPasser le pouding au tamis fin et le r\u00e9partir dans 4 petits ramequins ou bols.\nCouvrir chaque portion d'une pellicule plastique directement au contact de la surface pour \u00e9viter qu'une peau se forme.\nR\u00e9frig\u00e9rer au moins 4 h, ou jusqu'au lendemain, avant de servir.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Chocolate Pudding",
+      "description": "A rich, smooth homemade chocolate pudding cooked on the stove and chilled until fully set.",
+      "instructions": "Sift the cocoa powder into a medium saucepan and whisk in the sugar.\nGradually whisk in 1 1/2 cups of the milk until smooth. Set over medium-high heat and bring just to a simmer, stirring constantly. Remove from the heat.\nIn a large bowl, whisk the remaining 1/2 cup milk with the cornstarch, egg yolks, and salt until smooth.\nWhile whisking constantly, very slowly pour the hot cocoa mixture into the yolk mixture.\nReturn everything to the saucepan and cook over medium-high heat, whisking constantly, until it comes to a boil. Immediately lower the heat and simmer for 2 to 3 min, until thickened.\nRemove from the heat and stir in the melted semisweet chocolate, butter, and vanilla until smooth.\nStrain the pudding through a fine-mesh sieve and divide it among 4 ramekins or small bowls.\nCover each portion with plastic wrap directly touching the surface to prevent a skin from forming.\nChill for at least 4 h, or overnight, before serving.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5-ingredient-1",
+      "originalText": "1/3 cup unsweetened cocoa powder",
+      "ingredientName": "unsweetened cocoa powder",
+      "ingredientRefId": "ingredient-ref-unsweetened-cocoa-powder",
+      "quantity": 0.3333,
+      "unit": "cup"
+    },
+    {
+      "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5-ingredient-2",
+      "originalText": "1/2 cup granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5-ingredient-3",
+      "originalText": "2 cups whole milk, divided",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 2,
+      "unit": "cup",
+      "notes": "whole milk, divided"
+    },
+    {
+      "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5-ingredient-4",
+      "originalText": "4 tsp cornstarch",
+      "ingredientName": "cornstarch",
+      "ingredientRefId": "ingredient-ref-cornstarch",
+      "quantity": 4,
+      "unit": "tsp"
+    },
+    {
+      "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5-ingredient-5",
+      "originalText": "3 egg yolks",
+      "ingredientName": "egg yolk",
+      "ingredientRefId": "ingredient-ref-egg-yolk",
+      "quantity": 3,
+      "unit": "count"
+    },
+    {
+      "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5-ingredient-6",
+      "originalText": "1/4 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5-ingredient-7",
+      "originalText": "1/3 cup semisweet chocolate, melted",
+      "ingredientName": "semisweet chocolate",
+      "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+      "quantity": 0.3333,
+      "unit": "cup",
+      "preparation": "melted"
+    },
+    {
+      "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5-ingredient-8",
+      "originalText": "1 tbsp unsalted butter, softened",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 1,
+      "unit": "tbsp",
+      "preparation": "softened"
+    },
+    {
+      "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5-ingredient-9",
+      "originalText": "2 tsp pure vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 2,
+      "unit": "tsp"
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "4-oz servings"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 260
+  },
+  "tags": [
+    "tag-dessert"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-d9ce5a86-561d-4c36-975f-5f4249aa9df5-0",
+  "photos": [
+    {
+      "id": "photo-d9ce5a86-561d-4c36-975f-5f4249aa9df5-0",
+      "relativePath": "photos/d9ce5a86-561d-4c36-975f-5f4249aa9df5_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

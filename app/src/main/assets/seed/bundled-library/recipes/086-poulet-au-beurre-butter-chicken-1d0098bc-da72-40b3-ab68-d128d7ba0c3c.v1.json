@@ -1,0 +1,190 @@
+{
+  "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Trois fois par jour",
+    "sourceUrl": "https://www.troisfoisparjour.com/fr/recettes/plats-principaux/poulet-volaille/poulet-au-beurre/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Poulet au beurre",
+      "description": "Un poulet au beurre cr\u00e9meux parfum\u00e9 au cari, au garam masala et \u00e0 la cardamome, \u00e0 servir avec du riz.",
+      "instructions": "Dans un bol, m\u00e9langer le cari, le garam masala, la p\u00e2te de cari, la cardamome et le gingembre. R\u00e9server.\nDans un autre bol, m\u00e9langer le yogourt, la p\u00e2te de tomates, le lait de coco, la cr\u00e8me et le miel. R\u00e9server.\nDans une grande po\u00eale ou une cocotte, faire fondre 1 cuill\u00e8re \u00e0 soupe de beurre \u00e0 feu moyen. Ajouter l'oignon et cuire environ 10 min, jusqu'\u00e0 tendret\u00e9.\nSaler, ajouter l'ail et le m\u00e9lange d'\u00e9pices, puis poursuivre la cuisson 2 \u00e0 3 min.\nAu robot culinaire, mixer le m\u00e9lange d'oignon avec le yogourt grec jusqu'\u00e0 l'obtention d'une texture lisse. Rectifier l'assaisonnement au besoin.\nRemettre le m\u00e9lange dans la po\u00eale avec le reste du beurre. Ajouter les ingr\u00e9dients liquides r\u00e9serv\u00e9s et bien m\u00e9langer. Porter \u00e0 \u00e9bullition.\nBaisser le feu, ajouter le poulet et laisser mijoter 1 h 30 min \u00e0 2 h, jusqu'\u00e0 ce qu'il soit tr\u00e8s tendre.\nServir sur du riz.",
+      "notes": "Le rendement source indique 8 \u00e0 10 portions."
+    },
+    "en": {
+      "title": "Butter Chicken",
+      "description": "A creamy butter chicken scented with curry, garam masala, and cardamom, meant to be served over rice.",
+      "instructions": "In a bowl, combine the curry powder, garam masala, curry paste, cardamom, and ginger. Set aside.\nIn a second bowl, combine the yogurt, tomato paste, coconut milk, cream, and honey. Set aside.\nIn a large skillet or Dutch oven, melt 1 tablespoon of the butter over medium heat. Add the onion and cook for about 10 min, until softened.\nSeason with salt, add the garlic and spice mixture, and cook for 2 to 3 min more.\nIn a food processor, blend the onion mixture with the Greek yogurt until smooth. Adjust the seasoning if needed.\nReturn the mixture to the pan with the remaining butter. Add the reserved liquid ingredients and stir well. Bring to a boil.\nReduce the heat, add the chicken, and simmer for 1 h 30 min to 2 h, until very tender.\nServe over rice.",
+      "notes": "The source yield is listed as 8 to 10 servings."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-1",
+      "originalText": "1 kg chicken breasts, boneless and cut into cubes",
+      "ingredientName": "chicken breast",
+      "ingredientRefId": "ingredient-ref-chicken-breast",
+      "quantity": 1000,
+      "unit": "g",
+      "preparation": "boneless and cut into cubes"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-2",
+      "originalText": "5 tbsp butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 5,
+      "unit": "tbsp"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-3",
+      "originalText": "1 onion, coarsely chopped",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "coarsely chopped"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-4",
+      "originalText": "2 garlic cloves, coarsely chopped",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 2,
+      "unit": "count",
+      "preparation": "coarsely chopped"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-5",
+      "originalText": "1/2 cup plain Greek yogurt",
+      "ingredientName": "plain yogurt",
+      "ingredientRefId": "ingredient-ref-plain-yogurt",
+      "quantity": 0.5,
+      "unit": "cup",
+      "notes": "Greek style"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-6",
+      "originalText": "2 tsp curry powder",
+      "ingredientName": "curry powder",
+      "ingredientRefId": "ingredient-ref-curry-powder",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-7",
+      "originalText": "2 tsp garam masala",
+      "ingredientName": "garam masala",
+      "ingredientRefId": "ingredient-ref-garam-masala",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-8",
+      "originalText": "2 tsp curry paste",
+      "ingredientName": "curry paste",
+      "ingredientRefId": "ingredient-ref-curry-paste",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-9",
+      "originalText": "1/6 tsp ground cardamom",
+      "ingredientName": "ground cardamom",
+      "ingredientRefId": "ingredient-ref-ground-cardamom",
+      "quantity": 0.1667,
+      "unit": "tsp"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-10",
+      "originalText": "1/2 tsp ground ginger",
+      "ingredientName": "ground ginger",
+      "ingredientRefId": "ingredient-ref-ginger",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-11",
+      "originalText": "salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-12",
+      "originalText": "156 ml tomato paste",
+      "ingredientName": "tomato paste",
+      "ingredientRefId": "ingredient-ref-tomato-paste",
+      "quantity": 156,
+      "unit": "ml",
+      "notes": "1 small can"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-13",
+      "originalText": "1 cup canned coconut milk",
+      "ingredientName": "coconut milk",
+      "ingredientRefId": "ingredient-ref-coconut-milk",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-14",
+      "originalText": "1 cup heavy cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-15",
+      "originalText": "1 tbsp honey",
+      "ingredientName": "honey",
+      "ingredientRefId": "ingredient-ref-honey",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-16",
+      "originalText": "cooked rice, for serving",
+      "ingredientName": "cooked rice",
+      "ingredientRefId": "ingredient-ref-rice",
+      "notes": "for serving"
+    }
+  ],
+  "servings": {
+    "amount": 8,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 120,
+    "totalTimeMinutes": 140
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-indian",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-1d0098bc-da72-40b3-ab68-d128d7ba0c3c-0",
+  "photos": [
+    {
+      "id": "photo-1d0098bc-da72-40b3-ab68-d128d7ba0c3c-0",
+      "relativePath": "photos/1d0098bc-da72-40b3-ab68-d128d7ba0c3c_0.jpg"
+    },
+    {
+      "id": "photo-1d0098bc-da72-40b3-ab68-d128d7ba0c3c-1",
+      "relativePath": "photos/1d0098bc-da72-40b3-ab68-d128d7ba0c3c_1.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

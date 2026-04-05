@@ -1,0 +1,199 @@
+{
+  "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Cotter Crunch",
+    "sourceUrl": "https://www.cottercrunch.com/crock-pot-west-african-peanut-stew/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Rago\u00fbt aux arachides africain",
+      "description": "Un rago\u00fbt nourrissant \u00e0 la sauce tomate, au beurre d'arachide, \u00e0 la patate douce et aux \u00e9pinards.",
+      "instructions": "Au robot culinaire, m\u00e9langer la sauce tomate, le beurre d'arachide, le paprika, la coriandre moulue, le piment de Cayenne, le sel et le poivre jusqu'\u00e0 consistance homog\u00e8ne.\nDans une grande casserole \u00e0 fond \u00e9pais, chauffer \u00e0 feu moyen-vif. Faire revenir l'oignon et la viande de rago\u00fbt 3 \u00e0 4 min en remuant souvent.\nAjouter l'ail, le gingembre, les patates douces et les carottes. Bien m\u00e9langer.\nAjouter la sauce r\u00e9serv\u00e9e, les jeunes \u00e9pinards et le bouillon. M\u00e9langer de nouveau.\nCouvrir et laisser mijoter 40 \u00e0 60 min, jusqu'\u00e0 ce que les patates douces soient tendres et que la viande soit cuite.\nServir dans des bols.\nGarnir d'arachides et de coriandre fra\u00eeche, si d\u00e9sir\u00e9.",
+      "notes": "D\u00e9licieux servi sur du riz et pratique pour le cong\u00e9lateur.\nLa viande peut \u00eatre remplac\u00e9e par des haricots ou des pois chiches pour une variante v\u00e9g\u00e9tarienne.\nL'export indiquait du cumin \u00e0 un endroit, mais la recette source utilise de la coriandre moulue."
+    },
+    "en": {
+      "title": "African Peanut Stew",
+      "description": "A hearty stew with tomato sauce, peanut butter, sweet potatoes, and spinach.",
+      "instructions": "In a food processor, blend the tomato sauce, peanut butter, paprika, ground coriander, cayenne pepper, salt, and black pepper until smooth.\nHeat a large heavy-bottomed pot over medium-high heat. Saute the onion and stew meat for 3 to 4 min, stirring often.\nAdd the garlic, ginger, sweet potatoes, and carrots. Stir well.\nAdd the reserved sauce, baby spinach, and broth. Stir again.\nCover and simmer for 40 to 60 min, until the sweet potatoes are tender and the meat is cooked through.\nServe in bowls.\nTop with peanuts and fresh cilantro if desired.",
+      "notes": "Delicious served over rice and freezer friendly.\nThe meat can be replaced with beans or chickpeas for a vegetarian variation.\nThe export mentioned cumin in one place, but the source recipe uses ground coriander."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-1",
+      "originalText": "1 cup tomato sauce",
+      "ingredientName": "tomato sauce",
+      "ingredientRefId": "ingredient-ref-tomato-sauce",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-2",
+      "originalText": "1/2 cup natural creamy peanut butter",
+      "ingredientName": "peanut butter",
+      "ingredientRefId": "ingredient-ref-peanut-butter",
+      "quantity": 0.5,
+      "unit": "cup",
+      "notes": "natural creamy"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-3",
+      "originalText": "2 tsp paprika",
+      "ingredientName": "paprika",
+      "ingredientRefId": "ingredient-ref-paprika",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-4",
+      "originalText": "1/2 tsp ground coriander",
+      "ingredientName": "coriander",
+      "ingredientRefId": "ingredient-ref-coriander",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "notes": "ground"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-5",
+      "originalText": "1/2 tsp cayenne pepper",
+      "ingredientName": "cayenne pepper",
+      "ingredientRefId": "ingredient-ref-cayenne-pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-6",
+      "originalText": "1/2 tsp kosher salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "notes": "kosher salt"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-7",
+      "originalText": "1/2 tsp black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-8",
+      "originalText": "454 g stew meat",
+      "ingredientName": "stew meat",
+      "ingredientRefId": "ingredient-ref-stew-meat",
+      "quantity": 454,
+      "unit": "g",
+      "notes": "chicken, beef, or pork"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-9",
+      "originalText": "2 cups broth",
+      "ingredientName": "broth",
+      "quantity": 2,
+      "unit": "cup",
+      "notes": "use 2 1/2 cups if adding meat"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-10",
+      "originalText": "1 cup chopped onion",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "chopped"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-11",
+      "originalText": "3 cloves garlic, minced",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 3,
+      "unit": "count",
+      "preparation": "minced"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-12",
+      "originalText": "1 tsp ground ginger",
+      "ingredientName": "ground ginger",
+      "ingredientRefId": "ingredient-ref-ginger",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-13",
+      "originalText": "2 small sweet potatoes, peeled and diced",
+      "ingredientName": "sweet potato",
+      "ingredientRefId": "ingredient-ref-sweet-potato",
+      "quantity": 2,
+      "unit": "count",
+      "preparation": "peeled and diced"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-14",
+      "originalText": "2/3 cup peeled and sliced carrots",
+      "ingredientName": "carrot",
+      "ingredientRefId": "ingredient-ref-carrot",
+      "quantity": 0.6667,
+      "unit": "cup",
+      "preparation": "peeled and sliced",
+      "optional": true
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-15",
+      "originalText": "3 cups baby spinach",
+      "ingredientName": "baby spinach",
+      "ingredientRefId": "ingredient-ref-baby-spinach",
+      "quantity": 3,
+      "unit": "cup"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-16",
+      "originalText": "cooked rice, for serving",
+      "ingredientName": "cooked rice",
+      "ingredientRefId": "ingredient-ref-rice",
+      "optional": true,
+      "notes": "for serving"
+    },
+    {
+      "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-17",
+      "originalText": "peanuts and fresh cilantro, for garnish",
+      "ingredientName": "peanuts",
+      "optional": true,
+      "notes": "with fresh cilantro, for garnish"
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "batch"
+  },
+  "times": {
+    "prepTimeMinutes": 30,
+    "cookTimeMinutes": 70,
+    "totalTimeMinutes": 100
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-0",
+  "photos": [
+    {
+      "id": "photo-89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-0",
+      "relativePath": "photos/89f89f5e-4afc-4e3a-b37f-e7841ac24ff8_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

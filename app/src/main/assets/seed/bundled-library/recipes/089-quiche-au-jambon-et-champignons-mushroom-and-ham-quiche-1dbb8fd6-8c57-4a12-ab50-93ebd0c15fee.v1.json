@@ -1,0 +1,124 @@
+{
+  "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "",
+    "sourceUrl": ""
+  },
+  "languages": {
+    "fr": {
+      "title": "Quiche au jambon et champignons",
+      "description": "De petites quiches garnies de jambon, de poireau, de champignons et de gruy\u00e8re.",
+      "instructions": "Couper le jambon, le poireau et les champignons en morceaux. Garder les champignons un peu plus gros, puisqu'ils r\u00e9duiront \u00e0 la cuisson.\nDans un grand wok ou une grande po\u00eale \u00e0 feu moyen-vif, cuire le poireau, les champignons et le jambon jusqu'\u00e0 ce que le poireau soit tendre et que les champignons aient r\u00e9duit.\nPr\u00e9chauffer le four \u00e0 175\u00b0C/350\u00b0F.\nAu robot culinaire ou dans un grand bol, m\u00e9langer les oeufs, le lait et la cr\u00e8me moiti\u00e9-moiti\u00e9 jusqu'\u00e0 ce que le m\u00e9lange soit mousseux.\nAjouter le gruy\u00e8re et environ 2 tasses de la garniture saut\u00e9e. M\u00e9langer juste assez pour combiner.\nR\u00e9partir le m\u00e9lange dans 4 cro\u00fbtes de tarte de 5 po.\nCuire 55 min, ou jusqu'\u00e0 ce que le centre soit pris.\nLaisser ti\u00e9dir quelques minutes avant de servir.",
+      "notes": "L'export source indiquait originalement 1/2 jambon comme quantit\u00e9. Cette version le normalise \u00e0 1 tasse de jambon en d\u00e9s."
+    },
+    "en": {
+      "title": "Mushroom and Ham Quiche",
+      "description": "Small quiches filled with ham, leek, mushrooms, and Gruyere.",
+      "instructions": "Cut the ham, leek, and mushrooms into pieces. Keep the mushrooms slightly larger, since they will shrink as they cook.\nIn a large wok or skillet over medium-high heat, cook the leek, mushrooms, and ham until the leek is tender and the mushrooms have reduced.\nPreheat the oven to 175\u00b0C/350\u00b0F.\nIn a food processor or large bowl, blend the eggs, milk, and half-and-half until frothy.\nAdd the Gruyere and about 2 cups of the sauteed filling. Mix just until combined.\nDivide the mixture among 4 individual 5-inch pie crusts.\nBake for 55 min, or until the center is set.\nLet cool slightly before serving.",
+      "notes": "The original export listed the quantity as 1/2 ham. This version normalizes it to 1 cup diced ham."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-ingredient-1",
+      "originalText": "1 cup diced ham",
+      "ingredientName": "ham",
+      "ingredientRefId": "ingredient-ref-ham",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "diced"
+    },
+    {
+      "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-ingredient-2",
+      "originalText": "1 leek",
+      "ingredientName": "leek",
+      "ingredientRefId": "ingredient-ref-leek",
+      "quantity": 1,
+      "unit": "count"
+    },
+    {
+      "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-ingredient-3",
+      "originalText": "1/2 box mushrooms",
+      "ingredientName": "mushroom",
+      "ingredientRefId": "ingredient-ref-mushroom",
+      "quantity": 0.5,
+      "unit": "count",
+      "notes": "box"
+    },
+    {
+      "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-ingredient-4",
+      "originalText": "1/4 cup milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-ingredient-5",
+      "originalText": "1/4 cup half-and-half",
+      "ingredientName": "half-and-half",
+      "ingredientRefId": "ingredient-ref-half-and-half",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-ingredient-6",
+      "originalText": "4 eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 4,
+      "unit": "count"
+    },
+    {
+      "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-ingredient-7",
+      "originalText": "2 cups grated Gruyere",
+      "ingredientName": "gruyere",
+      "ingredientRefId": "ingredient-ref-gruyere",
+      "quantity": 2,
+      "unit": "cup",
+      "preparation": "grated"
+    },
+    {
+      "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-ingredient-8",
+      "originalText": "4 individual 5-inch pie crusts",
+      "ingredientName": "pie crust",
+      "ingredientRefId": "ingredient-ref-pie-crust",
+      "quantity": 4,
+      "unit": "count",
+      "notes": "5-inch"
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "5-inch pies"
+  },
+  "times": {
+    "prepTimeMinutes": 60,
+    "cookTimeMinutes": 55,
+    "totalTimeMinutes": 115
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-oven",
+    "tag-shareable"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-0",
+  "photos": [
+    {
+      "id": "photo-1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-0",
+      "relativePath": "photos/1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}
