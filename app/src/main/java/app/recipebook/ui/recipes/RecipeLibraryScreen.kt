@@ -23,11 +23,14 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -53,6 +56,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Dialog
 import app.recipebook.IngredientTagManagerActivity
 import app.recipebook.R
 import app.recipebook.RecipeDetailActivity
@@ -62,6 +66,7 @@ import app.recipebook.domain.localization.BilingualText
 import app.recipebook.domain.localization.BilingualTextResolver
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.Tag
 import app.recipebook.ui.theme.PopupShape
 import java.util.Locale
 
@@ -73,7 +78,10 @@ fun RecipeLibraryScreen(
     modifier: Modifier = Modifier
 ) {
     var searchQuery by rememberSaveable { mutableStateOf("") }
+    var selectedTagIds by rememberSaveable { mutableStateOf(emptyList<String>()) }
+    var showTagFilterDialog by rememberSaveable { mutableStateOf(false) }
     val recipes by repository.observeRecipes().collectAsState(initial = emptyList())
+    val tags by repository.observeTags().collectAsState(initial = emptyList())
     val resolver = remember { BilingualTextResolver() }
     val context = LocalContext.current
 
@@ -81,21 +89,19 @@ fun RecipeLibraryScreen(
         repository.seedBundledLibraryIfMissing()
     }
 
-    val filteredRecipes = remember(recipes, searchQuery) {
-        val trimmedQuery = searchQuery.trim()
-        if (trimmedQuery.isEmpty()) {
-            recipes
-        } else {
-            recipes.filter { recipe ->
-                listOf(
-                    recipe.languages.fr.title,
-                    recipe.languages.en.title,
-                    recipe.languages.fr.description,
-                    recipe.languages.en.description
-                ).any { value -> value.contains(trimmedQuery, ignoreCase = true) }
-            }
+    val filteredRecipes = remember(recipes, searchQuery, selectedTagIds) {
+        filterRecipes(
+            recipes = recipes,
+            searchQuery = searchQuery,
+            selectedTagIds = selectedTagIds
+        )
+    }
+    val selectedTagNames = remember(tags, selectedTagIds, language) {
+        selectedTagIds.mapNotNull { selectedId ->
+            tags.firstOrNull { tag -> tag.id == selectedId }?.displayName(language)
         }
     }
+    val hasActiveFilters = searchQuery.isNotBlank() || selectedTagIds.isNotEmpty()
 
     Scaffold(
         modifier = modifier.fillMaxSize(),
@@ -128,6 +134,11 @@ fun RecipeLibraryScreen(
                 }
             ) {
                 AppIconButton(
+                    icon = Icons.Filled.FilterList,
+                    contentDescription = localizedString(R.string.filter_tags_label, language),
+                    onClick = { showTagFilterDialog = true }
+                )
+                AppIconButton(
                     icon = Icons.Filled.Add,
                     contentDescription = localizedString(R.string.add_recipe_label, language),
                     onClick = { context.startActivity(Intent(context, RecipeEditorActivity::class.java)) }
@@ -152,9 +163,18 @@ fun RecipeLibraryScreen(
             contentPadding = PaddingValues(horizontal = 4.dp, vertical = 4.dp),
             verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
+            if (selectedTagNames.isNotEmpty()) {
+                item {
+                    ActiveTagFiltersCard(
+                        language = language,
+                        selectedTagNames = selectedTagNames,
+                        onClear = { selectedTagIds = emptyList() }
+                    )
+                }
+            }
             if (filteredRecipes.isEmpty()) {
                 item {
-                    EmptyLibraryCard(language = language)
+                    EmptyLibraryCard(language = language, hasActiveFilters = hasActiveFilters)
                 }
             } else {
                 items(filteredRecipes, key = { it.id }) { recipe ->
@@ -172,6 +192,16 @@ fun RecipeLibraryScreen(
                 }
             }
         }
+    }
+
+    if (showTagFilterDialog) {
+        RecipeTagFilterDialog(
+            language = language,
+            tags = tags,
+            selectedTagIds = selectedTagIds,
+            onSelectedTagIdsChange = { selectedTagIds = it },
+            onDismiss = { showTagFilterDialog = false }
+        )
     }
 }
 
@@ -258,13 +288,209 @@ private fun RecipeListCard(
 }
 
 @Composable
-private fun EmptyLibraryCard(language: AppLanguage) {
+private fun EmptyLibraryCard(
+    language: AppLanguage,
+    hasActiveFilters: Boolean
+) {
     Card(modifier = Modifier.fillMaxWidth()) {
         Text(
-            text = localizedString(R.string.empty_results, language),
+            text = localizedString(
+                if (hasActiveFilters) R.string.empty_filtered_results else R.string.empty_results,
+                language
+            ),
             modifier = Modifier.padding(6.dp),
             style = MaterialTheme.typography.bodyLarge
         )
+    }
+}
+
+@Composable
+private fun ActiveTagFiltersCard(
+    language: AppLanguage,
+    selectedTagNames: List<String>,
+    onClear: () -> Unit
+) {
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 8.dp, vertical = 4.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = localizedString(
+                    R.string.active_tag_filters_label,
+                    language,
+                    selectedTagNames.joinToString(", ")
+                ),
+                modifier = Modifier.weight(1f),
+                style = MaterialTheme.typography.bodyMedium
+            )
+            TextButton(onClick = onClear) {
+                Text(localizedString(R.string.clear_filters_label, language))
+            }
+        }
+    }
+}
+
+@Composable
+private fun RecipeTagFilterDialog(
+    language: AppLanguage,
+    tags: List<Tag>,
+    selectedTagIds: List<String>,
+    onSelectedTagIdsChange: (List<String>) -> Unit,
+    onDismiss: () -> Unit
+) {
+    var query by rememberSaveable { mutableStateOf("") }
+    val filteredTags = remember(tags, query) {
+        filterTags(tags, query)
+    }
+    val selectedTags = remember(filteredTags, selectedTagIds, language) {
+        selectedTagsForFilterDialog(
+            tags = filteredTags,
+            selectedTagIds = selectedTagIds,
+            language = language
+        )
+    }
+    val groupedTags = remember(filteredTags, selectedTagIds, language) {
+        groupTagsForDisplay(
+            tags = filteredTags.filterNot { tag -> selectedTagIds.contains(tag.id) },
+            language = language,
+            selectedTagIds = emptySet()
+        )
+    }
+
+    Dialog(onDismissRequest = onDismiss) {
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = PopupShape
+        ) {
+            Column(
+                modifier = Modifier.padding(12.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text(
+                        text = localizedString(R.string.filter_tags_label, language),
+                        style = MaterialTheme.typography.titleLarge,
+                        modifier = Modifier.weight(1f)
+                    )
+                    if (selectedTagIds.isNotEmpty()) {
+                        TextButton(onClick = { onSelectedTagIdsChange(emptyList()) }) {
+                            Text(localizedString(R.string.clear_filters_label, language))
+                        }
+                    }
+                }
+                SearchField(
+                    value = query,
+                    onValueChange = { query = it },
+                    label = localizedString(R.string.search_tags_label, language),
+                    placeholder = localizedString(R.string.search_tags_placeholder, language)
+                )
+                Surface(tonalElevation = 2.dp) {
+                    LazyColumn(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(320.dp)
+                            .padding(horizontal = 4.dp, vertical = 2.dp),
+                        verticalArrangement = Arrangement.spacedBy(3.dp)
+                    ) {
+                        if (selectedTags.isEmpty() && groupedTags.isEmpty()) {
+                            item {
+                                Text(
+                                    text = localizedString(R.string.no_tag_references_label, language),
+                                    modifier = Modifier.padding(8.dp)
+                                )
+                            }
+                        } else {
+                            if (selectedTags.isNotEmpty()) {
+                                item(key = "recipe-library-tag-category-selected") {
+                                    Text(
+                                        text = localizedString(R.string.selected_tags_label, language),
+                                        style = MaterialTheme.typography.titleSmall,
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .padding(vertical = 2.dp)
+                                    )
+                                }
+                                items(selectedTags, key = { "selected-${it.id}" }) { tag ->
+                                    Row(
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .padding(vertical = 1.dp),
+                                        horizontalArrangement = Arrangement.SpaceBetween
+                                    ) {
+                                        Text(
+                                            text = tag.displayName(language),
+                                            style = MaterialTheme.typography.bodyMedium,
+                                            modifier = Modifier.weight(1f)
+                                        )
+                                        AppIconButton(
+                                            icon = Icons.Filled.Delete,
+                                            contentDescription = localizedString(R.string.remove_label, language),
+                                            onClick = { onSelectedTagIdsChange(selectedTagIds - tag.id) }
+                                        )
+                                    }
+                                }
+                            }
+                            for (section in groupedTags) {
+                                item(key = "recipe-library-tag-category-${section.category.name}") {
+                                    Text(
+                                        text = section.category.localizedName(language),
+                                        style = MaterialTheme.typography.titleSmall,
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .padding(vertical = 2.dp)
+                                    )
+                                }
+                                items(section.tags, key = { it.id }) { tag ->
+                                    val isSelected = selectedTagIds.contains(tag.id)
+                                    Row(
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .padding(vertical = 1.dp),
+                                        horizontalArrangement = Arrangement.SpaceBetween
+                                    ) {
+                                        Text(
+                                            text = tag.displayName(language),
+                                            style = MaterialTheme.typography.bodyMedium,
+                                            modifier = Modifier.weight(1f)
+                                        )
+                                        AppIconButton(
+                                            icon = if (isSelected) Icons.Filled.Delete else Icons.Filled.Add,
+                                            contentDescription = localizedString(
+                                                if (isSelected) R.string.remove_label else R.string.add_tag_label,
+                                                language
+                                            ),
+                                            onClick = {
+                                                onSelectedTagIdsChange(
+                                                    if (isSelected) {
+                                                        selectedTagIds - tag.id
+                                                    } else {
+                                                        selectedTagIds + tag.id
+                                                    }
+                                                )
+                                            }
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.End
+                ) {
+                    TextButton(onClick = onDismiss) {
+                        Text(localizedString(R.string.close_label, language))
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -283,6 +509,36 @@ internal fun formatNumber(value: Double): String = if (value % 1.0 == 0.0) {
 } else {
     value.toString()
 }
+
+internal fun filterRecipes(
+    recipes: List<Recipe>,
+    searchQuery: String,
+    selectedTagIds: List<String>
+): List<Recipe> {
+    val trimmedQuery = searchQuery.trim()
+    return recipes.filter { recipe ->
+        val matchesSearch = trimmedQuery.isEmpty() || listOf(
+            recipe.languages.fr.title,
+            recipe.languages.en.title,
+            recipe.languages.fr.description,
+            recipe.languages.en.description
+        ).any { value ->
+            value.contains(trimmedQuery, ignoreCase = true)
+        }
+        val matchesTags = selectedTagIds.isEmpty() || selectedTagIds.all { selectedTagId ->
+            recipe.tagIds.contains(selectedTagId)
+        }
+        matchesSearch && matchesTags
+    }
+}
+
+internal fun selectedTagsForFilterDialog(
+    tags: List<Tag>,
+    selectedTagIds: List<String>,
+    language: AppLanguage
+): List<Tag> = tags
+    .filter { tag -> selectedTagIds.contains(tag.id) }
+    .sortedBy { tag -> tag.displayName(language) }
 
 @Composable
 internal fun localizedString(
@@ -405,6 +661,11 @@ internal fun EditIconButton(
         contentDescription = contentDescription,
         onClick = onClick
     )
+}
+
+private fun Tag.displayName(language: AppLanguage): String = when (language) {
+    AppLanguage.FR -> nameFr.ifBlank { nameEn }
+    AppLanguage.EN -> nameEn.ifBlank { nameFr }
 }
 
 

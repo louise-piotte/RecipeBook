@@ -100,9 +100,11 @@
     "totalTimeMinutes": 40
   },
   "tags": [
+    "tag-dessert",
     "tag-breakfast",
     "tag-snack",
     "tag-oven",
+    "tag-bake-sale",
     "tag-shareable"
   ],
   "collections": [

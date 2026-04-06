@@ -11,8 +11,13 @@
     <string name="placeholder_missing_en">Not available in English</string>
     <string name="search_label">Search recipes</string>
     <string name="search_placeholder">Search by title or description</string>
+    <string name="filter_tags_label">Filter by tags</string>
+    <string name="selected_tags_label">Selected tags</string>
+    <string name="clear_filters_label">Clear filters</string>
+    <string name="active_tag_filters_label">Tag filters: %1$s</string>
     <string name="detail_section_title">Recipe details</string>
     <string name="empty_results">No recipes match the current search.</string>
+    <string name="empty_filtered_results">No recipes match the current filters.</string>
     <string name="recipe_not_found">Recipe not found.</string>
     <string name="back_label">Back</string>
     <string name="add_recipe_label">Add recipe</string>

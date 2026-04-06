@@ -88,9 +88,11 @@
     "totalTimeMinutes": 15
   },
   "tags": [
-    "tag-sauce",
     "tag-dessert",
+    "tag-sauce",
     "tag-stovetop",
+    "tag-ingredient-component",
+    "tag-condiment",
     "tag-vegetarian"
   ],
   "collections": [],

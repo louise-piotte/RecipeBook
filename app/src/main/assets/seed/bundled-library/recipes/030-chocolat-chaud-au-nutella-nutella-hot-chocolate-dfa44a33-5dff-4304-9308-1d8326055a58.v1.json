@@ -52,8 +52,10 @@
     "totalTimeMinutes": 5
   },
   "tags": [
-    "tag-drink",
     "tag-dessert",
+    "tag-drink",
+    "tag-snack",
+    "tag-winter",
     "tag-quick"
   ],
   "collections": [],

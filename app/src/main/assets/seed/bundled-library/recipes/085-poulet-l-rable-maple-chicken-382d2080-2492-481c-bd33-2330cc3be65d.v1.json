@@ -103,7 +103,9 @@
     "totalTimeMinutes": 0
   },
   "tags": [
-    "tag-main-dish"
+    "tag-main-dish",
+    "tag-dinner",
+    "tag-stovetop"
   ],
   "collections": [],
   "ratings": {

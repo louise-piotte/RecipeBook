@@ -76,7 +76,10 @@
     "totalTimeMinutes": 140
   },
   "tags": [
-    "tag-tarts"
+    "tag-tarts",
+    "tag-ingredient-component",
+    "tag-dough",
+    "tag-vegetarian"
   ],
   "collections": [],
   "ratings": {

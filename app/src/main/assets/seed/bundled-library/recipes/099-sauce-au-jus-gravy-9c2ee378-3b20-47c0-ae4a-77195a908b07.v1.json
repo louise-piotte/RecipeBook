@@ -68,9 +68,11 @@
     "totalTimeMinutes": 15
   },
   "tags": [
-    "tag-sauce",
     "tag-side-dish",
-    "tag-stovetop"
+    "tag-sauce",
+    "tag-stovetop",
+    "tag-ingredient-component",
+    "tag-condiment"
   ],
   "collections": [],
   "ratings": {
