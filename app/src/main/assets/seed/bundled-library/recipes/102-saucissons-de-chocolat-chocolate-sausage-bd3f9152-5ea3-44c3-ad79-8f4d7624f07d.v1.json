@@ -1,0 +1,127 @@
+{
+  "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Ricardo Cuisine",
+    "sourceUrl": "https://www.ricardocuisine.com/recettes/3769-saucissons-de-chocolat"
+  },
+  "languages": {
+    "fr": {
+      "title": "Saucissons de chocolat",
+      "description": "Des rouleaux de chocolat noir garnis de biscuits, de guimauves, de raisins secs et de pignons.",
+      "instructions": "Dans un bol pos\u00e9 sur un bain-marie, faire fondre le chocolat avec le beurre.\nRetirer du feu, puis fouetter le sucre \u00e0 glacer et l'\u0153uf.\n\u00c0 l'aide d'une spatule, incorporer les biscuits, les guimauves, les raisins secs et les pignons.\nD\u00e9poser la pr\u00e9paration sur une grande feuille de papier d'aluminium et former un cylindre d'environ 30 cm/12 po, ou deux cylindres d'environ 15 cm/6 po.\nRefermer le papier en tortillant les extr\u00e9mit\u00e9s, puis r\u00e9frig\u00e9rer environ 2 h, jusqu'\u00e0 ce que le saucisson soit ferme au toucher.\nRetirer le papier d'aluminium et rouler le cylindre dans du sucre \u00e0 glacer pour lui donner l'apparence d'un vrai saucisson.\nFiceler au besoin, puis trancher pour servir.",
+      "notes": "L'export recommandait de bien compacter le m\u00e9lange en le roulant dans une pellicule plastique.\nSelon l'export, un moule ne compacte pas suffisamment la pr\u00e9paration."
+    },
+    "en": {
+      "title": "Chocolate Sausage",
+      "description": "Chocolate logs packed with cookie pieces, marshmallows, raisins, and pine nuts.",
+      "instructions": "Set a bowl over a double boiler and melt the chocolate with the butter.\nRemove from the heat, then whisk in the icing sugar and egg.\nUsing a spatula, fold in the cookie pieces, marshmallows, raisins, and pine nuts.\nSpoon the mixture onto a large sheet of aluminum foil and shape it into one 30 cm/12 in log or two 15 cm/6 in logs.\nClose the foil by twisting the ends, then refrigerate for about 2 h, until the sausage feels firm.\nRemove the foil and roll the log in icing sugar so it looks like a real dry sausage.\nTie if desired, then slice to serve.",
+      "notes": "The export recommended compacting the mixture tightly by rolling it in plastic wrap.\nAccording to the export, using a mold does not compress the mixture enough."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-ingredient-1",
+      "originalText": "225 g 70% dark chocolate, chopped",
+      "ingredientName": "dark chocolate",
+      "ingredientRefId": "ingredient-ref-dark-chocolate",
+      "quantity": 225,
+      "unit": "g",
+      "preparation": "70%, chopped"
+    },
+    {
+      "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-ingredient-2",
+      "originalText": "1/2 cup unsalted butter, softened",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "softened"
+    },
+    {
+      "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-ingredient-3",
+      "originalText": "1 cup icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-ingredient-4",
+      "originalText": "1 egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "large egg"
+    },
+    {
+      "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-ingredient-5",
+      "originalText": "1 cup butter cookies, broken into 1 cm pieces",
+      "ingredientName": "butter cookies",
+      "ingredientRefId": "ingredient-ref-butter-cookies",
+      "quantity": 1,
+      "unit": "cup",
+      "preparation": "broken into 1 cm pieces"
+    },
+    {
+      "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-ingredient-6",
+      "originalText": "1/2 cup white marshmallows, diced",
+      "ingredientName": "marshmallows",
+      "ingredientRefId": "ingredient-ref-marshmallows",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "diced"
+    },
+    {
+      "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-ingredient-7",
+      "originalText": "2 tbsp raisins",
+      "ingredientName": "raisins",
+      "ingredientRefId": "ingredient-ref-raisins",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-ingredient-8",
+      "originalText": "2 tbsp pine nuts",
+      "ingredientName": "pine nuts",
+      "ingredientRefId": "ingredient-ref-pine-nuts",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "servings": {
+    "amount": 32,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 5,
+    "totalTimeMinutes": 145
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-shareable",
+    "tag-christmas",
+    "tag-holiday"
+  ],
+  "collections": [
+    "collection-christmas-box"
+  ],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-0",
+  "photos": [
+    {
+      "id": "photo-bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-0",
+      "relativePath": "photos/bd3f9152-5ea3-44c3-ad79-8f4d7624f07d_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

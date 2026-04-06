@@ -1,0 +1,97 @@
+{
+  "id": "43dd1f6e-ab29-4365-bfee-a7ecb0d6309b",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "languages": {
+    "fr": {
+      "title": "Sirop au chocolat",
+      "description": "Un sirop au chocolat maison \u00e0 cuire au chaudron puis \u00e0 mettre en bouteille.",
+      "instructions": "Mettre le sucre, la farine, la poudre de cacao et la margarine dans un petit chaudron.\nChauffer \u00e0 feu moyen et verser le lait graduellement en fouettant pour \u00e9viter les grumeaux.\nPorter \u00e0 \u00e9bullition sans changer la temp\u00e9rature.\nLaisser bouillir 1 min, puis retirer du feu.\nRemuer jusqu'\u00e0 ce que le sirop cesse de bouillonner.\nTransf\u00e9rer dans une bouteille.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Chocolate Syrup",
+      "description": "A homemade chocolate syrup cooked on the stove and poured into a bottle.",
+      "instructions": "Place the sugar, flour, cocoa powder, and margarine in a small saucepan.\nSet it over medium heat and gradually whisk in the milk to avoid lumps.\nBring to a boil without changing the temperature.\nBoil for 1 min, then remove from the heat.\nStir until the syrup stops bubbling.\nTransfer to a bottle.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "43dd1f6e-ab29-4365-bfee-a7ecb0d6309b-ingredient-1",
+      "originalText": "1/2 cup granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "43dd1f6e-ab29-4365-bfee-a7ecb0d6309b-ingredient-2",
+      "originalText": "1 1/2 tbsp all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 1.5,
+      "unit": "tbsp"
+    },
+    {
+      "id": "43dd1f6e-ab29-4365-bfee-a7ecb0d6309b-ingredient-3",
+      "originalText": "1/2 cup unsweetened cocoa powder",
+      "ingredientName": "unsweetened cocoa powder",
+      "ingredientRefId": "ingredient-ref-unsweetened-cocoa-powder",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "43dd1f6e-ab29-4365-bfee-a7ecb0d6309b-ingredient-4",
+      "originalText": "1 1/2 cups milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "id": "43dd1f6e-ab29-4365-bfee-a7ecb0d6309b-ingredient-5",
+      "originalText": "2 tbsp margarine",
+      "ingredientName": "margarine",
+      "ingredientRefId": "ingredient-ref-margarine",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "batch"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 10,
+    "totalTimeMinutes": 15
+  },
+  "tags": [
+    "tag-sauce",
+    "tag-ingredient-component"
+  ],
+  "collections": [
+    "collection-mom-and-dad-recipes"
+  ],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-43dd1f6e-ab29-4365-bfee-a7ecb0d6309b-0",
+  "photos": [
+    {
+      "id": "photo-43dd1f6e-ab29-4365-bfee-a7ecb0d6309b-0",
+      "relativePath": "photos/43dd1f6e-ab29-4365-bfee-a7ecb0d6309b_0.jpg"
+    },
+    {
+      "id": "photo-43dd1f6e-ab29-4365-bfee-a7ecb0d6309b-1",
+      "relativePath": "photos/43dd1f6e-ab29-4365-bfee-a7ecb0d6309b_1.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

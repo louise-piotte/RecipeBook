@@ -2204,6 +2204,24 @@
     "updatedAt": "2026-04-05T00:00:00Z"
   },
   {
+    "id": "ingredient-ref-yellow-peas",
+    "nameFr": "pois jaunes s\u00e9ch\u00e9s",
+    "nameEn": "dried yellow peas",
+    "aliasesFr": [
+      "petits pois jaunes",
+      "pois jaunes",
+      "pois jaunes entiers s\u00e9ch\u00e9s"
+    ],
+    "aliasesEn": [
+      "dried whole yellow peas",
+      "whole yellow peas",
+      "yellow peas"
+    ],
+    "defaultDensity": null,
+    "unitMappings": [],
+    "updatedAt": "2026-04-05T00:00:00Z"
+  },
+  {
     "id": "ingredient-ref-pecans",
     "nameFr": "pacanes",
     "nameEn": "pecans",

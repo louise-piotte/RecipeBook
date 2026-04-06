@@ -1,0 +1,153 @@
+{
+  "id": "e152b749-db75-4a7c-9bbf-3b94f721451d",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Vegan Feast Kitchen",
+    "sourceUrl": "http://veganfeastkitchen.blogspot.com/2013/02/homemade-habitant-pea-soup-soupe-aux.html"
+  },
+  "languages": {
+    "fr": {
+      "title": "Soupe aux pois habitant",
+      "description": "Une soupe aux pois jaune s\u00e9ch\u00e9s, au bouillon de l\u00e9gumes, \u00e0 la patate douce et \u00e0 la fum\u00e9e liquide.",
+      "instructions": "Faire tremper les pois jaunes dans beaucoup d'eau pendant environ 8 h, puis \u00e9goutter.\nMettre les pois tremp\u00e9s dans une grande casserole \u00e9paisse avec le bouillon, l'oignon, l'ail, la patate douce, les carottes et le c\u00e9leri.\nAjouter les herbes de Provence, le poivre noir, la fum\u00e9e liquide et l'huile de s\u00e9same.\nPorter \u00e0 faible \u00e9bullition et laisser mijoter 1 h 30 min.\n\u00c0 l'aide d'un m\u00e9langeur \u00e0 immersion, r\u00e9duire en pur\u00e9e une partie de la soupe seulement, pour garder de la texture.",
+      "notes": "L'export brut mentionnait des pois chiches entiers s\u00e9ch\u00e9s, mais le titre, les instructions et la source correspondent \u00e0 une soupe aux pois jaunes.\nSi vous voulez essayer la variation aux pois chiches de l'export, remplacez les pois jaunes par 2 tasses de pois chiches entiers s\u00e9ch\u00e9s et ajustez la cuisson au besoin."
+    },
+    "en": {
+      "title": "Habitant Pea Soup",
+      "description": "A dried yellow pea soup with vegetable broth, sweet potato, and a touch of liquid smoke.",
+      "instructions": "Soak the yellow peas in plenty of water for about 8 h, then drain.\nPlace the soaked peas in a large heavy pot with the broth, onion, garlic, sweet potato, carrots, and celery.\nAdd the herbes de Provence, black pepper, liquid smoke, and sesame oil.\nBring to a gentle simmer and cook for 1 h 30 min.\nUsing an immersion blender, puree only part of the soup so it keeps some texture.",
+      "notes": "The raw export listed dried whole chickpeas, but the title, directions, and source match a yellow pea soup.\nIf you want to try the export's chickpea variation, replace the yellow peas with 2 cups of dried whole chickpeas and adjust the cooking time as needed."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-1",
+      "originalText": "2 cups dried yellow peas",
+      "ingredientName": "dried yellow peas",
+      "ingredientRefId": "ingredient-ref-yellow-peas",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-2",
+      "originalText": "8 cups vegetable broth",
+      "ingredientName": "vegetable stock",
+      "ingredientRefId": "ingredient-ref-vegetable-stock",
+      "quantity": 8,
+      "unit": "cup",
+      "notes": "chicken broth also works"
+    },
+    {
+      "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-3",
+      "originalText": "1 large onion, chopped",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "large, chopped"
+    },
+    {
+      "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-4",
+      "originalText": "4 cloves garlic, crushed",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 4,
+      "unit": "clove",
+      "preparation": "crushed"
+    },
+    {
+      "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-5",
+      "originalText": "1 sweet potato",
+      "ingredientName": "sweet potato",
+      "ingredientRefId": "ingredient-ref-sweet-potato",
+      "quantity": 1,
+      "unit": "count"
+    },
+    {
+      "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-6",
+      "originalText": "4 small carrots, diced",
+      "ingredientName": "carrot",
+      "ingredientRefId": "ingredient-ref-carrot",
+      "quantity": 4,
+      "unit": "count",
+      "preparation": "small, diced"
+    },
+    {
+      "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-7",
+      "originalText": "2 stalks celery, chopped",
+      "ingredientName": "celery",
+      "ingredientRefId": "ingredient-ref-celery",
+      "quantity": 2,
+      "unit": "stalk",
+      "preparation": "chopped"
+    },
+    {
+      "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-8",
+      "originalText": "Herbes de Provence, to taste",
+      "ingredientName": "herbes de Provence",
+      "ingredientRefId": "ingredient-ref-herbes-de-provence",
+      "quantity": 1,
+      "unit": "to taste"
+    },
+    {
+      "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-9",
+      "originalText": "Freshly ground black pepper, to taste",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 1,
+      "unit": "to taste",
+      "preparation": "freshly ground"
+    },
+    {
+      "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-10",
+      "originalText": "1 tsp liquid smoke",
+      "ingredientName": "liquid smoke",
+      "ingredientRefId": "ingredient-ref-liquid-smoke",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-11",
+      "originalText": "1 tbsp sesame oil",
+      "ingredientName": "toasted sesame oil",
+      "ingredientRefId": "ingredient-ref-toasted-sesame-oil",
+      "quantity": 1,
+      "unit": "tbsp",
+      "notes": "the export specified dark sesame oil"
+    }
+  ],
+  "servings": {
+    "amount": 8,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 90,
+    "totalTimeMinutes": 590
+  },
+  "tags": [
+    "tag-soup",
+    "tag-vegetarian",
+    "tag-quebec"
+  ],
+  "collections": [
+    "collection-gab-favorites"
+  ],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-e152b749-db75-4a7c-9bbf-3b94f721451d-0",
+  "photos": [
+    {
+      "id": "photo-e152b749-db75-4a7c-9bbf-3b94f721451d-0",
+      "relativePath": "photos/e152b749-db75-4a7c-9bbf-3b94f721451d_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

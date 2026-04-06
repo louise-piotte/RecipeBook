@@ -1,0 +1,138 @@
+{
+  "id": "7239d74f-e895-421d-96e4-09a049546aa1",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Allrecipes",
+    "sourceUrl": "https://www.allrecipes.com/recipe/220991/chef-johns-asparagus-souffle/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Souffl\u00e9 aux asperges",
+      "description": "Un souffl\u00e9 sal\u00e9 aux asperges, \u00e0 l'ail et au cheddar blanc fort.",
+      "instructions": "Cuire les asperges dans une casserole d'eau bouillante jusqu'\u00e0 ce qu'elles soient vertes mais encore croquantes, environ 2 min.\nTransf\u00e9rer les asperges dans de l'eau glac\u00e9e pour arr\u00eater la cuisson, puis \u00e9goutter.\nFaire fondre le beurre dans une casserole \u00e0 feu moyen-doux.\nIncorporer la farine et cuire environ 2 min, jusqu'\u00e0 ce que le m\u00e9lange devienne p\u00e2teux et l\u00e9g\u00e8rement dor\u00e9.\nFouetter le lait dans le m\u00e9lange beurre-farine, porter \u00e0 faible \u00e9bullition et cuire 2 min \u00e0 3 min jusqu'\u00e0 \u00e9paississement.\nAssaisonner de sel et de poivre de Cayenne.\nMettre le m\u00e9lange de lait, l'ail et les asperges dans un m\u00e9langeur et r\u00e9duire en pur\u00e9e lisse.\nVerser la pur\u00e9e dans un grand bol, puis incorporer les jaunes d'\u0153ufs et le cheddar.\nPr\u00e9chauffer le four \u00e0 190\u00b0C/375\u00b0F.\nBeurrer g\u00e9n\u00e9reusement 4 ramequins de 6 oz.\nBattre les blancs d'\u0153ufs jusqu'\u00e0 formation de pics mous.\nIncorporer la moiti\u00e9 des blancs d'\u0153ufs \u00e0 la base aux asperges, puis incorporer d\u00e9licatement le reste.\nRemplir les ramequins aux 3/4, les placer sur une plaque et cuire de 20 min \u00e0 25 min, jusqu'\u00e0 ce que les bords soient dor\u00e9s.",
+      "notes": "L'export sugg\u00e9rait d'essayer la m\u00eame m\u00e9thode avec d'autres l\u00e9gumes qui se r\u00e9duisent bien en pur\u00e9e, comme le brocoli, l'artichaut, le poireau ou les \u00e9pinards."
+    },
+    "en": {
+      "title": "Asparagus Souffle",
+      "description": "A savory asparagus souffle with garlic and sharp white Cheddar.",
+      "instructions": "Cook the asparagus in a saucepan of boiling water until bright green but still crisp, about 2 min.\nTransfer the asparagus to ice water to stop the cooking, then drain.\nMelt the butter in a saucepan over medium-low heat.\nWhisk in the flour and cook for about 2 min, until the mixture is paste-like and lightly golden.\nWhisk the milk into the butter-flour mixture, bring it just to a simmer, and cook for 2 min to 3 min until thickened.\nSeason with salt and cayenne pepper.\nPlace the milk mixture, garlic, and asparagus in a blender and puree until smooth.\nPour the puree into a large bowl, then stir in the egg yolks and Cheddar.\nPreheat the oven to 190\u00b0C/375\u00b0F.\nGenerously butter 4 ramekins of 6 oz each.\nBeat the egg whites until soft peaks form.\nStir half of the egg whites into the asparagus base, then gently fold in the rest.\nFill the ramekins about 3/4 full, place them on a baking sheet, and bake for 20 min to 25 min until the edges are golden.",
+      "notes": "The export suggested trying the same method with other vegetables that puree well, such as broccoli, artichokes, leeks, or spinach."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-1",
+      "originalText": "1 bunch asparagus, trimmed and cut into 1/2-inch pieces",
+      "ingredientName": "asparagus",
+      "ingredientRefId": "ingredient-ref-asparagus",
+      "quantity": 1,
+      "unit": "bunch",
+      "preparation": "trimmed and cut into 1/2-inch pieces"
+    },
+    {
+      "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-2",
+      "originalText": "2 tbsp unsalted butter",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-3",
+      "originalText": "2 tbsp all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-4",
+      "originalText": "1 cup cold milk",
+      "ingredientName": "milk",
+      "ingredientRefId": "ingredient-ref-milk",
+      "quantity": 1,
+      "unit": "cup",
+      "notes": "cold"
+    },
+    {
+      "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-5",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-6",
+      "originalText": "Cayenne pepper, to taste",
+      "ingredientName": "cayenne pepper",
+      "ingredientRefId": "ingredient-ref-cayenne-pepper",
+      "quantity": 1,
+      "unit": "to taste"
+    },
+    {
+      "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-7",
+      "originalText": "1 clove garlic, minced",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 1,
+      "unit": "clove",
+      "preparation": "minced"
+    },
+    {
+      "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-8",
+      "originalText": "4 eggs, separated",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 4,
+      "unit": "large egg",
+      "preparation": "separated"
+    },
+    {
+      "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-9",
+      "originalText": "1/2 cup sharp white Cheddar cheese, grated",
+      "ingredientName": "Cheddar cheese",
+      "ingredientRefId": "ingredient-ref-cheddar-cheese",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "sharp white, grated"
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "souffles"
+  },
+  "times": {
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 30,
+    "totalTimeMinutes": 50
+  },
+  "tags": [
+    "tag-appetizer",
+    "tag-vegetarian",
+    "tag-spring",
+    "tag-oven"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-7239d74f-e895-421d-96e4-09a049546aa1-0",
+  "photos": [
+    {
+      "id": "photo-7239d74f-e895-421d-96e4-09a049546aa1-0",
+      "relativePath": "photos/7239d74f-e895-421d-96e4-09a049546aa1_0.jpg"
+    },
+    {
+      "id": "photo-7239d74f-e895-421d-96e4-09a049546aa1-1",
+      "relativePath": "photos/7239d74f-e895-421d-96e4-09a049546aa1_1.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

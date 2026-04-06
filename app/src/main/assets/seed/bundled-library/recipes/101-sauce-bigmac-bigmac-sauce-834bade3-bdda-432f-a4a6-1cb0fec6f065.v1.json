@@ -1,0 +1,131 @@
+{
+  "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Joshua Weissman",
+    "sourceUrl": "https://www.joshuaweissman.com/post/mcdonald-s-big-mac-but-better"
+  },
+  "languages": {
+    "fr": {
+      "title": "Sauce Big Mac",
+      "description": "Une sauce burger cr\u00e9meuse au ketchup, \u00e0 la moutarde jaune, au cornichon sucr\u00e9 et \u00e0 l'oignon.",
+      "instructions": "Mettre tous les ingr\u00e9dients dans un petit bol.\nFouetter jusqu'\u00e0 ce que la sauce soit homog\u00e8ne.\nGo\u00fbter et ajuster le sel et le poivre au besoin.\nR\u00e9frig\u00e9rer jusqu'au moment de servir.",
+      "notes": "Le rendement original indiquait environ 2 \u00e0 4 portions.\nLa recette export\u00e9e notait que la sauce est bonne, mais qu'elle pourrait \u00eatre ajust\u00e9e au go\u00fbt."
+    },
+    "en": {
+      "title": "Big Mac Sauce",
+      "description": "A creamy burger sauce made with ketchup, yellow mustard, sweet pickle, and onion.",
+      "instructions": "Place all of the ingredients in a small bowl.\nWhisk until the sauce is smooth and fully combined.\nTaste and adjust the salt and pepper as needed.\nRefrigerate until ready to serve.",
+      "notes": "The original yield was listed as about 2 to 4 servings.\nThe exported recipe noted that the sauce is good but may need tuning to taste."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065-ingredient-1",
+      "originalText": "1/2 cup mayonnaise",
+      "ingredientName": "mayonnaise",
+      "ingredientRefId": "ingredient-ref-mayo",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065-ingredient-2",
+      "originalText": "3 tbsp ketchup",
+      "ingredientName": "ketchup",
+      "ingredientRefId": "ingredient-ref-ketchup",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065-ingredient-3",
+      "originalText": "3 tbsp yellow mustard",
+      "ingredientName": "yellow mustard",
+      "ingredientRefId": "ingredient-ref-yellow-mustard",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065-ingredient-4",
+      "originalText": "2 1/2 tbsp finely diced sweet onion",
+      "ingredientName": "onion",
+      "ingredientRefId": "ingredient-ref-onion",
+      "quantity": 2.5,
+      "unit": "tbsp",
+      "preparation": "finely diced sweet onion"
+    },
+    {
+      "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065-ingredient-5",
+      "originalText": "1/8 tsp onion powder",
+      "ingredientName": "onion powder",
+      "ingredientRefId": "ingredient-ref-onion-powder",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065-ingredient-6",
+      "originalText": "1 clove garlic, grated",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 1,
+      "unit": "clove",
+      "preparation": "grated"
+    },
+    {
+      "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065-ingredient-7",
+      "originalText": "1 bread and butter pickle, finely diced",
+      "ingredientName": "bread and butter pickle",
+      "ingredientRefId": "ingredient-ref-bread-and-butter-pickle",
+      "quantity": 1,
+      "unit": "count",
+      "preparation": "finely diced"
+    },
+    {
+      "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065-ingredient-8",
+      "originalText": "1 tsp white vinegar",
+      "ingredientName": "white vinegar",
+      "ingredientRefId": "ingredient-ref-white-vinegar",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065-ingredient-9",
+      "originalText": "Salt and pepper, to taste",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "quantity": 1,
+      "unit": "to taste",
+      "notes": "season with salt and pepper to taste"
+    }
+  ],
+  "servings": {
+    "amount": 4,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 5
+  },
+  "tags": [
+    "tag-sauce",
+    "tag-ingredient-component"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-834bade3-bdda-432f-a4a6-1cb0fec6f065-0",
+  "photos": [
+    {
+      "id": "photo-834bade3-bdda-432f-a4a6-1cb0fec6f065-0",
+      "relativePath": "photos/834bade3-bdda-432f-a4a6-1cb0fec6f065_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}
