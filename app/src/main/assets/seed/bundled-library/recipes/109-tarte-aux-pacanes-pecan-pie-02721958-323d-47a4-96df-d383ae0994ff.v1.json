@@ -1,0 +1,131 @@
+{
+  "id": "02721958-323d-47a4-96df-d383ae0994ff",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/pecan-pie/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Tarte aux pacanes",
+      "description": "Une petite tarte aux pacanes avec une garniture au sirop de ma\u00efs et \u00e0 la vanille.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 205\u00b0C/400\u00b0F.\nDans un bol, fouetter le sirop de ma\u00efs, le sucre, l'\u0153uf, le beurre fondu, la vanille et le sel jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9.\nR\u00e9partir les pacanes dans une cro\u00fbte \u00e0 tarte crue de 5 po, puis verser la garniture par-dessus.\nCuire 40 min, jusqu'\u00e0 ce que la garniture soit prise et que la cro\u00fbte soit bien dor\u00e9e.",
+      "notes": "Multiplier la recette par 3 pour faire une tarte de 9 po."
+    },
+    "en": {
+      "title": "Pecan Pie",
+      "description": "A small pecan pie with a vanilla-scented corn syrup filling.",
+      "instructions": "Preheat the oven to 205\u00b0C/400\u00b0F.\nIn a bowl, whisk together the corn syrup, sugar, egg, melted butter, vanilla, and salt until combined.\nScatter the pecans in a raw 5-inch pie shell, then pour the filling over top.\nBake for 40 min, until the filling is set and the crust is well browned.",
+      "notes": "Multiply the recipe by 3 to make a 9-inch pie."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "02721958-323d-47a4-96df-d383ae0994ff-ingredient-1",
+      "originalText": "1 raw 5-inch pie crust",
+      "ingredientName": "pie crust",
+      "ingredientRefId": "ingredient-ref-pie-crust",
+      "quantity": 1,
+      "unit": "count",
+      "group": "Crust",
+      "notes": "5-inch sweet pie shell"
+    },
+    {
+      "id": "02721958-323d-47a4-96df-d383ae0994ff-ingredient-2",
+      "originalText": "1/2 cup pecans, coarsely chopped",
+      "ingredientName": "pecans",
+      "ingredientRefId": "ingredient-ref-pecans",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "coarsely chopped",
+      "group": "Filling"
+    },
+    {
+      "id": "02721958-323d-47a4-96df-d383ae0994ff-ingredient-3",
+      "originalText": "1/3 cup dark corn syrup",
+      "ingredientName": "dark corn syrup",
+      "quantity": 0.333,
+      "unit": "cup",
+      "group": "Filling"
+    },
+    {
+      "id": "02721958-323d-47a4-96df-d383ae0994ff-ingredient-4",
+      "originalText": "50 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 50,
+      "unit": "g",
+      "group": "Filling"
+    },
+    {
+      "id": "02721958-323d-47a4-96df-d383ae0994ff-ingredient-5",
+      "originalText": "1 large egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "large egg",
+      "group": "Filling"
+    },
+    {
+      "id": "02721958-323d-47a4-96df-d383ae0994ff-ingredient-6",
+      "originalText": "19 g unsalted butter, melted",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 19,
+      "unit": "g",
+      "preparation": "melted",
+      "group": "Filling"
+    },
+    {
+      "id": "02721958-323d-47a4-96df-d383ae0994ff-ingredient-7",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Filling"
+    },
+    {
+      "id": "02721958-323d-47a4-96df-d383ae0994ff-ingredient-8",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Filling"
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "5-inch pie"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 40,
+    "totalTimeMinutes": 50
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-tarts",
+    "tag-thanksgiving",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-02721958-323d-47a4-96df-d383ae0994ff-0",
+  "photos": [
+    {
+      "id": "photo-02721958-323d-47a4-96df-d383ae0994ff-0",
+      "relativePath": "photos/02721958-323d-47a4-96df-d383ae0994ff_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "id": "b55e38ff-597e-441b-9a89-a4e06c07248a",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Tablespoon",
+    "sourceUrl": "https://www.tblspoon.com/home/almond-frangipane-mini-tarts"
+  },
+  "languages": {
+    "fr": {
+      "title": "Tartelettes \u00e0 la frangipane aux amandes",
+      "description": "Douze petites tartelettes garnies d'une p\u00e2te sucr\u00e9e tendre et d'une frangipane aux amandes.",
+      "instructions": "Pour la p\u00e2te, fouetter la farine, le sucre \u00e0 glacer et le sel. Dans un autre bol, m\u00e9langer le jaune d'\u0153uf, la cr\u00e8me et la vanille. Incorporer aux ingr\u00e9dients secs, puis couper le beurre froid dans le m\u00e9lange jusqu'\u00e0 l'obtention d'une texture grossi\u00e8re. Rassembler la p\u00e2te, p\u00e9trir juste assez pour qu'elle soit lisse, former un disque et r\u00e9frig\u00e9rer au moins 1 h.\nPour la frangipane, pulser la farine d'amande, le sucre et le sel dans un robot culinaire. Ajouter l'\u0153uf, le blanc d'\u0153uf, les extraits et m\u00e9langer. Ajouter le beurre et mixer jusqu'\u00e0 ce que la garniture soit lisse.\nPr\u00e9chauffer le four \u00e0 177\u00b0C/350\u00b0F.\nAbaisser la p\u00e2te \u00e0 environ 1/8 po d'\u00e9paisseur. D\u00e9couper 12 cercles et presser la p\u00e2te dans les cavit\u00e9s d'un moule \u00e0 muffins. R\u00e9frig\u00e9rer le moule 30 min pour raffermir la p\u00e2te.\nR\u00e9partir une grosse cuill\u00e8re \u00e0 soupe de frangipane dans chaque cavit\u00e9, garnir d'amandes tranch\u00e9es, puis cuire de 20 min \u00e0 25 min en tournant le moule \u00e0 mi-cuisson, jusqu'\u00e0 ce que les dessus soient pris et que les bords soient l\u00e9g\u00e8rement dor\u00e9s.\nLaisser refroidir 10 min dans le moule avant de d\u00e9mouler sur une grille.",
+      "notes": "Cette recette fait partie de la Bo\u00eete de No\u00ebl."
+    },
+    "en": {
+      "title": "Almond Frangipane Mini Tarts",
+      "description": "Twelve mini tarts with a tender pastry shell and a smooth almond frangipane filling.",
+      "instructions": "For the pastry, whisk together the flour, icing sugar, and salt. In a separate bowl, combine the egg yolk, cream, and vanilla. Stir into the dry ingredients, then cut the cold butter into the mixture until it looks coarse. Gather the dough, knead just until smooth, shape into a disc, and refrigerate for at least 1 h.\nFor the frangipane, pulse the almond flour, sugar, and salt in a food processor. Add the egg, egg white, and extracts and process to combine. Add the butter and process until the filling is smooth.\nPreheat the oven to 177\u00b0C/350\u00b0F.\nRoll the dough to about 1/8 inch thick. Cut 12 rounds and press them into the wells of a muffin tin. Chill the pan for 30 min to firm the dough.\nSpoon a heaping tablespoon of frangipane into each shell, top with sliced almonds, and bake for 20 min to 25 min, rotating the pan halfway through, until the tops are set and the edges are lightly golden.\nCool in the pan for 10 min, then remove the tartlets to a wire rack.",
+      "notes": "This recipe is part of the Christmas Box collection."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-1",
+      "originalText": "213 g all-purpose flour",
+      "ingredientName": "all-purpose flour",
+      "ingredientRefId": "ingredient-ref-all-purpose-flour",
+      "quantity": 213,
+      "unit": "g",
+      "group": "Pastry"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-2",
+      "originalText": "85 g icing sugar",
+      "ingredientName": "icing sugar",
+      "ingredientRefId": "ingredient-ref-icing-sugar",
+      "quantity": 85,
+      "unit": "g",
+      "group": "Pastry"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-3",
+      "originalText": "1/8 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.125,
+      "unit": "tsp",
+      "group": "Pastry"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-4",
+      "originalText": "1 large egg yolk",
+      "ingredientName": "egg yolk",
+      "ingredientRefId": "ingredient-ref-egg-yolk",
+      "quantity": 1,
+      "unit": "large egg yolk",
+      "group": "Pastry"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-5",
+      "originalText": "2 tbsp heavy cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 2,
+      "unit": "tbsp",
+      "group": "Pastry"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-6",
+      "originalText": "1/2 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Pastry"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-7",
+      "originalText": "142 g unsalted butter, very cold and diced",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 142,
+      "unit": "g",
+      "preparation": "very cold and diced",
+      "group": "Pastry"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-8",
+      "originalText": "113 g almond flour",
+      "ingredientName": "almond flour",
+      "ingredientRefId": "ingredient-ref-almond-flour",
+      "quantity": 113,
+      "unit": "g",
+      "group": "Frangipane"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-9",
+      "originalText": "100 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 100,
+      "unit": "g",
+      "group": "Frangipane"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-10",
+      "originalText": "1/8 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.125,
+      "unit": "tsp",
+      "group": "Frangipane"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-11",
+      "originalText": "1 egg",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 1,
+      "unit": "count",
+      "group": "Frangipane"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-12",
+      "originalText": "1 egg white",
+      "ingredientName": "egg white",
+      "ingredientRefId": "ingredient-ref-egg-white",
+      "quantity": 1,
+      "unit": "count",
+      "group": "Frangipane"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-13",
+      "originalText": "1/2 tsp almond extract",
+      "ingredientName": "almond extract",
+      "ingredientRefId": "ingredient-ref-almond-extract",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Frangipane"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-14",
+      "originalText": "1/2 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "group": "Frangipane"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-15",
+      "originalText": "85 g unsalted butter, room temperature",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 85,
+      "unit": "g",
+      "preparation": "room temperature",
+      "group": "Frangipane"
+    },
+    {
+      "id": "b55e38ff-597e-441b-9a89-a4e06c07248a-ingredient-16",
+      "originalText": "1/2 cup sliced almonds",
+      "ingredientName": "almonds",
+      "ingredientRefId": "ingredient-ref-almonds",
+      "quantity": 0.5,
+      "unit": "cup",
+      "preparation": "sliced",
+      "group": "Topping"
+    }
+  ],
+  "servings": {
+    "amount": 12,
+    "unit": "mini tarts"
+  },
+  "times": {
+    "prepTimeMinutes": 50,
+    "cookTimeMinutes": 25,
+    "totalTimeMinutes": 135
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-tarts",
+    "tag-christmas",
+    "tag-vegetarian",
+    "tag-shareable"
+  ],
+  "collections": [
+    "collection-christmas-box"
+  ],
+  "ratings": {
+    "userRating": 5
+  },
+  "mainPhotoId": "photo-b55e38ff-597e-441b-9a89-a4e06c07248a-0",
+  "photos": [
+    {
+      "id": "photo-b55e38ff-597e-441b-9a89-a4e06c07248a-0",
+      "relativePath": "photos/b55e38ff-597e-441b-9a89-a4e06c07248a_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

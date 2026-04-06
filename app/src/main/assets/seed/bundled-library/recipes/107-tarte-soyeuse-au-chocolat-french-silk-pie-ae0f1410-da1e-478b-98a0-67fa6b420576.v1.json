@@ -1,0 +1,122 @@
+{
+  "id": "ae0f1410-da1e-478b-98a0-67fa6b420576",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Preppy Kitchen",
+    "sourceUrl": "https://preppykitchen.com/french-silk-pie/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Tarte soyeuse au chocolat",
+      "description": "Une petite tarte au chocolat \u00e0 la garniture l\u00e9g\u00e8re et satin\u00e9e, servie bien froide.",
+      "instructions": "Porter \u00e0 fr\u00e9missement une petite casserole remplie d'environ 5 cm d'eau.\nDans un bol r\u00e9sistant \u00e0 la chaleur, fouetter le sucre et les \u0153ufs. Poser le bol sur la casserole sans que le fond touche l'eau et cuire en remuant constamment jusqu'\u00e0 ce que le m\u00e9lange atteigne 71\u00b0C/160\u00b0F ou soit lisse et bien chaud.\nRetirer du feu. Ajouter le chocolat et la vanille, puis fouetter jusqu'\u00e0 ce que le chocolat soit fondu et que le m\u00e9lange soit lisse. Laisser ti\u00e9dir environ 30 min, en remuant de temps en temps.\nBattre le beurre jusqu'\u00e0 ce qu'il soit l\u00e9ger et mousseux. Ajouter le m\u00e9lange au chocolat refroidi et battre jusqu'\u00e0 ce qu'il soit tr\u00e8s a\u00e9r\u00e9.\nDans un autre bol, fouetter la cr\u00e8me jusqu'\u00e0 la formation de pics mous. Incorporer d\u00e9licatement la cr\u00e8me fouett\u00e9e au m\u00e9lange au chocolat, puis verser dans la cro\u00fbte pr\u00e9cuite refroidie.\nR\u00e9frig\u00e9rer au moins 3 h avant de servir.",
+      "notes": "Multiplier la recette par 2 pour faire une tarte de 9 po."
+    },
+    "en": {
+      "title": "French Silk Pie",
+      "description": "A small chocolate pie with a light, silky filling that is best served cold.",
+      "instructions": "Bring a small saucepan filled with about 2 inches of water to a simmer.\nIn a heatproof bowl, whisk together the sugar and eggs. Set the bowl over the saucepan without letting the bottom touch the water and cook, stirring constantly, until the mixture reaches 71\u00b0C/160\u00b0F or feels hot and completely smooth.\nRemove from the heat. Add the chocolate and vanilla, then whisk until the chocolate is melted and the mixture is smooth. Let it cool for about 30 min, stirring occasionally.\nBeat the butter until light and fluffy. Add the cooled chocolate mixture and beat until very airy.\nIn a separate bowl, whip the cream to soft peaks. Fold the whipped cream into the chocolate mixture, then spoon it into the cooled prebaked crust.\nRefrigerate for at least 3 h before serving.",
+      "notes": "Multiply the recipe by 2 to make a 9-inch pie."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "ae0f1410-da1e-478b-98a0-67fa6b420576-ingredient-1",
+      "originalText": "1 prebaked 5-inch pie crust, cooled",
+      "ingredientName": "pie crust",
+      "ingredientRefId": "ingredient-ref-pie-crust",
+      "quantity": 1,
+      "unit": "count",
+      "group": "Crust",
+      "notes": "5-inch sweet pie shell, prebaked and cooled"
+    },
+    {
+      "id": "ae0f1410-da1e-478b-98a0-67fa6b420576-ingredient-2",
+      "originalText": "2 large eggs",
+      "ingredientName": "egg",
+      "ingredientRefId": "ingredient-ref-egg",
+      "quantity": 2,
+      "unit": "large egg",
+      "group": "Filling"
+    },
+    {
+      "id": "ae0f1410-da1e-478b-98a0-67fa6b420576-ingredient-3",
+      "originalText": "125 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 125,
+      "unit": "g",
+      "group": "Filling"
+    },
+    {
+      "id": "ae0f1410-da1e-478b-98a0-67fa6b420576-ingredient-4",
+      "originalText": "56 g unsweetened chocolate, finely chopped",
+      "ingredientName": "unsweetened chocolate",
+      "ingredientRefId": "ingredient-ref-unsweetened-chocolate",
+      "quantity": 56,
+      "unit": "g",
+      "preparation": "finely chopped",
+      "group": "Filling"
+    },
+    {
+      "id": "ae0f1410-da1e-478b-98a0-67fa6b420576-ingredient-5",
+      "originalText": "1 tsp vanilla extract",
+      "ingredientName": "vanilla extract",
+      "ingredientRefId": "ingredient-ref-vanilla-extract",
+      "quantity": 1,
+      "unit": "tsp",
+      "group": "Filling"
+    },
+    {
+      "id": "ae0f1410-da1e-478b-98a0-67fa6b420576-ingredient-6",
+      "originalText": "113 g unsalted butter, softened",
+      "ingredientName": "unsalted butter",
+      "ingredientRefId": "ingredient-ref-unsalted-butter",
+      "quantity": 113,
+      "unit": "g",
+      "preparation": "softened",
+      "group": "Filling"
+    },
+    {
+      "id": "ae0f1410-da1e-478b-98a0-67fa6b420576-ingredient-7",
+      "originalText": "1/3 cup heavy cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 0.333,
+      "unit": "cup",
+      "group": "Filling"
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "5-inch pie"
+  },
+  "times": {
+    "prepTimeMinutes": 60,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 240
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-tarts",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 2
+  },
+  "mainPhotoId": "photo-ae0f1410-da1e-478b-98a0-67fa6b420576-0",
+  "photos": [
+    {
+      "id": "photo-ae0f1410-da1e-478b-98a0-67fa6b420576-0",
+      "relativePath": "photos/ae0f1410-da1e-478b-98a0-67fa6b420576_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

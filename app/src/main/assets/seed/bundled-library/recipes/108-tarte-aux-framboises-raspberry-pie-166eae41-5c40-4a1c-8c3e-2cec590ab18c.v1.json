@@ -1,0 +1,114 @@
+{
+  "id": "166eae41-5c40-4a1c-8c3e-2cec590ab18c",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "The Busy Baker",
+    "sourceUrl": "https://thebusybaker.ca/classic-raspberry-pie/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Tarte aux framboises",
+      "description": "Une petite tarte aux framboises avec une garniture acidul\u00e9e sous une cro\u00fbte du dessus.",
+      "instructions": "Pr\u00e9chauffer le four \u00e0 205\u00b0C/400\u00b0F.\nDans un bol, m\u00e9langer les framboises, le jus de citron, le sucre, la f\u00e9cule de ma\u00efs et le sel.\nVerser la garniture dans une cro\u00fbte \u00e0 tarte crue de 5 po. Recouvrir avec l'exc\u00e9dent de p\u00e2te, puis faire quelques ouvertures sur le dessus.\nCuire 40 min, jusqu'\u00e0 ce que la cro\u00fbte soit dor\u00e9e et que la garniture bouillonne.",
+      "notes": "Multiplier la garniture par 4 pour faire une tarte de 9 po.\nUtiliser 2 cuill\u00e8res \u00e0 soupe de f\u00e9cule de ma\u00efs si les framboises sont congel\u00e9es."
+    },
+    "en": {
+      "title": "Raspberry Pie",
+      "description": "A small raspberry pie with a bright filling tucked under a top crust.",
+      "instructions": "Preheat the oven to 205\u00b0C/400\u00b0F.\nIn a bowl, combine the raspberries, lemon juice, sugar, cornstarch, and salt.\nTransfer the filling to a raw 5-inch pie shell. Cover with the extra dough, then cut a few vents in the top.\nBake for 40 min, until the crust is golden and the filling is bubbling.",
+      "notes": "Multiply the filling by 4 to make a 9-inch pie.\nUse 2 tablespoons of cornstarch if the raspberries are frozen."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "166eae41-5c40-4a1c-8c3e-2cec590ab18c-ingredient-1",
+      "originalText": "1 raw 5-inch pie crust, plus extra dough for the top crust",
+      "ingredientName": "pie crust",
+      "ingredientRefId": "ingredient-ref-pie-crust",
+      "quantity": 1,
+      "unit": "count",
+      "group": "Crust",
+      "notes": "5-inch sweet pie shell, plus extra dough for the top crust"
+    },
+    {
+      "id": "166eae41-5c40-4a1c-8c3e-2cec590ab18c-ingredient-2",
+      "originalText": "1.5 cups raspberries",
+      "ingredientName": "raspberries",
+      "ingredientRefId": "ingredient-ref-raspberries",
+      "quantity": 1.5,
+      "unit": "cup",
+      "group": "Filling",
+      "notes": "fresh or frozen"
+    },
+    {
+      "id": "166eae41-5c40-4a1c-8c3e-2cec590ab18c-ingredient-3",
+      "originalText": "1/2 tbsp lemon juice",
+      "ingredientName": "lemon juice",
+      "ingredientRefId": "ingredient-ref-lemon-juice",
+      "quantity": 0.5,
+      "unit": "tbsp",
+      "group": "Filling"
+    },
+    {
+      "id": "166eae41-5c40-4a1c-8c3e-2cec590ab18c-ingredient-4",
+      "originalText": "1 tbsp cornstarch",
+      "ingredientName": "cornstarch",
+      "ingredientRefId": "ingredient-ref-cornstarch",
+      "quantity": 1,
+      "unit": "tbsp",
+      "group": "Filling",
+      "notes": "use 2 tablespoons if the raspberries are frozen"
+    },
+    {
+      "id": "166eae41-5c40-4a1c-8c3e-2cec590ab18c-ingredient-5",
+      "originalText": "50 g granulated sugar",
+      "ingredientName": "granulated sugar",
+      "ingredientRefId": "ingredient-ref-granulated-sugar",
+      "quantity": 50,
+      "unit": "g",
+      "group": "Filling"
+    },
+    {
+      "id": "166eae41-5c40-4a1c-8c3e-2cec590ab18c-ingredient-6",
+      "originalText": "1/8 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.125,
+      "unit": "tsp",
+      "group": "Filling"
+    }
+  ],
+  "servings": {
+    "amount": 1,
+    "unit": "5-inch pie"
+  },
+  "times": {
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 40,
+    "totalTimeMinutes": 50
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-tarts",
+    "tag-summer",
+    "tag-vegetarian"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-166eae41-5c40-4a1c-8c3e-2cec590ab18c-0",
+  "photos": [
+    {
+      "id": "photo-166eae41-5c40-4a1c-8c3e-2cec590ab18c-0",
+      "relativePath": "photos/166eae41-5c40-4a1c-8c3e-2cec590ab18c_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}
