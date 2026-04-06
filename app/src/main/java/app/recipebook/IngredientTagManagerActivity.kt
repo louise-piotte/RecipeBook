@@ -50,11 +50,11 @@ class IngredientTagManagerActivity : ComponentActivity() {
                     },
                     initialSection = initialSection,
                     onNavigateToLibrary = {
-                        startActivity(
-                            Intent(this, MainActivity::class.java).apply {
-                                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                            }
-                        )
+                        startActivity(MainActivity.intentForCollection(this, null))
+                        finish()
+                    },
+                    onNavigateToCollections = {
+                        startActivity(CollectionManagerActivity.intent(this))
                         finish()
                     },
                     onCreateIngredient = { draft: IngredientReferenceDraft ->

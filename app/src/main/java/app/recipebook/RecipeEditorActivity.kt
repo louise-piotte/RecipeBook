@@ -15,6 +15,7 @@ import app.recipebook.data.local.recipes.RecipePhotoStore
 import app.recipebook.data.local.recipes.RecipeRepositoryProvider
 import app.recipebook.data.local.settings.AppLanguageStore
 import app.recipebook.domain.model.AppLanguage
+import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
 import app.recipebook.ui.recipes.RecipeEditorScreen
@@ -46,6 +47,7 @@ class RecipeEditorActivity : ComponentActivity() {
                 var recipe by remember { mutableStateOf<Recipe?>(null) }
                 val ingredientReferences by repository.observeIngredientReferences().collectAsState(initial = emptyList())
                 val tags by repository.observeTags().collectAsState(initial = emptyList())
+                val collections by repository.observeCollections().collectAsState(initial = emptyList<Collection>())
 
                 LaunchedEffect(recipeId) {
                     repository.seedBundledLibraryIfMissing()
@@ -63,6 +65,7 @@ class RecipeEditorActivity : ComponentActivity() {
                         isNewRecipe = isNewRecipe,
                         ingredientReferences = ingredientReferences,
                         tags = tags,
+                        collections = collections,
                         language = language,
                         onLanguageChange = { selected ->
                             lifecycleScope.launch { languageStore.setLanguage(selected) }

@@ -1,7 +1,5 @@
 # RecipeBook Roadmap (Active To-Do)
 
-- Build MVP functional screens:
-  - Basic collections management
 - Implement enhanced unit conversion behavior:
   - Show both C and F for temperatures
   - Support lb ↔ g conversion

@@ -48,6 +48,7 @@ fun IngredientTagManagerScreen(
     onLanguageChange: (AppLanguage) -> Unit,
     initialSection: LibraryManagerSection,
     onNavigateToLibrary: () -> Unit,
+    onNavigateToCollections: () -> Unit,
     onCreateIngredient: (IngredientReferenceDraft) -> Unit,
     onUpdateIngredient: (String, IngredientReferenceDraft) -> Unit,
     onCreateTag: (TagDraft) -> Unit,
@@ -83,6 +84,7 @@ fun IngredientTagManagerScreen(
                 onNavigate = { destination ->
                     when (destination) {
                         MainMenuDestination.Library -> onNavigateToLibrary()
+                        MainMenuDestination.Collections -> onNavigateToCollections()
                         MainMenuDestination.Ingredients -> currentSection = LibraryManagerSection.Ingredients
                         MainMenuDestination.Tags -> currentSection = LibraryManagerSection.Tags
                     }

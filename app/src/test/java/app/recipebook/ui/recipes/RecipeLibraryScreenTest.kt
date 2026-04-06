@@ -2,6 +2,7 @@ package app.recipebook.ui.recipes
 
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.AppLanguage
+import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Recipe
@@ -31,7 +32,8 @@ class RecipeLibraryScreenTest {
         val filtered = filterRecipes(
             recipes = recipes,
             searchQuery = "",
-            selectedTagIds = emptyList()
+            selectedTagIds = emptyList(),
+            selectedCollectionId = null
         )
 
         assertEquals(listOf("recipe-1", "recipe-2"), filtered.map { it.id })
@@ -60,7 +62,8 @@ class RecipeLibraryScreenTest {
         val filtered = filterRecipes(
             recipes = recipes,
             searchQuery = "",
-            selectedTagIds = listOf("tag-breakfast", "tag-quick")
+            selectedTagIds = listOf("tag-breakfast", "tag-quick"),
+            selectedCollectionId = null
         )
 
         assertEquals(listOf("recipe-breakfast-quick"), filtered.map { it.id })
@@ -92,10 +95,53 @@ class RecipeLibraryScreenTest {
         val filtered = filterRecipes(
             recipes = recipes,
             searchQuery = "pasta",
-            selectedTagIds = listOf("tag-quick", "tag-dinner")
+            selectedTagIds = listOf("tag-quick", "tag-dinner"),
+            selectedCollectionId = null
         )
 
         assertEquals(listOf("recipe-match"), filtered.map { it.id })
+    }
+
+    @Test
+    fun filterRecipes_filtersBySelectedCollection() {
+        val recipes = listOf(
+            recipeForFilterTest(
+                id = "recipe-1",
+                titleEn = "Waffles",
+                collectionIds = listOf("collection-breakfast")
+            ),
+            recipeForFilterTest(
+                id = "recipe-2",
+                titleEn = "Soup",
+                collectionIds = listOf("collection-dinner")
+            )
+        )
+
+        val filtered = filterRecipes(
+            recipes = recipes,
+            searchQuery = "",
+            selectedTagIds = emptyList(),
+            selectedCollectionId = "collection-breakfast"
+        )
+
+        assertEquals(listOf("recipe-1"), filtered.map { it.id })
+    }
+
+    @Test
+    fun collectionRecipeCounts_countsRecipesPerCollection() {
+        val recipes = listOf(
+            recipeForFilterTest(id = "recipe-1", titleEn = "Waffles", collectionIds = listOf("collection-a")),
+            recipeForFilterTest(id = "recipe-2", titleEn = "Soup", collectionIds = listOf("collection-a", "collection-b"))
+        )
+        val collections = listOf(
+            Collection(id = "collection-a", nameFr = "A", nameEn = "A"),
+            Collection(id = "collection-b", nameFr = "B", nameEn = "B")
+        )
+
+        val counts = collectionRecipeCounts(recipes, collections)
+
+        assertEquals(2, counts["collection-a"])
+        assertEquals(1, counts["collection-b"])
     }
 
     @Test
@@ -138,7 +184,8 @@ private fun recipeForFilterTest(
     id: String,
     titleEn: String,
     descriptionEn: String = "",
-    tagIds: List<String> = emptyList()
+    tagIds: List<String> = emptyList(),
+    collectionIds: List<String> = emptyList()
 ): Recipe = Recipe(
     id = id,
     createdAt = "2026-04-06T00:00:00Z",
@@ -164,5 +211,6 @@ private fun recipeForFilterTest(
             ingredientName = "ingredient"
         )
     ),
-    tagIds = tagIds
+    tagIds = tagIds,
+    collectionIds = collectionIds
 )

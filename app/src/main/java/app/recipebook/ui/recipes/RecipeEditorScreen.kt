@@ -54,6 +54,7 @@ import app.recipebook.data.local.recipes.PendingRecipePhotoCapture
 import app.recipebook.data.local.recipes.TagDraft
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
+import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.LocalizedSystemText
@@ -75,6 +76,7 @@ fun RecipeEditorScreen(
     isNewRecipe: Boolean,
     ingredientReferences: List<IngredientReference>,
     tags: List<Tag>,
+    collections: List<Collection>,
     language: AppLanguage,
     onLanguageChange: (AppLanguage) -> Unit,
     onBack: () -> Unit,
@@ -117,10 +119,14 @@ fun RecipeEditorScreen(
     val selectedTagIds = remember(initialRecipe.id) {
         mutableStateListOf<String>().apply { addAll(initialRecipe.tagIds) }
     }
+    val selectedCollectionIds = remember(initialRecipe.id) {
+        mutableStateListOf<String>().apply { addAll(initialRecipe.collectionIds) }
+    }
     var ingredientPickerIndex by remember { mutableStateOf<Int?>(null) }
     var pendingIngredientTargetIndex by remember { mutableStateOf<Int?>(null) }
     var showCreateIngredientDialog by remember { mutableStateOf(false) }
     var showTagPickerDialog by remember { mutableStateOf(false) }
+    var showCollectionPickerDialog by remember { mutableStateOf(false) }
     var showCreateTagDialog by remember { mutableStateOf(false) }
     var ingredientsExpanded by rememberSaveable { mutableStateOf(false) }
     var pendingCameraCapture by remember { mutableStateOf<PendingRecipePhotoCapture?>(null) }
@@ -151,6 +157,7 @@ fun RecipeEditorScreen(
                 times = parseTimes(prepMinutes, cookMinutes, totalMinutes),
                 ingredients = ingredientRows.toIngredientLines(ingredientReferences),
                 tagIds = selectedTagIds.distinct(),
+                collectionIds = selectedCollectionIds.distinct(),
                 mainPhotoId = normalizedMainPhotoId(mainPhotoId, recipePhotos),
                 photos = recipePhotos.toList()
             )
@@ -320,6 +327,39 @@ fun RecipeEditorScreen(
                 }
             }
 
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(6.dp)
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text(
+                        text = localizedString(R.string.collections_label, language),
+                        style = MaterialTheme.typography.titleLarge
+                    )
+                    AppIconButton(
+                        icon = Icons.Filled.Add,
+                        contentDescription = localizedString(R.string.select_collections_label, language),
+                        onClick = { showCollectionPickerDialog = true }
+                    )
+                }
+                if (selectedCollectionIds.isEmpty()) {
+                    Text(
+                        text = localizedString(R.string.no_collections_selected_label, language),
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                } else {
+                    Text(
+                        text = selectedCollectionIds
+                            .mapNotNull { collectionId -> collections.firstOrNull { it.id == collectionId }?.displayName(language) }
+                            .joinToString(", "),
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                }
+            }
+
                 RecipePhotoEditorSection(
                     language = language,
                     photos = recipePhotos,
@@ -370,6 +410,7 @@ fun RecipeEditorScreen(
                             times = parseTimes(prepMinutes, cookMinutes, totalMinutes),
                             ingredients = ingredientRows.toIngredientLines(ingredientReferences),
                             tagIds = selectedTagIds.distinct(),
+                            collectionIds = selectedCollectionIds.distinct(),
                             mainPhotoId = normalizedMainPhotoId(mainPhotoId, recipePhotos),
                             photos = recipePhotos.toList()
                         )
@@ -431,6 +472,15 @@ fun RecipeEditorScreen(
                 showTagPickerDialog = false
                 showCreateTagDialog = true
             }
+        )
+    }
+
+    if (showCollectionPickerDialog) {
+        CollectionPickerDialog(
+            language = language,
+            collections = collections,
+            selectedCollectionIds = selectedCollectionIds,
+            onDismiss = { showCollectionPickerDialog = false }
         )
     }
 
@@ -778,6 +828,82 @@ private fun TagPickerDialog(
         }
     }
 }
+
+@Composable
+private fun CollectionPickerDialog(
+    language: AppLanguage,
+    collections: List<Collection>,
+    selectedCollectionIds: MutableList<String>,
+    onDismiss: () -> Unit
+) {
+    var query by rememberSaveable { mutableStateOf("") }
+    val filtered = remember(query, collections) {
+        filterCollections(collections, query)
+    }
+
+    PickerDialogContainer(
+        title = localizedString(R.string.select_collections_label, language),
+        onDismiss = onDismiss
+    ) {
+        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            SearchField(
+                value = query,
+                onValueChange = { query = it },
+                label = localizedString(R.string.search_collections_label, language),
+                placeholder = localizedString(R.string.search_collections_placeholder, language)
+            )
+            Surface(tonalElevation = 2.dp) {
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .heightIn(max = 320.dp)
+                        .padding(horizontal = 4.dp, vertical = 2.dp),
+                    verticalArrangement = Arrangement.spacedBy(3.dp)
+                ) {
+                    if (filtered.isEmpty()) {
+                        item {
+                            Text(
+                                text = localizedString(R.string.no_collections_found_label, language),
+                                modifier = Modifier.padding(8.dp)
+                            )
+                        }
+                    } else {
+                        items(filtered, key = { it.id }) { collection ->
+                            val isSelected = selectedCollectionIds.contains(collection.id)
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(vertical = 1.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    text = collection.displayName(language),
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
+                                    modifier = Modifier.weight(1f)
+                                )
+                                if (isSelected) {
+                                    AppIconButton(
+                                        icon = Icons.Filled.Delete,
+                                        contentDescription = localizedString(R.string.remove_label, language),
+                                        onClick = { selectedCollectionIds.remove(collection.id) }
+                                    )
+                                } else {
+                                    AppIconButton(
+                                        icon = Icons.Filled.Add,
+                                        contentDescription = localizedString(R.string.add_collection_label, language),
+                                        onClick = { selectedCollectionIds.add(collection.id) }
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @Composable
 private fun CreateIngredientDialog(
     language: AppLanguage,
@@ -1071,6 +1197,24 @@ internal fun IngredientReference.canonicalName(): String = nameEn.ifBlank { name
 private fun Tag.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
     AppLanguage.EN -> nameEn.ifBlank { nameFr }
+}
+
+private fun Collection.displayName(language: AppLanguage): String = when (language) {
+    AppLanguage.FR -> nameFr.ifBlank { nameEn }
+    AppLanguage.EN -> nameEn.ifBlank { nameFr }
+}
+
+internal fun filterCollections(collections: List<Collection>, query: String): List<Collection> {
+    val trimmedQuery = query.trim()
+    return collections
+        .filter { collection ->
+            trimmedQuery.isBlank() ||
+                collection.nameFr.contains(trimmedQuery, ignoreCase = true) ||
+                collection.nameEn.contains(trimmedQuery, ignoreCase = true) ||
+                collection.descriptionFr.orEmpty().contains(trimmedQuery, ignoreCase = true) ||
+                collection.descriptionEn.orEmpty().contains(trimmedQuery, ignoreCase = true)
+        }
+        .sortedBy { it.nameEn.ifBlank { it.nameFr } }
 }
 
 

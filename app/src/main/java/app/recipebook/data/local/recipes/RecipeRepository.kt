@@ -5,6 +5,8 @@ import app.recipebook.data.local.db.IngredientLineSubstitutionEntity
 import app.recipebook.data.local.db.IngredientReferenceDao
 import app.recipebook.data.local.db.IngredientReferenceEntity
 import app.recipebook.data.local.db.IngredientLineWithSubstitutions
+import app.recipebook.data.local.db.CollectionDao
+import app.recipebook.data.local.db.CollectionEntity
 import app.recipebook.data.local.db.RecipeDao
 import app.recipebook.data.local.db.RecipeIngredientLineEntity
 import app.recipebook.data.local.db.RecipeCollectionCrossRef
@@ -15,6 +17,8 @@ import app.recipebook.data.local.db.TagDao
 import app.recipebook.data.local.db.TagEntity
 import app.recipebook.domain.model.AttachmentRef
 import app.recipebook.domain.model.BilingualText
+import app.recipebook.domain.model.Collection
+import app.recipebook.domain.model.CollectionSortOrder
 import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientLineSubstitution
@@ -44,6 +48,7 @@ class RecipeRepository(
     private val recipeDao: RecipeDao,
     private val ingredientReferenceDao: IngredientReferenceDao = EmptyIngredientReferenceDao,
     private val tagDao: TagDao = EmptyTagDao,
+    private val collectionDao: CollectionDao = EmptyCollectionDao,
     private val seedLibrary: SeedLibraryData = SeedLibraryData(),
     private val seedLibraryLoader: (() -> SeedLibraryData)? = null
 ) {
@@ -63,6 +68,10 @@ class RecipeRepository(
 
     fun observeTags(): Flow<List<Tag>> = tagDao.observeAll().map { tags ->
         tags.map(TagEntity::toDomain)
+    }
+
+    fun observeCollections(): Flow<List<Collection>> = collectionDao.observeAll().map { collections ->
+        collections.map(CollectionEntity::toDomain)
     }
 
     suspend fun getRecipeById(id: String): Recipe? = recipeDao.getByIdWithRelations(id)?.toDomainRecipe()
@@ -148,6 +157,35 @@ class RecipeRepository(
         return tag
     }
 
+    suspend fun createCollection(draft: CollectionDraft): Collection {
+        val collection = Collection(
+            id = UUID.randomUUID().toString(),
+            nameFr = draft.nameFr.trim(),
+            nameEn = draft.nameEn.trim(),
+            descriptionFr = draft.descriptionFr.trim().ifBlank { null },
+            descriptionEn = draft.descriptionEn.trim().ifBlank { null }
+        )
+        collectionDao.upsert(collection.toEntity())
+        return collection
+    }
+
+    suspend fun updateCollection(id: String, draft: CollectionDraft): Collection {
+        val existing = collectionDao.getById(id)?.toDomain() ?: error("Collection $id not found")
+        val collection = existing.copy(
+            nameFr = draft.nameFr.trim(),
+            nameEn = draft.nameEn.trim(),
+            descriptionFr = draft.descriptionFr.trim().ifBlank { null },
+            descriptionEn = draft.descriptionEn.trim().ifBlank { null }
+        )
+        collectionDao.upsert(collection.toEntity())
+        return collection
+    }
+
+    suspend fun deleteCollection(id: String) {
+        collectionDao.deleteRecipeRefsByCollectionId(id)
+        collectionDao.deleteById(id)
+    }
+
     suspend fun deleteRecipeById(id: String) {
         recipeDao.deleteById(id)
     }
@@ -189,6 +227,13 @@ class RecipeRepository(
                 if (tagDao.getById(tag.id) == null) {
                     tagDao.upsert(tag.toEntity())
                 }
+            }
+
+        resolvedSeedLibrary.collections
+            .distinctBy(Collection::id)
+            .takeIf(List<Collection>::isNotEmpty)
+            ?.let { collections ->
+                collectionDao.upsertAll(collections.map(Collection::toEntity))
             }
     }
 
@@ -244,8 +289,15 @@ data class TagDraft(
     val category: TagCategory? = null
 )
 
+data class CollectionDraft(
+    val nameFr: String,
+    val nameEn: String,
+    val descriptionFr: String = "",
+    val descriptionEn: String = ""
+)
+
 private fun SeedLibraryData.isEmpty(): Boolean =
-    recipes.isEmpty() && ingredientReferences.isEmpty() && tags.isEmpty()
+    recipes.isEmpty() && ingredientReferences.isEmpty() && tags.isEmpty() && collections.isEmpty()
 
 internal fun RecipeWithRelations.toDomainRecipe(): Recipe = Recipe(
     id = recipe.id,
@@ -405,6 +457,26 @@ private fun Tag.toEntity(): TagEntity = TagEntity(
     category = category.name
 )
 
+private fun CollectionEntity.toDomain(): Collection = Collection(
+    id = id,
+    nameFr = nameFr,
+    nameEn = nameEn,
+    descriptionFr = descriptionFr,
+    descriptionEn = descriptionEn,
+    recipeIds = storageJson.decodeFromString(recipeIdsJson),
+    sortOrder = sortOrder?.let(::toCollectionSortOrder)
+)
+
+private fun Collection.toEntity(): CollectionEntity = CollectionEntity(
+    id = id,
+    nameFr = nameFr,
+    nameEn = nameEn,
+    descriptionFr = descriptionFr,
+    descriptionEn = descriptionEn,
+    recipeIdsJson = storageJson.encodeToString(recipeIds),
+    sortOrder = sortOrder?.toStorageValue()
+)
+
 private val storageJson = Json {
     ignoreUnknownKeys = true
     encodeDefaults = true
@@ -465,6 +537,17 @@ private fun IngredientLineSubstitution.toEntity(position: Int): IngredientLineSu
     createdAt = createdAt,
     updatedAt = updatedAt
 )
+
+private fun toCollectionSortOrder(value: String): CollectionSortOrder = when (value) {
+    "MANUAL" -> CollectionSortOrder.MANUAL
+    "TITLE_ASC" -> CollectionSortOrder.TITLE_ASC
+    "TITLE_DESC" -> CollectionSortOrder.TITLE_DESC
+    "RATING_DESC" -> CollectionSortOrder.RATING_DESC
+    "RECENT_DESC" -> CollectionSortOrder.RECENT_DESC
+    else -> error("Unsupported collection sort order: $value")
+}
+
+private fun CollectionSortOrder.toStorageValue(): String = name
 
 @Serializable
 private data class StoredPhotoRef(
@@ -543,6 +626,20 @@ private object EmptyTagDao : TagDao {
     override fun observeAll(): Flow<List<TagEntity>> = flowOf(emptyList())
 
     override suspend fun getById(id: String): TagEntity? = null
+}
+
+private object EmptyCollectionDao : CollectionDao {
+    override suspend fun upsertAll(collections: List<CollectionEntity>) = Unit
+
+    override suspend fun upsert(collection: CollectionEntity) = Unit
+
+    override fun observeAll(): Flow<List<CollectionEntity>> = flowOf(emptyList())
+
+    override suspend fun getById(id: String): CollectionEntity? = null
+
+    override suspend fun deleteById(id: String) = Unit
+
+    override suspend fun deleteRecipeRefsByCollectionId(collectionId: String) = Unit
 }
 
 private fun slugify(input: String): String {

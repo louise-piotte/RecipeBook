@@ -17,6 +17,7 @@ import app.recipebook.data.schema.TagDto
 import app.recipebook.data.schema.UnitDefinitionDto
 import app.recipebook.data.schema.toDomainLibrary
 import app.recipebook.domain.model.IngredientReference
+import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.Tag
@@ -84,7 +85,8 @@ object BundledRecipeLibraryLoader {
         SeedLibraryData(
             recipes = materializeSeedRecipePhotos(context, manifest, library.recipes),
             ingredientReferences = library.ingredientReferences,
-            tags = library.tags
+            tags = library.tags,
+            collections = library.collections
         )
     }.getOrElse {
         Log.e(TAG, "Failed to load bundled seed library", it)
@@ -161,5 +163,6 @@ private data class BundledSeedManifestDto(
 data class SeedLibraryData(
     val recipes: List<Recipe> = emptyList(),
     val ingredientReferences: List<IngredientReference> = emptyList(),
-    val tags: List<Tag> = emptyList()
+    val tags: List<Tag> = emptyList(),
+    val collections: List<Collection> = emptyList()
 )

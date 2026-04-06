@@ -4,6 +4,7 @@
     <string name="language_option_fr_label">Fran&#231;ais</string>
     <string name="menu_label">Menu</string>
     <string name="menu_recipe_library_label">Recettes</string>
+    <string name="menu_collections_label">Collections</string>
     <string name="menu_ingredients_label">Ingr&#233;dients</string>
     <string name="menu_tags_label">Tags</string>
     <string name="notes_label">Notes</string>
@@ -46,12 +47,26 @@
     <string name="instruction_state_emphasized">Gras</string>
     <string name="source_label">Source</string>
     <string name="tags_label">Tags</string>
+    <string name="collections_label">Collections</string>
+    <string name="manage_collections_label">Collections</string>
     <string name="no_tags_selected_label">Aucun tag s&#233;lectionn&#233;.</string>
+    <string name="no_collections_selected_label">Aucune collection s&#233;lectionn&#233;e.</string>
+    <string name="no_collections_available_label">Aucune collection n&#8217;a encore &#233;t&#233; cr&#233;&#233;e.</string>
     <string name="select_tags_label">Choisir des tags</string>
+    <string name="select_collections_label">Choisir des collections</string>
     <string name="create_tag_label">Cr&#233;er un tag</string>
+    <string name="create_collection_label">Cr&#233;er une collection</string>
     <string name="add_tag_label">Ajouter le tag</string>
+    <string name="add_collection_label">Ajouter la collection</string>
+    <string name="add_recipe_to_collection_label">Ajouter une recette &#224; la collection</string>
+    <string name="edit_collections_label">G&#233;rer les collections</string>
+    <string name="rename_collection_label">Renommer la collection</string>
+    <string name="delete_collection_label">Supprimer la collection</string>
+    <string name="delete_collection_confirmation_label">Supprimer %1$s? Les recettes resteront dans la biblioth&#232;que.</string>
     <string name="tag_name_fr_label">Nom du tag (FR)</string>
     <string name="tag_name_en_label">Nom du tag (EN)</string>
+    <string name="collection_name_fr_label">Nom de la collection (FR)</string>
+    <string name="collection_name_en_label">Nom de la collection (EN)</string>
     <string name="select_ingredient_label">Choisir l\'ingr&#233;dient</string>
     <string name="create_ingredient_label">Cr&#233;er un ingr&#233;dient</string>
     <string name="add_existing_ingredient_label">Ajouter un ingr&#233;dient r&#233;utilisable</string>
@@ -89,8 +104,14 @@
     <string name="search_ingredients_placeholder">Chercher par nom ou alias</string>
     <string name="search_tags_label">Rechercher des tags</string>
     <string name="search_tags_placeholder">Chercher par nom de tag</string>
+    <string name="search_collections_label">Rechercher des collections</string>
+    <string name="search_collections_placeholder">Chercher par nom de collection</string>
+    <string name="search_recipes_label">Rechercher des recettes</string>
+    <string name="search_recipes_placeholder">Chercher par titre ou description</string>
     <string name="no_ingredient_references_label">Aucun ingr&#233;dient r&#233;utilisable trouv&#233;.</string>
     <string name="no_tag_references_label">Aucun tag trouv&#233;.</string>
+    <string name="no_collections_found_label">Aucune collection trouv&#233;e.</string>
+    <string name="no_recipes_available_for_collection_label">Aucune recette correspondante n&#8217;est disponible &#224; ajouter.</string>
     <string name="edit_ingredient_reference_label">Modifier l\'ingr&#233;dient</string>
     <string name="edit_tag_reference_label">Modifier le tag</string>
     <string name="ingredient_density_value_label">Densit&#233; %1$s g/ml</string>
@@ -110,6 +131,10 @@
     <string name="ingredient_conversion_reset_label">R&#233;initialiser</string>
     <string name="ingredient_state_done">Termin&#233;</string>
     <string name="ingredient_state_pending">&#192; faire</string>
+    <string name="all_recipes_count_label">Toutes les recettes (%1$d)</string>
+    <string name="collection_name_with_count">%1$s (%2$d)</string>
+    <string name="collection_recipe_count_label">%1$d recettes</string>
+    <string name="add_to_collection_dialog_title">Ajouter des recettes &#224; %1$s</string>
 </resources>
 
 

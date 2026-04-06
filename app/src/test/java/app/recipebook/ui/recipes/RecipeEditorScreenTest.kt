@@ -1,6 +1,7 @@
 package app.recipebook.ui.recipes
 
 import app.recipebook.domain.model.AppLanguage
+import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.TagCategory
@@ -134,5 +135,17 @@ class RecipeEditorScreenTest {
         )
 
         assertEquals("Butter", reference.canonicalName())
+    }
+
+    @Test
+    fun filterCollections_returnsLocalizedMatchesWithoutTruncation() {
+        val collections = listOf(
+            Collection(id = "collection-holiday", nameFr = "F\u00eates", nameEn = "Holiday Baking"),
+            Collection(id = "collection-family", nameFr = "Famille", nameEn = "Family")
+        )
+
+        val filtered = filterCollections(collections, "holiday")
+
+        assertEquals(listOf("collection-holiday"), filtered.map { it.id })
     }
 }

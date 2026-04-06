@@ -4,6 +4,8 @@ import app.recipebook.data.local.db.IngredientLineSubstitutionEntity
 import app.recipebook.data.local.db.IngredientReferenceDao
 import app.recipebook.data.local.db.IngredientReferenceEntity
 import app.recipebook.data.local.db.IngredientLineWithSubstitutions
+import app.recipebook.data.local.db.CollectionDao
+import app.recipebook.data.local.db.CollectionEntity
 import app.recipebook.data.local.db.RecipeCollectionCrossRef
 import app.recipebook.data.local.db.RecipeDao
 import app.recipebook.data.local.db.RecipeEntity
@@ -13,6 +15,7 @@ import app.recipebook.data.local.db.RecipeWithRelations
 import app.recipebook.data.local.db.TagDao
 import app.recipebook.data.local.db.TagEntity
 import app.recipebook.domain.model.BilingualText
+import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.IngredientCategory
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientLineSubstitution
@@ -30,6 +33,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -95,10 +99,12 @@ class RecipeRepositoryTest {
         val fakeDao = FakeRecipeDao()
         val ingredientDao = FakeIngredientReferenceDao()
         val tagDao = FakeTagDao()
+        val collectionDao = FakeCollectionDao()
         val repository = RecipeRepository(
             recipeDao = fakeDao,
             ingredientReferenceDao = ingredientDao,
             tagDao = tagDao,
+            collectionDao = collectionDao,
             seedLibrary = SeedLibraryData(
                 recipes = listOf(
                     sampleRecipe(id = "recipe-existing"),
@@ -112,7 +118,14 @@ class RecipeRepositoryTest {
                         updatedAt = "2026-03-16T00:00:00Z"
                     )
                 ),
-                tags = listOf(Tag(id = "tag-dessert", nameFr = "Dessert", nameEn = "Dessert", slug = "dessert"))
+                tags = listOf(Tag(id = "tag-dessert", nameFr = "Dessert", nameEn = "Dessert", slug = "dessert")),
+                collections = listOf(
+                    Collection(
+                        id = "collection-family",
+                        nameFr = "Famille",
+                        nameEn = "Family"
+                    )
+                )
             )
         )
 
@@ -123,6 +136,7 @@ class RecipeRepositoryTest {
         assertEquals("Missing recipe", fakeDao.stored("recipe-missing")?.recipe?.titleEn)
         assertTrue(ingredientDao.items.containsKey("ingredient-ref-all-purpose-flour"))
         assertTrue(tagDao.items.containsKey("tag-dessert"))
+        assertTrue(collectionDao.items.containsKey("collection-family"))
     }
 
     @Test
@@ -176,11 +190,13 @@ class RecipeRepositoryTest {
         val fakeDao = FakeRecipeDao()
         val ingredientDao = FakeIngredientReferenceDao()
         val tagDao = FakeTagDao()
+        val collectionDao = FakeCollectionDao()
         var loaderCalls = 0
         val repository = RecipeRepository(
             recipeDao = fakeDao,
             ingredientReferenceDao = ingredientDao,
             tagDao = tagDao,
+            collectionDao = collectionDao,
             seedLibraryLoader = {
                 loaderCalls += 1
                 SeedLibraryData(
@@ -193,7 +209,14 @@ class RecipeRepositoryTest {
                             updatedAt = "2026-03-27T00:00:00Z"
                         )
                     ),
-                    tags = listOf(Tag(id = "tag-loaded", nameFr = "Dessert", nameEn = "Dessert", slug = "dessert"))
+                    tags = listOf(Tag(id = "tag-loaded", nameFr = "Dessert", nameEn = "Dessert", slug = "dessert")),
+                    collections = listOf(
+                        Collection(
+                            id = "collection-loaded",
+                            nameFr = "Charg\u00e9",
+                            nameEn = "Loaded"
+                        )
+                    )
                 )
             }
         )
@@ -204,6 +227,7 @@ class RecipeRepositoryTest {
         assertEquals("Loaded recipe", fakeDao.stored("recipe-loaded")?.recipe?.titleEn)
         assertTrue(ingredientDao.items.containsKey("ingredient-ref-loaded"))
         assertTrue(tagDao.items.containsKey("tag-loaded"))
+        assertTrue(collectionDao.items.containsKey("collection-loaded"))
     }
 
     @Test
@@ -269,10 +293,12 @@ class RecipeRepositoryTest {
     fun updateIngredientReferenceAndTag_persistEditedValues() = runBlocking {
         val ingredientDao = FakeIngredientReferenceDao()
         val tagDao = FakeTagDao()
+        val collectionDao = FakeCollectionDao()
         val repository = RecipeRepository(
             recipeDao = FakeRecipeDao(),
             ingredientReferenceDao = ingredientDao,
-            tagDao = tagDao
+            tagDao = tagDao,
+            collectionDao = collectionDao
         )
         ingredientDao.upsert(
             IngredientReferenceEntity(
@@ -283,6 +309,13 @@ class RecipeRepositoryTest {
             )
         )
         tagDao.upsert(TagEntity(id = "tag-breakfast", nameFr = "Breakfast", nameEn = "Breakfast", slug = "breakfast"))
+        collectionDao.upsert(
+            CollectionEntity(
+                id = "collection-breakfast",
+                nameFr = "Matin",
+                nameEn = "Breakfast"
+            )
+        )
 
         val updatedIngredient = repository.updateIngredientReference(
             id = "ingredient-ref-sugar",
@@ -301,6 +334,15 @@ class RecipeRepositoryTest {
             id = "tag-breakfast",
             draft = TagDraft(nameFr = "Dejeuner", nameEn = "Morning")
         )
+        val updatedCollection = repository.updateCollection(
+            id = "collection-breakfast",
+            draft = CollectionDraft(
+                nameFr = "Brunch",
+                nameEn = "Brunch",
+                descriptionFr = "Fin de semaine",
+                descriptionEn = "Weekend"
+            )
+        )
 
         assertEquals("Icing sugar", updatedIngredient.nameEn)
         assertEquals(listOf("sucre en poudre"), updatedIngredient.aliasesFr)
@@ -310,6 +352,31 @@ class RecipeRepositoryTest {
         assertEquals(1, updatedIngredient.unitMappings.size)
         assertEquals("Morning", updatedTag.nameEn)
         assertEquals("morning", updatedTag.slug)
+        assertEquals("Brunch", updatedCollection.nameEn)
+        assertEquals("Weekend", updatedCollection.descriptionEn)
+    }
+
+    @Test
+    fun createAndDeleteCollection_persistsAndRemovesCollection() = runBlocking {
+        val collectionDao = FakeCollectionDao()
+        val repository = RecipeRepository(
+            recipeDao = FakeRecipeDao(),
+            collectionDao = collectionDao
+        )
+
+        val created = repository.createCollection(
+            CollectionDraft(
+                nameFr = "Desserts",
+                nameEn = "Desserts"
+            )
+        )
+
+        assertTrue(collectionDao.items.containsKey(created.id))
+
+        repository.deleteCollection(created.id)
+
+        assertFalse(collectionDao.items.containsKey(created.id))
+        assertEquals(listOf(created.id), collectionDao.deletedRecipeRefCollectionIds)
     }
 
     @Test
@@ -502,4 +569,29 @@ private class FakeTagDao : TagDao {
     override fun observeAll(): Flow<List<TagEntity>> = flowOf(items.values.toList())
 
     override suspend fun getById(id: String): TagEntity? = items[id]
+}
+
+private class FakeCollectionDao : CollectionDao {
+    val items = linkedMapOf<String, CollectionEntity>()
+    val deletedRecipeRefCollectionIds = mutableListOf<String>()
+
+    override suspend fun upsertAll(collections: List<CollectionEntity>) {
+        collections.forEach { items[it.id] = it }
+    }
+
+    override suspend fun upsert(collection: CollectionEntity) {
+        items[collection.id] = collection
+    }
+
+    override fun observeAll(): Flow<List<CollectionEntity>> = flowOf(items.values.toList())
+
+    override suspend fun getById(id: String): CollectionEntity? = items[id]
+
+    override suspend fun deleteById(id: String) {
+        items.remove(id)
+    }
+
+    override suspend fun deleteRecipeRefsByCollectionId(collectionId: String) {
+        deletedRecipeRefCollectionIds += collectionId
+    }
 }

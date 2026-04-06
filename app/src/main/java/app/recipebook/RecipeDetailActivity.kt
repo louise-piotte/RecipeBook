@@ -56,11 +56,11 @@ class RecipeDetailActivity : ComponentActivity() {
                     onNavigate = { destination ->
                         when (destination) {
                             MainMenuDestination.Library -> {
-                                startActivity(
-                                    android.content.Intent(this, MainActivity::class.java).apply {
-                                        addFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP or android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                                    }
-                                )
+                                startActivity(MainActivity.intentForCollection(this, null))
+                                finish()
+                            }
+                            MainMenuDestination.Collections -> {
+                                startActivity(CollectionManagerActivity.intent(this))
                                 finish()
                             }
                             MainMenuDestination.Ingredients -> {

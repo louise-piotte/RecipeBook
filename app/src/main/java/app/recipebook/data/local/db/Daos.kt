@@ -141,8 +141,20 @@ interface CollectionDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertAll(collections: List<CollectionEntity>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsert(collection: CollectionEntity)
+
     @Query("SELECT * FROM collections ORDER BY nameEn COLLATE NOCASE ASC")
     fun observeAll(): Flow<List<CollectionEntity>>
+
+    @Query("SELECT * FROM collections WHERE id = :id LIMIT 1")
+    suspend fun getById(id: String): CollectionEntity?
+
+    @Query("DELETE FROM collections WHERE id = :id")
+    suspend fun deleteById(id: String)
+
+    @Query("DELETE FROM recipe_collection_cross_refs WHERE collectionId = :collectionId")
+    suspend fun deleteRecipeRefsByCollectionId(collectionId: String)
 }
 
 @Dao

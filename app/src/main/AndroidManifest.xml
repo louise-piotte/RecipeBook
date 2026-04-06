@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipeBook">
         <activity
+            android:name=".CollectionManagerActivity"
+            android:exported="false"
+            android:label="@string/manage_collections_label"
+            android:theme="@style/Theme.RecipeBook" />
+        <activity
             android:name=".IngredientTagManagerActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"

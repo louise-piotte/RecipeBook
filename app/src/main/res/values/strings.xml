@@ -4,6 +4,7 @@
     <string name="language_option_fr_label">Fran&#231;ais</string>
     <string name="menu_label">Menu</string>
     <string name="menu_recipe_library_label">Recipes</string>
+    <string name="menu_collections_label">Collections</string>
     <string name="menu_ingredients_label">Ingredients</string>
     <string name="menu_tags_label">Tags</string>
     <string name="notes_label">Notes</string>
@@ -46,12 +47,26 @@
     <string name="instruction_state_emphasized">Bold</string>
     <string name="source_label">Source</string>
     <string name="tags_label">Tags</string>
+    <string name="collections_label">Collections</string>
+    <string name="manage_collections_label">Collections</string>
     <string name="no_tags_selected_label">No tags selected yet.</string>
+    <string name="no_collections_selected_label">No collections selected yet.</string>
+    <string name="no_collections_available_label">No collections created yet.</string>
     <string name="select_tags_label">Select tags</string>
+    <string name="select_collections_label">Select collections</string>
     <string name="create_tag_label">Create tag</string>
+    <string name="create_collection_label">Create collection</string>
     <string name="add_tag_label">Add tag</string>
+    <string name="add_collection_label">Add collection</string>
+    <string name="add_recipe_to_collection_label">Add recipe to collection</string>
+    <string name="edit_collections_label">Manage collections</string>
+    <string name="rename_collection_label">Rename collection</string>
+    <string name="delete_collection_label">Delete collection</string>
+    <string name="delete_collection_confirmation_label">Delete %1$s? Recipes will stay in the library.</string>
     <string name="tag_name_fr_label">Tag name (FR)</string>
     <string name="tag_name_en_label">Tag name (EN)</string>
+    <string name="collection_name_fr_label">Collection name (FR)</string>
+    <string name="collection_name_en_label">Collection name (EN)</string>
     <string name="select_ingredient_label">Select ingredient</string>
     <string name="create_ingredient_label">Create ingredient</string>
     <string name="add_existing_ingredient_label">Add reusable ingredient</string>
@@ -89,8 +104,14 @@
     <string name="search_ingredients_placeholder">Search by ingredient name or alias</string>
     <string name="search_tags_label">Search tags</string>
     <string name="search_tags_placeholder">Search by tag name</string>
+    <string name="search_collections_label">Search collections</string>
+    <string name="search_collections_placeholder">Search by collection name</string>
+    <string name="search_recipes_label">Search recipes</string>
+    <string name="search_recipes_placeholder">Search by recipe title or description</string>
     <string name="no_ingredient_references_label">No reusable ingredients found.</string>
     <string name="no_tag_references_label">No tags found.</string>
+    <string name="no_collections_found_label">No collections found.</string>
+    <string name="no_recipes_available_for_collection_label">No matching recipes are available to add.</string>
     <string name="edit_ingredient_reference_label">Edit ingredient</string>
     <string name="edit_tag_reference_label">Edit tag</string>
     <string name="ingredient_density_value_label">Density %1$s g/ml</string>
@@ -110,6 +131,10 @@
     <string name="ingredient_conversion_reset_label">Reset</string>
     <string name="ingredient_state_done">Done</string>
     <string name="ingredient_state_pending">Pending</string>
+    <string name="all_recipes_count_label">All Recipes (%1$d)</string>
+    <string name="collection_name_with_count">%1$s (%2$d)</string>
+    <string name="collection_recipe_count_label">%1$d recipes</string>
+    <string name="add_to_collection_dialog_title">Add recipes to %1$s</string>
 </resources>
 
 

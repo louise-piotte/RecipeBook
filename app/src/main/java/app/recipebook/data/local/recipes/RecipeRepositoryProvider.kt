@@ -11,6 +11,7 @@ object RecipeRepositoryProvider {
             recipeDao = db.recipeDao(),
             ingredientReferenceDao = db.ingredientReferenceDao(),
             tagDao = db.tagDao(),
+            collectionDao = db.collectionDao(),
             seedLibraryLoader = { BundledRecipeLibraryLoader.loadLibrary(context.applicationContext) }
         )
     }
