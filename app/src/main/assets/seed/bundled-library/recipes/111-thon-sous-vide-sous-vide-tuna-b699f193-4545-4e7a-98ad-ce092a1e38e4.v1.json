@@ -1,0 +1,98 @@
+{
+  "id": "b699f193-4545-4e7a-98ad-ce092a1e38e4",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Anova Culinary",
+    "sourceUrl": "https://recipes.anovaculinary.com/recipe/sous-vide-tuna"
+  },
+  "languages": {
+    "fr": {
+      "title": "Thon sous vide",
+      "description": "Un pav\u00e9 de thon cuit sous vide puis saisi rapidement pour garder un centre tendre et une fine cro\u00fbte dor\u00e9e.",
+      "instructions": "Assaisonner g\u00e9n\u00e9reusement le thon avec du sel et du poivre des deux c\u00f4t\u00e9s.\nD\u00e9poser le thon dans un sac \u00e0 fermeture \u00e0 glissi\u00e8re. Ajouter l'huile d'olive et, si d\u00e9sir\u00e9, les aromates. Tourner le thon pour bien l'enrober, fermer le sac et laisser reposer au r\u00e9frig\u00e9rateur au moins 30 min ou jusqu'au lendemain.\nPr\u00e9chauffer le bain-marie sous vide \u00e0 46\u00b0C/115\u00b0F.\nRetirer l'air du sac avec la m\u00e9thode du d\u00e9placement d'eau, puis cuire le thon 30 min \u00e0 45 min pour un filet d'environ 1 po d'\u00e9paisseur, ou 45 min \u00e0 1 h pour un filet allant jusqu'\u00e0 2 po d'\u00e9paisseur.\nRetirer le thon du sac et l'\u00e9ponger. Ajouter un peu plus de poivre noir si d\u00e9sir\u00e9, ou l'enrober de graines de s\u00e9same.\nFaire chauffer l'huile dans une po\u00eale \u00e9paisse \u00e0 feu vif jusqu'\u00e0 ce qu'elle fume l\u00e9g\u00e8rement. Saisir le thon 30 sec \u00e0 45 sec de chaque c\u00f4t\u00e9, puis saisir rapidement les bords.\nServir entier avec couteau et fourchette, ou trancher avant de servir.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Sous Vide Tuna",
+      "description": "A tuna steak cooked sous vide, then quickly seared so the center stays tender with a light browned crust.",
+      "instructions": "Season the tuna generously with salt and pepper on all sides.\nPlace the tuna in a zipper-lock bag. Add the olive oil and, if desired, the aromatics. Turn the tuna to coat well, seal the bag, and let it rest in the refrigerator for at least 30 min or up to overnight.\nPreheat the sous vide water bath to 46\u00b0C/115\u00b0F.\nRemove the air from the bag using the water displacement method, then cook the tuna for 30 min to 45 min for a fillet about 1 inch thick, or 45 min to 1 h for a fillet up to 2 inches thick.\nRemove the tuna from the bag and pat it dry. Add a little more black pepper if desired, or coat it with sesame seeds.\nHeat the oil in a heavy skillet over high heat until lightly smoking. Sear the tuna for 30 sec to 45 sec per side, then briefly sear the edges.\nServe whole with a fork and knife, or slice before serving.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "b699f193-4545-4e7a-98ad-ce092a1e38e4-ingredient-1",
+      "originalText": "1 tuna steak",
+      "ingredientName": "tuna",
+      "ingredientRefId": "ingredient-ref-tuna",
+      "quantity": 1,
+      "unit": "count"
+    },
+    {
+      "id": "b699f193-4545-4e7a-98ad-ce092a1e38e4-ingredient-2",
+      "originalText": "Salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt"
+    },
+    {
+      "id": "b699f193-4545-4e7a-98ad-ce092a1e38e4-ingredient-3",
+      "originalText": "Freshly ground black pepper",
+      "ingredientName": "black pepper",
+      "ingredientRefId": "ingredient-ref-black-pepper",
+      "preparation": "freshly ground"
+    },
+    {
+      "id": "b699f193-4545-4e7a-98ad-ce092a1e38e4-ingredient-4",
+      "originalText": "1 tbsp extra-virgin olive oil",
+      "ingredientName": "olive oil",
+      "ingredientRefId": "ingredient-ref-olive-oil",
+      "quantity": 1,
+      "unit": "tbsp",
+      "notes": "extra-virgin"
+    },
+    {
+      "id": "b699f193-4545-4e7a-98ad-ce092a1e38e4-ingredient-5",
+      "originalText": "Fresh aromatics such as thyme, dill, parsley, thinly sliced shallots, and/or citrus zest",
+      "ingredientName": "fresh aromatics",
+      "notes": "optional; such as thyme, dill, parsley, thinly sliced shallots, and/or citrus zest"
+    },
+    {
+      "id": "b699f193-4545-4e7a-98ad-ce092a1e38e4-ingredient-6",
+      "originalText": "Sesame seeds",
+      "ingredientName": "sesame seeds",
+      "ingredientRefId": "ingredient-ref-sesame-seeds",
+      "notes": "optional, for coating before searing"
+    }
+  ],
+  "servings": {
+    "amount": 2,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 35,
+    "cookTimeMinutes": 47,
+    "totalTimeMinutes": 82
+  },
+  "tags": [
+    "tag-main-dish",
+    "tag-sous-vide"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-b699f193-4545-4e7a-98ad-ce092a1e38e4-0",
+  "photos": [
+    {
+      "id": "photo-b699f193-4545-4e7a-98ad-ce092a1e38e4-0",
+      "relativePath": "photos/b699f193-4545-4e7a-98ad-ce092a1e38e4_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "mixed"
+  }
+}

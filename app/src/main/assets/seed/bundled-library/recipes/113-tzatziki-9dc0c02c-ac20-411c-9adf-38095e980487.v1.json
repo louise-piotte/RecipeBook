@@ -1,0 +1,117 @@
+{
+  "id": "9dc0c02c-ac20-411c-9adf-38095e980487",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "Cookie and Kate",
+    "sourceUrl": "https://cookieandkate.com/how-to-make-tzatziki/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Tzatziki",
+      "description": "Une sauce de yogourt grec, concombre, citron et herbes fra\u00eeches, servie froide.",
+      "instructions": "Presser le concombre r\u00e2p\u00e9 entre les mains, une grosse poign\u00e9e \u00e0 la fois, au-dessus de l'\u00e9vier pour retirer l'exc\u00e8s d'eau. D\u00e9poser le concombre essor\u00e9 dans un bol de service.\nAjouter le yogourt grec, l'huile d'olive, les herbes, le jus de citron, l'ail et le sel. M\u00e9langer jusqu'\u00e0 homog\u00e9n\u00e9it\u00e9.\nLaisser reposer 5 min pour que les saveurs se m\u00e9langent.\nServir tout de suite, ou r\u00e9frig\u00e9rer jusqu'au moment de servir. Les restes se conservent environ 4 jours au r\u00e9frig\u00e9rateur.",
+      "notes": "Les herbes peuvent \u00eatre de la menthe, de l'aneth ou un m\u00e9lange des deux."
+    },
+    "en": {
+      "title": "Tzatziki",
+      "description": "A chilled cucumber and Greek yogurt sauce with lemon, garlic, and fresh herbs.",
+      "instructions": "Squeeze the grated cucumber between your hands, one big handful at a time, over the sink to remove excess moisture. Transfer the squeezed cucumber to a serving bowl.\nAdd the Greek yogurt, olive oil, herbs, lemon juice, garlic, and salt. Stir until evenly combined.\nLet it rest for 5 min so the flavors can meld.\nServe right away, or chill until needed. Leftovers keep for about 4 days in the refrigerator.",
+      "notes": "The herbs can be mint, dill, or a mixture of both."
+    }
+  },
+  "ingredients": [
+    {
+      "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-1",
+      "originalText": "2 cups grated cucumber",
+      "ingredientName": "cucumber",
+      "ingredientRefId": "ingredient-ref-cucumber",
+      "quantity": 2,
+      "unit": "cup",
+      "preparation": "grated"
+    },
+    {
+      "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-2",
+      "originalText": "1 1/2 cups plain Greek yogurt",
+      "ingredientName": "plain yogurt",
+      "ingredientRefId": "ingredient-ref-plain-yogurt",
+      "quantity": 1.5,
+      "unit": "cup",
+      "notes": "Greek style"
+    },
+    {
+      "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-3",
+      "originalText": "2 tbsp extra-virgin olive oil",
+      "ingredientName": "olive oil",
+      "ingredientRefId": "ingredient-ref-olive-oil",
+      "quantity": 2,
+      "unit": "tbsp",
+      "notes": "extra-virgin"
+    },
+    {
+      "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-4",
+      "originalText": "2 tbsp chopped fresh mint and/or dill",
+      "ingredientName": "fresh herbs",
+      "quantity": 2,
+      "unit": "tbsp",
+      "preparation": "chopped",
+      "notes": "mint, dill, or a mixture of both"
+    },
+    {
+      "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-5",
+      "originalText": "1 tbsp lemon juice",
+      "ingredientName": "lemon juice",
+      "ingredientRefId": "ingredient-ref-lemon-juice",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-6",
+      "originalText": "1 medium garlic clove, pressed or minced",
+      "ingredientName": "garlic",
+      "ingredientRefId": "ingredient-ref-garlic",
+      "quantity": 1,
+      "unit": "clove",
+      "preparation": "pressed or minced"
+    },
+    {
+      "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-7",
+      "originalText": "1/2 tsp salt",
+      "ingredientName": "salt",
+      "ingredientRefId": "ingredient-ref-salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
+  ],
+  "servings": {
+    "amount": 2.5,
+    "unit": "cups"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 20
+  },
+  "tags": [
+    "tag-side-dish",
+    "tag-sauce",
+    "tag-mediterranean"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 4
+  },
+  "mainPhotoId": "photo-9dc0c02c-ac20-411c-9adf-38095e980487-0",
+  "photos": [
+    {
+      "id": "photo-9dc0c02c-ac20-411c-9adf-38095e980487-0",
+      "relativePath": "photos/9dc0c02c-ac20-411c-9adf-38095e980487_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "imperial"
+  }
+}

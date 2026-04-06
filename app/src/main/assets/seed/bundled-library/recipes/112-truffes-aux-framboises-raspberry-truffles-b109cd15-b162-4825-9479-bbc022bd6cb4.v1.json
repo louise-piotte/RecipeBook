@@ -1,0 +1,86 @@
+{
+  "id": "b109cd15-b162-4825-9479-bbc022bd6cb4",
+  "createdAt": "2026-03-20T00:00:00Z",
+  "updatedAt": "2026-04-05T00:00:00Z",
+  "source": {
+    "sourceName": "The Sum of All Sweets",
+    "sourceUrl": "https://www.thesumofallsweets.com/3-ingredient-white-chocolate-raspberry-truffles/"
+  },
+  "languages": {
+    "fr": {
+      "title": "Truffes aux framboises",
+      "description": "Des truffes au chocolat blanc parfum\u00e9es aux framboises lyophilis\u00e9es et roul\u00e9es dans leur poudre.",
+      "instructions": "Hacher le chocolat blanc. R\u00e9duire les framboises lyophilis\u00e9es en poudre fine, puis en r\u00e9server un peu pour l'enrobage.\nChauffer la cr\u00e8me jusqu'\u00e0 ce qu'elle soit bien chaude sans la faire bouillir. Verser la cr\u00e8me chaude sur le chocolat et laisser reposer quelques minutes.\nAjouter 10 g de poudre de framboises et m\u00e9langer jusqu'\u00e0 ce que le tout soit fondu et lisse. Si n\u00e9cessaire, chauffer encore quelques secondes au micro-ondes par courtes impulsions.\nD\u00e9poser de petites portions sur une plaque tapiss\u00e9e de papier parchemin et laisser refroidir jusqu'\u00e0 ce qu'elles puissent \u00eatre manipul\u00e9es.\nRouler chaque portion entre les paumes pour former des boules lisses.\nRouler les truffes dans la poudre de framboises r\u00e9serv\u00e9e jusqu'\u00e0 ce qu'elles soient bien enrob\u00e9es.\nServir \u00e0 temp\u00e9rature ambiante.",
+      "notes": ""
+    },
+    "en": {
+      "title": "Raspberry Truffles",
+      "description": "White chocolate truffles flavored with freeze-dried raspberries and coated in raspberry powder.",
+      "instructions": "Chop the white chocolate. Grind the freeze-dried raspberries into a fine powder, then reserve a little for coating.\nHeat the cream until hot but not boiling. Pour the hot cream over the chocolate and let it sit for a few minutes.\nAdd 10 g of raspberry powder and stir until the mixture is melted and smooth. If needed, warm it again in the microwave in a few short bursts.\nScoop small portions onto a parchment-lined tray and let them cool until they can be handled.\nRoll each portion between your palms to form smooth balls.\nRoll the truffles in the reserved raspberry powder until fully coated.\nServe at room temperature.",
+      "notes": ""
+    }
+  },
+  "ingredients": [
+    {
+      "id": "b109cd15-b162-4825-9479-bbc022bd6cb4-ingredient-1",
+      "originalText": "200 g white chocolate",
+      "ingredientName": "white chocolate",
+      "ingredientRefId": "ingredient-ref-white-chocolate",
+      "quantity": 200,
+      "unit": "g"
+    },
+    {
+      "id": "b109cd15-b162-4825-9479-bbc022bd6cb4-ingredient-2",
+      "originalText": "50 g heavy cream",
+      "ingredientName": "heavy cream",
+      "ingredientRefId": "ingredient-ref-heavy-cream",
+      "quantity": 50,
+      "unit": "g"
+    },
+    {
+      "id": "b109cd15-b162-4825-9479-bbc022bd6cb4-ingredient-3",
+      "originalText": "10 g freeze-dried raspberries",
+      "ingredientName": "freeze dried raspberries",
+      "ingredientRefId": "ingredient-ref-freeze-dried-raspberries",
+      "quantity": 10,
+      "unit": "g"
+    },
+    {
+      "id": "b109cd15-b162-4825-9479-bbc022bd6cb4-ingredient-4",
+      "originalText": "Extra freeze-dried raspberries for coating",
+      "ingredientName": "freeze dried raspberries",
+      "ingredientRefId": "ingredient-ref-freeze-dried-raspberries",
+      "notes": "extra, for coating"
+    }
+  ],
+  "servings": {
+    "amount": 6,
+    "unit": "servings"
+  },
+  "times": {
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 0,
+    "totalTimeMinutes": 15
+  },
+  "tags": [
+    "tag-dessert",
+    "tag-snack"
+  ],
+  "collections": [],
+  "ratings": {
+    "userRating": 3
+  },
+  "mainPhotoId": "photo-b109cd15-b162-4825-9479-bbc022bd6cb4-0",
+  "photos": [
+    {
+      "id": "photo-b109cd15-b162-4825-9479-bbc022bd6cb4-0",
+      "relativePath": "photos/b109cd15-b162-4825-9479-bbc022bd6cb4_0.jpg"
+    }
+  ],
+  "attachments": [],
+  "importMetadata": {
+    "sourceType": "recipekeeper-manual-cleanup",
+    "parserVersion": "2026-04-05",
+    "originalUnits": "metric"
+  }
+}
