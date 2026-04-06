@@ -22,6 +22,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.testTag
@@ -228,10 +229,23 @@ private fun RecipeDetailCard(
                 .fillMaxWidth()
                 .aspectRatio(1f)
         )
-        Text(
-            text = resolver.resolveSystemText(language, recipe.titleText()),
-            style = MaterialTheme.typography.headlineSmall
-        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = resolver.resolveSystemText(language, recipe.titleText()),
+                style = MaterialTheme.typography.headlineSmall
+            )
+            RecipeRatingStars(
+                rating = recipe.ratings?.userRating,
+                orientation = RecipeRatingOrientation.Horizontal,
+                ratingDescription = recipe.ratings?.userRating?.let { rating ->
+                    localizedString(R.string.detail_rating_value, language, rating)
+                }
+            )
+        }
         Text(
             text = resolver.resolveSystemText(language, recipe.descriptionText()),
             style = MaterialTheme.typography.bodyLarge
@@ -261,12 +275,6 @@ private fun RecipeDetailCard(
             recipe.times?.cookTimeMinutes?.let { cook ->
                 Text(
                     text = localizedString(R.string.detail_cook_time_value, language, cook),
-                    style = MaterialTheme.typography.bodyLarge
-                )
-            }
-            recipe.ratings?.userRating?.let { rating ->
-                Text(
-                    text = localizedString(R.string.detail_rating_value, language, rating),
                     style = MaterialTheme.typography.bodyLarge
                 )
             }

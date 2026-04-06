@@ -52,6 +52,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
@@ -254,6 +255,9 @@ private fun RecipeListCard(
     resolver: BilingualTextResolver,
     onClick: () -> Unit
 ) {
+    val ratingDescription = recipe.ratings?.userRating?.let { rating ->
+        localizedString(R.string.detail_rating_value, language, rating)
+    }
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -271,6 +275,7 @@ private fun RecipeListCard(
                 )
                 Column(
                     modifier = Modifier
+                        .weight(1f)
                         .fillMaxHeight()
                         .padding(horizontal = 8.dp),
                     verticalArrangement = Arrangement.Center
@@ -282,6 +287,14 @@ private fun RecipeListCard(
                         overflow = TextOverflow.Ellipsis
                     )
                 }
+                RecipeRatingStars(
+                    rating = recipe.ratings?.userRating,
+                    orientation = RecipeRatingOrientation.Vertical,
+                    ratingDescription = ratingDescription,
+                    modifier = Modifier
+                        .padding(end = 8.dp, top = 4.dp, bottom = 4.dp)
+                        .align(Alignment.CenterVertically)
+                )
             }
         }
     }

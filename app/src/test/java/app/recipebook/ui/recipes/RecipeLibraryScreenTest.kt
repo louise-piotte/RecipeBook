@@ -13,6 +13,15 @@ import org.junit.Test
 class RecipeLibraryScreenTest {
 
     @Test
+    fun visibleStarCount_roundsAndClampsRatingsForDisplay() {
+        assertEquals(0, visibleStarCount(null))
+        assertEquals(0, visibleStarCount(0.0))
+        assertEquals(3, visibleStarCount(3.2))
+        assertEquals(4, visibleStarCount(3.6))
+        assertEquals(5, visibleStarCount(5.8))
+    }
+
+    @Test
     fun filterRecipes_returnsAllRecipesWhenNoSearchOrTagFiltersAreActive() {
         val recipes = listOf(
             recipeForFilterTest(id = "recipe-1", titleEn = "Waffles"),
