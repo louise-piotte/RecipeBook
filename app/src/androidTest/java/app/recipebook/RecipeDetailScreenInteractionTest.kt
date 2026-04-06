@@ -1,6 +1,7 @@
 package app.recipebook
 
 import androidx.activity.ComponentActivity
+import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.assert
@@ -9,8 +10,7 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.performTouchInput
-import androidx.compose.ui.test.longClick
+import androidx.compose.ui.test.performSemanticsAction
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.IngredientLine
@@ -73,9 +73,11 @@ class RecipeDetailScreenInteractionTest {
             .assert(hasStateDescription("Pending"))
             .performClick()
 
+        composeRule.waitForIdle()
+
         composeRule.onNodeWithTag("ingredient-row-ingredient-1")
             .assert(hasStateDescription("Done"))
-            .performTouchInput { longClick() }
+            .performSemanticsAction(SemanticsActions.OnLongClick)
 
         composeRule.onNodeWithText("Convert sugar").assert(hasText("Convert sugar"))
         composeRule.onNodeWithTag("ingredient-convert-g").performClick()
