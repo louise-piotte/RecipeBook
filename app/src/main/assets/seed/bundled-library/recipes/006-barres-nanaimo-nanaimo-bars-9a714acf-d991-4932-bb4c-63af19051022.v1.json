@@ -158,7 +158,9 @@
     "tag-christmas",
     "tag-shareable"
   ],
-  "collections": [],
+  "collections": [
+    "collection-christmas-box"
+  ],
   "ratings": {
     "userRating": 5
   },
