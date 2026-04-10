@@ -1,10 +1,13 @@
 package app.recipebook.ui.recipes
 
+import app.recipebook.data.local.recipes.IngredientSubstitutionSuggestion
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.RecipeSource
+import app.recipebook.domain.model.SubstitutionConfidence
+import app.recipebook.domain.model.SubstitutionRiskLevel
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -114,6 +117,32 @@ class RecipeDetailScreenTest {
         val result = buildDetailIngredientText(ingredient, null, AppLanguage.EN)
 
         assertEquals("\u00BE tsp vanilla", result)
+    }
+
+    @Test
+    fun buildIngredientSubstitutionOptionLabel_usesSubstitutionNameAndAmount() {
+        val ingredient = IngredientLine(
+            id = "ingredient-1",
+            originalText = "2 tbsp flour",
+            quantity = 2.0,
+            unit = "tbsp",
+            ingredientName = "flour"
+        )
+        val substitution = IngredientSubstitutionSuggestion(
+            id = "sub-1",
+            displayNameFr = "f\u00e9cule de ma\u00efs",
+            displayNameEn = "cornstarch",
+            quantity = 1.0,
+            unit = "tbsp",
+            riskLevel = SubstitutionRiskLevel.HIGH_RISK,
+            confidence = SubstitutionConfidence.TESTED,
+            warningTextFr = "Utiliser seulement pour \u00e9paissir une sauce.",
+            warningTextEn = "Use only to thicken a sauce."
+        )
+
+        val result = buildIngredientSubstitutionOptionLabel(ingredient, substitution, AppLanguage.EN)
+
+        assertEquals("1 tbsp cornstarch", result)
     }
 
     @Test

@@ -25,8 +25,8 @@ import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
 import app.recipebook.domain.model.SubstitutionConfidence
 import app.recipebook.domain.model.SubstitutionConversionType
+import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.domain.model.SubstitutionRule
-import app.recipebook.domain.model.SubstitutionSeverity
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.TagCategory
 import app.recipebook.domain.model.UnitDefinition
@@ -314,7 +314,11 @@ private fun IngredientFormDto.toDomain(): IngredientForm = IngredientForm(
     id = id,
     ingredientRefId = ingredientRefId,
     formCode = formCode,
+    labelFr = labelFr,
+    labelEn = labelEn,
     prepState = prepState,
+    matchTermsFr = matchTermsFr,
+    matchTermsEn = matchTermsEn,
     densityGPerMl = densityGPerMl,
     notesFr = notesFr,
     notesEn = notesEn,
@@ -325,7 +329,11 @@ private fun IngredientForm.toDto(): IngredientFormDto = IngredientFormDto(
     id = id,
     ingredientRefId = ingredientRefId,
     formCode = formCode,
+    labelFr = labelFr,
+    labelEn = labelEn,
     prepState = prepState,
+    matchTermsFr = matchTermsFr,
+    matchTermsEn = matchTermsEn,
     densityGPerMl = densityGPerMl,
     notesFr = notesFr,
     notesEn = notesEn,
@@ -344,9 +352,12 @@ private fun SubstitutionRuleDto.toDomain(): SubstitutionRule = SubstitutionRule(
     minQty = minQty,
     maxQty = maxQty,
     confidence = confidence.toSubstitutionConfidence(),
+    riskLevel = riskLevel.toSubstitutionRiskLevel(),
     roundingPolicy = roundingPolicy,
     notesFr = notesFr,
     notesEn = notesEn,
+    warningTextFr = warningTextFr,
+    warningTextEn = warningTextEn,
     updatedAt = updatedAt
 )
 
@@ -362,9 +373,12 @@ private fun SubstitutionRule.toDto(): SubstitutionRuleDto = SubstitutionRuleDto(
     minQty = minQty,
     maxQty = maxQty,
     confidence = confidence.toSchemaValue(),
+    riskLevel = riskLevel.toSchemaValue(),
     roundingPolicy = roundingPolicy,
     notesFr = notesFr,
     notesEn = notesEn,
+    warningTextFr = warningTextFr,
+    warningTextEn = warningTextEn,
     updatedAt = updatedAt
 )
 
@@ -380,11 +394,12 @@ private fun ContextualSubstitutionRuleDto.toDomain(): ContextualSubstitutionRule
     allowedIngredientRoles = allowedIngredientRoles,
     excludedIngredientRoles = excludedIngredientRoles,
     allowedCookingMethods = allowedCookingMethods,
-    severityIfMisused = severityIfMisused.toSubstitutionSeverity(),
-    requiresUserConfirmation = requiresUserConfirmation,
     confidence = confidence.toSubstitutionConfidence(),
+    riskLevel = riskLevel.toSubstitutionRiskLevel(),
     notesFr = notesFr,
     notesEn = notesEn,
+    warningTextFr = warningTextFr,
+    warningTextEn = warningTextEn,
     updatedAt = updatedAt
 )
 
@@ -400,11 +415,12 @@ private fun ContextualSubstitutionRule.toDto(): ContextualSubstitutionRuleDto = 
     allowedIngredientRoles = allowedIngredientRoles,
     excludedIngredientRoles = excludedIngredientRoles,
     allowedCookingMethods = allowedCookingMethods,
-    severityIfMisused = severityIfMisused.toSchemaValue(),
-    requiresUserConfirmation = requiresUserConfirmation,
     confidence = confidence.toSchemaValue(),
+    riskLevel = riskLevel.toSchemaValue(),
     notesFr = notesFr,
     notesEn = notesEn,
+    warningTextFr = warningTextFr,
+    warningTextEn = warningTextEn,
     updatedAt = updatedAt
 )
 
@@ -587,17 +603,17 @@ private fun SubstitutionConfidence.toSchemaValue(): String = when (this) {
     SubstitutionConfidence.APPROXIMATE -> "approximate"
 }
 
-private fun String.toSubstitutionSeverity(): SubstitutionSeverity = when (lowercase()) {
-    "low" -> SubstitutionSeverity.LOW
-    "medium" -> SubstitutionSeverity.MEDIUM
-    "high" -> SubstitutionSeverity.HIGH
-    else -> error("Unsupported substitution severity: $this")
+private fun String.toSubstitutionRiskLevel(): SubstitutionRiskLevel = when (lowercase()) {
+    "safe" -> SubstitutionRiskLevel.SAFE
+    "caution" -> SubstitutionRiskLevel.CAUTION
+    "high_risk" -> SubstitutionRiskLevel.HIGH_RISK
+    else -> error("Unsupported substitution risk level: $this")
 }
 
-private fun SubstitutionSeverity.toSchemaValue(): String = when (this) {
-    SubstitutionSeverity.LOW -> "low"
-    SubstitutionSeverity.MEDIUM -> "medium"
-    SubstitutionSeverity.HIGH -> "high"
+private fun SubstitutionRiskLevel.toSchemaValue(): String = when (this) {
+    SubstitutionRiskLevel.SAFE -> "safe"
+    SubstitutionRiskLevel.CAUTION -> "caution"
+    SubstitutionRiskLevel.HIGH_RISK -> "high_risk"
 }
 
 private fun String.toCollectionSortOrder(): CollectionSortOrder = when (lowercase()) {

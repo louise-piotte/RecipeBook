@@ -18,8 +18,11 @@ import app.recipebook.data.schema.UnitDefinitionDto
 import app.recipebook.data.schema.toDomainLibrary
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.Collection
+import app.recipebook.domain.model.ContextualSubstitutionRule
+import app.recipebook.domain.model.IngredientForm
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.SubstitutionRule
 import app.recipebook.domain.model.Tag
 import java.io.File
 import kotlinx.serialization.DeserializationStrategy
@@ -85,6 +88,9 @@ object BundledRecipeLibraryLoader {
         SeedLibraryData(
             recipes = materializeSeedRecipePhotos(context, manifest, library.recipes),
             ingredientReferences = library.ingredientReferences,
+            ingredientForms = library.ingredientForms,
+            substitutionRules = library.substitutionRules,
+            contextualSubstitutionRules = library.contextualSubstitutionRules,
             tags = library.tags,
             collections = library.collections
         )
@@ -163,6 +169,9 @@ private data class BundledSeedManifestDto(
 data class SeedLibraryData(
     val recipes: List<Recipe> = emptyList(),
     val ingredientReferences: List<IngredientReference> = emptyList(),
+    val ingredientForms: List<IngredientForm> = emptyList(),
+    val substitutionRules: List<SubstitutionRule> = emptyList(),
+    val contextualSubstitutionRules: List<ContextualSubstitutionRule> = emptyList(),
     val tags: List<Tag> = emptyList(),
     val collections: List<Collection> = emptyList()
 )

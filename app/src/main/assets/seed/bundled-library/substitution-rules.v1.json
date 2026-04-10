@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": "substitution-rule-chickpeas-canned-to-dried-package",
+    "fromFormId": "ingredient-form-chickpeas-canned-drained",
+    "toFormId": "ingredient-form-chickpeas-dried",
+    "conversionType": "ratio",
+    "ratio": 155,
+    "sourceUnitScope": "package",
+    "targetUnitScope": "mass",
+    "confidence": "tested",
+    "riskLevel": "safe",
+    "roundingPolicy": "nearest_5g",
+    "notesFr": "1 canette standard de 14 oz, rinc\u00e9e et \u00e9goutt\u00e9e, correspond \u00e0 environ 155 g de pois chiches secs.",
+    "notesEn": "One standard 14 oz can, rinsed and drained, corresponds to about 155 g dried chickpeas.",
+    "updatedAt": "2026-04-10T00:00:00Z"
+  },
+  {
+    "id": "substitution-rule-chickpeas-canned-to-dried-mass",
+    "fromFormId": "ingredient-form-chickpeas-canned-drained",
+    "toFormId": "ingredient-form-chickpeas-dried",
+    "conversionType": "ratio",
+    "ratio": 0.65,
+    "sourceUnitScope": "mass",
+    "targetUnitScope": "mass",
+    "confidence": "tested",
+    "riskLevel": "safe",
+    "roundingPolicy": "nearest_5g",
+    "notesFr": "Les pois chiches en conserve \u00e9goutt\u00e9s p\u00e8sent environ 1,55 fois le poids sec \u00e9quivalent.",
+    "notesEn": "Drained canned chickpeas weigh about 1.55 times the equivalent dried weight.",
+    "updatedAt": "2026-04-10T00:00:00Z"
+  }
+]

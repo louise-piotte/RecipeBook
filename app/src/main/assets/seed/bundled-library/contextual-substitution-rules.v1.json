@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "id": "contextual-substitution-rule-unsalted-to-salted-butter",
+    "fromIngredientRefId": "ingredient-ref-unsalted-butter",
+    "toIngredientRefId": "ingredient-ref-salted-butter",
+    "conversionType": "ratio",
+    "ratio": 1,
+    "allowedDishTypes": [],
+    "excludedDishTypes": [],
+    "allowedIngredientRoles": [],
+    "excludedIngredientRoles": [],
+    "allowedCookingMethods": [],
+    "confidence": "tested",
+    "riskLevel": "caution",
+    "notesFr": "R\u00e9duire le sel ajout\u00e9 ailleurs dans la recette.",
+    "notesEn": "Reduce the added salt elsewhere in the recipe.",
+    "updatedAt": "2026-04-10T00:00:00Z"
+  },
+  {
+    "id": "contextual-substitution-rule-salted-to-unsalted-butter",
+    "fromIngredientRefId": "ingredient-ref-salted-butter",
+    "toIngredientRefId": "ingredient-ref-unsalted-butter",
+    "conversionType": "ratio",
+    "ratio": 1,
+    "allowedDishTypes": [],
+    "excludedDishTypes": [],
+    "allowedIngredientRoles": [],
+    "excludedIngredientRoles": [],
+    "allowedCookingMethods": [],
+    "confidence": "tested",
+    "riskLevel": "caution",
+    "notesFr": "Ajouter une petite pinc\u00e9e de sel si la recette en a besoin.",
+    "notesEn": "Add a small pinch of salt if the recipe needs it.",
+    "updatedAt": "2026-04-10T00:00:00Z"
+  },
+  {
+    "id": "contextual-substitution-rule-flour-to-cornstarch",
+    "fromIngredientRefId": "ingredient-ref-all-purpose-flour",
+    "toIngredientRefId": "ingredient-ref-cornstarch",
+    "conversionType": "ratio",
+    "ratio": 0.5,
+    "allowedDishTypes": [
+      "sauce"
+    ],
+    "excludedDishTypes": [
+      "cake",
+      "cookies",
+      "tarts",
+      "bars-and-squares"
+    ],
+    "allowedIngredientRoles": [],
+    "excludedIngredientRoles": [],
+    "allowedCookingMethods": [],
+    "confidence": "tested",
+    "riskLevel": "high_risk",
+    "notesFr": "Utiliser environ la moiti\u00e9 de la quantit\u00e9 de farine pour \u00e9paissir.",
+    "notesEn": "Use about half the flour amount when thickening.",
+    "warningTextFr": "Utiliser seulement pour \u00e9paissir une sauce ou un jus. Ne pas utiliser dans les g\u00e2teaux ou les p\u00e2tisseries.",
+    "warningTextEn": "Use only to thicken a sauce or gravy. Do not use this in cakes or pastries.",
+    "updatedAt": "2026-04-10T00:00:00Z"
+  }
+]

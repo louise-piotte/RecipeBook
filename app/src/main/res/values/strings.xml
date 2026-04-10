@@ -129,6 +129,13 @@
     <string name="ingredient_conversion_dialog_title">Convert %1$s</string>
     <string name="ingredient_conversion_unavailable_label">No supported unit conversions are available for this ingredient.</string>
     <string name="ingredient_conversion_reset_label">Reset</string>
+    <string name="ingredient_substitution_button_label">Show ingredient substitutions</string>
+    <string name="ingredient_substitution_dialog_title">Substitute %1$s</string>
+    <string name="ingredient_substitution_unavailable_label">No substitutions are available for this ingredient yet.</string>
+    <string name="ingredient_substitution_risk_safe_label">Safe</string>
+    <string name="ingredient_substitution_risk_caution_label">Use caution</string>
+    <string name="ingredient_substitution_risk_high_label">High risk</string>
+    <string name="ingredient_substitution_warning_value_label">Warning: %1$s</string>
     <string name="ingredient_state_done">Done</string>
     <string name="ingredient_state_pending">Pending</string>
     <string name="all_recipes_count_label">All Recipes (%1$d)</string>

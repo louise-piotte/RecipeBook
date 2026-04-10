@@ -25,8 +25,8 @@ import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
 import app.recipebook.domain.model.SubstitutionConfidence
 import app.recipebook.domain.model.SubstitutionConversionType
+import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.domain.model.SubstitutionRule
-import app.recipebook.domain.model.SubstitutionSeverity
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.UnitDefinition
 import app.recipebook.domain.model.UnitScope
@@ -147,7 +147,11 @@ class SchemaRoundTripTest {
                 id = "3b7cb1f8-79c3-4abc-90ac-99cae87b8eca",
                 ingredientRefId = "8c35153a-4bf2-4501-a77f-b7a5af15427b",
                 formCode = "raw",
+                labelFr = "farine crue",
+                labelEn = "raw flour",
                 prepState = "raw",
+                matchTermsFr = listOf("farine"),
+                matchTermsEn = listOf("flour"),
                 densityGPerMl = 0.53,
                 notesFr = "Forme de reference",
                 notesEn = "Reference form",
@@ -167,9 +171,12 @@ class SchemaRoundTripTest {
                 minQty = null,
                 maxQty = null,
                 confidence = SubstitutionConfidence.EXACT,
+                riskLevel = SubstitutionRiskLevel.SAFE,
                 roundingPolicy = "none",
                 notesFr = "Identite",
                 notesEn = "Identity",
+                warningTextFr = null,
+                warningTextEn = null,
                 updatedAt = "2026-03-02T12:40:00Z"
             )
         ),
@@ -186,11 +193,12 @@ class SchemaRoundTripTest {
                 allowedIngredientRoles = listOf("thickener"),
                 excludedIngredientRoles = emptyList(),
                 allowedCookingMethods = listOf("simmer"),
-                severityIfMisused = SubstitutionSeverity.HIGH,
-                requiresUserConfirmation = true,
                 confidence = SubstitutionConfidence.TESTED,
+                riskLevel = SubstitutionRiskLevel.HIGH_RISK,
                 notesFr = "Utiliser seulement pour sauces",
                 notesEn = "Use only for sauces",
+                warningTextFr = "Ne pas utiliser dans les g\u00e2teaux ou les p\u00e2tisseries.",
+                warningTextEn = "Do not use this in cakes or pastries.",
                 updatedAt = "2026-03-02T12:42:00Z"
             )
         ),

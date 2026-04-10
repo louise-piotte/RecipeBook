@@ -7,8 +7,10 @@ import androidx.core.view.WindowCompat
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.lifecycle.lifecycleScope
 import app.recipebook.data.local.recipes.RecipeRepositoryProvider
+import app.recipebook.data.local.recipes.IngredientSubstitutionCatalog
 import app.recipebook.data.local.settings.AppLanguageStore
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.ui.recipes.LibraryManagerSection
@@ -43,10 +45,14 @@ class RecipeDetailActivity : ComponentActivity() {
                 }
                 val ingredientReferences by repository.observeIngredientReferences().collectAsState(initial = emptyList())
                 val tags by repository.observeTags().collectAsState(initial = emptyList())
+                val substitutionCatalog by produceState(initialValue = IngredientSubstitutionCatalog.EMPTY) {
+                    value = repository.loadIngredientSubstitutionCatalog()
+                }
 
                 RecipeDetailScreen(
                     recipe = recipe,
                     ingredientReferences = ingredientReferences,
+                    substitutionCatalog = substitutionCatalog,
                     tags = tags,
                     language = language,
                     onLanguageChange = { selected ->

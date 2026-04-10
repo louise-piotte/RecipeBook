@@ -1,1 +1,45 @@
-[]
+[
+  {
+    "id": "ingredient-form-chickpeas-canned-drained",
+    "ingredientRefId": "ingredient-ref-chickpeas",
+    "formCode": "canned_drained",
+    "labelFr": "pois chiches en conserve, rinc\u00e9s et \u00e9goutt\u00e9s",
+    "labelEn": "canned chickpeas, drained",
+    "prepState": "drained",
+    "matchTermsFr": [
+      "conserve",
+      "\u00e9goutt\u00e9",
+      "rinc\u00e9"
+    ],
+    "matchTermsEn": [
+      "can",
+      "canned",
+      "drained",
+      "rinsed"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme pr\u00eate \u00e0 utiliser directement dans la recette.",
+    "notesEn": "Ready-to-use form for direct recipe use.",
+    "updatedAt": "2026-04-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-chickpeas-dried",
+    "ingredientRefId": "ingredient-ref-chickpeas",
+    "formCode": "dried",
+    "labelFr": "pois chiches secs",
+    "labelEn": "dried chickpeas",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "sec",
+      "secs"
+    ],
+    "matchTermsEn": [
+      "dry",
+      "dried"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "N\u00e9cessitent un trempage et une cuisson avant utilisation.",
+    "notesEn": "Need soaking and cooking before use.",
+    "updatedAt": "2026-04-10T00:00:00Z"
+  }
+]

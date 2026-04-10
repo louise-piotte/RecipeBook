@@ -155,17 +155,21 @@ enum class SubstitutionConfidence {
     APPROXIMATE
 }
 
-enum class SubstitutionSeverity {
-    LOW,
-    MEDIUM,
-    HIGH
+enum class SubstitutionRiskLevel {
+    SAFE,
+    CAUTION,
+    HIGH_RISK
 }
 
 data class IngredientForm(
     val id: String,
     val ingredientRefId: String,
     val formCode: String,
+    val labelFr: String,
+    val labelEn: String,
     val prepState: String? = null,
+    val matchTermsFr: List<String> = emptyList(),
+    val matchTermsEn: List<String> = emptyList(),
     val densityGPerMl: Double? = null,
     val notesFr: String? = null,
     val notesEn: String? = null,
@@ -184,9 +188,12 @@ data class SubstitutionRule(
     val minQty: Double? = null,
     val maxQty: Double? = null,
     val confidence: SubstitutionConfidence,
+    val riskLevel: SubstitutionRiskLevel,
     val roundingPolicy: String,
     val notesFr: String? = null,
     val notesEn: String? = null,
+    val warningTextFr: String? = null,
+    val warningTextEn: String? = null,
     val updatedAt: String
 )
 
@@ -202,11 +209,12 @@ data class ContextualSubstitutionRule(
     val allowedIngredientRoles: List<String> = emptyList(),
     val excludedIngredientRoles: List<String> = emptyList(),
     val allowedCookingMethods: List<String> = emptyList(),
-    val severityIfMisused: SubstitutionSeverity,
-    val requiresUserConfirmation: Boolean = true,
     val confidence: SubstitutionConfidence,
+    val riskLevel: SubstitutionRiskLevel,
     val notesFr: String? = null,
     val notesEn: String? = null,
+    val warningTextFr: String? = null,
+    val warningTextEn: String? = null,
     val updatedAt: String
 )
 

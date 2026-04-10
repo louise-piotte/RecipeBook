@@ -218,12 +218,16 @@
     "IngredientForm": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "ingredientRefId", "formCode", "updatedAt"],
+      "required": ["id", "ingredientRefId", "formCode", "labelFr", "labelEn", "updatedAt"],
       "properties": {
         "id": { "$ref": "#/$defs/Uuid" },
         "ingredientRefId": { "$ref": "#/$defs/Uuid" },
         "formCode": { "type": "string" },
+        "labelFr": { "type": "string" },
+        "labelEn": { "type": "string" },
         "prepState": { "type": "string" },
+        "matchTermsFr": { "type": "array", "items": { "type": "string" } },
+        "matchTermsEn": { "type": "array", "items": { "type": "string" } },
         "densityGPerMl": { "type": "number", "exclusiveMinimum": 0 },
         "notesFr": { "type": "string" },
         "notesEn": { "type": "string" },
@@ -233,7 +237,7 @@
     "SubstitutionRule": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "fromFormId", "toFormId", "conversionType", "sourceUnitScope", "targetUnitScope", "confidence", "roundingPolicy", "updatedAt"],
+      "required": ["id", "fromFormId", "toFormId", "conversionType", "sourceUnitScope", "targetUnitScope", "confidence", "riskLevel", "roundingPolicy", "updatedAt"],
       "properties": {
         "id": { "$ref": "#/$defs/Uuid" },
         "fromFormId": { "$ref": "#/$defs/Uuid" },
@@ -246,16 +250,31 @@
         "minQty": { "type": "number", "exclusiveMinimum": 0 },
         "maxQty": { "type": "number", "exclusiveMinimum": 0 },
         "confidence": { "type": "string", "enum": ["exact", "tested", "approximate"] },
+        "riskLevel": { "type": "string", "enum": ["safe", "caution", "high_risk"] },
         "roundingPolicy": { "type": "string" },
         "notesFr": { "type": "string" },
         "notesEn": { "type": "string" },
+        "warningTextFr": { "type": "string" },
+        "warningTextEn": { "type": "string" },
         "updatedAt": { "$ref": "#/$defs/DateTime" }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "riskLevel": { "const": "high_risk" }
+            }
+          },
+          "then": {
+            "required": ["warningTextFr", "warningTextEn"]
+          }
+        }
+      ]
     },
     "ContextualSubstitutionRule": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "fromIngredientRefId", "toIngredientRefId", "conversionType", "severityIfMisused", "requiresUserConfirmation", "confidence", "updatedAt"],
+      "required": ["id", "fromIngredientRefId", "toIngredientRefId", "conversionType", "confidence", "riskLevel", "updatedAt"],
       "properties": {
         "id": { "$ref": "#/$defs/Uuid" },
         "fromIngredientRefId": { "$ref": "#/$defs/Uuid" },
@@ -268,13 +287,26 @@
         "allowedIngredientRoles": { "type": "array", "items": { "type": "string" } },
         "excludedIngredientRoles": { "type": "array", "items": { "type": "string" } },
         "allowedCookingMethods": { "type": "array", "items": { "type": "string" } },
-        "severityIfMisused": { "type": "string", "enum": ["low", "medium", "high"] },
-        "requiresUserConfirmation": { "type": "boolean" },
         "confidence": { "type": "string", "enum": ["exact", "tested", "approximate"] },
+        "riskLevel": { "type": "string", "enum": ["safe", "caution", "high_risk"] },
         "notesFr": { "type": "string" },
         "notesEn": { "type": "string" },
+        "warningTextFr": { "type": "string" },
+        "warningTextEn": { "type": "string" },
         "updatedAt": { "$ref": "#/$defs/DateTime" }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "riskLevel": { "const": "high_risk" }
+            }
+          },
+          "then": {
+            "required": ["warningTextFr", "warningTextEn"]
+          }
+        }
+      ]
     },
     "Unit": {
       "type": "object",

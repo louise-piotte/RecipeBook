@@ -7,6 +7,7 @@ This directory contains the versioned JSON Schemas used by RecipeBook.
 - `full-library.schema.v1.json`: Canonical, lossless full-library format for persistence/import/export.
 - Recipes may include `mainPhotoId` to mark which attached photo should be rendered as the primary image.
 - Media references in schema payloads must use package-relative paths such as `photos/...` and `attachments/...`, never device-local absolute filesystem paths.
+- Substitution rules carry an explicit risk level, and `high_risk` rules must include bilingual warning text.
 
 ## Versioning
 - Schema versions are explicit in each document via:

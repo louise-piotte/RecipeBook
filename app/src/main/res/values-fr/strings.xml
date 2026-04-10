@@ -129,6 +129,13 @@
     <string name="ingredient_conversion_dialog_title">Convertir %1$s</string>
     <string name="ingredient_conversion_unavailable_label">Aucune conversion d&#8217;unit&#233; prise en charge n&#8217;est disponible pour cet ingr&#233;dient.</string>
     <string name="ingredient_conversion_reset_label">R&#233;initialiser</string>
+    <string name="ingredient_substitution_button_label">Afficher les substitutions d&#8217;ingr&#233;dient</string>
+    <string name="ingredient_substitution_dialog_title">Substituer %1$s</string>
+    <string name="ingredient_substitution_unavailable_label">Aucune substitution n&#8217;est encore disponible pour cet ingr&#233;dient.</string>
+    <string name="ingredient_substitution_risk_safe_label">Sans risque</string>
+    <string name="ingredient_substitution_risk_caution_label">Prudence</string>
+    <string name="ingredient_substitution_risk_high_label">Risque &#233;lev&#233;</string>
+    <string name="ingredient_substitution_warning_value_label">Avertissement : %1$s</string>
     <string name="ingredient_state_done">Termin&#233;</string>
     <string name="ingredient_state_pending">&#192; faire</string>
     <string name="all_recipes_count_label">Toutes les recettes (%1$d)</string>

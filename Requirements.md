@@ -88,7 +88,9 @@ Build a personal recipe book app that:
 * `id`
 * `ingredientRefId`
 * `formCode` (e.g., dried, cooked, canned_drained, raw, toasted)
+* `labelFr`, `labelEn` (localized display names for the form)
 * `prepState` (optional normalized state metadata)
+* `matchTermsFr[]`, `matchTermsEn[]` (optional bilingual keywords used to infer the active form from recipe text)
 * `densityGPerMl` (optional form-level override)
 * `notesFr?`, `notesEn?`
 * `updatedAt`
@@ -105,8 +107,10 @@ Build a personal recipe book app that:
 * `targetUnitScope` (mass, volume, count, package)
 * `minQty?`, `maxQty?` (optional validity range)
 * `confidence` (`exact`, `tested`, `approximate`)
+* `riskLevel` (`safe`, `caution`, `high_risk`)
 * `roundingPolicy` (e.g., none, nearest_5g, nearest_0_25cup)
 * `notesFr?`, `notesEn?`
+* `warningTextFr?`, `warningTextEn?` (required when `riskLevel` is `high_risk`)
 * `updatedAt`
 
 **IngredientLineSubstitution** (recipe-line-level substitution suggestion/selection)
@@ -131,10 +135,10 @@ Build a personal recipe book app that:
 * `allowedIngredientRoles[]` (e.g., thickener, aromatic, heat)
 * `excludedIngredientRoles[]` (optional)
 * `allowedCookingMethods[]` (optional)
-* `severityIfMisused` (`low`, `medium`, `high`)
-* `requiresUserConfirmation` (bool)
 * `confidence` (`exact`, `tested`, `approximate`)
+* `riskLevel` (`safe`, `caution`, `high_risk`)
 * `notesFr?`, `notesEn?`
+* `warningTextFr?`, `warningTextEn?` (required when `riskLevel` is `high_risk`)
 * `updatedAt`
 
 **Unit**
@@ -299,7 +303,8 @@ User can convert ingredient quantities between:
     * Select ingredient from reference list
     * Or provide a one-time density override for that recipe/line
 * User can define and save a custom weight-to-volume ratio (density in g/ml) per ingredient for future conversions.
-* Substitution results must expose confidence (`exact`, `tested`, `approximate`) and apply rule-specific rounding policy.
+* Substitution results must expose confidence (`exact`, `tested`, `approximate`), a three-step risk evaluation (`safe`, `caution`, `high_risk`), and apply rule-specific rounding policy.
+* `high_risk` substitutions must include an explicit warning note in both languages; warning notes are optional for `safe` and `caution`.
 * Contextual substitutions must enforce scope (dish type/role/method) and apply warning or block behavior when out of scope.
 
 **Acceptance criteria**
@@ -587,7 +592,7 @@ User can convert ingredient quantities between:
     1. Convert source amount to canonical base (usually grams or milliliters) from source form mappings.
     2. Apply `SubstitutionRule` (`ratio`, `affine`, or `fixed_amount`).
     3. Convert result to target display unit from target form mappings.
-    4. Apply `roundingPolicy` and show `confidence` + notes.
+    4. Apply `roundingPolicy` and show `confidence`, `riskLevel`, and notes.
 * Example forms for chickpeas:
 
     * `chickpea_dried`
@@ -604,8 +609,8 @@ User can convert ingredient quantities between:
 * Evaluation order for contextual substitutions:
 
     1. Match recipe context (dish type, ingredient role, cooking method when available).
-    2. If context matches, offer substitution with confidence and notes.
-    3. If context is unknown, require explicit user confirmation.
+    2. If context matches, offer substitution with confidence, risk level, and notes.
+    3. If context is unknown, prefer blocking high-risk substitutions unless the app has enough context to justify showing the required warning note.
     4. If context is excluded/high-risk, block or show high-severity warning.
 * Example policy:
 

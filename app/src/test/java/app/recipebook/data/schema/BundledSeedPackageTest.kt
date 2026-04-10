@@ -95,16 +95,26 @@ class BundledSeedPackageTest {
 
         library.ingredientForms.forEach { form ->
             assertTrue(form.ingredientRefId in ingredientReferenceIds)
+            assertTrue(form.labelFr.isNotBlank())
+            assertTrue(form.labelEn.isNotBlank())
         }
 
         library.substitutionRules.forEach { rule ->
             assertTrue(rule.fromFormId in ingredientFormIds)
             assertTrue(rule.toFormId in ingredientFormIds)
+            if (rule.riskLevel == "high_risk") {
+                assertTrue(!rule.warningTextFr.isNullOrBlank())
+                assertTrue(!rule.warningTextEn.isNullOrBlank())
+            }
         }
 
         library.contextualSubstitutionRules.forEach { rule ->
             assertTrue(rule.fromIngredientRefId in ingredientReferenceIds)
             assertTrue(rule.toIngredientRefId in ingredientReferenceIds)
+            if (rule.riskLevel == "high_risk") {
+                assertTrue(!rule.warningTextFr.isNullOrBlank())
+                assertTrue(!rule.warningTextEn.isNullOrBlank())
+            }
         }
 
         library.collections.forEach { collection ->

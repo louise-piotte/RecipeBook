@@ -5,17 +5,24 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.SwapHoriz
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -33,6 +40,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import app.recipebook.R
+import app.recipebook.data.local.recipes.IngredientSubstitutionCatalog
+import app.recipebook.data.local.recipes.IngredientSubstitutionSuggestion
+import app.recipebook.data.local.recipes.resolveIngredientSubstitutions
 import app.recipebook.domain.localization.BilingualTextResolver
 import app.recipebook.domain.localization.MissingTextPlaceholders
 import app.recipebook.domain.model.AppLanguage
@@ -41,6 +51,7 @@ import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeSource
+import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.domain.model.Tag
 import app.recipebook.ui.theme.PopupShape
 import kotlin.math.abs
@@ -51,6 +62,7 @@ import kotlin.math.round
 internal fun RecipeDetailScreen(
     recipe: Recipe?,
     ingredientReferences: List<IngredientReference>,
+    substitutionCatalog: IngredientSubstitutionCatalog = IngredientSubstitutionCatalog.EMPTY,
     tags: List<Tag>,
     language: AppLanguage,
     onLanguageChange: (AppLanguage) -> Unit,
@@ -68,6 +80,7 @@ internal fun RecipeDetailScreen(
     var emphasizedInstructionIndexes by remember { mutableStateOf(setOf<Int>()) }
     var convertedUnits by remember { mutableStateOf<Map<String, String>>(emptyMap()) }
     var conversionDialogIngredientId by remember { mutableStateOf<String?>(null) }
+    var substitutionDialogIngredientId by remember { mutableStateOf<String?>(null) }
 
     Scaffold(
         modifier = modifier,
@@ -109,6 +122,7 @@ internal fun RecipeDetailScreen(
                 RecipeDetailCard(
                     recipe = recipe,
                     ingredientReferences = ingredientReferences,
+                    substitutionCatalog = substitutionCatalog,
                     tags = tags,
                     language = language,
                     resolver = resolver,
@@ -134,8 +148,14 @@ internal fun RecipeDetailScreen(
                     onOpenIngredientConversion = { ingredientId ->
                         conversionDialogIngredientId = ingredientId
                     },
+                    onOpenIngredientSubstitutions = { ingredientId ->
+                        substitutionDialogIngredientId = ingredientId
+                    },
                     onDismissIngredientConversion = {
                         conversionDialogIngredientId = null
+                    },
+                    onDismissIngredientSubstitutions = {
+                        substitutionDialogIngredientId = null
                     },
                     onSelectIngredientConversion = { ingredientId, unit ->
                         convertedUnits = if (unit == null) {
@@ -144,7 +164,8 @@ internal fun RecipeDetailScreen(
                             convertedUnits + (ingredientId to unit)
                         }
                         conversionDialogIngredientId = null
-                    }
+                    },
+                    substitutionDialogIngredientId = substitutionDialogIngredientId
                 )
             }
         }
@@ -156,6 +177,7 @@ internal fun RecipeDetailScreen(
 private fun RecipeDetailCard(
     recipe: Recipe,
     ingredientReferences: List<IngredientReference>,
+    substitutionCatalog: IngredientSubstitutionCatalog,
     tags: List<Tag>,
     language: AppLanguage,
     resolver: BilingualTextResolver,
@@ -164,10 +186,13 @@ private fun RecipeDetailCard(
     emphasizedInstructionIndexes: Set<Int>,
     convertedUnits: Map<String, String>,
     conversionDialogIngredientId: String?,
+    substitutionDialogIngredientId: String?,
     onToggleIngredientDone: (String) -> Unit,
     onToggleInstructionEmphasis: (Int) -> Unit,
     onOpenIngredientConversion: (String) -> Unit,
+    onOpenIngredientSubstitutions: (String) -> Unit,
     onDismissIngredientConversion: () -> Unit,
+    onDismissIngredientSubstitutions: () -> Unit,
     onSelectIngredientConversion: (String, String?) -> Unit
 ) {
     val ingredientReferenceMap = ingredientReferences.associateBy(IngredientReference::id)
@@ -198,10 +223,18 @@ private fun RecipeDetailCard(
             quantityOverride = convertedQuantity ?: ingredient.quantity,
             unitOverride = convertedUnit ?: ingredient.unit
         )
+        val substitutions = resolveIngredientSubstitutions(
+            ingredient = ingredient,
+            recipe = recipe,
+            tags = tags,
+            ingredientReferences = ingredientReferences,
+            catalog = substitutionCatalog
+        )
         displayText.takeIf { it.isNotEmpty() }?.let {
             DetailIngredientItem(
                 ingredient = ingredient,
                 text = it,
+                substitutions = substitutions,
                 isDone = ingredient.id in doneIngredientIds
             )
         }
@@ -214,6 +247,14 @@ private fun RecipeDetailCard(
                 ingredientReference = ingredientReference,
                 targetUnits = availableConversionUnits(ingredient.unit, ingredientReference),
                 selectedUnit = convertedUnits[selectedId]
+            )
+        }
+    }
+    val selectedSubstitutionItem = substitutionDialogIngredientId?.let { selectedId ->
+        ingredientItems.firstOrNull { it.ingredient.id == selectedId }?.let { item ->
+            SubstitutionDialogState(
+                ingredient = item.ingredient,
+                substitutions = item.substitutions
             )
         }
     }
@@ -295,7 +336,8 @@ private fun RecipeDetailCard(
                     ingredient = ingredient,
                     language = language,
                     onToggleDone = { onToggleIngredientDone(ingredient.ingredient.id) },
-                    onOpenConversion = { onOpenIngredientConversion(ingredient.ingredient.id) }
+                    onOpenConversion = { onOpenIngredientConversion(ingredient.ingredient.id) },
+                    onOpenSubstitutions = { onOpenIngredientSubstitutions(ingredient.ingredient.id) }
                 )
             }
         }
@@ -358,6 +400,15 @@ private fun RecipeDetailCard(
             }
         )
     }
+
+    selectedSubstitutionItem?.let { dialogState ->
+        IngredientSubstitutionDialog(
+            ingredient = dialogState.ingredient,
+            substitutions = dialogState.substitutions,
+            language = language,
+            onDismiss = onDismissIngredientSubstitutions
+        )
+    }
 }
 
 @Composable
@@ -403,21 +454,15 @@ private fun DetailIngredientRow(
     ingredient: DetailIngredientItem,
     language: AppLanguage,
     onToggleDone: () -> Unit,
-    onOpenConversion: () -> Unit
+    onOpenConversion: () -> Unit,
+    onOpenSubstitutions: () -> Unit
 ) {
     val stateLabel = if (ingredient.isDone) {
         localizedString(R.string.ingredient_state_done, language)
     } else {
         localizedString(R.string.ingredient_state_pending, language)
     }
-    Text(
-        text = ingredient.text,
-        style = MaterialTheme.typography.bodyMedium,
-        color = if (ingredient.isDone) {
-            DoneIngredientTextColor
-        } else {
-            MaterialTheme.colorScheme.onSurface
-        },
+    Row(
         modifier = Modifier
             .fillMaxWidth()
             .testTag("ingredient-row-${ingredient.ingredient.id}")
@@ -426,8 +471,44 @@ private fun DetailIngredientRow(
                 onClick = onToggleDone,
                 onLongClick = onOpenConversion
             )
-            .padding(vertical = 1.dp)
-    )
+            .padding(vertical = 1.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
+    ) {
+        Text(
+            text = ingredient.text,
+            style = MaterialTheme.typography.bodyMedium,
+            color = if (ingredient.isDone) {
+                DoneIngredientTextColor
+            } else {
+                MaterialTheme.colorScheme.onSurface
+            },
+            modifier = Modifier
+                .weight(1f)
+        )
+        Box(modifier = Modifier.width(28.dp)) {
+            IconButton(
+                onClick = onOpenSubstitutions,
+                modifier = Modifier
+                    .size(28.dp)
+                    .testTag("ingredient-substitute-${ingredient.ingredient.id}")
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.SwapHoriz,
+                    contentDescription = localizedString(R.string.ingredient_substitution_button_label, language),
+                    tint = if (ingredient.substitutions.isEmpty()) {
+                        MaterialTheme.colorScheme.onSurface.copy(alpha = 0.35f)
+                    } else {
+                        when (ingredient.substitutions.first().riskLevel) {
+                            SubstitutionRiskLevel.SAFE -> MaterialTheme.colorScheme.primary
+                            SubstitutionRiskLevel.CAUTION -> MaterialTheme.colorScheme.tertiary
+                            SubstitutionRiskLevel.HIGH_RISK -> MaterialTheme.colorScheme.error
+                        }
+                    }
+                )
+            }
+        }
+    }
 }
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -510,6 +591,80 @@ private fun IngredientConversionDialog(
     )
 }
 
+@Composable
+private fun IngredientSubstitutionDialog(
+    ingredient: IngredientLine,
+    substitutions: List<IngredientSubstitutionSuggestion>,
+    language: AppLanguage,
+    onDismiss: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        shape = PopupShape,
+        confirmButton = {
+            TextButton(onClick = onDismiss) {
+                Text(localizedString(R.string.close_label, language))
+            }
+        },
+        title = {
+            Text(localizedString(R.string.ingredient_substitution_dialog_title, language, ingredient.ingredientName))
+        },
+        text = {
+            if (substitutions.isEmpty()) {
+                Text(localizedString(R.string.ingredient_substitution_unavailable_label, language))
+            } else {
+                Column(
+                    modifier = Modifier.verticalScroll(rememberScrollState()),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    substitutions.forEach { substitution ->
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .testTag("ingredient-substitution-option-${substitution.id}")
+                                .semantics(mergeDescendants = true) {},
+                            verticalArrangement = Arrangement.spacedBy(2.dp)
+                        ) {
+                            Text(
+                                text = buildIngredientSubstitutionOptionLabel(ingredient, substitution, language),
+                                color = when (substitution.riskLevel) {
+                                    SubstitutionRiskLevel.SAFE -> MaterialTheme.colorScheme.onSurface
+                                    SubstitutionRiskLevel.CAUTION -> MaterialTheme.colorScheme.tertiary
+                                    SubstitutionRiskLevel.HIGH_RISK -> MaterialTheme.colorScheme.error
+                                }
+                            )
+                            Text(
+                                text = localizedString(
+                                    riskLevelLabelResId(substitution.riskLevel),
+                                    language
+                                ),
+                                style = MaterialTheme.typography.labelSmall
+                            )
+                            substitution.localizedNotes(language)?.let { note ->
+                                Text(
+                                    text = note,
+                                    style = MaterialTheme.typography.bodySmall
+                                )
+                            }
+                            substitution.localizedWarning(language)?.let { warning ->
+                                Text(
+                                    text = localizedString(
+                                        R.string.ingredient_substitution_warning_value_label,
+                                        language,
+                                        warning
+                                    ),
+                                    color = MaterialTheme.colorScheme.error,
+                                    style = MaterialTheme.typography.bodySmall
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    )
+}
+
 internal fun buildDetailTagText(tags: List<Tag>, language: AppLanguage): String =
     tags.joinToString(", ") { it.localizedName(language) }
 
@@ -560,6 +715,24 @@ internal fun buildIngredientConversionOptionLabel(
     unitOverride = unit,
     preserveUnitOverride = true
 )
+
+internal fun buildIngredientSubstitutionOptionLabel(
+    ingredient: IngredientLine,
+    substitution: IngredientSubstitutionSuggestion,
+    language: AppLanguage
+): String = buildDetailIngredientText(
+    ingredient = ingredient.copy(ingredientName = substitution.localizedDisplayName(language)),
+    ingredientReference = null,
+    language = language,
+    quantityOverride = substitution.quantity,
+    unitOverride = substitution.unit
+)
+
+private fun riskLevelLabelResId(riskLevel: SubstitutionRiskLevel): Int = when (riskLevel) {
+    SubstitutionRiskLevel.SAFE -> R.string.ingredient_substitution_risk_safe_label
+    SubstitutionRiskLevel.CAUTION -> R.string.ingredient_substitution_risk_caution_label
+    SubstitutionRiskLevel.HIGH_RISK -> R.string.ingredient_substitution_risk_high_label
+}
 
 private fun formatIngredientAmount(
     quantity: Double?,
@@ -923,6 +1096,7 @@ internal fun RecipeSource.clickableUrlOrNull(): String? = sourceUrl.trim().takeI
 private data class DetailIngredientItem(
     val ingredient: IngredientLine,
     val text: String,
+    val substitutions: List<IngredientSubstitutionSuggestion>,
     val isDone: Boolean
 )
 
@@ -931,6 +1105,11 @@ private data class ConversionDialogState(
     val ingredientReference: IngredientReference?,
     val targetUnits: List<String>,
     val selectedUnit: String?
+)
+
+private data class SubstitutionDialogState(
+    val ingredient: IngredientLine,
+    val substitutions: List<IngredientSubstitutionSuggestion>
 )
 
 private data class StandardUnitDefinition(

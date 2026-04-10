@@ -246,8 +246,16 @@ data class IngredientFormDto(
     val ingredientRefId: String,
     @SerialName("formCode")
     val formCode: String,
+    @SerialName("labelFr")
+    val labelFr: String,
+    @SerialName("labelEn")
+    val labelEn: String,
     @SerialName("prepState")
     val prepState: String? = null,
+    @SerialName("matchTermsFr")
+    val matchTermsFr: List<String> = emptyList(),
+    @SerialName("matchTermsEn")
+    val matchTermsEn: List<String> = emptyList(),
     @SerialName("densityGPerMl")
     val densityGPerMl: Double? = null,
     @SerialName("notesFr")
@@ -282,12 +290,18 @@ data class SubstitutionRuleDto(
     val maxQty: Double? = null,
     @SerialName("confidence")
     val confidence: String,
+    @SerialName("riskLevel")
+    val riskLevel: String,
     @SerialName("roundingPolicy")
     val roundingPolicy: String,
     @SerialName("notesFr")
     val notesFr: String? = null,
     @SerialName("notesEn")
     val notesEn: String? = null,
+    @SerialName("warningTextFr")
+    val warningTextFr: String? = null,
+    @SerialName("warningTextEn")
+    val warningTextEn: String? = null,
     @SerialName("updatedAt")
     val updatedAt: String
 )
@@ -316,16 +330,18 @@ data class ContextualSubstitutionRuleDto(
     val excludedIngredientRoles: List<String> = emptyList(),
     @SerialName("allowedCookingMethods")
     val allowedCookingMethods: List<String> = emptyList(),
-    @SerialName("severityIfMisused")
-    val severityIfMisused: String,
-    @SerialName("requiresUserConfirmation")
-    val requiresUserConfirmation: Boolean = true,
     @SerialName("confidence")
     val confidence: String,
+    @SerialName("riskLevel")
+    val riskLevel: String,
     @SerialName("notesFr")
     val notesFr: String? = null,
     @SerialName("notesEn")
     val notesEn: String? = null,
+    @SerialName("warningTextFr")
+    val warningTextFr: String? = null,
+    @SerialName("warningTextEn")
+    val warningTextEn: String? = null,
     @SerialName("updatedAt")
     val updatedAt: String
 )

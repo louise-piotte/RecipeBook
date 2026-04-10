@@ -5,14 +5,13 @@
   - Support lb ↔ g conversion
   - Support fl oz ↔ ml conversion
   - Add per-ingredient custom density (g/ml) for weight ↔ volume conversion
-- Finalize substitution modeling before implementation:
-  - Global form-to-form equivalent rules (same ingredient states)
-  - Contextual ingredient-to-ingredient rules with scope (dish type/role/method)
-  - Warning/block behavior for out-of-scope or high-risk substitutions
 - Expand persistence/data-layer search support:
   - Recipe search across ingredients and instructions
   - Tag and collection filtering support in the local data layer
   - Ingredient reference search across French/English names and aliases
+- Deepen contextual substitution enforcement:
+  - Capture structured ingredient roles and cooking methods so contextual rules can enforce more than dish-type tags
+  - Expand the seeded substitution catalog beyond the initial butter, chickpea, and flour/cornstarch examples
 - Review recipe-to-recipe links:
   - Decide whether linked recipes should be part of the product requirements
   - If yes, add the requirement to `Requirements.md` and plan the supporting seed/schema model

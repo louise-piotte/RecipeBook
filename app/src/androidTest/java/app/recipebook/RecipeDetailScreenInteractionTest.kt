@@ -11,13 +11,18 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performSemanticsAction
+import app.recipebook.data.local.recipes.IngredientSubstitutionCatalog
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
+import app.recipebook.domain.model.ContextualSubstitutionRule
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.SubstitutionConfidence
+import app.recipebook.domain.model.SubstitutionConversionType
+import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.ui.recipes.RecipeDetailScreen
 import org.junit.Rule
 import org.junit.Test
@@ -60,6 +65,7 @@ class RecipeDetailScreenInteractionTest {
             RecipeDetailScreen(
                 recipe = recipe,
                 ingredientReferences = listOf(ingredientReference),
+                substitutionCatalog = IngredientSubstitutionCatalog.EMPTY,
                 tags = emptyList(),
                 language = AppLanguage.EN,
                 onLanguageChange = {},
@@ -101,6 +107,7 @@ class RecipeDetailScreenInteractionTest {
             RecipeDetailScreen(
                 recipe = recipe,
                 ingredientReferences = emptyList(),
+                substitutionCatalog = IngredientSubstitutionCatalog.EMPTY,
                 tags = emptyList(),
                 language = AppLanguage.EN,
                 onLanguageChange = {},
@@ -120,6 +127,90 @@ class RecipeDetailScreenInteractionTest {
 
         composeRule.onNodeWithTag("instruction-row-0")
             .assert(hasStateDescription("Normal"))
+    }
+
+    @Test
+    fun substitutionIconOpensDialogAndShowsWarningText() {
+        val recipe = Recipe(
+            id = "recipe-1",
+            createdAt = "2026-04-21T00:00:00Z",
+            updatedAt = "2026-04-21T00:00:00Z",
+            languages = BilingualText(
+                fr = LocalizedSystemText("Sauce", "", "", ""),
+                en = LocalizedSystemText("Sauce", "", "", "")
+            ),
+            ingredients = listOf(
+                IngredientLine(
+                    id = "ingredient-1",
+                    ingredientRefId = "ingredient-ref-all-purpose-flour",
+                    originalText = "2 tbsp flour",
+                    quantity = 2.0,
+                    unit = "tbsp",
+                    ingredientName = "flour"
+                )
+            ),
+            tagIds = listOf("tag-sauce")
+        )
+        val ingredientReferences = listOf(
+            IngredientReference(
+                id = "ingredient-ref-all-purpose-flour",
+                nameFr = "farine tout usage",
+                nameEn = "flour",
+                updatedAt = "2026-04-21T00:00:00Z"
+            ),
+            IngredientReference(
+                id = "ingredient-ref-cornstarch",
+                nameFr = "f\u00e9cule de ma\u00efs",
+                nameEn = "cornstarch",
+                updatedAt = "2026-04-21T00:00:00Z"
+            )
+        )
+        val tag = app.recipebook.domain.model.Tag(
+            id = "tag-sauce",
+            nameFr = "Sauce",
+            nameEn = "Sauce",
+            slug = "sauce",
+            category = app.recipebook.domain.model.TagCategory.DISH_TYPE
+        )
+        val substitutionCatalog = IngredientSubstitutionCatalog(
+            contextualSubstitutionRules = listOf(
+                ContextualSubstitutionRule(
+                    id = "rule-flour-cornstarch",
+                    fromIngredientRefId = "ingredient-ref-all-purpose-flour",
+                    toIngredientRefId = "ingredient-ref-cornstarch",
+                    conversionType = SubstitutionConversionType.RATIO,
+                    ratio = 0.5,
+                    allowedDishTypes = listOf("sauce"),
+                    confidence = SubstitutionConfidence.TESTED,
+                    riskLevel = SubstitutionRiskLevel.HIGH_RISK,
+                    warningTextFr = "Utiliser seulement pour \u00e9paissir une sauce.",
+                    warningTextEn = "Use only to thicken a sauce.",
+                    updatedAt = "2026-04-21T00:00:00Z"
+                )
+            )
+        )
+
+        composeRule.setContent {
+            RecipeDetailScreen(
+                recipe = recipe,
+                ingredientReferences = ingredientReferences,
+                substitutionCatalog = substitutionCatalog,
+                tags = listOf(tag),
+                language = AppLanguage.EN,
+                onLanguageChange = {},
+                onBack = {},
+                onNavigate = {},
+                onEdit = {}
+            )
+        }
+
+        composeRule.onNodeWithTag("ingredient-substitute-ingredient-1").performClick()
+
+        composeRule.onNodeWithText("Substitute flour").assert(hasText("Substitute flour"))
+        composeRule.onNodeWithTag("ingredient-substitution-option-rule-flour-cornstarch")
+            .assert(hasText("1 tbsp cornstarch"))
+        composeRule.onNodeWithText("Warning: Use only to thicken a sauce.")
+            .assert(hasText("Warning: Use only to thicken a sauce."))
     }
 
     private fun hasStateDescription(expected: String): SemanticsMatcher =

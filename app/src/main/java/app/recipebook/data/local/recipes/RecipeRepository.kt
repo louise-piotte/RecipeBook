@@ -40,6 +40,8 @@ import java.util.UUID
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.Dispatchers
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -269,6 +271,15 @@ class RecipeRepository(
         ),
         ingredients = emptyList()
     )
+
+    suspend fun loadIngredientSubstitutionCatalog(): IngredientSubstitutionCatalog = withContext(Dispatchers.IO) {
+        val seedLibrary = resolveSeedLibrary()
+        IngredientSubstitutionCatalog(
+            ingredientForms = seedLibrary.ingredientForms,
+            substitutionRules = seedLibrary.substitutionRules,
+            contextualSubstitutionRules = seedLibrary.contextualSubstitutionRules
+        )
+    }
 }
 
 private const val TAG = "RecipeRepository"
@@ -297,7 +308,13 @@ data class CollectionDraft(
 )
 
 private fun SeedLibraryData.isEmpty(): Boolean =
-    recipes.isEmpty() && ingredientReferences.isEmpty() && tags.isEmpty() && collections.isEmpty()
+    recipes.isEmpty() &&
+        ingredientReferences.isEmpty() &&
+        ingredientForms.isEmpty() &&
+        substitutionRules.isEmpty() &&
+        contextualSubstitutionRules.isEmpty() &&
+        tags.isEmpty() &&
+        collections.isEmpty()
 
 internal fun RecipeWithRelations.toDomainRecipe(): Recipe = Recipe(
     id = recipe.id,
