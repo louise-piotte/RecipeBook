@@ -122,6 +122,27 @@ interface IngredientReferenceDao {
 }
 
 @Dao
+interface ContextualSubstitutionRuleDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsert(rule: ContextualSubstitutionRuleEntity)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsertAll(rules: List<ContextualSubstitutionRuleEntity>)
+
+    @Query("SELECT * FROM contextual_substitution_rules ORDER BY fromIngredientRefId, toIngredientRefId")
+    fun observeAll(): Flow<List<ContextualSubstitutionRuleEntity>>
+
+    @Query("SELECT * FROM contextual_substitution_rules WHERE fromIngredientRefId = :ingredientRefId ORDER BY toIngredientRefId")
+    fun observeBySourceIngredientId(ingredientRefId: String): Flow<List<ContextualSubstitutionRuleEntity>>
+
+    @Query("SELECT * FROM contextual_substitution_rules WHERE id = :id LIMIT 1")
+    suspend fun getById(id: String): ContextualSubstitutionRuleEntity?
+
+    @Query("DELETE FROM contextual_substitution_rules WHERE id = :id")
+    suspend fun deleteById(id: String)
+}
+
+@Dao
 interface TagDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(tag: TagEntity)

@@ -1,16 +1,7 @@
 # RecipeBook Roadmap (Active To-Do)
 
-- Implement enhanced unit conversion behavior:
-  - Show both C and F for temperatures
-  - Support lb ↔ g conversion
-  - Support fl oz ↔ ml conversion
-  - Add per-ingredient custom density (g/ml) for weight ↔ volume conversion
-- Expand persistence/data-layer search support:
-  - Recipe search across ingredients and instructions
-  - Tag and collection filtering support in the local data layer
-  - Ingredient reference search across French/English names and aliases
+
 - Deepen contextual substitution enforcement:
-  - Capture structured ingredient roles and cooking methods so contextual rules can enforce more than dish-type tags
   - Expand the seeded substitution catalog beyond the initial butter, chickpea, and flour/cornstarch examples
 - Review recipe-to-recipe links:
   - Decide whether linked recipes should be part of the product requirements

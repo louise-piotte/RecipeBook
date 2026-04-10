@@ -10,6 +10,7 @@ object RecipeRepositoryProvider {
         return RecipeRepository(
             recipeDao = db.recipeDao(),
             ingredientReferenceDao = db.ingredientReferenceDao(),
+            contextualSubstitutionRuleDao = db.contextualSubstitutionRuleDao(),
             tagDao = db.tagDao(),
             collectionDao = db.collectionDao(),
             seedLibraryLoader = { BundledRecipeLibraryLoader.loadLibrary(context.applicationContext) }

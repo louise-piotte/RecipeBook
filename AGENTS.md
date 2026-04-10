@@ -39,6 +39,10 @@
 - Do not add backward-compatibility layers, startup migrations, normalization passes, schema-version upgrades, or compatibility shims for draft code, draft schemas, draft databases, debug seed recipes, or bundled library data. Fix or replace the current draft source instead.
 - If a change feels too large or too destructive, stop and ask the user before proceeding.
 - For any non-trivial change, present a plan and get user confirmation before proceeding. Trivial changes do not require confirmation.
+  - Explaining the plan include, but is not limited to:
+    - Listing changes or additions to the data structure, inculding implementing stubs.
+    - Listing changes to the UI worklflow
+    - Listing algorithms and data manipulation flows.
 
 ### Schema And Data Rules
 - Keep schema DTOs, mappers, round-trip tests, schema files, schema docs, and examples consistent with each other whenever any one of them changes.

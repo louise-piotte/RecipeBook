@@ -114,6 +114,35 @@ data class IngredientReferenceEntity(
     val updatedAt: String
 )
 
+@Entity(
+    tableName = "contextual_substitution_rules",
+    indices = [
+        Index(value = ["fromIngredientRefId"]),
+        Index(value = ["toIngredientRefId"])
+    ]
+)
+data class ContextualSubstitutionRuleEntity(
+    @PrimaryKey
+    val id: String,
+    val fromIngredientRefId: String,
+    val toIngredientRefId: String,
+    val conversionType: String,
+    val ratio: Double? = null,
+    val offset: Double? = null,
+    val allowedDishTypesJson: String = "[]",
+    val excludedDishTypesJson: String = "[]",
+    val allowedIngredientRolesJson: String = "[]",
+    val excludedIngredientRolesJson: String = "[]",
+    val allowedCookingMethodsJson: String = "[]",
+    val confidence: String,
+    val riskLevel: String,
+    val notesFr: String? = null,
+    val notesEn: String? = null,
+    val warningTextFr: String? = null,
+    val warningTextEn: String? = null,
+    val updatedAt: String
+)
+
 @Entity(tableName = "tags")
 data class TagEntity(
     @PrimaryKey

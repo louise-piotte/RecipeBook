@@ -11,6 +11,7 @@ import androidx.room.RoomDatabase
         RecipeIngredientLineEntity::class,
         IngredientLineSubstitutionEntity::class,
         IngredientReferenceEntity::class,
+        ContextualSubstitutionRuleEntity::class,
         TagEntity::class,
         RecipeTagCrossRef::class,
         CollectionEntity::class,
@@ -18,12 +19,13 @@ import androidx.room.RoomDatabase
         LibrarySettingsEntity::class,
         LibraryMetadataEntity::class
     ],
-    version = 5,
+    version = 6,
     exportSchema = false
 )
 abstract class RecipeBookDatabase : RoomDatabase() {
     abstract fun recipeDao(): RecipeDao
     abstract fun ingredientReferenceDao(): IngredientReferenceDao
+    abstract fun contextualSubstitutionRuleDao(): ContextualSubstitutionRuleDao
     abstract fun tagDao(): TagDao
     abstract fun collectionDao(): CollectionDao
     abstract fun librarySettingsDao(): LibrarySettingsDao

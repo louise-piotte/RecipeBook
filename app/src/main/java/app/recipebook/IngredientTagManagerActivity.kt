@@ -9,6 +9,7 @@ import androidx.core.view.WindowCompat
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.lifecycleScope
+import app.recipebook.data.local.recipes.IngredientSubstitutionDraft
 import app.recipebook.data.local.recipes.IngredientReferenceDraft
 import app.recipebook.data.local.recipes.RecipeRepositoryProvider
 import app.recipebook.data.local.recipes.TagDraft
@@ -39,10 +40,12 @@ class IngredientTagManagerActivity : ComponentActivity() {
             RecipeBookTheme {
                 val language by languageStore.language.collectAsState(initial = AppLanguage.EN)
                 val ingredientReferences by repository.observeIngredientReferences().collectAsState(initial = emptyList())
+                val ingredientSubstitutions by repository.observeContextualSubstitutionRules().collectAsState(initial = emptyList())
                 val tags by repository.observeTags().collectAsState(initial = emptyList())
 
                 IngredientTagManagerScreen(
                     ingredientReferences = ingredientReferences,
+                    ingredientSubstitutions = ingredientSubstitutions,
                     tags = tags,
                     language = language,
                     onLanguageChange = { selected ->
@@ -62,6 +65,15 @@ class IngredientTagManagerActivity : ComponentActivity() {
                     },
                     onUpdateIngredient = { id: String, draft: IngredientReferenceDraft ->
                         lifecycleScope.launch { repository.updateIngredientReference(id, draft) }
+                    },
+                    onCreateIngredientSubstitution = { draft: IngredientSubstitutionDraft ->
+                        lifecycleScope.launch { repository.createIngredientSubstitution(draft) }
+                    },
+                    onUpdateIngredientSubstitution = { id: String, draft: IngredientSubstitutionDraft ->
+                        lifecycleScope.launch { repository.updateIngredientSubstitution(id, draft) }
+                    },
+                    onDeleteIngredientSubstitution = { id: String ->
+                        lifecycleScope.launch { repository.deleteIngredientSubstitution(id) }
                     },
                     onCreateTag = { draft: TagDraft ->
                         lifecycleScope.launch { repository.createTag(draft) }

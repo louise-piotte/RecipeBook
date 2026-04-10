@@ -1,6 +1,8 @@
 package app.recipebook.data.local.recipes
 
 import android.util.Log
+import app.recipebook.data.local.db.ContextualSubstitutionRuleDao
+import app.recipebook.data.local.db.ContextualSubstitutionRuleEntity
 import app.recipebook.data.local.db.IngredientLineSubstitutionEntity
 import app.recipebook.data.local.db.IngredientReferenceDao
 import app.recipebook.data.local.db.IngredientReferenceEntity
@@ -19,6 +21,7 @@ import app.recipebook.domain.model.AttachmentRef
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.CollectionSortOrder
+import app.recipebook.domain.model.ContextualSubstitutionRule
 import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientLineSubstitution
@@ -32,16 +35,20 @@ import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
+import app.recipebook.domain.model.SubstitutionConfidence
+import app.recipebook.domain.model.SubstitutionConversionType
+import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.TagCategory
 import java.text.Normalizer
 import java.time.Instant
 import java.util.UUID
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
-import kotlinx.coroutines.Dispatchers
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -49,6 +56,7 @@ import kotlinx.serialization.json.Json
 class RecipeRepository(
     private val recipeDao: RecipeDao,
     private val ingredientReferenceDao: IngredientReferenceDao = EmptyIngredientReferenceDao,
+    private val contextualSubstitutionRuleDao: ContextualSubstitutionRuleDao = EmptyContextualSubstitutionRuleDao,
     private val tagDao: TagDao = EmptyTagDao,
     private val collectionDao: CollectionDao = EmptyCollectionDao,
     private val seedLibrary: SeedLibraryData = SeedLibraryData(),
@@ -67,6 +75,21 @@ class RecipeRepository(
     fun observeIngredientReferences(): Flow<List<IngredientReference>> = ingredientReferenceDao.observeAll().map { refs ->
         refs.map(IngredientReferenceEntity::toDomain)
     }
+
+    fun observeContextualSubstitutionRules(): Flow<List<ContextualSubstitutionRule>> =
+        contextualSubstitutionRuleDao.observeAll().map { rules ->
+            rules.map(ContextualSubstitutionRuleEntity::toDomain)
+        }
+
+    fun observeIngredientSubstitutionCatalog(): Flow<IngredientSubstitutionCatalog> =
+        contextualSubstitutionRuleDao.observeAll().map { storedRules ->
+            val seedLibrary = resolveSeedLibrary()
+            IngredientSubstitutionCatalog(
+                ingredientForms = seedLibrary.ingredientForms,
+                substitutionRules = seedLibrary.substitutionRules,
+                contextualSubstitutionRules = storedRules.map(ContextualSubstitutionRuleEntity::toDomain)
+            )
+        }
 
     fun observeTags(): Flow<List<Tag>> = tagDao.observeAll().map { tags ->
         tags.map(TagEntity::toDomain)
@@ -131,6 +154,63 @@ class RecipeRepository(
         )
         ingredientReferenceDao.upsert(ingredientReference.toEntity())
         return ingredientReference
+    }
+
+    suspend fun createIngredientSubstitution(
+        draft: IngredientSubstitutionDraft,
+        now: String = Instant.now().toString()
+    ): ContextualSubstitutionRule {
+        ensureIngredientReferenceExists(draft.fromIngredientRefId)
+        ensureIngredientReferenceExists(draft.toIngredientRefId)
+        val rule = draft.toDomain(
+            id = UUID.randomUUID().toString(),
+            updatedAt = now
+        )
+        validateIngredientSubstitution(rule)
+        contextualSubstitutionRuleDao.upsert(rule.toEntity())
+        return rule
+    }
+
+    suspend fun updateIngredientSubstitution(
+        id: String,
+        draft: IngredientSubstitutionDraft,
+        now: String = Instant.now().toString()
+    ): ContextualSubstitutionRule {
+        contextualSubstitutionRuleDao.getById(id) ?: error("Ingredient substitution $id not found")
+        ensureIngredientReferenceExists(draft.fromIngredientRefId)
+        ensureIngredientReferenceExists(draft.toIngredientRefId)
+        val rule = draft.toDomain(
+            id = id,
+            updatedAt = now
+        )
+        validateIngredientSubstitution(rule)
+        contextualSubstitutionRuleDao.upsert(rule.toEntity())
+        return rule
+    }
+
+    suspend fun deleteIngredientSubstitution(id: String) {
+        contextualSubstitutionRuleDao.deleteById(id)
+    }
+
+    private suspend fun ensureIngredientReferenceExists(id: String) {
+        ingredientReferenceDao.getById(id) ?: error("Ingredient reference $id not found")
+    }
+
+    private fun validateIngredientSubstitution(rule: ContextualSubstitutionRule) {
+        require(rule.fromIngredientRefId != rule.toIngredientRefId) {
+            "Ingredient substitution target must be different from source ingredient"
+        }
+        require((rule.ratio ?: 0.0) > 0.0) {
+            "Ingredient substitution ratio must be greater than zero"
+        }
+        if (rule.riskLevel == SubstitutionRiskLevel.HIGH_RISK) {
+            require(!rule.warningTextFr.isNullOrBlank()) {
+                "High-risk substitutions require a French warning note"
+            }
+            require(!rule.warningTextEn.isNullOrBlank()) {
+                "High-risk substitutions require an English warning note"
+            }
+        }
     }
 
     suspend fun createTag(draft: TagDraft): Tag {
@@ -223,6 +303,14 @@ class RecipeRepository(
                 }
             }
 
+        resolvedSeedLibrary.contextualSubstitutionRules
+            .distinctBy(ContextualSubstitutionRule::id)
+            .forEach { rule ->
+                if (contextualSubstitutionRuleDao.getById(rule.id) == null) {
+                    contextualSubstitutionRuleDao.upsert(rule.toEntity())
+                }
+            }
+
         resolvedSeedLibrary.tags
             .distinctBy(Tag::id)
             .forEach { tag ->
@@ -277,7 +365,10 @@ class RecipeRepository(
         IngredientSubstitutionCatalog(
             ingredientForms = seedLibrary.ingredientForms,
             substitutionRules = seedLibrary.substitutionRules,
-            contextualSubstitutionRules = seedLibrary.contextualSubstitutionRules
+            contextualSubstitutionRules = contextualSubstitutionRuleDao.observeAll()
+                .map { rules -> rules.map(ContextualSubstitutionRuleEntity::toDomain) }
+                .firstOrNull()
+                ?: seedLibrary.contextualSubstitutionRules
         )
     }
 }
@@ -307,6 +398,18 @@ data class CollectionDraft(
     val descriptionEn: String = ""
 )
 
+data class IngredientSubstitutionDraft(
+    val fromIngredientRefId: String,
+    val toIngredientRefId: String,
+    val ratio: Double,
+    val riskLevel: SubstitutionRiskLevel,
+    val notesFr: String = "",
+    val notesEn: String = "",
+    val warningTextFr: String = "",
+    val warningTextEn: String = "",
+    val allowedDishTypes: List<String> = emptyList()
+)
+
 private fun SeedLibraryData.isEmpty(): Boolean =
     recipes.isEmpty() &&
         ingredientReferences.isEmpty() &&
@@ -315,6 +418,30 @@ private fun SeedLibraryData.isEmpty(): Boolean =
         contextualSubstitutionRules.isEmpty() &&
         tags.isEmpty() &&
         collections.isEmpty()
+
+private fun IngredientSubstitutionDraft.toDomain(
+    id: String,
+    updatedAt: String
+): ContextualSubstitutionRule = ContextualSubstitutionRule(
+    id = id,
+    fromIngredientRefId = fromIngredientRefId,
+    toIngredientRefId = toIngredientRefId,
+    conversionType = SubstitutionConversionType.RATIO,
+    ratio = ratio,
+    offset = null,
+    allowedDishTypes = allowedDishTypes,
+    excludedDishTypes = emptyList(),
+    allowedIngredientRoles = emptyList(),
+    excludedIngredientRoles = emptyList(),
+    allowedCookingMethods = emptyList(),
+    confidence = SubstitutionConfidence.TESTED,
+    riskLevel = riskLevel,
+    notesFr = notesFr.trim().ifBlank { null },
+    notesEn = notesEn.trim().ifBlank { null },
+    warningTextFr = warningTextFr.trim().ifBlank { null },
+    warningTextEn = warningTextEn.trim().ifBlank { null },
+    updatedAt = updatedAt
+)
 
 internal fun RecipeWithRelations.toDomainRecipe(): Recipe = Recipe(
     id = recipe.id,
@@ -494,6 +621,48 @@ private fun Collection.toEntity(): CollectionEntity = CollectionEntity(
     sortOrder = sortOrder?.toStorageValue()
 )
 
+private fun ContextualSubstitutionRuleEntity.toDomain(): ContextualSubstitutionRule = ContextualSubstitutionRule(
+    id = id,
+    fromIngredientRefId = fromIngredientRefId,
+    toIngredientRefId = toIngredientRefId,
+    conversionType = SubstitutionConversionType.valueOf(conversionType),
+    ratio = ratio,
+    offset = offset,
+    allowedDishTypes = storageJson.decodeFromString(allowedDishTypesJson),
+    excludedDishTypes = storageJson.decodeFromString(excludedDishTypesJson),
+    allowedIngredientRoles = storageJson.decodeFromString(allowedIngredientRolesJson),
+    excludedIngredientRoles = storageJson.decodeFromString(excludedIngredientRolesJson),
+    allowedCookingMethods = storageJson.decodeFromString(allowedCookingMethodsJson),
+    confidence = SubstitutionConfidence.valueOf(confidence),
+    riskLevel = SubstitutionRiskLevel.valueOf(riskLevel),
+    notesFr = notesFr,
+    notesEn = notesEn,
+    warningTextFr = warningTextFr,
+    warningTextEn = warningTextEn,
+    updatedAt = updatedAt
+)
+
+private fun ContextualSubstitutionRule.toEntity(): ContextualSubstitutionRuleEntity = ContextualSubstitutionRuleEntity(
+    id = id,
+    fromIngredientRefId = fromIngredientRefId,
+    toIngredientRefId = toIngredientRefId,
+    conversionType = conversionType.name,
+    ratio = ratio,
+    offset = offset,
+    allowedDishTypesJson = storageJson.encodeToString(allowedDishTypes),
+    excludedDishTypesJson = storageJson.encodeToString(excludedDishTypes),
+    allowedIngredientRolesJson = storageJson.encodeToString(allowedIngredientRoles),
+    excludedIngredientRolesJson = storageJson.encodeToString(excludedIngredientRoles),
+    allowedCookingMethodsJson = storageJson.encodeToString(allowedCookingMethods),
+    confidence = confidence.name,
+    riskLevel = riskLevel.name,
+    notesFr = notesFr,
+    notesEn = notesEn,
+    warningTextFr = warningTextFr,
+    warningTextEn = warningTextEn,
+    updatedAt = updatedAt
+)
+
 private val storageJson = Json {
     ignoreUnknownKeys = true
     encodeDefaults = true
@@ -635,6 +804,20 @@ private object EmptyIngredientReferenceDao : IngredientReferenceDao {
     override suspend fun getById(id: String): IngredientReferenceEntity? = null
 }
 
+private object EmptyContextualSubstitutionRuleDao : ContextualSubstitutionRuleDao {
+    override suspend fun upsert(rule: ContextualSubstitutionRuleEntity) = Unit
+
+    override suspend fun upsertAll(rules: List<ContextualSubstitutionRuleEntity>) = Unit
+
+    override fun observeAll(): Flow<List<ContextualSubstitutionRuleEntity>> = flowOf(emptyList())
+
+    override fun observeBySourceIngredientId(ingredientRefId: String): Flow<List<ContextualSubstitutionRuleEntity>> = flowOf(emptyList())
+
+    override suspend fun getById(id: String): ContextualSubstitutionRuleEntity? = null
+
+    override suspend fun deleteById(id: String) = Unit
+}
+
 private object EmptyTagDao : TagDao {
     override suspend fun upsert(tag: TagEntity) = Unit
 
@@ -689,6 +872,7 @@ private fun normalizeAliases(
         }
     }
 }
+
 
 
 

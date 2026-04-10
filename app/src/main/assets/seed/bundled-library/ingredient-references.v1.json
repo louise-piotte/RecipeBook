@@ -2341,6 +2341,26 @@
     "updatedAt": "2026-03-23T00:00:00Z"
   },
   {
+    "id": "ingredient-ref-apple-cider-vinegar",
+    "nameFr": "vinaigre de cidre de pomme",
+    "nameEn": "apple cider vinegar",
+    "aliasesFr": [
+      "vinaigre de cidre"
+    ],
+    "aliasesEn": [
+      "cider vinegar"
+    ],
+    "defaultDensity": 1.01,
+    "unitMappings": [
+      {
+        "fromUnit": "cup",
+        "toUnit": "g",
+        "factor": 240
+      }
+    ],
+    "updatedAt": "2026-04-10T00:00:00Z"
+  },
+  {
     "id": "ingredient-ref-pork-loin-chops",
     "nameFr": "c\u00f4telettes de longe de porc d\u00e9soss\u00e9es",
     "nameEn": "pork loin chops",
@@ -2690,12 +2710,9 @@
     "nameFr": "sauce soya",
     "nameEn": "soy sauce",
     "aliasesFr": [
-      "sauce soja",
-      "tamari"
+      "sauce soja"
     ],
-    "aliasesEn": [
-      "tamari"
-    ],
+    "aliasesEn": [],
     "defaultDensity": 1.2,
     "unitMappings": [
       {
@@ -2705,6 +2722,26 @@
       }
     ],
     "updatedAt": "2026-03-23T00:00:00Z"
+  },
+  {
+    "id": "ingredient-ref-tamari",
+    "nameFr": "tamari",
+    "nameEn": "tamari",
+    "aliasesFr": [
+      "tamari sans gluten"
+    ],
+    "aliasesEn": [
+      "gluten-free tamari"
+    ],
+    "defaultDensity": 1.2,
+    "unitMappings": [
+      {
+        "fromUnit": "tbsp",
+        "toUnit": "g",
+        "factor": 18
+      }
+    ],
+    "updatedAt": "2026-04-10T00:00:00Z"
   },
   {
     "id": "ingredient-ref-sprinkles",

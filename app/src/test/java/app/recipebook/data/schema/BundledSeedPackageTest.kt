@@ -25,6 +25,10 @@ class BundledSeedPackageTest {
         assertTrue(library.collections.any { it.nameEn == "Christmas Box" })
         assertTrue(library.ingredientReferences.any { it.nameEn == "all-purpose flour" })
         assertTrue(library.ingredientReferences.any { it.nameEn == "icing sugar" })
+        assertTrue(library.ingredientReferences.any { it.nameEn == "tamari" })
+        assertTrue(library.ingredientReferences.any { it.nameEn == "apple cider vinegar" })
+        assertTrue(library.contextualSubstitutionRules.any { it.id == "contextual-substitution-rule-soy-sauce-to-tamari" })
+        assertTrue(library.contextualSubstitutionRules.any { it.id == "contextual-substitution-rule-plain-yogurt-to-sour-cream" })
         assertTrue(library.recipes.all { recipe ->
             recipe.languages.fr.title.isNotBlank() &&
                 recipe.languages.en.title.isNotBlank() &&

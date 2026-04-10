@@ -1,5 +1,7 @@
 package app.recipebook.data.local.recipes
 
+import app.recipebook.data.local.db.ContextualSubstitutionRuleDao
+import app.recipebook.data.local.db.ContextualSubstitutionRuleEntity
 import app.recipebook.data.local.db.IngredientLineSubstitutionEntity
 import app.recipebook.data.local.db.IngredientReferenceDao
 import app.recipebook.data.local.db.IngredientReferenceEntity
@@ -25,6 +27,7 @@ import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeSource
+import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.domain.model.Tag
 import app.recipebook.ui.recipes.normalizeMultilineText
 import app.recipebook.ui.recipes.parseIngredients
@@ -35,7 +38,9 @@ import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
+import org.junit.Assert.fail
 import org.junit.Test
 
 class RecipeRepositoryTest {
@@ -380,6 +385,114 @@ class RecipeRepositoryTest {
     }
 
     @Test
+    fun createUpdateAndDeleteIngredientSubstitution_persistsIngredientOwnedRules() = runBlocking {
+        val ingredientDao = FakeIngredientReferenceDao()
+        val substitutionDao = FakeContextualSubstitutionRuleDao()
+        val repository = RecipeRepository(
+            recipeDao = FakeRecipeDao(),
+            ingredientReferenceDao = ingredientDao,
+            contextualSubstitutionRuleDao = substitutionDao
+        )
+        ingredientDao.upsert(
+            IngredientReferenceEntity(
+                id = "ingredient-ref-butter",
+                nameFr = "Beurre non sal\u00e9",
+                nameEn = "Unsalted butter",
+                updatedAt = "2026-04-10T09:00:00Z"
+            )
+        )
+        ingredientDao.upsert(
+            IngredientReferenceEntity(
+                id = "ingredient-ref-salted-butter",
+                nameFr = "Beurre sal\u00e9",
+                nameEn = "Salted butter",
+                updatedAt = "2026-04-10T09:00:00Z"
+            )
+        )
+
+        val created = repository.createIngredientSubstitution(
+            IngredientSubstitutionDraft(
+                fromIngredientRefId = "ingredient-ref-butter",
+                toIngredientRefId = "ingredient-ref-salted-butter",
+                ratio = 1.0,
+                riskLevel = SubstitutionRiskLevel.CAUTION,
+                notesFr = "R\u00e9duire le sel ailleurs.",
+                notesEn = "Reduce salt elsewhere.",
+                allowedDishTypes = listOf("sauce")
+            ),
+            now = "2026-04-10T10:00:00Z"
+        )
+
+        assertEquals(1, substitutionDao.items.size)
+        assertEquals("ingredient-ref-butter", created.fromIngredientRefId)
+        assertEquals(listOf("sauce"), created.allowedDishTypes)
+
+        val updated = repository.updateIngredientSubstitution(
+            id = created.id,
+            draft = IngredientSubstitutionDraft(
+                fromIngredientRefId = "ingredient-ref-butter",
+                toIngredientRefId = "ingredient-ref-salted-butter",
+                ratio = 1.5,
+                riskLevel = SubstitutionRiskLevel.HIGH_RISK,
+                notesFr = "Seulement si la sauce reste sal\u00e9e.",
+                notesEn = "Only if the sauce still needs salt.",
+                warningTextFr = "Go\u00fbter avant d'ajouter du sel.",
+                warningTextEn = "Taste before adding salt.",
+                allowedDishTypes = listOf("sauce", "soup")
+            ),
+            now = "2026-04-10T11:00:00Z"
+        )
+
+        assertEquals(1.5, updated.ratio)
+        assertEquals(SubstitutionRiskLevel.HIGH_RISK, updated.riskLevel)
+        assertEquals("Taste before adding salt.", substitutionDao.items[created.id]?.warningTextEn)
+
+        repository.deleteIngredientSubstitution(created.id)
+
+        assertTrue(created.id in substitutionDao.deletedIds)
+        assertNull(substitutionDao.items[created.id])
+    }
+
+    @Test
+    fun createIngredientSubstitution_requiresWarningsForHighRiskRules() = runBlocking {
+        val ingredientDao = FakeIngredientReferenceDao()
+        val repository = RecipeRepository(
+            recipeDao = FakeRecipeDao(),
+            ingredientReferenceDao = ingredientDao,
+            contextualSubstitutionRuleDao = FakeContextualSubstitutionRuleDao()
+        )
+        ingredientDao.upsert(
+            IngredientReferenceEntity(
+                id = "ingredient-ref-flour",
+                nameFr = "Farine",
+                nameEn = "Flour",
+                updatedAt = "2026-04-10T09:00:00Z"
+            )
+        )
+        ingredientDao.upsert(
+            IngredientReferenceEntity(
+                id = "ingredient-ref-cornstarch",
+                nameFr = "F\u00e9cule de ma\u00efs",
+                nameEn = "Cornstarch",
+                updatedAt = "2026-04-10T09:00:00Z"
+            )
+        )
+
+        try {
+            repository.createIngredientSubstitution(
+                IngredientSubstitutionDraft(
+                    fromIngredientRefId = "ingredient-ref-flour",
+                    toIngredientRefId = "ingredient-ref-cornstarch",
+                    ratio = 0.5,
+                    riskLevel = SubstitutionRiskLevel.HIGH_RISK
+                )
+            )
+            fail("Expected high-risk ingredient substitutions without warnings to be rejected")
+        } catch (_: IllegalArgumentException) {
+        }
+    }
+
+    @Test
     fun parseIngredients_createsOneIngredientPerLine() {
         val ingredients = parseIngredients("1 cup flour\n\n2 eggs\n pinch salt ")
 
@@ -569,6 +682,31 @@ private class FakeTagDao : TagDao {
     override fun observeAll(): Flow<List<TagEntity>> = flowOf(items.values.toList())
 
     override suspend fun getById(id: String): TagEntity? = items[id]
+}
+
+private class FakeContextualSubstitutionRuleDao : ContextualSubstitutionRuleDao {
+    val items = linkedMapOf<String, ContextualSubstitutionRuleEntity>()
+    val deletedIds = mutableListOf<String>()
+
+    override suspend fun upsert(rule: ContextualSubstitutionRuleEntity) {
+        items[rule.id] = rule
+    }
+
+    override suspend fun upsertAll(rules: List<ContextualSubstitutionRuleEntity>) {
+        rules.forEach { items[it.id] = it }
+    }
+
+    override fun observeAll(): Flow<List<ContextualSubstitutionRuleEntity>> = flowOf(items.values.toList())
+
+    override fun observeBySourceIngredientId(ingredientRefId: String): Flow<List<ContextualSubstitutionRuleEntity>> =
+        flowOf(items.values.filter { it.fromIngredientRefId == ingredientRefId })
+
+    override suspend fun getById(id: String): ContextualSubstitutionRuleEntity? = items[id]
+
+    override suspend fun deleteById(id: String) {
+        deletedIds += id
+        items.remove(id)
+    }
 }
 
 private class FakeCollectionDao : CollectionDao {
