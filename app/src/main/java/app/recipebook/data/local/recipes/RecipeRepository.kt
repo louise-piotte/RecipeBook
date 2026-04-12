@@ -20,6 +20,7 @@ import app.recipebook.data.local.db.TagDao
 import app.recipebook.data.local.db.TagEntity
 import app.recipebook.domain.model.AttachmentRef
 import app.recipebook.domain.model.BilingualText
+import app.recipebook.domain.model.BilingualSyncStatus
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.CollectionSortOrder
 import app.recipebook.domain.model.ContextualSubstitutionRule
@@ -827,19 +828,28 @@ private fun AttachmentRef.toStored(): StoredAttachmentRef = StoredAttachmentRef(
 private data class StoredImportMetadata(
     val sourceType: String? = null,
     val parserVersion: String? = null,
-    val originalUnits: String? = null
+    val originalUnits: String? = null,
+    val authoritativeLanguage: String? = null,
+    val syncStatusFr: String? = null,
+    val syncStatusEn: String? = null
 ) {
     fun toDomain(): ImportMetadata = ImportMetadata(
         sourceType = sourceType,
         parserVersion = parserVersion,
-        originalUnits = originalUnits
+        originalUnits = originalUnits,
+        authoritativeLanguage = authoritativeLanguage?.let { app.recipebook.domain.model.AppLanguage.valueOf(it) },
+        syncStatusFr = syncStatusFr?.let(BilingualSyncStatus::valueOf),
+        syncStatusEn = syncStatusEn?.let(BilingualSyncStatus::valueOf)
     )
 }
 
 private fun ImportMetadata.toStored(): StoredImportMetadata = StoredImportMetadata(
     sourceType = sourceType,
     parserVersion = parserVersion,
-    originalUnits = originalUnits
+    originalUnits = originalUnits,
+    authoritativeLanguage = authoritativeLanguage?.name,
+    syncStatusFr = syncStatusFr?.name,
+    syncStatusEn = syncStatusEn?.name
 )
 
 private object EmptyIngredientReferenceDao : IngredientReferenceDao {

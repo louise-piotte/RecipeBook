@@ -58,9 +58,11 @@ import app.recipebook.data.local.recipes.PendingRecipePhotoCapture
 import app.recipebook.data.local.recipes.TagDraft
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
+import app.recipebook.domain.model.BilingualSyncStatus
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientReference
+import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
@@ -87,7 +89,7 @@ fun RecipeEditorScreen(
     language: AppLanguage,
     onLanguageChange: (AppLanguage) -> Unit,
     onBack: () -> Unit,
-    onSave: (Recipe) -> Unit,
+    onSave: (Recipe, AppLanguage) -> Unit,
     onCreateIngredientReference: suspend (IngredientReferenceDraft) -> IngredientReference,
     onCreateTag: suspend (TagDraft) -> Tag,
     onImportPhoto: suspend (Uri) -> PhotoRef,
@@ -144,15 +146,25 @@ fun RecipeEditorScreen(
     var pendingRecipeLinkIndex by remember { mutableStateOf<Int?>(null) }
     var ingredientsExpanded by rememberSaveable { mutableStateOf(false) }
     var pendingCameraCapture by remember { mutableStateOf<PendingRecipePhotoCapture?>(null) }
+    var showRegenerationUnavailableDialog by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
     val activeLocalizedText = remember(localizedTexts, language) {
         localizedTexts.forLanguage(language)
+    }
+    val otherLanguage = remember(language) { language.opposite() }
+    val otherLanguageStatus = remember(localizedTexts, language, initialRecipe.importMetadata) {
+        displayedOtherLanguageStatus(
+            initialLanguages = initialRecipe.languages,
+            currentLanguages = localizedTexts,
+            currentLanguage = language,
+            importMetadata = initialRecipe.importMetadata
+        )
     }
     val saveRecipe = {
         onSave(
             initialRecipe.copy(
                 updatedAt = Instant.now().toString(),
-                languages = localizedTexts.normalizedForSave(),
+                languages = localizedTexts,
                 source = if (sourceName.isBlank() && sourceUrl.isBlank()) null else RecipeSource(
                     sourceName = sourceName.trim(),
                     sourceUrl = sourceUrl.trim()
@@ -165,7 +177,8 @@ fun RecipeEditorScreen(
                 recipeLinks = recipeLinkRows.toRecipeLinks(),
                 mainPhotoId = normalizedMainPhotoId(mainPhotoId, recipePhotos),
                 photos = recipePhotos.toList()
-            )
+            ),
+            language
         )
     }
 
@@ -254,6 +267,12 @@ fun RecipeEditorScreen(
                 Text(
                     text = titlePreview.ifBlank { localizedString(R.string.editor_preview_placeholder, language) },
                     style = MaterialTheme.typography.titleLarge
+                )
+                BilingualSyncStatusCard(
+                    language = language,
+                    otherLanguage = otherLanguage,
+                    otherLanguageStatus = otherLanguageStatus,
+                    onRegenerateClick = { showRegenerationUnavailableDialog = true }
                 )
 
                 LabeledField(localizedString(R.string.title_label, language), activeLocalizedText.title) {
@@ -550,6 +569,75 @@ fun RecipeEditorScreen(
                 }
             }
         )
+    }
+
+    if (showRegenerationUnavailableDialog) {
+        AlertDialog(
+            onDismissRequest = { showRegenerationUnavailableDialog = false },
+            title = {
+                Text(localizedString(R.string.regeneration_unavailable_title, language))
+            },
+            text = {
+                Text(localizedString(R.string.regeneration_unavailable_message, language))
+            },
+            confirmButton = {
+                TextButton(onClick = { showRegenerationUnavailableDialog = false }) {
+                    Text(localizedString(R.string.close_label, language))
+                }
+            }
+        )
+    }
+}
+
+@Composable
+private fun BilingualSyncStatusCard(
+    language: AppLanguage,
+    otherLanguage: AppLanguage,
+    otherLanguageStatus: BilingualSyncStatus,
+    onRegenerateClick: () -> Unit
+) {
+    val message = when (otherLanguageStatus) {
+        BilingualSyncStatus.UP_TO_DATE -> localizedString(
+            R.string.other_language_up_to_date_label,
+            language,
+            localizedLanguageName(otherLanguage, language)
+        )
+        BilingualSyncStatus.NEEDS_REGENERATION -> localizedString(
+            R.string.other_language_needs_regeneration_label,
+            language,
+            localizedLanguageName(otherLanguage, language)
+        )
+        BilingualSyncStatus.MISSING -> localizedString(
+            R.string.other_language_missing_label,
+            language,
+            localizedLanguageName(otherLanguage, language)
+        )
+    }
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 8.dp, vertical = 6.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = message,
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.weight(1f)
+            )
+            if (otherLanguageStatus != BilingualSyncStatus.UP_TO_DATE) {
+                TextButton(onClick = onRegenerateClick) {
+                    Text(
+                        localizedString(
+                            R.string.regenerate_other_language_label,
+                            language,
+                            localizedLanguageName(otherLanguage, language)
+                        )
+                    )
+                }
+            }
+        }
     }
 }
 
@@ -1278,20 +1366,45 @@ internal fun BilingualText.updateForLanguage(
     AppLanguage.EN -> copy(en = en.update())
 }
 
-internal fun BilingualText.normalizedForSave(): BilingualText = copy(
-    fr = fr.copy(
-        title = fr.title.trim(),
-        description = fr.description.trim(),
-        instructions = normalizeMultilineText(fr.instructions),
-        notes = normalizeMultilineText(fr.notes)
-    ),
-    en = en.copy(
-        title = en.title.trim(),
-        description = en.description.trim(),
-        instructions = normalizeMultilineText(en.instructions),
-        notes = normalizeMultilineText(en.notes)
-    )
-)
+internal fun AppLanguage.opposite(): AppLanguage = when (this) {
+    AppLanguage.FR -> AppLanguage.EN
+    AppLanguage.EN -> AppLanguage.FR
+}
+
+internal fun displayedOtherLanguageStatus(
+    initialLanguages: BilingualText,
+    currentLanguages: BilingualText,
+    currentLanguage: AppLanguage,
+    importMetadata: ImportMetadata?
+): BilingualSyncStatus {
+    val activeChanged = currentLanguages.forLanguage(currentLanguage) != initialLanguages.forLanguage(currentLanguage)
+    val otherLanguage = currentLanguage.opposite()
+    val currentOtherText = currentLanguages.forLanguage(otherLanguage)
+    return if (activeChanged) {
+        if (currentOtherText.isBlankText()) BilingualSyncStatus.MISSING else BilingualSyncStatus.NEEDS_REGENERATION
+    } else {
+        importMetadata.statusForLanguage(otherLanguage)
+            ?: if (currentOtherText.isBlankText()) BilingualSyncStatus.MISSING else BilingualSyncStatus.UP_TO_DATE
+    }
+}
+
+internal fun localizedLanguageName(targetLanguage: AppLanguage, uiLanguage: AppLanguage): String = when (targetLanguage) {
+    AppLanguage.EN -> localizedLanguageOptionLabel(AppLanguage.EN, uiLanguage)
+    AppLanguage.FR -> localizedLanguageOptionLabel(AppLanguage.FR, uiLanguage)
+}
+
+private fun localizedLanguageOptionLabel(targetLanguage: AppLanguage, uiLanguage: AppLanguage): String = when (targetLanguage) {
+    AppLanguage.EN -> if (uiLanguage == AppLanguage.FR) "anglais" else "English"
+    AppLanguage.FR -> if (uiLanguage == AppLanguage.FR) "fran\u00e7ais" else "French"
+}
+
+private fun LocalizedSystemText.isBlankText(): Boolean =
+    title.isBlank() && description.isBlank() && instructions.isBlank() && notes.isBlank()
+
+private fun ImportMetadata?.statusForLanguage(language: AppLanguage): BilingualSyncStatus? = when (language) {
+    AppLanguage.FR -> this?.syncStatusFr
+    AppLanguage.EN -> this?.syncStatusEn
+}
 
 internal fun parseIngredients(input: String): List<IngredientLine> {
     return parseTextEntries(input)

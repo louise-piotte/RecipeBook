@@ -13,6 +13,7 @@ This package contains the main recipe-library orchestration layer.
 - `BundledRecipeLibraryLoader.kt`, `BundledIngredientCatalog.kt`, `BundledTagCatalog.kt`: seed and catalog hydration from assets.
 - `IngredientSubstitutionResolver.kt`: domain-facing substitution/conversion helper logic backed by stored and seeded data.
 - `RecipePhotoStore.kt`: local file ownership for recipe photos.
+- `RecipeLocalizationCoordinator.kt`: save-time bilingual finalization seam that treats the active editor language as authoritative and preserves the opposite language until a real regeneration backend is available.
 - `SharedRecipeImport.kt`: deterministic shared-text and shared-URL intake, including `schema.org/Recipe` JSON-LD extraction and imported-draft mapping.
 - `RecipeKeeper*Import.kt`: import parsing from RecipeKeeper exports into domain-friendly data.
 
@@ -21,6 +22,7 @@ This package contains the main recipe-library orchestration layer.
 - Validation that protects graph integrity lives close to repository writes.
 - Bundled seed data and user-created data are combined by repository orchestration, but the user database becomes authoritative after seeding.
 - Import helpers should extract whatever is reliable without AI, then hand a compact draft to the existing editor/save pipeline.
+- Bilingual save orchestration should happen here rather than in Compose so later translation/regeneration backends can plug into one persistence-facing seam.
 
 ## Maintenance Notes
 - When changing recipe structure, review graph replacement logic carefully; most bugs here are partial-write or mapping drift issues.

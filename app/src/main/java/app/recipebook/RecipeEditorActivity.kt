@@ -15,6 +15,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.lifecycleScope
 import app.recipebook.data.local.recipes.ImportedRecipeDraft
 import app.recipebook.data.local.recipes.RecipePhotoStore
+import app.recipebook.data.local.recipes.RecipeLocalizationCoordinator
 import app.recipebook.data.local.recipes.RecipeRepositoryProvider
 import app.recipebook.data.local.recipes.applyToRecipe
 import app.recipebook.data.local.settings.AppLanguageStore
@@ -43,6 +44,7 @@ class RecipeEditorActivity : ComponentActivity() {
         photoStore = RecipePhotoStore(this)
 
         val repository = RecipeRepositoryProvider.create(this)
+        val localizationCoordinator = RecipeLocalizationCoordinator()
         val languageStore = AppLanguageStore(this)
         val recipeId = intent.getStringExtra(EXTRA_RECIPE_ID)
         val isNewRecipe = recipeId == null
@@ -84,7 +86,7 @@ class RecipeEditorActivity : ComponentActivity() {
                             lifecycleScope.launch { languageStore.setLanguage(selected) }
                         },
                         onBack = ::finish,
-                        onSave = { updatedRecipe ->
+                        onSave = { updatedRecipe, authoritativeLanguage ->
                             lifecycleScope.launch {
                                 val persistedPhotos = photoStore.persistRecipePhotos(updatedRecipe.id, updatedRecipe.photos)
                                 val persistedMainPhotoId = persistedPhotos.firstOrNull { it.id == updatedRecipe.mainPhotoId }?.id
@@ -93,10 +95,14 @@ class RecipeEditorActivity : ComponentActivity() {
                                     mainPhotoId = persistedMainPhotoId,
                                     photos = persistedPhotos
                                 )
+                                val finalizedRecipe = localizationCoordinator.finalizeForSave(
+                                    recipe = persistedRecipe,
+                                    authoritativeLanguage = authoritativeLanguage
+                                )
                                 val removedPhotos = currentRecipe.photos.filter { oldPhoto ->
                                     persistedPhotos.none { it.id == oldPhoto.id }
                                 }
-                                repository.upsertRecipe(persistedRecipe)
+                                repository.upsertRecipe(finalizedRecipe)
                                 photoStore.deleteManagedPhotos(removedPhotos)
                                 didCommitChanges = true
                                 finish()

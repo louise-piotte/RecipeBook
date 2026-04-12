@@ -189,7 +189,13 @@ data class ImportMetadataDto(
     @SerialName("parserVersion")
     val parserVersion: String? = null,
     @SerialName("originalUnits")
-    val originalUnits: String? = null
+    val originalUnits: String? = null,
+    @SerialName("authoritativeLanguage")
+    val authoritativeLanguage: String? = null,
+    @SerialName("syncStatusFr")
+    val syncStatusFr: String? = null,
+    @SerialName("syncStatusEn")
+    val syncStatusEn: String? = null
 )
 
 @Serializable

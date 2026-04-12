@@ -2,8 +2,10 @@ package app.recipebook.ui.recipes
 
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
+import app.recipebook.domain.model.BilingualSyncStatus
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.IngredientReference
+import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.TagCategory
@@ -165,29 +167,54 @@ class RecipeEditorScreenTest {
     }
 
     @Test
-    fun normalizedForSave_trimsAndNormalizesBothLanguages() {
-        val bilingual = BilingualText(
-            fr = LocalizedSystemText(
-                title = "  Titre  ",
-                description = "  Desc  ",
-                instructions = "  Etape 1  \n\n Etape 2 ",
-                notes = "  Note  "
-            ),
-            en = LocalizedSystemText(
-                title = "  Title  ",
-                description = "  Desc  ",
-                instructions = " Step 1 \n\n Step 2 ",
-                notes = "  Note  "
-            )
+    fun displayedOtherLanguageStatus_marksOtherLanguageStaleWhenActiveLanguageChanges() {
+        val initial = bilingualForStatusTest()
+        val current = initial.updateForLanguage(AppLanguage.EN) { copy(title = "Updated title") }
+
+        val status = displayedOtherLanguageStatus(
+            initialLanguages = initial,
+            currentLanguages = current,
+            currentLanguage = AppLanguage.EN,
+            importMetadata = ImportMetadata(syncStatusFr = BilingualSyncStatus.UP_TO_DATE)
         )
 
-        val normalized = bilingual.normalizedForSave()
-
-        assertEquals("Titre", normalized.fr.title)
-        assertEquals("Desc", normalized.fr.description)
-        assertEquals("Etape 1\nEtape 2", normalized.fr.instructions)
-        assertEquals("Note", normalized.fr.notes)
-        assertEquals("Title", normalized.en.title)
-        assertEquals("Step 1\nStep 2", normalized.en.instructions)
+        assertEquals(BilingualSyncStatus.NEEDS_REGENERATION, status)
     }
+
+    @Test
+    fun displayedOtherLanguageStatus_marksOtherLanguageMissingWhenBlank() {
+        val initial = bilingualForStatusTest()
+        val current = initial.copy(
+            fr = LocalizedSystemText(title = "", description = "", instructions = "", notes = "")
+        ).updateForLanguage(AppLanguage.EN) { copy(title = "Updated title") }
+
+        val status = displayedOtherLanguageStatus(
+            initialLanguages = initial,
+            currentLanguages = current,
+            currentLanguage = AppLanguage.EN,
+            importMetadata = null
+        )
+
+        assertEquals(BilingualSyncStatus.MISSING, status)
+    }
+
+    @Test
+    fun displayedOtherLanguageStatus_usesStoredStatusWhenCurrentLanguageUnchanged() {
+        val initial = bilingualForStatusTest()
+
+        val status = displayedOtherLanguageStatus(
+            initialLanguages = initial,
+            currentLanguages = initial,
+            currentLanguage = AppLanguage.EN,
+            importMetadata = ImportMetadata(syncStatusFr = BilingualSyncStatus.NEEDS_REGENERATION)
+        )
+
+        assertEquals(BilingualSyncStatus.NEEDS_REGENERATION, status)
+    }
+
+    private fun bilingualForStatusTest(): BilingualText = BilingualText(
+        fr = LocalizedSystemText(title = "Titre", description = "", instructions = "", notes = ""),
+        en = LocalizedSystemText(title = "Title", description = "", instructions = "", notes = "")
+    )
+
 }

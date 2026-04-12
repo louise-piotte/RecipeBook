@@ -3,6 +3,7 @@ package app.recipebook.data.schema
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.AttachmentRef
 import app.recipebook.domain.model.BilingualText
+import app.recipebook.domain.model.BilingualSyncStatus
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.CollectionSortOrder
 import app.recipebook.domain.model.ContextualSubstitutionRule
@@ -253,13 +254,19 @@ private fun portableAttachmentRelativePath(attachment: AttachmentRef): String {
 private fun ImportMetadataDto.toDomain(): ImportMetadata = ImportMetadata(
     sourceType = sourceType,
     parserVersion = parserVersion,
-    originalUnits = originalUnits
+    originalUnits = originalUnits,
+    authoritativeLanguage = authoritativeLanguage?.let(AppLanguage::valueOf),
+    syncStatusFr = syncStatusFr?.let(BilingualSyncStatus::valueOf),
+    syncStatusEn = syncStatusEn?.let(BilingualSyncStatus::valueOf)
 )
 
 private fun ImportMetadata.toDto(): ImportMetadataDto = ImportMetadataDto(
     sourceType = sourceType,
     parserVersion = parserVersion,
-    originalUnits = originalUnits
+    originalUnits = originalUnits,
+    authoritativeLanguage = authoritativeLanguage?.name,
+    syncStatusFr = syncStatusFr?.name,
+    syncStatusEn = syncStatusEn?.name
 )
 
 private fun LibraryDto.toDomain(): RecipeLibrary = RecipeLibrary(

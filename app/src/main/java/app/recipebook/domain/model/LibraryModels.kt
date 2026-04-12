@@ -91,10 +91,19 @@ data class AttachmentRef(
     val cloudRef: String? = null
 )
 
+enum class BilingualSyncStatus {
+    UP_TO_DATE,
+    NEEDS_REGENERATION,
+    MISSING
+}
+
 data class ImportMetadata(
     val sourceType: String? = null,
     val parserVersion: String? = null,
-    val originalUnits: String? = null
+    val originalUnits: String? = null,
+    val authoritativeLanguage: AppLanguage? = null,
+    val syncStatusFr: BilingualSyncStatus? = null,
+    val syncStatusEn: BilingualSyncStatus? = null
 )
 
 data class Recipe(
