@@ -10,6 +10,7 @@ import androidx.room.RoomDatabase
         RecipeEntity::class,
         RecipeIngredientLineEntity::class,
         IngredientLineSubstitutionEntity::class,
+        RecipeLinkEntity::class,
         IngredientReferenceEntity::class,
         ContextualSubstitutionRuleEntity::class,
         TagEntity::class,
@@ -19,7 +20,7 @@ import androidx.room.RoomDatabase
         LibrarySettingsEntity::class,
         LibraryMetadataEntity::class
     ],
-    version = 6,
+    version = 7,
     exportSchema = false
 )
 abstract class RecipeBookDatabase : RoomDatabase() {

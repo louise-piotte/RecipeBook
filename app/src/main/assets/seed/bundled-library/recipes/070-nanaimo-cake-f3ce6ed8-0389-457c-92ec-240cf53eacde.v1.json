@@ -1,7 +1,7 @@
 {
   "id": "f3ce6ed8-0389-457c-92ec-240cf53eacde",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-05T00:00:00Z",
+  "updatedAt": "2026-04-12T00:00:00Z",
   "languages": {
     "fr": {
       "title": "G\u00e2teau Nanaimo",
@@ -233,6 +233,16 @@
   "ratings": {
     "userRating": 5
   },
+  "recipeLinks": [
+    {
+      "id": "recipe-link-f3ce6ed8-0389-457c-92ec-240cf53eacde-nanaimo-bars-inspiration",
+      "targetRecipeId": "9a714acf-d991-4932-bb4c-63af19051022",
+      "linkType": "OTHER",
+      "labelFr": "Inspiration",
+      "labelEn": "Inspiration",
+      "position": 0
+    }
+  ],
   "mainPhotoId": "photo-f3ce6ed8-0389-457c-92ec-240cf53eacde-0",
   "photos": [
     {

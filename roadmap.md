@@ -1,11 +1,6 @@
 # RecipeBook Roadmap (Active To-Do)
 
 
-- Deepen contextual substitution enforcement:
-  - Expand the seeded substitution catalog beyond the initial butter, chickpea, and flour/cornstarch examples
-- Review recipe-to-recipe links:
-  - Decide whether linked recipes should be part of the product requirements
-  - If yes, add the requirement to `Requirements.md` and plan the supporting seed/schema model
 - Implement full-library export/import (replace mode first).
 - Add export/import integrity tests.
 - Implement basic Google Drive sync:

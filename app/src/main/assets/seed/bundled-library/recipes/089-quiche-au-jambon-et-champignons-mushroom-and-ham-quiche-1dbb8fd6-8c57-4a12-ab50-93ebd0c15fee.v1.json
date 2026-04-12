@@ -1,7 +1,7 @@
 {
   "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-05T00:00:00Z",
+  "updatedAt": "2026-04-12T00:00:00Z",
   "source": {
     "sourceName": "",
     "sourceUrl": ""
@@ -109,6 +109,14 @@
   "ratings": {
     "userRating": 5
   },
+  "recipeLinks": [
+    {
+      "id": "recipe-link-1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-pie-crust",
+      "targetRecipeId": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca",
+      "linkType": "COMPONENT",
+      "position": 0
+    }
+  ],
   "mainPhotoId": "photo-1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-0",
   "photos": [
     {

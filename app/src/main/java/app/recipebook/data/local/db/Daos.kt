@@ -24,6 +24,9 @@ abstract class RecipeDao {
     protected abstract suspend fun upsertIngredientLineSubstitutions(substitutions: List<IngredientLineSubstitutionEntity>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
+    protected abstract suspend fun upsertRecipeLinks(recipeLinks: List<RecipeLinkEntity>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     protected abstract suspend fun upsertRecipeTagRefs(tagRefs: List<RecipeTagCrossRef>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -37,6 +40,9 @@ abstract class RecipeDao {
 
     @Query("DELETE FROM recipe_ingredient_lines WHERE recipeId = :recipeId")
     protected abstract suspend fun deleteIngredientLinesByRecipeId(recipeId: String)
+
+    @Query("DELETE FROM recipe_links WHERE recipeId = :recipeId")
+    protected abstract suspend fun deleteRecipeLinksByRecipeId(recipeId: String)
 
     @Query("SELECT * FROM recipes WHERE id = :id LIMIT 1")
     abstract suspend fun getById(id: String): RecipeEntity?
@@ -84,18 +90,23 @@ abstract class RecipeDao {
         recipe: RecipeEntity,
         ingredientLines: List<RecipeIngredientLineEntity>,
         ingredientLineSubstitutions: List<IngredientLineSubstitutionEntity>,
+        recipeLinks: List<RecipeLinkEntity>,
         tagRefs: List<RecipeTagCrossRef>,
         collectionRefs: List<RecipeCollectionCrossRef>
     ) {
         upsert(recipe)
         deleteTagRefsByRecipeId(recipe.id)
         deleteCollectionRefsByRecipeId(recipe.id)
+        deleteRecipeLinksByRecipeId(recipe.id)
         deleteIngredientLinesByRecipeId(recipe.id)
         if (ingredientLines.isNotEmpty()) {
             upsertIngredientLines(ingredientLines)
         }
         if (ingredientLineSubstitutions.isNotEmpty()) {
             upsertIngredientLineSubstitutions(ingredientLineSubstitutions)
+        }
+        if (recipeLinks.isNotEmpty()) {
+            upsertRecipeLinks(recipeLinks)
         }
         if (tagRefs.isNotEmpty()) {
             upsertRecipeTagRefs(tagRefs)
@@ -205,6 +216,11 @@ data class RecipeWithRelations(
         entityColumn = "recipeId"
     )
     val ingredientLines: List<IngredientLineWithSubstitutions>,
+    @Relation(
+        parentColumn = "id",
+        entityColumn = "recipeId"
+    )
+    val recipeLinks: List<RecipeLinkEntity>,
     @Relation(
         parentColumn = "id",
         entityColumn = "recipeId"

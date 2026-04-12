@@ -106,6 +106,21 @@
         "totalTimeMinutes": { "type": "integer", "minimum": 0 }
       }
     },
+    "RecipeLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "targetRecipeId", "linkType"],
+      "properties": {
+        "id": { "$ref": "#/$defs/Uuid" },
+        "targetRecipeId": { "$ref": "#/$defs/Uuid" },
+        "linkType": {
+          "type": "string",
+          "enum": ["COMPONENT", "TOPPING", "FILLING", "FROSTING", "SAUCE", "SEASONING", "SIDE", "PAIRING", "VARIATION", "OTHER"]
+        },
+        "labelFr": { "type": "string" },
+        "labelEn": { "type": "string" }
+      }
+    },
     "Ratings": {
       "type": "object",
       "additionalProperties": false,
@@ -171,6 +186,10 @@
           "items": { "$ref": "#/$defs/Uuid" }
         },
         "ratings": { "$ref": "#/$defs/Ratings" },
+        "recipeLinks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/RecipeLink" }
+        },
         "mainPhotoId": { "$ref": "#/$defs/Uuid" },
         "photos": {
           "type": "array",

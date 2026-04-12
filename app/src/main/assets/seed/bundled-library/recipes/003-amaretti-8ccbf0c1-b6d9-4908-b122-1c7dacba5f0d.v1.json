@@ -1,7 +1,7 @@
 {
   "id": "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-04T00:00:00Z",
+  "updatedAt": "2026-04-12T00:00:00Z",
   "source": {
     "sourceName": "Foodtasia",
     "sourceUrl": "https://foodtasia.com/almond-paste-cookies/"
@@ -95,6 +95,14 @@
   "ratings": {
     "userRating": 4
   },
+  "recipeLinks": [
+    {
+      "id": "recipe-link-8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-almond-paste",
+      "targetRecipeId": "1dca3c8b-ed68-4397-b804-ae62e769ee5e",
+      "linkType": "COMPONENT",
+      "position": 0
+    }
+  ],
   "mainPhotoId": "photo-8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-0",
   "photos": [
     {

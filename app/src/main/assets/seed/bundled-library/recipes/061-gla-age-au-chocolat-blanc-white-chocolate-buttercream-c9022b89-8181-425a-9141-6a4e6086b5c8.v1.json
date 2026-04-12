@@ -1,7 +1,7 @@
 {
   "id": "c9022b89-8181-425a-9141-6a4e6086b5c8",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-03-27T00:00:00Z",
+  "updatedAt": "2026-04-12T00:00:00Z",
   "source": {
     "sourceName": "Sugar Spun Run",
     "sourceUrl": "https://sugarspunrun.com/white-chocolate-buttercream/"
@@ -89,6 +89,14 @@
   "ratings": {
     "userRating": 4
   },
+  "recipeLinks": [
+    {
+      "id": "recipe-link-c9022b89-8181-425a-9141-6a4e6086b5c8-devils-food-cake",
+      "targetRecipeId": "4207e09a-429f-437f-b7bd-14e862d6d696",
+      "linkType": "FROSTING",
+      "position": 0
+    }
+  ],
   "mainPhotoId": "photo-c9022b89-8181-425a-9141-6a4e6086b5c8-0",
   "photos": [
     {

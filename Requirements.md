@@ -53,9 +53,18 @@ Build a personal recipe book app that:
 
     * `userRating` (0–5, allow halves optional)
     * optional `madeCount`, `lastMadeAt`
+* `recipeLinks[]` (optional references to other Recipe entities for component/navigation relationships)
 * `photos[]` (local + cloud references)
 * `attachments[]` (optional; pdf, etc.)
 * `importMetadata` (optional: where it came from, original units, parser version)
+
+**RecipeLink**
+
+* `id`
+* `targetRecipeId` (reference to another Recipe)
+* `linkType` (`COMPONENT`, `TOPPING`, `FILLING`, `FROSTING`, `SAUCE`, `SEASONING`, `SIDE`, `PAIRING`, `VARIATION`, `OTHER`)
+* `labelFr?`, `labelEn?` (optional custom bilingual label overriding the built-in type label)
+* `position`
 
 **IngredientLine** (per recipe line)
 
@@ -279,6 +288,34 @@ Support at least these import types:
 **Acceptance criteria**
 
 * Tap opens the correct URL.
+
+---
+
+### FR-4B Recipe-to-recipe links
+
+* A recipe can link to one or more other recipes in the same library.
+* Links are intended for component and pairing relationships such as frosting, filling, crust, sauce, rub, dough, side, or similar recipe dependencies.
+* Each link stores:
+
+    * target recipe ID
+    * typed relationship
+    * optional custom bilingual label
+    * display order
+* Users can:
+
+    * add one or more linked recipes from the editor
+    * remove links
+    * open linked recipes from recipe detail
+* Self-links are not allowed.
+* Exact duplicate links to the same target should be prevented.
+* If a linked target recipe is unavailable, the app should show the link as unavailable rather than navigating silently.
+
+**Acceptance criteria**
+
+* User can attach multiple linked recipes to one recipe.
+* Linked recipes persist after save, app restart, and export/import round-trip.
+* Recipe detail shows linked recipes with localized labels and opens the correct target recipe.
+* Editor excludes the current recipe from the link picker.
 
 ---
 
@@ -541,6 +578,7 @@ User can convert ingredient quantities between:
     * Scale controls
     * Convert units controls
     * Ingredients + instructions
+    * Linked recipes
     * Photos gallery
     * Rating
     * Go to source

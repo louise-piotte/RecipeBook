@@ -1,7 +1,7 @@
 {
   "id": "a8429c9a-dcc8-4694-b09d-81c62d51af2d",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-04T00:00:00Z",
+  "updatedAt": "2026-04-12T00:00:00Z",
   "source": {
     "sourceName": "Fit Foodie Finds",
     "sourceUrl": "https://fitfoodiefinds.com/24-hour-sous-vide-ribs/"
@@ -74,6 +74,14 @@
   "ratings": {
     "userRating": 5
   },
+  "recipeLinks": [
+    {
+      "id": "recipe-link-a8429c9a-dcc8-4694-b09d-81c62d51af2d-pork-rub",
+      "targetRecipeId": "f137bc89-dee6-46e1-b9cd-1bb426bdbdda",
+      "linkType": "SEASONING",
+      "position": 0
+    }
+  ],
   "mainPhotoId": "photo-a8429c9a-dcc8-4694-b09d-81c62d51af2d-0",
   "photos": [
     {

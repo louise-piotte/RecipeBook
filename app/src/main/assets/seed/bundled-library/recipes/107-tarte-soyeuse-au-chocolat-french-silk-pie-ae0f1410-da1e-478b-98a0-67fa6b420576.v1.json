@@ -1,7 +1,7 @@
 {
   "id": "ae0f1410-da1e-478b-98a0-67fa6b420576",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-05T00:00:00Z",
+  "updatedAt": "2026-04-12T00:00:00Z",
   "source": {
     "sourceName": "Preppy Kitchen",
     "sourceUrl": "https://preppykitchen.com/french-silk-pie/"
@@ -107,6 +107,14 @@
   "ratings": {
     "userRating": 2
   },
+  "recipeLinks": [
+    {
+      "id": "recipe-link-ae0f1410-da1e-478b-98a0-67fa6b420576-pie-crust",
+      "targetRecipeId": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca",
+      "linkType": "COMPONENT",
+      "position": 0
+    }
+  ],
   "mainPhotoId": "photo-ae0f1410-da1e-478b-98a0-67fa6b420576-0",
   "photos": [
     {

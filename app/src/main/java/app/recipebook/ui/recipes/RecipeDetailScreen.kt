@@ -19,6 +19,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material.icons.Icons
@@ -50,6 +51,8 @@ import app.recipebook.domain.localization.BilingualText
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.RecipeLink
+import app.recipebook.domain.model.RecipeLinkType
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.domain.model.Tag
@@ -61,6 +64,7 @@ import kotlin.math.round
 @Composable
 internal fun RecipeDetailScreen(
     recipe: Recipe?,
+    recipes: List<Recipe>,
     ingredientReferences: List<IngredientReference>,
     substitutionCatalog: IngredientSubstitutionCatalog = IngredientSubstitutionCatalog.EMPTY,
     tags: List<Tag>,
@@ -69,6 +73,7 @@ internal fun RecipeDetailScreen(
     onBack: () -> Unit,
     onNavigate: (MainMenuDestination) -> Unit,
     onEdit: (String) -> Unit,
+    onOpenLinkedRecipe: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val resolver = BilingualTextResolver()
@@ -121,6 +126,7 @@ internal fun RecipeDetailScreen(
             } else {
                 RecipeDetailCard(
                     recipe = recipe,
+                    recipes = recipes,
                     ingredientReferences = ingredientReferences,
                     substitutionCatalog = substitutionCatalog,
                     tags = tags,
@@ -157,6 +163,7 @@ internal fun RecipeDetailScreen(
                     onDismissIngredientSubstitutions = {
                         substitutionDialogIngredientId = null
                     },
+                    onOpenLinkedRecipe = onOpenLinkedRecipe,
                     onSelectIngredientConversion = { ingredientId, unit ->
                         convertedUnits = if (unit == null) {
                             convertedUnits - ingredientId
@@ -176,6 +183,7 @@ internal fun RecipeDetailScreen(
 @Composable
 private fun RecipeDetailCard(
     recipe: Recipe,
+    recipes: List<Recipe>,
     ingredientReferences: List<IngredientReference>,
     substitutionCatalog: IngredientSubstitutionCatalog,
     tags: List<Tag>,
@@ -193,9 +201,11 @@ private fun RecipeDetailCard(
     onOpenIngredientSubstitutions: (String) -> Unit,
     onDismissIngredientConversion: () -> Unit,
     onDismissIngredientSubstitutions: () -> Unit,
+    onOpenLinkedRecipe: (String) -> Unit,
     onSelectIngredientConversion: (String, String?) -> Unit
 ) {
     val ingredientReferenceMap = ingredientReferences.associateBy(IngredientReference::id)
+    val recipeMap = recipes.associateBy(Recipe::id)
     val uriHandler = LocalUriHandler.current
     val resolvedTags = recipe.tagIds.mapNotNull { tagId -> tags.firstOrNull { it.id == tagId } }
     val notes = resolver.resolveUserText(
@@ -257,6 +267,12 @@ private fun RecipeDetailCard(
                 substitutions = item.substitutions
             )
         }
+    }
+    val recipeLinks = recipe.recipeLinks.map { link ->
+        DetailRecipeLinkItem(
+            link = link,
+            targetRecipe = recipeMap[link.targetRecipeId]
+        )
     }
 
     Column(
@@ -327,6 +343,19 @@ private fun RecipeDetailCard(
                     text = buildDetailTagText(resolvedTags, language),
                     style = MaterialTheme.typography.bodyLarge
                 )
+            }
+        }
+
+        if (recipeLinks.isNotEmpty()) {
+            DetailSection(localizedString(R.string.linked_recipes_label, language)) {
+                recipeLinks.forEach { linkItem ->
+                    DetailRecipeLinkRow(
+                        item = linkItem,
+                        language = language,
+                        resolver = resolver,
+                        onOpen = onOpenLinkedRecipe
+                    )
+                }
             }
         }
 
@@ -411,6 +440,11 @@ private fun RecipeDetailCard(
     }
 }
 
+private data class DetailRecipeLinkItem(
+    val link: RecipeLink,
+    val targetRecipe: Recipe?
+)
+
 @Composable
 private fun DetailSection(
     label: String,
@@ -419,6 +453,55 @@ private fun DetailSection(
     Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
         Text(text = label, style = MaterialTheme.typography.titleMedium)
         content()
+    }
+}
+
+@Composable
+private fun DetailRecipeLinkRow(
+    item: DetailRecipeLinkItem,
+    language: AppLanguage,
+    resolver: BilingualTextResolver,
+    onOpen: (String) -> Unit
+) {
+    val title = item.targetRecipe?.let { resolver.resolveSystemText(language, it.titleText()) }
+        ?: localizedString(R.string.linked_recipe_unavailable_label, language)
+    val label = item.link.localizedLabel(language)
+        ?: localizedString(recipeLinkTypeLabelRes(item.link.linkType), language)
+    val modifier = if (item.targetRecipe == null) {
+        Modifier
+    } else {
+        Modifier.clickable { onOpen(item.targetRecipe.id) }
+    }
+
+    Surface(
+        tonalElevation = 2.dp,
+        modifier = modifier.fillMaxWidth()
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(6.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            RecipePhoto(
+                localPath = item.targetRecipe?.mainPhoto()?.localPath,
+                contentDescription = localizedString(R.string.recipe_photo_preview_label, language),
+                modifier = Modifier
+                    .size(52.dp)
+            )
+            Text(
+                text = "$label: $title",
+                style = MaterialTheme.typography.bodyLarge,
+                color = if (item.targetRecipe == null) {
+                    MaterialTheme.colorScheme.onSurfaceVariant
+                } else {
+                    MaterialTheme.colorScheme.primary
+                },
+                textDecoration = if (item.targetRecipe == null) TextDecoration.None else TextDecoration.Underline,
+                modifier = Modifier.weight(1f)
+            )
+        }
     }
 }
 
@@ -1123,6 +1206,24 @@ private data class UnitOptionSortKey(
     val category: Int,
     val rank: Int
 )
+
+private fun RecipeLink.localizedLabel(language: AppLanguage): String? = when (language) {
+    AppLanguage.FR -> labelFr?.trim()?.ifBlank { null }
+    AppLanguage.EN -> labelEn?.trim()?.ifBlank { null }
+}
+
+private fun recipeLinkTypeLabelRes(type: RecipeLinkType): Int = when (type) {
+    RecipeLinkType.COMPONENT -> R.string.recipe_link_type_component_label
+    RecipeLinkType.TOPPING -> R.string.recipe_link_type_topping_label
+    RecipeLinkType.FILLING -> R.string.recipe_link_type_filling_label
+    RecipeLinkType.FROSTING -> R.string.recipe_link_type_frosting_label
+    RecipeLinkType.SAUCE -> R.string.recipe_link_type_sauce_label
+    RecipeLinkType.SEASONING -> R.string.recipe_link_type_seasoning_label
+    RecipeLinkType.SIDE -> R.string.recipe_link_type_side_label
+    RecipeLinkType.PAIRING -> R.string.recipe_link_type_pairing_label
+    RecipeLinkType.VARIATION -> R.string.recipe_link_type_variation_label
+    RecipeLinkType.OTHER -> R.string.recipe_link_type_other_label
+}
 
 private val DoneIngredientTextColor = Color(0xFFB8B8B8)
 private const val TABLESPOONS_PER_CUP = 16.0

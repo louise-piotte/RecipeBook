@@ -100,6 +100,33 @@ data class IngredientLineSubstitutionEntity(
     val updatedAt: String
 )
 
+@Entity(
+    tableName = "recipe_links",
+    foreignKeys = [
+        ForeignKey(
+            entity = RecipeEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["recipeId"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ],
+    indices = [
+        Index(value = ["recipeId", "position"], unique = true),
+        Index(value = ["recipeId"]),
+        Index(value = ["targetRecipeId"])
+    ]
+)
+data class RecipeLinkEntity(
+    @PrimaryKey
+    val id: String,
+    val recipeId: String,
+    val targetRecipeId: String,
+    val linkType: String,
+    val labelFr: String? = null,
+    val labelEn: String? = null,
+    val position: Int
+)
+
 @Entity(tableName = "ingredient_references")
 data class IngredientReferenceEntity(
     @PrimaryKey

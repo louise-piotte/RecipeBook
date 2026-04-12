@@ -1,7 +1,7 @@
 {
   "id": "41d7331d-2cf7-4a72-b1ce-ac90ffb97f33",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-04T00:00:00Z",
+  "updatedAt": "2026-04-12T00:00:00Z",
   "source": {
     "sourceName": "Sally's Baking Addiction",
     "sourceUrl": "https://sallysbakingaddiction.com/vanilla-cake/"
@@ -181,6 +181,14 @@
   "ratings": {
     "userRating": 0
   },
+  "recipeLinks": [
+    {
+      "id": "recipe-link-41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-french-buttercream",
+      "targetRecipeId": "e0f7bb65-859b-4dc0-8d03-30180b9acdaf",
+      "linkType": "FROSTING",
+      "position": 0
+    }
+  ],
   "mainPhotoId": "photo-41d7331d-2cf7-4a72-b1ce-ac90ffb97f33-0",
   "photos": [
     {

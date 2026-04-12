@@ -25,6 +25,27 @@ data class RecipeSource(
     val sourceName: String
 )
 
+enum class RecipeLinkType {
+    COMPONENT,
+    TOPPING,
+    FILLING,
+    FROSTING,
+    SAUCE,
+    SEASONING,
+    SIDE,
+    PAIRING,
+    VARIATION,
+    OTHER
+}
+
+data class RecipeLink(
+    val id: String,
+    val targetRecipeId: String,
+    val linkType: RecipeLinkType,
+    val labelFr: String? = null,
+    val labelEn: String? = null
+)
+
 data class IngredientLine(
     val id: String,
     val ingredientRefId: String? = null,
@@ -88,6 +109,7 @@ data class Recipe(
     val tagIds: List<String> = emptyList(),
     val collectionIds: List<String> = emptyList(),
     val ratings: Ratings? = null,
+    val recipeLinks: List<RecipeLink> = emptyList(),
     val mainPhotoId: String? = null,
     val photos: List<PhotoRef> = emptyList(),
     val attachments: List<AttachmentRef> = emptyList(),

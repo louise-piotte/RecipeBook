@@ -48,6 +48,8 @@ data class RecipeDto(
     val collections: List<String> = emptyList(),
     @SerialName("ratings")
     val ratings: RatingsDto? = null,
+    @SerialName("recipeLinks")
+    val recipeLinks: List<RecipeLinkDto> = emptyList(),
     @SerialName("mainPhotoId")
     val mainPhotoId: String? = null,
     @SerialName("photos")
@@ -58,6 +60,20 @@ data class RecipeDto(
     val importMetadata: ImportMetadataDto? = null,
     @SerialName("deletedAt")
     val deletedAt: String? = null
+)
+
+@Serializable
+data class RecipeLinkDto(
+    @SerialName("id")
+    val id: String,
+    @SerialName("targetRecipeId")
+    val targetRecipeId: String,
+    @SerialName("linkType")
+    val linkType: String,
+    @SerialName("labelFr")
+    val labelFr: String? = null,
+    @SerialName("labelEn")
+    val labelEn: String? = null
 )
 
 @Serializable

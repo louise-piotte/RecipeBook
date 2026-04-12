@@ -1,7 +1,7 @@
 {
   "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-05T00:00:00Z",
+  "updatedAt": "2026-04-12T00:00:00Z",
   "source": {
     "sourceName": "Sally's Baking Addiction",
     "sourceUrl": "https://sallysbakingaddiction.com/strawberry-cake/#tasty-recipes-66510"
@@ -163,6 +163,14 @@
   "ratings": {
     "userRating": 3
   },
+  "recipeLinks": [
+    {
+      "id": "recipe-link-eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-strawberry-frosting",
+      "targetRecipeId": "e34243f0-f13c-47bf-991f-a8d50e3c67a8",
+      "linkType": "FROSTING",
+      "position": 0
+    }
+  ],
   "mainPhotoId": "photo-eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-0",
   "photos": [
     {

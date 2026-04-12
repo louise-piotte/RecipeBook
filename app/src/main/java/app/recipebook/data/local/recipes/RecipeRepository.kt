@@ -13,6 +13,7 @@ import app.recipebook.data.local.db.RecipeDao
 import app.recipebook.data.local.db.RecipeIngredientLineEntity
 import app.recipebook.data.local.db.RecipeCollectionCrossRef
 import app.recipebook.data.local.db.RecipeEntity
+import app.recipebook.data.local.db.RecipeLinkEntity
 import app.recipebook.data.local.db.RecipeTagCrossRef
 import app.recipebook.data.local.db.RecipeWithRelations
 import app.recipebook.data.local.db.TagDao
@@ -32,6 +33,8 @@ import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Ratings
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.RecipeLink
+import app.recipebook.domain.model.RecipeLinkType
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
@@ -102,11 +105,13 @@ class RecipeRepository(
     suspend fun getRecipeById(id: String): Recipe? = recipeDao.getByIdWithRelations(id)?.toDomainRecipe()
 
     suspend fun upsertRecipe(recipe: Recipe) {
+        validateRecipeLinks(recipe)
         val storage = recipe.toStorageGraph()
         recipeDao.replaceRecipeGraph(
             recipe = storage.recipe,
             ingredientLines = storage.ingredientLines,
             ingredientLineSubstitutions = storage.ingredientLineSubstitutions,
+            recipeLinks = storage.recipeLinks,
             tagRefs = storage.tagRefs,
             collectionRefs = storage.collectionRefs
         )
@@ -213,6 +218,24 @@ class RecipeRepository(
         }
     }
 
+    private fun validateRecipeLinks(recipe: Recipe) {
+        val seen = linkedSetOf<String>()
+        recipe.recipeLinks.forEach { link ->
+            require(link.targetRecipeId != recipe.id) {
+                "Recipe links cannot target the same recipe"
+            }
+            val duplicateKey = listOf(
+                link.targetRecipeId,
+                link.linkType.name,
+                link.labelFr.orEmpty().trim().lowercase(),
+                link.labelEn.orEmpty().trim().lowercase()
+            ).joinToString("|")
+            require(seen.add(duplicateKey)) {
+                "Duplicate recipe links are not allowed"
+            }
+        }
+    }
+
     suspend fun createTag(draft: TagDraft): Tag {
         val baseName = draft.nameEn.trim().ifBlank { draft.nameFr.trim() }
         val tag = Tag(
@@ -289,6 +312,7 @@ class RecipeRepository(
                         recipe = storage.recipe,
                         ingredientLines = storage.ingredientLines,
                         ingredientLineSubstitutions = storage.ingredientLineSubstitutions,
+                        recipeLinks = storage.recipeLinks,
                         tagRefs = storage.tagRefs,
                         collectionRefs = storage.collectionRefs
                     )
@@ -490,6 +514,7 @@ internal fun RecipeWithRelations.toDomainRecipe(): Recipe = Recipe(
     } else {
         null
     },
+    recipeLinks = recipeLinks.sortedBy(RecipeLinkEntity::position).map(RecipeLinkEntity::toDomain),
     mainPhotoId = recipe.mainPhotoId,
     photos = storageJson.decodeFromString<List<StoredPhotoRef>>(recipe.photosJson).map(StoredPhotoRef::toDomain),
     attachments = storageJson.decodeFromString<List<StoredAttachmentRef>>(recipe.attachmentsJson).map(StoredAttachmentRef::toDomain),
@@ -532,6 +557,7 @@ private data class RecipeStorageGraph(
     val recipe: RecipeEntity,
     val ingredientLines: List<RecipeIngredientLineEntity>,
     val ingredientLineSubstitutions: List<IngredientLineSubstitutionEntity>,
+    val recipeLinks: List<RecipeLinkEntity>,
     val tagRefs: List<RecipeTagCrossRef>,
     val collectionRefs: List<RecipeCollectionCrossRef>
 )
@@ -545,6 +571,9 @@ private fun Recipe.toStorageGraph(): RecipeStorageGraph {
             substitution.toEntity(position = index)
         }
     }
+    val recipeLinks = this.recipeLinks.mapIndexed { index, recipeLink ->
+        recipeLink.toEntity(recipeId = id, position = index)
+    }
     val tagRefs = tagIds.distinct().mapIndexed { index, tagId ->
         RecipeTagCrossRef(recipeId = id, tagId = tagId, position = index)
     }
@@ -556,10 +585,29 @@ private fun Recipe.toStorageGraph(): RecipeStorageGraph {
         recipe = toEntity(),
         ingredientLines = ingredientLines,
         ingredientLineSubstitutions = substitutions,
+        recipeLinks = recipeLinks,
         tagRefs = tagRefs,
         collectionRefs = collectionRefs
     )
 }
+
+private fun RecipeLinkEntity.toDomain(): RecipeLink = RecipeLink(
+    id = id,
+    targetRecipeId = targetRecipeId,
+    linkType = RecipeLinkType.valueOf(linkType),
+    labelFr = labelFr,
+    labelEn = labelEn
+)
+
+private fun RecipeLink.toEntity(recipeId: String, position: Int): RecipeLinkEntity = RecipeLinkEntity(
+    id = id,
+    recipeId = recipeId,
+    targetRecipeId = targetRecipeId,
+    linkType = linkType.name,
+    labelFr = labelFr?.trim()?.ifBlank { null },
+    labelEn = labelEn?.trim()?.ifBlank { null },
+    position = position
+)
 
 private fun IngredientReferenceEntity.toDomain(): IngredientReference = IngredientReference(
     id = id,

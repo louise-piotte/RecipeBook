@@ -26,6 +26,8 @@ import androidx.compose.material.icons.filled.Save
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -60,6 +62,8 @@ import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.RecipeLink
+import app.recipebook.domain.model.RecipeLinkType
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
@@ -74,6 +78,7 @@ import kotlinx.coroutines.launch
 fun RecipeEditorScreen(
     initialRecipe: Recipe,
     isNewRecipe: Boolean,
+    recipes: List<Recipe>,
     ingredientReferences: List<IngredientReference>,
     tags: List<Tag>,
     collections: List<Collection>,
@@ -115,6 +120,11 @@ fun RecipeEditorScreen(
     val recipePhotos = remember(initialRecipe.id) {
         mutableStateListOf<PhotoRef>().apply { addAll(initialRecipe.photos) }
     }
+    val recipeLinkRows = remember(initialRecipe.id) {
+        mutableStateListOf<EditableRecipeLinkRow>().apply {
+            addAll(initialRecipe.recipeLinks.map(RecipeLink::toEditableRow))
+        }
+    }
     var mainPhotoId by rememberSaveable(initialRecipe.id) { mutableStateOf(initialRecipe.mainPhotoId) }
     val selectedTagIds = remember(initialRecipe.id) {
         mutableStateListOf<String>().apply { addAll(initialRecipe.tagIds) }
@@ -128,6 +138,8 @@ fun RecipeEditorScreen(
     var showTagPickerDialog by remember { mutableStateOf(false) }
     var showCollectionPickerDialog by remember { mutableStateOf(false) }
     var showCreateTagDialog by remember { mutableStateOf(false) }
+    var showRecipeLinkPickerDialog by remember { mutableStateOf(false) }
+    var pendingRecipeLinkIndex by remember { mutableStateOf<Int?>(null) }
     var ingredientsExpanded by rememberSaveable { mutableStateOf(false) }
     var pendingCameraCapture by remember { mutableStateOf<PendingRecipePhotoCapture?>(null) }
     val coroutineScope = rememberCoroutineScope()
@@ -158,6 +170,7 @@ fun RecipeEditorScreen(
                 ingredients = ingredientRows.toIngredientLines(ingredientReferences),
                 tagIds = selectedTagIds.distinct(),
                 collectionIds = selectedCollectionIds.distinct(),
+                recipeLinks = recipeLinkRows.toRecipeLinks(),
                 mainPhotoId = normalizedMainPhotoId(mainPhotoId, recipePhotos),
                 photos = recipePhotos.toList()
             )
@@ -360,28 +373,61 @@ fun RecipeEditorScreen(
                 }
             }
 
-                RecipePhotoEditorSection(
-                    language = language,
-                    photos = recipePhotos,
-                    mainPhotoId = mainPhotoId,
-                    onAddFromFile = { importPhotoLauncher.launch("image/*") },
-                    onTakePhoto = {
-                        val capture = onCreatePendingCameraCapture()
-                        pendingCameraCapture = capture
-                        takePhotoLauncher.launch(capture.uri)
-                    },
-                    onSetMainPhoto = { selectedPhotoId ->
-                        mainPhotoId = selectedPhotoId
-                    },
-                    onRemovePhoto = { photo ->
-                        recipePhotos.remove(photo)
-                        onDiscardDraftPhoto(photo)
-                        mainPhotoId = normalizedMainPhotoId(
-                            mainPhotoId = if (mainPhotoId == photo.id) null else mainPhotoId,
-                            photos = recipePhotos
-                        )
+            LinkedRecipesEditorSection(
+                language = language,
+                currentRecipeId = initialRecipe.id,
+                allRecipes = recipes,
+                recipeLinkRows = recipeLinkRows,
+                onAddLink = {
+                    recipeLinkRows.add(blankRecipeLinkRow())
+                    pendingRecipeLinkIndex = recipeLinkRows.lastIndex
+                    showRecipeLinkPickerDialog = true
+                },
+                onPickTarget = { index ->
+                    pendingRecipeLinkIndex = index
+                    showRecipeLinkPickerDialog = true
+                },
+                onLabelFrChange = { index, value -> recipeLinkRows[index] = recipeLinkRows[index].copy(labelFr = value) },
+                onLabelEnChange = { index, value -> recipeLinkRows[index] = recipeLinkRows[index].copy(labelEn = value) },
+                onMoveUp = { index ->
+                    if (index > 0) {
+                        val current = recipeLinkRows[index]
+                        recipeLinkRows[index] = recipeLinkRows[index - 1]
+                        recipeLinkRows[index - 1] = current
                     }
-                )
+                },
+                onMoveDown = { index ->
+                    if (index < recipeLinkRows.lastIndex) {
+                        val current = recipeLinkRows[index]
+                        recipeLinkRows[index] = recipeLinkRows[index + 1]
+                        recipeLinkRows[index + 1] = current
+                    }
+                },
+                onRemove = { index -> recipeLinkRows.removeAt(index) }
+            )
+
+            RecipePhotoEditorSection(
+                language = language,
+                photos = recipePhotos,
+                mainPhotoId = mainPhotoId,
+                onAddFromFile = { importPhotoLauncher.launch("image/*") },
+                onTakePhoto = {
+                    val capture = onCreatePendingCameraCapture()
+                    pendingCameraCapture = capture
+                    takePhotoLauncher.launch(capture.uri)
+                },
+                onSetMainPhoto = { selectedPhotoId ->
+                    mainPhotoId = selectedPhotoId
+                },
+                onRemovePhoto = { photo ->
+                    recipePhotos.remove(photo)
+                    onDiscardDraftPhoto(photo)
+                    mainPhotoId = normalizedMainPhotoId(
+                        mainPhotoId = if (mainPhotoId == photo.id) null else mainPhotoId,
+                        photos = recipePhotos
+                    )
+                }
+            )
 
             Button(
                 onClick = {
@@ -411,6 +457,7 @@ fun RecipeEditorScreen(
                             ingredients = ingredientRows.toIngredientLines(ingredientReferences),
                             tagIds = selectedTagIds.distinct(),
                             collectionIds = selectedCollectionIds.distinct(),
+                            recipeLinks = recipeLinkRows.toRecipeLinks(),
                             mainPhotoId = normalizedMainPhotoId(mainPhotoId, recipePhotos),
                             photos = recipePhotos.toList()
                         )
@@ -481,6 +528,32 @@ fun RecipeEditorScreen(
             collections = collections,
             selectedCollectionIds = selectedCollectionIds,
             onDismiss = { showCollectionPickerDialog = false }
+        )
+    }
+
+    if (showRecipeLinkPickerDialog) {
+        RecipeLinkTargetPickerDialog(
+            language = language,
+            currentRecipeId = initialRecipe.id,
+            recipes = recipes,
+            initialLinkType = pendingRecipeLinkIndex?.let { recipeLinkRows.getOrNull(it)?.linkType } ?: RecipeLinkType.OTHER,
+            onDismiss = {
+                val index = pendingRecipeLinkIndex
+                if (index != null && recipeLinkRows.getOrNull(index)?.targetRecipeId == null) {
+                    recipeLinkRows.removeAt(index)
+                }
+                pendingRecipeLinkIndex = null
+                showRecipeLinkPickerDialog = false
+            },
+            onSelect = { targetRecipe, linkType ->
+                val index = pendingRecipeLinkIndex ?: return@RecipeLinkTargetPickerDialog
+                recipeLinkRows[index] = recipeLinkRows[index].copy(
+                    targetRecipeId = targetRecipe.id,
+                    linkType = linkType
+                )
+                pendingRecipeLinkIndex = null
+                showRecipeLinkPickerDialog = false
+            }
         )
     }
 
@@ -904,6 +977,228 @@ private fun CollectionPickerDialog(
         }
     }
 }
+
+@Composable
+private fun LinkedRecipesEditorSection(
+    language: AppLanguage,
+    currentRecipeId: String,
+    allRecipes: List<Recipe>,
+    recipeLinkRows: List<EditableRecipeLinkRow>,
+    onAddLink: () -> Unit,
+    onPickTarget: (Int) -> Unit,
+    onLabelFrChange: (Int, String) -> Unit,
+    onLabelEnChange: (Int, String) -> Unit,
+    onMoveUp: (Int) -> Unit,
+    onMoveDown: (Int) -> Unit,
+    onRemove: (Int) -> Unit
+) {
+    val recipeMap = allRecipes.associateBy(Recipe::id)
+
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(6.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = localizedString(R.string.linked_recipes_label, language),
+                style = MaterialTheme.typography.titleLarge
+            )
+            AppIconButton(
+                icon = Icons.Filled.Add,
+                contentDescription = localizedString(R.string.add_linked_recipe_label, language),
+                onClick = onAddLink
+            )
+        }
+        if (recipeLinkRows.isEmpty()) {
+            Text(
+                text = localizedString(R.string.no_linked_recipes_label, language),
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        } else {
+            recipeLinkRows.forEachIndexed { index, row ->
+                RecipeLinkEditorCard(
+                    language = language,
+                    row = row,
+                    targetRecipe = row.targetRecipeId?.let(recipeMap::get),
+                    canMoveUp = index > 0,
+                    canMoveDown = index < recipeLinkRows.lastIndex,
+                    currentRecipeId = currentRecipeId,
+                    onPickTarget = { onPickTarget(index) },
+                    onLabelFrChange = { onLabelFrChange(index, it) },
+                    onLabelEnChange = { onLabelEnChange(index, it) },
+                    onMoveUp = { onMoveUp(index) },
+                    onMoveDown = { onMoveDown(index) },
+                    onRemove = { onRemove(index) }
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun RecipeLinkEditorCard(
+    language: AppLanguage,
+    row: EditableRecipeLinkRow,
+    targetRecipe: Recipe?,
+    canMoveUp: Boolean,
+    canMoveDown: Boolean,
+    currentRecipeId: String,
+    onPickTarget: () -> Unit,
+    onLabelFrChange: (String) -> Unit,
+    onLabelEnChange: (String) -> Unit,
+    onMoveUp: () -> Unit,
+    onMoveDown: () -> Unit,
+    onRemove: () -> Unit
+) {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            val typePrefix = if (row.linkType == RecipeLinkType.OTHER) {
+                null
+            } else {
+                localizedString(recipeLinkTypeLabelRes(row.linkType), language)
+            }
+            val title = targetRecipe?.let {
+                if (language == AppLanguage.FR) it.languages.fr.title.ifBlank { it.languages.en.title }
+                else it.languages.en.title.ifBlank { it.languages.fr.title }
+            } ?: localizedString(R.string.select_linked_recipe_label, language)
+            Text(
+                text = listOfNotNull(typePrefix, title).joinToString(": "),
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.weight(1f)
+            )
+            AppIconButton(
+                icon = Icons.Filled.Edit,
+                contentDescription = localizedString(R.string.select_linked_recipe_label, language),
+                onClick = onPickTarget
+            )
+            if (canMoveUp) {
+                AppIconButton(
+                    icon = Icons.Filled.ExpandLess,
+                    contentDescription = localizedString(R.string.move_up_label, language),
+                    onClick = onMoveUp
+                )
+            }
+            if (canMoveDown) {
+                AppIconButton(
+                    icon = Icons.Filled.ExpandMore,
+                    contentDescription = localizedString(R.string.move_down_label, language),
+                    onClick = onMoveDown
+                )
+            }
+            AppIconButton(
+                icon = Icons.Filled.Delete,
+                contentDescription = localizedString(R.string.remove_label, language),
+                onClick = onRemove
+            )
+        }
+        LabeledField(localizedString(R.string.recipe_link_label_fr_label, language), row.labelFr, singleLine = false, onValueChange = onLabelFrChange)
+        LabeledField(localizedString(R.string.recipe_link_label_en_label, language), row.labelEn, singleLine = false, onValueChange = onLabelEnChange)
+        if (row.targetRecipeId == currentRecipeId) {
+            Text(
+                text = localizedString(R.string.linked_recipe_self_invalid_label, language),
+                color = MaterialTheme.colorScheme.error
+            )
+        }
+    }
+}
+
+@Composable
+private fun RecipeLinkTargetPickerDialog(
+    language: AppLanguage,
+    currentRecipeId: String,
+    recipes: List<Recipe>,
+    onDismiss: () -> Unit,
+    initialLinkType: RecipeLinkType,
+    onSelect: (Recipe, RecipeLinkType) -> Unit
+) {
+    var query by rememberSaveable { mutableStateOf("") }
+    var selectedType by rememberSaveable { mutableStateOf(initialLinkType) }
+    val filtered = remember(query, recipes, currentRecipeId) {
+        filterRecipesForLinkPicker(recipes, currentRecipeId, query)
+    }
+
+    PickerDialogContainer(
+        title = localizedString(R.string.select_linked_recipe_label, language),
+        onDismiss = onDismiss
+    ) {
+        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            RecipeLinkTypeDropdownField(
+                language = language,
+                selectedType = selectedType,
+                onSelect = { selectedType = it }
+            )
+            SearchField(
+                value = query,
+                onValueChange = { query = it },
+                label = localizedString(R.string.search_recipes_label, language),
+                placeholder = localizedString(R.string.search_recipes_placeholder, language)
+            )
+            Surface(tonalElevation = 2.dp) {
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .heightIn(max = 320.dp)
+                        .padding(horizontal = 4.dp, vertical = 2.dp),
+                    verticalArrangement = Arrangement.spacedBy(3.dp)
+                ) {
+                    if (filtered.isEmpty()) {
+                        item {
+                            Text(
+                                text = localizedString(R.string.no_linkable_recipes_found_label, language),
+                                modifier = Modifier.padding(8.dp)
+                            )
+                        }
+                    } else {
+                        items(filtered, key = { it.id }) { recipe ->
+                            TextButton(onClick = { onSelect(recipe, selectedType) }) {
+                                Text(
+                                    if (language == AppLanguage.FR) recipe.languages.fr.title.ifBlank { recipe.languages.en.title }
+                                    else recipe.languages.en.title.ifBlank { recipe.languages.fr.title }
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun RecipeLinkTypeDropdownField(
+    language: AppLanguage,
+    selectedType: RecipeLinkType,
+    onSelect: (RecipeLinkType) -> Unit
+) {
+    var expanded by remember { mutableStateOf(false) }
+    val selectedLabel = localizedString(recipeLinkTypeLabelRes(selectedType), language)
+    Box {
+        TextButton(onClick = { expanded = true }) {
+            Text("${localizedString(R.string.recipe_link_type_label, language)}: $selectedLabel")
+        }
+        DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+            RecipeLinkType.entries.forEach { type ->
+                DropdownMenuItem(
+                    text = { Text(localizedString(recipeLinkTypeLabelRes(type), language)) },
+                    onClick = {
+                        expanded = false
+                        onSelect(type)
+                    }
+                )
+            }
+        }
+    }
+}
 @Composable
 private fun CreateIngredientDialog(
     language: AppLanguage,
@@ -1002,6 +1297,13 @@ internal data class EditableIngredientRow(
     val originalText: String = ""
 )
 
+internal data class EditableRecipeLinkRow(
+    val id: String,
+    val targetRecipeId: String? = null,
+    val linkType: RecipeLinkType = RecipeLinkType.OTHER,
+    val labelFr: String = "",
+    val labelEn: String = ""
+)
 
 private fun IngredientLine.toEditableRow(): EditableIngredientRow = EditableIngredientRow(
     id = id,
@@ -1012,6 +1314,14 @@ private fun IngredientLine.toEditableRow(): EditableIngredientRow = EditableIngr
     preparation = preparation.orEmpty(),
     notes = notes.orEmpty(),
     originalText = originalText
+)
+
+private fun RecipeLink.toEditableRow(): EditableRecipeLinkRow = EditableRecipeLinkRow(
+    id = id,
+    targetRecipeId = targetRecipeId,
+    linkType = linkType,
+    labelFr = labelFr.orEmpty(),
+    labelEn = labelEn.orEmpty()
 )
 
 
@@ -1035,6 +1345,8 @@ internal fun editableIngredientRowForTest(
     originalText = originalText
 )
 private fun blankIngredientRow(): EditableIngredientRow = EditableIngredientRow(id = UUID.randomUUID().toString())
+
+private fun blankRecipeLinkRow(): EditableRecipeLinkRow = EditableRecipeLinkRow(id = UUID.randomUUID().toString())
 
 internal fun List<EditableIngredientRow>.toIngredientLines(
     ingredientReferences: List<IngredientReference>
@@ -1067,6 +1379,17 @@ internal fun List<EditableIngredientRow>.toIngredientLines(
             )
         }
     }
+}
+
+private fun List<EditableRecipeLinkRow>.toRecipeLinks(): List<RecipeLink> = mapNotNull { row ->
+    val targetRecipeId = row.targetRecipeId ?: return@mapNotNull null
+    RecipeLink(
+        id = row.id,
+        targetRecipeId = targetRecipeId,
+        linkType = row.linkType,
+        labelFr = row.labelFr.trim().ifBlank { null },
+        labelEn = row.labelEn.trim().ifBlank { null }
+    )
 }
 private fun buildIngredientPreview(
     quantity: Double?,
@@ -1215,6 +1538,37 @@ internal fun filterCollections(collections: List<Collection>, query: String): Li
                 collection.descriptionEn.orEmpty().contains(trimmedQuery, ignoreCase = true)
         }
         .sortedBy { it.nameEn.ifBlank { it.nameFr } }
+}
+
+private fun filterRecipesForLinkPicker(
+    recipes: List<Recipe>,
+    currentRecipeId: String,
+    query: String
+): List<Recipe> {
+    val trimmedQuery = query.trim()
+    return recipes
+        .filter { it.id != currentRecipeId }
+        .filter { recipe ->
+            trimmedQuery.isBlank() ||
+                recipe.languages.fr.title.contains(trimmedQuery, ignoreCase = true) ||
+                recipe.languages.en.title.contains(trimmedQuery, ignoreCase = true) ||
+                recipe.languages.fr.description.contains(trimmedQuery, ignoreCase = true) ||
+                recipe.languages.en.description.contains(trimmedQuery, ignoreCase = true)
+        }
+        .sortedBy { it.languages.en.title.ifBlank { it.languages.fr.title } }
+}
+
+private fun recipeLinkTypeLabelRes(type: RecipeLinkType): Int = when (type) {
+    RecipeLinkType.COMPONENT -> R.string.recipe_link_type_component_label
+    RecipeLinkType.TOPPING -> R.string.recipe_link_type_topping_label
+    RecipeLinkType.FILLING -> R.string.recipe_link_type_filling_label
+    RecipeLinkType.FROSTING -> R.string.recipe_link_type_frosting_label
+    RecipeLinkType.SAUCE -> R.string.recipe_link_type_sauce_label
+    RecipeLinkType.SEASONING -> R.string.recipe_link_type_seasoning_label
+    RecipeLinkType.SIDE -> R.string.recipe_link_type_side_label
+    RecipeLinkType.PAIRING -> R.string.recipe_link_type_pairing_label
+    RecipeLinkType.VARIATION -> R.string.recipe_link_type_variation_label
+    RecipeLinkType.OTHER -> R.string.recipe_link_type_other_label
 }
 
 

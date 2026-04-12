@@ -20,6 +20,8 @@ import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Ratings
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeLibrary
+import app.recipebook.domain.model.RecipeLink
+import app.recipebook.domain.model.RecipeLinkType
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
@@ -285,6 +287,15 @@ class SchemaRoundTripTest {
         tagIds = listOf("6bce17f2-67ad-40c3-8267-fee6bac1ac43"),
         collectionIds = listOf("70ac4e1b-b73f-4477-82fd-ff44c643cce6"),
         ratings = Ratings(userRating = 4.5, madeCount = 2, lastMadeAt = "2026-02-20T09:00:00Z"),
+        recipeLinks = listOf(
+            RecipeLink(
+                id = "d1c3f2c3-9eb2-4a19-9fc1-2511ac6d3458",
+                targetRecipeId = "70ac4e1b-b73f-4477-82fd-ff44c643cce6",
+                linkType = RecipeLinkType.TOPPING,
+                labelFr = "Garniture",
+                labelEn = "Topping"
+            )
+        ),
         photos = listOf(PhotoRef("3f4f2cf1-70fa-42e6-935f-fddc4e7d870e", "photos/3f4f2cf1-70fa-42e6-935f-fddc4e7d870e.jpg", "drive://photo-1")),
         attachments = listOf(AttachmentRef("f49fbc5c-2b15-47a3-a81d-6fd0da70c2ed", "notes.pdf", "application/pdf", "attachments/f49fbc5c-2b15-47a3-a81d-6fd0da70c2ed-notes.pdf", null)),
         importMetadata = ImportMetadata(sourceType = "url", parserVersion = "1.0.0", originalUnits = "metric"),

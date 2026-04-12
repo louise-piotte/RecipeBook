@@ -7,6 +7,7 @@ import app.recipebook.data.local.db.RecipeBookDatabase
 import app.recipebook.data.local.db.RecipeCollectionCrossRef
 import app.recipebook.data.local.db.RecipeEntity
 import app.recipebook.data.local.db.RecipeIngredientLineEntity
+import app.recipebook.data.local.db.RecipeLinkEntity
 import app.recipebook.data.local.db.RecipeTagCrossRef
 import app.recipebook.data.local.recipes.RecipeRepository
 import app.recipebook.data.local.recipes.SeedLibraryData
@@ -71,6 +72,15 @@ class InstrumentedTest {
                 )
             ),
             ingredientLineSubstitutions = emptyList(),
+            recipeLinks = listOf(
+                RecipeLinkEntity(
+                    id = "recipe-link-1",
+                    recipeId = "recipe-1",
+                    targetRecipeId = "recipe-2",
+                    linkType = "SAUCE",
+                    position = 0
+                )
+            ),
             tagRefs = listOf(
                 RecipeTagCrossRef(
                     recipeId = "recipe-1",
@@ -92,6 +102,7 @@ class InstrumentedTest {
         assertNotNull(stored)
         assertEquals("Crepes", stored?.recipe?.titleFr)
         assertEquals("2 eggs", stored?.ingredientLines?.single()?.ingredientLine?.originalText)
+        assertEquals("recipe-2", stored?.recipeLinks?.single()?.targetRecipeId)
         assertEquals("tag-1", stored?.tagRefs?.single()?.tagId)
         assertEquals("collection-1", stored?.collectionRefs?.single()?.collectionId)
     }

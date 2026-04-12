@@ -1,7 +1,7 @@
 {
   "id": "166eae41-5c40-4a1c-8c3e-2cec590ab18c",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-05T00:00:00Z",
+  "updatedAt": "2026-04-12T00:00:00Z",
   "source": {
     "sourceName": "The Busy Baker",
     "sourceUrl": "https://thebusybaker.ca/classic-raspberry-pie/"
@@ -99,6 +99,14 @@
   "ratings": {
     "userRating": 3
   },
+  "recipeLinks": [
+    {
+      "id": "recipe-link-166eae41-5c40-4a1c-8c3e-2cec590ab18c-pie-crust",
+      "targetRecipeId": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca",
+      "linkType": "COMPONENT",
+      "position": 0
+    }
+  ],
   "mainPhotoId": "photo-166eae41-5c40-4a1c-8c3e-2cec590ab18c-0",
   "photos": [
     {

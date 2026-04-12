@@ -1,7 +1,7 @@
 {
   "id": "eea71586-6439-4826-9a3d-b87c5c98a2a6",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-04T00:00:00Z",
+  "updatedAt": "2026-04-12T00:00:00Z",
   "source": {
     "sourceName": "Baking With Butter",
     "sourceUrl": "https://bakingwithbutter.com/blueberry-cake-filling/"
@@ -97,6 +97,14 @@
   "ratings": {
     "userRating": 0
   },
+  "recipeLinks": [
+    {
+      "id": "recipe-link-eea71586-6439-4826-9a3d-b87c5c98a2a6-cherry-filling-variation",
+      "targetRecipeId": "5f004db4-2d76-458c-ae72-7f60379430fd",
+      "linkType": "VARIATION",
+      "position": 0
+    }
+  ],
   "mainPhotoId": "photo-eea71586-6439-4826-9a3d-b87c5c98a2a6-0",
   "photos": [
     {

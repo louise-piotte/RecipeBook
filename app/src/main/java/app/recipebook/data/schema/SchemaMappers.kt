@@ -20,6 +20,8 @@ import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Ratings
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeLibrary
+import app.recipebook.domain.model.RecipeLink
+import app.recipebook.domain.model.RecipeLinkType
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.Servings
@@ -64,6 +66,7 @@ private fun RecipeDto.toDomain(): Recipe = Recipe(
     tagIds = tags,
     collectionIds = collections,
     ratings = ratings?.toDomain(),
+    recipeLinks = recipeLinks.map { it.toDomain() },
     mainPhotoId = mainPhotoId,
     photos = photos.map { it.toDomain() },
     attachments = attachments.map { it.toDomain() },
@@ -83,6 +86,7 @@ private fun Recipe.toDto(): RecipeDto = RecipeDto(
     tags = tagIds,
     collections = collectionIds,
     ratings = ratings?.toDto(),
+    recipeLinks = recipeLinks.map { it.toDto() },
     mainPhotoId = mainPhotoId,
     photos = photos.map { it.toDto() },
     attachments = attachments.map { it.toDto() },
@@ -184,6 +188,22 @@ private fun Ratings.toDto(): RatingsDto = RatingsDto(
     userRating = userRating,
     madeCount = madeCount,
     lastMadeAt = lastMadeAt
+)
+
+private fun RecipeLinkDto.toDomain(): RecipeLink = RecipeLink(
+    id = id,
+    targetRecipeId = targetRecipeId,
+    linkType = RecipeLinkType.valueOf(linkType),
+    labelFr = labelFr,
+    labelEn = labelEn
+)
+
+private fun RecipeLink.toDto(): RecipeLinkDto = RecipeLinkDto(
+    id = id,
+    targetRecipeId = targetRecipeId,
+    linkType = linkType.name,
+    labelFr = labelFr,
+    labelEn = labelEn
 )
 
 private fun PhotoRefDto.toDomain(): PhotoRef = PhotoRef(

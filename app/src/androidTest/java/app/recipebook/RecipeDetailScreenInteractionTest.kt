@@ -20,12 +20,15 @@ import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.RecipeLink
+import app.recipebook.domain.model.RecipeLinkType
 import app.recipebook.domain.model.SubstitutionConfidence
 import app.recipebook.domain.model.SubstitutionConversionType
 import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.ui.recipes.RecipeDetailScreen
 import org.junit.Rule
 import org.junit.Test
+import org.junit.Assert.assertEquals
 
 class RecipeDetailScreenInteractionTest {
 
@@ -64,6 +67,7 @@ class RecipeDetailScreenInteractionTest {
         composeRule.setContent {
             RecipeDetailScreen(
                 recipe = recipe,
+                recipes = listOf(recipe),
                 ingredientReferences = listOf(ingredientReference),
                 substitutionCatalog = IngredientSubstitutionCatalog.EMPTY,
                 tags = emptyList(),
@@ -71,7 +75,8 @@ class RecipeDetailScreenInteractionTest {
                 onLanguageChange = {},
                 onBack = {},
                 onNavigate = {},
-                onEdit = {}
+                onEdit = {},
+                onOpenLinkedRecipe = {}
             )
         }
 
@@ -106,6 +111,7 @@ class RecipeDetailScreenInteractionTest {
         composeRule.setContent {
             RecipeDetailScreen(
                 recipe = recipe,
+                recipes = listOf(recipe),
                 ingredientReferences = emptyList(),
                 substitutionCatalog = IngredientSubstitutionCatalog.EMPTY,
                 tags = emptyList(),
@@ -113,7 +119,8 @@ class RecipeDetailScreenInteractionTest {
                 onLanguageChange = {},
                 onBack = {},
                 onNavigate = {},
-                onEdit = {}
+                onEdit = {},
+                onOpenLinkedRecipe = {}
             )
         }
 
@@ -193,6 +200,7 @@ class RecipeDetailScreenInteractionTest {
         composeRule.setContent {
             RecipeDetailScreen(
                 recipe = recipe,
+                recipes = listOf(recipe),
                 ingredientReferences = ingredientReferences,
                 substitutionCatalog = substitutionCatalog,
                 tags = listOf(tag),
@@ -200,7 +208,8 @@ class RecipeDetailScreenInteractionTest {
                 onLanguageChange = {},
                 onBack = {},
                 onNavigate = {},
-                onEdit = {}
+                onEdit = {},
+                onOpenLinkedRecipe = {}
             )
         }
 
@@ -211,6 +220,61 @@ class RecipeDetailScreenInteractionTest {
             .assert(hasText("1 tbsp cornstarch"))
         composeRule.onNodeWithText("Warning: Use only to thicken a sauce.")
             .assert(hasText("Warning: Use only to thicken a sauce."))
+    }
+
+    @Test
+    fun linkedRecipeRowOpensTargetRecipe() {
+        val linkedRecipeId = "recipe-sauce"
+        val recipe = Recipe(
+            id = "recipe-main",
+            createdAt = "2026-04-21T00:00:00Z",
+            updatedAt = "2026-04-21T00:00:00Z",
+            languages = BilingualText(
+                fr = LocalizedSystemText("Pates", "", "", ""),
+                en = LocalizedSystemText("Pasta", "", "", "")
+            ),
+            ingredients = emptyList(),
+            recipeLinks = listOf(
+                RecipeLink(
+                    id = "link-1",
+                    targetRecipeId = linkedRecipeId,
+                    linkType = RecipeLinkType.SAUCE
+                )
+            )
+        )
+        val sauceRecipe = Recipe(
+            id = linkedRecipeId,
+            createdAt = "2026-04-21T00:00:00Z",
+            updatedAt = "2026-04-21T00:00:00Z",
+            languages = BilingualText(
+                fr = LocalizedSystemText("Sauce tomate", "", "", ""),
+                en = LocalizedSystemText("Tomato Sauce", "", "", "")
+            ),
+            ingredients = emptyList()
+        )
+        var openedRecipeId: String? = null
+
+        composeRule.setContent {
+            RecipeDetailScreen(
+                recipe = recipe,
+                recipes = listOf(recipe, sauceRecipe),
+                ingredientReferences = emptyList(),
+                substitutionCatalog = IngredientSubstitutionCatalog.EMPTY,
+                tags = emptyList(),
+                language = AppLanguage.EN,
+                onLanguageChange = {},
+                onBack = {},
+                onNavigate = {},
+                onEdit = {},
+                onOpenLinkedRecipe = { recipeId -> openedRecipeId = recipeId }
+            )
+        }
+
+        composeRule.onNodeWithText("Sauce: Tomato Sauce").performClick()
+
+        composeRule.runOnIdle {
+            assertEquals(linkedRecipeId, openedRecipeId)
+        }
     }
 
     private fun hasStateDescription(expected: String): SemanticsMatcher =

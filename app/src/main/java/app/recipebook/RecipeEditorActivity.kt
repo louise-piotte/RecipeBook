@@ -45,6 +45,7 @@ class RecipeEditorActivity : ComponentActivity() {
             RecipeBookTheme {
                 val language by languageStore.language.collectAsState(initial = AppLanguage.EN)
                 var recipe by remember { mutableStateOf<Recipe?>(null) }
+                val recipes by repository.observeRecipes().collectAsState(initial = emptyList())
                 val ingredientReferences by repository.observeIngredientReferences().collectAsState(initial = emptyList())
                 val tags by repository.observeTags().collectAsState(initial = emptyList())
                 val collections by repository.observeCollections().collectAsState(initial = emptyList<Collection>())
@@ -63,6 +64,7 @@ class RecipeEditorActivity : ComponentActivity() {
                     RecipeEditorScreen(
                         initialRecipe = currentRecipe,
                         isNewRecipe = isNewRecipe,
+                        recipes = recipes,
                         ingredientReferences = ingredientReferences,
                         tags = tags,
                         collections = collections,

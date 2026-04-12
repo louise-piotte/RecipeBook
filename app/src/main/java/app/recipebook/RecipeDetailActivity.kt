@@ -43,6 +43,7 @@ class RecipeDetailActivity : ComponentActivity() {
                 } else {
                     repository.observeRecipeById(recipeId).collectAsState(initial = null)
                 }
+                val recipes by repository.observeRecipes().collectAsState(initial = emptyList())
                 val ingredientReferences by repository.observeIngredientReferences().collectAsState(initial = emptyList())
                 val tags by repository.observeTags().collectAsState(initial = emptyList())
                 val substitutionCatalog by produceState(initialValue = IngredientSubstitutionCatalog.EMPTY) {
@@ -51,6 +52,7 @@ class RecipeDetailActivity : ComponentActivity() {
 
                 RecipeDetailScreen(
                     recipe = recipe,
+                    recipes = recipes,
                     ingredientReferences = ingredientReferences,
                     substitutionCatalog = substitutionCatalog,
                     tags = tags,
@@ -83,6 +85,12 @@ class RecipeDetailActivity : ComponentActivity() {
                         startActivity(
                             android.content.Intent(this, RecipeEditorActivity::class.java)
                                 .putExtra(RecipeEditorActivity.EXTRA_RECIPE_ID, it)
+                        )
+                    },
+                    onOpenLinkedRecipe = {
+                        startActivity(
+                            android.content.Intent(this, RecipeDetailActivity::class.java)
+                                .putExtra(EXTRA_RECIPE_ID, it)
                         )
                     }
                 )

@@ -12,6 +12,7 @@ import app.recipebook.data.local.db.RecipeCollectionCrossRef
 import app.recipebook.data.local.db.RecipeDao
 import app.recipebook.data.local.db.RecipeEntity
 import app.recipebook.data.local.db.RecipeIngredientLineEntity
+import app.recipebook.data.local.db.RecipeLinkEntity
 import app.recipebook.data.local.db.RecipeTagCrossRef
 import app.recipebook.data.local.db.RecipeWithRelations
 import app.recipebook.data.local.db.TagDao
@@ -26,6 +27,8 @@ import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.RecipeLink
+import app.recipebook.domain.model.RecipeLinkType
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.domain.model.Tag
@@ -86,6 +89,28 @@ class RecipeRepositoryTest {
         assertEquals(original.mainPhotoId, roundTrip.mainPhotoId)
         assertEquals(original.tagIds, roundTrip.tagIds)
         assertEquals(original.collectionIds, roundTrip.collectionIds)
+        assertEquals(original.recipeLinks, roundTrip.recipeLinks)
+    }
+
+    @Test
+    fun upsertRecipe_rejectsSelfLinks() = runBlocking {
+        val repository = RecipeRepository(FakeRecipeDao())
+        val recipe = sampleRecipe(id = "recipe-self-link").copy(
+            recipeLinks = listOf(
+                RecipeLink(
+                    id = "link-1",
+                    targetRecipeId = "recipe-self-link",
+                    linkType = RecipeLinkType.COMPONENT
+                )
+            )
+        )
+
+        try {
+            repository.upsertRecipe(recipe)
+            fail("Expected self-link validation to fail")
+        } catch (expected: IllegalArgumentException) {
+            assertTrue(expected.message?.contains("cannot target the same recipe") == true)
+        }
     }
 
     @Test
@@ -518,7 +543,8 @@ private fun sampleRecipe(
         originalText = "1 cup flour",
         ingredientName = "flour"
     ),
-    tagIds: List<String> = emptyList()
+    tagIds: List<String> = emptyList(),
+    recipeLinks: List<RecipeLink> = emptyList()
 ): Recipe = Recipe(
     id = id,
     createdAt = "2026-03-13T10:00:00Z",
@@ -530,13 +556,15 @@ private fun sampleRecipe(
     ingredients = listOf(ingredient),
     mainPhotoId = "photo-main",
     photos = listOf(PhotoRef("photo-main", "C:/photos/photo-main.jpg")),
-    tagIds = tagIds
+    tagIds = tagIds,
+    recipeLinks = recipeLinks
 )
 
 private class FakeRecipeDao : RecipeDao() {
     private val recipes = linkedMapOf<String, RecipeEntity>()
     private val ingredientLines = linkedMapOf<String, RecipeIngredientLineEntity>()
     private val substitutions = linkedMapOf<String, IngredientLineSubstitutionEntity>()
+    private val recipeLinks = linkedMapOf<String, MutableList<RecipeLinkEntity>>()
     private val tagRefs = linkedMapOf<String, MutableList<RecipeTagCrossRef>>()
     private val collectionRefs = linkedMapOf<String, MutableList<RecipeCollectionCrossRef>>()
 
@@ -554,6 +582,12 @@ private class FakeRecipeDao : RecipeDao() {
 
     override suspend fun upsertIngredientLineSubstitutions(substitutions: List<IngredientLineSubstitutionEntity>) {
         substitutions.forEach { substitution -> this.substitutions[substitution.id] = substitution }
+    }
+
+    override suspend fun upsertRecipeLinks(recipeLinks: List<RecipeLinkEntity>) {
+        recipeLinks.groupBy(RecipeLinkEntity::recipeId).forEach { (recipeId, links) ->
+            this.recipeLinks[recipeId] = links.sortedBy(RecipeLinkEntity::position).toMutableList()
+        }
     }
 
     override suspend fun upsertRecipeTagRefs(tagRefs: List<RecipeTagCrossRef>) {
@@ -583,6 +617,10 @@ private class FakeRecipeDao : RecipeDao() {
             .toSet()
         ingredientLines.entries.removeIf { it.value.recipeId == recipeId }
         substitutions.entries.removeIf { it.value.ingredientLineId in deletedLineIds }
+    }
+
+    override suspend fun deleteRecipeLinksByRecipeId(recipeId: String) {
+        recipeLinks.remove(recipeId)
     }
 
     override suspend fun getById(id: String): RecipeEntity? = recipes[id]
@@ -622,6 +660,7 @@ private class FakeRecipeDao : RecipeDao() {
     override suspend fun deleteById(id: String) {
         recipes.remove(id)
         deleteIngredientLinesByRecipeId(id)
+        deleteRecipeLinksByRecipeId(id)
         deleteTagRefsByRecipeId(id)
         deleteCollectionRefsByRecipeId(id)
     }
@@ -646,6 +685,7 @@ private class FakeRecipeDao : RecipeDao() {
         return RecipeWithRelations(
             recipe = recipe,
             ingredientLines = ingredientLineRelations,
+            recipeLinks = recipeLinks[id].orEmpty().sortedBy(RecipeLinkEntity::position),
             tagRefs = tagRefs[id].orEmpty().sortedBy(RecipeTagCrossRef::position),
             collectionRefs = collectionRefs[id].orEmpty().sortedBy(RecipeCollectionCrossRef::position)
         )

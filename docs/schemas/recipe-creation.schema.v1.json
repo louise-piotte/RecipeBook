@@ -104,6 +104,21 @@
         "unit": { "type": "string" }
       }
     },
+    "RecipeLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "targetRecipeId", "linkType"],
+      "properties": {
+        "id": { "$ref": "#/$defs/Uuid" },
+        "targetRecipeId": { "$ref": "#/$defs/Uuid" },
+        "linkType": {
+          "type": "string",
+          "enum": ["COMPONENT", "TOPPING", "FILLING", "FROSTING", "SAUCE", "SEASONING", "SIDE", "PAIRING", "VARIATION", "OTHER"]
+        },
+        "labelFr": { "type": "string" },
+        "labelEn": { "type": "string" }
+      }
+    },
     "Times": {
       "type": "object",
       "additionalProperties": false,
@@ -145,6 +160,10 @@
             "madeCount": { "type": "integer", "minimum": 0 },
             "lastMadeAt": { "$ref": "#/$defs/DateTime" }
           }
+        },
+        "recipeLinks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/RecipeLink" }
         },
         "mainPhotoId": { "$ref": "#/$defs/Uuid" },
         "photos": {
@@ -214,6 +233,13 @@
             "quantity": 200,
             "unit": "g",
             "ingredientName": "flour"
+          }
+        ],
+        "recipeLinks": [
+          {
+            "id": "0f33af53-cd66-4307-8a70-b22ab0d38f95",
+            "targetRecipeId": "c277d887-f38f-4f7a-a86c-e42ba2ef3d90",
+            "linkType": "TOPPING"
           }
         ],
         "servings": {
