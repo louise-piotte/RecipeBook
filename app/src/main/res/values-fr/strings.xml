@@ -24,6 +24,9 @@
     <string name="add_recipe_label">Ajouter une recette</string>
     <string name="edit_recipe_label">Modifier la recette</string>
     <string name="import_recipe_label">Importer une recette</string>
+    <string name="import_recipe_help_label">Coller une URL de recette ou le texte d&#8217;une recette pour cr&#233;er une &#233;bauche.</string>
+    <string name="import_recipe_input_label">URL ou texte de la recette</string>
+    <string name="import_action_label">Importer</string>
     <string name="save_recipe_label">Enregistrer la recette</string>
     <string name="delete_recipe_label">Supprimer la recette</string>
     <string name="editor_preview_placeholder">Recette sans titre</string>

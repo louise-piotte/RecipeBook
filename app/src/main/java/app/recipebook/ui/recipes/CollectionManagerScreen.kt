@@ -68,6 +68,7 @@ fun CollectionManagerScreen(
                 onNavigate = { destination ->
                     when (destination) {
                         MainMenuDestination.Library -> onNavigateToLibrary(null)
+                        MainMenuDestination.Import -> Unit
                         MainMenuDestination.Collections -> Unit
                         MainMenuDestination.Ingredients -> onNavigateToIngredients()
                         MainMenuDestination.Tags -> onNavigateToTags()

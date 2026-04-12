@@ -34,6 +34,7 @@ import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
+import androidx.compose.material3.Button
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -70,6 +71,7 @@ import app.recipebook.CollectionManagerActivity
 import app.recipebook.RecipeDetailActivity
 import app.recipebook.RecipeEditorActivity
 import app.recipebook.data.local.recipes.RecipeRepository
+import app.recipebook.data.local.recipes.SharedRecipeImporter
 import app.recipebook.domain.localization.BilingualText
 import app.recipebook.domain.localization.BilingualTextResolver
 import app.recipebook.domain.model.AppLanguage
@@ -93,6 +95,7 @@ fun RecipeLibraryScreen(
     var selectedCollectionId by rememberSaveable { mutableStateOf(initialSelectedCollectionId) }
     var showTagFilterDialog by rememberSaveable { mutableStateOf(false) }
     var showAddRecipesToCollectionDialog by rememberSaveable { mutableStateOf(false) }
+    var showImportDialog by rememberSaveable { mutableStateOf(false) }
     val recipes by repository.observeRecipes().collectAsState(initial = emptyList())
     val tags by repository.observeTags().collectAsState(initial = emptyList())
     val collections by repository.observeCollections().collectAsState(initial = emptyList())
@@ -175,6 +178,9 @@ fun RecipeLibraryScreen(
                             context.startActivity(
                                 CollectionManagerActivity.intent(context)
                             )
+                        }
+                        MainMenuDestination.Import -> {
+                            showImportDialog = true
                         }
 
                         MainMenuDestination.Tags -> {
@@ -280,6 +286,24 @@ fun RecipeLibraryScreen(
             onAddRecipe = { recipe ->
                 repository.upsertRecipe(
                     recipe.copy(collectionIds = (recipe.collectionIds + selectedCollection.id).distinct())
+                )
+            }
+        )
+    }
+
+    if (showImportDialog) {
+        RecipeImportDialog(
+            language = language,
+            onDismiss = { showImportDialog = false },
+            onImport = { input ->
+                val importer = SharedRecipeImporter()
+                val draft = importer.import(input)
+                context.startActivity(
+                    RecipeEditorActivity.intentForImportedDraft(
+                        context = context,
+                        draft = draft,
+                        language = language
+                    )
                 )
             }
         )
@@ -741,6 +765,73 @@ private fun AddRecipesToCollectionDialog(
     }
 }
 
+@Composable
+private fun RecipeImportDialog(
+    language: AppLanguage,
+    onDismiss: () -> Unit,
+    onImport: suspend (String) -> Unit
+) {
+    var input by rememberSaveable { mutableStateOf("") }
+    var isImporting by remember { mutableStateOf(false) }
+    val coroutineScope = rememberCoroutineScope()
+
+    Dialog(onDismissRequest = { if (!isImporting) onDismiss() }) {
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = PopupShape
+        ) {
+            Column(
+                modifier = Modifier.padding(12.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Text(
+                    text = localizedString(R.string.import_recipe_label, language),
+                    style = MaterialTheme.typography.titleLarge
+                )
+                Text(
+                    text = localizedString(R.string.import_recipe_help_label, language),
+                    style = MaterialTheme.typography.bodyMedium
+                )
+                OutlinedTextField(
+                    value = input,
+                    onValueChange = { input = it },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(220.dp),
+                    label = { Text(localizedString(R.string.import_recipe_input_label, language)) }
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.End
+                ) {
+                    TextButton(
+                        enabled = !isImporting,
+                        onClick = onDismiss
+                    ) {
+                        Text(localizedString(R.string.cancel_label, language))
+                    }
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Button(
+                        enabled = input.isNotBlank() && !isImporting,
+                        onClick = {
+                            isImporting = true
+                            coroutineScope.launch {
+                                runCatching {
+                                    onImport(input.trim())
+                                }
+                                isImporting = false
+                                onDismiss()
+                            }
+                        }
+                    ) {
+                        Text(localizedString(R.string.import_action_label, language))
+                    }
+                }
+            }
+        }
+    }
+}
+
 internal fun Recipe.titleText(): BilingualText = BilingualText(
     fr = languages.fr.title,
     en = languages.en.title
@@ -861,6 +952,7 @@ enum class LibraryManagerSection {
 
 internal enum class MainMenuDestination(@StringRes val labelResId: Int) {
     Library(R.string.menu_recipe_library_label),
+    Import(R.string.import_recipe_label),
     Collections(R.string.menu_collections_label),
     Ingredients(R.string.menu_ingredients_label),
     Tags(R.string.menu_tags_label)
