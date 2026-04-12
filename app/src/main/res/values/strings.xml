@@ -7,7 +7,6 @@
     <string name="menu_collections_label">Collections</string>
     <string name="menu_ingredients_label">Ingredients</string>
     <string name="menu_tags_label">Tags</string>
-    <string name="notes_label">Notes</string>
     <string name="placeholder_missing_fr">Non disponible en fran&#231;ais</string>
     <string name="placeholder_missing_en">Not available in English</string>
     <string name="search_label">Search recipes</string>
@@ -30,14 +29,10 @@
     <string name="save_recipe_label">Save recipe</string>
     <string name="delete_recipe_label">Delete recipe</string>
     <string name="editor_preview_placeholder">Untitled recipe</string>
-    <string name="title_fr_label">Title (FR)</string>
-    <string name="title_en_label">Title (EN)</string>
-    <string name="description_fr_label">Description (FR)</string>
-    <string name="description_en_label">Description (EN)</string>
-    <string name="instructions_fr_label">Instructions (FR)</string>
-    <string name="instructions_en_label">Instructions (EN)</string>
-    <string name="notes_fr_label">Notes (FR)</string>
-    <string name="notes_en_label">Notes (EN)</string>
+    <string name="title_label">Title</string>
+    <string name="description_label">Description</string>
+    <string name="instructions_label">Instructions</string>
+    <string name="notes_label">Notes</string>
     <string name="source_name_label">Source name</string>
     <string name="source_url_label">Source URL</string>
     <string name="servings_amount_label">Servings amount</string>
@@ -46,7 +41,6 @@
     <string name="cook_minutes_label">Cook minutes</string>
     <string name="total_minutes_label">Total minutes</string>
     <string name="ingredients_label">Ingredients</string>
-    <string name="instructions_label">Instructions</string>
     <string name="instruction_state_normal">Normal</string>
     <string name="instruction_state_emphasized">Bold</string>
     <string name="source_label">Source</string>

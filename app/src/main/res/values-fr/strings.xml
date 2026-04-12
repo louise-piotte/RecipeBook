@@ -7,7 +7,6 @@
     <string name="menu_collections_label">Collections</string>
     <string name="menu_ingredients_label">Ingr&#233;dients</string>
     <string name="menu_tags_label">Tags</string>
-    <string name="notes_label">Notes</string>
     <string name="placeholder_missing_fr">Non disponible en fran&#231;ais</string>
     <string name="placeholder_missing_en">Not available in English</string>
     <string name="search_label">Rechercher des recettes</string>
@@ -30,14 +29,10 @@
     <string name="save_recipe_label">Enregistrer la recette</string>
     <string name="delete_recipe_label">Supprimer la recette</string>
     <string name="editor_preview_placeholder">Recette sans titre</string>
-    <string name="title_fr_label">Titre (FR)</string>
-    <string name="title_en_label">Titre (EN)</string>
-    <string name="description_fr_label">Description (FR)</string>
-    <string name="description_en_label">Description (EN)</string>
-    <string name="instructions_fr_label">Instructions (FR)</string>
-    <string name="instructions_en_label">Instructions (EN)</string>
-    <string name="notes_fr_label">Notes (FR)</string>
-    <string name="notes_en_label">Notes (EN)</string>
+    <string name="title_label">Titre</string>
+    <string name="description_label">Description</string>
+    <string name="instructions_label">Instructions</string>
+    <string name="notes_label">Notes</string>
     <string name="source_name_label">Nom de la source</string>
     <string name="source_url_label">URL de la source</string>
     <string name="servings_amount_label">Quantit&#233; de portions</string>
@@ -46,7 +41,6 @@
     <string name="cook_minutes_label">Minutes de cuisson</string>
     <string name="total_minutes_label">Minutes totales</string>
     <string name="ingredients_label">Ingr&#233;dients</string>
-    <string name="instructions_label">Instructions</string>
     <string name="instruction_state_normal">Normal</string>
     <string name="instruction_state_emphasized">Gras</string>
     <string name="source_label">Source</string>

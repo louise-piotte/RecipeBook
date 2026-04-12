@@ -1,8 +1,10 @@
 package app.recipebook.ui.recipes
 
 import app.recipebook.domain.model.AppLanguage
+import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.IngredientReference
+import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.TagCategory
 import org.junit.Assert.assertEquals
@@ -147,5 +149,45 @@ class RecipeEditorScreenTest {
         val filtered = filterCollections(collections, "holiday")
 
         assertEquals(listOf("collection-holiday"), filtered.map { it.id })
+    }
+
+    @Test
+    fun updateForLanguage_updatesOnlySelectedLanguage() {
+        val bilingual = BilingualText(
+            fr = LocalizedSystemText(title = "Soupe", description = "", instructions = "", notes = ""),
+            en = LocalizedSystemText(title = "Soup", description = "", instructions = "", notes = "")
+        )
+
+        val updated = bilingual.updateForLanguage(AppLanguage.EN) { copy(title = "Stew") }
+
+        assertEquals("Soupe", updated.fr.title)
+        assertEquals("Stew", updated.en.title)
+    }
+
+    @Test
+    fun normalizedForSave_trimsAndNormalizesBothLanguages() {
+        val bilingual = BilingualText(
+            fr = LocalizedSystemText(
+                title = "  Titre  ",
+                description = "  Desc  ",
+                instructions = "  Etape 1  \n\n Etape 2 ",
+                notes = "  Note  "
+            ),
+            en = LocalizedSystemText(
+                title = "  Title  ",
+                description = "  Desc  ",
+                instructions = " Step 1 \n\n Step 2 ",
+                notes = "  Note  "
+            )
+        )
+
+        val normalized = bilingual.normalizedForSave()
+
+        assertEquals("Titre", normalized.fr.title)
+        assertEquals("Desc", normalized.fr.description)
+        assertEquals("Etape 1\nEtape 2", normalized.fr.instructions)
+        assertEquals("Note", normalized.fr.notes)
+        assertEquals("Title", normalized.en.title)
+        assertEquals("Step 1\nStep 2", normalized.en.instructions)
     }
 }

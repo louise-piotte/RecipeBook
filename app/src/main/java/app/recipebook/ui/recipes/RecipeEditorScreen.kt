@@ -43,6 +43,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.saveable.listSaver
+import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -96,14 +98,14 @@ fun RecipeEditorScreen(
     onDelete: (() -> Unit)?,
     modifier: Modifier = Modifier
 ) {
-    var titleFr by rememberSaveable { mutableStateOf(initialRecipe.languages.fr.title) }
-    var titleEn by rememberSaveable { mutableStateOf(initialRecipe.languages.en.title) }
-    var descriptionFr by rememberSaveable { mutableStateOf(initialRecipe.languages.fr.description) }
-    var descriptionEn by rememberSaveable { mutableStateOf(initialRecipe.languages.en.description) }
-    var instructionsFr by rememberSaveable { mutableStateOf(initialRecipe.languages.fr.instructions) }
-    var instructionsEn by rememberSaveable { mutableStateOf(initialRecipe.languages.en.instructions) }
-    var notesFr by rememberSaveable { mutableStateOf(initialRecipe.languages.fr.notes) }
-    var notesEn by rememberSaveable { mutableStateOf(initialRecipe.languages.en.notes) }
+    var localizedTexts by rememberSaveable(stateSaver = bilingualTextSaver()) {
+        mutableStateOf(
+            BilingualText(
+                fr = initialRecipe.languages.fr,
+                en = initialRecipe.languages.en
+            )
+        )
+    }
     var sourceName by rememberSaveable { mutableStateOf(initialRecipe.source?.sourceName.orEmpty()) }
     var sourceUrl by rememberSaveable { mutableStateOf(initialRecipe.source?.sourceUrl.orEmpty()) }
     var servingsAmount by rememberSaveable { mutableStateOf(initialRecipe.servings?.amount?.let(::formatNumber).orEmpty()) }
@@ -143,24 +145,14 @@ fun RecipeEditorScreen(
     var ingredientsExpanded by rememberSaveable { mutableStateOf(false) }
     var pendingCameraCapture by remember { mutableStateOf<PendingRecipePhotoCapture?>(null) }
     val coroutineScope = rememberCoroutineScope()
+    val activeLocalizedText = remember(localizedTexts, language) {
+        localizedTexts.forLanguage(language)
+    }
     val saveRecipe = {
         onSave(
             initialRecipe.copy(
                 updatedAt = Instant.now().toString(),
-                languages = BilingualText(
-                    fr = LocalizedSystemText(
-                        title = titleFr.trim(),
-                        description = descriptionFr.trim(),
-                        instructions = normalizeMultilineText(instructionsFr),
-                        notes = normalizeMultilineText(notesFr)
-                    ),
-                    en = LocalizedSystemText(
-                        title = titleEn.trim(),
-                        description = descriptionEn.trim(),
-                        instructions = normalizeMultilineText(instructionsEn),
-                        notes = normalizeMultilineText(notesEn)
-                    )
-                ),
+                languages = localizedTexts.normalizedForSave(),
                 source = if (sourceName.isBlank() && sourceUrl.isBlank()) null else RecipeSource(
                     sourceName = sourceName.trim(),
                     sourceUrl = sourceUrl.trim()
@@ -177,8 +169,8 @@ fun RecipeEditorScreen(
         )
     }
 
-    val titlePreview = remember(language, titleFr, titleEn) {
-        if (language == AppLanguage.FR) titleFr else titleEn
+    val titlePreview = remember(language, localizedTexts) {
+        localizedTexts.forLanguage(language).title
     }
 
     val importPhotoLauncher = rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri ->
@@ -264,10 +256,17 @@ fun RecipeEditorScreen(
                     style = MaterialTheme.typography.titleLarge
                 )
 
-                LabeledField(localizedString(R.string.title_fr_label, language), titleFr) { titleFr = it }
-                LabeledField(localizedString(R.string.title_en_label, language), titleEn) { titleEn = it }
-                LabeledField(localizedString(R.string.description_fr_label, language), descriptionFr, singleLine = false, minLines = 4) { descriptionFr = it }
-                LabeledField(localizedString(R.string.description_en_label, language), descriptionEn, singleLine = false, minLines = 4) { descriptionEn = it }
+                LabeledField(localizedString(R.string.title_label, language), activeLocalizedText.title) {
+                    localizedTexts = localizedTexts.updateForLanguage(language) { copy(title = it) }
+                }
+                LabeledField(
+                    localizedString(R.string.description_label, language),
+                    activeLocalizedText.description,
+                    singleLine = false,
+                    minLines = 4
+                ) {
+                    localizedTexts = localizedTexts.updateForLanguage(language) { copy(description = it) }
+                }
                 IngredientsEditorSection(
                     language = language,
                     ingredientRows = ingredientRows,
@@ -294,10 +293,22 @@ fun RecipeEditorScreen(
                         ingredientPickerIndex = ingredientRows.lastIndex
                     }
                 )
-                LabeledField(localizedString(R.string.instructions_fr_label, language), instructionsFr, singleLine = false, minLines = 5) { instructionsFr = it }
-                LabeledField(localizedString(R.string.instructions_en_label, language), instructionsEn, singleLine = false, minLines = 5) { instructionsEn = it }
-                LabeledField(localizedString(R.string.notes_fr_label, language), notesFr, singleLine = false, minLines = 4) { notesFr = it }
-                LabeledField(localizedString(R.string.notes_en_label, language), notesEn, singleLine = false, minLines = 4) { notesEn = it }
+                LabeledField(
+                    localizedString(R.string.instructions_label, language),
+                    activeLocalizedText.instructions,
+                    singleLine = false,
+                    minLines = 5
+                ) {
+                    localizedTexts = localizedTexts.updateForLanguage(language) { copy(instructions = it) }
+                }
+                LabeledField(
+                    localizedString(R.string.notes_label, language),
+                    activeLocalizedText.notes,
+                    singleLine = false,
+                    minLines = 4
+                ) {
+                    localizedTexts = localizedTexts.updateForLanguage(language) { copy(notes = it) }
+                }
                 LabeledField(localizedString(R.string.source_name_label, language), sourceName) { sourceName = it }
                 LabeledField(localizedString(R.string.source_url_label, language), sourceUrl) { sourceUrl = it }
                 LabeledField(localizedString(R.string.servings_amount_label, language), servingsAmount) { servingsAmount = it }
@@ -430,39 +441,7 @@ fun RecipeEditorScreen(
             )
 
             Button(
-                onClick = {
-                    onSave(
-                        initialRecipe.copy(
-                            updatedAt = Instant.now().toString(),
-                            languages = BilingualText(
-                                fr = LocalizedSystemText(
-                                    title = titleFr.trim(),
-                                    description = descriptionFr.trim(),
-                                    instructions = normalizeMultilineText(instructionsFr),
-                                    notes = normalizeMultilineText(notesFr)
-                                ),
-                                en = LocalizedSystemText(
-                                    title = titleEn.trim(),
-                                    description = descriptionEn.trim(),
-                                    instructions = normalizeMultilineText(instructionsEn),
-                                    notes = normalizeMultilineText(notesEn)
-                                )
-                            ),
-                            source = if (sourceName.isBlank() && sourceUrl.isBlank()) null else RecipeSource(
-                                sourceName = sourceName.trim(),
-                                sourceUrl = sourceUrl.trim()
-                            ),
-                            servings = parseServings(servingsAmount, servingsUnit),
-                            times = parseTimes(prepMinutes, cookMinutes, totalMinutes),
-                            ingredients = ingredientRows.toIngredientLines(ingredientReferences),
-                            tagIds = selectedTagIds.distinct(),
-                            collectionIds = selectedCollectionIds.distinct(),
-                            recipeLinks = recipeLinkRows.toRecipeLinks(),
-                            mainPhotoId = normalizedMainPhotoId(mainPhotoId, recipePhotos),
-                            photos = recipePhotos.toList()
-                        )
-                    )
-                },
+                onClick = saveRecipe,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(localizedString(R.string.save_recipe_label, language))
@@ -1254,6 +1233,65 @@ internal fun parseTextEntries(input: String): List<String> {
 }
 
 internal fun normalizeMultilineText(input: String): String = parseTextEntries(input).joinToString("\n")
+
+private fun bilingualTextSaver(): Saver<BilingualText, Any> = listSaver(
+    save = {
+        listOf(
+            it.fr.title,
+            it.fr.description,
+            it.fr.instructions,
+            it.fr.notes,
+            it.en.title,
+            it.en.description,
+            it.en.instructions,
+            it.en.notes
+        )
+    },
+    restore = {
+        BilingualText(
+            fr = LocalizedSystemText(
+                title = it[0] as String,
+                description = it[1] as String,
+                instructions = it[2] as String,
+                notes = it[3] as String
+            ),
+            en = LocalizedSystemText(
+                title = it[4] as String,
+                description = it[5] as String,
+                instructions = it[6] as String,
+                notes = it[7] as String
+            )
+        )
+    }
+)
+
+internal fun BilingualText.forLanguage(language: AppLanguage): LocalizedSystemText = when (language) {
+    AppLanguage.FR -> fr
+    AppLanguage.EN -> en
+}
+
+internal fun BilingualText.updateForLanguage(
+    language: AppLanguage,
+    update: LocalizedSystemText.() -> LocalizedSystemText
+): BilingualText = when (language) {
+    AppLanguage.FR -> copy(fr = fr.update())
+    AppLanguage.EN -> copy(en = en.update())
+}
+
+internal fun BilingualText.normalizedForSave(): BilingualText = copy(
+    fr = fr.copy(
+        title = fr.title.trim(),
+        description = fr.description.trim(),
+        instructions = normalizeMultilineText(fr.instructions),
+        notes = normalizeMultilineText(fr.notes)
+    ),
+    en = en.copy(
+        title = en.title.trim(),
+        description = en.description.trim(),
+        instructions = normalizeMultilineText(en.instructions),
+        notes = normalizeMultilineText(en.notes)
+    )
+)
 
 internal fun parseIngredients(input: String): List<IngredientLine> {
     return parseTextEntries(input)
