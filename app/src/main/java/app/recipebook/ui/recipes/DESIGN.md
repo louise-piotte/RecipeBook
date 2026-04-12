@@ -22,3 +22,4 @@ This package contains the main Compose product UI.
 ## Maintenance Notes
 - Large screen files can grow quickly. When splitting them, group extracted components by workflow instead of making generic utility files too early.
 - When adding UI around new data fields, confirm the repository and localization behavior already support the intended workflow.
+- Imported recipes should still open in `RecipeEditorScreen.kt` so parsing review happens inside the normal editing experience instead of a separate draft-only screen for now.

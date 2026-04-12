@@ -13,12 +13,14 @@ This package contains the main recipe-library orchestration layer.
 - `BundledRecipeLibraryLoader.kt`, `BundledIngredientCatalog.kt`, `BundledTagCatalog.kt`: seed and catalog hydration from assets.
 - `IngredientSubstitutionResolver.kt`: domain-facing substitution/conversion helper logic backed by stored and seeded data.
 - `RecipePhotoStore.kt`: local file ownership for recipe photos.
+- `SharedRecipeImport.kt`: deterministic shared-text and shared-URL intake, including `schema.org/Recipe` JSON-LD extraction and imported-draft mapping.
 - `RecipeKeeper*Import.kt`: import parsing from RecipeKeeper exports into domain-friendly data.
 
 ## Core Design
 - Repository methods return domain models and flows, not Room entities.
 - Validation that protects graph integrity lives close to repository writes.
 - Bundled seed data and user-created data are combined by repository orchestration, but the user database becomes authoritative after seeding.
+- Import helpers should extract whatever is reliable without AI, then hand a compact draft to the existing editor/save pipeline.
 
 ## Maintenance Notes
 - When changing recipe structure, review graph replacement logic carefully; most bugs here are partial-write or mapping drift issues.

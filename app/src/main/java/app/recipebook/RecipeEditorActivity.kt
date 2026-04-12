@@ -1,5 +1,7 @@
 package app.recipebook
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -11,13 +13,17 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.lifecycleScope
+import app.recipebook.data.local.recipes.ImportedRecipeDraft
 import app.recipebook.data.local.recipes.RecipePhotoStore
 import app.recipebook.data.local.recipes.RecipeRepositoryProvider
+import app.recipebook.data.local.recipes.applyToRecipe
 import app.recipebook.data.local.settings.AppLanguageStore
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.RecipeTimes
+import app.recipebook.domain.model.Servings
 import app.recipebook.ui.recipes.RecipeEditorScreen
 import app.recipebook.ui.recipes.photosToDeleteForRecipeDeletion
 import app.recipebook.ui.theme.RecipeBookTheme
@@ -40,6 +46,10 @@ class RecipeEditorActivity : ComponentActivity() {
         val languageStore = AppLanguageStore(this)
         val recipeId = intent.getStringExtra(EXTRA_RECIPE_ID)
         val isNewRecipe = recipeId == null
+        val importedDraft = importedDraftFromIntent(intent)
+        val importLanguage = intent.getStringExtra(EXTRA_IMPORT_LANGUAGE)
+            ?.let { runCatching { AppLanguage.valueOf(it) }.getOrNull() }
+            ?: AppLanguage.EN
 
         setContent {
             RecipeBookTheme {
@@ -53,7 +63,8 @@ class RecipeEditorActivity : ComponentActivity() {
                 LaunchedEffect(recipeId) {
                     repository.seedBundledLibraryIfMissing()
                     recipe = if (recipeId == null) {
-                        repository.createBlankRecipe()
+                        val blankRecipe = repository.createBlankRecipe()
+                        importedDraft?.applyToRecipe(blankRecipe, importLanguage) ?: blankRecipe
                     } else {
                         repository.getRecipeById(recipeId) ?: repository.createBlankRecipe()
                     }
@@ -125,7 +136,96 @@ class RecipeEditorActivity : ComponentActivity() {
 
     companion object {
         const val EXTRA_RECIPE_ID = "recipe_id"
+        private const val EXTRA_IMPORT_LANGUAGE = "import_language"
+        private const val EXTRA_IMPORTED_TITLE = "imported_title"
+        private const val EXTRA_IMPORTED_DESCRIPTION = "imported_description"
+        private const val EXTRA_IMPORTED_INGREDIENTS = "imported_ingredients"
+        private const val EXTRA_IMPORTED_INSTRUCTIONS = "imported_instructions"
+        private const val EXTRA_IMPORTED_NOTES = "imported_notes"
+        private const val EXTRA_IMPORTED_SOURCE_NAME = "imported_source_name"
+        private const val EXTRA_IMPORTED_SOURCE_URL = "imported_source_url"
+        private const val EXTRA_IMPORTED_SERVINGS_AMOUNT = "imported_servings_amount"
+        private const val EXTRA_IMPORTED_SERVINGS_UNIT = "imported_servings_unit"
+        private const val EXTRA_IMPORTED_PREP_MINUTES = "imported_prep_minutes"
+        private const val EXTRA_IMPORTED_COOK_MINUTES = "imported_cook_minutes"
+        private const val EXTRA_IMPORTED_TOTAL_MINUTES = "imported_total_minutes"
+        private const val EXTRA_IMPORTED_SOURCE_TYPE = "imported_source_type"
+        private const val EXTRA_IMPORTED_PARSER_VERSION = "imported_parser_version"
+        private const val EXTRA_IMPORTED_ORIGINAL_UNITS = "imported_original_units"
+
+        fun intentForImportedDraft(
+            context: Context,
+            draft: ImportedRecipeDraft,
+            language: AppLanguage
+        ): Intent = Intent(context, RecipeEditorActivity::class.java).apply {
+            putExtra(EXTRA_IMPORT_LANGUAGE, language.name)
+            putExtra(EXTRA_IMPORTED_TITLE, draft.title)
+            putExtra(EXTRA_IMPORTED_DESCRIPTION, draft.description)
+            putStringArrayListExtra(EXTRA_IMPORTED_INGREDIENTS, ArrayList(draft.ingredients))
+            putExtra(EXTRA_IMPORTED_INSTRUCTIONS, draft.instructions)
+            putExtra(EXTRA_IMPORTED_NOTES, draft.notes)
+            putExtra(EXTRA_IMPORTED_SOURCE_NAME, draft.sourceName)
+            putExtra(EXTRA_IMPORTED_SOURCE_URL, draft.sourceUrl)
+            putExtra(EXTRA_IMPORTED_SERVINGS_AMOUNT, draft.servings?.amount)
+            putExtra(EXTRA_IMPORTED_SERVINGS_UNIT, draft.servings?.unit)
+            putExtra(EXTRA_IMPORTED_PREP_MINUTES, draft.times?.prepTimeMinutes)
+            putExtra(EXTRA_IMPORTED_COOK_MINUTES, draft.times?.cookTimeMinutes)
+            putExtra(EXTRA_IMPORTED_TOTAL_MINUTES, draft.times?.totalTimeMinutes)
+            putExtra(EXTRA_IMPORTED_SOURCE_TYPE, draft.importMetadata.sourceType)
+            putExtra(EXTRA_IMPORTED_PARSER_VERSION, draft.importMetadata.parserVersion)
+            putExtra(EXTRA_IMPORTED_ORIGINAL_UNITS, draft.importMetadata.originalUnits)
+        }
+
+        private fun importedDraftFromIntent(intent: Intent): ImportedRecipeDraft? {
+            val title = intent.getStringExtra(EXTRA_IMPORTED_TITLE).orEmpty()
+            val description = intent.getStringExtra(EXTRA_IMPORTED_DESCRIPTION).orEmpty()
+            val ingredients = intent.getStringArrayListExtra(EXTRA_IMPORTED_INGREDIENTS).orEmpty()
+            val instructions = intent.getStringExtra(EXTRA_IMPORTED_INSTRUCTIONS).orEmpty()
+            val notes = intent.getStringExtra(EXTRA_IMPORTED_NOTES).orEmpty()
+            val sourceName = intent.getStringExtra(EXTRA_IMPORTED_SOURCE_NAME).orEmpty()
+            val sourceUrl = intent.getStringExtra(EXTRA_IMPORTED_SOURCE_URL).orEmpty()
+            val hasImportedContent = listOf(
+                title,
+                description,
+                instructions,
+                notes,
+                sourceName,
+                sourceUrl
+            ).any { it.isNotBlank() } || ingredients.isNotEmpty()
+            if (!hasImportedContent) return null
+
+            return ImportedRecipeDraft(
+                title = title,
+                description = description,
+                ingredients = ingredients,
+                instructions = instructions,
+                notes = notes,
+                sourceName = sourceName,
+                sourceUrl = sourceUrl,
+                servings = intent.takeIf { it.hasExtra(EXTRA_IMPORTED_SERVINGS_AMOUNT) }?.let {
+                    Servings(
+                        amount = it.getDoubleExtra(EXTRA_IMPORTED_SERVINGS_AMOUNT, 0.0),
+                        unit = it.getStringExtra(EXTRA_IMPORTED_SERVINGS_UNIT)
+                    )
+                },
+                times = RecipeTimes(
+                    prepTimeMinutes = intent.getSerializableExtraCompat(EXTRA_IMPORTED_PREP_MINUTES),
+                    cookTimeMinutes = intent.getSerializableExtraCompat(EXTRA_IMPORTED_COOK_MINUTES),
+                    totalTimeMinutes = intent.getSerializableExtraCompat(EXTRA_IMPORTED_TOTAL_MINUTES)
+                ).takeIf { it.prepTimeMinutes != null || it.cookTimeMinutes != null || it.totalTimeMinutes != null },
+                importMetadata = app.recipebook.domain.model.ImportMetadata(
+                    sourceType = intent.getStringExtra(EXTRA_IMPORTED_SOURCE_TYPE),
+                    parserVersion = intent.getStringExtra(EXTRA_IMPORTED_PARSER_VERSION),
+                    originalUnits = intent.getStringExtra(EXTRA_IMPORTED_ORIGINAL_UNITS)
+                )
+            )
+        }
     }
+}
+
+private fun Intent.getSerializableExtraCompat(key: String): Int? {
+    if (!hasExtra(key)) return null
+    return getIntExtra(key, 0)
 }
 
 
