@@ -4,7 +4,8 @@
 - Expand recipe importer beyond shared text and `schema.org/Recipe` URLs:
   - Add richer webpage fallback extraction when no recipe schema is present
   - Add image/OCR intake
-  - Add AI-assisted draft finishing, bilingual generation, and normalization
+  - Replace the local stub regenerator with a real AI-backed bilingual generation backend through `RecipeLanguageRegenerator`
+  - Add AI-assisted draft finishing and normalization
 - Implement full-library export/import (replace mode first).
 - Add export/import integrity tests.
 - Implement basic Google Drive sync:

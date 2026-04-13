@@ -90,6 +90,8 @@ fun RecipeEditorScreen(
     onLanguageChange: (AppLanguage) -> Unit,
     onBack: () -> Unit,
     onSave: (Recipe, AppLanguage) -> Unit,
+    onRegenerateOtherLanguage: suspend (Recipe, AppLanguage) -> Recipe,
+    onLocalizedTextEdited: (ImportMetadata?, BilingualText, AppLanguage) -> ImportMetadata,
     onCreateIngredientReference: suspend (IngredientReferenceDraft) -> IngredientReference,
     onCreateTag: suspend (TagDraft) -> Tag,
     onImportPhoto: suspend (Uri) -> PhotoRef,
@@ -146,18 +148,22 @@ fun RecipeEditorScreen(
     var pendingRecipeLinkIndex by remember { mutableStateOf<Int?>(null) }
     var ingredientsExpanded by rememberSaveable { mutableStateOf(false) }
     var pendingCameraCapture by remember { mutableStateOf<PendingRecipePhotoCapture?>(null) }
-    var showRegenerationUnavailableDialog by remember { mutableStateOf(false) }
+    var currentImportMetadata by rememberSaveable(stateSaver = importMetadataSaver()) {
+        mutableStateOf(initialRecipe.importMetadata)
+    }
+    var isRegeneratingOtherLanguage by remember { mutableStateOf(false) }
+    var regenerationNotice by remember { mutableStateOf<RegenerationNotice?>(null) }
     val coroutineScope = rememberCoroutineScope()
     val activeLocalizedText = remember(localizedTexts, language) {
         localizedTexts.forLanguage(language)
     }
     val otherLanguage = remember(language) { language.opposite() }
-    val otherLanguageStatus = remember(localizedTexts, language, initialRecipe.importMetadata) {
+    val otherLanguageStatus = remember(localizedTexts, language, currentImportMetadata) {
         displayedOtherLanguageStatus(
             initialLanguages = initialRecipe.languages,
             currentLanguages = localizedTexts,
             currentLanguage = language,
-            importMetadata = initialRecipe.importMetadata
+            importMetadata = currentImportMetadata
         )
     }
     val saveRecipe = {
@@ -165,6 +171,7 @@ fun RecipeEditorScreen(
             initialRecipe.copy(
                 updatedAt = Instant.now().toString(),
                 languages = localizedTexts,
+                importMetadata = currentImportMetadata,
                 source = if (sourceName.isBlank() && sourceUrl.isBlank()) null else RecipeSource(
                     sourceName = sourceName.trim(),
                     sourceUrl = sourceUrl.trim()
@@ -272,11 +279,45 @@ fun RecipeEditorScreen(
                     language = language,
                     otherLanguage = otherLanguage,
                     otherLanguageStatus = otherLanguageStatus,
-                    onRegenerateClick = { showRegenerationUnavailableDialog = true }
+                    isRegenerating = isRegeneratingOtherLanguage,
+                    onRegenerateClick = {
+                        if (isRegeneratingOtherLanguage) return@BilingualSyncStatusCard
+                        val draftRecipe = initialRecipe.copy(
+                            updatedAt = Instant.now().toString(),
+                            languages = localizedTexts,
+                            importMetadata = currentImportMetadata,
+                            source = if (sourceName.isBlank() && sourceUrl.isBlank()) null else RecipeSource(
+                                sourceName = sourceName.trim(),
+                                sourceUrl = sourceUrl.trim()
+                            ),
+                            servings = parseServings(servingsAmount, servingsUnit),
+                            times = parseTimes(prepMinutes, cookMinutes, totalMinutes),
+                            ingredients = ingredientRows.toIngredientLines(ingredientReferences),
+                            tagIds = selectedTagIds.distinct(),
+                            collectionIds = selectedCollectionIds.distinct(),
+                            recipeLinks = recipeLinkRows.toRecipeLinks(),
+                            mainPhotoId = normalizedMainPhotoId(mainPhotoId, recipePhotos),
+                            photos = recipePhotos.toList()
+                        )
+                        coroutineScope.launch {
+                            isRegeneratingOtherLanguage = true
+                            runCatching {
+                                onRegenerateOtherLanguage(draftRecipe, language)
+                            }.onSuccess { regeneratedRecipe ->
+                                localizedTexts = regeneratedRecipe.languages
+                                currentImportMetadata = regeneratedRecipe.importMetadata
+                                regenerationNotice = RegenerationNotice.Success(otherLanguage)
+                            }.onFailure {
+                                regenerationNotice = RegenerationNotice.Error(otherLanguage)
+                            }
+                            isRegeneratingOtherLanguage = false
+                        }
+                    }
                 )
 
                 LabeledField(localizedString(R.string.title_label, language), activeLocalizedText.title) {
                     localizedTexts = localizedTexts.updateForLanguage(language) { copy(title = it) }
+                    currentImportMetadata = onLocalizedTextEdited(currentImportMetadata, localizedTexts, language)
                 }
                 LabeledField(
                     localizedString(R.string.description_label, language),
@@ -285,6 +326,7 @@ fun RecipeEditorScreen(
                     minLines = 4
                 ) {
                     localizedTexts = localizedTexts.updateForLanguage(language) { copy(description = it) }
+                    currentImportMetadata = onLocalizedTextEdited(currentImportMetadata, localizedTexts, language)
                 }
                 IngredientsEditorSection(
                     language = language,
@@ -319,6 +361,7 @@ fun RecipeEditorScreen(
                     minLines = 5
                 ) {
                     localizedTexts = localizedTexts.updateForLanguage(language) { copy(instructions = it) }
+                    currentImportMetadata = onLocalizedTextEdited(currentImportMetadata, localizedTexts, language)
                 }
                 LabeledField(
                     localizedString(R.string.notes_label, language),
@@ -327,6 +370,7 @@ fun RecipeEditorScreen(
                     minLines = 4
                 ) {
                     localizedTexts = localizedTexts.updateForLanguage(language) { copy(notes = it) }
+                    currentImportMetadata = onLocalizedTextEdited(currentImportMetadata, localizedTexts, language)
                 }
                 LabeledField(localizedString(R.string.source_name_label, language), sourceName) { sourceName = it }
                 LabeledField(localizedString(R.string.source_url_label, language), sourceUrl) { sourceUrl = it }
@@ -571,17 +615,38 @@ fun RecipeEditorScreen(
         )
     }
 
-    if (showRegenerationUnavailableDialog) {
+    regenerationNotice?.let { notice ->
         AlertDialog(
-            onDismissRequest = { showRegenerationUnavailableDialog = false },
+            onDismissRequest = { regenerationNotice = null },
             title = {
-                Text(localizedString(R.string.regeneration_unavailable_title, language))
+                Text(
+                    localizedString(
+                        when (notice) {
+                            is RegenerationNotice.Success -> R.string.regeneration_applied_title
+                            is RegenerationNotice.Error -> R.string.regeneration_failed_title
+                        },
+                        language
+                    )
+                )
             },
             text = {
-                Text(localizedString(R.string.regeneration_unavailable_message, language))
+                val otherTargetLanguage = when (notice) {
+                    is RegenerationNotice.Success -> notice.otherLanguage
+                    is RegenerationNotice.Error -> notice.otherLanguage
+                }
+                Text(
+                    localizedString(
+                        when (notice) {
+                            is RegenerationNotice.Success -> R.string.regeneration_applied_message
+                            is RegenerationNotice.Error -> R.string.regeneration_failed_message
+                        },
+                        language,
+                        localizedLanguageName(otherTargetLanguage, language)
+                    )
+                )
             },
             confirmButton = {
-                TextButton(onClick = { showRegenerationUnavailableDialog = false }) {
+                TextButton(onClick = { regenerationNotice = null }) {
                     Text(localizedString(R.string.close_label, language))
                 }
             }
@@ -594,6 +659,7 @@ private fun BilingualSyncStatusCard(
     language: AppLanguage,
     otherLanguage: AppLanguage,
     otherLanguageStatus: BilingualSyncStatus,
+    isRegenerating: Boolean,
     onRegenerateClick: () -> Unit
 ) {
     val message = when (otherLanguageStatus) {
@@ -627,14 +693,25 @@ private fun BilingualSyncStatusCard(
                 modifier = Modifier.weight(1f)
             )
             if (otherLanguageStatus != BilingualSyncStatus.UP_TO_DATE) {
-                TextButton(onClick = onRegenerateClick) {
+                if (isRegenerating) {
                     Text(
-                        localizedString(
-                            R.string.regenerate_other_language_label,
+                        text = localizedString(
+                            R.string.regeneration_in_progress_label,
                             language,
                             localizedLanguageName(otherLanguage, language)
-                        )
+                        ),
+                        style = MaterialTheme.typography.bodySmall
                     )
+                } else {
+                    TextButton(onClick = onRegenerateClick) {
+                        Text(
+                            localizedString(
+                                R.string.regenerate_other_language_label,
+                                language,
+                                localizedLanguageName(otherLanguage, language)
+                            )
+                        )
+                    }
                 }
             }
         }
@@ -1353,6 +1430,34 @@ private fun bilingualTextSaver(): Saver<BilingualText, Any> = listSaver(
     }
 )
 
+private fun importMetadataSaver(): Saver<ImportMetadata?, Any> = listSaver(
+    save = {
+        listOf(
+            it?.sourceType.orEmpty(),
+            it?.parserVersion.orEmpty(),
+            it?.originalUnits.orEmpty(),
+            it?.authoritativeLanguage?.name.orEmpty(),
+            it?.syncStatusFr?.name.orEmpty(),
+            it?.syncStatusEn?.name.orEmpty()
+        )
+    },
+    restore = {
+        val values = it.map { value -> value as String }
+        if (values.all(String::isBlank)) {
+            null
+        } else {
+            ImportMetadata(
+                sourceType = values[0].ifBlank { null },
+                parserVersion = values[1].ifBlank { null },
+                originalUnits = values[2].ifBlank { null },
+                authoritativeLanguage = values[3].ifBlank { null }?.let(AppLanguage::valueOf),
+                syncStatusFr = values[4].ifBlank { null }?.let(BilingualSyncStatus::valueOf),
+                syncStatusEn = values[5].ifBlank { null }?.let(BilingualSyncStatus::valueOf)
+            )
+        }
+    }
+)
+
 internal fun BilingualText.forLanguage(language: AppLanguage): LocalizedSystemText = when (language) {
     AppLanguage.FR -> fr
     AppLanguage.EN -> en
@@ -1377,13 +1482,19 @@ internal fun displayedOtherLanguageStatus(
     currentLanguage: AppLanguage,
     importMetadata: ImportMetadata?
 ): BilingualSyncStatus {
-    val activeChanged = currentLanguages.forLanguage(currentLanguage) != initialLanguages.forLanguage(currentLanguage)
     val otherLanguage = currentLanguage.opposite()
+    val storedStatus = importMetadata.statusForLanguage(otherLanguage)
+    if (storedStatus == BilingualSyncStatus.UP_TO_DATE &&
+        importMetadata?.authoritativeLanguage == currentLanguage
+    ) {
+        return BilingualSyncStatus.UP_TO_DATE
+    }
+    val activeChanged = currentLanguages.forLanguage(currentLanguage) != initialLanguages.forLanguage(currentLanguage)
     val currentOtherText = currentLanguages.forLanguage(otherLanguage)
     return if (activeChanged) {
         if (currentOtherText.isBlankText()) BilingualSyncStatus.MISSING else BilingualSyncStatus.NEEDS_REGENERATION
     } else {
-        importMetadata.statusForLanguage(otherLanguage)
+        storedStatus
             ?: if (currentOtherText.isBlankText()) BilingualSyncStatus.MISSING else BilingualSyncStatus.UP_TO_DATE
     }
 }
@@ -1396,6 +1507,11 @@ internal fun localizedLanguageName(targetLanguage: AppLanguage, uiLanguage: AppL
 private fun localizedLanguageOptionLabel(targetLanguage: AppLanguage, uiLanguage: AppLanguage): String = when (targetLanguage) {
     AppLanguage.EN -> if (uiLanguage == AppLanguage.FR) "anglais" else "English"
     AppLanguage.FR -> if (uiLanguage == AppLanguage.FR) "fran\u00e7ais" else "French"
+}
+
+private sealed interface RegenerationNotice {
+    data class Success(val otherLanguage: AppLanguage) : RegenerationNotice
+    data class Error(val otherLanguage: AppLanguage) : RegenerationNotice
 }
 
 private fun LocalizedSystemText.isBlankText(): Boolean =

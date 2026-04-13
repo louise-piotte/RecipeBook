@@ -108,6 +108,19 @@ class RecipeEditorActivity : ComponentActivity() {
                                 finish()
                             }
                         },
+                        onRegenerateOtherLanguage = { draftRecipe, authoritativeLanguage ->
+                            localizationCoordinator.regenerateOppositeLanguage(
+                                recipe = draftRecipe,
+                                authoritativeLanguage = authoritativeLanguage
+                            )
+                        },
+                        onLocalizedTextEdited = { importMetadata, draftLanguages, authoritativeLanguage ->
+                            localizationCoordinator.markActiveLanguageEdited(
+                                importMetadata = importMetadata,
+                                languages = draftLanguages,
+                                authoritativeLanguage = authoritativeLanguage
+                            )
+                        },
                         onCreateIngredientReference = { draft -> repository.createIngredientReference(draft) },
                         onCreateTag = { draft -> repository.createTag(draft) },
                         onImportPhoto = { sourceUri -> photoStore.importDraftPhoto(sourceUri) },

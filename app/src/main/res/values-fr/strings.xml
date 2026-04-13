@@ -30,8 +30,11 @@
     <string name="other_language_needs_regeneration_label">%1$s doit &#234;tre r&#233;g&#233;n&#233;r&#233; apr&#232;s vos modifications.</string>
     <string name="other_language_missing_label">%1$s est manquant et devrait &#234;tre r&#233;g&#233;n&#233;r&#233;.</string>
     <string name="regenerate_other_language_label">R&#233;g&#233;n&#233;rer %1$s</string>
-    <string name="regeneration_unavailable_title">R&#233;g&#233;n&#233;ration indisponible</string>
-    <string name="regeneration_unavailable_message">La r&#233;g&#233;n&#233;ration bilingue automatique n&#8217;est pas encore connect&#233;e. RecipeBook conservera l&#8217;autre langue telle quelle jusqu&#8217;&#224; ce qu&#8217;un g&#233;n&#233;rateur soit ajout&#233;.</string>
+    <string name="regeneration_in_progress_label">G&#233;n&#233;ration de %1$s...</string>
+    <string name="regeneration_applied_title">R&#233;g&#233;n&#233;ration appliqu&#233;e</string>
+    <string name="regeneration_applied_message">RecipeBook a rempli %1$s avec le g&#233;n&#233;rateur local simul&#233;. R&#233;visez-le avant de vous y fier.</string>
+    <string name="regeneration_failed_title">&#201;chec de la r&#233;g&#233;n&#233;ration</string>
+    <string name="regeneration_failed_message">RecipeBook n&#8217;a pas pu r&#233;g&#233;n&#233;rer %1$s pour le moment. Le texte actuel a &#233;t&#233; conserv&#233;.</string>
     <string name="save_recipe_label">Enregistrer la recette</string>
     <string name="delete_recipe_label">Supprimer la recette</string>
     <string name="editor_preview_placeholder">Recette sans titre</string>

@@ -212,6 +212,30 @@ class RecipeEditorScreenTest {
         assertEquals(BilingualSyncStatus.NEEDS_REGENERATION, status)
     }
 
+    @Test
+    fun displayedOtherLanguageStatus_prefersUpdatedStoredStatusAfterRegeneration() {
+        val initial = bilingualForStatusTest().copy(
+            fr = LocalizedSystemText(title = "", description = "", instructions = "", notes = "")
+        )
+        val current = initial.copy(
+            fr = LocalizedSystemText(title = "Title", description = "", instructions = "", notes = "Brouillon"),
+            en = LocalizedSystemText(title = "Title", description = "", instructions = "", notes = "")
+        )
+
+        val status = displayedOtherLanguageStatus(
+            initialLanguages = initial,
+            currentLanguages = current,
+            currentLanguage = AppLanguage.EN,
+            importMetadata = ImportMetadata(
+                authoritativeLanguage = AppLanguage.EN,
+                syncStatusFr = BilingualSyncStatus.UP_TO_DATE,
+                syncStatusEn = BilingualSyncStatus.UP_TO_DATE
+            )
+        )
+
+        assertEquals(BilingualSyncStatus.UP_TO_DATE, status)
+    }
+
     private fun bilingualForStatusTest(): BilingualText = BilingualText(
         fr = LocalizedSystemText(title = "Titre", description = "", instructions = "", notes = ""),
         en = LocalizedSystemText(title = "Title", description = "", instructions = "", notes = "")
