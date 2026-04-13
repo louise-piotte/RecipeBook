@@ -303,6 +303,282 @@ Builds provenance data for saved recipes.
 
 That separation will make testing much easier.
 
+**Next Design Step: Contracts And Pipeline States**
+The next implementation-facing design step is to define the importer contract layer in enough detail that the current `SharedRecipeImporter` can evolve into the full hybrid pipeline without creating duplicate models or parallel flows.
+
+Right now the high-level product direction is clear, but the system still needs one shared contract between:
+- Android share intake
+- deterministic extraction
+- AI finishing
+- draft editor state
+- bilingual save regeneration
+- final persisted import metadata
+
+That contract layer should be the next planned design artifact.
+
+**1. Core Import Data Structures**
+The importer should carry three different kinds of data, and they should not be collapsed into one model:
+
+1. `Import source`
+The raw thing the user shared.
+
+Suggested shape:
+- `sourceId`
+- `sourceType`: `webpage_url`, `shared_text`, `image`
+- `receivedAt`
+- `displayLabel`
+- `originalText`
+- `sourceUrl`
+- `imageUris`
+- `mimeType`
+
+Purpose:
+- preserves the incoming payload exactly enough to retry extraction
+- supports future crash recovery or background processing
+- avoids pretending the raw source is already a recipe draft
+
+2. `Raw extraction bundle`
+The deterministic extraction result before AI.
+
+Suggested shape:
+- `jobId`
+- `sourceId`
+- `extractorVersion`
+- `sourceType`
+- `rawText`
+- `cleanedText`
+- `htmlTitle`
+- `articleTitle`
+- `recipeSchemaJson`
+- `ocrBlocks`
+- `detectedSections`
+- `deterministicFields`
+- `warnings`
+
+Where `deterministicFields` should be a structured object such as:
+- `title`
+- `description`
+- `ingredientLines`
+- `instructionLines`
+- `notes`
+- `sourceName`
+- `sourceUrl`
+- `servingsText`
+- `prepTimeText`
+- `cookTimeText`
+- `totalTimeText`
+- `imageCandidates`
+
+Purpose:
+- captures everything deterministic extraction knows
+- keeps original evidence for debugging and retry behavior
+- gives AI a compact but grounded input instead of the entire raw payload when that is unnecessary
+
+3. `Editor import draft`
+The editable draft shown to the user.
+
+Suggested shape:
+- current `ImportedRecipeDraft` fields for editable recipe content
+- `warnings`
+- `draftConfidence`
+- `jobId`
+- `authoritativeLanguage`
+- `draftSourceSummary`
+
+Purpose:
+- stays focused on editing
+- does not need to carry every extraction artifact
+- is the bridge into the existing recipe editor and save pipeline
+
+**2. Warning And Uncertainty Model**
+Warnings should be first-class structured data, not only strings assembled in UI code.
+
+Suggested `ImportWarning` shape:
+- `code`
+- `severity`: `info`, `warning`, `blocking`
+- `field`
+- `messageKey`
+- `sourceEvidence`
+
+Examples:
+- `missing_recipe_schema`
+- `ocr_low_confidence`
+- `ingredient_parse_uncertain`
+- `instruction_section_missing`
+- `servings_ambiguous`
+- `translation_regenerated_from_reviewed_source`
+
+This matters because the same warnings should be reusable in:
+- progress UI
+- draft field highlights
+- saved import metadata summaries
+- automated tests
+
+**3. Pipeline States**
+The import pipeline should have explicit job states instead of a one-shot “loading then draft” flow.
+
+Suggested states:
+1. `received`
+The app stored the share payload and created an import job.
+
+2. `extracting`
+The app is running deterministic extraction for URL, text, or image.
+
+3. `awaiting_ai`
+Deterministic extraction finished and the bundle is being turned into a structured draft.
+
+4. `draft_ready`
+The editable draft exists and can be opened in the editor.
+
+5. `save_regenerating`
+The user tapped save and the opposite language plus final normalization are being rebuilt.
+
+6. `completed`
+The final recipe was saved successfully.
+
+7. `failed`
+The job failed, ideally with a stage-specific reason and retry affordance.
+
+These states should be represented in data rather than implied only by UI timing.
+
+**4. Stage Boundaries**
+The implementation should follow one staged pipeline with stable boundaries:
+
+1. `ShareIngress`
+Input:
+- Android `Intent`
+
+Output:
+- `ImportSource`
+
+Rules:
+- accept URL-like shared text, plain text, and image URIs
+- persist enough source data immediately that the job can resume after process death later if needed
+
+2. `ImportSourceStore`
+Input:
+- `ImportSource`
+
+Output:
+- stored source record plus `ImportDraftJob`
+
+Rules:
+- temporary storage only
+- no recipe interpretation here
+
+3. `RawExtractor`
+Input:
+- `ImportSource`
+
+Output:
+- `RawExtractionBundle`
+
+Rules:
+- webpage: try schema first, then readable-page fallback
+- text: section and line heuristics first
+- image: OCR plus section grouping
+- attach warnings instead of failing when extraction is partial
+
+4. `AiRecipeImportService`
+Input:
+- `RawExtractionBundle`
+
+Output:
+- schema-valid recipe creation payload plus warnings
+
+Rules:
+- AI may organize, normalize, translate, and fill structure
+- AI may not invent missing quantities, temperatures, or times
+- deterministic fields should be passed in separately so the model knows which data is high-confidence
+
+5. `ImportDraftMapper`
+Input:
+- AI result plus deterministic evidence bundle
+
+Output:
+- editor-facing import draft
+
+Rules:
+- keep only the active language editable
+- preserve warning links to the originating fields
+
+6. `BilingualSavePipeline`
+Input:
+- reviewed active-language editor state
+
+Output:
+- final normalized `Recipe`
+
+Rules:
+- reviewed active language becomes the canonical source
+- opposite language is regenerated from the reviewed content, not from the earlier import draft
+- final normalization and metadata population happen here
+
+**5. Deterministic Versus AI Ownership**
+The design needs one explicit ownership rule per field to avoid silent drift.
+
+Recommended rule:
+- deterministic extraction owns source evidence
+- AI owns draft reconstruction and bilingual generation
+- the user owns the reviewed active-language draft
+- save-time regeneration owns the opposite language
+
+In practice:
+- if schema.org provides ingredient lines, keep them as the source evidence
+- if OCR is messy, AI can reorganize them into structured draft lines
+- if the user edits an ingredient line, the edited active-language text becomes authoritative
+- on save, the opposite language must be regenerated from the reviewed source, not preserved from an older AI pass
+
+**6. Failure And Fallback Rules**
+The pipeline should prefer degraded success over brittle failure.
+
+Recommended fallback behavior:
+- URL fetch fails: create a minimal draft with source URL and warning
+- webpage has no recipe schema: continue with readable content extraction
+- OCR is incomplete: build a draft from partial text plus warnings
+- AI returns invalid output: keep the deterministic draft path available when possible
+- AI returns partial output: map valid fields, keep blanks blank, surface warnings
+
+Blocking failure should be reserved for cases like:
+- no usable shared payload
+- unreadable image with no extracted text
+- impossible validation after both deterministic and AI stages
+
+**7. Saved Metadata Boundary**
+Not everything from import processing should be stored forever in the final recipe.
+
+The final `ImportMetadata` should stay compact and product-facing, for example:
+- `sourceType`
+- `sourceUrl`
+- `parserVersion`
+- `extractorVersion`
+- `generatorLabel`
+- `authoritativeLanguage`
+- sync status fields
+- maybe a compact warning summary
+
+The final recipe should not store:
+- raw HTML
+- full OCR block geometry
+- entire AI prompt payloads
+- bulky extraction debug artifacts
+
+Those belong only in temporary import-job storage if they are stored at all.
+
+**8. First Implementation Slice After This Design Step**
+Once this contract layer is documented, the next implementation slice should be:
+
+1. Introduce `ImportSource` and `ImportDraftJob` as temporary importer models.
+2. Split current `SharedRecipeImporter` responsibilities into:
+- source classification
+- deterministic extraction
+- imported draft mapping
+3. Expand the deterministic extractor output from direct `ImportedRecipeDraft` creation into a `RawExtractionBundle`.
+4. Keep the current editor handoff working by mapping the new bundle back into `ImportedRecipeDraft` until the AI service lands.
+5. Add tests around bundle creation and warning generation before adding AI integration.
+
+That sequence upgrades the current importer in place rather than replacing it with a second pipeline.
+
 **Testing strategy**
 This approach is testable if you split it properly.
 

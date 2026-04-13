@@ -15,14 +15,14 @@ This package contains the main recipe-library orchestration layer.
 - `RecipePhotoStore.kt`: local file ownership for recipe photos.
 - `RecipeLocalizationCoordinator.kt`: bilingual save/regeneration seam that treats the active editor language as authoritative, tracks draft sync status, and can swap between local stub regeneration and future real backends.
 - `RecipeLanguageRegenerator.kt`: pluggable opposite-language generation contract plus the current local stub implementation used to complete the editor UX safely.
-- `SharedRecipeImport.kt`: deterministic shared-text and shared-URL intake, including `schema.org/Recipe` JSON-LD extraction and imported-draft mapping.
+- `SharedRecipeImport.kt`: deterministic shared-text and shared-URL intake, now split into staged importer models (`ImportSource`, `ImportDraftJob`, `RawExtractionBundle`, warnings) plus imported-draft mapping for the existing editor handoff.
 - `RecipeKeeper*Import.kt`: import parsing from RecipeKeeper exports into domain-friendly data.
 
 ## Core Design
 - Repository methods return domain models and flows, not Room entities.
 - Validation that protects graph integrity lives close to repository writes.
 - Bundled seed data and user-created data are combined by repository orchestration, but the user database becomes authoritative after seeding.
-- Import helpers should extract whatever is reliable without AI, then hand a compact draft to the existing editor/save pipeline.
+- Import helpers should extract whatever is reliable without AI, keep source evidence and warnings in staged importer models, then hand a compact draft to the existing editor/save pipeline.
 - Bilingual save orchestration and regeneration should happen here rather than in Compose so later translation/regeneration backends can plug into one persistence-facing seam.
 
 ## Maintenance Notes

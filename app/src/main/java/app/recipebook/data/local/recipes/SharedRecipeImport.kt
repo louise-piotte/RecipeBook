@@ -27,6 +27,7 @@ import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 
 private const val IMPORT_PARSER_VERSION = "shared-import-v1"
+private const val IMPORT_EXTRACTOR_VERSION = "shared-import-extractor-v1"
 private val LD_JSON_SCRIPT_REGEX = Regex(
     "<script[^>]*type=[\"']application/ld\\+json[\"'][^>]*>(.*?)</script>",
     setOf(RegexOption.IGNORE_CASE, RegexOption.DOT_MATCHES_ALL)
@@ -57,6 +58,65 @@ data class ImportedRecipeDraft(
         sourceType = "shared_text",
         parserVersion = IMPORT_PARSER_VERSION
     )
+)
+
+data class ImportSource(
+    val sourceId: String,
+    val sourceType: String,
+    val displayLabel: String = "",
+    val originalText: String = "",
+    val sourceUrl: String = ""
+)
+
+enum class ImportJobStage {
+    RECEIVED,
+    EXTRACTING,
+    DRAFT_READY,
+    FAILED
+}
+
+data class ImportDraftJob(
+    val jobId: String,
+    val sourceId: String,
+    val sourceType: String,
+    val stage: ImportJobStage
+)
+
+enum class ImportWarningSeverity {
+    INFO,
+    WARNING,
+    BLOCKING
+}
+
+data class ImportWarning(
+    val code: String,
+    val severity: ImportWarningSeverity,
+    val field: String? = null,
+    val sourceEvidence: String? = null
+)
+
+data class DeterministicRecipeFields(
+    val title: String = "",
+    val description: String = "",
+    val ingredientLines: List<String> = emptyList(),
+    val instructionLines: List<String> = emptyList(),
+    val notes: String = "",
+    val sourceName: String = "",
+    val sourceUrl: String = "",
+    val servings: Servings? = null,
+    val times: RecipeTimes? = null
+)
+
+data class RawExtractionBundle(
+    val jobId: String,
+    val sourceId: String,
+    val extractorVersion: String,
+    val sourceType: String,
+    val rawText: String = "",
+    val cleanedText: String = "",
+    val htmlTitle: String = "",
+    val deterministicFields: DeterministicRecipeFields = DeterministicRecipeFields(),
+    val warnings: List<ImportWarning> = emptyList()
 )
 
 fun ImportedRecipeDraft.applyToRecipe(recipe: Recipe, language: AppLanguage): Recipe {
@@ -91,46 +151,194 @@ class SharedRecipeImporter(
     private val fetchUrlContent: suspend (String) -> String = ::fetchUrlText
 ) {
     suspend fun import(sharedText: String, sourceNameHint: String? = null): ImportedRecipeDraft {
+        val source = createImportSource(sharedText, sourceNameHint)
+        val job = createImportJob(source)
+        val extraction = extract(source, job)
+        return mapToDraft(extraction)
+    }
+
+    fun createImportSource(sharedText: String, sourceNameHint: String? = null): ImportSource {
         val normalizedText = sharedText.trim()
-        if (normalizedText.isBlank()) {
-            return ImportedRecipeDraft(
-                sourceName = sourceNameHint.orEmpty()
+        return when {
+            normalizedText.isBlank() -> ImportSource(
+                sourceId = UUID.randomUUID().toString(),
+                sourceType = "shared_text",
+                displayLabel = sourceNameHint.orEmpty()
             )
-        }
-        return if (URL_ONLY_REGEX.matches(normalizedText)) {
-            importFromUrl(normalizedText, sourceNameHint)
-        } else {
-            importFromText(normalizedText, sourceNameHint)
+            URL_ONLY_REGEX.matches(normalizedText) -> ImportSource(
+                sourceId = UUID.randomUUID().toString(),
+                sourceType = "shared_webpage_url",
+                displayLabel = sourceNameHint.orEmpty(),
+                originalText = normalizedText,
+                sourceUrl = normalizedText
+            )
+            else -> ImportSource(
+                sourceId = UUID.randomUUID().toString(),
+                sourceType = "shared_text",
+                displayLabel = sourceNameHint.orEmpty(),
+                originalText = normalizedText
+            )
         }
     }
 
-    private suspend fun importFromUrl(url: String, sourceNameHint: String?): ImportedRecipeDraft {
-        val html = runCatching { fetchUrlContent(url) }.getOrNull()
-        val sourceName = sourceNameHint.orEmpty().ifBlank { hostLabel(url) }
-        val extracted = html?.let { extractRecipeFromHtml(it, url, sourceNameHint) }
-        return extracted ?: ImportedRecipeDraft(
-            sourceName = sourceName,
-            sourceUrl = url,
+    fun createImportJob(source: ImportSource): ImportDraftJob = ImportDraftJob(
+        jobId = UUID.randomUUID().toString(),
+        sourceId = source.sourceId,
+        sourceType = source.sourceType,
+        stage = ImportJobStage.RECEIVED
+    )
+
+    suspend fun extract(source: ImportSource, job: ImportDraftJob = createImportJob(source)): RawExtractionBundle {
+        return when (source.sourceType) {
+            "shared_webpage_url" -> extractFromUrl(source, job)
+            else -> extractFromText(source, job)
+        }
+    }
+
+    fun mapToDraft(bundle: RawExtractionBundle): ImportedRecipeDraft {
+        val fields = bundle.deterministicFields
+        return ImportedRecipeDraft(
+            title = fields.title,
+            description = fields.description,
+            ingredients = fields.ingredientLines,
+            instructions = fields.instructionLines.joinToString("\n"),
+            notes = fields.notes,
+            sourceName = fields.sourceName,
+            sourceUrl = fields.sourceUrl,
+            servings = fields.servings,
+            times = fields.times,
             importMetadata = ImportMetadata(
-                sourceType = "shared_webpage_url",
+                sourceType = bundle.sourceType,
                 parserVersion = IMPORT_PARSER_VERSION
             )
         )
     }
 
-    private fun importFromText(text: String, sourceNameHint: String?): ImportedRecipeDraft {
+    private suspend fun extractFromUrl(source: ImportSource, job: ImportDraftJob): RawExtractionBundle {
+        val url = source.sourceUrl.ifBlank { source.originalText.trim() }
+        if (url.isBlank()) {
+            return RawExtractionBundle(
+                jobId = job.jobId,
+                sourceId = source.sourceId,
+                extractorVersion = IMPORT_EXTRACTOR_VERSION,
+                sourceType = source.sourceType,
+                warnings = listOf(
+                    ImportWarning(
+                        code = "missing_source_url",
+                        severity = ImportWarningSeverity.BLOCKING,
+                        field = "sourceUrl"
+                    )
+                )
+            )
+        }
+
+        val html = runCatching { fetchUrlContent(url) }.getOrNull()
+        val sourceName = source.displayLabel.ifBlank { hostLabel(url) }
+        val fallbackFields = DeterministicRecipeFields(
+            sourceName = sourceName,
+            sourceUrl = url
+        )
+        if (html == null) {
+            return RawExtractionBundle(
+                jobId = job.jobId,
+                sourceId = source.sourceId,
+                extractorVersion = IMPORT_EXTRACTOR_VERSION,
+                sourceType = source.sourceType,
+                rawText = url,
+                cleanedText = url,
+                deterministicFields = fallbackFields,
+                warnings = listOf(
+                    ImportWarning(
+                        code = "webpage_fetch_failed",
+                        severity = ImportWarningSeverity.WARNING,
+                        field = "sourceUrl",
+                        sourceEvidence = url
+                    )
+                )
+            )
+        }
+
+        val extracted = extractRecipeBundleFromHtml(
+            html = html,
+            source = source,
+            job = job,
+            url = url,
+            fallbackSourceName = sourceName
+        )
+        if (extracted != null) return extracted
+
+        return RawExtractionBundle(
+            jobId = job.jobId,
+            sourceId = source.sourceId,
+            extractorVersion = IMPORT_EXTRACTOR_VERSION,
+            sourceType = source.sourceType,
+            rawText = html,
+            cleanedText = normalizeWhitespace(html),
+            htmlTitle = extractHtmlTitle(html),
+            deterministicFields = fallbackFields.copy(
+                title = extractHtmlTitle(html)
+            ),
+            warnings = listOf(
+                ImportWarning(
+                    code = "missing_recipe_schema",
+                    severity = ImportWarningSeverity.WARNING,
+                    field = "recipeSchemaJson"
+                )
+            )
+        )
+    }
+
+    private fun extractFromText(source: ImportSource, job: ImportDraftJob): RawExtractionBundle {
+        val text = source.originalText.trim()
+        if (text.isBlank()) {
+            return RawExtractionBundle(
+                jobId = job.jobId,
+                sourceId = source.sourceId,
+                extractorVersion = IMPORT_EXTRACTOR_VERSION,
+                sourceType = source.sourceType,
+                warnings = listOf(
+                    ImportWarning(
+                        code = "empty_shared_text",
+                        severity = ImportWarningSeverity.WARNING,
+                        field = "originalText"
+                    )
+                ),
+                deterministicFields = DeterministicRecipeFields(
+                    sourceName = source.displayLabel
+                )
+            )
+        }
+
         val lines = text.lineSequence()
             .map { it.trim() }
             .filter { it.isNotEmpty() }
             .toList()
         if (lines.isEmpty()) {
-            return ImportedRecipeDraft(sourceName = sourceNameHint.orEmpty())
+            return RawExtractionBundle(
+                jobId = job.jobId,
+                sourceId = source.sourceId,
+                extractorVersion = IMPORT_EXTRACTOR_VERSION,
+                sourceType = source.sourceType,
+                rawText = text,
+                cleanedText = text,
+                warnings = listOf(
+                    ImportWarning(
+                        code = "empty_shared_text",
+                        severity = ImportWarningSeverity.WARNING,
+                        field = "originalText"
+                    )
+                ),
+                deterministicFields = DeterministicRecipeFields(
+                    sourceName = source.displayLabel
+                )
+            )
         }
 
         val ingredients = mutableListOf<String>()
         val instructions = mutableListOf<String>()
         val notes = mutableListOf<String>()
         val description = mutableListOf<String>()
+        val warnings = mutableListOf<ImportWarning>()
         var title = ""
         var currentSection = TextSection.BODY
 
@@ -154,18 +362,37 @@ class SharedRecipeImporter(
                 else -> notes += cleanListPrefix(line)
             }
         }
-
-        return ImportedRecipeDraft(
-            title = title,
-            description = description.joinToString("\n"),
-            ingredients = ingredients,
-            instructions = instructions.joinToString("\n"),
-            notes = notes.joinToString("\n"),
-            sourceName = sourceNameHint.orEmpty(),
-            importMetadata = ImportMetadata(
-                sourceType = "shared_text",
-                parserVersion = IMPORT_PARSER_VERSION
+        if (ingredients.isEmpty()) {
+            warnings += ImportWarning(
+                code = "ingredient_section_missing",
+                severity = ImportWarningSeverity.INFO,
+                field = "ingredients"
             )
+        }
+        if (instructions.isEmpty()) {
+            warnings += ImportWarning(
+                code = "instruction_section_missing",
+                severity = ImportWarningSeverity.INFO,
+                field = "instructions"
+            )
+        }
+
+        return RawExtractionBundle(
+            jobId = job.jobId,
+            sourceId = source.sourceId,
+            extractorVersion = IMPORT_EXTRACTOR_VERSION,
+            sourceType = source.sourceType,
+            rawText = text,
+            cleanedText = text,
+            deterministicFields = DeterministicRecipeFields(
+                title = title,
+                description = description.joinToString("\n"),
+                ingredientLines = ingredients,
+                instructionLines = instructions,
+                notes = notes.joinToString("\n"),
+                sourceName = source.displayLabel
+            ),
+            warnings = warnings
         )
     }
 }
@@ -187,11 +414,13 @@ private suspend fun fetchUrlText(url: String): String = withContext(Dispatchers.
     connection.inputStream.bufferedReader().use { it.readText() }
 }
 
-private fun extractRecipeFromHtml(
+private fun extractRecipeBundleFromHtml(
     html: String,
+    source: ImportSource,
+    job: ImportDraftJob,
     url: String,
-    sourceNameHint: String?
-): ImportedRecipeDraft? {
+    fallbackSourceName: String
+): RawExtractionBundle? {
     val json = Json { ignoreUnknownKeys = true; isLenient = true }
     val recipeObject = LD_JSON_SCRIPT_REGEX.findAll(html)
         .mapNotNull { scriptMatch ->
@@ -208,26 +437,53 @@ private fun extractRecipeFromHtml(
         return null
     }
 
-    return ImportedRecipeDraft(
-        title = title.ifBlank { extractHtmlTitle(html) },
-        description = recipeObject["description"]?.stringValue().orEmpty(),
-        ingredients = ingredientLines,
-        instructions = instructions,
-        notes = "",
-        sourceName = sourceNameHint.orEmpty()
-            .ifBlank { extractSourceName(recipeObject) }
-            .ifBlank { hostLabel(url) },
-        sourceUrl = url,
-        servings = parseServings(recipeObject["recipeYield"]?.stringValue().orEmpty()),
-        times = RecipeTimes(
+    val times = RecipeTimes(
             prepTimeMinutes = parseIsoDurationMinutes(recipeObject["prepTime"]?.stringValue()),
             cookTimeMinutes = parseIsoDurationMinutes(recipeObject["cookTime"]?.stringValue()),
             totalTimeMinutes = parseIsoDurationMinutes(recipeObject["totalTime"]?.stringValue())
-        ).takeIf { it.prepTimeMinutes != null || it.cookTimeMinutes != null || it.totalTimeMinutes != null },
-        importMetadata = ImportMetadata(
-            sourceType = "shared_webpage_url",
-            parserVersion = IMPORT_PARSER_VERSION
-        )
+        ).takeIf { it.prepTimeMinutes != null || it.cookTimeMinutes != null || it.totalTimeMinutes != null }
+
+    return RawExtractionBundle(
+        jobId = job.jobId,
+        sourceId = source.sourceId,
+        extractorVersion = IMPORT_EXTRACTOR_VERSION,
+        sourceType = source.sourceType,
+        rawText = html,
+        cleanedText = normalizeWhitespace(html),
+        htmlTitle = extractHtmlTitle(html),
+        deterministicFields = DeterministicRecipeFields(
+            title = title.ifBlank { extractHtmlTitle(html) },
+            description = recipeObject["description"]?.stringValue().orEmpty(),
+            ingredientLines = ingredientLines,
+            instructionLines = instructions.lineSequence().map { it.trim() }.filter { it.isNotEmpty() }.toList(),
+            notes = "",
+            sourceName = source.displayLabel
+                .ifBlank { extractSourceName(recipeObject) }
+                .ifBlank { fallbackSourceName },
+            sourceUrl = url,
+            servings = parseServings(recipeObject["recipeYield"]?.stringValue().orEmpty()),
+            times = times
+        ),
+        warnings = buildList {
+            if (ingredientLines.isEmpty()) {
+                add(
+                    ImportWarning(
+                        code = "ingredient_section_missing",
+                        severity = ImportWarningSeverity.INFO,
+                        field = "ingredients"
+                    )
+                )
+            }
+            if (instructions.isBlank()) {
+                add(
+                    ImportWarning(
+                        code = "instruction_section_missing",
+                        severity = ImportWarningSeverity.INFO,
+                        field = "instructions"
+                    )
+                )
+            }
+        }
     )
 }
 
@@ -310,7 +566,7 @@ private fun looksLikeInstructionLine(line: String): Boolean {
     val cleaned = cleanListPrefix(line)
     return NUMBERED_STEP_REGEX.matches(line) ||
         cleaned.contains(". ") ||
-        cleaned.split(' ').size >= 5 && !SECTION_HEADING_REGEX.matches(cleaned)
+        cleaned.split(' ').size >= 6 && !SECTION_HEADING_REGEX.matches(cleaned)
 }
 
 private fun cleanListPrefix(line: String): String = line.replace(Regex("^(?:[-*•]|\\d+[.)])\\s*"), "").trim()
