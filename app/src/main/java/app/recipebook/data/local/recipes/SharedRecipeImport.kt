@@ -54,6 +54,8 @@ data class ImportedRecipeDraft(
     val sourceUrl: String = "",
     val servings: Servings? = null,
     val times: RecipeTimes? = null,
+    val importJobId: String? = null,
+    val warnings: List<ImportWarning> = emptyList(),
     val importMetadata: ImportMetadata = ImportMetadata(
         sourceType = "shared_text",
         parserVersion = IMPORT_PARSER_VERSION
@@ -207,6 +209,8 @@ class SharedRecipeImporter(
             sourceUrl = fields.sourceUrl,
             servings = fields.servings,
             times = fields.times,
+            importJobId = bundle.jobId,
+            warnings = bundle.warnings,
             importMetadata = ImportMetadata(
                 sourceType = bundle.sourceType,
                 parserVersion = IMPORT_PARSER_VERSION

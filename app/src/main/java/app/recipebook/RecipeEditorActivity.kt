@@ -13,6 +13,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.lifecycleScope
+import app.recipebook.data.local.recipes.ImportWarning
+import app.recipebook.data.local.recipes.ImportWarningSeverity
 import app.recipebook.data.local.recipes.ImportedRecipeDraft
 import app.recipebook.data.local.recipes.RecipePhotoStore
 import app.recipebook.data.local.recipes.RecipeLocalizationCoordinator
@@ -168,6 +170,11 @@ class RecipeEditorActivity : ComponentActivity() {
         private const val EXTRA_IMPORTED_PREP_MINUTES = "imported_prep_minutes"
         private const val EXTRA_IMPORTED_COOK_MINUTES = "imported_cook_minutes"
         private const val EXTRA_IMPORTED_TOTAL_MINUTES = "imported_total_minutes"
+        private const val EXTRA_IMPORTED_JOB_ID = "imported_job_id"
+        private const val EXTRA_IMPORTED_WARNING_CODES = "imported_warning_codes"
+        private const val EXTRA_IMPORTED_WARNING_SEVERITIES = "imported_warning_severities"
+        private const val EXTRA_IMPORTED_WARNING_FIELDS = "imported_warning_fields"
+        private const val EXTRA_IMPORTED_WARNING_EVIDENCE = "imported_warning_evidence"
         private const val EXTRA_IMPORTED_SOURCE_TYPE = "imported_source_type"
         private const val EXTRA_IMPORTED_PARSER_VERSION = "imported_parser_version"
         private const val EXTRA_IMPORTED_ORIGINAL_UNITS = "imported_original_units"
@@ -190,6 +197,20 @@ class RecipeEditorActivity : ComponentActivity() {
             putExtra(EXTRA_IMPORTED_PREP_MINUTES, draft.times?.prepTimeMinutes)
             putExtra(EXTRA_IMPORTED_COOK_MINUTES, draft.times?.cookTimeMinutes)
             putExtra(EXTRA_IMPORTED_TOTAL_MINUTES, draft.times?.totalTimeMinutes)
+            putExtra(EXTRA_IMPORTED_JOB_ID, draft.importJobId)
+            putStringArrayListExtra(EXTRA_IMPORTED_WARNING_CODES, ArrayList(draft.warnings.map(ImportWarning::code)))
+            putStringArrayListExtra(
+                EXTRA_IMPORTED_WARNING_SEVERITIES,
+                ArrayList(draft.warnings.map { it.severity.name })
+            )
+            putStringArrayListExtra(
+                EXTRA_IMPORTED_WARNING_FIELDS,
+                ArrayList(draft.warnings.map { it.field.orEmpty() })
+            )
+            putStringArrayListExtra(
+                EXTRA_IMPORTED_WARNING_EVIDENCE,
+                ArrayList(draft.warnings.map { it.sourceEvidence.orEmpty() })
+            )
             putExtra(EXTRA_IMPORTED_SOURCE_TYPE, draft.importMetadata.sourceType)
             putExtra(EXTRA_IMPORTED_PARSER_VERSION, draft.importMetadata.parserVersion)
             putExtra(EXTRA_IMPORTED_ORIGINAL_UNITS, draft.importMetadata.originalUnits)
@@ -203,6 +224,10 @@ class RecipeEditorActivity : ComponentActivity() {
             val notes = intent.getStringExtra(EXTRA_IMPORTED_NOTES).orEmpty()
             val sourceName = intent.getStringExtra(EXTRA_IMPORTED_SOURCE_NAME).orEmpty()
             val sourceUrl = intent.getStringExtra(EXTRA_IMPORTED_SOURCE_URL).orEmpty()
+            val warningCodes = intent.getStringArrayListExtra(EXTRA_IMPORTED_WARNING_CODES).orEmpty()
+            val warningSeverities = intent.getStringArrayListExtra(EXTRA_IMPORTED_WARNING_SEVERITIES).orEmpty()
+            val warningFields = intent.getStringArrayListExtra(EXTRA_IMPORTED_WARNING_FIELDS).orEmpty()
+            val warningEvidence = intent.getStringArrayListExtra(EXTRA_IMPORTED_WARNING_EVIDENCE).orEmpty()
             val hasImportedContent = listOf(
                 title,
                 description,
@@ -210,7 +235,7 @@ class RecipeEditorActivity : ComponentActivity() {
                 notes,
                 sourceName,
                 sourceUrl
-            ).any { it.isNotBlank() } || ingredients.isNotEmpty()
+            ).any { it.isNotBlank() } || ingredients.isNotEmpty() || warningCodes.isNotEmpty()
             if (!hasImportedContent) return null
 
             return ImportedRecipeDraft(
@@ -232,6 +257,17 @@ class RecipeEditorActivity : ComponentActivity() {
                     cookTimeMinutes = intent.getSerializableExtraCompat(EXTRA_IMPORTED_COOK_MINUTES),
                     totalTimeMinutes = intent.getSerializableExtraCompat(EXTRA_IMPORTED_TOTAL_MINUTES)
                 ).takeIf { it.prepTimeMinutes != null || it.cookTimeMinutes != null || it.totalTimeMinutes != null },
+                importJobId = intent.getStringExtra(EXTRA_IMPORTED_JOB_ID),
+                warnings = warningCodes.mapIndexed { index, code ->
+                    ImportWarning(
+                        code = code,
+                        severity = warningSeverities.getOrNull(index)
+                            ?.let { runCatching { ImportWarningSeverity.valueOf(it) }.getOrNull() }
+                            ?: ImportWarningSeverity.INFO,
+                        field = warningFields.getOrNull(index)?.ifBlank { null },
+                        sourceEvidence = warningEvidence.getOrNull(index)?.ifBlank { null }
+                    )
+                },
                 importMetadata = app.recipebook.domain.model.ImportMetadata(
                     sourceType = intent.getStringExtra(EXTRA_IMPORTED_SOURCE_TYPE),
                     parserVersion = intent.getStringExtra(EXTRA_IMPORTED_PARSER_VERSION),

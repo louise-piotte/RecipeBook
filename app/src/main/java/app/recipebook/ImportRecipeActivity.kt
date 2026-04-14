@@ -44,7 +44,10 @@ class ImportRecipeActivity : ComponentActivity() {
             val subject = intent.getStringExtra(Intent.EXTRA_SUBJECT)
             val language = languageStore.language.first()
             val importer = SharedRecipeImporter()
-            val draft = importer.import(sharedText, sourceNameHint = subject)
+            val source = importer.createImportSource(sharedText, sourceNameHint = subject)
+            val job = importer.createImportJob(source)
+            val extraction = importer.extract(source, job)
+            val draft = importer.mapToDraft(extraction)
             startActivity(RecipeEditorActivity.intentForImportedDraft(this@ImportRecipeActivity, draft, language))
             finish()
         }

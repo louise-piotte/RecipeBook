@@ -160,6 +160,35 @@ class SharedRecipeImportTest {
     }
 
     @Test
+    fun mapToDraft_preservesJobIdAndWarnings() {
+        val importer = SharedRecipeImporter(fetchUrlContent = { error("network not expected") })
+
+        val draft = importer.mapToDraft(
+            RawExtractionBundle(
+                jobId = "job-123",
+                sourceId = "source-123",
+                extractorVersion = "extractor-v1",
+                sourceType = "shared_text",
+                deterministicFields = DeterministicRecipeFields(
+                    title = "Imported title",
+                    ingredientLines = listOf("1 cup milk")
+                ),
+                warnings = listOf(
+                    ImportWarning(
+                        code = "ingredient_section_missing",
+                        severity = ImportWarningSeverity.INFO,
+                        field = "ingredients"
+                    )
+                )
+            )
+        )
+
+        assertEquals("job-123", draft.importJobId)
+        assertEquals(1, draft.warnings.size)
+        assertEquals("ingredient_section_missing", draft.warnings.first().code)
+    }
+
+    @Test
     fun applyToRecipe_populatesOnlyTargetLanguage() {
         val draft = ImportedRecipeDraft(
             title = "Imported Soup",

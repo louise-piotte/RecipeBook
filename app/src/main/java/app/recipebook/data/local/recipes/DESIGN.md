@@ -15,7 +15,7 @@ This package contains the main recipe-library orchestration layer.
 - `RecipePhotoStore.kt`: local file ownership for recipe photos.
 - `RecipeLocalizationCoordinator.kt`: bilingual save/regeneration seam that treats the active editor language as authoritative, tracks draft sync status, and can swap between local stub regeneration and future real backends.
 - `RecipeLanguageRegenerator.kt`: pluggable opposite-language generation contract plus the current local stub implementation used to complete the editor UX safely.
-- `SharedRecipeImport.kt`: deterministic shared-text and shared-URL intake, now split into staged importer models (`ImportSource`, `ImportDraftJob`, `RawExtractionBundle`, warnings) plus imported-draft mapping for the existing editor handoff.
+- `SharedRecipeImport.kt`: deterministic shared-text and shared-URL intake, now split into staged importer models (`ImportSource`, `ImportDraftJob`, `RawExtractionBundle`, warnings) plus imported-draft mapping for the existing editor handoff. `ImportRecipeActivity` now creates staged source/job records explicitly before mapping to the editor draft.
 - `RecipeKeeper*Import.kt`: import parsing from RecipeKeeper exports into domain-friendly data.
 
 ## Core Design
