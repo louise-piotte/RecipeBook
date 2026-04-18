@@ -18,6 +18,7 @@ import app.recipebook.data.local.recipes.ImportWarningSeverity
 import app.recipebook.data.local.recipes.ImportedRecipeDraft
 import app.recipebook.data.local.recipes.RecipePhotoStore
 import app.recipebook.data.local.recipes.RecipeLocalizationCoordinator
+import app.recipebook.data.local.recipes.RecipeAiRuntime
 import app.recipebook.data.local.recipes.RecipeRepositoryProvider
 import app.recipebook.data.local.recipes.applyToRecipe
 import app.recipebook.data.local.settings.AppLanguageStore
@@ -46,7 +47,7 @@ class RecipeEditorActivity : ComponentActivity() {
         photoStore = RecipePhotoStore(this)
 
         val repository = RecipeRepositoryProvider.create(this)
-        val localizationCoordinator = RecipeLocalizationCoordinator()
+        val localizationCoordinator = RecipeAiRuntime.createLocalizationCoordinator(this)
         val languageStore = AppLanguageStore(this)
         val recipeId = intent.getStringExtra(EXTRA_RECIPE_ID)
         val isNewRecipe = recipeId == null
@@ -112,9 +113,20 @@ class RecipeEditorActivity : ComponentActivity() {
                             }
                         },
                         onRegenerateOtherLanguage = { draftRecipe, authoritativeLanguage ->
-                            localizationCoordinator.regenerateOppositeLanguage(
+                            val outcome = localizationCoordinator.regenerateOppositeLanguage(
                                 recipe = draftRecipe,
                                 authoritativeLanguage = authoritativeLanguage
+                            )
+                            val referencesByLineId = outcome.ingredientReferenceSuggestions.associate { suggestion ->
+                                suggestion.ingredientLineId to repository.ensureIngredientReference(suggestion.draft)
+                            }
+                            outcome.recipe.copy(
+                                ingredients = outcome.recipe.ingredients.map { ingredient ->
+                                    val reference = referencesByLineId[ingredient.id] ?: return@map ingredient
+                                    ingredient.copy(
+                                        ingredientRefId = reference.id
+                                    )
+                                }
                             )
                         },
                         onLocalizedTextEdited = { importMetadata, draftLanguages, authoritativeLanguage ->

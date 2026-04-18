@@ -139,6 +139,22 @@ class RecipeRepository(
         return ingredientReference
     }
 
+    suspend fun ensureIngredientReference(
+        draft: IngredientReferenceDraft,
+        now: String = Instant.now().toString()
+    ): IngredientReference {
+        val targetKeys = listOf(draft.nameFr, draft.nameEn)
+            .map(::lookupKey)
+            .filter { it.isNotBlank() }
+            .toSet()
+        val existing = observeIngredientReferences().firstOrNull()
+            .orEmpty()
+            .firstOrNull { reference ->
+                reference.lookupKeys().any(targetKeys::contains)
+            }
+        return existing ?: createIngredientReference(draft, now)
+    }
+
     suspend fun updateIngredientReference(
         id: String,
         draft: IngredientReferenceDraft,
@@ -936,6 +952,15 @@ private fun normalizeAliases(
         }
     }
 }
+
+private fun IngredientReference.lookupKeys(): Set<String> = buildSet {
+    add(lookupKey(nameFr))
+    add(lookupKey(nameEn))
+    aliasesFr.forEach { add(lookupKey(it)) }
+    aliasesEn.forEach { add(lookupKey(it)) }
+}.filter { it.isNotBlank() }.toSet()
+
+private fun lookupKey(input: String): String = slugify(input)
 
 
 

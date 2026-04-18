@@ -114,7 +114,7 @@ class RecipeLocalizationCoordinatorTest {
             )
         )
 
-        val regenerated = coordinator.regenerateOppositeLanguage(recipe, AppLanguage.EN)
+        val regenerated = coordinator.regenerateOppositeLanguage(recipe, AppLanguage.EN).recipe
 
         assertEquals("Reviewed title", regenerated.languages.fr.title)
         assertEquals("Reviewed description", regenerated.languages.fr.description)

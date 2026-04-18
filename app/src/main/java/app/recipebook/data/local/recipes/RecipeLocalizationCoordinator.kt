@@ -7,6 +7,11 @@ import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Recipe
 
+data class RecipeRegenerationOutcome(
+    val recipe: Recipe,
+    val ingredientReferenceSuggestions: List<IngredientReferenceSuggestion> = emptyList()
+)
+
 class RecipeLocalizationCoordinator(
     private val regenerator: RecipeLanguageRegenerator = LocalStubRecipeLanguageRegenerator()
 ) {
@@ -50,7 +55,7 @@ class RecipeLocalizationCoordinator(
     suspend fun regenerateOppositeLanguage(
         recipe: Recipe,
         authoritativeLanguage: AppLanguage
-    ): Recipe {
+    ): RecipeRegenerationOutcome {
         val authoritativeText = normalizeLocalizedText(recipe.languages.forLanguage(authoritativeLanguage))
         val regenerated = regenerator.regenerateOppositeLanguage(
             RecipeLanguageRegenerationRequest(
@@ -65,8 +70,10 @@ class RecipeLocalizationCoordinator(
             AppLanguage.FR -> BilingualText(fr = normalizedOpposite, en = authoritativeText)
             AppLanguage.EN -> BilingualText(fr = authoritativeText, en = normalizedOpposite)
         }
-        return recipe.copy(
+        val regeneratedIngredients = recipe.ingredients.applyRegeneratedIngredients(regenerated.generatedIngredients)
+        val regeneratedRecipe = recipe.copy(
             languages = regeneratedLanguages,
+            ingredients = regeneratedIngredients,
             importMetadata = (recipe.importMetadata ?: ImportMetadata())
                 .copy(generatorLabel = regenerated.generatorLabel)
                 .withSyncState(
@@ -82,6 +89,17 @@ class RecipeLocalizationCoordinator(
                         BilingualSyncStatus.UP_TO_DATE
                     }
                 )
+        )
+        return RecipeRegenerationOutcome(
+            recipe = regeneratedRecipe,
+            ingredientReferenceSuggestions = regenerated.generatedIngredients.mapNotNull { ingredient ->
+                ingredient.referenceDraft?.let { draft ->
+                    IngredientReferenceSuggestion(
+                        ingredientLineId = ingredient.id,
+                        draft = draft
+                    )
+                }
+            }
         )
     }
 
@@ -182,4 +200,18 @@ private fun normalizeRecipeMultilineText(input: String): String = input.lineSequ
 private fun ImportMetadata?.statusForLanguage(language: AppLanguage): BilingualSyncStatus? = when (language) {
     AppLanguage.FR -> this?.syncStatusFr
     AppLanguage.EN -> this?.syncStatusEn
+}
+
+private fun List<app.recipebook.domain.model.IngredientLine>.applyRegeneratedIngredients(
+    regeneratedIngredients: List<RegeneratedIngredientLine>
+): List<app.recipebook.domain.model.IngredientLine> {
+    if (regeneratedIngredients.isEmpty()) return this
+    val updatesById = regeneratedIngredients.associateBy(RegeneratedIngredientLine::id)
+    return map { ingredient ->
+        val update = updatesById[ingredient.id] ?: return@map ingredient
+        ingredient.copy(
+            ingredientName = update.ingredientName.ifBlank { ingredient.ingredientName },
+            originalText = update.originalText.ifBlank { ingredient.originalText }
+        )
+    }
 }

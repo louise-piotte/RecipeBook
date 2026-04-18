@@ -310,6 +310,11 @@ fun RecipeEditorScreen(
                                 onRegenerateOtherLanguage(draftRecipe, language)
                             }.onSuccess { regeneratedRecipe ->
                                 localizedTexts = regeneratedRecipe.languages
+                                ingredientRows.clear()
+                                ingredientRows.addAll(regeneratedRecipe.ingredients.map(IngredientLine::toEditableRow))
+                                if (ingredientRows.isEmpty()) {
+                                    ingredientRows.add(blankIngredientRow())
+                                }
                                 currentImportMetadata = regeneratedRecipe.importMetadata
                                 regenerationNotice = RegenerationNotice.Success(otherLanguage)
                             }.onFailure {

@@ -71,8 +71,8 @@ import app.recipebook.R
 import app.recipebook.CollectionManagerActivity
 import app.recipebook.RecipeDetailActivity
 import app.recipebook.RecipeEditorActivity
+import app.recipebook.data.local.recipes.RecipeAiRuntime
 import app.recipebook.data.local.recipes.RecipeRepository
-import app.recipebook.data.local.recipes.SharedRecipeImporter
 import app.recipebook.domain.localization.BilingualText
 import app.recipebook.domain.localization.BilingualTextResolver
 import app.recipebook.domain.model.AppLanguage
@@ -300,8 +300,8 @@ fun RecipeLibraryScreen(
             language = language,
             onDismiss = { showImportDialog = false },
             onImport = { input ->
-                val importer = SharedRecipeImporter()
-                val draft = importer.import(input)
+                val importer = RecipeAiRuntime.createSharedRecipeImporter(context)
+                val draft = importer.import(input, activeLanguage = language)
                 context.startActivity(
                     RecipeEditorActivity.intentForImportedDraft(
                         context = context,

@@ -12,7 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
-import app.recipebook.data.local.recipes.SharedRecipeImporter
+import app.recipebook.data.local.recipes.RecipeAiRuntime
 import app.recipebook.data.local.settings.AppLanguageStore
 import app.recipebook.ui.theme.RecipeBookTheme
 import kotlinx.coroutines.flow.first
@@ -43,7 +43,7 @@ class ImportRecipeActivity : ComponentActivity() {
             val sharedText = intent.getStringExtra(Intent.EXTRA_TEXT).orEmpty()
             val subject = intent.getStringExtra(Intent.EXTRA_SUBJECT)
             val language = languageStore.language.first()
-            val importer = SharedRecipeImporter()
+            val importer = RecipeAiRuntime.createSharedRecipeImporter(this@ImportRecipeActivity)
             val source = importer.createImportSource(sharedText, sourceNameHint = subject)
             val job = importer.createImportJob(source)
             val extraction = importer.extract(source, job)

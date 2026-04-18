@@ -33,7 +33,7 @@
     <string name="regenerate_other_language_label">Regenerate %1$s</string>
     <string name="regeneration_in_progress_label">Generating %1$s...</string>
     <string name="regeneration_applied_title">Regeneration applied</string>
-    <string name="regeneration_applied_message">RecipeBook filled %1$s using the local stub generator. Review it before relying on it.</string>
+    <string name="regeneration_applied_message">RecipeBook regenerated %1$s. Review it before relying on it.</string>
     <string name="regeneration_failed_title">Regeneration failed</string>
     <string name="regeneration_failed_message">RecipeBook could not regenerate %1$s right now. The current text was left unchanged.</string>
     <string name="import_review_info_title">Import notes</string>

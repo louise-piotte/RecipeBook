@@ -1,6 +1,8 @@
 package app.recipebook.data.local.recipes
 
 import app.recipebook.domain.model.AppLanguage
+import app.recipebook.domain.model.IngredientCategory
+import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Recipe
 import kotlinx.coroutines.delay
@@ -13,7 +15,20 @@ data class RecipeLanguageRegenerationRequest(
 data class RecipeLanguageRegenerationResult(
     val generatedLanguage: AppLanguage,
     val generatedText: LocalizedSystemText,
-    val generatorLabel: String
+    val generatorLabel: String,
+    val generatedIngredients: List<RegeneratedIngredientLine> = emptyList()
+)
+
+data class RegeneratedIngredientLine(
+    val id: String,
+    val ingredientName: String,
+    val originalText: String,
+    val referenceDraft: IngredientReferenceDraft? = null
+)
+
+data class IngredientReferenceSuggestion(
+    val ingredientLineId: String,
+    val draft: IngredientReferenceDraft
 )
 
 interface RecipeLanguageRegenerator {

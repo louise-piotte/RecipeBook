@@ -3,6 +3,7 @@
 
 - Expand recipe importer beyond shared text and `schema.org/Recipe` URLs:
   - Add AI settings screen and local config storage for `apiKey`, `baseUrl`, and shared `model`
+  - Remove the temporary hardcoded default AI credentials/config from `AiBackendSettingsStore`
   - Add the real OpenAI-compatible importer/regenerator backend with deterministic importer fallback and local-stub regeneration fallback
   - Add richer webpage fallback extraction when no recipe schema is present
   - Add image/OCR intake

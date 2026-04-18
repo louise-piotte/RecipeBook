@@ -320,6 +320,37 @@ class RecipeRepositoryTest {
     }
 
     @Test
+    fun ensureIngredientReference_reusesExistingReferenceByLocalizedName() = runBlocking {
+        val ingredientDao = FakeIngredientReferenceDao()
+        val repository = RecipeRepository(
+            recipeDao = FakeRecipeDao(),
+            ingredientReferenceDao = ingredientDao
+        )
+        ingredientDao.upsert(
+            IngredientReferenceEntity(
+                id = "ingredient-ref-flour",
+                nameFr = "Farine tout usage",
+                nameEn = "All-purpose flour",
+                aliasesFrJson = "[\"farine\"]",
+                aliasesEnJson = "[\"flour\"]",
+                updatedAt = "2026-04-18T10:00:00Z"
+            )
+        )
+
+        val ensured = repository.ensureIngredientReference(
+            IngredientReferenceDraft(
+                nameFr = "Farine tout usage",
+                nameEn = "All-purpose flour",
+                aliasesFr = listOf("farine"),
+                aliasesEn = listOf("flour")
+            )
+        )
+
+        assertEquals("ingredient-ref-flour", ensured.id)
+        assertEquals(1, ingredientDao.items.size)
+    }
+
+    @Test
     fun updateIngredientReferenceAndTag_persistEditedValues() = runBlocking {
         val ingredientDao = FakeIngredientReferenceDao()
         val tagDao = FakeTagDao()

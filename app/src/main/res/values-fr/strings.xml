@@ -33,7 +33,7 @@
     <string name="regenerate_other_language_label">R&#233;g&#233;n&#233;rer %1$s</string>
     <string name="regeneration_in_progress_label">G&#233;n&#233;ration de %1$s...</string>
     <string name="regeneration_applied_title">R&#233;g&#233;n&#233;ration appliqu&#233;e</string>
-    <string name="regeneration_applied_message">RecipeBook a rempli %1$s avec le g&#233;n&#233;rateur local simul&#233;. R&#233;visez-le avant de vous y fier.</string>
+    <string name="regeneration_applied_message">RecipeBook a r&#233;g&#233;n&#233;r&#233; %1$s. R&#233;visez-le avant de vous y fier.</string>
     <string name="regeneration_failed_title">&#201;chec de la r&#233;g&#233;n&#233;ration</string>
     <string name="regeneration_failed_message">RecipeBook n&#8217;a pas pu r&#233;g&#233;n&#233;rer %1$s pour le moment. Le texte actuel a &#233;t&#233; conserv&#233;.</string>
     <string name="import_review_info_title">Notes d&#8217;importation</string>
