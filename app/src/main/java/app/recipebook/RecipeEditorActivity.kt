@@ -178,6 +178,8 @@ class RecipeEditorActivity : ComponentActivity() {
         private const val EXTRA_IMPORTED_WARNING_EVIDENCE = "imported_warning_evidence"
         private const val EXTRA_IMPORTED_SOURCE_TYPE = "imported_source_type"
         private const val EXTRA_IMPORTED_PARSER_VERSION = "imported_parser_version"
+        private const val EXTRA_IMPORTED_EXTRACTOR_VERSION = "imported_extractor_version"
+        private const val EXTRA_IMPORTED_GENERATOR_LABEL = "imported_generator_label"
         private const val EXTRA_IMPORTED_ORIGINAL_UNITS = "imported_original_units"
 
         fun intentForImportedDraft(
@@ -214,6 +216,8 @@ class RecipeEditorActivity : ComponentActivity() {
             )
             putExtra(EXTRA_IMPORTED_SOURCE_TYPE, draft.importMetadata.sourceType)
             putExtra(EXTRA_IMPORTED_PARSER_VERSION, draft.importMetadata.parserVersion)
+            putExtra(EXTRA_IMPORTED_EXTRACTOR_VERSION, draft.importMetadata.extractorVersion)
+            putExtra(EXTRA_IMPORTED_GENERATOR_LABEL, draft.importMetadata.generatorLabel)
             putExtra(EXTRA_IMPORTED_ORIGINAL_UNITS, draft.importMetadata.originalUnits)
         }
 
@@ -272,6 +276,8 @@ class RecipeEditorActivity : ComponentActivity() {
                 importMetadata = app.recipebook.domain.model.ImportMetadata(
                     sourceType = intent.getStringExtra(EXTRA_IMPORTED_SOURCE_TYPE),
                     parserVersion = intent.getStringExtra(EXTRA_IMPORTED_PARSER_VERSION),
+                    extractorVersion = intent.getStringExtra(EXTRA_IMPORTED_EXTRACTOR_VERSION),
+                    generatorLabel = intent.getStringExtra(EXTRA_IMPORTED_GENERATOR_LABEL),
                     originalUnits = intent.getStringExtra(EXTRA_IMPORTED_ORIGINAL_UNITS)
                 )
             )

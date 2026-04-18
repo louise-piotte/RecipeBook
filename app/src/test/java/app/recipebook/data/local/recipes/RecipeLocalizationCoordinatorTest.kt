@@ -123,6 +123,7 @@ class RecipeLocalizationCoordinatorTest {
             "Brouillon local simul\u00e9 \u00e0 r\u00e9viser.",
             regenerated.languages.fr.notes
         )
+        assertEquals("local_stub", regenerated.importMetadata?.generatorLabel)
         assertEquals(BilingualSyncStatus.UP_TO_DATE, regenerated.importMetadata?.syncStatusFr)
         assertEquals(BilingualSyncStatus.UP_TO_DATE, regenerated.importMetadata?.syncStatusEn)
     }

@@ -188,6 +188,10 @@ data class ImportMetadataDto(
     val sourceType: String? = null,
     @SerialName("parserVersion")
     val parserVersion: String? = null,
+    @SerialName("extractorVersion")
+    val extractorVersion: String? = null,
+    @SerialName("generatorLabel")
+    val generatorLabel: String? = null,
     @SerialName("originalUnits")
     val originalUnits: String? = null,
     @SerialName("authoritativeLanguage")

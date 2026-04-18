@@ -828,6 +828,8 @@ private fun AttachmentRef.toStored(): StoredAttachmentRef = StoredAttachmentRef(
 private data class StoredImportMetadata(
     val sourceType: String? = null,
     val parserVersion: String? = null,
+    val extractorVersion: String? = null,
+    val generatorLabel: String? = null,
     val originalUnits: String? = null,
     val authoritativeLanguage: String? = null,
     val syncStatusFr: String? = null,
@@ -836,6 +838,8 @@ private data class StoredImportMetadata(
     fun toDomain(): ImportMetadata = ImportMetadata(
         sourceType = sourceType,
         parserVersion = parserVersion,
+        extractorVersion = extractorVersion,
+        generatorLabel = generatorLabel,
         originalUnits = originalUnits,
         authoritativeLanguage = authoritativeLanguage?.let { app.recipebook.domain.model.AppLanguage.valueOf(it) },
         syncStatusFr = syncStatusFr?.let(BilingualSyncStatus::valueOf),
@@ -846,6 +850,8 @@ private data class StoredImportMetadata(
 private fun ImportMetadata.toStored(): StoredImportMetadata = StoredImportMetadata(
     sourceType = sourceType,
     parserVersion = parserVersion,
+    extractorVersion = extractorVersion,
+    generatorLabel = generatorLabel,
     originalUnits = originalUnits,
     authoritativeLanguage = authoritativeLanguage?.name,
     syncStatusFr = syncStatusFr?.name,

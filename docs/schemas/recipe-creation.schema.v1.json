@@ -199,6 +199,8 @@
           "properties": {
             "sourceType": { "type": "string" },
             "parserVersion": { "type": "string" },
+            "extractorVersion": { "type": "string" },
+            "generatorLabel": { "type": "string" },
             "originalUnits": { "type": "string" }
           }
         }

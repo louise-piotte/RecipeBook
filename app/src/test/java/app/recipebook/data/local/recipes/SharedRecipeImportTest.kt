@@ -1,9 +1,9 @@
 package app.recipebook.data.local.recipes
 
 import app.recipebook.domain.model.AppLanguage
-import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.LocalizedSystemText
+import app.recipebook.domain.model.Recipe
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -64,6 +64,7 @@ class SharedRecipeImportTest {
         assertEquals(15, draft.times?.cookTimeMinutes)
         assertEquals(25, draft.times?.totalTimeMinutes)
         assertEquals("shared_webpage_url", draft.importMetadata.sourceType)
+        assertEquals("shared-import-extractor-v1", draft.importMetadata.extractorVersion)
     }
 
     @Test
@@ -142,6 +143,129 @@ class SharedRecipeImportTest {
     }
 
     @Test
+    fun finishDraft_aiSuccessPrefersAiContentAndPreservesMetadata() = kotlinx.coroutines.runBlocking {
+        val importer = SharedRecipeImporter(
+            fetchUrlContent = { error("network not expected") },
+            aiRecipeImportService = object : AiRecipeImportService {
+                override suspend fun buildDraft(request: AiRecipeImportRequest): AiRecipeImportResult {
+                    assertEquals(AppLanguage.FR, request.activeLanguage)
+                    assertEquals("shared_text", request.sourceType)
+                    return AiRecipeImportResult.Success(
+                        AiRecipeImportResponse(
+                            payload = AiRecipeDraftPayload(
+                                title = "Gateau affine",
+                                description = "Description AI",
+                                ingredients = listOf("2 tasses de farine"),
+                                instructions = "Melanger.\nCuire.",
+                                notes = "Note AI",
+                                sourceName = "AI Source",
+                                sourceUrl = "https://example.com/ai"
+                            ),
+                            warnings = listOf(
+                                ImportWarning(
+                                    code = "ai_partial_cleanup",
+                                    severity = ImportWarningSeverity.INFO,
+                                    field = "ingredients"
+                                )
+                            ),
+                            generatorLabel = "fake_ai",
+                            isPartial = true
+                        )
+                    )
+                }
+            }
+        )
+
+        val source = importer.createImportSource(
+            """
+            Cake
+
+            Ingredients
+            2 cups flour
+
+            Instructions
+            1. Bake.
+            """.trimIndent()
+        )
+        val bundle = importer.extract(source)
+        val draft = importer.finishDraft(bundle, activeLanguage = AppLanguage.FR)
+
+        assertEquals("Gateau affine", draft.title)
+        assertEquals(listOf("2 tasses de farine"), draft.ingredients)
+        assertEquals("Melanger.\nCuire.", draft.instructions)
+        assertEquals("fake_ai", draft.importMetadata.generatorLabel)
+        assertEquals("shared-import-extractor-v1", draft.importMetadata.extractorVersion)
+        assertTrue(draft.warnings.any { it.code == "ai_partial_cleanup" })
+    }
+
+    @Test
+    fun finishDraft_aiInvalidFallsBackToDeterministicDraft() = kotlinx.coroutines.runBlocking {
+        val importer = SharedRecipeImporter(
+            fetchUrlContent = { error("network not expected") },
+            aiRecipeImportService = object : AiRecipeImportService {
+                override suspend fun buildDraft(request: AiRecipeImportRequest): AiRecipeImportResult =
+                    AiRecipeImportResult.Success(
+                        AiRecipeImportResponse(
+                            payload = AiRecipeDraftPayload(),
+                            generatorLabel = "broken_ai"
+                        )
+                    )
+            }
+        )
+
+        val source = importer.createImportSource(
+            """
+            Chocolate Cake
+
+            Ingredients
+            2 cups flour
+            1 cup sugar
+
+            Instructions
+            1. Mix everything together.
+            2. Bake for 30 minutes.
+            """.trimIndent()
+        )
+        val bundle = importer.extract(source)
+        val draft = importer.finishDraft(bundle, activeLanguage = AppLanguage.EN)
+
+        assertEquals("Chocolate Cake", draft.title)
+        assertEquals(listOf("2 cups flour", "1 cup sugar"), draft.ingredients)
+        assertEquals("Mix everything together.\nBake for 30 minutes.", draft.instructions)
+        assertEquals(null, draft.importMetadata.generatorLabel)
+        assertTrue(draft.warnings.any { it.code == "ai_response_invalid" })
+    }
+
+    @Test
+    fun finishDraft_aiFailureFallsBackToDeterministicDraftWithInfoWarning() = kotlinx.coroutines.runBlocking {
+        val importer = SharedRecipeImporter(
+            fetchUrlContent = { error("network not expected") },
+            aiRecipeImportService = object : AiRecipeImportService {
+                override suspend fun buildDraft(request: AiRecipeImportRequest): AiRecipeImportResult =
+                    AiRecipeImportResult.Failed(
+                        reasonCode = "network_timeout",
+                        retryable = true
+                    )
+            }
+        )
+
+        val draft = importer.import(
+            """
+            Toast
+
+            Ingredients
+            2 slices bread
+
+            Instructions
+            1. Toast bread.
+            """.trimIndent()
+        )
+
+        assertEquals("Toast", draft.title)
+        assertTrue(draft.warnings.any { it.code == "ai_draft_unavailable" })
+    }
+
+    @Test
     fun extract_noteLikeSharedText_emitsMissingSectionWarnings() = kotlinx.coroutines.runBlocking {
         val importer = SharedRecipeImporter(fetchUrlContent = { error("network not expected") })
 
@@ -186,6 +310,7 @@ class SharedRecipeImportTest {
         assertEquals("job-123", draft.importJobId)
         assertEquals(1, draft.warnings.size)
         assertEquals("ingredient_section_missing", draft.warnings.first().code)
+        assertEquals("extractor-v1", draft.importMetadata.extractorVersion)
     }
 
     @Test

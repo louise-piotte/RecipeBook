@@ -254,6 +254,8 @@ private fun portableAttachmentRelativePath(attachment: AttachmentRef): String {
 private fun ImportMetadataDto.toDomain(): ImportMetadata = ImportMetadata(
     sourceType = sourceType,
     parserVersion = parserVersion,
+    extractorVersion = extractorVersion,
+    generatorLabel = generatorLabel,
     originalUnits = originalUnits,
     authoritativeLanguage = authoritativeLanguage?.let(AppLanguage::valueOf),
     syncStatusFr = syncStatusFr?.let(BilingualSyncStatus::valueOf),
@@ -263,6 +265,8 @@ private fun ImportMetadataDto.toDomain(): ImportMetadata = ImportMetadata(
 private fun ImportMetadata.toDto(): ImportMetadataDto = ImportMetadataDto(
     sourceType = sourceType,
     parserVersion = parserVersion,
+    extractorVersion = extractorVersion,
+    generatorLabel = generatorLabel,
     originalUnits = originalUnits,
     authoritativeLanguage = authoritativeLanguage?.name,
     syncStatusFr = syncStatusFr?.name,

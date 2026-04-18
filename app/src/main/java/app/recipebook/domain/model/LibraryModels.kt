@@ -100,6 +100,8 @@ enum class BilingualSyncStatus {
 data class ImportMetadata(
     val sourceType: String? = null,
     val parserVersion: String? = null,
+    val extractorVersion: String? = null,
+    val generatorLabel: String? = null,
     val originalUnits: String? = null,
     val authoritativeLanguage: AppLanguage? = null,
     val syncStatusFr: BilingualSyncStatus? = null,

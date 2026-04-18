@@ -58,7 +58,8 @@ data class ImportedRecipeDraft(
     val warnings: List<ImportWarning> = emptyList(),
     val importMetadata: ImportMetadata = ImportMetadata(
         sourceType = "shared_text",
-        parserVersion = IMPORT_PARSER_VERSION
+        parserVersion = IMPORT_PARSER_VERSION,
+        extractorVersion = IMPORT_EXTRACTOR_VERSION
     )
 )
 
@@ -73,15 +74,26 @@ data class ImportSource(
 enum class ImportJobStage {
     RECEIVED,
     EXTRACTING,
+    AWAITING_AI,
     DRAFT_READY,
+    SAVE_REGENERATING,
+    COMPLETED,
     FAILED
 }
+
+data class ImportJobFailure(
+    val stage: ImportJobStage,
+    val reasonCode: String,
+    val retryable: Boolean,
+    val sourceEvidence: String? = null
+)
 
 data class ImportDraftJob(
     val jobId: String,
     val sourceId: String,
     val sourceType: String,
-    val stage: ImportJobStage
+    val stage: ImportJobStage,
+    val failure: ImportJobFailure? = null
 )
 
 enum class ImportWarningSeverity {
@@ -121,6 +133,56 @@ data class RawExtractionBundle(
     val warnings: List<ImportWarning> = emptyList()
 )
 
+data class AiRecipeImportRequest(
+    val jobId: String,
+    val sourceType: String,
+    val extractorVersion: String,
+    val activeLanguage: AppLanguage,
+    val rawText: String,
+    val cleanedText: String,
+    val htmlTitle: String,
+    val deterministicFields: DeterministicRecipeFields,
+    val warnings: List<ImportWarning>
+)
+
+data class AiRecipeDraftPayload(
+    val title: String = "",
+    val description: String = "",
+    val ingredients: List<String> = emptyList(),
+    val instructions: String = "",
+    val notes: String = "",
+    val sourceName: String = "",
+    val sourceUrl: String = "",
+    val servings: Servings? = null,
+    val times: RecipeTimes? = null
+)
+
+data class AiRecipeImportResponse(
+    val payload: AiRecipeDraftPayload,
+    val warnings: List<ImportWarning> = emptyList(),
+    val generatorLabel: String,
+    val isPartial: Boolean = false
+)
+
+sealed interface AiRecipeImportResult {
+    data class Success(val response: AiRecipeImportResponse) : AiRecipeImportResult
+    data class Failed(
+        val reasonCode: String,
+        val retryable: Boolean,
+        val warnings: List<ImportWarning> = emptyList()
+    ) : AiRecipeImportResult
+    object Skipped : AiRecipeImportResult
+}
+
+interface AiRecipeImportService {
+    suspend fun buildDraft(request: AiRecipeImportRequest): AiRecipeImportResult
+}
+
+class DeterministicOnlyAiRecipeImportService : AiRecipeImportService {
+    override suspend fun buildDraft(request: AiRecipeImportRequest): AiRecipeImportResult =
+        AiRecipeImportResult.Skipped
+}
+
 fun ImportedRecipeDraft.applyToRecipe(recipe: Recipe, language: AppLanguage): Recipe {
     val targetText = LocalizedSystemText(
         title = title.trim(),
@@ -150,13 +212,18 @@ fun ImportedRecipeDraft.applyToRecipe(recipe: Recipe, language: AppLanguage): Re
 }
 
 class SharedRecipeImporter(
-    private val fetchUrlContent: suspend (String) -> String = ::fetchUrlText
+    private val fetchUrlContent: suspend (String) -> String = ::fetchUrlText,
+    private val aiRecipeImportService: AiRecipeImportService = DeterministicOnlyAiRecipeImportService()
 ) {
-    suspend fun import(sharedText: String, sourceNameHint: String? = null): ImportedRecipeDraft {
+    suspend fun import(
+        sharedText: String,
+        sourceNameHint: String? = null,
+        activeLanguage: AppLanguage = AppLanguage.EN
+    ): ImportedRecipeDraft {
         val source = createImportSource(sharedText, sourceNameHint)
         val job = createImportJob(source)
         val extraction = extract(source, job)
-        return mapToDraft(extraction)
+        return finishDraft(extraction, activeLanguage)
     }
 
     fun createImportSource(sharedText: String, sourceNameHint: String? = null): ImportSource {
@@ -198,6 +265,10 @@ class SharedRecipeImporter(
     }
 
     fun mapToDraft(bundle: RawExtractionBundle): ImportedRecipeDraft {
+        return mapDeterministicBundleToDraft(bundle)
+    }
+
+    fun mapDeterministicBundleToDraft(bundle: RawExtractionBundle): ImportedRecipeDraft {
         val fields = bundle.deterministicFields
         return ImportedRecipeDraft(
             title = fields.title,
@@ -213,9 +284,88 @@ class SharedRecipeImporter(
             warnings = bundle.warnings,
             importMetadata = ImportMetadata(
                 sourceType = bundle.sourceType,
-                parserVersion = IMPORT_PARSER_VERSION
+                parserVersion = IMPORT_PARSER_VERSION,
+                extractorVersion = bundle.extractorVersion
             )
         )
+    }
+
+    fun mapAiResultToDraft(
+        bundle: RawExtractionBundle,
+        response: AiRecipeImportResponse
+    ): ImportedRecipeDraft {
+        val deterministic = bundle.deterministicFields
+        val payload = response.payload
+        return ImportedRecipeDraft(
+            title = payload.title.ifBlank { deterministic.title },
+            description = payload.description.ifBlank { deterministic.description },
+            ingredients = payload.ingredients.ifEmpty { deterministic.ingredientLines },
+            instructions = payload.instructions.ifBlank { deterministic.instructionLines.joinToString("\n") },
+            notes = payload.notes.ifBlank { deterministic.notes },
+            sourceName = payload.sourceName.ifBlank { deterministic.sourceName },
+            sourceUrl = payload.sourceUrl.ifBlank { deterministic.sourceUrl },
+            servings = payload.servings ?: deterministic.servings,
+            times = payload.times ?: deterministic.times,
+            importJobId = bundle.jobId,
+            warnings = bundle.warnings + response.warnings,
+            importMetadata = ImportMetadata(
+                sourceType = bundle.sourceType,
+                parserVersion = IMPORT_PARSER_VERSION,
+                extractorVersion = bundle.extractorVersion,
+                generatorLabel = response.generatorLabel
+            )
+        )
+    }
+
+    suspend fun finishDraft(
+        bundle: RawExtractionBundle,
+        activeLanguage: AppLanguage = AppLanguage.EN
+    ): ImportedRecipeDraft {
+        val aiResult = aiRecipeImportService.buildDraft(
+            AiRecipeImportRequest(
+                jobId = bundle.jobId,
+                sourceType = bundle.sourceType,
+                extractorVersion = bundle.extractorVersion,
+                activeLanguage = activeLanguage,
+                rawText = bundle.rawText,
+                cleanedText = bundle.cleanedText,
+                htmlTitle = bundle.htmlTitle,
+                deterministicFields = bundle.deterministicFields,
+                warnings = bundle.warnings
+            )
+        )
+
+        return when (aiResult) {
+            is AiRecipeImportResult.Success -> {
+                val validationWarnings = validateAiResponse(aiResult.response)
+                if (validationWarnings.any { it.severity == ImportWarningSeverity.BLOCKING }) {
+                    mapDeterministicBundleToDraft(
+                        bundle.copy(warnings = bundle.warnings + validationWarnings)
+                    )
+                } else {
+                    mapAiResultToDraft(
+                        bundle = bundle.copy(warnings = bundle.warnings + validationWarnings),
+                        response = aiResult.response
+                    )
+                }
+            }
+            is AiRecipeImportResult.Failed -> {
+                val fallbackWarnings = buildList {
+                    addAll(bundle.warnings)
+                    addAll(aiResult.warnings)
+                    add(
+                        ImportWarning(
+                            code = "ai_draft_unavailable",
+                            severity = ImportWarningSeverity.INFO,
+                            field = null,
+                            sourceEvidence = aiResult.reasonCode
+                        )
+                    )
+                }
+                mapDeterministicBundleToDraft(bundle.copy(warnings = fallbackWarnings))
+            }
+            AiRecipeImportResult.Skipped -> mapDeterministicBundleToDraft(bundle)
+        }
     }
 
     private suspend fun extractFromUrl(source: ImportSource, job: ImportDraftJob): RawExtractionBundle {
@@ -400,6 +550,30 @@ class SharedRecipeImporter(
         )
     }
 }
+
+private fun validateAiResponse(response: AiRecipeImportResponse): List<ImportWarning> {
+    val payload = response.payload
+    if (payload.hasMeaningfulContent()) return emptyList()
+    return listOf(
+        ImportWarning(
+            code = "ai_response_invalid",
+            severity = ImportWarningSeverity.BLOCKING,
+            field = null,
+            sourceEvidence = response.generatorLabel
+        )
+    )
+}
+
+private fun AiRecipeDraftPayload.hasMeaningfulContent(): Boolean =
+    title.isNotBlank() ||
+        description.isNotBlank() ||
+        ingredients.isNotEmpty() ||
+        instructions.isNotBlank() ||
+        notes.isNotBlank() ||
+        sourceName.isNotBlank() ||
+        sourceUrl.isNotBlank() ||
+        servings != null ||
+        times != null
 
 private enum class TextSection {
     BODY,

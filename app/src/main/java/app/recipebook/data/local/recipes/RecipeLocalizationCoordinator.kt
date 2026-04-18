@@ -67,19 +67,21 @@ class RecipeLocalizationCoordinator(
         }
         return recipe.copy(
             languages = regeneratedLanguages,
-            importMetadata = (recipe.importMetadata ?: ImportMetadata()).withSyncState(
-                authoritativeLanguage = authoritativeLanguage,
-                frStatus = if (regenerated.generatedLanguage == AppLanguage.FR) {
-                    resolveGeneratedStatus(normalizedOpposite)
-                } else {
-                    BilingualSyncStatus.UP_TO_DATE
-                },
-                enStatus = if (regenerated.generatedLanguage == AppLanguage.EN) {
-                    resolveGeneratedStatus(normalizedOpposite)
-                } else {
-                    BilingualSyncStatus.UP_TO_DATE
-                }
-            )
+            importMetadata = (recipe.importMetadata ?: ImportMetadata())
+                .copy(generatorLabel = regenerated.generatorLabel)
+                .withSyncState(
+                    authoritativeLanguage = authoritativeLanguage,
+                    frStatus = if (regenerated.generatedLanguage == AppLanguage.FR) {
+                        resolveGeneratedStatus(normalizedOpposite)
+                    } else {
+                        BilingualSyncStatus.UP_TO_DATE
+                    },
+                    enStatus = if (regenerated.generatedLanguage == AppLanguage.EN) {
+                        resolveGeneratedStatus(normalizedOpposite)
+                    } else {
+                        BilingualSyncStatus.UP_TO_DATE
+                    }
+                )
         )
     }
 
