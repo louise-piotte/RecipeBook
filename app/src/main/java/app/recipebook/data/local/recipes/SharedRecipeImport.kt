@@ -36,6 +36,10 @@ private val HTML_TITLE_REGEX = Regex(
     "<title[^>]*>(.*?)</title>",
     setOf(RegexOption.IGNORE_CASE, RegexOption.DOT_MATCHES_ALL)
 )
+private val META_IMAGE_REGEX = Regex(
+    """<meta[^>]+(?:property|name)=["'](?:og:image|twitter:image)["'][^>]+content=["'](.*?)["'][^>]*>""",
+    setOf(RegexOption.IGNORE_CASE, RegexOption.DOT_MATCHES_ALL)
+)
 private val SECTION_HEADING_REGEX = Regex("^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ\\s]{1,40}:?$")
 private val NUMBERED_STEP_REGEX = Regex("^\\d+[.)]\\s+.+")
 private val BULLET_LINE_REGEX = Regex("^(?:[-*•]|\\d+[.)])\\s+.+")
@@ -50,6 +54,7 @@ data class ImportedRecipeDraft(
     val ingredients: List<String> = emptyList(),
     val instructions: String = "",
     val notes: String = "",
+    val mainPhotoUrl: String = "",
     val sourceName: String = "",
     val sourceUrl: String = "",
     val servings: Servings? = null,
@@ -115,6 +120,7 @@ data class DeterministicRecipeFields(
     val ingredientLines: List<String> = emptyList(),
     val instructionLines: List<String> = emptyList(),
     val notes: String = "",
+    val mainPhotoUrl: String = "",
     val sourceName: String = "",
     val sourceUrl: String = "",
     val servings: Servings? = null,
@@ -276,6 +282,7 @@ class SharedRecipeImporter(
             ingredients = fields.ingredientLines,
             instructions = fields.instructionLines.joinToString("\n"),
             notes = fields.notes,
+            mainPhotoUrl = fields.mainPhotoUrl,
             sourceName = fields.sourceName,
             sourceUrl = fields.sourceUrl,
             servings = fields.servings,
@@ -302,6 +309,7 @@ class SharedRecipeImporter(
             ingredients = payload.ingredients.ifEmpty { deterministic.ingredientLines },
             instructions = payload.instructions.ifBlank { deterministic.instructionLines.joinToString("\n") },
             notes = payload.notes.ifBlank { deterministic.notes },
+            mainPhotoUrl = deterministic.mainPhotoUrl,
             sourceName = payload.sourceName.ifBlank { deterministic.sourceName },
             sourceUrl = payload.sourceUrl.ifBlank { deterministic.sourceUrl },
             servings = payload.servings ?: deterministic.servings,
@@ -611,6 +619,9 @@ private fun extractRecipeBundleFromHtml(
     val ingredientLines = recipeObject["recipeIngredient"]?.stringList().orEmpty()
     val instructions = extractInstructions(recipeObject["recipeInstructions"])
     val title = recipeObject["name"]?.stringValue().orEmpty()
+    val mainPhotoUrl = extractPrimaryImageUrl(recipeObject["image"], url)
+        ?: extractPrimaryImageUrl(recipeObject["thumbnailUrl"], url)
+        ?: extractMetaImageUrl(html, url)
     if (title.isBlank() && ingredientLines.isEmpty() && instructions.isBlank()) {
         return null
     }
@@ -635,6 +646,7 @@ private fun extractRecipeBundleFromHtml(
             ingredientLines = ingredientLines,
             instructionLines = instructions.lineSequence().map { it.trim() }.filter { it.isNotEmpty() }.toList(),
             notes = "",
+            mainPhotoUrl = mainPhotoUrl.orEmpty(),
             sourceName = source.displayLabel
                 .ifBlank { extractSourceName(recipeObject) }
                 .ifBlank { fallbackSourceName },
@@ -774,6 +786,14 @@ private fun extractHtmlTitle(html: String): String {
     return normalizeWhitespace(rawTitle)
 }
 
+private fun extractMetaImageUrl(html: String, pageUrl: String): String? =
+    META_IMAGE_REGEX.find(html)
+        ?.groupValues
+        ?.getOrNull(1)
+        ?.let(::normalizeWhitespace)
+        ?.ifBlank { null }
+        ?.let { resolveUrl(pageUrl, it) }
+
 private fun normalizeWhitespace(value: String): String = value
     .replace(Regex("<[^>]+>"), " ")
     .replace(Regex("\\s+"), " ")
@@ -782,6 +802,24 @@ private fun normalizeWhitespace(value: String): String = value
 private fun hostLabel(url: String): String = runCatching {
     URI(url).host.orEmpty().removePrefix("www.")
 }.getOrDefault("")
+
+private fun extractPrimaryImageUrl(element: JsonElement?, pageUrl: String): String? = when (element) {
+    null, JsonNull -> null
+    is JsonPrimitive -> element.content.trim().ifBlank { null }?.let { resolveUrl(pageUrl, it) }
+    is JsonObject -> (
+        element["url"]?.stringValue()
+            ?: element["contentUrl"]?.stringValue()
+            ?: element["thumbnailUrl"]?.stringValue()
+            ?: element["image"]?.let { nested -> extractPrimaryImageUrl(nested, pageUrl) }
+        )?.trim()
+        ?.ifBlank { null }
+        ?.let { resolveUrl(pageUrl, it) }
+    is JsonArray -> element.firstNotNullOfOrNull { item -> extractPrimaryImageUrl(item, pageUrl) }
+}
+
+private fun resolveUrl(pageUrl: String, candidate: String): String? = runCatching {
+    URI(pageUrl).resolve(candidate).toString()
+}.getOrNull()
 
 private fun toIngredientLine(line: String): IngredientLine = IngredientLine(
     id = UUID.randomUUID().toString(),

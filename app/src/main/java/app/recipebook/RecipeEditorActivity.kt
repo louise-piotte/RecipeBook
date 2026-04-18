@@ -69,7 +69,19 @@ class RecipeEditorActivity : ComponentActivity() {
                     repository.seedBundledLibraryIfMissing()
                     recipe = if (recipeId == null) {
                         val blankRecipe = repository.createBlankRecipe()
-                        importedDraft?.applyToRecipe(blankRecipe, importLanguage) ?: blankRecipe
+                        val importedRecipe = importedDraft?.applyToRecipe(blankRecipe, importLanguage) ?: blankRecipe
+                        val importedPhotoUrl = importedDraft?.mainPhotoUrl?.trim().orEmpty()
+                        if (importedPhotoUrl.isBlank()) {
+                            importedRecipe
+                        } else {
+                            runCatching {
+                                val importedPhoto = photoStore.importDraftPhotoFromUrl(importedPhotoUrl)
+                                importedRecipe.copy(
+                                    mainPhotoId = importedPhoto.id,
+                                    photos = listOf(importedPhoto)
+                                )
+                            }.getOrDefault(importedRecipe)
+                        }
                     } else {
                         repository.getRecipeById(recipeId) ?: repository.createBlankRecipe()
                     }
@@ -176,6 +188,7 @@ class RecipeEditorActivity : ComponentActivity() {
         private const val EXTRA_IMPORTED_INGREDIENTS = "imported_ingredients"
         private const val EXTRA_IMPORTED_INSTRUCTIONS = "imported_instructions"
         private const val EXTRA_IMPORTED_NOTES = "imported_notes"
+        private const val EXTRA_IMPORTED_MAIN_PHOTO_URL = "imported_main_photo_url"
         private const val EXTRA_IMPORTED_SOURCE_NAME = "imported_source_name"
         private const val EXTRA_IMPORTED_SOURCE_URL = "imported_source_url"
         private const val EXTRA_IMPORTED_SERVINGS_AMOUNT = "imported_servings_amount"
@@ -205,6 +218,7 @@ class RecipeEditorActivity : ComponentActivity() {
             putStringArrayListExtra(EXTRA_IMPORTED_INGREDIENTS, ArrayList(draft.ingredients))
             putExtra(EXTRA_IMPORTED_INSTRUCTIONS, draft.instructions)
             putExtra(EXTRA_IMPORTED_NOTES, draft.notes)
+            putExtra(EXTRA_IMPORTED_MAIN_PHOTO_URL, draft.mainPhotoUrl)
             putExtra(EXTRA_IMPORTED_SOURCE_NAME, draft.sourceName)
             putExtra(EXTRA_IMPORTED_SOURCE_URL, draft.sourceUrl)
             putExtra(EXTRA_IMPORTED_SERVINGS_AMOUNT, draft.servings?.amount)
@@ -239,6 +253,7 @@ class RecipeEditorActivity : ComponentActivity() {
             val ingredients = intent.getStringArrayListExtra(EXTRA_IMPORTED_INGREDIENTS).orEmpty()
             val instructions = intent.getStringExtra(EXTRA_IMPORTED_INSTRUCTIONS).orEmpty()
             val notes = intent.getStringExtra(EXTRA_IMPORTED_NOTES).orEmpty()
+            val mainPhotoUrl = intent.getStringExtra(EXTRA_IMPORTED_MAIN_PHOTO_URL).orEmpty()
             val sourceName = intent.getStringExtra(EXTRA_IMPORTED_SOURCE_NAME).orEmpty()
             val sourceUrl = intent.getStringExtra(EXTRA_IMPORTED_SOURCE_URL).orEmpty()
             val warningCodes = intent.getStringArrayListExtra(EXTRA_IMPORTED_WARNING_CODES).orEmpty()
@@ -250,6 +265,7 @@ class RecipeEditorActivity : ComponentActivity() {
                 description,
                 instructions,
                 notes,
+                mainPhotoUrl,
                 sourceName,
                 sourceUrl
             ).any { it.isNotBlank() } || ingredients.isNotEmpty() || warningCodes.isNotEmpty()
@@ -261,6 +277,7 @@ class RecipeEditorActivity : ComponentActivity() {
                 ingredients = ingredients,
                 instructions = instructions,
                 notes = notes,
+                mainPhotoUrl = mainPhotoUrl,
                 sourceName = sourceName,
                 sourceUrl = sourceUrl,
                 servings = intent.takeIf { it.hasExtra(EXTRA_IMPORTED_SERVINGS_AMOUNT) }?.let {

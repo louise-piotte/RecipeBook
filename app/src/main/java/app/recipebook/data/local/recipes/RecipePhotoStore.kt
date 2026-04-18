@@ -8,6 +8,8 @@ import app.recipebook.domain.model.PhotoRef
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
+import java.net.HttpURLConnection
+import java.net.URL
 import java.util.UUID
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -50,6 +52,34 @@ class RecipePhotoStore(private val context: Context) {
             }
         }
         PhotoRef(id = photoId, localPath = targetFile.absolutePath)
+    }
+
+    suspend fun importDraftPhotoFromUrl(sourceUrl: String): PhotoRef = withContext(Dispatchers.IO) {
+        val connection = (URL(sourceUrl).openConnection() as HttpURLConnection).apply {
+            instanceFollowRedirects = true
+            connectTimeout = 10000
+            readTimeout = 10000
+            requestMethod = "GET"
+            setRequestProperty("User-Agent", "RecipeBook/1.0")
+        }
+        connection.connect()
+        try {
+            require(connection.responseCode in 200..299) { "Unable to download photo: HTTP ${connection.responseCode}" }
+            val extension = resolveExtension(
+                contentType = connection.contentType,
+                sourceUrl = connection.url?.toString().orEmpty()
+            )
+            val photoId = UUID.randomUUID().toString()
+            val targetFile = File(ensureDirectory(draftRoot), "$photoId.$extension")
+            connection.inputStream.use { input ->
+                FileOutputStream(targetFile).use { output ->
+                    input.copyTo(output)
+                }
+            }
+            PhotoRef(id = photoId, localPath = targetFile.absolutePath)
+        } finally {
+            connection.disconnect()
+        }
     }
 
     suspend fun finalizePendingCameraCapture(capture: PendingRecipePhotoCapture): PhotoRef? = withContext(Dispatchers.IO) {
@@ -101,11 +131,19 @@ class RecipePhotoStore(private val context: Context) {
 
     private fun resolveExtension(sourceUri: Uri): String {
         val mimeType = appContext.contentResolver.getType(sourceUri)
-        val fromMimeType = mimeType?.let(MimeTypeMap.getSingleton()::getExtensionFromMimeType)
+        return resolveExtension(
+            contentType = mimeType,
+            sourceUrl = sourceUri.toString()
+        )
+    }
+
+    private fun resolveExtension(contentType: String?, sourceUrl: String): String {
+        val fromMimeType = contentType?.substringBefore(';')?.trim()
+            ?.let(MimeTypeMap.getSingleton()::getExtensionFromMimeType)
         if (!fromMimeType.isNullOrBlank()) {
             return fromMimeType.lowercase()
         }
-        val fromPath = MimeTypeMap.getFileExtensionFromUrl(sourceUri.toString())
+        val fromPath = MimeTypeMap.getFileExtensionFromUrl(sourceUrl)
         return fromPath?.ifBlank { null }?.lowercase() ?: "jpg"
     }
 

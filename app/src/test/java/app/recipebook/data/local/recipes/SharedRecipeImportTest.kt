@@ -29,6 +29,7 @@ class SharedRecipeImportTest {
                     "prepTime": "PT10M",
                     "cookTime": "PT15M",
                     "totalTime": "PT25M",
+                    "image": "https://example.com/images/pancakes.jpg",
                     "recipeIngredient": [
                       "2 cups flour",
                       "1 cup milk"
@@ -56,6 +57,7 @@ class SharedRecipeImportTest {
         assertEquals("Easy weekend pancakes.", draft.description)
         assertEquals(listOf("2 cups flour", "1 cup milk"), draft.ingredients)
         assertEquals("Whisk the dry ingredients.\nCook on a hot griddle.", draft.instructions)
+        assertEquals("https://example.com/images/pancakes.jpg", draft.mainPhotoUrl)
         assertEquals("Chef Alex", draft.sourceName)
         assertEquals("https://example.com/pancakes", draft.sourceUrl)
         assertEquals(4.0, draft.servings?.amount)
@@ -65,6 +67,69 @@ class SharedRecipeImportTest {
         assertEquals(25, draft.times?.totalTimeMinutes)
         assertEquals("shared_webpage_url", draft.importMetadata.sourceType)
         assertEquals("shared-import-extractor-v1", draft.importMetadata.extractorVersion)
+    }
+
+    @Test
+    fun import_urlWithRecipeSchema_extractsPrimaryImageFromImageObject() = kotlinx.coroutines.runBlocking {
+        val importer = SharedRecipeImporter(
+            fetchUrlContent = {
+                """
+                <html>
+                <head>
+                  <script type="application/ld+json">
+                  {
+                    "@context": "https://schema.org",
+                    "@type": "Recipe",
+                    "name": "Soup",
+                    "image": {
+                      "@type": "ImageObject",
+                      "url": "/media/soup.png"
+                    },
+                    "recipeIngredient": ["1 onion"],
+                    "recipeInstructions": "Cook."
+                  }
+                  </script>
+                </head>
+                </html>
+                """.trimIndent()
+            }
+        )
+
+        val draft = importer.import("https://example.com/recipes/soup")
+
+        assertEquals("https://example.com/media/soup.png", draft.mainPhotoUrl)
+    }
+
+    @Test
+    fun extract_urlWithoutRecipeImage_usesOpenGraphFallback() = kotlinx.coroutines.runBlocking {
+        val importer = SharedRecipeImporter(
+            fetchUrlContent = {
+                """
+                <html>
+                <head>
+                  <title>Fancy Pasta</title>
+                  <meta property="og:image" content="/images/pasta-hero.jpg" />
+                  <script type="application/ld+json">
+                  {
+                    "@context": "https://schema.org",
+                    "@type": "Recipe",
+                    "name": "Fancy Pasta",
+                    "recipeIngredient": ["200 g pasta"],
+                    "recipeInstructions": "Boil."
+                  }
+                  </script>
+                </head>
+                </html>
+                """.trimIndent()
+            }
+        )
+
+        val bundle = importer.extract(importer.createImportSource("https://example.com/pasta"))
+
+        assertEquals(
+            "https://example.com/images/pasta-hero.jpg",
+            bundle.deterministicFields.mainPhotoUrl
+        )
     }
 
     @Test
@@ -321,6 +386,7 @@ class SharedRecipeImportTest {
             ingredients = listOf("1 onion"),
             instructions = "Cook gently.",
             notes = "Shared from notes.",
+            mainPhotoUrl = "https://example.com/images/soup.jpg",
             sourceUrl = "https://example.com/soup"
         )
 
@@ -331,6 +397,7 @@ class SharedRecipeImportTest {
         assertEquals("Cook gently.", recipe.languages.en.instructions)
         assertTrue(recipe.ingredients.isNotEmpty())
         assertEquals("1 onion", recipe.ingredients.first().ingredientName)
+        assertTrue(recipe.photos.isEmpty())
         assertEquals("https://example.com/soup", recipe.source?.sourceUrl)
     }
 

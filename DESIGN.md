@@ -17,8 +17,9 @@ This file is the architectural index for the current Android app. Package-level 
 ## Main Runtime Flow
 1. `MainActivity` creates the repository and language store.
 2. The repository seeds bundled library data if the local database is empty.
-3. Compose screens observe repository flows and render domain models.
-4. User edits go back through `RecipeRepository`, which validates invariants and writes full Room graph updates.
+3. Shared webpage imports build a staged draft, download the recipe's primary image into app-managed draft photo storage when available, then launch the editor with that photo already attached as the main image.
+4. Compose screens observe repository flows and render domain models.
+5. User edits go back through `RecipeRepository`, which validates invariants and writes full Room graph updates.
 
 ## Data Ownership
 - Room entities are internal storage shapes, not the app's source-of-truth API.
