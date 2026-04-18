@@ -66,6 +66,7 @@ fun IngredientTagManagerScreen(
     initialSection: LibraryManagerSection,
     onNavigateToLibrary: () -> Unit,
     onNavigateToCollections: () -> Unit,
+    onNavigateToSettings: () -> Unit,
     onCreateIngredient: (IngredientReferenceDraft) -> Unit,
     onUpdateIngredient: (String, IngredientReferenceDraft) -> Unit,
     onCreateIngredientSubstitution: (IngredientSubstitutionDraft) -> Unit,
@@ -113,6 +114,7 @@ fun IngredientTagManagerScreen(
                         MainMenuDestination.Collections -> onNavigateToCollections()
                         MainMenuDestination.Ingredients -> currentSection = LibraryManagerSection.Ingredients
                         MainMenuDestination.Tags -> currentSection = LibraryManagerSection.Tags
+                        MainMenuDestination.Settings -> onNavigateToSettings()
                     }
                 },
                 actions = {

@@ -123,6 +123,32 @@ The AI responsibilities are:
 
 This is where structured output really matters. You want the app to validate the result against your existing recipe creation schema before it ever reaches storage.
 
+**AI Configuration**
+The app should treat AI access as local app configuration rather than bundled product configuration.
+
+For the first real integration:
+- the AI backend is `OpenAI-compatible`, not hardcoded to one hosted provider
+- the user can edit:
+  - `apiKey`
+  - `baseUrl`
+  - `model`
+- those values are stored locally on-device
+- one shared `model` setting is used for both importer draft finishing and opposite-language regeneration
+- if AI is unavailable, missing configuration, or returns invalid output:
+  - importer falls back to deterministic draft creation
+  - save-time opposite-language generation may keep using the local stub regenerator as fallback until the real path is trusted
+
+The settings entry point should live in a dedicated app `Settings` screen reachable from the hamburger menu, not inside the importer flow itself.
+
+**Prompt Source**
+The prompt should still live in a separate source file so it is easy to audit and revise in code review, but it should not be loaded from an app-editable asset or app-managed file.
+
+That means:
+- keep prompt text outside inline UI code
+- do not expose prompt editing in the app
+- do not build prompt-file loading infrastructure for this first version
+- prefer a code-owned prompt definition file that ships with the app
+
 **What the AI prompt should enforce**
 The prompt should be very strict. For example, the model should be told to:
 - output only valid JSON matching the schema
@@ -303,17 +329,18 @@ Builds provenance data for saved recipes.
 
 That separation will make testing much easier.
 
-**Next Design Step: AI Boundary, State Machine, And Save Ownership**
+**Next Design Step: Runtime AI Integration**
 The staged importer contract is no longer just a future idea. The current code already carries explicit importer models such as `ImportSource`, `ImportDraftJob`, `RawExtractionBundle`, and `ImportWarning`, and the current `SharedRecipeImporter` already routes deterministic intake through those stages before mapping to `ImportedRecipeDraft`.
 
-That means the next implementation-facing design step is no longer “invent the contract layer.” The next step is to define the unresolved boundary between:
+That means the next implementation-facing design step is no longer “invent the contract layer.” The next step is to implement the runtime boundary between:
 - deterministic extraction
 - AI draft finishing
 - editor-facing draft mapping
 - save-time bilingual regeneration
 - final persisted import metadata
+- local AI configuration and settings UI
 
-That is the next planned design artifact because it is the part that still risks duplicate logic or two competing generation paths if it stays implicit.
+That is the next planned implementation slice because it is the part that still risks duplicate logic or two competing generation paths if it stays implicit.
 
 **1. Current Import Contract Baseline**
 The importer already carries three different kinds of data, and they should stay distinct rather than being collapsed into one model:
@@ -604,30 +631,30 @@ The final recipe should not store:
 
 Those belong only in temporary import-job storage if they are stored at all.
 
-**8. Concrete Design Deliverable**
-The next design revision should explicitly document:
-- `AiRecipeImportService` request and response DTOs
-- importer job-state transition rules, including deterministic-only fallback
-- the handoff boundary from AI result to `ImportedRecipeDraft`
-- save-time ownership rules for `RecipeLocalizationCoordinator` and `RecipeLanguageRegenerator`
-- the exact fields that survive into `ImportMetadata`
-- fake-service and fixture strategy for automated tests
+**8. First Runtime Integration Slice**
+The next implementation slice should be:
 
-That document should be specific enough that implementation can proceed without inventing new models ad hoc in UI code or repository code.
+1. Add an app-local AI settings store for:
+- `apiKey`
+- `baseUrl`
+- `model`
 
-**9. First Implementation Slice After This Design Step**
-Once that AI/save-boundary design is documented, the next implementation slice should be:
+2. Add a dedicated `Settings` screen reachable from the hamburger menu.
 
-1. Add the missing importer job states and retry/failure reason modeling.
-2. Introduce `AiRecipeImportService` as an interface plus fake implementation used by tests and temporary non-network behavior.
-3. Split the current draft mapping into:
-- deterministic-only fallback mapping
-- AI-result mapping
-4. Wire save-time opposite-language regeneration so import-time AI and save-time bilingual rebuild share rules but not one mutable draft object.
-5. Add tests around:
-- deterministic fallback when AI fails
-- validation of AI output before editor handoff
-- authoritative-language save behavior and opposite-language regeneration metadata
+3. Add a code-owned prompt definition file that is not editable from the app and does not rely on runtime prompt-file loading.
+
+4. Introduce the real OpenAI-compatible HTTP client seam behind:
+- `AiRecipeImportService`
+- `RecipeLanguageRegenerator`
+
+5. Keep deterministic importer fallback and local stub regenerator fallback active while the real AI path is still stabilizing.
+
+6. Add tests around:
+- settings persistence
+- missing-config fallback behavior
+- invalid AI response fallback
+- successful validated AI draft mapping
+- successful opposite-language regeneration metadata
 
 That sequence upgrades the current importer in place rather than replacing it with a second pipeline.
 

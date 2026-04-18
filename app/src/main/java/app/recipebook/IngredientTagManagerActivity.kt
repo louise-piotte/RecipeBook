@@ -60,6 +60,10 @@ class IngredientTagManagerActivity : ComponentActivity() {
                         startActivity(CollectionManagerActivity.intent(this))
                         finish()
                     },
+                    onNavigateToSettings = {
+                        startActivity(AiSettingsActivity.intent(this))
+                        finish()
+                    },
                     onCreateIngredient = { draft: IngredientReferenceDraft ->
                         lifecycleScope.launch { repository.createIngredientReference(draft) }
                     },

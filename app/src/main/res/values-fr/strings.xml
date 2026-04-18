@@ -7,6 +7,7 @@
     <string name="menu_collections_label">Collections</string>
     <string name="menu_ingredients_label">Ingr&#233;dients</string>
     <string name="menu_tags_label">Tags</string>
+    <string name="menu_ai_settings_label">R&#233;glages IA</string>
     <string name="placeholder_missing_fr">Non disponible en fran&#231;ais</string>
     <string name="placeholder_missing_en">Not available in English</string>
     <string name="search_label">Rechercher des recettes</string>
@@ -55,6 +56,15 @@
     <string name="import_warning_empty_shared_text">Le texte partag&#233; &#233;tait vide.</string>
     <string name="import_warning_missing_source_url">Le lien source partag&#233; &#233;tait manquant.</string>
     <string name="import_warning_generic">RecipeBook n&#8217;a pas pu confirmer enti&#232;rement ce contenu import&#233;.</string>
+    <string name="ai_settings_info_title">Backend compatible OpenAI</string>
+    <string name="ai_settings_info_message">Ces r&#233;glages restent sur cet appareil et servent &#224; l&#8217;IA d&#8217;importation ainsi qu&#8217;&#224; la r&#233;g&#233;n&#233;ration bilingue.</string>
+    <string name="ai_settings_status_configured">La configuration IA semble compl&#232;te.</string>
+    <string name="ai_settings_status_incomplete">Ajoutez les trois valeurs avant d&#8217;utiliser le vrai backend IA.</string>
+    <string name="ai_settings_api_key_label">Cl&#233; API</string>
+    <string name="ai_settings_base_url_label">URL de base</string>
+    <string name="ai_settings_model_label">Mod&#232;le</string>
+    <string name="ai_settings_save_label">Enregistrer les r&#233;glages IA</string>
+    <string name="ai_settings_fallback_message">Si ces r&#233;glages sont manquants ou si le backend &#233;choue, RecipeBook retombe sur l&#8217;importation d&#233;terministe et peut continuer d&#8217;utiliser le g&#233;n&#233;rateur local simul&#233;.</string>
     <string name="save_recipe_label">Enregistrer la recette</string>
     <string name="delete_recipe_label">Supprimer la recette</string>
     <string name="editor_preview_placeholder">Recette sans titre</string>

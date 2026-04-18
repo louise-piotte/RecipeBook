@@ -2,7 +2,8 @@
 
 
 - Expand recipe importer beyond shared text and `schema.org/Recipe` URLs:
-  - Finalize the importer AI handoff/state-machine/save-ownership design contract
+  - Add AI settings screen and local config storage for `apiKey`, `baseUrl`, and shared `model`
+  - Add the real OpenAI-compatible importer/regenerator backend with deterministic importer fallback and local-stub regeneration fallback
   - Add richer webpage fallback extraction when no recipe schema is present
   - Add image/OCR intake
   - Replace the local stub regenerator with a real AI-backed bilingual generation backend through `RecipeLanguageRegenerator`

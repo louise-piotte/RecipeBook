@@ -65,6 +65,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import app.recipebook.AiSettingsActivity
 import app.recipebook.IngredientTagManagerActivity
 import app.recipebook.R
 import app.recipebook.CollectionManagerActivity
@@ -190,6 +191,9 @@ fun RecipeLibraryScreen(
                                     section = LibraryManagerSection.Tags
                                 )
                             )
+                        }
+                        MainMenuDestination.Settings -> {
+                            context.startActivity(AiSettingsActivity.intent(context))
                         }
                     }
                 }
@@ -955,7 +959,8 @@ internal enum class MainMenuDestination(@StringRes val labelResId: Int) {
     Import(R.string.import_recipe_label),
     Collections(R.string.menu_collections_label),
     Ingredients(R.string.menu_ingredients_label),
-    Tags(R.string.menu_tags_label)
+    Tags(R.string.menu_tags_label),
+    Settings(R.string.menu_ai_settings_label)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

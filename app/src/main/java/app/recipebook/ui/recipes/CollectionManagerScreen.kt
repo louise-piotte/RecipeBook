@@ -45,6 +45,7 @@ fun CollectionManagerScreen(
     onNavigateToLibrary: (String?) -> Unit,
     onNavigateToIngredients: () -> Unit,
     onNavigateToTags: () -> Unit,
+    onNavigateToSettings: () -> Unit,
     onCreateCollection: (CollectionDraft) -> Unit,
     onUpdateCollection: (String, CollectionDraft) -> Unit,
     onDeleteCollection: (String) -> Unit,
@@ -72,6 +73,7 @@ fun CollectionManagerScreen(
                         MainMenuDestination.Collections -> Unit
                         MainMenuDestination.Ingredients -> onNavigateToIngredients()
                         MainMenuDestination.Tags -> onNavigateToTags()
+                        MainMenuDestination.Settings -> onNavigateToSettings()
                     }
                 },
                 disabledDestinations = setOf(MainMenuDestination.Collections),

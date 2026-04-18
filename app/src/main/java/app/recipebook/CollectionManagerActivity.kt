@@ -56,6 +56,10 @@ class CollectionManagerActivity : ComponentActivity() {
                         startActivity(IngredientTagManagerActivity.intentForSection(this, LibraryManagerSection.Tags))
                         finish()
                     },
+                    onNavigateToSettings = {
+                        startActivity(AiSettingsActivity.intent(this))
+                        finish()
+                    },
                     onCreateCollection = { draft: CollectionDraft ->
                         lifecycleScope.launch { repository.createCollection(draft) }
                     },

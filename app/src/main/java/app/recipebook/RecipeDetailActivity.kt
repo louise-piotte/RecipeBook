@@ -80,6 +80,10 @@ class RecipeDetailActivity : ComponentActivity() {
                                 startActivity(IngredientTagManagerActivity.intentForSection(this, LibraryManagerSection.Tags))
                                 finish()
                             }
+                            MainMenuDestination.Settings -> {
+                                startActivity(AiSettingsActivity.intent(this))
+                                finish()
+                            }
                         }
                     },
                     onEdit = {
