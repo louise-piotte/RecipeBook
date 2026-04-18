@@ -83,6 +83,7 @@ class RecipeEditorActivity : ComponentActivity() {
                         ingredientReferences = ingredientReferences,
                         tags = tags,
                         collections = collections,
+                        importWarnings = importedDraft?.warnings.orEmpty(),
                         language = language,
                         onLanguageChange = { selected ->
                             lifecycleScope.launch { languageStore.setLanguage(selected) }

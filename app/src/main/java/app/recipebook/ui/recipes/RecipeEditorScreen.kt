@@ -54,6 +54,8 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import app.recipebook.R
 import app.recipebook.data.local.recipes.IngredientReferenceDraft
+import app.recipebook.data.local.recipes.ImportWarning
+import app.recipebook.data.local.recipes.ImportWarningSeverity
 import app.recipebook.data.local.recipes.PendingRecipePhotoCapture
 import app.recipebook.data.local.recipes.TagDraft
 import app.recipebook.domain.model.AppLanguage
@@ -86,6 +88,7 @@ fun RecipeEditorScreen(
     ingredientReferences: List<IngredientReference>,
     tags: List<Tag>,
     collections: List<Collection>,
+    importWarnings: List<ImportWarning>,
     language: AppLanguage,
     onLanguageChange: (AppLanguage) -> Unit,
     onBack: () -> Unit,
@@ -157,6 +160,8 @@ fun RecipeEditorScreen(
     val activeLocalizedText = remember(localizedTexts, language) {
         localizedTexts.forLanguage(language)
     }
+    val dedupedImportWarnings = remember(importWarnings) { dedupeImportWarnings(importWarnings) }
+    val importWarningsByField = remember(dedupedImportWarnings) { groupImportWarningsByField(dedupedImportWarnings) }
     val otherLanguage = remember(language) { language.opposite() }
     val otherLanguageStatus = remember(localizedTexts, language, currentImportMetadata) {
         displayedOtherLanguageStatus(
@@ -314,6 +319,14 @@ fun RecipeEditorScreen(
                         }
                     }
                 )
+                if (dedupedImportWarnings.isNotEmpty()) {
+                    ImportWarningsCard(
+                        language = language,
+                        warnings = dedupedImportWarnings,
+                        source = initialRecipe.source,
+                        sourceType = initialRecipe.importMetadata?.sourceType
+                    )
+                }
 
                 LabeledField(localizedString(R.string.title_label, language), activeLocalizedText.title) {
                     localizedTexts = localizedTexts.updateForLanguage(language) { copy(title = it) }
@@ -332,6 +345,7 @@ fun RecipeEditorScreen(
                     language = language,
                     ingredientRows = ingredientRows,
                     ingredientReferences = ingredientReferences,
+                    importWarning = importWarningsByField["ingredients"]?.firstOrNull(),
                     expanded = ingredientsExpanded,
                     onToggleExpanded = { ingredientsExpanded = !ingredientsExpanded },
                     onSelectIngredient = { index ->
@@ -358,7 +372,10 @@ fun RecipeEditorScreen(
                     localizedString(R.string.instructions_label, language),
                     activeLocalizedText.instructions,
                     singleLine = false,
-                    minLines = 5
+                    minLines = 5,
+                    supportingText = importWarningsByField["instructions"]?.firstOrNull()?.let { warning ->
+                        localizedImportWarningLine(warning, language)
+                    }
                 ) {
                     localizedTexts = localizedTexts.updateForLanguage(language) { copy(instructions = it) }
                     currentImportMetadata = onLocalizedTextEdited(currentImportMetadata, localizedTexts, language)
@@ -373,7 +390,13 @@ fun RecipeEditorScreen(
                     currentImportMetadata = onLocalizedTextEdited(currentImportMetadata, localizedTexts, language)
                 }
                 LabeledField(localizedString(R.string.source_name_label, language), sourceName) { sourceName = it }
-                LabeledField(localizedString(R.string.source_url_label, language), sourceUrl) { sourceUrl = it }
+                LabeledField(
+                    localizedString(R.string.source_url_label, language),
+                    sourceUrl,
+                    supportingText = importWarningsByField["sourceUrl"]?.firstOrNull()?.let { warning ->
+                        localizedImportWarningLine(warning, language)
+                    }
+                ) { sourceUrl = it }
                 LabeledField(localizedString(R.string.servings_amount_label, language), servingsAmount) { servingsAmount = it }
                 LabeledField(localizedString(R.string.servings_unit_label, language), servingsUnit) { servingsUnit = it }
                 LabeledField(localizedString(R.string.prep_minutes_label, language), prepMinutes) { prepMinutes = it }
@@ -718,12 +741,62 @@ private fun BilingualSyncStatusCard(
     }
 }
 
+@Composable
+private fun ImportWarningsCard(
+    language: AppLanguage,
+    warnings: List<ImportWarning>,
+    source: RecipeSource?,
+    sourceType: String?
+) {
+    val titleRes = when (warnings.maxOfOrNull { it.severity.rank() } ?: 0) {
+        2 -> R.string.import_review_required_title
+        1 -> R.string.import_review_warning_title
+        else -> R.string.import_review_info_title
+    }
+    val warningLines = remember(warnings) {
+        buildImportWarningSummaryLines(warnings)
+    }
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 8.dp, vertical = 6.dp),
+            verticalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            Text(
+                text = localizedString(titleRes, language),
+                style = MaterialTheme.typography.titleMedium
+            )
+            Text(
+                text = localizedString(R.string.import_review_message, language),
+                style = MaterialTheme.typography.bodyMedium
+            )
+            importSourceSummary(sourceType, source, language)?.let { summary ->
+                Text(
+                    text = summary,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+            warningLines.forEach { line ->
+                Text(
+                    text = "\u2022 " + localizedString(line.severityLabelResId, language) + ": " +
+                        localizedString(line.messageResId, language),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        }
+    }
+}
+
 
 @Composable
 private fun IngredientsEditorSection(
     language: AppLanguage,
     ingredientRows: List<EditableIngredientRow>,
     ingredientReferences: List<IngredientReference>,
+    importWarning: ImportWarning?,
     expanded: Boolean,
     onToggleExpanded: () -> Unit,
     onSelectIngredient: (Int) -> Unit,
@@ -758,6 +831,13 @@ private fun IngredientsEditorSection(
                 icon = if (expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
                 contentDescription = if (expanded) localizedString(R.string.collapse_ingredients_label, language) else localizedString(R.string.edit_ingredients_label, language),
                 onClick = onToggleExpanded
+            )
+        }
+        importWarning?.let { warning ->
+            Text(
+                text = localizedImportWarningLine(warning, language),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
 
@@ -1376,6 +1456,7 @@ private fun LabeledField(
     value: String,
     singleLine: Boolean = true,
     minLines: Int = 1,
+    supportingText: String? = null,
     leadingIcon: (@Composable () -> Unit)? = null,
     onValueChange: (String) -> Unit
 ) {
@@ -1385,6 +1466,14 @@ private fun LabeledField(
         modifier = Modifier.fillMaxWidth(),
         label = { Text(label) },
         leadingIcon = leadingIcon,
+        supportingText = supportingText?.let { text ->
+            {
+                Text(
+                    text = text,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        },
         singleLine = singleLine,
         minLines = minLines
     )
@@ -1504,6 +1593,93 @@ internal fun localizedLanguageName(targetLanguage: AppLanguage, uiLanguage: AppL
     AppLanguage.FR -> localizedLanguageOptionLabel(AppLanguage.FR, uiLanguage)
 }
 
+internal data class ImportWarningSummaryLine(
+    val severityLabelResId: Int,
+    val messageResId: Int
+)
+
+internal fun dedupeImportWarnings(warnings: List<ImportWarning>): List<ImportWarning> =
+    warnings
+        .groupBy { warning -> warning.code to warning.field }
+        .values
+        .map { grouped ->
+            grouped.maxBy { it.severity.rank() }
+        }
+
+internal fun groupImportWarningsByField(warnings: List<ImportWarning>): Map<String, List<ImportWarning>> =
+    warnings
+        .filter { !it.field.isNullOrBlank() }
+        .groupBy { it.field.orEmpty() }
+
+internal fun buildImportWarningSummaryLines(
+    warnings: List<ImportWarning>
+): List<ImportWarningSummaryLine> = dedupeImportWarnings(warnings).map { warning ->
+    ImportWarningSummaryLine(
+        severityLabelResId = when (warning.severity) {
+            ImportWarningSeverity.INFO -> R.string.import_warning_info_prefix
+            ImportWarningSeverity.WARNING -> R.string.import_warning_warning_prefix
+            ImportWarningSeverity.BLOCKING -> R.string.import_warning_blocking_prefix
+        },
+        messageResId = importWarningMessageRes(warning.code)
+    )
+}
+
+internal fun importWarningMessageRes(code: String): Int = when (code) {
+    "missing_recipe_schema" -> R.string.import_warning_missing_recipe_schema
+    "webpage_fetch_failed" -> R.string.import_warning_webpage_fetch_failed
+    "ingredient_section_missing" -> R.string.import_warning_ingredient_section_missing
+    "instruction_section_missing" -> R.string.import_warning_instruction_section_missing
+    "empty_shared_text" -> R.string.import_warning_empty_shared_text
+    "missing_source_url" -> R.string.import_warning_missing_source_url
+    else -> R.string.import_warning_generic
+}
+
+@Composable
+internal fun importSourceSummary(
+    sourceType: String?,
+    source: RecipeSource?,
+    language: AppLanguage
+): String? {
+    val typeRes = importSourceTypeLabelRes(sourceType) ?: return null
+    val sourceLabel = source?.sourceName?.trim().orEmpty()
+        .ifBlank { source?.sourceUrl?.trim().orEmpty() }
+    return if (sourceLabel.isBlank()) {
+        localizedString(R.string.imported_from_type_only_label, language, localizedString(typeRes, language))
+    } else {
+        localizedString(
+            R.string.imported_from_with_label,
+            language,
+            localizedString(typeRes, language),
+            sourceLabel
+        )
+    }
+}
+
+@Composable
+internal fun localizedImportWarningLine(
+    warning: ImportWarning,
+    language: AppLanguage
+): String = localizedString(
+    R.string.import_warning_inline_format,
+    language,
+    localizedString(
+        when (warning.severity) {
+            ImportWarningSeverity.INFO -> R.string.import_warning_info_prefix
+            ImportWarningSeverity.WARNING -> R.string.import_warning_warning_prefix
+            ImportWarningSeverity.BLOCKING -> R.string.import_warning_blocking_prefix
+        },
+        language
+    ),
+    localizedString(importWarningMessageRes(warning.code), language)
+)
+
+internal fun importSourceTypeLabelRes(sourceType: String?): Int? = when (sourceType) {
+    "shared_webpage_url" -> R.string.import_source_type_webpage
+    "shared_text" -> R.string.import_source_type_text
+    "image" -> R.string.import_source_type_image
+    else -> null
+}
+
 private fun localizedLanguageOptionLabel(targetLanguage: AppLanguage, uiLanguage: AppLanguage): String = when (targetLanguage) {
     AppLanguage.EN -> if (uiLanguage == AppLanguage.FR) "anglais" else "English"
     AppLanguage.FR -> if (uiLanguage == AppLanguage.FR) "fran\u00e7ais" else "French"
@@ -1520,6 +1696,12 @@ private fun LocalizedSystemText.isBlankText(): Boolean =
 private fun ImportMetadata?.statusForLanguage(language: AppLanguage): BilingualSyncStatus? = when (language) {
     AppLanguage.FR -> this?.syncStatusFr
     AppLanguage.EN -> this?.syncStatusEn
+}
+
+private fun ImportWarningSeverity.rank(): Int = when (this) {
+    ImportWarningSeverity.INFO -> 0
+    ImportWarningSeverity.WARNING -> 1
+    ImportWarningSeverity.BLOCKING -> 2
 }
 
 internal fun parseIngredients(input: String): List<IngredientLine> {

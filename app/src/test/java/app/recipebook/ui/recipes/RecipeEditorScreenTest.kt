@@ -9,6 +9,8 @@ import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.TagCategory
+import app.recipebook.data.local.recipes.ImportWarning
+import app.recipebook.data.local.recipes.ImportWarningSeverity
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -234,6 +236,101 @@ class RecipeEditorScreenTest {
         )
 
         assertEquals(BilingualSyncStatus.UP_TO_DATE, status)
+    }
+
+    @Test
+    fun importWarningMessageRes_mapsKnownCodes() {
+        assertEquals(
+            app.recipebook.R.string.import_warning_missing_recipe_schema,
+            importWarningMessageRes("missing_recipe_schema")
+        )
+        assertEquals(
+            app.recipebook.R.string.import_warning_generic,
+            importWarningMessageRes("something_else")
+        )
+    }
+
+    @Test
+    fun dedupeImportWarnings_collapsesDuplicateCodeAndFieldToHighestSeverity() {
+        val deduped = dedupeImportWarnings(
+            listOf(
+                ImportWarning(
+                    code = "ingredient_section_missing",
+                    severity = ImportWarningSeverity.INFO,
+                    field = "ingredients"
+                ),
+                ImportWarning(
+                    code = "ingredient_section_missing",
+                    severity = ImportWarningSeverity.WARNING,
+                    field = "ingredients"
+                ),
+                ImportWarning(
+                    code = "instruction_section_missing",
+                    severity = ImportWarningSeverity.INFO,
+                    field = "instructions"
+                )
+            )
+        )
+
+        assertEquals(2, deduped.size)
+        assertTrue(
+            deduped.any {
+                it.code == "ingredient_section_missing" &&
+                    it.field == "ingredients" &&
+                    it.severity == ImportWarningSeverity.WARNING
+            }
+        )
+    }
+
+    @Test
+    fun groupImportWarningsByField_ignoresBlankFields() {
+        val grouped = groupImportWarningsByField(
+            listOf(
+                ImportWarning(
+                    code = "ingredient_section_missing",
+                    severity = ImportWarningSeverity.INFO,
+                    field = "ingredients"
+                ),
+                ImportWarning(
+                    code = "missing_recipe_schema",
+                    severity = ImportWarningSeverity.WARNING,
+                    field = null
+                )
+            )
+        )
+
+        assertEquals(listOf("ingredients"), grouped.keys.toList())
+        assertEquals(1, grouped["ingredients"]?.size)
+    }
+
+    @Test
+    fun buildImportWarningSummaryLines_mapsSeverityAndMessageResources() {
+        val lines = buildImportWarningSummaryLines(
+            warnings = listOf(
+                ImportWarning(
+                    code = "ingredient_section_missing",
+                    severity = ImportWarningSeverity.WARNING
+                ),
+                ImportWarning(
+                    code = "missing_source_url",
+                    severity = ImportWarningSeverity.BLOCKING
+                )
+            )
+        )
+
+        assertEquals(2, lines.size)
+        assertEquals(app.recipebook.R.string.import_warning_warning_prefix, lines[0].severityLabelResId)
+        assertEquals(app.recipebook.R.string.import_warning_ingredient_section_missing, lines[0].messageResId)
+        assertEquals(app.recipebook.R.string.import_warning_blocking_prefix, lines[1].severityLabelResId)
+        assertEquals(app.recipebook.R.string.import_warning_missing_source_url, lines[1].messageResId)
+    }
+
+    @Test
+    fun importSourceTypeLabelRes_mapsKnownTypes() {
+        assertEquals(app.recipebook.R.string.import_source_type_webpage, importSourceTypeLabelRes("shared_webpage_url"))
+        assertEquals(app.recipebook.R.string.import_source_type_text, importSourceTypeLabelRes("shared_text"))
+        assertEquals(app.recipebook.R.string.import_source_type_image, importSourceTypeLabelRes("image"))
+        assertEquals(null, importSourceTypeLabelRes("other"))
     }
 
     private fun bilingualForStatusTest(): BilingualText = BilingualText(

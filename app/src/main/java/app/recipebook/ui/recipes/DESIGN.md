@@ -23,6 +23,8 @@ This package contains the main Compose product UI.
 - Large screen files can grow quickly. When splitting them, group extracted components by workflow instead of making generic utility files too early.
 - When adding UI around new data fields, confirm the repository and localization behavior already support the intended workflow.
 - Imported recipes should still open in `RecipeEditorScreen.kt` so parsing review happens inside the normal editing experience instead of a separate draft-only screen for now.
+- Imported drafts can carry structured importer warnings into `RecipeEditorScreen.kt`; the editor should surface them as a compact review summary near the top rather than as a separate full-screen import review flow.
+- The import review UI should deduplicate repeated warnings, show compact provenance such as the input source type, and mirror important warnings beside the affected editor sections when that keeps review faster.
 - In-app import entry points should stay discoverable from the library hamburger menu and reuse the same importer pipeline as Android share intake.
 - Recipe text editing is active-language-only: the editor shows one localized text surface at a time and writes changes back to the currently selected app language while the opposite language is tracked through sync metadata.
 - The editor's regenerate action is asynchronous and currently uses a local stub generator; the UI should show progress, preserve the current draft on failure, and clearly tell the user the stub output still needs review.
