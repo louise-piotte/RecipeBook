@@ -32,7 +32,9 @@ class RecipeAiRuntimeTest {
                 cleanedText = "Toast",
                 htmlTitle = "",
                 deterministicFields = DeterministicRecipeFields(title = "Toast"),
-                warnings = emptyList()
+                warnings = emptyList(),
+                deterministicDraftJson = "{}",
+                ingredientCatalogJson = "{}"
             )
         )
 
@@ -49,7 +51,25 @@ class RecipeAiRuntimeTest {
                             {
                               "title": "Toast",
                               "description": "Simple toast.",
-                              "ingredients": ["2 slices bread"],
+                              "ingredients": [
+                                {
+                                  "id": "ingredient-1",
+                                  "ingredientName": "bread",
+                                  "quantity": 2,
+                                  "unit": "slices",
+                                  "preparation": null,
+                                  "notes": null,
+                                  "originalText": "2 slices bread",
+                                  "ingredientRefId": "ingredient-bread",
+                                  "referenceNameFr": "Pain",
+                                  "referenceNameEn": "Bread",
+                                  "referenceAliasesFr": [],
+                                  "referenceAliasesEn": ["bread"],
+                                  "referenceCategory": "OTHER",
+                                  "referenceDefaultDensity": null,
+                                  "referenceUnitMappings": []
+                                }
+                              ],
                               "instructions": "Toast bread.",
                               "notes": "",
                               "sourceName": "Notebook",
@@ -77,16 +97,56 @@ class RecipeAiRuntimeTest {
                 cleanedText = "Toast",
                 htmlTitle = "",
                 deterministicFields = DeterministicRecipeFields(title = "Toast"),
-                warnings = emptyList()
+                warnings = emptyList(),
+                deterministicDraftJson = "{}",
+                ingredientCatalogJson = "{}"
             )
         )
 
         val success = result as AiRecipeImportResult.Success
         assertEquals("Toast", success.response.payload.title)
         assertEquals("Simple toast.", success.response.payload.description)
-        assertEquals(listOf("2 slices bread"), success.response.payload.ingredients)
+        assertEquals(listOf("2 slices bread"), success.response.payload.ingredients.map(ImportedIngredientDraft::originalText))
+        assertEquals(2.0, success.response.payload.ingredients.first().quantity)
+        assertEquals("slices", success.response.payload.ingredients.first().unit)
         assertEquals("openai_compatible:test-model", success.response.generatorLabel)
         assertEquals(3, success.response.payload.times?.totalTimeMinutes)
+    }
+
+    @Test
+    fun openAiCompatibleRecipeImportService_userPromptMentionsFunctionalIngredientCollapse() = runBlocking {
+        var capturedPrompt = ""
+        val service = OpenAiCompatibleRecipeImportService(
+            completionClient = object : RecipeAiCompletionClient {
+                override suspend fun completeJson(request: RecipeAiCompletionRequest): RecipeAiCompletionResult {
+                    capturedPrompt = request.userPrompt
+                    return RecipeAiCompletionResult.NotConfigured
+                }
+            },
+            systemPrompt = "prompt"
+        )
+
+        service.buildDraft(
+            AiRecipeImportRequest(
+                jobId = "job-1",
+                sourceType = "shared_text",
+                extractorVersion = "extractor-v1",
+                activeLanguage = AppLanguage.EN,
+                rawText = "sprinkles",
+                cleanedText = "sprinkles",
+                htmlTitle = "",
+                deterministicFields = DeterministicRecipeFields(
+                    title = "Test",
+                    ingredientLines = listOf("red sprinkles", "green sprinkles", "gold sprinkles")
+                ),
+                warnings = emptyList(),
+                deterministicDraftJson = "{}",
+                ingredientCatalogJson = "{}"
+            )
+        )
+
+        assertTrue(capturedPrompt.contains("functionally the same ingredient"))
+        assertTrue(capturedPrompt.contains("colored sprinkles should usually reuse one sprinkles ingredient"))
     }
 
     @Test

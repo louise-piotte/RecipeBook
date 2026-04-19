@@ -15,15 +15,19 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.lifecycleScope
 import app.recipebook.data.local.recipes.ImportWarning
 import app.recipebook.data.local.recipes.ImportWarningSeverity
+import app.recipebook.data.local.recipes.ImportedIngredientDraft
 import app.recipebook.data.local.recipes.ImportedRecipeDraft
 import app.recipebook.data.local.recipes.RecipePhotoStore
 import app.recipebook.data.local.recipes.RecipeLocalizationCoordinator
 import app.recipebook.data.local.recipes.RecipeAiRuntime
+import app.recipebook.data.local.recipes.IngredientReferenceDraft
+import app.recipebook.data.local.recipes.RecipeRepository
 import app.recipebook.data.local.recipes.RecipeRepositoryProvider
 import app.recipebook.data.local.recipes.applyToRecipe
 import app.recipebook.data.local.settings.AppLanguageStore
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.Collection
+import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeTimes
@@ -32,6 +36,9 @@ import app.recipebook.ui.recipes.RecipeEditorScreen
 import app.recipebook.ui.recipes.photosToDeleteForRecipeDeletion
 import app.recipebook.ui.theme.RecipeBookTheme
 import kotlinx.coroutines.launch
+import kotlinx.serialization.builtins.ListSerializer
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 class RecipeEditorActivity : ComponentActivity() {
 
@@ -55,6 +62,16 @@ class RecipeEditorActivity : ComponentActivity() {
         val importLanguage = intent.getStringExtra(EXTRA_IMPORT_LANGUAGE)
             ?.let { runCatching { AppLanguage.valueOf(it) }.getOrNull() }
             ?: AppLanguage.EN
+        val importedPendingReferences = importedDraft?.ingredients
+            ?.associateNotNull { ingredient ->
+                ingredient.pendingReference?.let { pending ->
+                    ingredient.id to PendingImportedIngredientReference(
+                        assignedIngredientRefId = ingredient.ingredientRefId,
+                        draft = pending.toRepositoryDraft()
+                    )
+                }
+            }
+            .orEmpty()
 
         setContent {
             RecipeBookTheme {
@@ -64,6 +81,7 @@ class RecipeEditorActivity : ComponentActivity() {
                 val ingredientReferences by repository.observeIngredientReferences().collectAsState(initial = emptyList())
                 val tags by repository.observeTags().collectAsState(initial = emptyList())
                 val collections by repository.observeCollections().collectAsState(initial = emptyList<Collection>())
+                val editorIngredientReferences = ingredientReferences.withImportedDraftPlaceholders(importedDraft)
 
                 LaunchedEffect(recipeId) {
                     repository.seedBundledLibraryIfMissing()
@@ -93,7 +111,7 @@ class RecipeEditorActivity : ComponentActivity() {
                         initialRecipe = currentRecipe,
                         isNewRecipe = isNewRecipe,
                         recipes = recipes,
-                        ingredientReferences = ingredientReferences,
+                        ingredientReferences = editorIngredientReferences,
                         tags = tags,
                         collections = collections,
                         importWarnings = importedDraft?.warnings.orEmpty(),
@@ -104,10 +122,14 @@ class RecipeEditorActivity : ComponentActivity() {
                         onBack = ::finish,
                         onSave = { updatedRecipe, authoritativeLanguage ->
                             lifecycleScope.launch {
+                                val recipeWithResolvedImportedReferences = updatedRecipe.resolveImportedIngredientReferences(
+                                    pendingByLineId = importedPendingReferences,
+                                    repository = repository
+                                )
                                 val persistedPhotos = photoStore.persistRecipePhotos(updatedRecipe.id, updatedRecipe.photos)
-                                val persistedMainPhotoId = persistedPhotos.firstOrNull { it.id == updatedRecipe.mainPhotoId }?.id
+                                val persistedMainPhotoId = persistedPhotos.firstOrNull { it.id == recipeWithResolvedImportedReferences.mainPhotoId }?.id
                                     ?: persistedPhotos.firstOrNull()?.id
-                                val persistedRecipe = updatedRecipe.copy(
+                                val persistedRecipe = recipeWithResolvedImportedReferences.copy(
                                     mainPhotoId = persistedMainPhotoId,
                                     photos = persistedPhotos
                                 )
@@ -185,7 +207,7 @@ class RecipeEditorActivity : ComponentActivity() {
         private const val EXTRA_IMPORT_LANGUAGE = "import_language"
         private const val EXTRA_IMPORTED_TITLE = "imported_title"
         private const val EXTRA_IMPORTED_DESCRIPTION = "imported_description"
-        private const val EXTRA_IMPORTED_INGREDIENTS = "imported_ingredients"
+        internal const val EXTRA_IMPORTED_INGREDIENTS = "imported_ingredients"
         private const val EXTRA_IMPORTED_INSTRUCTIONS = "imported_instructions"
         private const val EXTRA_IMPORTED_NOTES = "imported_notes"
         private const val EXTRA_IMPORTED_MAIN_PHOTO_URL = "imported_main_photo_url"
@@ -206,6 +228,7 @@ class RecipeEditorActivity : ComponentActivity() {
         private const val EXTRA_IMPORTED_EXTRACTOR_VERSION = "imported_extractor_version"
         private const val EXTRA_IMPORTED_GENERATOR_LABEL = "imported_generator_label"
         private const val EXTRA_IMPORTED_ORIGINAL_UNITS = "imported_original_units"
+        internal const val EXTRA_IMPORTED_INGREDIENTS_JSON = "imported_ingredients_json"
 
         fun intentForImportedDraft(
             context: Context,
@@ -215,7 +238,17 @@ class RecipeEditorActivity : ComponentActivity() {
             putExtra(EXTRA_IMPORT_LANGUAGE, language.name)
             putExtra(EXTRA_IMPORTED_TITLE, draft.title)
             putExtra(EXTRA_IMPORTED_DESCRIPTION, draft.description)
-            putStringArrayListExtra(EXTRA_IMPORTED_INGREDIENTS, ArrayList(draft.ingredients))
+            putStringArrayListExtra(
+                EXTRA_IMPORTED_INGREDIENTS,
+                ArrayList(draft.ingredients.map(ImportedIngredientDraft::originalText))
+            )
+            putExtra(
+                EXTRA_IMPORTED_INGREDIENTS_JSON,
+                importedDraftIntentJson.encodeToString(
+                    ListSerializer(ImportedIngredientDraft.serializer()),
+                    draft.ingredients
+                )
+            )
             putExtra(EXTRA_IMPORTED_INSTRUCTIONS, draft.instructions)
             putExtra(EXTRA_IMPORTED_NOTES, draft.notes)
             putExtra(EXTRA_IMPORTED_MAIN_PHOTO_URL, draft.mainPhotoUrl)
@@ -250,7 +283,7 @@ class RecipeEditorActivity : ComponentActivity() {
         private fun importedDraftFromIntent(intent: Intent): ImportedRecipeDraft? {
             val title = intent.getStringExtra(EXTRA_IMPORTED_TITLE).orEmpty()
             val description = intent.getStringExtra(EXTRA_IMPORTED_DESCRIPTION).orEmpty()
-            val ingredients = intent.getStringArrayListExtra(EXTRA_IMPORTED_INGREDIENTS).orEmpty()
+            val ingredients = parseImportedIngredients(intent)
             val instructions = intent.getStringExtra(EXTRA_IMPORTED_INSTRUCTIONS).orEmpty()
             val notes = intent.getStringExtra(EXTRA_IMPORTED_NOTES).orEmpty()
             val mainPhotoUrl = intent.getStringExtra(EXTRA_IMPORTED_MAIN_PHOTO_URL).orEmpty()
@@ -318,6 +351,88 @@ private fun Intent.getSerializableExtraCompat(key: String): Int? {
     if (!hasExtra(key)) return null
     return getIntExtra(key, 0)
 }
+
+private val importedDraftIntentJson = Json { ignoreUnknownKeys = true }
+
+private fun parseImportedIngredients(intent: Intent): List<ImportedIngredientDraft> {
+    val ingredientsJson = intent.getStringExtra(RecipeEditorActivity.EXTRA_IMPORTED_INGREDIENTS_JSON).orEmpty()
+    if (ingredientsJson.isNotBlank()) {
+        return runCatching {
+            importedDraftIntentJson.decodeFromString(
+                ListSerializer(ImportedIngredientDraft.serializer()),
+                ingredientsJson
+            )
+        }.getOrDefault(emptyList())
+    }
+    return intent.getStringArrayListExtra(RecipeEditorActivity.EXTRA_IMPORTED_INGREDIENTS)
+        .orEmpty()
+        .map { originalText ->
+            ImportedIngredientDraft(
+                ingredientName = originalText,
+                originalText = originalText
+            )
+        }
+}
+
+private data class PendingImportedIngredientReference(
+    val assignedIngredientRefId: String?,
+    val draft: IngredientReferenceDraft
+)
+
+private fun List<IngredientReference>.withImportedDraftPlaceholders(
+    importedDraft: ImportedRecipeDraft?
+): List<IngredientReference> {
+    val placeholders = importedDraft?.ingredients
+        ?.mapNotNull { ingredient ->
+            val pending = ingredient.pendingReference ?: return@mapNotNull null
+            val placeholderId = ingredient.ingredientRefId ?: return@mapNotNull null
+            if (!placeholderId.startsWith(IMPORTED_PENDING_REF_PREFIX)) return@mapNotNull null
+            IngredientReference(
+                id = placeholderId,
+                nameFr = pending.nameFr,
+                nameEn = pending.nameEn,
+                category = pending.toRepositoryDraft().category,
+                aliasesFr = pending.aliasesFr,
+                aliasesEn = pending.aliasesEn,
+                defaultDensity = pending.defaultDensity,
+                unitMappings = pending.unitMappings,
+                updatedAt = ""
+            )
+        }
+        .orEmpty()
+    return (this + placeholders).distinctBy(IngredientReference::id)
+}
+
+private suspend fun Recipe.resolveImportedIngredientReferences(
+    pendingByLineId: Map<String, PendingImportedIngredientReference>,
+    repository: RecipeRepository
+): Recipe {
+    if (pendingByLineId.isEmpty()) return this
+    return copy(
+        ingredients = ingredients.map { ingredient ->
+            val pending = pendingByLineId[ingredient.id] ?: return@map ingredient
+            if (ingredient.ingredientRefId != pending.assignedIngredientRefId) {
+                return@map ingredient
+            }
+            val resolved = repository.resolveImportedIngredientReference(
+                preferredId = ingredient.ingredientRefId?.takeUnless { it.startsWith(IMPORTED_PENDING_REF_PREFIX) },
+                draft = pending.draft
+            )
+            ingredient.copy(ingredientRefId = resolved.id)
+        }
+    )
+}
+
+private fun <K, V> Iterable<V>.associateNotNull(transform: (V) -> Pair<K, PendingImportedIngredientReference>?): Map<K, PendingImportedIngredientReference> {
+    val result = linkedMapOf<K, PendingImportedIngredientReference>()
+    for (item in this) {
+        val pair = transform(item) ?: continue
+        result[pair.first] = pair.second
+    }
+    return result
+}
+
+private const val IMPORTED_PENDING_REF_PREFIX = "imported-pending-ref:"
 
 
 

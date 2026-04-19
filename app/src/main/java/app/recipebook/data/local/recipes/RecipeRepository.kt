@@ -154,16 +154,61 @@ class RecipeRepository(
         draft: IngredientReferenceDraft,
         now: String = Instant.now().toString()
     ): IngredientReference {
-        val targetKeys = listOf(draft.nameFr, draft.nameEn)
-            .map(::lookupKey)
-            .filter { it.isNotBlank() }
-            .toSet()
+        return resolveImportedIngredientReference(
+            preferredId = null,
+            draft = draft,
+            now = now
+        )
+    }
+
+    suspend fun resolveImportedIngredientReference(
+        preferredId: String?,
+        draft: IngredientReferenceDraft,
+        now: String = Instant.now().toString()
+    ): IngredientReference {
+        val existingById = preferredId
+            ?.let { id -> ingredientReferenceDao.getById(id) }
+            ?.toDomain()
+        if (existingById != null) {
+            return mergeIngredientReference(existingById, draft, now)
+        }
+
+        val targetKeys = draft.lookupKeys()
         val existing = observeIngredientReferences().firstOrNull()
             .orEmpty()
             .firstOrNull { reference ->
                 reference.lookupKeys().any(targetKeys::contains)
             }
-        return existing ?: createIngredientReference(draft, now)
+        return if (existing != null) {
+            mergeIngredientReference(existing, draft, now)
+        } else {
+            createIngredientReference(draft, now)
+        }
+    }
+
+    private suspend fun mergeIngredientReference(
+        existing: IngredientReference,
+        draft: IngredientReferenceDraft,
+        now: String
+    ): IngredientReference {
+        val merged = existing.copy(
+            category = if (existing.category == IngredientCategory.OTHER) draft.category else existing.category,
+            aliasesFr = normalizeAliases(
+                aliases = existing.aliasesFr + draft.aliasesFr + listOf(draft.nameFr),
+                primaryName = existing.nameFr,
+                counterpartName = existing.nameEn
+            ),
+            aliasesEn = normalizeAliases(
+                aliases = existing.aliasesEn + draft.aliasesEn + listOf(draft.nameEn),
+                primaryName = existing.nameEn,
+                counterpartName = existing.nameFr
+            ),
+            defaultDensity = existing.defaultDensity ?: draft.defaultDensity,
+            unitMappings = if (existing.unitMappings.isNotEmpty()) existing.unitMappings else draft.unitMappings,
+            updatedAt = now
+        )
+        ingredientReferenceDao.upsert(merged.toEntity())
+        return merged
     }
 
     suspend fun updateIngredientReference(
@@ -470,7 +515,7 @@ class RecipeRepository(
             contextualSubstitutionRules = contextualSubstitutionRules,
             units = seedLibrary.units,
             tags = tags,
-            collections = collections,
+            collections = collections.reconciledForExport(recipes),
             settings = settings
         )
     }
@@ -524,6 +569,36 @@ private fun SeedLibraryData.isEmpty(): Boolean =
         collections.isEmpty() &&
         settings == null &&
         metadata == null
+
+private fun List<Collection>.reconciledForExport(recipes: List<Recipe>): List<Collection> {
+    if (isEmpty()) return this
+
+    val recipeIdsByCollection = recipes
+        .flatMap { recipe -> recipe.collectionIds.distinct().map { collectionId -> collectionId to recipe.id } }
+        .groupBy(
+            keySelector = { (collectionId, _) -> collectionId },
+            valueTransform = { (_, recipeId) -> recipeId }
+        )
+
+    return map { collection ->
+        val liveRecipeIds = recipeIdsByCollection[collection.id].orEmpty()
+        if (liveRecipeIds.isEmpty()) {
+            collection.copy(recipeIds = emptyList())
+        } else {
+            val liveRecipeIdSet = liveRecipeIds.toSet()
+            val reconciledRecipeIds = buildList {
+                collection.recipeIds
+                    .filter { it in liveRecipeIdSet }
+                    .distinct()
+                    .forEach(::add)
+                liveRecipeIds
+                    .filterNot { it in this }
+                    .forEach(::add)
+            }
+            collection.copy(recipeIds = reconciledRecipeIds)
+        }
+    }
+}
 
 private fun IngredientSubstitutionDraft.toDomain(
     id: String,
@@ -1054,6 +1129,13 @@ private fun normalizeAliases(
 }
 
 private fun IngredientReference.lookupKeys(): Set<String> = buildSet {
+    add(lookupKey(nameFr))
+    add(lookupKey(nameEn))
+    aliasesFr.forEach { add(lookupKey(it)) }
+    aliasesEn.forEach { add(lookupKey(it)) }
+}.filter { it.isNotBlank() }.toSet()
+
+private fun IngredientReferenceDraft.lookupKeys(): Set<String> = buildSet {
     add(lookupKey(nameFr))
     add(lookupKey(nameEn))
     aliasesFr.forEach { add(lookupKey(it)) }

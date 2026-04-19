@@ -15,6 +15,8 @@ import java.net.URL
 import java.util.UUID
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
@@ -51,7 +53,7 @@ private val URL_ONLY_REGEX = Regex("^https?://\\S+$", RegexOption.IGNORE_CASE)
 data class ImportedRecipeDraft(
     val title: String = "",
     val description: String = "",
-    val ingredients: List<String> = emptyList(),
+    val ingredients: List<ImportedIngredientDraft> = emptyList(),
     val instructions: String = "",
     val notes: String = "",
     val mainPhotoUrl: String = "",
@@ -67,6 +69,58 @@ data class ImportedRecipeDraft(
         extractorVersion = IMPORT_EXTRACTOR_VERSION
     )
 )
+
+@Serializable
+data class ImportedIngredientDraft(
+    @SerialName("id")
+    val id: String = UUID.randomUUID().toString(),
+    @SerialName("ingredientName")
+    val ingredientName: String = "",
+    @SerialName("quantity")
+    val quantity: Double? = null,
+    @SerialName("unit")
+    val unit: String? = null,
+    @SerialName("preparation")
+    val preparation: String? = null,
+    @SerialName("notes")
+    val notes: String? = null,
+    @SerialName("originalText")
+    val originalText: String = "",
+    @SerialName("ingredientRefId")
+    val ingredientRefId: String? = null,
+    @SerialName("pendingReference")
+    val pendingReference: ImportedIngredientReferenceDraft? = null
+)
+
+@Serializable
+data class ImportedIngredientReferenceDraft(
+    @SerialName("nameFr")
+    val nameFr: String = "",
+    @SerialName("nameEn")
+    val nameEn: String = "",
+    @SerialName("category")
+    val category: String? = null,
+    @SerialName("aliasesFr")
+    val aliasesFr: List<String> = emptyList(),
+    @SerialName("aliasesEn")
+    val aliasesEn: List<String> = emptyList(),
+    @SerialName("defaultDensity")
+    val defaultDensity: Double? = null,
+    @SerialName("unitMappings")
+    val unitMappings: List<app.recipebook.domain.model.IngredientUnitMapping> = emptyList()
+) {
+    fun toRepositoryDraft(): IngredientReferenceDraft = IngredientReferenceDraft(
+        nameFr = nameFr,
+        nameEn = nameEn,
+        category = category
+            ?.let { runCatching { app.recipebook.domain.model.IngredientCategory.valueOf(it) }.getOrNull() }
+            ?: app.recipebook.domain.model.IngredientCategory.OTHER,
+        aliasesFr = aliasesFr,
+        aliasesEn = aliasesEn,
+        defaultDensity = defaultDensity,
+        unitMappings = unitMappings
+    )
+}
 
 data class ImportSource(
     val sourceId: String,
@@ -148,13 +202,15 @@ data class AiRecipeImportRequest(
     val cleanedText: String,
     val htmlTitle: String,
     val deterministicFields: DeterministicRecipeFields,
-    val warnings: List<ImportWarning>
+    val warnings: List<ImportWarning>,
+    val deterministicDraftJson: String,
+    val ingredientCatalogJson: String
 )
 
 data class AiRecipeDraftPayload(
     val title: String = "",
     val description: String = "",
-    val ingredients: List<String> = emptyList(),
+    val ingredients: List<ImportedIngredientDraft> = emptyList(),
     val instructions: String = "",
     val notes: String = "",
     val sourceName: String = "",
@@ -202,7 +258,7 @@ fun ImportedRecipeDraft.applyToRecipe(recipe: Recipe, language: AppLanguage): Re
     }
     return recipe.copy(
         languages = languages,
-        ingredients = ingredients.map(::toIngredientLine),
+        ingredients = ingredients.map(ImportedIngredientDraft::toIngredientLine),
         source = if (sourceName.isBlank() && sourceUrl.isBlank()) {
             null
         } else {
@@ -219,7 +275,8 @@ fun ImportedRecipeDraft.applyToRecipe(recipe: Recipe, language: AppLanguage): Re
 
 class SharedRecipeImporter(
     private val fetchUrlContent: suspend (String) -> String = ::fetchUrlText,
-    private val aiRecipeImportService: AiRecipeImportService = DeterministicOnlyAiRecipeImportService()
+    private val aiRecipeImportService: AiRecipeImportService = DeterministicOnlyAiRecipeImportService(),
+    private val loadIngredientCatalogJson: suspend () -> String = { "" }
 ) {
     suspend fun import(
         sharedText: String,
@@ -279,7 +336,7 @@ class SharedRecipeImporter(
         return ImportedRecipeDraft(
             title = fields.title,
             description = fields.description,
-            ingredients = fields.ingredientLines,
+            ingredients = fields.ingredientLines.map(::toImportedIngredientDraft),
             instructions = fields.instructionLines.joinToString("\n"),
             notes = fields.notes,
             mainPhotoUrl = fields.mainPhotoUrl,
@@ -306,7 +363,9 @@ class SharedRecipeImporter(
         return ImportedRecipeDraft(
             title = payload.title.ifBlank { deterministic.title },
             description = payload.description.ifBlank { deterministic.description },
-            ingredients = payload.ingredients.ifEmpty { deterministic.ingredientLines },
+            ingredients = payload.ingredients.ifEmpty {
+                deterministic.ingredientLines.map(::toImportedIngredientDraft)
+            },
             instructions = payload.instructions.ifBlank { deterministic.instructionLines.joinToString("\n") },
             notes = payload.notes.ifBlank { deterministic.notes },
             mainPhotoUrl = deterministic.mainPhotoUrl,
@@ -329,6 +388,7 @@ class SharedRecipeImporter(
         bundle: RawExtractionBundle,
         activeLanguage: AppLanguage = AppLanguage.EN
     ): ImportedRecipeDraft {
+        val ingredientCatalogJson = runCatching { loadIngredientCatalogJson() }.getOrDefault("")
         val aiResult = aiRecipeImportService.buildDraft(
             AiRecipeImportRequest(
                 jobId = bundle.jobId,
@@ -339,7 +399,9 @@ class SharedRecipeImporter(
                 cleanedText = bundle.cleanedText,
                 htmlTitle = bundle.htmlTitle,
                 deterministicFields = bundle.deterministicFields,
-                warnings = bundle.warnings
+                warnings = bundle.warnings,
+                deterministicDraftJson = deterministicDraftJson(bundle),
+                ingredientCatalogJson = ingredientCatalogJson
             )
         )
 
@@ -821,10 +883,66 @@ private fun resolveUrl(pageUrl: String, candidate: String): String? = runCatchin
     URI(pageUrl).resolve(candidate).toString()
 }.getOrNull()
 
-private fun toIngredientLine(line: String): IngredientLine = IngredientLine(
-    id = UUID.randomUUID().toString(),
-    originalText = line,
-    ingredientName = line
+private fun ImportedIngredientDraft.toIngredientLine(): IngredientLine = IngredientLine(
+    id = id,
+    ingredientRefId = ingredientRefId,
+    originalText = originalText.trim(),
+    quantity = quantity,
+    unit = unit?.trim()?.ifBlank { null },
+    ingredientName = ingredientName.trim().ifBlank { originalText.trim() },
+    preparation = preparation?.trim()?.ifBlank { null },
+    notes = notes?.trim()?.ifBlank { null }
+)
+
+private fun toImportedIngredientDraft(line: String): ImportedIngredientDraft = ImportedIngredientDraft(
+    ingredientName = line.trim(),
+    originalText = line.trim()
+)
+
+private fun deterministicDraftJson(bundle: RawExtractionBundle): String = Json.encodeToString(
+    ImporterDeterministicDraftContextDto.serializer(),
+    ImporterDeterministicDraftContextDto(
+        title = bundle.deterministicFields.title,
+        description = bundle.deterministicFields.description,
+        ingredients = bundle.deterministicFields.ingredientLines,
+        instructions = bundle.deterministicFields.instructionLines.joinToString("\n"),
+        notes = bundle.deterministicFields.notes,
+        sourceName = bundle.deterministicFields.sourceName,
+        sourceUrl = bundle.deterministicFields.sourceUrl,
+        servingsAmount = bundle.deterministicFields.servings?.amount,
+        servingsUnit = bundle.deterministicFields.servings?.unit,
+        prepTimeMinutes = bundle.deterministicFields.times?.prepTimeMinutes,
+        cookTimeMinutes = bundle.deterministicFields.times?.cookTimeMinutes,
+        totalTimeMinutes = bundle.deterministicFields.times?.totalTimeMinutes
+    )
+)
+
+@Serializable
+private data class ImporterDeterministicDraftContextDto(
+    @SerialName("title")
+    val title: String = "",
+    @SerialName("description")
+    val description: String = "",
+    @SerialName("ingredients")
+    val ingredients: List<String> = emptyList(),
+    @SerialName("instructions")
+    val instructions: String = "",
+    @SerialName("notes")
+    val notes: String = "",
+    @SerialName("sourceName")
+    val sourceName: String = "",
+    @SerialName("sourceUrl")
+    val sourceUrl: String = "",
+    @SerialName("servingsAmount")
+    val servingsAmount: Double? = null,
+    @SerialName("servingsUnit")
+    val servingsUnit: String? = null,
+    @SerialName("prepTimeMinutes")
+    val prepTimeMinutes: Int? = null,
+    @SerialName("cookTimeMinutes")
+    val cookTimeMinutes: Int? = null,
+    @SerialName("totalTimeMinutes")
+    val totalTimeMinutes: Int? = null
 )
 
 private fun JsonElement.stringValue(): String = when (this) {

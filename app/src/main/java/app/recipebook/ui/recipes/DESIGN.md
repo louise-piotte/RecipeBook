@@ -24,6 +24,7 @@ This package contains the main Compose product UI.
 - When adding UI around new data fields, confirm the repository and localization behavior already support the intended workflow.
 - Imported recipes should still open in `RecipeEditorScreen.kt` so parsing review happens inside the normal editing experience instead of a separate draft-only screen for now.
 - Imported drafts can carry structured importer warnings into `RecipeEditorScreen.kt`; the editor should surface them as a compact review summary near the top rather than as a separate full-screen import review flow.
+- Imported drafts may also carry pending ingredient-reference suggestions; the editor should treat those suggestions like selected existing ingredients for review, but catalog writes must still wait until the user saves.
 - The import review UI should deduplicate repeated warnings, show compact provenance such as the input source type, and mirror important warnings beside the affected editor sections when that keeps review faster.
 - In-app import entry points should stay discoverable from the library hamburger menu and reuse the same importer pipeline as Android share intake.
 - The library hamburger menu is also the home for direct export actions that do not need a dedicated screen; long-running file work should stay out of composables and use thin launcher/save wiring only.

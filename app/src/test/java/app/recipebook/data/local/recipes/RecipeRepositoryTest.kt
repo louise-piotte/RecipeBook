@@ -32,6 +32,9 @@ import app.recipebook.domain.model.RecipeLinkType
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.domain.model.Tag
+import app.recipebook.domain.model.AppLanguage
+import app.recipebook.domain.model.LibraryMetadata
+import app.recipebook.domain.model.LibrarySettings
 import app.recipebook.ui.recipes.normalizeMultilineText
 import app.recipebook.ui.recipes.parseIngredients
 import kotlinx.coroutines.flow.Flow
@@ -351,6 +354,44 @@ class RecipeRepositoryTest {
     }
 
     @Test
+    fun resolveImportedIngredientReference_mergesAliasesIntoExistingReference() = runBlocking {
+        val ingredientDao = FakeIngredientReferenceDao()
+        val repository = RecipeRepository(
+            recipeDao = FakeRecipeDao(),
+            ingredientReferenceDao = ingredientDao
+        )
+        ingredientDao.upsert(
+            IngredientReferenceEntity(
+                id = "ingredient-ref-flour",
+                nameFr = "Farine tout usage",
+                nameEn = "All-purpose flour",
+                aliasesFrJson = "[\"farine\"]",
+                aliasesEnJson = "[\"flour\"]",
+                updatedAt = "2026-04-18T10:00:00Z"
+            )
+        )
+
+        val ensured = repository.resolveImportedIngredientReference(
+            preferredId = "ingredient-ref-flour",
+            draft = IngredientReferenceDraft(
+                nameFr = "Farine tout usage",
+                nameEn = "All-purpose flour",
+                aliasesFr = listOf("farine blanche"),
+                aliasesEn = listOf("plain flour")
+            ),
+            now = "2026-04-18T11:00:00Z"
+        )
+
+        assertEquals("ingredient-ref-flour", ensured.id)
+        assertEquals(listOf("farine", "farine blanche"), ensured.aliasesFr)
+        assertEquals(listOf("flour", "plain flour"), ensured.aliasesEn)
+        assertEquals(
+            listOf("flour", "plain flour"),
+            Json.decodeFromString<List<String>>(ingredientDao.items.getValue("ingredient-ref-flour").aliasesEnJson)
+        )
+    }
+
+    @Test
     fun updateIngredientReferenceAndTag_persistEditedValues() = runBlocking {
         val ingredientDao = FakeIngredientReferenceDao()
         val tagDao = FakeTagDao()
@@ -438,6 +479,75 @@ class RecipeRepositoryTest {
 
         assertFalse(collectionDao.items.containsKey(created.id))
         assertEquals(listOf(created.id), collectionDao.deletedRecipeRefCollectionIds)
+    }
+
+    @Test
+    fun buildExportLibrary_reconcilesCollectionRecipeIdsFromLiveRecipeMembership() = runBlocking {
+        val recipeDao = FakeRecipeDao()
+        val collectionDao = FakeCollectionDao()
+        val repository = RecipeRepository(
+            recipeDao = recipeDao,
+            collectionDao = collectionDao,
+            seedLibrary = SeedLibraryData(
+                units = emptyList(),
+                settings = LibrarySettings(
+                    language = AppLanguage.EN,
+                    driveSyncEnabled = false
+                ),
+                metadata = LibraryMetadata(
+                    libraryId = "library-local",
+                    createdAt = "2026-04-18T09:00:00Z",
+                    updatedAt = "2026-04-18T09:00:00Z",
+                    exportedAt = "2026-04-18T09:00:00Z"
+                )
+            )
+        )
+
+        recipeDao.replaceRecipeGraph(
+            recipe = sampleRecipe(id = "recipe-existing", titleEn = "Existing").copy(
+                collectionIds = listOf("collection-brunch")
+            ).toEntity(),
+            ingredientLines = emptyList(),
+            ingredientLineSubstitutions = emptyList(),
+            recipeLinks = emptyList(),
+            tagRefs = emptyList(),
+            collectionRefs = listOf(
+                RecipeCollectionCrossRef(
+                    recipeId = "recipe-existing",
+                    collectionId = "collection-brunch",
+                    position = 0
+                )
+            )
+        )
+        recipeDao.replaceRecipeGraph(
+            recipe = sampleRecipe(id = "recipe-new", titleEn = "New").copy(
+                collectionIds = listOf("collection-brunch")
+            ).toEntity(),
+            ingredientLines = emptyList(),
+            ingredientLineSubstitutions = emptyList(),
+            recipeLinks = emptyList(),
+            tagRefs = emptyList(),
+            collectionRefs = listOf(
+                RecipeCollectionCrossRef(
+                    recipeId = "recipe-new",
+                    collectionId = "collection-brunch",
+                    position = 0
+                )
+            )
+        )
+        collectionDao.upsert(
+            CollectionEntity(
+                id = "collection-brunch",
+                nameFr = "Brunch",
+                nameEn = "Brunch",
+                recipeIdsJson = "[\"recipe-existing\",\"recipe-stale\"]"
+            )
+        )
+
+        val exportLibrary = repository.buildExportLibrary(now = "2026-04-18T10:00:00Z")
+        val exportedCollection = exportLibrary.collections.single { it.id == "collection-brunch" }
+
+        assertEquals(listOf("recipe-existing", "recipe-new"), exportedCollection.recipeIds)
     }
 
     @Test

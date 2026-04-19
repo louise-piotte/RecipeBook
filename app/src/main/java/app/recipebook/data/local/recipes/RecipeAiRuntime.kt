@@ -25,6 +25,7 @@ private val aiJson = Json { ignoreUnknownKeys = true }
 object RecipeAiRuntime {
     fun createSharedRecipeImporter(context: Context): SharedRecipeImporter {
         val settingsStore = AiBackendSettingsStore(context)
+        val repository = RecipeRepositoryProvider.create(context)
         val importerPrompt = RecipeAiPrompts.loadImporterSystemPrompt(context)
         val completionClient = OpenAiCompatibleRecipeAiClient(
             loadSettings = { settingsStore.settings.first() }
@@ -33,7 +34,13 @@ object RecipeAiRuntime {
             aiRecipeImportService = OpenAiCompatibleRecipeImportService(
                 completionClient = completionClient,
                 systemPrompt = importerPrompt
-            )
+            ),
+            loadIngredientCatalogJson = {
+                repository.seedBundledLibraryIfMissing()
+                RecipeExportCodec.encodeIngredientCatalogJson(
+                    repository.buildExportLibrary()
+                )
+            }
         )
     }
 
@@ -217,7 +224,7 @@ private data class ImporterDraftPayloadDto(
     @SerialName("description")
     val description: String = "",
     @SerialName("ingredients")
-    val ingredients: List<String> = emptyList(),
+    val ingredients: List<ImporterIngredientDto> = emptyList(),
     @SerialName("instructions")
     val instructions: String = "",
     @SerialName("notes")
@@ -240,7 +247,7 @@ private data class ImporterDraftPayloadDto(
     fun toPayload(): AiRecipeDraftPayload = AiRecipeDraftPayload(
         title = title,
         description = description,
-        ingredients = ingredients,
+        ingredients = ingredients.map(ImporterIngredientDto::toDraft),
         instructions = instructions,
         notes = notes,
         sourceName = sourceName,
@@ -252,6 +259,70 @@ private data class ImporterDraftPayloadDto(
             totalTimeMinutes = totalTimeMinutes
         ).takeIf { prepTimeMinutes != null || cookTimeMinutes != null || totalTimeMinutes != null }
     )
+}
+
+@Serializable
+private data class ImporterIngredientDto(
+    @SerialName("id")
+    val id: String? = null,
+    @SerialName("ingredientName")
+    val ingredientName: String = "",
+    @SerialName("quantity")
+    val quantity: Double? = null,
+    @SerialName("unit")
+    val unit: String? = null,
+    @SerialName("preparation")
+    val preparation: String? = null,
+    @SerialName("notes")
+    val notes: String? = null,
+    @SerialName("originalText")
+    val originalText: String = "",
+    @SerialName("ingredientRefId")
+    val ingredientRefId: String? = null,
+    @SerialName("referenceNameFr")
+    val referenceNameFr: String = "",
+    @SerialName("referenceNameEn")
+    val referenceNameEn: String = "",
+    @SerialName("referenceAliasesFr")
+    val referenceAliasesFr: List<String> = emptyList(),
+    @SerialName("referenceAliasesEn")
+    val referenceAliasesEn: List<String> = emptyList(),
+    @SerialName("referenceCategory")
+    val referenceCategory: String? = null,
+    @SerialName("referenceDefaultDensity")
+    val referenceDefaultDensity: Double? = null,
+    @SerialName("referenceUnitMappings")
+    val referenceUnitMappings: List<app.recipebook.domain.model.IngredientUnitMapping> = emptyList()
+) {
+    fun toDraft(): ImportedIngredientDraft {
+        val normalizedOriginalText = originalText.trim()
+        val normalizedIngredientName = ingredientName.trim().ifBlank { normalizedOriginalText }
+        val resolvedId = id ?: java.util.UUID.randomUUID().toString()
+        val pendingReference = if (referenceNameFr.isBlank() || referenceNameEn.isBlank()) {
+            null
+        } else {
+            ImportedIngredientReferenceDraft(
+                nameFr = referenceNameFr,
+                nameEn = referenceNameEn,
+                category = referenceCategory,
+                aliasesFr = referenceAliasesFr,
+                aliasesEn = referenceAliasesEn,
+                defaultDensity = referenceDefaultDensity,
+                unitMappings = referenceUnitMappings
+            )
+        }
+        return ImportedIngredientDraft(
+            id = resolvedId,
+            ingredientName = normalizedIngredientName,
+            quantity = quantity,
+            unit = unit?.trim()?.ifBlank { null },
+            preparation = preparation?.trim()?.ifBlank { null },
+            notes = notes?.trim()?.ifBlank { null },
+            originalText = normalizedOriginalText.ifBlank { normalizedIngredientName },
+            ingredientRefId = ingredientRefId ?: pendingReference?.let { "imported-pending-ref:$resolvedId" },
+            pendingReference = pendingReference
+        )
+    }
 }
 
 @Serializable
@@ -320,9 +391,21 @@ private fun importerUserPrompt(request: AiRecipeImportRequest): String = buildSt
     appendLine("title, description, ingredients, instructions, notes, sourceName, sourceUrl, servingsAmount, servingsUnit, prepTimeMinutes, cookTimeMinutes, totalTimeMinutes")
     appendLine("Keep missing values blank or null.")
     appendLine("Do not invent quantities, temperatures, times, or servings.")
+    appendLine("Each item in ingredients must be an object with keys:")
+    appendLine("id, ingredientName, quantity, unit, preparation, notes, originalText, ingredientRefId, referenceNameFr, referenceNameEn, referenceAliasesFr, referenceAliasesEn, referenceCategory, referenceDefaultDensity, referenceUnitMappings")
+    appendLine("Preserve ingredient amounts, units, and preparation text whenever the evidence supports them.")
+    appendLine("Reuse an existing ingredientRefId from the ingredient catalog whenever the ingredient is already known.")
+    appendLine("If source wording should become an alias of an existing ingredient, keep the existing ingredientRefId and include alias additions in the referenceAliases arrays.")
+    appendLine("If multiple ingredient lines are functionally the same ingredient and differ only by decorative or minor variant details, collapse them to one reusable canonical ingredient name.")
+    appendLine("Keep those distinguishing details in preparation or notes instead of creating near-duplicate ingredients. Example: colored sprinkles should usually reuse one sprinkles ingredient.")
+    appendLine("Only leave ingredientRefId null when no existing ingredient fits and a new reference must be proposed.")
     appendLine("Active app language: ${request.activeLanguage.name}")
     appendLine("Source type: ${request.sourceType}")
     appendLine("Extractor version: ${request.extractorVersion}")
+    appendLine("Deterministic draft JSON:")
+    appendLine(request.deterministicDraftJson)
+    appendLine("Ingredient catalog JSON:")
+    appendLine(request.ingredientCatalogJson.take(24000))
     appendLine("HTML title: ${request.htmlTitle}")
     appendLine("Deterministic title: ${request.deterministicFields.title}")
     appendLine("Deterministic description: ${request.deterministicFields.description}")

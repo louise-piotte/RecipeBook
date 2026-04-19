@@ -101,6 +101,8 @@ So the AI input would include:
 - source type: webpage, image, or text
 - raw extracted content
 - any deterministic structured fields found already
+- the deterministic draft JSON already produced by the app
+- the exported ingredient catalog JSON from the live library
 - current app language
 - your schema shape
 - ingredient/unit expectations
@@ -116,7 +118,10 @@ The AI responsibilities are:
 - infer recipe structure from noisy content
 - convert extracted text into clean fields
 - translate to the other language
-- normalize ingredient naming
+- reuse existing ingredient references from the catalog when possible
+- add alias suggestions when source wording should map to an existing ingredient
+- propose a brand-new ingredient reference only when the catalog has no good match
+- preserve structured ingredient fields such as quantity, unit, and preparation when the evidence supports them
 - normalize units/times where appropriate
 - preserve original ingredient wording in `originalText`
 - leave missing values blank instead of guessing
@@ -191,16 +196,17 @@ When the user taps save:
 1. Take the edited active-language fields.
 2. Treat that version as the authoritative reviewable text.
 3. Generate or regenerate the opposite language from that reviewed version.
-4. Run normalization passes:
+4. Resolve imported pending ingredient references and alias additions into the real ingredient database.
+5. Run normalization passes:
 - ingredient reference matching
 - unit cleanup
 - time cleanup
 - source metadata population
 - import metadata population
 
-5. Validate against the recipe creation schema.
-6. Convert to domain `Recipe`.
-7. Save through the repository.
+6. Validate against the recipe creation schema.
+7. Convert to domain `Recipe`.
+8. Save through the repository.
 
 This is important: the reviewed active language should be the source of truth for the final bilingual output, not the earlier raw AI draft.
 

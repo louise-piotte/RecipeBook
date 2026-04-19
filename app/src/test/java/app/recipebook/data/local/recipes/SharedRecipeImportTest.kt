@@ -55,7 +55,7 @@ class SharedRecipeImportTest {
 
         assertEquals("Best Pancakes", draft.title)
         assertEquals("Easy weekend pancakes.", draft.description)
-        assertEquals(listOf("2 cups flour", "1 cup milk"), draft.ingredients)
+        assertEquals(listOf("2 cups flour", "1 cup milk"), draft.ingredients.map(ImportedIngredientDraft::originalText))
         assertEquals("Whisk the dry ingredients.\nCook on a hot griddle.", draft.instructions)
         assertEquals("https://example.com/images/pancakes.jpg", draft.mainPhotoUrl)
         assertEquals("Chef Alex", draft.sourceName)
@@ -202,7 +202,7 @@ class SharedRecipeImportTest {
         )
 
         assertEquals("Chocolate Cake", draft.title)
-        assertEquals(listOf("2 cups flour", "1 cup sugar"), draft.ingredients)
+        assertEquals(listOf("2 cups flour", "1 cup sugar"), draft.ingredients.map(ImportedIngredientDraft::originalText))
         assertEquals("Mix everything together.\nBake for 30 minutes.", draft.instructions)
         assertEquals("shared_text", draft.importMetadata.sourceType)
     }
@@ -220,7 +220,15 @@ class SharedRecipeImportTest {
                             payload = AiRecipeDraftPayload(
                                 title = "Gateau affine",
                                 description = "Description AI",
-                                ingredients = listOf("2 tasses de farine"),
+                                ingredients = listOf(
+                                    ImportedIngredientDraft(
+                                        id = "ingredient-1",
+                                        ingredientName = "farine",
+                                        quantity = 2.0,
+                                        unit = "tasses",
+                                        originalText = "2 tasses de farine"
+                                    )
+                                ),
                                 instructions = "Melanger.\nCuire.",
                                 notes = "Note AI",
                                 sourceName = "AI Source",
@@ -256,7 +264,9 @@ class SharedRecipeImportTest {
         val draft = importer.finishDraft(bundle, activeLanguage = AppLanguage.FR)
 
         assertEquals("Gateau affine", draft.title)
-        assertEquals(listOf("2 tasses de farine"), draft.ingredients)
+        assertEquals(listOf("2 tasses de farine"), draft.ingredients.map(ImportedIngredientDraft::originalText))
+        assertEquals(2.0, draft.ingredients.first().quantity)
+        assertEquals("tasses", draft.ingredients.first().unit)
         assertEquals("Melanger.\nCuire.", draft.instructions)
         assertEquals("fake_ai", draft.importMetadata.generatorLabel)
         assertEquals("shared-import-extractor-v1", draft.importMetadata.extractorVersion)
@@ -295,7 +305,7 @@ class SharedRecipeImportTest {
         val draft = importer.finishDraft(bundle, activeLanguage = AppLanguage.EN)
 
         assertEquals("Chocolate Cake", draft.title)
-        assertEquals(listOf("2 cups flour", "1 cup sugar"), draft.ingredients)
+        assertEquals(listOf("2 cups flour", "1 cup sugar"), draft.ingredients.map(ImportedIngredientDraft::originalText))
         assertEquals("Mix everything together.\nBake for 30 minutes.", draft.instructions)
         assertEquals(null, draft.importMetadata.generatorLabel)
         assertTrue(draft.warnings.any { it.code == "ai_response_invalid" })
@@ -376,6 +386,7 @@ class SharedRecipeImportTest {
         assertEquals(1, draft.warnings.size)
         assertEquals("ingredient_section_missing", draft.warnings.first().code)
         assertEquals("extractor-v1", draft.importMetadata.extractorVersion)
+        assertEquals(listOf("1 cup milk"), draft.ingredients.map(ImportedIngredientDraft::originalText))
     }
 
     @Test
@@ -383,7 +394,14 @@ class SharedRecipeImportTest {
         val draft = ImportedRecipeDraft(
             title = "Imported Soup",
             description = "A simple soup.",
-            ingredients = listOf("1 onion"),
+            ingredients = listOf(
+                ImportedIngredientDraft(
+                    id = "ingredient-1",
+                    ingredientName = "onion",
+                    quantity = 1.0,
+                    originalText = "1 onion"
+                )
+            ),
             instructions = "Cook gently.",
             notes = "Shared from notes.",
             mainPhotoUrl = "https://example.com/images/soup.jpg",
@@ -396,9 +414,57 @@ class SharedRecipeImportTest {
         assertEquals("", recipe.languages.fr.title)
         assertEquals("Cook gently.", recipe.languages.en.instructions)
         assertTrue(recipe.ingredients.isNotEmpty())
-        assertEquals("1 onion", recipe.ingredients.first().ingredientName)
+        assertEquals("onion", recipe.ingredients.first().ingredientName)
+        assertEquals(1.0, recipe.ingredients.first().quantity)
         assertTrue(recipe.photos.isEmpty())
         assertEquals("https://example.com/soup", recipe.source?.sourceUrl)
+    }
+
+    @Test
+    fun finishDraft_aiNewIngredientAssignsPendingPlaceholderReferenceId() = kotlinx.coroutines.runBlocking {
+        val importer = SharedRecipeImporter(
+            fetchUrlContent = { error("network not expected") },
+            aiRecipeImportService = object : AiRecipeImportService {
+                override suspend fun buildDraft(request: AiRecipeImportRequest): AiRecipeImportResult =
+                    AiRecipeImportResult.Success(
+                        AiRecipeImportResponse(
+                            payload = AiRecipeDraftPayload(
+                                title = "Soup",
+                                ingredients = listOf(
+                                    ImportedIngredientDraft(
+                                        id = "ingredient-1",
+                                        ingredientName = "shallot",
+                                        originalText = "1 shallot",
+                                        ingredientRefId = "imported-pending-ref:ingredient-1",
+                                        pendingReference = ImportedIngredientReferenceDraft(
+                                            nameFr = "\u00c9chalote",
+                                            nameEn = "Shallot",
+                                            aliasesEn = listOf("shallot")
+                                        )
+                                    )
+                                ),
+                                instructions = "Cook."
+                            ),
+                            generatorLabel = "fake_ai"
+                        )
+                    )
+            }
+        )
+
+        val draft = importer.import(
+            """
+            Soup
+
+            Ingredients
+            1 shallot
+
+            Instructions
+            1. Cook.
+            """.trimIndent()
+        )
+
+        assertEquals("imported-pending-ref:ingredient-1", draft.ingredients.first().ingredientRefId)
+        assertEquals("Shallot", draft.ingredients.first().pendingReference?.nameEn)
     }
 
     private fun blankRecipe(): Recipe = Recipe(
