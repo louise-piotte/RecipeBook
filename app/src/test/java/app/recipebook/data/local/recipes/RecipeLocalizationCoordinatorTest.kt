@@ -4,6 +4,7 @@ import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.BilingualSyncStatus
 import app.recipebook.domain.model.ImportMetadata
+import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Recipe
 import org.junit.Assert.assertEquals
@@ -128,6 +129,39 @@ class RecipeLocalizationCoordinatorTest {
         assertEquals(BilingualSyncStatus.UP_TO_DATE, regenerated.importMetadata?.syncStatusEn)
     }
 
+    @Test
+    fun regenerateOppositeLanguage_keepsSharedIngredientTextInAuthoritativeLanguage() = runBlocking {
+        val coordinator = RecipeLocalizationCoordinator(
+            regenerator = object : RecipeLanguageRegenerator {
+                override suspend fun regenerateOppositeLanguage(
+                    request: RecipeLanguageRegenerationRequest
+                ): RecipeLanguageRegenerationResult = RecipeLanguageRegenerationResult(
+                    generatedLanguage = AppLanguage.FR,
+                    generatedText = LocalizedSystemText(
+                        title = "Titre regenere",
+                        description = "",
+                        instructions = "",
+                        notes = ""
+                    ),
+                    generatorLabel = "test",
+                    generatedIngredients = listOf(
+                        RegeneratedIngredientLine(
+                            id = "ingredient-1",
+                            ingredientName = "farine",
+                            originalText = "200 g farine"
+                        )
+                    )
+                )
+            }
+        )
+
+        val regenerated = coordinator.regenerateOppositeLanguage(sampleRecipe(), AppLanguage.EN).recipe
+
+        assertEquals("flour", regenerated.ingredients.single().ingredientName)
+        assertEquals("200 g flour", regenerated.ingredients.single().originalText)
+        assertEquals("Titre regenere", regenerated.languages.fr.title)
+    }
+
     private fun sampleRecipe(): Recipe = Recipe(
         id = "recipe-1",
         createdAt = "2026-04-12T00:00:00Z",
@@ -136,6 +170,12 @@ class RecipeLocalizationCoordinatorTest {
             fr = LocalizedSystemText(title = "", description = "", instructions = "", notes = ""),
             en = LocalizedSystemText(title = "", description = "", instructions = "", notes = "")
         ),
-        ingredients = emptyList()
+        ingredients = listOf(
+            IngredientLine(
+                id = "ingredient-1",
+                originalText = "200 g flour",
+                ingredientName = "flour"
+            )
+        )
     )
 }

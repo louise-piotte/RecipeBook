@@ -70,10 +70,8 @@ class RecipeLocalizationCoordinator(
             AppLanguage.FR -> BilingualText(fr = normalizedOpposite, en = authoritativeText)
             AppLanguage.EN -> BilingualText(fr = authoritativeText, en = normalizedOpposite)
         }
-        val regeneratedIngredients = recipe.ingredients.applyRegeneratedIngredients(regenerated.generatedIngredients)
         val regeneratedRecipe = recipe.copy(
             languages = regeneratedLanguages,
-            ingredients = regeneratedIngredients,
             importMetadata = (recipe.importMetadata ?: ImportMetadata())
                 .copy(generatorLabel = regenerated.generatorLabel)
                 .withSyncState(
@@ -200,18 +198,4 @@ private fun normalizeRecipeMultilineText(input: String): String = input.lineSequ
 private fun ImportMetadata?.statusForLanguage(language: AppLanguage): BilingualSyncStatus? = when (language) {
     AppLanguage.FR -> this?.syncStatusFr
     AppLanguage.EN -> this?.syncStatusEn
-}
-
-private fun List<app.recipebook.domain.model.IngredientLine>.applyRegeneratedIngredients(
-    regeneratedIngredients: List<RegeneratedIngredientLine>
-): List<app.recipebook.domain.model.IngredientLine> {
-    if (regeneratedIngredients.isEmpty()) return this
-    val updatesById = regeneratedIngredients.associateBy(RegeneratedIngredientLine::id)
-    return map { ingredient ->
-        val update = updatesById[ingredient.id] ?: return@map ingredient
-        ingredient.copy(
-            ingredientName = update.ingredientName.ifBlank { ingredient.ingredientName },
-            originalText = update.originalText.ifBlank { ingredient.originalText }
-        )
-    }
 }

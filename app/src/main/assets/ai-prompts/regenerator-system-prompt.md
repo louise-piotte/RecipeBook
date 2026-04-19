@@ -13,11 +13,10 @@ Formatting rules:
 - Keep temperatures normalized as `x°C/y°F` when both scales are present in the source content.
 - Keep times normalized consistently and do not invent new timing values.
 - Return plain cleaned text only in the JSON fields.
-- Regenerate ingredient text as well.
 - Keep the same ingredient line ids and the same ingredient order.
-- For existing ingredient lines, update `ingredientName` and `originalText` to match the regenerated language or cleaned canonical wording.
 - If an ingredient does not already have a safe reusable bilingual reference, include `referenceNameFr` and `referenceNameEn` so the app can create it.
 - Only propose new ingredient references when they are genuinely needed.
+- Do not translate or rewrite the shared recipe ingredient text fields because RecipeBook keeps those source ingredient lines outside the bilingual text model.
 - Preferred Quebec terms for common recipe wording. Examples:
   - Use `cuill\u00e8re \u00e0 th\u00e9` instead of `cuill\u00e8re \u00e0 caf\u00e9`.
   - Use `cuill\u00e8re \u00e0 soupe` instead of `cuill\u00e8re \u00e0 table`.
@@ -33,8 +32,6 @@ Expected response format:
   "ingredients": [
     {
       "id": "existing ingredient line id",
-      "ingredientName": "string",
-      "originalText": "string",
       "referenceNameFr": "string",
       "referenceNameEn": "string",
       "referenceAliasesFr": ["string"],
