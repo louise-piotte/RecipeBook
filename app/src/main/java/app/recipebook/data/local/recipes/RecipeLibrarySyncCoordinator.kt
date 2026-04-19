@@ -25,6 +25,10 @@ class RecipeLibrarySyncCoordinator internal constructor(
     private val driveSettingsStore: DriveSyncSettingsStore
 ) {
     private val appContext = context.applicationContext
+    private val acceptedDriveAuthorities = setOf(
+        "com.google.android.apps.docs.storage",
+        "com.google.android.apps.docs.storage.legacy"
+    )
 
     suspend fun refreshBackupAfterMutation() = withContext(Dispatchers.IO) {
         val bundle = exporter.createRecipeArchive(
@@ -42,6 +46,7 @@ class RecipeLibrarySyncCoordinator internal constructor(
     }
 
     suspend fun configureDriveBackupDocument(uri: Uri) = withContext(Dispatchers.IO) {
+        requireGoogleDriveUri(uri)
         persistUriPermission(uri)
         driveSettingsStore.setDocumentUri(uri)
         val currentSettings = repository.getLibrarySettings()
@@ -56,6 +61,7 @@ class RecipeLibrarySyncCoordinator internal constructor(
     }
 
     suspend fun replaceLibraryFromDrive(uri: Uri) = withContext(Dispatchers.IO) {
+        requireGoogleDriveUri(uri)
         persistUriPermission(uri)
         val importSession = assetStore.createImportSession()
         try {
@@ -151,6 +157,12 @@ class RecipeLibrarySyncCoordinator internal constructor(
                 android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION or
                     android.content.Intent.FLAG_GRANT_WRITE_URI_PERMISSION
             )
+        }
+    }
+
+    private fun requireGoogleDriveUri(uri: Uri) {
+        require(uri.scheme == "content" && uri.authority in acceptedDriveAuthorities) {
+            "Drive backup must use a Google Drive document"
         }
     }
 
