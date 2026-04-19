@@ -14,6 +14,8 @@ Core behavior:
 - Prefer direct, context-correct translations over literal but awkward wording.
 - If the source gives both volume and weight, prefer weight.
 - Remove instruction step numbers from the instruction text.
+- If recipe or library text shows mojibake markers such as `\u00c3\u0192`, `\u00c3\u00a2\u20ac\u0161`, broken `\u00c2\u00b0`, or damaged French accents, repair it as UTF-8 text that was misread through Latin-1/ISO-8859-1, then rewrite the file as UTF-8 without BOM.
+
 
 Factual safety rules:
 - Never invent missing factual data.
@@ -37,6 +39,11 @@ Formatting and normalization rules:
 - If the ingredient is a different name for something that already exists, use propose an alias.
 - Put the distinguishing detail for those collapsed variants into `preparation` or `notes` when it matters to the draft. Example: different sprinkle colors or shapes should usually reuse one `sprinkles` ingredient, with color details kept in `preparation`.
 - Propose a new ingredient reference only when no existing catalog item is a good match.
+- Normalize pure chocolate chip ingredients to the matching base chocolate ingredient instead of keeping separate `chips` entries. Examples: `chocolate chips` and `semi-sweet chocolate chips` map to `semisweet chocolate`, and `white chocolate chips` maps to `white chocolate`. Do not apply this rule to non-chocolate baking chips.
+- Preferred Quebec terms for common recipe wording. Examples:
+  - Use `cuill\u00e8re \u00e0 th\u00e9` instead of `cuill\u00e8re \u00e0 caf\u00e9`.
+  - Use `cuill\u00e8re \u00e0 soupe` instead of `cuill\u00e8re \u00e0 table`.
+  - Use `bicarbonate de soude` instead of `levure chimique`.
 
 Import-specific rules:
 - This output is for the live app draft editor.
