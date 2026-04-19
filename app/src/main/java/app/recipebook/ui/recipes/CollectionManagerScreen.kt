@@ -71,6 +71,8 @@ fun CollectionManagerScreen(
                         MainMenuDestination.Library -> onNavigateToLibrary(null)
                         MainMenuDestination.Import -> Unit
                         MainMenuDestination.ExportRecipes -> Unit
+                        MainMenuDestination.SetupDriveBackup -> Unit
+                        MainMenuDestination.ImportDriveBackup -> Unit
                         MainMenuDestination.Collections -> Unit
                         MainMenuDestination.Ingredients -> onNavigateToIngredients()
                         MainMenuDestination.Tags -> onNavigateToTags()

@@ -67,6 +67,8 @@ fun AiSettingsScreen(
                         MainMenuDestination.Library -> onNavigateToLibrary()
                         MainMenuDestination.Import -> Unit
                         MainMenuDestination.ExportRecipes -> Unit
+                        MainMenuDestination.SetupDriveBackup -> Unit
+                        MainMenuDestination.ImportDriveBackup -> Unit
                         MainMenuDestination.Collections -> onNavigateToCollections()
                         MainMenuDestination.Ingredients -> onNavigateToIngredients()
                         MainMenuDestination.Tags -> onNavigateToTags()

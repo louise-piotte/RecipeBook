@@ -26,7 +26,7 @@ class IngredientTagManagerActivity : ComponentActivity() {
         keepScreenOnWhileInUse()
         WindowCompat.setDecorFitsSystemWindows(window, true)
 
-        val repository = RecipeRepositoryProvider.create(this)
+        val repository = RecipeRepositoryProvider.createServices(this).repository
         val languageStore = AppLanguageStore(this)
         val initialSection = intent.getStringExtra(EXTRA_INITIAL_SECTION)
             ?.let { runCatching { LibraryManagerSection.valueOf(it) }.getOrNull() }
@@ -49,7 +49,12 @@ class IngredientTagManagerActivity : ComponentActivity() {
                     tags = tags,
                     language = language,
                     onLanguageChange = { selected ->
-                        lifecycleScope.launch { languageStore.setLanguage(selected) }
+                        lifecycleScope.launch {
+                            languageStore.setLanguage(selected)
+                            repository.updateLibrarySettings(
+                                repository.getLibrarySettings().copy(language = selected)
+                            )
+                        }
                     },
                     initialSection = initialSection,
                     onNavigateToLibrary = {

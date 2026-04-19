@@ -8,6 +8,10 @@ import app.recipebook.data.local.db.IngredientReferenceEntity
 import app.recipebook.data.local.db.IngredientLineWithSubstitutions
 import app.recipebook.data.local.db.CollectionDao
 import app.recipebook.data.local.db.CollectionEntity
+import app.recipebook.data.local.db.LibraryMetadataDao
+import app.recipebook.data.local.db.LibraryMetadataEntity
+import app.recipebook.data.local.db.LibrarySettingsDao
+import app.recipebook.data.local.db.LibrarySettingsEntity
 import app.recipebook.data.local.db.RecipeCollectionCrossRef
 import app.recipebook.data.local.db.RecipeDao
 import app.recipebook.data.local.db.RecipeEntity
@@ -24,17 +28,18 @@ import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientLineSubstitution
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
+import app.recipebook.domain.model.LibraryMetadata
+import app.recipebook.domain.model.LibrarySettings
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.RecipeLibrary
 import app.recipebook.domain.model.RecipeLink
 import app.recipebook.domain.model.RecipeLinkType
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.AppLanguage
-import app.recipebook.domain.model.LibraryMetadata
-import app.recipebook.domain.model.LibrarySettings
 import app.recipebook.ui.recipes.normalizeMultilineText
 import app.recipebook.ui.recipes.parseIngredients
 import kotlinx.coroutines.flow.Flow
@@ -659,6 +664,67 @@ class RecipeRepositoryTest {
     }
 
     @Test
+    fun replaceLibrary_replacesStoredLibraryGraphAndSettings() = runBlocking {
+        val recipeDao = FakeRecipeDao()
+        val ingredientDao = FakeIngredientReferenceDao()
+        val tagDao = FakeTagDao()
+        val collectionDao = FakeCollectionDao()
+        val substitutionDao = FakeContextualSubstitutionRuleDao()
+        val settingsDao = FakeLibrarySettingsDao()
+        val metadataDao = FakeLibraryMetadataDao()
+        val repository = RecipeRepository(
+            recipeDao = recipeDao,
+            ingredientReferenceDao = ingredientDao,
+            contextualSubstitutionRuleDao = substitutionDao,
+            tagDao = tagDao,
+            collectionDao = collectionDao,
+            librarySettingsDao = settingsDao,
+            libraryMetadataDao = metadataDao
+        )
+        repository.upsertRecipe(sampleRecipe(id = "recipe-old"))
+
+        repository.replaceLibrary(
+            library = RecipeLibrary(
+                metadata = LibraryMetadata(
+                    libraryId = "library-drive",
+                    createdAt = "2026-04-19T10:00:00Z",
+                    updatedAt = "2026-04-19T10:05:00Z",
+                    exportedAt = "2026-04-19T10:10:00Z"
+                ),
+                recipes = listOf(sampleRecipe(id = "recipe-new", titleEn = "Drive recipe")),
+                ingredientReferences = listOf(
+                    IngredientReference(
+                        id = "ingredient-ref-new",
+                        nameFr = "Farine",
+                        nameEn = "Flour",
+                        updatedAt = "2026-04-19T10:10:00Z"
+                    )
+                ),
+                ingredientForms = emptyList(),
+                substitutionRules = emptyList(),
+                contextualSubstitutionRules = emptyList(),
+                units = emptyList(),
+                tags = listOf(Tag(id = "tag-new", nameFr = "Souper", nameEn = "Dinner", slug = "dinner")),
+                collections = listOf(Collection(id = "collection-new", nameFr = "Repas", nameEn = "Meals")),
+                settings = LibrarySettings(
+                    language = AppLanguage.FR,
+                    driveSyncEnabled = true,
+                    driveFileName = "recipebook-library-backup.zip"
+                )
+            ),
+            notifyMutation = false
+        )
+
+        assertNull(recipeDao.stored("recipe-old"))
+        assertEquals("Drive recipe", repository.getRecipeById("recipe-new")?.languages?.en?.title)
+        assertTrue(ingredientDao.items.containsKey("ingredient-ref-new"))
+        assertTrue(tagDao.items.containsKey("tag-new"))
+        assertTrue(collectionDao.items.containsKey("collection-new"))
+        assertEquals("recipebook-library-backup.zip", settingsDao.value?.driveFileName)
+        assertEquals("library-drive", metadataDao.value?.libraryId)
+    }
+
+    @Test
     fun parseIngredients_createsOneIngredientPerLine() {
         val ingredients = parseIngredients("1 cup flour\n\n2 eggs\n pinch salt ")
 
@@ -806,6 +872,15 @@ private class FakeRecipeDao : RecipeDao() {
         deleteCollectionRefsByRecipeId(id)
     }
 
+    override suspend fun deleteAll() {
+        recipes.clear()
+        ingredientLines.clear()
+        substitutions.clear()
+        recipeLinks.clear()
+        tagRefs.clear()
+        collectionRefs.clear()
+    }
+
     fun stored(id: String): RecipeWithRelations? = relationFor(id)
 
     fun size(): Int = recipes.size
@@ -847,6 +922,10 @@ private class FakeIngredientReferenceDao : IngredientReferenceDao {
     override fun observeAll(): Flow<List<IngredientReferenceEntity>> = flowOf(items.values.toList())
 
     override suspend fun getById(id: String): IngredientReferenceEntity? = items[id]
+
+    override suspend fun deleteAll() {
+        items.clear()
+    }
 }
 
 private class FakeTagDao : TagDao {
@@ -863,6 +942,10 @@ private class FakeTagDao : TagDao {
     override fun observeAll(): Flow<List<TagEntity>> = flowOf(items.values.toList())
 
     override suspend fun getById(id: String): TagEntity? = items[id]
+
+    override suspend fun deleteAll() {
+        items.clear()
+    }
 }
 
 private class FakeContextualSubstitutionRuleDao : ContextualSubstitutionRuleDao {
@@ -888,6 +971,10 @@ private class FakeContextualSubstitutionRuleDao : ContextualSubstitutionRuleDao 
         deletedIds += id
         items.remove(id)
     }
+
+    override suspend fun deleteAll() {
+        items.clear()
+    }
 }
 
 private class FakeCollectionDao : CollectionDao {
@@ -912,5 +999,40 @@ private class FakeCollectionDao : CollectionDao {
 
     override suspend fun deleteRecipeRefsByCollectionId(collectionId: String) {
         deletedRecipeRefCollectionIds += collectionId
+    }
+
+    override suspend fun deleteAll() {
+        items.clear()
+    }
+}
+
+private class FakeLibrarySettingsDao : LibrarySettingsDao {
+    var value: LibrarySettingsEntity? = null
+
+    override suspend fun upsert(settings: LibrarySettingsEntity) {
+        value = settings
+    }
+
+    override suspend fun getById(id: String): LibrarySettingsEntity? = value
+
+    override suspend fun deleteAll() {
+        value = null
+    }
+}
+
+private class FakeLibraryMetadataDao : LibraryMetadataDao {
+    var value: LibraryMetadataEntity? = null
+
+    override suspend fun upsert(metadata: LibraryMetadataEntity) {
+        value = metadata
+    }
+
+    override suspend fun getByLibraryId(libraryId: String): LibraryMetadataEntity? =
+        value?.takeIf { it.libraryId == libraryId }
+
+    override suspend fun getAny(): LibraryMetadataEntity? = value
+
+    override suspend fun deleteAll() {
+        value = null
     }
 }

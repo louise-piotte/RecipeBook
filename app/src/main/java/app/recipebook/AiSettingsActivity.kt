@@ -9,6 +9,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
+import app.recipebook.data.local.recipes.RecipeRepositoryProvider
 import app.recipebook.data.local.settings.AiBackendSettings
 import app.recipebook.data.local.settings.AiBackendSettingsStore
 import app.recipebook.data.local.settings.AppLanguageStore
@@ -23,6 +24,7 @@ class AiSettingsActivity : ComponentActivity() {
         keepScreenOnWhileInUse()
         WindowCompat.setDecorFitsSystemWindows(window, true)
 
+        val repository = RecipeRepositoryProvider.createServices(this).repository
         val languageStore = AppLanguageStore(this)
         val aiSettingsStore = AiBackendSettingsStore(this)
 
@@ -35,7 +37,12 @@ class AiSettingsActivity : ComponentActivity() {
                     language = language,
                     settings = aiSettings,
                     onLanguageChange = { selected ->
-                        lifecycleScope.launch { languageStore.setLanguage(selected) }
+                        lifecycleScope.launch {
+                            languageStore.setLanguage(selected)
+                            repository.updateLibrarySettings(
+                                repository.getLibrarySettings().copy(language = selected)
+                            )
+                        }
                     },
                     onBack = ::finish,
                     onSave = { updated ->

@@ -24,7 +24,7 @@ class CollectionManagerActivity : ComponentActivity() {
         keepScreenOnWhileInUse()
         WindowCompat.setDecorFitsSystemWindows(window, true)
 
-        val repository = RecipeRepositoryProvider.create(this)
+        val repository = RecipeRepositoryProvider.createServices(this).repository
         val languageStore = AppLanguageStore(this)
 
         lifecycleScope.launch {
@@ -42,7 +42,12 @@ class CollectionManagerActivity : ComponentActivity() {
                     recipes = recipes,
                     language = language,
                     onLanguageChange = { selected ->
-                        lifecycleScope.launch { languageStore.setLanguage(selected) }
+                        lifecycleScope.launch {
+                            languageStore.setLanguage(selected)
+                            repository.updateLibrarySettings(
+                                repository.getLibrarySettings().copy(language = selected)
+                            )
+                        }
                     },
                     onNavigateToLibrary = { collectionId ->
                         startActivity(MainActivity.intentForCollection(this, collectionId))

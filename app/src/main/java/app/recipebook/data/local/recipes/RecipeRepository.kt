@@ -75,9 +75,11 @@ class RecipeRepository(
     private val librarySettingsDao: LibrarySettingsDao = EmptyLibrarySettingsDao,
     private val libraryMetadataDao: LibraryMetadataDao = EmptyLibraryMetadataDao,
     private val seedLibrary: SeedLibraryData = SeedLibraryData(),
-    private val seedLibraryLoader: (() -> SeedLibraryData)? = null
+    private val seedLibraryLoader: (() -> SeedLibraryData)? = null,
+    private val transactionRunner: suspend (suspend () -> Unit) -> Unit = { block -> block() }
 ) {
     private var cachedSeedLibrary: SeedLibraryData = seedLibrary
+    var onLibraryMutated: (suspend () -> Unit)? = null
 
     fun observeRecipes(): Flow<List<Recipe>> = recipeDao.observeAll().map { recipes ->
         recipes.map(RecipeWithRelations::toDomainRecipe)
@@ -127,6 +129,7 @@ class RecipeRepository(
             tagRefs = storage.tagRefs,
             collectionRefs = storage.collectionRefs
         )
+        notifyLibraryMutated()
     }
 
     suspend fun createIngredientReference(
@@ -147,6 +150,7 @@ class RecipeRepository(
             updatedAt = now
         )
         ingredientReferenceDao.upsert(ingredientReference.toEntity())
+        notifyLibraryMutated()
         return ingredientReference
     }
 
@@ -208,6 +212,7 @@ class RecipeRepository(
             updatedAt = now
         )
         ingredientReferenceDao.upsert(merged.toEntity())
+        notifyLibraryMutated()
         return merged
     }
 
@@ -231,6 +236,7 @@ class RecipeRepository(
             updatedAt = now
         )
         ingredientReferenceDao.upsert(ingredientReference.toEntity())
+        notifyLibraryMutated()
         return ingredientReference
     }
 
@@ -246,6 +252,7 @@ class RecipeRepository(
         )
         validateIngredientSubstitution(rule)
         contextualSubstitutionRuleDao.upsert(rule.toEntity())
+        notifyLibraryMutated()
         return rule
     }
 
@@ -263,11 +270,13 @@ class RecipeRepository(
         )
         validateIngredientSubstitution(rule)
         contextualSubstitutionRuleDao.upsert(rule.toEntity())
+        notifyLibraryMutated()
         return rule
     }
 
     suspend fun deleteIngredientSubstitution(id: String) {
         contextualSubstitutionRuleDao.deleteById(id)
+        notifyLibraryMutated()
     }
 
     private suspend fun ensureIngredientReferenceExists(id: String) {
@@ -319,6 +328,7 @@ class RecipeRepository(
             category = draft.category ?: TagCategory.OTHER
         )
         tagDao.upsert(tag.toEntity())
+        notifyLibraryMutated()
         return tag
     }
 
@@ -332,6 +342,7 @@ class RecipeRepository(
             category = draft.category ?: existing.category
         )
         tagDao.upsert(tag.toEntity())
+        notifyLibraryMutated()
         return tag
     }
 
@@ -344,6 +355,7 @@ class RecipeRepository(
             descriptionEn = draft.descriptionEn.trim().ifBlank { null }
         )
         collectionDao.upsert(collection.toEntity())
+        notifyLibraryMutated()
         return collection
     }
 
@@ -356,16 +368,96 @@ class RecipeRepository(
             descriptionEn = draft.descriptionEn.trim().ifBlank { null }
         )
         collectionDao.upsert(collection.toEntity())
+        notifyLibraryMutated()
         return collection
     }
 
     suspend fun deleteCollection(id: String) {
         collectionDao.deleteRecipeRefsByCollectionId(id)
         collectionDao.deleteById(id)
+        notifyLibraryMutated()
     }
 
     suspend fun deleteRecipeById(id: String) {
         recipeDao.deleteById(id)
+        notifyLibraryMutated()
+    }
+
+    suspend fun getLibrarySettings(
+        fallbackLanguage: AppLanguage = AppLanguage.EN
+    ): LibrarySettings = withContext(Dispatchers.IO) {
+        librarySettingsDao.getById()?.toDomain()
+            ?: resolveSeedLibrary().settings
+            ?: LibrarySettings(
+                language = fallbackLanguage,
+                driveSyncEnabled = false
+            )
+    }
+
+    suspend fun updateLibrarySettings(
+        settings: LibrarySettings,
+        notifyMutation: Boolean = true
+    ) {
+        librarySettingsDao.upsert(settings.toEntity())
+        if (notifyMutation) {
+            notifyLibraryMutated()
+        }
+    }
+
+    suspend fun replaceLibrary(
+        library: RecipeLibrary,
+        notifyMutation: Boolean = true
+    ) = withContext(Dispatchers.IO) {
+        transactionRunner {
+            recipeDao.deleteAll()
+            contextualSubstitutionRuleDao.deleteAll()
+            ingredientReferenceDao.deleteAll()
+            tagDao.deleteAll()
+            collectionDao.deleteAll()
+            libraryMetadataDao.deleteAll()
+            librarySettingsDao.deleteAll()
+
+            library.ingredientReferences
+                .distinctBy(IngredientReference::id)
+                .takeIf(List<IngredientReference>::isNotEmpty)
+                ?.let { ingredientReferenceDao.upsertAll(it.map(IngredientReference::toEntity)) }
+
+            library.contextualSubstitutionRules
+                .distinctBy(ContextualSubstitutionRule::id)
+                .takeIf(List<ContextualSubstitutionRule>::isNotEmpty)
+                ?.let { contextualSubstitutionRuleDao.upsertAll(it.map(ContextualSubstitutionRule::toEntity)) }
+
+            library.tags
+                .distinctBy(Tag::id)
+                .takeIf(List<Tag>::isNotEmpty)
+                ?.let { tagDao.upsertAll(it.map(Tag::toEntity)) }
+
+            library.collections
+                .distinctBy(Collection::id)
+                .takeIf(List<Collection>::isNotEmpty)
+                ?.let { collectionDao.upsertAll(it.map(Collection::toEntity)) }
+
+            library.metadata.let { libraryMetadataDao.upsert(it.toEntity()) }
+            library.settings.let { librarySettingsDao.upsert(it.toEntity()) }
+
+            library.recipes
+                .distinctBy(Recipe::id)
+                .forEach { importedRecipe ->
+                    validateRecipeLinks(importedRecipe)
+                    val storage = importedRecipe.toStorageGraph()
+                    recipeDao.replaceRecipeGraph(
+                        recipe = storage.recipe,
+                        ingredientLines = storage.ingredientLines,
+                        ingredientLineSubstitutions = storage.ingredientLineSubstitutions,
+                        recipeLinks = storage.recipeLinks,
+                        tagRefs = storage.tagRefs,
+                        collectionRefs = storage.collectionRefs
+                    )
+                }
+        }
+        if (notifyMutation) {
+            notifyLibraryMutated()
+        }
     }
 
 
@@ -434,6 +526,10 @@ class RecipeRepository(
             cachedSeedLibrary = loadedSeedLibrary
         }
         return loadedSeedLibrary
+    }
+
+    private suspend fun notifyLibraryMutated() {
+        onLibraryMutated?.invoke()
     }
 
     fun createBlankRecipe(now: String = Instant.now().toString()): Recipe = Recipe(
@@ -889,6 +985,21 @@ private fun ContextualSubstitutionRule.toEntity(): ContextualSubstitutionRuleEnt
     updatedAt = updatedAt
 )
 
+private fun LibrarySettings.toEntity(): LibrarySettingsEntity = LibrarySettingsEntity(
+    language = language.name,
+    driveSyncEnabled = driveSyncEnabled,
+    driveFileName = driveFileName,
+    driveFolderId = driveFolderId,
+    openSourceInAppBrowser = openSourceInAppBrowser
+)
+
+private fun LibraryMetadata.toEntity(): LibraryMetadataEntity = LibraryMetadataEntity(
+    libraryId = libraryId,
+    createdAt = createdAt,
+    updatedAt = updatedAt,
+    exportedAt = exportedAt
+)
+
 private val storageJson = Json {
     ignoreUnknownKeys = true
     encodeDefaults = true
@@ -1043,6 +1154,8 @@ private object EmptyIngredientReferenceDao : IngredientReferenceDao {
     override fun observeAll(): Flow<List<IngredientReferenceEntity>> = flowOf(emptyList())
 
     override suspend fun getById(id: String): IngredientReferenceEntity? = null
+
+    override suspend fun deleteAll() = Unit
 }
 
 private object EmptyContextualSubstitutionRuleDao : ContextualSubstitutionRuleDao {
@@ -1057,6 +1170,8 @@ private object EmptyContextualSubstitutionRuleDao : ContextualSubstitutionRuleDa
     override suspend fun getById(id: String): ContextualSubstitutionRuleEntity? = null
 
     override suspend fun deleteById(id: String) = Unit
+
+    override suspend fun deleteAll() = Unit
 }
 
 private object EmptyTagDao : TagDao {
@@ -1067,6 +1182,8 @@ private object EmptyTagDao : TagDao {
     override fun observeAll(): Flow<List<TagEntity>> = flowOf(emptyList())
 
     override suspend fun getById(id: String): TagEntity? = null
+
+    override suspend fun deleteAll() = Unit
 }
 
 private object EmptyCollectionDao : CollectionDao {
@@ -1081,12 +1198,16 @@ private object EmptyCollectionDao : CollectionDao {
     override suspend fun deleteById(id: String) = Unit
 
     override suspend fun deleteRecipeRefsByCollectionId(collectionId: String) = Unit
+
+    override suspend fun deleteAll() = Unit
 }
 
 private object EmptyLibrarySettingsDao : LibrarySettingsDao {
     override suspend fun upsert(settings: LibrarySettingsEntity) = Unit
 
     override suspend fun getById(id: String): LibrarySettingsEntity? = null
+
+    override suspend fun deleteAll() = Unit
 }
 
 private object EmptyLibraryMetadataDao : LibraryMetadataDao {
@@ -1095,6 +1216,8 @@ private object EmptyLibraryMetadataDao : LibraryMetadataDao {
     override suspend fun getByLibraryId(libraryId: String): LibraryMetadataEntity? = null
 
     override suspend fun getAny(): LibraryMetadataEntity? = null
+
+    override suspend fun deleteAll() = Unit
 }
 
 private fun slugify(input: String): String {

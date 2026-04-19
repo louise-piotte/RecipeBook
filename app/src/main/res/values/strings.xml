@@ -5,6 +5,8 @@
     <string name="menu_label">Menu</string>
     <string name="menu_recipe_library_label">Recipes</string>
     <string name="menu_export_recipes_label">Export recipes</string>
+    <string name="menu_setup_drive_backup_label">Set up Drive backup</string>
+    <string name="menu_import_drive_backup_label">Replace from Drive backup</string>
     <string name="menu_collections_label">Collections</string>
     <string name="menu_ingredients_label">Ingredients</string>
     <string name="menu_tags_label">Tags</string>
@@ -27,6 +29,13 @@
     <string name="import_recipe_label">Import recipe</string>
     <string name="export_recipes_success_label">Recipe export saved.</string>
     <string name="export_recipes_failed_label">Recipe export failed.</string>
+    <string name="drive_backup_setup_success_label">Drive backup connected.</string>
+    <string name="drive_backup_setup_failed_label">Drive backup setup failed.</string>
+    <string name="drive_backup_import_success_label">Library replaced from Drive backup.</string>
+    <string name="drive_backup_import_failed_label">Drive backup import failed.</string>
+    <string name="drive_sync_pull_success_label">Drive backup loaded.</string>
+    <string name="drive_sync_cache_restore_label">Drive was unavailable. Restored the cached library backup.</string>
+    <string name="drive_sync_pull_failed_label">Drive backup could not be loaded.</string>
     <string name="import_recipe_help_label">Paste a recipe URL or recipe text to build a draft.</string>
     <string name="import_recipe_input_label">Recipe URL or text</string>
     <string name="import_action_label">Import</string>

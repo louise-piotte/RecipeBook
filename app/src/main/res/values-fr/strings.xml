@@ -5,6 +5,8 @@
     <string name="menu_label">Menu</string>
     <string name="menu_recipe_library_label">Recettes</string>
     <string name="menu_export_recipes_label">Exporter les recettes</string>
+    <string name="menu_setup_drive_backup_label">Configurer la sauvegarde Drive</string>
+    <string name="menu_import_drive_backup_label">Remplacer depuis la sauvegarde Drive</string>
     <string name="menu_collections_label">Collections</string>
     <string name="menu_ingredients_label">Ingr&#233;dients</string>
     <string name="menu_tags_label">Tags</string>
@@ -27,6 +29,13 @@
     <string name="import_recipe_label">Importer une recette</string>
     <string name="export_recipes_success_label">Exportation des recettes enregistr&#233;e.</string>
     <string name="export_recipes_failed_label">&#201;chec de l&#8217;exportation des recettes.</string>
+    <string name="drive_backup_setup_success_label">Sauvegarde Drive configur&#233;e.</string>
+    <string name="drive_backup_setup_failed_label">&#201;chec de la configuration de la sauvegarde Drive.</string>
+    <string name="drive_backup_import_success_label">Biblioth&#232;que remplac&#233;e depuis la sauvegarde Drive.</string>
+    <string name="drive_backup_import_failed_label">&#201;chec de l&#8217;importation depuis la sauvegarde Drive.</string>
+    <string name="drive_sync_pull_success_label">Sauvegarde Drive charg&#233;e.</string>
+    <string name="drive_sync_cache_restore_label">Drive &#233;tait indisponible. La sauvegarde locale en cache a &#233;t&#233; restaur&#233;e.</string>
+    <string name="drive_sync_pull_failed_label">La sauvegarde Drive n&#8217;a pas pu &#234;tre charg&#233;e.</string>
     <string name="import_recipe_help_label">Coller une URL de recette ou le texte d&#8217;une recette pour cr&#233;er une &#233;bauche.</string>
     <string name="import_recipe_input_label">URL ou texte de la recette</string>
     <string name="import_action_label">Importer</string>

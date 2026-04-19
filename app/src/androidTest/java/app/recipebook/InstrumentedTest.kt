@@ -1,6 +1,7 @@
 package app.recipebook
 
 import androidx.room.Room
+import androidx.room.withTransaction
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import app.recipebook.data.local.db.RecipeBookDatabase
@@ -11,9 +12,15 @@ import app.recipebook.data.local.db.RecipeLinkEntity
 import app.recipebook.data.local.db.RecipeTagCrossRef
 import app.recipebook.data.local.recipes.RecipeRepository
 import app.recipebook.data.local.recipes.SeedLibraryData
+import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
+import app.recipebook.domain.model.Collection
+import app.recipebook.domain.model.IngredientReference
+import app.recipebook.domain.model.LibraryMetadata
+import app.recipebook.domain.model.LibrarySettings
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.LocalizedSystemText
+import app.recipebook.domain.model.RecipeLibrary
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -204,5 +211,73 @@ class InstrumentedTest {
         val storedAfterDelete = repository.observeRecipes().first()
 
         assertTrue(storedAfterDelete.isEmpty())
+    }
+
+    @Test
+    fun recipeRepository_replaceLibrary_replacesRoomBackedLibraryState() = runBlocking {
+        val repository = RecipeRepository(
+            recipeDao = db.recipeDao(),
+            ingredientReferenceDao = db.ingredientReferenceDao(),
+            contextualSubstitutionRuleDao = db.contextualSubstitutionRuleDao(),
+            tagDao = db.tagDao(),
+            collectionDao = db.collectionDao(),
+            librarySettingsDao = db.librarySettingsDao(),
+            libraryMetadataDao = db.libraryMetadataDao(),
+            transactionRunner = { block -> db.withTransaction { block() } }
+        )
+        repository.upsertRecipe(
+            repository.createBlankRecipe("2026-04-19T13:00:00Z").copy(
+                id = "recipe-old",
+                languages = BilingualText(
+                    fr = LocalizedSystemText("Ancienne recette", "", "", ""),
+                    en = LocalizedSystemText("Old Recipe", "", "", "")
+                )
+            )
+        )
+
+        repository.replaceLibrary(
+            RecipeLibrary(
+                metadata = LibraryMetadata(
+                    libraryId = "library-drive",
+                    createdAt = "2026-04-19T13:00:00Z",
+                    updatedAt = "2026-04-19T13:05:00Z",
+                    exportedAt = "2026-04-19T13:10:00Z"
+                ),
+                recipes = listOf(
+                    repository.createBlankRecipe("2026-04-19T13:05:00Z").copy(
+                        id = "recipe-new",
+                        languages = BilingualText(
+                            fr = LocalizedSystemText("Recette Drive", "", "", ""),
+                            en = LocalizedSystemText("Drive Recipe", "", "", "")
+                        )
+                    )
+                ),
+                ingredientReferences = listOf(
+                    IngredientReference(
+                        id = "ingredient-ref-1",
+                        nameFr = "Farine",
+                        nameEn = "Flour",
+                        updatedAt = "2026-04-19T13:10:00Z"
+                    )
+                ),
+                ingredientForms = emptyList(),
+                substitutionRules = emptyList(),
+                contextualSubstitutionRules = emptyList(),
+                units = emptyList(),
+                tags = emptyList(),
+                collections = listOf(Collection(id = "collection-1", nameFr = "Base", nameEn = "Base")),
+                settings = LibrarySettings(
+                    language = AppLanguage.FR,
+                    driveSyncEnabled = true,
+                    driveFileName = "recipebook-library-backup.zip"
+                )
+            ),
+            notifyMutation = false
+        )
+
+        assertEquals(1, repository.observeRecipes().first().size)
+        assertEquals("Drive Recipe", repository.getRecipeById("recipe-new")?.languages?.en?.title)
+        assertEquals("recipebook-library-backup.zip", db.librarySettingsDao().getById()?.driveFileName)
+        assertEquals("library-drive", db.libraryMetadataDao().getAny()?.libraryId)
     }
 }

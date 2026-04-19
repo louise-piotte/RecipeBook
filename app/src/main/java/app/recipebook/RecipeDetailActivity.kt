@@ -27,7 +27,7 @@ class RecipeDetailActivity : ComponentActivity() {
         keepScreenOnWhileInUse()
         WindowCompat.setDecorFitsSystemWindows(window, true)
 
-        val repository = RecipeRepositoryProvider.create(this)
+        val repository = RecipeRepositoryProvider.createServices(this).repository
         val languageStore = AppLanguageStore(this)
         val recipeId = intent.getStringExtra(EXTRA_RECIPE_ID)
 
@@ -58,7 +58,12 @@ class RecipeDetailActivity : ComponentActivity() {
                     tags = tags,
                     language = language,
                     onLanguageChange = { selected ->
-                        lifecycleScope.launch { languageStore.setLanguage(selected) }
+                        lifecycleScope.launch {
+                            languageStore.setLanguage(selected)
+                            repository.updateLibrarySettings(
+                                repository.getLibrarySettings().copy(language = selected)
+                            )
+                        }
                     },
                     onBack = ::finish,
                     onNavigate = { destination ->
@@ -69,6 +74,8 @@ class RecipeDetailActivity : ComponentActivity() {
                             }
                             MainMenuDestination.Import -> Unit
                             MainMenuDestination.ExportRecipes -> Unit
+                            MainMenuDestination.SetupDriveBackup -> Unit
+                            MainMenuDestination.ImportDriveBackup -> Unit
                             MainMenuDestination.Collections -> {
                                 startActivity(CollectionManagerActivity.intent(this))
                                 finish()

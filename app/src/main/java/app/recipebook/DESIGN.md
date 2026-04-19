@@ -6,6 +6,7 @@ This package contains Android entry points and thin activity-level wiring.
 - Host top-level activities for the library, detail, editor, collection manager, and ingredient/tag manager flows.
 - Create app-scoped dependencies that are still simple enough to build directly in activities.
 - Bridge classic Android lifecycle/events into Compose screens.
+- Kick off launch-time library restore/sync behavior before Compose screens rely on the current library state.
 
 ## Design Rules
 - Keep activities thin. Business rules and storage behavior belong in `data` or `domain`.
@@ -15,6 +16,7 @@ This package contains Android entry points and thin activity-level wiring.
 
 ## Key Files
 - `MainActivity.kt`: library entry point and language/repository setup.
+- `MainActivity.kt`: library entry point, launch-time Drive/cache restore, and shared language/repository setup.
 - `RecipeDetailActivity.kt` and `RecipeEditorActivity.kt`: recipe-specific flows.
 - `ImportRecipeActivity.kt`: Android share-target entry that resolves shared text or URLs into an imported draft before launching the editor.
 - `CollectionManagerActivity.kt` and `IngredientTagManagerActivity.kt`: management flows for supporting catalog data.

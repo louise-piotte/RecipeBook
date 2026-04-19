@@ -85,6 +85,9 @@ abstract class RecipeDao {
     @Query("DELETE FROM recipes WHERE id = :id")
     abstract suspend fun deleteById(id: String)
 
+    @Query("DELETE FROM recipes")
+    abstract suspend fun deleteAll()
+
     @Transaction
     open suspend fun replaceRecipeGraph(
         recipe: RecipeEntity,
@@ -130,6 +133,9 @@ interface IngredientReferenceDao {
 
     @Query("SELECT * FROM ingredient_references WHERE id = :id LIMIT 1")
     suspend fun getById(id: String): IngredientReferenceEntity?
+
+    @Query("DELETE FROM ingredient_references")
+    suspend fun deleteAll()
 }
 
 @Dao
@@ -151,6 +157,9 @@ interface ContextualSubstitutionRuleDao {
 
     @Query("DELETE FROM contextual_substitution_rules WHERE id = :id")
     suspend fun deleteById(id: String)
+
+    @Query("DELETE FROM contextual_substitution_rules")
+    suspend fun deleteAll()
 }
 
 @Dao
@@ -166,6 +175,9 @@ interface TagDao {
 
     @Query("SELECT * FROM tags WHERE id = :id LIMIT 1")
     suspend fun getById(id: String): TagEntity?
+
+    @Query("DELETE FROM tags")
+    suspend fun deleteAll()
 }
 
 @Dao
@@ -187,6 +199,9 @@ interface CollectionDao {
 
     @Query("DELETE FROM recipe_collection_cross_refs WHERE collectionId = :collectionId")
     suspend fun deleteRecipeRefsByCollectionId(collectionId: String)
+
+    @Query("DELETE FROM collections")
+    suspend fun deleteAll()
 }
 
 @Dao
@@ -196,6 +211,9 @@ interface LibrarySettingsDao {
 
     @Query("SELECT * FROM library_settings WHERE id = :id LIMIT 1")
     suspend fun getById(id: String = LibrarySettingsEntity.SINGLETON_ID): LibrarySettingsEntity?
+
+    @Query("DELETE FROM library_settings")
+    suspend fun deleteAll()
 }
 
 @Dao
@@ -208,6 +226,9 @@ interface LibraryMetadataDao {
 
     @Query("SELECT * FROM library_metadata LIMIT 1")
     suspend fun getAny(): LibraryMetadataEntity?
+
+    @Query("DELETE FROM library_metadata")
+    suspend fun deleteAll()
 }
 
 data class RecipeWithRelations(

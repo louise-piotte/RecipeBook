@@ -77,6 +77,7 @@ import app.recipebook.RecipeDetailActivity
 import app.recipebook.RecipeEditorActivity
 import app.recipebook.data.local.recipes.RecipeAiRuntime
 import app.recipebook.data.local.recipes.RecipeLibraryExporter
+import app.recipebook.data.local.recipes.RecipeLibrarySyncCoordinator
 import app.recipebook.data.local.recipes.RecipeRepository
 import app.recipebook.domain.localization.BilingualText
 import app.recipebook.domain.localization.BilingualTextResolver
@@ -92,6 +93,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun RecipeLibraryScreen(
     repository: RecipeRepository,
+    syncCoordinator: RecipeLibrarySyncCoordinator,
     language: AppLanguage,
     initialSelectedCollectionId: String? = null,
     onLanguageChange: (AppLanguage) -> Unit,
@@ -112,8 +114,13 @@ fun RecipeLibraryScreen(
     val exporter = remember(context, repository) { RecipeLibraryExporter(context, repository) }
     var pendingExportFile by remember { mutableStateOf<File?>(null) }
     var exportInProgress by remember { mutableStateOf(false) }
+    var driveSyncInProgress by remember { mutableStateOf(false) }
     val exportFailedLabel = localizedString(R.string.export_recipes_failed_label, language)
     val exportSuccessLabel = localizedString(R.string.export_recipes_success_label, language)
+    val driveSetupSuccessLabel = localizedString(R.string.drive_backup_setup_success_label, language)
+    val driveSetupFailedLabel = localizedString(R.string.drive_backup_setup_failed_label, language)
+    val driveImportSuccessLabel = localizedString(R.string.drive_backup_import_success_label, language)
+    val driveImportFailedLabel = localizedString(R.string.drive_backup_import_failed_label, language)
     val exportLauncher = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/zip")) { uri: Uri? ->
         val exportFile = pendingExportFile
         pendingExportFile = null
@@ -155,9 +162,40 @@ fun RecipeLibraryScreen(
             exportInProgress = false
         }
     }
-
-    LaunchedEffect(repository) {
-        repository.seedBundledLibraryIfMissing()
+    val driveSetupLauncher = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/zip")) { uri: Uri? ->
+        if (uri == null) {
+            driveSyncInProgress = false
+            return@rememberLauncherForActivityResult
+        }
+        driveSyncInProgress = true
+        scope.launch {
+            runCatching {
+                syncCoordinator.configureDriveBackupDocument(uri)
+            }.onSuccess {
+                Toast.makeText(context, driveSetupSuccessLabel, Toast.LENGTH_SHORT).show()
+            }.onFailure {
+                Toast.makeText(context, driveSetupFailedLabel, Toast.LENGTH_SHORT).show()
+            }
+            driveSyncInProgress = false
+        }
+    }
+    val driveImportLauncher = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri: Uri? ->
+        if (uri == null) {
+            driveSyncInProgress = false
+            return@rememberLauncherForActivityResult
+        }
+        driveSyncInProgress = true
+        scope.launch {
+            runCatching {
+                syncCoordinator.replaceLibraryFromDrive(uri)
+            }.onSuccess {
+                onLanguageChange(repository.getLibrarySettings().language)
+                Toast.makeText(context, driveImportSuccessLabel, Toast.LENGTH_SHORT).show()
+            }.onFailure {
+                Toast.makeText(context, driveImportFailedLabel, Toast.LENGTH_SHORT).show()
+            }
+            driveSyncInProgress = false
+        }
     }
 
     LaunchedEffect(initialSelectedCollectionId) {
@@ -217,7 +255,11 @@ fun RecipeLibraryScreen(
                 },
                 language = language,
                 onLanguageChange = onLanguageChange,
-                additionalMenuDestinations = listOf(MainMenuDestination.ExportRecipes),
+                additionalMenuDestinations = listOf(
+                    MainMenuDestination.ExportRecipes,
+                    MainMenuDestination.SetupDriveBackup,
+                    MainMenuDestination.ImportDriveBackup
+                ),
                 onNavigate = { destination ->
                     when (destination) {
                         MainMenuDestination.Library -> Unit
@@ -256,6 +298,36 @@ fun RecipeLibraryScreen(
                                         exportFailedLabel,
                                         Toast.LENGTH_SHORT
                                     ).show()
+                                }
+                            }
+                        }
+                        MainMenuDestination.SetupDriveBackup -> {
+                            if (driveSyncInProgress) return@RecipeBookTopBar
+                            driveSyncInProgress = true
+                            driveSetupLauncher.launch("recipebook-library-backup.zip")
+                        }
+                        MainMenuDestination.ImportDriveBackup -> {
+                            if (driveSyncInProgress) return@RecipeBookTopBar
+                            driveSyncInProgress = true
+                            scope.launch {
+                                val usedConfiguredBackup = runCatching {
+                                    if (syncCoordinator.hasConfiguredDriveBackup()) {
+                                        syncCoordinator.replaceLibraryFromConfiguredDrive()
+                                        true
+                                    } else {
+                                        false
+                                    }
+                                }.getOrElse {
+                                    Toast.makeText(context, driveImportFailedLabel, Toast.LENGTH_SHORT).show()
+                                    driveSyncInProgress = false
+                                    return@launch
+                                }
+                                if (usedConfiguredBackup) {
+                                    onLanguageChange(repository.getLibrarySettings().language)
+                                    Toast.makeText(context, driveImportSuccessLabel, Toast.LENGTH_SHORT).show()
+                                    driveSyncInProgress = false
+                                } else {
+                                    driveImportLauncher.launch(arrayOf("application/zip"))
                                 }
                             }
                         }
@@ -1034,6 +1106,8 @@ internal enum class MainMenuDestination(@StringRes val labelResId: Int) {
     Library(R.string.menu_recipe_library_label),
     Import(R.string.import_recipe_label),
     ExportRecipes(R.string.menu_export_recipes_label),
+    SetupDriveBackup(R.string.menu_setup_drive_backup_label),
+    ImportDriveBackup(R.string.menu_import_drive_backup_label),
     Collections(R.string.menu_collections_label),
     Ingredients(R.string.menu_ingredients_label),
     Tags(R.string.menu_tags_label),

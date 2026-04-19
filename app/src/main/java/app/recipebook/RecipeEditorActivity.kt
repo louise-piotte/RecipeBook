@@ -53,7 +53,7 @@ class RecipeEditorActivity : ComponentActivity() {
 
         photoStore = RecipePhotoStore(this)
 
-        val repository = RecipeRepositoryProvider.create(this)
+        val repository = RecipeRepositoryProvider.createServices(this).repository
         val localizationCoordinator = RecipeAiRuntime.createLocalizationCoordinator(this)
         val languageStore = AppLanguageStore(this)
         val recipeId = intent.getStringExtra(EXTRA_RECIPE_ID)
@@ -117,7 +117,12 @@ class RecipeEditorActivity : ComponentActivity() {
                         importWarnings = importedDraft?.warnings.orEmpty(),
                         language = language,
                         onLanguageChange = { selected ->
-                            lifecycleScope.launch { languageStore.setLanguage(selected) }
+                            lifecycleScope.launch {
+                                languageStore.setLanguage(selected)
+                                repository.updateLibrarySettings(
+                                    repository.getLibrarySettings().copy(language = selected)
+                                )
+                            }
                         },
                         onBack = ::finish,
                         onSave = { updatedRecipe, authoritativeLanguage ->

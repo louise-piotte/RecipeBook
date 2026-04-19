@@ -12,6 +12,8 @@ This package contains the main recipe-library orchestration layer.
 - `RecipeRepositoryProvider.kt`: central place to assemble Room + repository dependencies.
 - `BundledRecipeLibraryLoader.kt`, `BundledIngredientCatalog.kt`, `BundledTagCatalog.kt`: seed and catalog hydration from assets.
 - `RecipeExportCodec.kt`, `RecipeLibraryExporter.kt`: seed-shaped export packaging that writes one recipe JSON per file plus manifest, split catalog files, and packaged media into a single zip; also exposes an internal ingredient-catalog JSON export.
+- `RecipeLibraryImportCodec.kt`, `RecipeLibraryAssetStore.kt`: replace-mode import reader for that same canonical seed-shaped zip plus staged media materialization into app-managed files.
+- `RecipeLibrarySyncCoordinator.kt`, `RecipeLibraryCacheStore.kt`: local cached-library snapshots plus Storage Access Framework backed Drive backup/pull behavior using one configured Drive zip document.
 - `IngredientSubstitutionResolver.kt`: domain-facing substitution/conversion helper logic backed by stored and seeded data.
 - `RecipePhotoStore.kt`: local file ownership for recipe photos, including webpage-photo downloads into draft storage before the editor saves them permanently.
 - `RecipeLocalizationCoordinator.kt`: bilingual save/regeneration seam that treats the active editor language as authoritative, tracks draft sync status, preserves shared ingredient-line source text during opposite-language regeneration, and surfaces ingredient-reference suggestions for repository creation/reuse.
@@ -25,7 +27,9 @@ This package contains the main recipe-library orchestration layer.
 - Validation that protects graph integrity lives close to repository writes.
 - Bundled seed data and user-created data are combined by repository orchestration, but the user database becomes authoritative after seeding.
 - Export packaging should mirror the bundled seed package layout rather than inventing a parallel recipe archive format, so recipe JSON, manifest references, and packaged media stay compatible with the existing seed loader/tests.
+- Full-library import/export/sync should use that same canonical seed-package zip layout everywhere, including bundled data, Drive backup, cached local snapshots, and any future whole-library handoff flows.
 - Import helpers should extract whatever is reliable without AI, keep source evidence and warnings in staged importer models, send the current ingredient catalog plus deterministic draft JSON when AI finishing is available, and fall back deterministically when that finishing step is skipped or invalid.
+- Drive backup uses Android's document provider flow rather than a separate Drive REST client: the app persists one document URI locally, pushes a fresh canonical zip after each library mutation, pulls it on launch, and falls back to the last cached local zip if Drive is unavailable.
 - Shared webpage imports should keep the source page's primary recipe image when one can be resolved, then hand that image off through the app-managed photo pipeline so `mainPhotoId` behavior stays consistent with manual photo imports.
 - Runtime AI integration should read local app settings for `apiKey`, `baseUrl`, and shared `model`, call one OpenAI-compatible backend seam, and preserve deterministic import plus local-stub regeneration as fallbacks.
 - Bilingual save orchestration and regeneration should happen here rather than in Compose so later translation/regeneration backends can plug into one persistence-facing seam.
