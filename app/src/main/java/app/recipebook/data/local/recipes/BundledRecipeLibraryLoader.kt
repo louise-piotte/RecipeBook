@@ -20,10 +20,13 @@ import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.ContextualSubstitutionRule
 import app.recipebook.domain.model.IngredientForm
+import app.recipebook.domain.model.LibraryMetadata
+import app.recipebook.domain.model.LibrarySettings
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.SubstitutionRule
 import app.recipebook.domain.model.Tag
+import app.recipebook.domain.model.UnitDefinition
 import java.io.File
 import kotlinx.serialization.DeserializationStrategy
 import kotlinx.serialization.Serializable
@@ -86,13 +89,16 @@ object BundledRecipeLibraryLoader {
         ).toDomainLibrary()
 
         SeedLibraryData(
+            metadata = library.metadata,
             recipes = materializeSeedRecipePhotos(context, manifest, library.recipes),
             ingredientReferences = library.ingredientReferences,
             ingredientForms = library.ingredientForms,
             substitutionRules = library.substitutionRules,
             contextualSubstitutionRules = library.contextualSubstitutionRules,
+            units = library.units,
             tags = library.tags,
-            collections = library.collections
+            collections = library.collections,
+            settings = library.settings
         )
     }.getOrElse {
         Log.e(TAG, "Failed to load bundled seed library", it)
@@ -167,11 +173,14 @@ private data class BundledSeedManifestDto(
 }
 
 data class SeedLibraryData(
+    val metadata: LibraryMetadata? = null,
     val recipes: List<Recipe> = emptyList(),
     val ingredientReferences: List<IngredientReference> = emptyList(),
     val ingredientForms: List<IngredientForm> = emptyList(),
     val substitutionRules: List<SubstitutionRule> = emptyList(),
     val contextualSubstitutionRules: List<ContextualSubstitutionRule> = emptyList(),
+    val units: List<UnitDefinition> = emptyList(),
     val tags: List<Tag> = emptyList(),
-    val collections: List<Collection> = emptyList()
+    val collections: List<Collection> = emptyList(),
+    val settings: LibrarySettings? = null
 )

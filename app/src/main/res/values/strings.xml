@@ -4,6 +4,7 @@
     <string name="language_option_fr_label">Fran&#231;ais</string>
     <string name="menu_label">Menu</string>
     <string name="menu_recipe_library_label">Recipes</string>
+    <string name="menu_export_recipes_label">Export recipes</string>
     <string name="menu_collections_label">Collections</string>
     <string name="menu_ingredients_label">Ingredients</string>
     <string name="menu_tags_label">Tags</string>
@@ -24,6 +25,8 @@
     <string name="add_recipe_label">Add recipe</string>
     <string name="edit_recipe_label">Edit recipe</string>
     <string name="import_recipe_label">Import recipe</string>
+    <string name="export_recipes_success_label">Recipe export saved.</string>
+    <string name="export_recipes_failed_label">Recipe export failed.</string>
     <string name="import_recipe_help_label">Paste a recipe URL or recipe text to build a draft.</string>
     <string name="import_recipe_input_label">Recipe URL or text</string>
     <string name="import_action_label">Import</string>

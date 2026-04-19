@@ -13,6 +13,8 @@ object RecipeRepositoryProvider {
             contextualSubstitutionRuleDao = db.contextualSubstitutionRuleDao(),
             tagDao = db.tagDao(),
             collectionDao = db.collectionDao(),
+            librarySettingsDao = db.librarySettingsDao(),
+            libraryMetadataDao = db.libraryMetadataDao(),
             seedLibraryLoader = { BundledRecipeLibraryLoader.loadLibrary(context.applicationContext) }
         )
     }

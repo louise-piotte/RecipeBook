@@ -68,6 +68,7 @@ class RecipeDetailActivity : ComponentActivity() {
                                 finish()
                             }
                             MainMenuDestination.Import -> Unit
+                            MainMenuDestination.ExportRecipes -> Unit
                             MainMenuDestination.Collections -> {
                                 startActivity(CollectionManagerActivity.intent(this))
                                 finish()

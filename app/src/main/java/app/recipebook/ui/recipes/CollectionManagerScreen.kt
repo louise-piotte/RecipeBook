@@ -70,6 +70,7 @@ fun CollectionManagerScreen(
                     when (destination) {
                         MainMenuDestination.Library -> onNavigateToLibrary(null)
                         MainMenuDestination.Import -> Unit
+                        MainMenuDestination.ExportRecipes -> Unit
                         MainMenuDestination.Collections -> Unit
                         MainMenuDestination.Ingredients -> onNavigateToIngredients()
                         MainMenuDestination.Tags -> onNavigateToTags()

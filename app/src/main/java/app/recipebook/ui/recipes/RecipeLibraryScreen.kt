@@ -2,7 +2,11 @@ package app.recipebook.ui.recipes
 
 import android.content.Intent
 import android.content.res.Configuration
+import android.net.Uri
+import android.widget.Toast
 import androidx.annotation.StringRes
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -72,6 +76,7 @@ import app.recipebook.CollectionManagerActivity
 import app.recipebook.RecipeDetailActivity
 import app.recipebook.RecipeEditorActivity
 import app.recipebook.data.local.recipes.RecipeAiRuntime
+import app.recipebook.data.local.recipes.RecipeLibraryExporter
 import app.recipebook.data.local.recipes.RecipeRepository
 import app.recipebook.domain.localization.BilingualText
 import app.recipebook.domain.localization.BilingualTextResolver
@@ -81,6 +86,7 @@ import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.Tag
 import app.recipebook.ui.theme.PopupShape
 import java.util.Locale
+import java.io.File
 import kotlinx.coroutines.launch
 
 @Composable
@@ -102,6 +108,53 @@ fun RecipeLibraryScreen(
     val collections by repository.observeCollections().collectAsState(initial = emptyList())
     val resolver = remember { BilingualTextResolver() }
     val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    val exporter = remember(context, repository) { RecipeLibraryExporter(context, repository) }
+    var pendingExportFile by remember { mutableStateOf<File?>(null) }
+    var exportInProgress by remember { mutableStateOf(false) }
+    val exportFailedLabel = localizedString(R.string.export_recipes_failed_label, language)
+    val exportSuccessLabel = localizedString(R.string.export_recipes_success_label, language)
+    val exportLauncher = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/zip")) { uri: Uri? ->
+        val exportFile = pendingExportFile
+        pendingExportFile = null
+        if (uri == null) {
+            exportFile?.delete()
+            exportInProgress = false
+            return@rememberLauncherForActivityResult
+        }
+        if (exportFile == null) {
+            exportInProgress = false
+            Toast.makeText(
+                context,
+                exportFailedLabel,
+                Toast.LENGTH_SHORT
+            ).show()
+            return@rememberLauncherForActivityResult
+        }
+        exportInProgress = true
+        scope.launch {
+            runCatching {
+                context.contentResolver.openOutputStream(uri).use { output ->
+                    requireNotNull(output) { "Unable to open export destination" }
+                    exportFile.inputStream().use { input -> input.copyTo(output) }
+                }
+            }.onSuccess {
+                Toast.makeText(
+                    context,
+                    exportSuccessLabel,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }.onFailure {
+                Toast.makeText(
+                    context,
+                    exportFailedLabel,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            exportFile.delete()
+            exportInProgress = false
+        }
+    }
 
     LaunchedEffect(repository) {
         repository.seedBundledLibraryIfMissing()
@@ -164,6 +217,7 @@ fun RecipeLibraryScreen(
                 },
                 language = language,
                 onLanguageChange = onLanguageChange,
+                additionalMenuDestinations = listOf(MainMenuDestination.ExportRecipes),
                 onNavigate = { destination ->
                     when (destination) {
                         MainMenuDestination.Library -> Unit
@@ -182,6 +236,28 @@ fun RecipeLibraryScreen(
                         }
                         MainMenuDestination.Import -> {
                             showImportDialog = true
+                        }
+                        MainMenuDestination.ExportRecipes -> {
+                            if (exportInProgress) return@RecipeBookTopBar
+                            exportInProgress = true
+                            scope.launch {
+                                runCatching {
+                                    exporter.createRecipeArchive(language)
+                                }.onSuccess { bundle ->
+                                    pendingExportFile?.delete()
+                                    pendingExportFile = bundle.archiveFile
+                                    exportLauncher.launch(bundle.suggestedFileName)
+                                }.onFailure {
+                                    exportInProgress = false
+                                    pendingExportFile?.delete()
+                                    pendingExportFile = null
+                                    Toast.makeText(
+                                        context,
+                                        exportFailedLabel,
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                            }
                         }
 
                         MainMenuDestination.Tags -> {
@@ -957,6 +1033,7 @@ enum class LibraryManagerSection {
 internal enum class MainMenuDestination(@StringRes val labelResId: Int) {
     Library(R.string.menu_recipe_library_label),
     Import(R.string.import_recipe_label),
+    ExportRecipes(R.string.menu_export_recipes_label),
     Collections(R.string.menu_collections_label),
     Ingredients(R.string.menu_ingredients_label),
     Tags(R.string.menu_tags_label),
@@ -971,6 +1048,7 @@ internal fun RecipeBookTopBar(
     language: AppLanguage,
     onLanguageChange: (AppLanguage) -> Unit,
     onNavigate: (MainMenuDestination) -> Unit,
+    additionalMenuDestinations: List<MainMenuDestination> = emptyList(),
     disabledDestinations: Set<MainMenuDestination> = emptySet(),
     navigationIcon: (@Composable () -> Unit)? = null,
     actions: @Composable RowScope.() -> Unit = {}
@@ -992,7 +1070,12 @@ internal fun RecipeBookTopBar(
                 onDismissRequest = { menuExpanded = false },
                 shape = PopupShape
             ) {
-                MainMenuDestination.entries.forEach { destination ->
+                (listOf(MainMenuDestination.Library, MainMenuDestination.Import) + additionalMenuDestinations + listOf(
+                    MainMenuDestination.Collections,
+                    MainMenuDestination.Ingredients,
+                    MainMenuDestination.Tags,
+                    MainMenuDestination.Settings
+                )).forEach { destination ->
                     DropdownMenuItem(
                         text = { Text(localizedString(destination.labelResId, language)) },
                         enabled = destination !in disabledDestinations,

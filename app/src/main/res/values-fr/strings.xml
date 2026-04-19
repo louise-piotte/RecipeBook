@@ -4,6 +4,7 @@
     <string name="language_option_fr_label">Fran&#231;ais</string>
     <string name="menu_label">Menu</string>
     <string name="menu_recipe_library_label">Recettes</string>
+    <string name="menu_export_recipes_label">Exporter les recettes</string>
     <string name="menu_collections_label">Collections</string>
     <string name="menu_ingredients_label">Ingr&#233;dients</string>
     <string name="menu_tags_label">Tags</string>
@@ -24,6 +25,8 @@
     <string name="add_recipe_label">Ajouter une recette</string>
     <string name="edit_recipe_label">Modifier la recette</string>
     <string name="import_recipe_label">Importer une recette</string>
+    <string name="export_recipes_success_label">Exportation des recettes enregistr&#233;e.</string>
+    <string name="export_recipes_failed_label">&#201;chec de l&#8217;exportation des recettes.</string>
     <string name="import_recipe_help_label">Coller une URL de recette ou le texte d&#8217;une recette pour cr&#233;er une &#233;bauche.</string>
     <string name="import_recipe_input_label">URL ou texte de la recette</string>
     <string name="import_action_label">Importer</string>

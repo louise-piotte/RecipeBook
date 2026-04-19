@@ -9,8 +9,8 @@
   - Add image/OCR intake
   - Replace the local stub regenerator with a real AI-backed bilingual generation backend through `RecipeLanguageRegenerator`
   - Add AI-assisted draft finishing and normalization
-- Implement full-library export/import (replace mode first).
-- Add export/import integrity tests.
+- Implement full-library import (replace mode first).
+- Add import integrity tests.
 - Implement basic Google Drive sync:
   - File selection/setup
   - Pull on launch

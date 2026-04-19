@@ -9,6 +9,10 @@ import app.recipebook.data.local.db.IngredientReferenceEntity
 import app.recipebook.data.local.db.IngredientLineWithSubstitutions
 import app.recipebook.data.local.db.CollectionDao
 import app.recipebook.data.local.db.CollectionEntity
+import app.recipebook.data.local.db.LibraryMetadataDao
+import app.recipebook.data.local.db.LibraryMetadataEntity
+import app.recipebook.data.local.db.LibrarySettingsDao
+import app.recipebook.data.local.db.LibrarySettingsEntity
 import app.recipebook.data.local.db.RecipeDao
 import app.recipebook.data.local.db.RecipeIngredientLineEntity
 import app.recipebook.data.local.db.RecipeCollectionCrossRef
@@ -30,6 +34,9 @@ import app.recipebook.domain.model.IngredientLineSubstitution
 import app.recipebook.domain.model.IngredientCategory
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
+import app.recipebook.domain.model.LibraryMetadata
+import app.recipebook.domain.model.LibrarySettings
+import app.recipebook.domain.model.RecipeLibrary
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Ratings
@@ -44,6 +51,8 @@ import app.recipebook.domain.model.SubstitutionConversionType
 import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.TagCategory
+import app.recipebook.domain.model.UnitDefinition
+import app.recipebook.domain.model.AppLanguage
 import java.text.Normalizer
 import java.time.Instant
 import java.util.UUID
@@ -63,6 +72,8 @@ class RecipeRepository(
     private val contextualSubstitutionRuleDao: ContextualSubstitutionRuleDao = EmptyContextualSubstitutionRuleDao,
     private val tagDao: TagDao = EmptyTagDao,
     private val collectionDao: CollectionDao = EmptyCollectionDao,
+    private val librarySettingsDao: LibrarySettingsDao = EmptyLibrarySettingsDao,
+    private val libraryMetadataDao: LibraryMetadataDao = EmptyLibraryMetadataDao,
     private val seedLibrary: SeedLibraryData = SeedLibraryData(),
     private val seedLibraryLoader: (() -> SeedLibraryData)? = null
 ) {
@@ -412,6 +423,57 @@ class RecipeRepository(
                 ?: seedLibrary.contextualSubstitutionRules
         )
     }
+
+    suspend fun buildExportLibrary(
+        fallbackLanguage: AppLanguage = AppLanguage.EN,
+        now: String = Instant.now().toString(),
+        appVersion: String? = null,
+        deviceId: String? = null
+    ): RecipeLibrary = withContext(Dispatchers.IO) {
+        val seedLibrary = resolveSeedLibrary()
+        val recipes = observeRecipes().firstOrNull().orEmpty()
+        val ingredientReferences = observeIngredientReferences().firstOrNull().orEmpty()
+        val contextualSubstitutionRules = observeContextualSubstitutionRules().firstOrNull().orEmpty()
+        val tags = observeTags().firstOrNull().orEmpty()
+        val collections = observeCollections().firstOrNull().orEmpty()
+        val updatedAt = recipes.maxOfOrNull(Recipe::updatedAt) ?: now
+        val metadata = libraryMetadataDao.getAny()?.toDomain(
+            exportedAt = now,
+            appVersion = appVersion,
+            deviceId = deviceId
+        ) ?: seedLibrary.metadata?.copy(
+            updatedAt = updatedAt,
+            exportedAt = now,
+            appVersion = appVersion ?: seedLibrary.metadata.appVersion,
+            deviceId = deviceId ?: seedLibrary.metadata.deviceId
+        ) ?: LibraryMetadata(
+            libraryId = "library-local",
+            createdAt = now,
+            updatedAt = updatedAt,
+            exportedAt = now,
+            appVersion = appVersion,
+            deviceId = deviceId
+        )
+        val settings = librarySettingsDao.getById()?.toDomain()
+            ?: seedLibrary.settings
+            ?: LibrarySettings(
+                language = fallbackLanguage,
+                driveSyncEnabled = false
+            )
+
+        RecipeLibrary(
+            metadata = metadata,
+            recipes = recipes,
+            ingredientReferences = ingredientReferences,
+            ingredientForms = seedLibrary.ingredientForms,
+            substitutionRules = seedLibrary.substitutionRules,
+            contextualSubstitutionRules = contextualSubstitutionRules,
+            units = seedLibrary.units,
+            tags = tags,
+            collections = collections,
+            settings = settings
+        )
+    }
 }
 
 private const val TAG = "RecipeRepository"
@@ -457,8 +519,11 @@ private fun SeedLibraryData.isEmpty(): Boolean =
         ingredientForms.isEmpty() &&
         substitutionRules.isEmpty() &&
         contextualSubstitutionRules.isEmpty() &&
+        units.isEmpty() &&
         tags.isEmpty() &&
-        collections.isEmpty()
+        collections.isEmpty() &&
+        settings == null &&
+        metadata == null
 
 private fun IngredientSubstitutionDraft.toDomain(
     id: String,
@@ -707,6 +772,27 @@ private fun ContextualSubstitutionRuleEntity.toDomain(): ContextualSubstitutionR
     updatedAt = updatedAt
 )
 
+private fun LibrarySettingsEntity.toDomain(): LibrarySettings = LibrarySettings(
+    language = AppLanguage.valueOf(language),
+    driveSyncEnabled = driveSyncEnabled,
+    driveFileName = driveFileName,
+    driveFolderId = driveFolderId,
+    openSourceInAppBrowser = openSourceInAppBrowser
+)
+
+private fun LibraryMetadataEntity.toDomain(
+    exportedAt: String,
+    appVersion: String?,
+    deviceId: String?
+): LibraryMetadata = LibraryMetadata(
+    libraryId = libraryId,
+    createdAt = createdAt,
+    updatedAt = updatedAt,
+    exportedAt = exportedAt,
+    appVersion = appVersion,
+    deviceId = deviceId
+)
+
 private fun ContextualSubstitutionRule.toEntity(): ContextualSubstitutionRuleEntity = ContextualSubstitutionRuleEntity(
     id = id,
     fromIngredientRefId = fromIngredientRefId,
@@ -920,6 +1006,20 @@ private object EmptyCollectionDao : CollectionDao {
     override suspend fun deleteById(id: String) = Unit
 
     override suspend fun deleteRecipeRefsByCollectionId(collectionId: String) = Unit
+}
+
+private object EmptyLibrarySettingsDao : LibrarySettingsDao {
+    override suspend fun upsert(settings: LibrarySettingsEntity) = Unit
+
+    override suspend fun getById(id: String): LibrarySettingsEntity? = null
+}
+
+private object EmptyLibraryMetadataDao : LibraryMetadataDao {
+    override suspend fun upsert(metadata: LibraryMetadataEntity) = Unit
+
+    override suspend fun getByLibraryId(libraryId: String): LibraryMetadataEntity? = null
+
+    override suspend fun getAny(): LibraryMetadataEntity? = null
 }
 
 private fun slugify(input: String): String {

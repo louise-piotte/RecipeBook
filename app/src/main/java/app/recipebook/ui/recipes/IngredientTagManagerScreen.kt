@@ -111,6 +111,7 @@ fun IngredientTagManagerScreen(
                     when (destination) {
                         MainMenuDestination.Library -> onNavigateToLibrary()
                         MainMenuDestination.Import -> Unit
+                        MainMenuDestination.ExportRecipes -> Unit
                         MainMenuDestination.Collections -> onNavigateToCollections()
                         MainMenuDestination.Ingredients -> currentSection = LibraryManagerSection.Ingredients
                         MainMenuDestination.Tags -> currentSection = LibraryManagerSection.Tags

@@ -205,6 +205,9 @@ interface LibraryMetadataDao {
 
     @Query("SELECT * FROM library_metadata WHERE libraryId = :libraryId LIMIT 1")
     suspend fun getByLibraryId(libraryId: String): LibraryMetadataEntity?
+
+    @Query("SELECT * FROM library_metadata LIMIT 1")
+    suspend fun getAny(): LibraryMetadataEntity?
 }
 
 data class RecipeWithRelations(

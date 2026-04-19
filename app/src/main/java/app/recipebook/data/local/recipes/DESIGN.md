@@ -11,6 +11,7 @@ This package contains the main recipe-library orchestration layer.
 - `RecipeRepository.kt`: main read/write API for recipes, tags, collections, ingredient references, and contextual substitution rules.
 - `RecipeRepositoryProvider.kt`: central place to assemble Room + repository dependencies.
 - `BundledRecipeLibraryLoader.kt`, `BundledIngredientCatalog.kt`, `BundledTagCatalog.kt`: seed and catalog hydration from assets.
+- `RecipeExportCodec.kt`, `RecipeLibraryExporter.kt`: seed-shaped export packaging that writes one recipe JSON per file plus manifest, split catalog files, and packaged media into a single zip; also exposes an internal ingredient-catalog JSON export.
 - `IngredientSubstitutionResolver.kt`: domain-facing substitution/conversion helper logic backed by stored and seeded data.
 - `RecipePhotoStore.kt`: local file ownership for recipe photos, including webpage-photo downloads into draft storage before the editor saves them permanently.
 - `RecipeLocalizationCoordinator.kt`: bilingual save/regeneration seam that treats the active editor language as authoritative, tracks draft sync status, applies regenerated ingredient-line wording, and surfaces ingredient-reference suggestions for repository creation/reuse.
@@ -23,6 +24,7 @@ This package contains the main recipe-library orchestration layer.
 - Repository methods return domain models and flows, not Room entities.
 - Validation that protects graph integrity lives close to repository writes.
 - Bundled seed data and user-created data are combined by repository orchestration, but the user database becomes authoritative after seeding.
+- Export packaging should mirror the bundled seed package layout rather than inventing a parallel recipe archive format, so recipe JSON, manifest references, and packaged media stay compatible with the existing seed loader/tests.
 - Import helpers should extract whatever is reliable without AI, keep source evidence and warnings in staged importer models, try AI draft finishing through a narrow contract when available, and fall back deterministically when that finishing step is skipped or invalid.
 - Shared webpage imports should keep the source page's primary recipe image when one can be resolved, then hand that image off through the app-managed photo pipeline so `mainPhotoId` behavior stays consistent with manual photo imports.
 - Runtime AI integration should read local app settings for `apiKey`, `baseUrl`, and shared `model`, call one OpenAI-compatible backend seam, and preserve deterministic import plus local-stub regeneration as fallbacks.

@@ -66,6 +66,7 @@ fun AiSettingsScreen(
                     when (destination) {
                         MainMenuDestination.Library -> onNavigateToLibrary()
                         MainMenuDestination.Import -> Unit
+                        MainMenuDestination.ExportRecipes -> Unit
                         MainMenuDestination.Collections -> onNavigateToCollections()
                         MainMenuDestination.Ingredients -> onNavigateToIngredients()
                         MainMenuDestination.Tags -> onNavigateToTags()

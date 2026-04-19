@@ -56,6 +56,7 @@ class IngredientTagManagerScreenInteractionTest {
                 initialSection = LibraryManagerSection.Ingredients,
                 onNavigateToLibrary = {},
                 onNavigateToCollections = {},
+                onNavigateToSettings = {},
                 onCreateIngredient = {},
                 onUpdateIngredient = { _, _ -> },
                 onCreateIngredientSubstitution = { savedDraft = it },
