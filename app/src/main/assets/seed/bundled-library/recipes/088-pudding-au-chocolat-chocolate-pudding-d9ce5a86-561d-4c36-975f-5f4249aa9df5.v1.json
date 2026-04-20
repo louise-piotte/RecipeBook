@@ -44,7 +44,10 @@
       "ingredientRefId": "ingredient-ref-milk",
       "quantity": 2,
       "unit": "cup",
-      "notes": "whole milk, divided"
+      "notes": {
+        "fr": "lait entier, divis\u00e9",
+        "en": "whole milk, divided"
+      }
     },
     {
       "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5-ingredient-4",
@@ -77,7 +80,10 @@
       "ingredientRefId": "ingredient-ref-semisweet-chocolate",
       "quantity": 0.3333,
       "unit": "cup",
-      "preparation": "melted"
+      "preparation": {
+        "fr": "fondu",
+        "en": "melted"
+      }
     },
     {
       "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5-ingredient-8",
@@ -86,7 +92,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 1,
       "unit": "tbsp",
-      "preparation": "softened"
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      }
     },
     {
       "id": "d9ce5a86-561d-4c36-975f-5f4249aa9df5-ingredient-9",

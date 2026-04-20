@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-bittersweet-chocolate",
       "quantity": 10,
       "unit": "oz",
-      "preparation": "finely chopped",
+      "preparation": {
+        "fr": "finement hach\u00e9",
+        "en": "finely chopped"
+      },
       "group": "Cake"
     },
     {
@@ -90,7 +93,10 @@
       "ingredientName": "egg yolk",
       "quantity": 3,
       "unit": "count",
-      "preparation": "large",
+      "preparation": {
+        "fr": "gros",
+        "en": "large"
+      },
       "group": "Cake"
     },
     {
@@ -109,7 +115,10 @@
       "ingredientRefId": "ingredient-ref-brown-sugar",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "light",
+      "preparation": {
+        "fr": "l\u00e9ger",
+        "en": "light"
+      },
       "group": "Cake"
     },
     {
@@ -155,7 +164,10 @@
       "ingredientRefId": "ingredient-ref-white-chocolate",
       "quantity": 454,
       "unit": "g",
-      "preparation": "chopped",
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      },
       "group": "White chocolate ganache"
     },
     {
@@ -192,7 +204,10 @@
       "ingredientRefId": "ingredient-ref-bittersweet-chocolate",
       "quantity": 10,
       "unit": "oz",
-      "preparation": "chopped",
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      },
       "group": "Dark chocolate ganache"
     },
     {
@@ -202,7 +217,10 @@
       "ingredientRefId": "ingredient-ref-bittersweet-chocolate",
       "quantity": 4,
       "unit": "oz",
-      "preparation": "chopped",
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      },
       "group": "Chocolate frosting"
     },
     {
@@ -255,7 +273,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 454,
       "unit": "g",
-      "preparation": "softened",
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      },
       "group": "Chocolate frosting"
     },
     {
@@ -265,14 +286,20 @@
       "ingredientRefId": "ingredient-ref-icing-sugar",
       "quantity": 0.75,
       "unit": "cup",
-      "preparation": "sifted",
+      "preparation": {
+        "fr": "tamis\u00e9",
+        "en": "sifted"
+      },
       "group": "Chocolate frosting"
     },
     {
       "id": "f4807560-d19f-4e2d-aeab-80138564b93f-ingredient-28",
       "originalText": "Bittersweet and white chocolate shavings, for garnish",
       "ingredientName": "chocolate shavings",
-      "notes": "Bittersweet and white chocolate, for garnish",
+      "notes": {
+        "fr": "chocolat mi-amer et chocolat blanc, pour garnir",
+        "en": "Bittersweet and white chocolate, for garnish"
+      },
       "optional": true,
       "group": "Garnish"
     }

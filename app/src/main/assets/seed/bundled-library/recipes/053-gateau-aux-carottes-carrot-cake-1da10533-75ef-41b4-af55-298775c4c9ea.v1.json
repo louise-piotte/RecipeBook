@@ -123,7 +123,10 @@
       "ingredientRefId": "ingredient-ref-carrot",
       "quantity": 3,
       "unit": "cup",
-      "preparation": "grated",
+      "preparation": {
+        "fr": "r\u00e2p\u00e9",
+        "en": "grated"
+      },
       "group": "Cake"
     },
     {
@@ -133,8 +136,14 @@
       "ingredientRefId": "ingredient-ref-pecans",
       "quantity": 1.5,
       "unit": "cup",
-      "preparation": "chopped",
-      "notes": "Plus more for garnish",
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      },
+      "notes": {
+        "fr": "plus un peu pour garnir",
+        "en": "Plus more for garnish"
+      },
       "group": "Cake"
     },
     {
@@ -144,7 +153,10 @@
       "ingredientRefId": "ingredient-ref-pineapple",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "crushed and drained",
+      "preparation": {
+        "fr": "\u00e9cras\u00e9 et \u00e9goutt\u00e9",
+        "en": "crushed and drained"
+      },
       "group": "Cake"
     },
     {

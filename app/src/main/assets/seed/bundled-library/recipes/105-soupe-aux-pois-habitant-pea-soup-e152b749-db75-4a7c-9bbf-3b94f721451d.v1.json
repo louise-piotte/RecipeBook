@@ -36,7 +36,10 @@
       "ingredientRefId": "ingredient-ref-vegetable-stock",
       "quantity": 8,
       "unit": "cup",
-      "notes": "chicken broth also works"
+      "notes": {
+        "fr": "le bouillon de poulet convient aussi",
+        "en": "chicken broth also works"
+      }
     },
     {
       "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-3",
@@ -45,7 +48,10 @@
       "ingredientRefId": "ingredient-ref-onion",
       "quantity": 1,
       "unit": "count",
-      "preparation": "large, chopped"
+      "preparation": {
+        "fr": "gros, hach\u00e9",
+        "en": "large, chopped"
+      }
     },
     {
       "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-4",
@@ -54,7 +60,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 4,
       "unit": "clove",
-      "preparation": "crushed"
+      "preparation": {
+        "fr": "\u00e9cras\u00e9",
+        "en": "crushed"
+      }
     },
     {
       "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-5",
@@ -71,7 +80,10 @@
       "ingredientRefId": "ingredient-ref-carrot",
       "quantity": 4,
       "unit": "count",
-      "preparation": "small, diced"
+      "preparation": {
+        "fr": "petit, en d\u00e9s",
+        "en": "small, diced"
+      }
     },
     {
       "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-7",
@@ -80,7 +92,10 @@
       "ingredientRefId": "ingredient-ref-celery",
       "quantity": 2,
       "unit": "stalk",
-      "preparation": "chopped"
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      }
     },
     {
       "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-8",
@@ -97,7 +112,10 @@
       "ingredientRefId": "ingredient-ref-black-pepper",
       "quantity": 1,
       "unit": "to taste",
-      "preparation": "freshly ground"
+      "preparation": {
+        "fr": "fra\u00eechement moulu",
+        "en": "freshly ground"
+      }
     },
     {
       "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-10",
@@ -114,7 +132,10 @@
       "ingredientRefId": "ingredient-ref-toasted-sesame-oil",
       "quantity": 1,
       "unit": "tbsp",
-      "notes": "the export specified dark sesame oil"
+      "notes": {
+        "fr": "l'export indiquait de l'huile de s\u00e9same fonc\u00e9e",
+        "en": "the export specified dark sesame oil"
+      }
     }
   ],
   "servings": {

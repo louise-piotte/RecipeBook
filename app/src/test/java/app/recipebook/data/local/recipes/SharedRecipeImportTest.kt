@@ -2,6 +2,7 @@ package app.recipebook.data.local.recipes
 
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
+import app.recipebook.domain.model.LocalizedValue
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Recipe
 import org.junit.Assert.assertEquals
@@ -10,6 +11,27 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class SharedRecipeImportTest {
+
+    @Test
+    fun applyToRecipe_placesIngredientPreparationAndNotesInAuthoritativeLanguageOnly() {
+        val draft = ImportedRecipeDraft(
+            ingredients = listOf(
+                ImportedIngredientDraft(
+                    id = "ingredient-1",
+                    ingredientName = "butter",
+                    preparation = "softened",
+                    notes = "for frosting",
+                    originalText = "1 cup butter, softened"
+                )
+            )
+        )
+
+        val applied = draft.applyToRecipe(blankRecipe(), AppLanguage.EN)
+        val ingredient = applied.ingredients.single()
+
+        assertEquals(LocalizedValue(en = "softened"), ingredient.preparation)
+        assertEquals(LocalizedValue(en = "for frosting"), ingredient.notes)
+    }
 
     @Test
     fun import_urlWithRecipeSchema_extractsStructuredDraft() = kotlinx.coroutines.runBlocking {

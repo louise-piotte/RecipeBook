@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-tomatoes",
       "quantity": 4,
       "unit": "count",
-      "preparation": "large, diced"
+      "preparation": {
+        "fr": "gros, en d\u00e9s",
+        "en": "large, diced"
+      }
     },
     {
       "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-2",
@@ -45,7 +48,10 @@
       "ingredientRefId": "ingredient-ref-onion",
       "quantity": 1,
       "unit": "count",
-      "preparation": "Spanish, finely chopped"
+      "preparation": {
+        "fr": "espagnol, finement hach\u00e9",
+        "en": "Spanish, finely chopped"
+      }
     },
     {
       "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-4",
@@ -62,7 +68,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 2,
       "unit": "clove",
-      "preparation": "large, finely chopped"
+      "preparation": {
+        "fr": "gros, finement hach\u00e9",
+        "en": "large, finely chopped"
+      }
     },
     {
       "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-6",
@@ -95,7 +104,10 @@
       "ingredientRefId": "ingredient-ref-basil",
       "quantity": 10,
       "unit": "count",
-      "preparation": "fresh leaves"
+      "preparation": {
+        "fr": "feuilles fra\u00eeches",
+        "en": "fresh leaves"
+      }
     },
     {
       "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-10",

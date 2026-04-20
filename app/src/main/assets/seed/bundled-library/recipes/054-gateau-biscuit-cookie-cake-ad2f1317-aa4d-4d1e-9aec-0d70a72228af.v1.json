@@ -55,7 +55,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 113,
       "unit": "g",
-      "preparation": "softened",
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      },
       "group": "Cookie Cake"
     },
     {
@@ -65,7 +68,10 @@
       "ingredientRefId": "ingredient-ref-brown-sugar",
       "quantity": 165,
       "unit": "g",
-      "notes": "Light brown sugar",
+      "notes": {
+        "fr": "cassonade claire",
+        "en": "Light brown sugar"
+      },
       "group": "Cookie Cake"
     },
     {
@@ -102,7 +108,10 @@
       "ingredientRefId": "ingredient-ref-semisweet-chocolate",
       "quantity": 270,
       "unit": "g",
-      "notes": "Plus more for decorating",
+      "notes": {
+        "fr": "plus un peu pour d\u00e9corer",
+        "en": "Plus more for decorating"
+      },
       "group": "Cookie Cake"
     },
     {
@@ -112,7 +121,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 85,
       "unit": "g",
-      "preparation": "softened",
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      },
       "group": "Frosting"
     },
     {

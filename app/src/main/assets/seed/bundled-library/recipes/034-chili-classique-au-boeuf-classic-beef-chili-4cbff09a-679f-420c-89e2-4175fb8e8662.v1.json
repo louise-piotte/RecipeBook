@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-onion",
       "quantity": 1,
       "unit": "count",
-      "preparation": "finely chopped"
+      "preparation": {
+        "fr": "finement hach\u00e9",
+        "en": "finely chopped"
+      }
     },
     {
       "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-2",
@@ -37,7 +40,10 @@
       "ingredientRefId": "ingredient-ref-jalapeno-pepper",
       "quantity": 1,
       "unit": "count",
-      "preparation": "seeded if desired, finely chopped"
+      "preparation": {
+        "fr": "\u00e9p\u00e9pin\u00e9 si d\u00e9sir\u00e9, finement hach\u00e9",
+        "en": "seeded if desired, finely chopped"
+      }
     },
     {
       "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-3",
@@ -62,7 +68,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 2,
       "unit": "clove",
-      "preparation": "finely chopped"
+      "preparation": {
+        "fr": "finement hach\u00e9",
+        "en": "finely chopped"
+      }
     },
     {
       "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-6",
@@ -87,7 +96,10 @@
       "ingredientRefId": "ingredient-ref-tomatoes",
       "quantity": 798,
       "unit": "ml",
-      "preparation": "canned, diced"
+      "preparation": {
+        "fr": "en conserve, en d\u00e9s",
+        "en": "canned, diced"
+      }
     },
     {
       "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-9",
@@ -96,7 +108,10 @@
       "ingredientRefId": "ingredient-ref-kidney-beans",
       "quantity": 540,
       "unit": "ml",
-      "preparation": "rinsed and drained"
+      "preparation": {
+        "fr": "rinc\u00e9 et \u00e9goutt\u00e9",
+        "en": "rinsed and drained"
+      }
     },
     {
       "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-10",
@@ -105,7 +120,10 @@
       "ingredientRefId": "ingredient-ref-coffee",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "regular or strong"
+      "preparation": {
+        "fr": "ordinaire ou cors\u00e9",
+        "en": "regular or strong"
+      }
     },
     {
       "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-11",
@@ -114,7 +132,10 @@
       "ingredientRefId": "ingredient-ref-beef-stock",
       "quantity": 0.25,
       "unit": "cup",
-      "notes": "Water can be used instead."
+      "notes": {
+        "fr": "l'eau peut \u00eatre utilis\u00e9e \u00e0 la place.",
+        "en": "Water can be used instead."
+      }
     },
     {
       "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-12",
@@ -139,7 +160,10 @@
       "ingredientRefId": "ingredient-ref-cilantro",
       "quantity": 10,
       "unit": "g",
-      "preparation": "fresh, chopped"
+      "preparation": {
+        "fr": "frais, hach\u00e9",
+        "en": "fresh, chopped"
+      }
     }
   ],
   "servings": {

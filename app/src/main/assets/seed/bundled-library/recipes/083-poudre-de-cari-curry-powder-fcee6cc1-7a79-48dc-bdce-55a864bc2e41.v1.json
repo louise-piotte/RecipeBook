@@ -60,7 +60,10 @@
       "ingredientRefId": "ingredient-ref-mustard-seeds",
       "quantity": 0.5,
       "unit": "tsp",
-      "preparation": "ground"
+      "preparation": {
+        "fr": "moulu",
+        "en": "ground"
+      }
     },
     {
       "id": "fcee6cc1-7a79-48dc-bdce-55a864bc2e41-ingredient-6",
@@ -69,7 +72,10 @@
       "ingredientRefId": "ingredient-ref-ginger",
       "quantity": 0.5,
       "unit": "tsp",
-      "preparation": "ground"
+      "preparation": {
+        "fr": "moulu",
+        "en": "ground"
+      }
     }
   ],
   "servings": {

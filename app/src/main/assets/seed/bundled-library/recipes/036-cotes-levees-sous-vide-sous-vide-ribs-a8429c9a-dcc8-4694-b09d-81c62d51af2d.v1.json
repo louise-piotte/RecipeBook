@@ -43,7 +43,10 @@
       "ingredientName": "pork dry rub",
       "quantity": 0.75,
       "unit": "cup",
-      "preparation": "divided"
+      "preparation": {
+        "fr": "divis\u00e9",
+        "en": "divided"
+      }
     },
     {
       "id": "a8429c9a-dcc8-4694-b09d-81c62d51af2d-ingredient-4",

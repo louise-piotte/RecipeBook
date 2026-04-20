@@ -36,7 +36,10 @@
       "ingredientRefId": "ingredient-ref-onion",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "yellow and chopped"
+      "preparation": {
+        "fr": "jaune et hach\u00e9",
+        "en": "yellow and chopped"
+      }
     },
     {
       "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-3",
@@ -45,7 +48,10 @@
       "ingredientRefId": "ingredient-ref-kale",
       "quantity": 3,
       "unit": "cup",
-      "preparation": "fresh and chopped"
+      "preparation": {
+        "fr": "frais et hach\u00e9",
+        "en": "fresh and chopped"
+      }
     },
     {
       "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-4",
@@ -54,7 +60,10 @@
       "ingredientRefId": "ingredient-ref-english-muffin",
       "quantity": 12,
       "unit": "oz",
-      "preparation": "cubed and toasted"
+      "preparation": {
+        "fr": "en cubes et grill\u00e9",
+        "en": "cubed and toasted"
+      }
     },
     {
       "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-5",
@@ -62,7 +71,10 @@
       "ingredientName": "shredded cheese",
       "quantity": 2,
       "unit": "cup",
-      "preparation": "divided"
+      "preparation": {
+        "fr": "divis\u00e9",
+        "en": "divided"
+      }
     },
     {
       "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-6",
@@ -87,7 +99,10 @@
       "ingredientRefId": "ingredient-ref-salt",
       "quantity": 1,
       "unit": "tsp",
-      "preparation": "kosher"
+      "preparation": {
+        "fr": "casher",
+        "en": "kosher"
+      }
     },
     {
       "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-9",

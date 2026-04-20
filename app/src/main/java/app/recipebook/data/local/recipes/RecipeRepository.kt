@@ -36,6 +36,7 @@ import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LibraryMetadata
 import app.recipebook.domain.model.LibrarySettings
+import app.recipebook.domain.model.LocalizedValue
 import app.recipebook.domain.model.RecipeLibrary
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
@@ -1012,9 +1013,15 @@ private fun IngredientLineWithSubstitutions.toDomain(): IngredientLine = Ingredi
     quantity = ingredientLine.quantity,
     unit = ingredientLine.unit,
     ingredientName = ingredientLine.ingredientName,
-    preparation = ingredientLine.preparation,
+    preparation = LocalizedValue(
+        fr = ingredientLine.preparationFr,
+        en = ingredientLine.preparationEn
+    ),
     optional = ingredientLine.optional,
-    notes = ingredientLine.notes,
+    notes = LocalizedValue(
+        fr = ingredientLine.notesFr,
+        en = ingredientLine.notesEn
+    ),
     group = ingredientLine.group,
     substitutions = substitutions
         .sortedBy(IngredientLineSubstitutionEntity::position)
@@ -1030,9 +1037,11 @@ private fun IngredientLine.toEntity(recipeId: String, position: Int): RecipeIngr
     quantity = quantity,
     unit = unit,
     ingredientName = ingredientName,
-    preparation = preparation,
+    preparationFr = preparation.fr,
+    preparationEn = preparation.en,
     optional = optional,
-    notes = notes,
+    notesFr = notes.fr,
+    notesEn = notes.en,
     group = group
 )
 

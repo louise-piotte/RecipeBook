@@ -44,7 +44,10 @@
       "ingredientRefId": "ingredient-ref-heavy-cream",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "cold"
+      "preparation": {
+        "fr": "froid",
+        "en": "cold"
+      }
     },
     {
       "id": "4af3c637-fd51-4344-8695-5dfe3583b237-ingredient-4",

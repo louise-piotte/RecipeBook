@@ -44,7 +44,10 @@
       "ingredientRefId": "ingredient-ref-dark-chocolate",
       "quantity": 2,
       "unit": "cup",
-      "notes": "from dark chocolate chips"
+      "notes": {
+        "fr": "\u00e0 partir de p\u00e9pites de chocolat noir",
+        "en": "from dark chocolate chips"
+      }
     },
     {
       "id": "798352ab-d4ad-4e5d-9c90-f0484609bca2-ingredient-4",

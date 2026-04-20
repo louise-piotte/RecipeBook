@@ -87,7 +87,10 @@
       "ingredientRefId": "ingredient-ref-white-chocolate",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "chips"
+      "preparation": {
+        "fr": "en p\u00e9pites",
+        "en": "chips"
+      }
     }
   ],
   "servings": {

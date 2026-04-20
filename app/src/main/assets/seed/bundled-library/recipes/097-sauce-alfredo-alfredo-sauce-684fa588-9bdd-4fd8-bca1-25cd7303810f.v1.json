@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-milk",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "skim"
+      "preparation": {
+        "fr": "\u00e9cr\u00e9m\u00e9",
+        "en": "skim"
+      }
     },
     {
       "id": "684fa588-9bdd-4fd8-bca1-25cd7303810f-ingredient-2",
@@ -61,7 +64,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 0.5,
       "unit": "tsp",
-      "preparation": "minced"
+      "preparation": {
+        "fr": "\u00e9minc\u00e9",
+        "en": "minced"
+      }
     },
     {
       "id": "684fa588-9bdd-4fd8-bca1-25cd7303810f-ingredient-6",

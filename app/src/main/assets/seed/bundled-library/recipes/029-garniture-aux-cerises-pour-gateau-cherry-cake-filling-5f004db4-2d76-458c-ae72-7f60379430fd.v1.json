@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-cherries",
       "quantity": 460,
       "unit": "g",
-      "preparation": "pitted, fresh or frozen"
+      "preparation": {
+        "fr": "d\u00e9noyaut\u00e9, frais ou congel\u00e9",
+        "en": "pitted, fresh or frozen"
+      }
     },
     {
       "id": "5f004db4-2d76-458c-ae72-7f60379430fd-ingredient-2",
@@ -37,7 +40,10 @@
       "ingredientRefId": "ingredient-ref-granulated-sugar",
       "quantity": 65,
       "unit": "g",
-      "notes": "add more if the cherries are tart"
+      "notes": {
+        "fr": "en ajouter plus si les cerises sont acidul\u00e9es",
+        "en": "add more if the cherries are tart"
+      }
     },
     {
       "id": "5f004db4-2d76-458c-ae72-7f60379430fd-ingredient-3",
@@ -46,7 +52,10 @@
       "ingredientRefId": "ingredient-ref-cornstarch",
       "quantity": 2,
       "unit": "tbsp",
-      "notes": "or arrowroot"
+      "notes": {
+        "fr": "ou marante",
+        "en": "or arrowroot"
+      }
     },
     {
       "id": "5f004db4-2d76-458c-ae72-7f60379430fd-ingredient-4",

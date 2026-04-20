@@ -76,7 +76,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 76,
       "unit": "g",
-      "preparation": "melted"
+      "preparation": {
+        "fr": "fondu",
+        "en": "melted"
+      }
     },
     {
       "id": "b676257d-c46f-4ddc-bb63-1516307ad18f-ingredient-8",
@@ -85,7 +88,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 2,
       "unit": "large egg",
-      "preparation": "lightly beaten"
+      "preparation": {
+        "fr": "l\u00e9g\u00e8rement battu",
+        "en": "lightly beaten"
+      }
     },
     {
       "id": "b676257d-c46f-4ddc-bb63-1516307ad18f-ingredient-9",

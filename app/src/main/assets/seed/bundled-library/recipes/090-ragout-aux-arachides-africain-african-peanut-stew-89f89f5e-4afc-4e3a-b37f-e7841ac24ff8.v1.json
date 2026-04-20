@@ -36,7 +36,10 @@
       "ingredientRefId": "ingredient-ref-peanut-butter",
       "quantity": 0.5,
       "unit": "cup",
-      "notes": "natural creamy"
+      "notes": {
+        "fr": "cr\u00e9meux naturel",
+        "en": "natural creamy"
+      }
     },
     {
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-3",
@@ -53,7 +56,10 @@
       "ingredientRefId": "ingredient-ref-coriander",
       "quantity": 0.5,
       "unit": "tsp",
-      "notes": "ground"
+      "notes": {
+        "fr": "moulu",
+        "en": "ground"
+      }
     },
     {
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-5",
@@ -70,7 +76,10 @@
       "ingredientRefId": "ingredient-ref-salt",
       "quantity": 0.5,
       "unit": "tsp",
-      "notes": "kosher salt"
+      "notes": {
+        "fr": "sel casher",
+        "en": "kosher salt"
+      }
     },
     {
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-7",
@@ -87,7 +96,10 @@
       "ingredientRefId": "ingredient-ref-stew-meat",
       "quantity": 454,
       "unit": "g",
-      "notes": "chicken, beef, or pork"
+      "notes": {
+        "fr": "poulet, boeuf ou porc",
+        "en": "chicken, beef, or pork"
+      }
     },
     {
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-9",
@@ -95,7 +107,10 @@
       "ingredientName": "broth",
       "quantity": 2,
       "unit": "cup",
-      "notes": "use 2 1/2 cups if adding meat"
+      "notes": {
+        "fr": "utiliser 2 1/2 tasses si vous ajoutez de la viande",
+        "en": "use 2 1/2 cups if adding meat"
+      }
     },
     {
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-10",
@@ -104,7 +119,10 @@
       "ingredientRefId": "ingredient-ref-onion",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "chopped"
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      }
     },
     {
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-11",
@@ -113,7 +131,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 3,
       "unit": "count",
-      "preparation": "minced"
+      "preparation": {
+        "fr": "\u00e9minc\u00e9",
+        "en": "minced"
+      }
     },
     {
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-12",
@@ -130,7 +151,10 @@
       "ingredientRefId": "ingredient-ref-sweet-potato",
       "quantity": 2,
       "unit": "count",
-      "preparation": "peeled and diced"
+      "preparation": {
+        "fr": "pel\u00e9 et en d\u00e9s",
+        "en": "peeled and diced"
+      }
     },
     {
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-14",
@@ -139,7 +163,10 @@
       "ingredientRefId": "ingredient-ref-carrot",
       "quantity": 0.6667,
       "unit": "cup",
-      "preparation": "peeled and sliced",
+      "preparation": {
+        "fr": "pel\u00e9 et tranch\u00e9",
+        "en": "peeled and sliced"
+      },
       "optional": true
     },
     {
@@ -156,14 +183,20 @@
       "ingredientName": "cooked rice",
       "ingredientRefId": "ingredient-ref-rice",
       "optional": true,
-      "notes": "for serving"
+      "notes": {
+        "fr": "pour servir",
+        "en": "for serving"
+      }
     },
     {
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-17",
       "originalText": "peanuts and fresh cilantro, for garnish",
       "ingredientName": "peanuts",
       "optional": true,
-      "notes": "with fresh cilantro, for garnish"
+      "notes": {
+        "fr": "avec de la coriandre fra\u00eeche, pour garnir",
+        "en": "with fresh cilantro, for garnish"
+      }
     }
   ],
   "servings": {

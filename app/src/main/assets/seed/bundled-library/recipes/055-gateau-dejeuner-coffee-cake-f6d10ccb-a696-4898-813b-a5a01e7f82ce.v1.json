@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-brown-sugar",
       "quantity": 147,
       "unit": "g",
-      "preparation": "packed light",
+      "preparation": {
+        "fr": "l\u00e9g\u00e8rement tass\u00e9",
+        "en": "packed light"
+      },
       "group": "Cinnamon filling"
     },
     {
@@ -65,7 +68,10 @@
       "ingredientRefId": "ingredient-ref-brown-sugar",
       "quantity": 110,
       "unit": "g",
-      "preparation": "packed",
+      "preparation": {
+        "fr": "tass\u00e9",
+        "en": "packed"
+      },
       "group": "Streusel topping"
     },
     {
@@ -102,7 +108,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 85,
       "unit": "g",
-      "preparation": "cold and diced",
+      "preparation": {
+        "fr": "froid et en d\u00e9s",
+        "en": "cold and diced"
+      },
       "group": "Streusel topping"
     },
     {
@@ -112,7 +121,10 @@
       "ingredientRefId": "ingredient-ref-walnuts",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "chopped",
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      },
       "group": "Streusel topping"
     },
     {
@@ -149,7 +161,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 142,
       "unit": "g",
-      "preparation": "softened",
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      },
       "group": "Cake"
     },
     {
@@ -168,7 +183,10 @@
       "ingredientRefId": "ingredient-ref-brown-sugar",
       "quantity": 55,
       "unit": "g",
-      "preparation": "packed light",
+      "preparation": {
+        "fr": "l\u00e9g\u00e8rement tass\u00e9",
+        "en": "packed light"
+      },
       "group": "Cake"
     },
     {
@@ -178,7 +196,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 2,
       "unit": "large egg",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -188,7 +209,10 @@
       "ingredientRefId": "ingredient-ref-sour-cream",
       "quantity": 160,
       "unit": "g",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -216,7 +240,10 @@
       "ingredientRefId": "ingredient-ref-milk",
       "quantity": 2,
       "unit": "tbsp",
-      "preparation": "whole",
+      "preparation": {
+        "fr": "entier",
+        "en": "whole"
+      },
       "group": "Vanilla glaze"
     },
     {

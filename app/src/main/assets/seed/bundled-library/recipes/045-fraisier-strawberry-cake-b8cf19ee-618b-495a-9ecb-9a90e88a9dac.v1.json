@@ -108,7 +108,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 175,
       "unit": "g",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Mousseline Cream"
     },
     {
@@ -152,7 +155,10 @@
       "originalText": "Melted white chocolate, to taste",
       "ingredientName": "white chocolate",
       "ingredientRefId": "ingredient-ref-white-chocolate",
-      "notes": "Melted, for decoration",
+      "notes": {
+        "fr": "fondu, pour d\u00e9coration",
+        "en": "Melted, for decoration"
+      },
       "group": "Decoration"
     },
     {
@@ -167,7 +173,10 @@
       "id": "b8cf19ee-618b-495a-9ecb-9a90e88a9dac-ingredient-17",
       "originalText": "Sugar pearls, to taste",
       "ingredientName": "sugar pearls",
-      "notes": "For decoration",
+      "notes": {
+        "fr": "pour d\u00e9coration",
+        "en": "For decoration"
+      },
       "group": "Decoration"
     }
   ],

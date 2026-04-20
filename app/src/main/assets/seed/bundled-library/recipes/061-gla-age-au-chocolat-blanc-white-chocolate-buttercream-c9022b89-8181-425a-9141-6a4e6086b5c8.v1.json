@@ -26,7 +26,10 @@
       "ingredientRefId": "ingredient-ref-white-chocolate",
       "quantity": 170,
       "unit": "g",
-      "preparation": "chopped into small pieces"
+      "preparation": {
+        "fr": "hach\u00e9 en petits morceaux",
+        "en": "chopped into small pieces"
+      }
     },
     {
       "id": "c9022b89-8181-425a-9141-6a4e6086b5c8-ingredient-2",
@@ -35,7 +38,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 226,
       "unit": "g",
-      "preparation": "softened to room temperature"
+      "preparation": {
+        "fr": "ramolli \u00e0 temp\u00e9rature ambiante",
+        "en": "softened to room temperature"
+      }
     },
     {
       "id": "c9022b89-8181-425a-9141-6a4e6086b5c8-ingredient-3",

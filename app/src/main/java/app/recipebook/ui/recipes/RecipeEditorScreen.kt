@@ -65,6 +65,7 @@ import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.ImportMetadata
+import app.recipebook.domain.model.LocalizedValue
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
@@ -359,8 +360,12 @@ fun RecipeEditorScreen(
                     },
                     onQuantityChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(quantity = value) },
                     onUnitChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(unit = value) },
-                    onPreparationChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(preparation = value) },
-                    onNotesChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(notes = value) },
+                    onPreparationChange = { index, value ->
+                        ingredientRows[index] = ingredientRows[index].withPreparation(language, value)
+                    },
+                    onNotesChange = { index, value ->
+                        ingredientRows[index] = ingredientRows[index].withNotes(language, value)
+                    },
                     onOriginalTextChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(originalText = value) },
                     onRemove = { index ->
                         ingredientRows.removeAt(index)
@@ -927,8 +932,16 @@ private fun IngredientEditorCard(
         }
         LabeledField(localizedString(R.string.ingredient_quantity_label, language), row.quantity, onValueChange = onQuantityChange)
         LabeledField(localizedString(R.string.ingredient_unit_label, language), row.unit, onValueChange = onUnitChange)
-        LabeledField(localizedString(R.string.ingredient_preparation_label, language), row.preparation, onValueChange = onPreparationChange)
-        LabeledField(localizedString(R.string.ingredient_notes_label, language), row.notes, onValueChange = onNotesChange)
+        LabeledField(
+            localizedString(R.string.ingredient_preparation_label, language),
+            row.preparation.forLanguage(language),
+            onValueChange = onPreparationChange
+        )
+        LabeledField(
+            localizedString(R.string.ingredient_notes_label, language),
+            row.notes.forLanguage(language),
+            onValueChange = onNotesChange
+        )
         LabeledField(
             localizedString(R.string.ingredient_original_text_label, language),
             row.originalText,
@@ -1746,8 +1759,8 @@ internal data class EditableIngredientRow(
     val ingredientName: String = "",
     val quantity: String = "",
     val unit: String = "",
-    val preparation: String = "",
-    val notes: String = "",
+    val preparation: LocalizedValue = LocalizedValue(),
+    val notes: LocalizedValue = LocalizedValue(),
     val originalText: String = ""
 )
 
@@ -1765,8 +1778,8 @@ private fun IngredientLine.toEditableRow(): EditableIngredientRow = EditableIngr
     ingredientName = ingredientName,
     quantity = quantity?.let(::formatNumber).orEmpty(),
     unit = unit.orEmpty(),
-    preparation = preparation.orEmpty(),
-    notes = notes.orEmpty(),
+    preparation = preparation,
+    notes = notes,
     originalText = originalText
 )
 
@@ -1785,8 +1798,8 @@ internal fun editableIngredientRowForTest(
     ingredientName: String = "",
     quantity: String = "",
     unit: String = "",
-    preparation: String = "",
-    notes: String = "",
+    preparation: LocalizedValue = LocalizedValue(),
+    notes: LocalizedValue = LocalizedValue(),
     originalText: String = ""
 ): EditableIngredientRow = EditableIngredientRow(
     id = id,
@@ -1813,10 +1826,16 @@ internal fun List<EditableIngredientRow>.toIngredientLines(
             ?: row.ingredientName.trim()
         val quantity = row.quantity.trim().toDoubleOrNull()
         val unit = row.unit.trim().ifBlank { null }
-        val preparation = row.preparation.trim().ifBlank { null }
-        val notes = row.notes.trim().ifBlank { null }
+        val preparation = row.preparation.normalized()
+        val notes = row.notes.normalized()
         val originalText = row.originalText.trim().ifBlank {
-            buildIngredientPreview(quantity, unit, ingredientName, preparation, notes)
+            buildIngredientPreview(
+                quantity = quantity,
+                unit = unit,
+                ingredientName = ingredientName,
+                preparation = preparation.primaryValue(),
+                notes = notes.primaryValue()
+            )
         }
         if (ingredientName.isBlank() && originalText.isBlank()) {
             null
@@ -1873,10 +1892,16 @@ private fun EditableIngredientRow.toIngredientLinePreview(
         ?: ingredientName.trim()
     val quantityValue = quantity.trim().toDoubleOrNull()
     val resolvedUnit = unit.trim().ifBlank { null }
-    val resolvedPreparation = preparation.trim().ifBlank { null }
-    val resolvedNotes = notes.trim().ifBlank { null }
+    val resolvedPreparation = preparation.normalized()
+    val resolvedNotes = notes.normalized()
     val resolvedOriginalText = originalText.trim().ifBlank {
-        buildIngredientPreview(quantityValue, resolvedUnit, resolvedName, resolvedPreparation, resolvedNotes)
+        buildIngredientPreview(
+            quantity = quantityValue,
+            unit = resolvedUnit,
+            ingredientName = resolvedName,
+            preparation = resolvedPreparation.forLanguage(language).ifBlank { resolvedPreparation.primaryValue() },
+            notes = resolvedNotes.forLanguage(language).ifBlank { resolvedNotes.primaryValue() }
+        )
     }
     if (resolvedName.isBlank() && resolvedOriginalText.isBlank()) {
         return null
@@ -1892,6 +1917,33 @@ private fun EditableIngredientRow.toIngredientLinePreview(
         notes = resolvedNotes
     )
 }
+
+internal fun EditableIngredientRow.withPreparation(language: AppLanguage, value: String): EditableIngredientRow =
+    copy(preparation = preparation.replaceForLanguage(language, value))
+
+internal fun EditableIngredientRow.withNotes(language: AppLanguage, value: String): EditableIngredientRow =
+    copy(notes = notes.replaceForLanguage(language, value))
+
+internal fun LocalizedValue.forLanguage(language: AppLanguage): String = when (language) {
+    AppLanguage.FR -> fr
+    AppLanguage.EN -> en
+}
+
+private fun LocalizedValue.replaceForLanguage(language: AppLanguage, value: String): LocalizedValue {
+    val trimmed = value.trim()
+    return when (language) {
+        AppLanguage.FR -> copy(fr = trimmed)
+        AppLanguage.EN -> copy(en = trimmed)
+    }
+}
+
+private fun LocalizedValue.normalized(): LocalizedValue = copy(
+    fr = fr.trim(),
+    en = en.trim()
+)
+
+private fun LocalizedValue.primaryValue(): String? =
+    en.ifBlank { fr }.ifBlank { null }
 internal fun filterIngredientReferences(
     ingredientReferences: List<IngredientReference>,
     query: String

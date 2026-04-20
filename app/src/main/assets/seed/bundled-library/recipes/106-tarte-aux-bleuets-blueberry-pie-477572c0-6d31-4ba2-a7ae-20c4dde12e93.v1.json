@@ -29,7 +29,10 @@
       "quantity": 1,
       "unit": "count",
       "group": "Crust",
-      "notes": "5-inch sweet pie shell, plus extra dough for the top crust"
+      "notes": {
+        "fr": "abaisse \u00e0 tarte sucr\u00e9e de 5 po, plus p\u00e2te suppl\u00e9mentaire pour la cro\u00fbte du dessus",
+        "en": "5-inch sweet pie shell, plus extra dough for the top crust"
+      }
     },
     {
       "id": "477572c0-6d31-4ba2-a7ae-20c4dde12e93-ingredient-2",

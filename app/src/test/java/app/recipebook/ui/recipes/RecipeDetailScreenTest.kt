@@ -5,6 +5,7 @@ import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
+import app.recipebook.domain.model.LocalizedValue
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.SubstitutionConfidence
 import app.recipebook.domain.model.SubstitutionRiskLevel
@@ -35,8 +36,8 @@ class RecipeDetailScreenTest {
             quantity = 1.0,
             unit = "cup",
             ingredientName = "butter",
-            preparation = "divided",
-            notes = "baking"
+            preparation = LocalizedValue(fr = "divis\u00e9", en = "divided"),
+            notes = LocalizedValue(fr = "pour cuisson", en = "baking")
         )
         val ingredientReference = IngredientReference(
             id = "ingredient-ref-butter",
@@ -59,8 +60,8 @@ class RecipeDetailScreenTest {
             quantity = 1.0,
             unit = "cup",
             ingredientName = "butter",
-            preparation = "divided",
-            notes = "baking"
+            preparation = LocalizedValue(fr = "divis\u00e9", en = "divided"),
+            notes = LocalizedValue(fr = "pour cuisson", en = "baking")
         )
         val ingredientReference = IngredientReference(
             id = "ingredient-ref-butter",

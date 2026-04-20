@@ -48,7 +48,10 @@
       "ingredientRefId": "ingredient-ref-water",
       "quantity": 2,
       "unit": "cup",
-      "preparation": "boiling"
+      "preparation": {
+        "fr": "bouillant",
+        "en": "boiling"
+      }
     },
     {
       "id": "9c2ee378-3b20-47c0-ae4a-77195a908b07-ingredient-5",

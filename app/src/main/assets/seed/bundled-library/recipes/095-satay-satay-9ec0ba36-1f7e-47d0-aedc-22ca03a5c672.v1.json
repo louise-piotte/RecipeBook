@@ -24,7 +24,10 @@
       "ingredientRefId": "ingredient-ref-pork-loin-chops",
       "quantity": 1,
       "unit": "lb",
-      "preparation": "boneless and cut into diagonal strips"
+      "preparation": {
+        "fr": "d\u00e9soss\u00e9 et coup\u00e9 en lani\u00e8res diagonales",
+        "en": "boneless and cut into diagonal strips"
+      }
     },
     {
       "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-2",
@@ -49,7 +52,10 @@
       "ingredientRefId": "ingredient-ref-red-curry-paste",
       "quantity": 1,
       "unit": "tbsp",
-      "notes": "Use up to 2 tbsp to taste"
+      "notes": {
+        "fr": "utiliser jusqu'\u00e0 2 cuill\u00e8res \u00e0 soupe, au go\u00fbt",
+        "en": "Use up to 2 tbsp to taste"
+      }
     },
     {
       "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-5",
@@ -98,7 +104,10 @@
       "ingredientRefId": "ingredient-ref-coriander",
       "quantity": 0.5,
       "unit": "tsp",
-      "notes": "Ground"
+      "notes": {
+        "fr": "moulu",
+        "en": "Ground"
+      }
     },
     {
       "id": "9ec0ba36-1f7e-47d0-aedc-22ca03a5c672-ingredient-11",

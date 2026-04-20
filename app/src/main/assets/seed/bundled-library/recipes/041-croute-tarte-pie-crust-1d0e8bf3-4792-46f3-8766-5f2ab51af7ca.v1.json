@@ -36,7 +36,10 @@
       "ingredientRefId": "ingredient-ref-granulated-sugar",
       "quantity": 4,
       "unit": "tbsp",
-      "notes": "optional; use up to 4 tablespoons depending on the pie"
+      "notes": {
+        "fr": "facultatif; utiliser jusqu'\u00e0 4 cuill\u00e8res \u00e0 soupe selon la tarte",
+        "en": "optional; use up to 4 tablespoons depending on the pie"
+      }
     },
     {
       "id": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca-ingredient-3",
@@ -53,7 +56,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 227,
       "unit": "g",
-      "preparation": "cold and cubed"
+      "preparation": {
+        "fr": "froid et coup\u00e9 en cubes",
+        "en": "cold and cubed"
+      }
     },
     {
       "id": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca-ingredient-5",
@@ -62,8 +68,14 @@
       "ingredientRefId": "ingredient-ref-water",
       "quantity": 60,
       "unit": "ml",
-      "preparation": "ice cold",
-      "notes": "add more as needed, 1 tablespoon at a time"
+      "preparation": {
+        "fr": "glac\u00e9",
+        "en": "ice cold"
+      },
+      "notes": {
+        "fr": "en ajouter au besoin, 1 cuill\u00e8re \u00e0 soupe \u00e0 la fois",
+        "en": "add more as needed, 1 tablespoon at a time"
+      }
     }
   ],
   "servings": {

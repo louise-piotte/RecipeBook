@@ -52,7 +52,10 @@
       "ingredientRefId": "ingredient-ref-breadcrumbs",
       "quantity": 1,
       "unit": "cup",
-      "notes": "panko"
+      "notes": {
+        "fr": "panko",
+        "en": "panko"
+      }
     },
     {
       "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-5",
@@ -61,7 +64,10 @@
       "ingredientRefId": "ingredient-ref-parmesan-cheese",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "freshly grated"
+      "preparation": {
+        "fr": "fra\u00eechement r\u00e2p\u00e9",
+        "en": "freshly grated"
+      }
     },
     {
       "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-6",
@@ -110,7 +116,10 @@
       "ingredientRefId": "ingredient-ref-mozzarella",
       "quantity": 1.5,
       "unit": "cup",
-      "preparation": "shredded"
+      "preparation": {
+        "fr": "r\u00e2p\u00e9",
+        "en": "shredded"
+      }
     },
     {
       "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-12",
@@ -119,9 +128,15 @@
       "ingredientRefId": "ingredient-ref-parsley",
       "quantity": 2,
       "unit": "tbsp",
-      "preparation": "minced",
+      "preparation": {
+        "fr": "\u00e9minc\u00e9",
+        "en": "minced"
+      },
       "optional": true,
-      "notes": "for garnish"
+      "notes": {
+        "fr": "pour garnir",
+        "en": "for garnish"
+      }
     }
   ],
   "servings": {

@@ -6,6 +6,7 @@ import app.recipebook.domain.model.BilingualSyncStatus
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.ImportMetadata
+import app.recipebook.domain.model.LocalizedValue
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.TagCategory
@@ -141,6 +142,41 @@ class RecipeEditorScreenTest {
         )
 
         assertEquals("Butter", reference.canonicalName())
+    }
+
+    @Test
+    fun editableIngredientRow_tracksPreparationAndNotesPerLanguage() {
+        val row = editableIngredientRowForTest(id = "line-1")
+            .withPreparation(AppLanguage.EN, "divided")
+            .withPreparation(AppLanguage.FR, "divise")
+            .withNotes(AppLanguage.EN, "for garnish")
+            .withNotes(AppLanguage.FR, "pour garniture")
+
+        assertEquals("divided", row.preparation.forLanguage(AppLanguage.EN))
+        assertEquals("divise", row.preparation.forLanguage(AppLanguage.FR))
+        assertEquals("for garnish", row.notes.forLanguage(AppLanguage.EN))
+        assertEquals("pour garniture", row.notes.forLanguage(AppLanguage.FR))
+    }
+
+    @Test
+    fun toIngredientLines_preservesBilingualPreparationAndNotes() {
+        val rows = listOf(
+            editableIngredientRowForTest(
+                id = "line-1",
+                ingredientName = "butter",
+                quantity = "1",
+                unit = "cup",
+                preparation = LocalizedValue(fr = "ramolli", en = "softened"),
+                notes = LocalizedValue(fr = "pour glacage", en = "for frosting")
+            )
+        )
+
+        val ingredient = rows.toIngredientLines(emptyList()).single()
+
+        assertEquals("ramolli", ingredient.preparation.fr)
+        assertEquals("softened", ingredient.preparation.en)
+        assertEquals("pour glacage", ingredient.notes.fr)
+        assertEquals("for frosting", ingredient.notes.en)
     }
 
     @Test

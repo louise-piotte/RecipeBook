@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-almonds",
       "quantity": 210,
       "unit": "g",
-      "preparation": "blanched",
+      "preparation": {
+        "fr": "blanchi",
+        "en": "blanched"
+      },
       "group": "Almond Paste Base"
     },
     {
@@ -39,7 +42,10 @@
       "quantity": 180,
       "unit": "g",
       "group": "Almond Paste Base",
-      "notes": "divided"
+      "notes": {
+        "fr": "divis\u00e9",
+        "en": "divided"
+      }
     },
     {
       "id": "1dca3c8b-ed68-4397-b804-ae62e769ee5e-ingredient-3",
@@ -49,7 +55,10 @@
       "quantity": 1,
       "unit": "count",
       "group": "Almond Paste Base",
-      "preparation": "lightly beaten, at room temperature"
+      "preparation": {
+        "fr": "l\u00e9g\u00e8rement battu, \u00e0 temp\u00e9rature ambiante",
+        "en": "lightly beaten, at room temperature"
+      }
     },
     {
       "id": "1dca3c8b-ed68-4397-b804-ae62e769ee5e-ingredient-4",
@@ -87,8 +96,14 @@
       "quantity": 1,
       "unit": "count",
       "group": "For Marzipan",
-      "preparation": "lightly beaten, at room temperature",
-      "notes": "add gradually; you may not need it all"
+      "preparation": {
+        "fr": "l\u00e9g\u00e8rement battu, \u00e0 temp\u00e9rature ambiante",
+        "en": "lightly beaten, at room temperature"
+      },
+      "notes": {
+        "fr": "ajouter graduellement; il se peut que vous n'en ayez pas besoin au complet",
+        "en": "add gradually; you may not need it all"
+      }
     },
     {
       "id": "1dca3c8b-ed68-4397-b804-ae62e769ee5e-ingredient-8",

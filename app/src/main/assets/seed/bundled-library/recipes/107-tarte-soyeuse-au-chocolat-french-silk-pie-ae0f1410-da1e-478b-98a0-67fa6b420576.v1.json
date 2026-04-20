@@ -29,7 +29,10 @@
       "quantity": 1,
       "unit": "count",
       "group": "Crust",
-      "notes": "5-inch sweet pie shell, prebaked and cooled"
+      "notes": {
+        "fr": "abaisse \u00e0 tarte sucr\u00e9e de 5 po, pr\u00e9cuite et refroidie",
+        "en": "5-inch sweet pie shell, prebaked and cooled"
+      }
     },
     {
       "id": "ae0f1410-da1e-478b-98a0-67fa6b420576-ingredient-2",
@@ -56,7 +59,10 @@
       "ingredientRefId": "ingredient-ref-unsweetened-chocolate",
       "quantity": 56,
       "unit": "g",
-      "preparation": "finely chopped",
+      "preparation": {
+        "fr": "finement hach\u00e9",
+        "en": "finely chopped"
+      },
       "group": "Filling"
     },
     {
@@ -75,7 +81,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 113,
       "unit": "g",
-      "preparation": "softened",
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      },
       "group": "Filling"
     },
     {

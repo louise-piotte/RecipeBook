@@ -44,7 +44,10 @@
       "ingredientRefId": "ingredient-ref-onion",
       "quantity": 1,
       "unit": "count",
-      "preparation": "chopped"
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      }
     },
     {
       "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-4",
@@ -61,7 +64,10 @@
       "ingredientRefId": "ingredient-ref-breadcrumbs",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "dried"
+      "preparation": {
+        "fr": "s\u00e9ch\u00e9",
+        "en": "dried"
+      }
     },
     {
       "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-6",

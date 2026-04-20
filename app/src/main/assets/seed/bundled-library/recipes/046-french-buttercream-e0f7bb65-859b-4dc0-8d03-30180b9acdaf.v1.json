@@ -52,7 +52,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 227,
       "unit": "g",
-      "preparation": "room temperature, cubed"
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante, en cubes",
+        "en": "room temperature, cubed"
+      }
     },
     {
       "id": "e0f7bb65-859b-4dc0-8d03-30180b9acdaf-ingredient-5",

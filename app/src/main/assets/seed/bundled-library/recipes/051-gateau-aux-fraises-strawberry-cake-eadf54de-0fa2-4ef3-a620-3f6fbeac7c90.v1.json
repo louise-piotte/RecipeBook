@@ -73,7 +73,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 170,
       "unit": "g",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -92,7 +95,10 @@
       "ingredientRefId": "ingredient-ref-egg-white",
       "quantity": 5,
       "unit": "large egg white",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -101,7 +107,10 @@
       "ingredientName": "sour cream or plain yogurt",
       "quantity": 75,
       "unit": "g",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -120,7 +129,10 @@
       "ingredientRefId": "ingredient-ref-milk",
       "quantity": 120,
       "unit": "ml",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -139,7 +151,10 @@
       "quantity": 1,
       "unit": "drop",
       "optional": true,
-      "notes": "Use 1 to 2 drops",
+      "notes": {
+        "fr": "utiliser 1 \u00e0 2 gouttes",
+        "en": "Use 1 to 2 drops"
+      },
       "group": "Cake"
     }
   ],

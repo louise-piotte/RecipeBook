@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-asparagus",
       "quantity": 1,
       "unit": "bunch",
-      "preparation": "trimmed and cut into 1/2-inch pieces"
+      "preparation": {
+        "fr": "par\u00e9 et coup\u00e9 en morceaux de 1/2 po",
+        "en": "trimmed and cut into 1/2-inch pieces"
+      }
     },
     {
       "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-2",
@@ -53,7 +56,10 @@
       "ingredientRefId": "ingredient-ref-milk",
       "quantity": 1,
       "unit": "cup",
-      "notes": "cold"
+      "notes": {
+        "fr": "froid",
+        "en": "cold"
+      }
     },
     {
       "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-5",
@@ -78,7 +84,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 1,
       "unit": "clove",
-      "preparation": "minced"
+      "preparation": {
+        "fr": "\u00e9minc\u00e9",
+        "en": "minced"
+      }
     },
     {
       "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-8",
@@ -87,7 +96,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 4,
       "unit": "large egg",
-      "preparation": "separated"
+      "preparation": {
+        "fr": "s\u00e9par\u00e9",
+        "en": "separated"
+      }
     },
     {
       "id": "7239d74f-e895-421d-96e4-09a049546aa1-ingredient-9",
@@ -96,7 +108,10 @@
       "ingredientRefId": "ingredient-ref-cheddar-cheese",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "sharp white, grated"
+      "preparation": {
+        "fr": "blanc fort, r\u00e2p\u00e9",
+        "en": "sharp white, grated"
+      }
     }
   ],
   "servings": {

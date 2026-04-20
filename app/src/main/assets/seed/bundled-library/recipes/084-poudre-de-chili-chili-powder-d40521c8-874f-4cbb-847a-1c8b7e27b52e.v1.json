@@ -68,7 +68,10 @@
       "ingredientRefId": "ingredient-ref-cayenne-pepper",
       "quantity": 0.5,
       "unit": "tsp",
-      "notes": "or to taste"
+      "notes": {
+        "fr": "ou au go\u00fbt",
+        "en": "or to taste"
+      }
     }
   ],
   "servings": {

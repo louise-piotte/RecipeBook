@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 170,
       "unit": "g",
-      "preparation": "softened to room temperature"
+      "preparation": {
+        "fr": "ramolli \u00e0 temp\u00e9rature ambiante",
+        "en": "softened to room temperature"
+      }
     },
     {
       "id": "5719878d-25d9-40df-9f2c-8035a862f9e4-ingredient-2",
@@ -77,7 +80,10 @@
       "ingredientRefId": "ingredient-ref-cerises-au-marasquin",
       "quantity": 16,
       "unit": "item",
-      "preparation": "drained and chopped"
+      "preparation": {
+        "fr": "\u00e9goutt\u00e9 et hach\u00e9",
+        "en": "drained and chopped"
+      }
     },
     {
       "id": "5719878d-25d9-40df-9f2c-8035a862f9e4-ingredient-8",

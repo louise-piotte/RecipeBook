@@ -60,7 +60,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 340,
       "unit": "g",
-      "preparation": "softened"
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      }
     },
     {
       "id": "a1e9ba5d-be5c-447d-a368-3ae4954a0a07-ingredient-6",

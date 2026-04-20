@@ -93,7 +93,10 @@
       "quantity": 120,
       "unit": "ml",
       "group": "Cake",
-      "notes": "canola or vegetable oil"
+      "notes": {
+        "fr": "huile de canola ou v\u00e9g\u00e9tale",
+        "en": "canola or vegetable oil"
+      }
     },
     {
       "id": "e2d11309-7775-4efb-981c-2c78a8d03da6-ingredient-9",
@@ -102,7 +105,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 2,
       "unit": "large egg",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -112,7 +118,10 @@
       "ingredientRefId": "ingredient-ref-sour-cream",
       "quantity": 180,
       "unit": "g",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -122,7 +131,10 @@
       "ingredientRefId": "ingredient-ref-buttermilk",
       "quantity": 120,
       "unit": "ml",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -158,9 +170,15 @@
       "ingredientRefId": "ingredient-ref-brown-sugar",
       "quantity": 200,
       "unit": "g",
-      "preparation": "packed",
+      "preparation": {
+        "fr": "tass\u00e9",
+        "en": "packed"
+      },
       "group": "Filling",
-      "notes": "light or dark"
+      "notes": {
+        "fr": "clair ou fonc\u00e9",
+        "en": "light or dark"
+      }
     },
     {
       "id": "e2d11309-7775-4efb-981c-2c78a8d03da6-ingredient-16",
@@ -197,7 +215,10 @@
       "quantity": 2,
       "unit": "cup",
       "group": "Filling",
-      "notes": "sweetened"
+      "notes": {
+        "fr": "sucr\u00e9",
+        "en": "sweetened"
+      }
     },
     {
       "id": "e2d11309-7775-4efb-981c-2c78a8d03da6-ingredient-20",
@@ -206,7 +227,10 @@
       "ingredientRefId": "ingredient-ref-pecans",
       "quantity": 125,
       "unit": "g",
-      "preparation": "chopped",
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      },
       "group": "Filling"
     }
   ],

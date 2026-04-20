@@ -37,7 +37,10 @@
       "ingredientRefId": "ingredient-ref-dark-chocolate",
       "quantity": 100,
       "unit": "g",
-      "notes": "or preferred chocolate",
+      "notes": {
+        "fr": "ou le chocolat de votre choix",
+        "en": "or preferred chocolate"
+      },
       "group": "Base"
     },
     {
@@ -46,7 +49,10 @@
       "ingredientName": "salt",
       "ingredientRefId": "ingredient-ref-salt",
       "optional": true,
-      "notes": "flaky sea salt, for topping",
+      "notes": {
+        "fr": "sel de mer en flocons, pour garnir",
+        "en": "flaky sea salt, for topping"
+      },
       "group": "Base"
     },
     {

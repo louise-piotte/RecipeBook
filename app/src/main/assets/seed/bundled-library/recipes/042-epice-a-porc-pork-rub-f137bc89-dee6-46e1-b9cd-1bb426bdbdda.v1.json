@@ -52,7 +52,10 @@
       "ingredientRefId": "ingredient-ref-salt",
       "quantity": 2,
       "unit": "tbsp",
-      "notes": "coarse salt"
+      "notes": {
+        "fr": "gros sel",
+        "en": "coarse salt"
+      }
     },
     {
       "id": "f137bc89-dee6-46e1-b9cd-1bb426bdbdda-ingredient-5",

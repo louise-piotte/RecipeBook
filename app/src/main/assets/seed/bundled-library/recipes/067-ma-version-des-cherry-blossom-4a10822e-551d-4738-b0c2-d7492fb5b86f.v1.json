@@ -24,7 +24,10 @@
       "ingredientRefId": "ingredient-ref-dark-chocolate",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "chips"
+      "preparation": {
+        "fr": "en p\u00e9pites",
+        "en": "chips"
+      }
     },
     {
       "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-2",
@@ -32,7 +35,10 @@
       "ingredientName": "milk chocolate",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "chips"
+      "preparation": {
+        "fr": "en p\u00e9pites",
+        "en": "chips"
+      }
     },
     {
       "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-3",
@@ -41,7 +47,10 @@
       "ingredientRefId": "ingredient-ref-peanut-butter",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "natural"
+      "preparation": {
+        "fr": "nature",
+        "en": "natural"
+      }
     },
     {
       "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-4",
@@ -50,7 +59,10 @@
       "ingredientRefId": "ingredient-ref-pecans",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "finely chopped"
+      "preparation": {
+        "fr": "finement hach\u00e9",
+        "en": "finely chopped"
+      }
     },
     {
       "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-5",
@@ -59,7 +71,10 @@
       "ingredientRefId": "ingredient-ref-shredded-coconut",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "unsweetened"
+      "preparation": {
+        "fr": "non sucr\u00e9",
+        "en": "unsweetened"
+      }
     },
     {
       "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-6",

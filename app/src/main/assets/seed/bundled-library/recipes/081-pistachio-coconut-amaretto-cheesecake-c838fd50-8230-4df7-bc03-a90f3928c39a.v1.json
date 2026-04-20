@@ -37,8 +37,14 @@
       "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "toasted",
-      "notes": "flakes",
+      "preparation": {
+        "fr": "grill\u00e9",
+        "en": "toasted"
+      },
+      "notes": {
+        "fr": "en flocons",
+        "en": "flakes"
+      },
       "group": "Crust"
     },
     {
@@ -66,7 +72,10 @@
       "ingredientRefId": "ingredient-ref-salted-butter",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "melted",
+      "preparation": {
+        "fr": "fondu",
+        "en": "melted"
+      },
       "group": "Crust"
     },
     {
@@ -76,8 +85,14 @@
       "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "toasted",
-      "notes": "flakes",
+      "preparation": {
+        "fr": "grill\u00e9",
+        "en": "toasted"
+      },
+      "notes": {
+        "fr": "en flocons",
+        "en": "flakes"
+      },
       "group": "Filling"
     },
     {
@@ -114,7 +129,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 4,
       "group": "Filling",
-      "notes": "large"
+      "notes": {
+        "fr": "gros",
+        "en": "large"
+      }
     },
     {
       "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-11",
@@ -133,7 +151,10 @@
       "quantity": 1,
       "unit": "can",
       "group": "Filling",
-      "notes": "15 oz can"
+      "notes": {
+        "fr": "bo\u00eete de 15 oz",
+        "en": "15 oz can"
+      }
     },
     {
       "id": "c838fd50-8230-4df7-bc03-a90f3928c39a-ingredient-13",

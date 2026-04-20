@@ -32,7 +32,10 @@
       "ingredientRefId": "ingredient-ref-brown-sugar",
       "quantity": 0.75,
       "unit": "cup",
-      "preparation": "firmly packed"
+      "preparation": {
+        "fr": "bien tass\u00e9",
+        "en": "firmly packed"
+      }
     },
     {
       "id": "3e2bd9d9-95fc-43ea-8d33-140de5b7de25-ingredient-3",

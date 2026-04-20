@@ -44,7 +44,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 3,
       "unit": "large egg",
-      "preparation": "separated"
+      "preparation": {
+        "fr": "s\u00e9par\u00e9",
+        "en": "separated"
+      }
     },
     {
       "id": "2d53895b-8bd0-4225-bf63-766d29418eac-ingredient-4",
@@ -79,7 +82,10 @@
       "ingredientRefId": "ingredient-ref-heavy-cream",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "cold",
+      "preparation": {
+        "fr": "froid",
+        "en": "cold"
+      },
       "group": "Mousse"
     },
     {
@@ -97,7 +103,10 @@
       "ingredientRefId": "ingredient-ref-heavy-cream",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "cold",
+      "preparation": {
+        "fr": "froid",
+        "en": "cold"
+      },
       "group": "For serving"
     },
     {

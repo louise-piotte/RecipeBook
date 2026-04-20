@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 227,
       "unit": "g",
-      "preparation": "softened",
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      },
       "group": "Cookies"
     },
     {

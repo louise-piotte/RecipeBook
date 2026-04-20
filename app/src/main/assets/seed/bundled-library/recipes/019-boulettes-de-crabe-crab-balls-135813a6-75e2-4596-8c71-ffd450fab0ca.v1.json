@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 1,
       "unit": "large egg",
-      "preparation": "lightly whisked",
+      "preparation": {
+        "fr": "l\u00e9g\u00e8rement fouett\u00e9",
+        "en": "lightly whisked"
+      },
       "group": "Crab balls"
     },
     {
@@ -38,7 +41,10 @@
       "ingredientRefId": "ingredient-ref-plain-yogurt",
       "quantity": 0.25,
       "unit": "cup",
-      "preparation": "Greek",
+      "preparation": {
+        "fr": "grec",
+        "en": "Greek"
+      },
       "group": "Crab balls"
     },
     {
@@ -66,7 +72,10 @@
       "ingredientRefId": "ingredient-ref-lemon-juice",
       "quantity": 2,
       "unit": "tsp",
-      "preparation": "fresh",
+      "preparation": {
+        "fr": "frais",
+        "en": "fresh"
+      },
       "group": "Crab balls"
     },
     {
@@ -76,7 +85,10 @@
       "ingredientRefId": "ingredient-ref-green-onions",
       "quantity": 2,
       "unit": "count",
-      "preparation": "chopped",
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      },
       "group": "Crab balls"
     },
     {
@@ -104,7 +116,10 @@
       "ingredientRefId": "ingredient-ref-breadcrumbs",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "panko",
+      "preparation": {
+        "fr": "panko",
+        "en": "panko"
+      },
       "group": "Crab balls"
     },
     {
@@ -132,7 +147,10 @@
       "ingredientRefId": "ingredient-ref-plain-yogurt",
       "quantity": 0.25,
       "unit": "cup",
-      "preparation": "Greek",
+      "preparation": {
+        "fr": "grec",
+        "en": "Greek"
+      },
       "group": "Sriracha dipping sauce"
     },
     {

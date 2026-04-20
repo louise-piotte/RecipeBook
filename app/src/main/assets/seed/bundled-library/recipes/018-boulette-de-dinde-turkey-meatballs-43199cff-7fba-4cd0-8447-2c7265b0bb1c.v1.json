@@ -26,7 +26,10 @@
       "ingredientRefId": "ingredient-ref-ground-turkey",
       "quantity": 2,
       "unit": "lb",
-      "preparation": "lean"
+      "preparation": {
+        "fr": "maigre",
+        "en": "lean"
+      }
     },
     {
       "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-2",
@@ -43,7 +46,10 @@
       "ingredientRefId": "ingredient-ref-manchego-cheese",
       "quantity": 113,
       "unit": "g",
-      "preparation": "grated"
+      "preparation": {
+        "fr": "r\u00e2p\u00e9",
+        "en": "grated"
+      }
     },
     {
       "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-4",
@@ -52,7 +58,10 @@
       "ingredientRefId": "ingredient-ref-onion",
       "quantity": 75,
       "unit": "g",
-      "preparation": "red, minced"
+      "preparation": {
+        "fr": "rouge, \u00e9minc\u00e9",
+        "en": "red, minced"
+      }
     },
     {
       "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-5",
@@ -61,7 +70,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 1,
       "unit": "tbsp",
-      "preparation": "fresh, minced"
+      "preparation": {
+        "fr": "frais, \u00e9minc\u00e9",
+        "en": "fresh, minced"
+      }
     },
     {
       "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-6",
@@ -94,7 +106,10 @@
       "ingredientRefId": "ingredient-ref-black-pepper",
       "quantity": 1,
       "unit": "tsp",
-      "preparation": "ground"
+      "preparation": {
+        "fr": "moulu",
+        "en": "ground"
+      }
     },
     {
       "id": "43199cff-7fba-4cd0-8447-2c7265b0bb1c-ingredient-10",

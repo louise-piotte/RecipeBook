@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-peanut-butter",
       "quantity": 240,
       "unit": "g",
-      "preparation": "smooth"
+      "preparation": {
+        "fr": "cr\u00e9meux",
+        "en": "smooth"
+      }
     },
     {
       "id": "607adb61-ff54-49c9-8aaf-d02648a3ae90-ingredient-2",

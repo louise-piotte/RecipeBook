@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 227,
       "unit": "g",
-      "preparation": "cold"
+      "preparation": {
+        "fr": "froid",
+        "en": "cold"
+      }
     },
     {
       "id": "42ed2176-cd9f-451e-af27-d77cbe85d5da-ingredient-2",
@@ -61,8 +64,14 @@
       "ingredientRefId": "ingredient-ref-water",
       "quantity": 120,
       "unit": "ml",
-      "preparation": "cold",
-      "notes": "up to 150 ml as needed"
+      "preparation": {
+        "fr": "froid",
+        "en": "cold"
+      },
+      "notes": {
+        "fr": "jusqu'\u00e0 150 ml au besoin",
+        "en": "up to 150 ml as needed"
+      }
     }
   ],
   "servings": {

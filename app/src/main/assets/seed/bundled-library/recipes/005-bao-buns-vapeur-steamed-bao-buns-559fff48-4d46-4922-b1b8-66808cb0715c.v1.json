@@ -36,7 +36,10 @@
       "ingredientRefId": "ingredient-ref-yeast",
       "quantity": 1,
       "unit": "tsp",
-      "preparation": "dried"
+      "preparation": {
+        "fr": "s\u00e9ch\u00e9",
+        "en": "dried"
+      }
     },
     {
       "id": "559fff48-4d46-4922-b1b8-66808cb0715c-ingredient-3",
@@ -61,7 +64,10 @@
       "ingredientRefId": "ingredient-ref-water",
       "quantity": 140,
       "unit": "ml",
-      "preparation": "lukewarm"
+      "preparation": {
+        "fr": "ti\u00e8de",
+        "en": "lukewarm"
+      }
     },
     {
       "id": "559fff48-4d46-4922-b1b8-66808cb0715c-ingredient-6",

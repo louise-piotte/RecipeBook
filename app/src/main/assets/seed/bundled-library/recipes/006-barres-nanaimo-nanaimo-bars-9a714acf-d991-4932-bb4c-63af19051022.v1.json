@@ -55,7 +55,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 1,
       "unit": "large egg",
-      "preparation": "beaten",
+      "preparation": {
+        "fr": "battu",
+        "en": "beaten"
+      },
       "group": "Base"
     },
     {
@@ -74,7 +77,10 @@
       "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 120,
       "unit": "g",
-      "preparation": "flaked",
+      "preparation": {
+        "fr": "en flocons",
+        "en": "flaked"
+      },
       "group": "Base"
     },
     {
@@ -84,7 +90,10 @@
       "ingredientRefId": "ingredient-ref-almonds",
       "quantity": 40,
       "unit": "g",
-      "preparation": "finely chopped",
+      "preparation": {
+        "fr": "finement hach\u00e9",
+        "en": "finely chopped"
+      },
       "group": "Base"
     },
     {
@@ -94,7 +103,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 113.5,
       "unit": "g",
-      "preparation": "softened",
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      },
       "group": "Middle Layer"
     },
     {

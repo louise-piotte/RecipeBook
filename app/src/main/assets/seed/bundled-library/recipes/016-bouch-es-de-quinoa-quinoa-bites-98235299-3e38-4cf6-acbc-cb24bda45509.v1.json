@@ -26,7 +26,10 @@
       "ingredientRefId": "ingredient-ref-quinoa",
       "quantity": 2,
       "unit": "cup",
-      "preparation": "cooked"
+      "preparation": {
+        "fr": "cuit",
+        "en": "cooked"
+      }
     },
     {
       "id": "98235299-3e38-4cf6-acbc-cb24bda45509-ingredient-2",
@@ -43,7 +46,10 @@
       "ingredientRefId": "ingredient-ref-cheddar-cheese",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "shredded"
+      "preparation": {
+        "fr": "r\u00e2p\u00e9",
+        "en": "shredded"
+      }
     },
     {
       "id": "98235299-3e38-4cf6-acbc-cb24bda45509-ingredient-4",
@@ -52,7 +58,10 @@
       "ingredientRefId": "ingredient-ref-carrot",
       "quantity": 0.25,
       "unit": "cup",
-      "preparation": "grated"
+      "preparation": {
+        "fr": "r\u00e2p\u00e9",
+        "en": "grated"
+      }
     },
     {
       "id": "98235299-3e38-4cf6-acbc-cb24bda45509-ingredient-5",
@@ -61,7 +70,10 @@
       "ingredientRefId": "ingredient-ref-broccoli",
       "quantity": 1.5,
       "unit": "cup",
-      "preparation": "chopped"
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      }
     },
     {
       "id": "98235299-3e38-4cf6-acbc-cb24bda45509-ingredient-6",

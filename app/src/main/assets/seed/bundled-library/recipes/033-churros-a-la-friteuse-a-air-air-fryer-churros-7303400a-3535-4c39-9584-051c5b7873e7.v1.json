@@ -37,7 +37,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 0.1666666667,
       "unit": "cup",
-      "preparation": "cut into cubes",
+      "preparation": {
+        "fr": "coup\u00e9 en cubes",
+        "en": "cut into cubes"
+      },
       "group": "Dough"
     },
     {

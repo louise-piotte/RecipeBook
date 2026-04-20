@@ -38,7 +38,10 @@
       "quantity": 60,
       "unit": "ml",
       "group": "Tangzhong",
-      "preparation": "whole"
+      "preparation": {
+        "fr": "entier",
+        "en": "whole"
+      }
     },
     {
       "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-3",
@@ -57,7 +60,10 @@
       "quantity": 125,
       "unit": "ml",
       "group": "Dough",
-      "preparation": "whole"
+      "preparation": {
+        "fr": "entier",
+        "en": "whole"
+      }
     },
     {
       "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-5",
@@ -76,7 +82,10 @@
       "quantity": 8,
       "unit": "g",
       "group": "Dough",
-      "preparation": "instant"
+      "preparation": {
+        "fr": "instantan\u00e9",
+        "en": "instant"
+      }
     },
     {
       "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-7",
@@ -130,7 +139,10 @@
       "quantity": 3,
       "unit": "tbsp",
       "group": "Dough",
-      "preparation": "softened"
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      }
     },
     {
       "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-13",
@@ -144,14 +156,20 @@
       "ingredientName": "sesame seeds",
       "ingredientRefId": "ingredient-ref-sesame-seeds",
       "group": "Topping",
-      "preparation": "toasted"
+      "preparation": {
+        "fr": "grill\u00e9",
+        "en": "toasted"
+      }
     },
     {
       "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-15",
       "originalText": "Melted butter",
       "ingredientName": "butter",
       "group": "Topping",
-      "preparation": "melted"
+      "preparation": {
+        "fr": "fondu",
+        "en": "melted"
+      }
     }
   ],
   "servings": {

@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-cucumber",
       "quantity": 2,
       "unit": "cup",
-      "preparation": "grated"
+      "preparation": {
+        "fr": "r\u00e2p\u00e9",
+        "en": "grated"
+      }
     },
     {
       "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-2",
@@ -37,7 +40,10 @@
       "ingredientRefId": "ingredient-ref-plain-yogurt",
       "quantity": 1.5,
       "unit": "cup",
-      "notes": "Greek style"
+      "notes": {
+        "fr": "style grec",
+        "en": "Greek style"
+      }
     },
     {
       "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-3",
@@ -46,7 +52,10 @@
       "ingredientRefId": "ingredient-ref-olive-oil",
       "quantity": 2,
       "unit": "tbsp",
-      "notes": "extra-virgin"
+      "notes": {
+        "fr": "extra-vierge",
+        "en": "extra-virgin"
+      }
     },
     {
       "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-4",
@@ -54,8 +63,14 @@
       "ingredientName": "fresh herbs",
       "quantity": 2,
       "unit": "tbsp",
-      "preparation": "chopped",
-      "notes": "mint, dill, or a mixture of both"
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      },
+      "notes": {
+        "fr": "menthe, aneth ou un m\u00e9lange des deux",
+        "en": "mint, dill, or a mixture of both"
+      }
     },
     {
       "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-5",
@@ -72,7 +87,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 1,
       "unit": "clove",
-      "preparation": "pressed or minced"
+      "preparation": {
+        "fr": "press\u00e9 ou \u00e9minc\u00e9",
+        "en": "pressed or minced"
+      }
     },
     {
       "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-7",

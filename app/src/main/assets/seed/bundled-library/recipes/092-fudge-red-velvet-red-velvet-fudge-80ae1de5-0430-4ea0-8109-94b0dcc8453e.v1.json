@@ -84,7 +84,10 @@
       "ingredientRefId": "ingredient-ref-food-coloring",
       "quantity": 3,
       "unit": "tbsp",
-      "notes": "Red"
+      "notes": {
+        "fr": "rouge",
+        "en": "Red"
+      }
     }
   ],
   "servings": {

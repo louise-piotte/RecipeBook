@@ -36,7 +36,10 @@
       "ingredientRefId": "ingredient-ref-semisweet-chocolate",
       "quantity": 175,
       "unit": "g",
-      "preparation": "divided"
+      "preparation": {
+        "fr": "divis\u00e9",
+        "en": "divided"
+      }
     },
     {
       "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-3",
@@ -77,7 +80,10 @@
       "ingredientRefId": "ingredient-ref-brown-sugar",
       "quantity": 220,
       "unit": "g",
-      "preparation": "packed light"
+      "preparation": {
+        "fr": "l\u00e9g\u00e8rement tass\u00e9",
+        "en": "packed light"
+      }
     },
     {
       "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-8",
@@ -102,7 +108,10 @@
       "ingredientRefId": "ingredient-ref-peanut-butter",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "creamy"
+      "preparation": {
+        "fr": "cr\u00e9meux",
+        "en": "creamy"
+      }
     }
   ],
   "servings": {

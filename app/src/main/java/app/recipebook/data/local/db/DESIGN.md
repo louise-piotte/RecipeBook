@@ -21,3 +21,4 @@ This package is the Room storage foundation for the recipe library.
 - Any entity or DAO change usually requires matching updates in repository mappers and instrumentation coverage.
 - Because the app is pre-MVP, evolve the schema in place instead of adding compatibility layers.
 - Keep line/link/cross-ref deletion behavior obvious so edits do not leave orphaned rows.
+- Ingredient-line localized editor fields are stored explicitly as paired FR/EN columns in Room so draft language switching does not depend on runtime descriptor translation.

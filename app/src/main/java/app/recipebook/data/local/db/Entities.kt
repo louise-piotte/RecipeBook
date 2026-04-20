@@ -64,9 +64,11 @@ data class RecipeIngredientLineEntity(
     val quantity: Double? = null,
     val unit: String? = null,
     val ingredientName: String,
-    val preparation: String? = null,
+    val preparationFr: String = "",
+    val preparationEn: String = "",
     val optional: Boolean = false,
-    val notes: String? = null,
+    val notesFr: String = "",
+    val notesEn: String = "",
     @ColumnInfo(name = "groupName")
     val group: String? = null
 )

@@ -36,7 +36,10 @@
       "ingredientRefId": "ingredient-ref-lemon-zest",
       "quantity": 1,
       "unit": "tbsp",
-      "preparation": "grated"
+      "preparation": {
+        "fr": "r\u00e2p\u00e9",
+        "en": "grated"
+      }
     },
     {
       "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-3",
@@ -53,7 +56,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 113,
       "unit": "g",
-      "preparation": "melted"
+      "preparation": {
+        "fr": "fondu",
+        "en": "melted"
+      }
     },
     {
       "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-5",
@@ -70,7 +76,10 @@
       "ingredientRefId": "ingredient-ref-lemon-juice",
       "quantity": 60,
       "unit": "ml",
-      "preparation": "fresh"
+      "preparation": {
+        "fr": "frais",
+        "en": "fresh"
+      }
     },
     {
       "id": "f07ba465-a5c8-4fad-bba3-83941f165410-ingredient-7",

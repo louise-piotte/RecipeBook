@@ -51,7 +51,10 @@
       "ingredientRefId": "ingredient-ref-semisweet-chocolate",
       "quantity": 56,
       "unit": "g",
-      "preparation": "finely chopped",
+      "preparation": {
+        "fr": "finement hach\u00e9",
+        "en": "finely chopped"
+      },
       "group": "Cake"
     },
     {
@@ -61,7 +64,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "softened",
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      },
       "group": "Cake"
     },
     {
@@ -107,7 +113,10 @@
       "ingredientRefId": "ingredient-ref-coconut-milk",
       "quantity": 0.75,
       "unit": "cup",
-      "preparation": "canned, room temperature",
+      "preparation": {
+        "fr": "en conserve, \u00e0 temp\u00e9rature ambiante",
+        "en": "canned, room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -117,7 +126,10 @@
       "ingredientRefId": "ingredient-ref-shredded-coconut",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "unsweetened",
+      "preparation": {
+        "fr": "non sucr\u00e9",
+        "en": "unsweetened"
+      },
       "group": "Cake"
     },
     {
@@ -154,7 +166,10 @@
       "ingredientRefId": "ingredient-ref-almonds",
       "quantity": 20,
       "unit": "g",
-      "preparation": "sliced",
+      "preparation": {
+        "fr": "tranch\u00e9",
+        "en": "sliced"
+      },
       "group": "Crunch"
     },
     {
@@ -164,7 +179,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 170.25,
       "unit": "g",
-      "preparation": "softened",
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      },
       "group": "Nanaimo-style filling"
     },
     {
@@ -201,7 +219,10 @@
       "ingredientRefId": "ingredient-ref-semisweet-chocolate",
       "quantity": 113,
       "unit": "g",
-      "preparation": "finely chopped",
+      "preparation": {
+        "fr": "finement hach\u00e9",
+        "en": "finely chopped"
+      },
       "group": "Ganache"
     },
     {

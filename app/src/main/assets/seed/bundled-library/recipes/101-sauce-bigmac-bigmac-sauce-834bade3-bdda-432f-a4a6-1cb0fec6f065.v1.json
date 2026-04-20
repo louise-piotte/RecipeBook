@@ -52,7 +52,10 @@
       "ingredientRefId": "ingredient-ref-onion",
       "quantity": 2.5,
       "unit": "tbsp",
-      "preparation": "finely diced sweet onion"
+      "preparation": {
+        "fr": "oignon doux finement coup\u00e9 en d\u00e9s",
+        "en": "finely diced sweet onion"
+      }
     },
     {
       "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065-ingredient-5",
@@ -69,7 +72,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 1,
       "unit": "clove",
-      "preparation": "grated"
+      "preparation": {
+        "fr": "r\u00e2p\u00e9",
+        "en": "grated"
+      }
     },
     {
       "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065-ingredient-7",
@@ -78,7 +84,10 @@
       "ingredientRefId": "ingredient-ref-bread-and-butter-pickle",
       "quantity": 1,
       "unit": "count",
-      "preparation": "finely diced"
+      "preparation": {
+        "fr": "finement coup\u00e9 en d\u00e9s",
+        "en": "finely diced"
+      }
     },
     {
       "id": "834bade3-bdda-432f-a4a6-1cb0fec6f065-ingredient-8",
@@ -95,7 +104,10 @@
       "ingredientRefId": "ingredient-ref-black-pepper",
       "quantity": 1,
       "unit": "to taste",
-      "notes": "season with salt and pepper to taste"
+      "notes": {
+        "fr": "assaisonner de sel et de poivre au go\u00fbt",
+        "en": "season with salt and pepper to taste"
+      }
     }
   ],
   "servings": {

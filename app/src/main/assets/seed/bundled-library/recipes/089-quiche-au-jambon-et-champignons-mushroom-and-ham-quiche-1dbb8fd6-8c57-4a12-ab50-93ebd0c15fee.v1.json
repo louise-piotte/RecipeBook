@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-ham",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "diced"
+      "preparation": {
+        "fr": "en d\u00e9s",
+        "en": "diced"
+      }
     },
     {
       "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-ingredient-2",
@@ -45,7 +48,10 @@
       "ingredientRefId": "ingredient-ref-mushroom",
       "quantity": 0.5,
       "unit": "count",
-      "notes": "box"
+      "notes": {
+        "fr": "bo\u00eete",
+        "en": "box"
+      }
     },
     {
       "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-ingredient-4",
@@ -78,7 +84,10 @@
       "ingredientRefId": "ingredient-ref-gruyere",
       "quantity": 2,
       "unit": "cup",
-      "preparation": "grated"
+      "preparation": {
+        "fr": "r\u00e2p\u00e9",
+        "en": "grated"
+      }
     },
     {
       "id": "1dbb8fd6-8c57-4a12-ab50-93ebd0c15fee-ingredient-8",
@@ -87,7 +96,10 @@
       "ingredientRefId": "ingredient-ref-pie-crust",
       "quantity": 4,
       "unit": "count",
-      "notes": "5-inch"
+      "notes": {
+        "fr": "5 po",
+        "en": "5-inch"
+      }
     }
   ],
   "servings": {

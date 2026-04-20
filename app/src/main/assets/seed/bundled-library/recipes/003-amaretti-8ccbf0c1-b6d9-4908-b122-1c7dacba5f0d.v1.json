@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-almond-paste",
       "quantity": 16,
       "unit": "oz",
-      "notes": "1 batch"
+      "notes": {
+        "fr": "1 recette",
+        "en": "1 batch"
+      }
     },
     {
       "id": "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-ingredient-2",
@@ -53,7 +56,10 @@
       "ingredientRefId": "ingredient-ref-egg-white",
       "quantity": 2,
       "unit": "large egg white",
-      "preparation": "lightly beaten"
+      "preparation": {
+        "fr": "l\u00e9g\u00e8rement battu",
+        "en": "lightly beaten"
+      }
     },
     {
       "id": "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-ingredient-5",
@@ -68,7 +74,10 @@
       "originalText": "sliced almonds for rolling",
       "ingredientName": "almonds",
       "ingredientRefId": "ingredient-ref-almonds",
-      "notes": "sliced, for rolling"
+      "notes": {
+        "fr": "tranch\u00e9, pour rouler",
+        "en": "sliced, for rolling"
+      }
     },
     {
       "id": "8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-ingredient-7",
@@ -76,7 +85,10 @@
       "ingredientName": "icing sugar",
       "ingredientRefId": "ingredient-ref-icing-sugar",
       "optional": true,
-      "notes": "for dusting"
+      "notes": {
+        "fr": "pour saupoudrer",
+        "en": "for dusting"
+      }
     }
   ],
   "times": {

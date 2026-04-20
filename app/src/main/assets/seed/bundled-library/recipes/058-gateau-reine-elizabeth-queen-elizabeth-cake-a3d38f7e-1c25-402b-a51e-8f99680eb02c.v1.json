@@ -27,7 +27,10 @@
       "ingredientName": "water",
       "quantity": 1.25,
       "unit": "cup",
-      "preparation": "boiling",
+      "preparation": {
+        "fr": "bouillant",
+        "en": "boiling"
+      },
       "group": "Cake"
     },
     {
@@ -36,7 +39,10 @@
       "ingredientName": "dates",
       "quantity": 1.25,
       "unit": "cup",
-      "preparation": "pitted and chopped",
+      "preparation": {
+        "fr": "d\u00e9noyaut\u00e9 et hach\u00e9",
+        "en": "pitted and chopped"
+      },
       "group": "Cake"
     },
     {
@@ -45,7 +51,10 @@
       "ingredientName": "butter",
       "quantity": 57,
       "unit": "g",
-      "preparation": "softened",
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      },
       "group": "Cake"
     },
     {
@@ -118,7 +127,10 @@
       "ingredientRefId": "ingredient-ref-walnuts",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "chopped",
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      },
       "group": "Cake"
     },
     {
@@ -128,7 +140,10 @@
       "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "flaked",
+      "preparation": {
+        "fr": "en flocons",
+        "en": "flaked"
+      },
       "group": "Topping"
     },
     {
@@ -138,7 +153,10 @@
       "ingredientRefId": "ingredient-ref-brown-sugar",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "packed",
+      "preparation": {
+        "fr": "tass\u00e9",
+        "en": "packed"
+      },
       "group": "Topping"
     },
     {
@@ -164,7 +182,10 @@
       "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "toasted",
+      "preparation": {
+        "fr": "grill\u00e9",
+        "en": "toasted"
+      },
       "group": "Topping"
     }
   ],

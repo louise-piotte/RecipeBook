@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-water",
       "quantity": 180,
       "unit": "ml",
-      "preparation": "warm"
+      "preparation": {
+        "fr": "ti\u00e8de",
+        "en": "warm"
+      }
     },
     {
       "id": "14d20789-1967-432a-b9bc-0319599ffbd3-ingredient-2",
@@ -37,7 +40,10 @@
       "ingredientRefId": "ingredient-ref-all-purpose-flour",
       "quantity": 240,
       "unit": "g",
-      "notes": "bread flour can be used instead"
+      "notes": {
+        "fr": "la farine \u00e0 pain peut \u00eatre utilis\u00e9e \u00e0 la place",
+        "en": "bread flour can be used instead"
+      }
     },
     {
       "id": "14d20789-1967-432a-b9bc-0319599ffbd3-ingredient-3",

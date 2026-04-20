@@ -50,7 +50,10 @@
       "originalText": "Extra freeze-dried raspberries for coating",
       "ingredientName": "freeze dried raspberries",
       "ingredientRefId": "ingredient-ref-freeze-dried-raspberries",
-      "notes": "extra, for coating"
+      "notes": {
+        "fr": "un peu plus, pour enrober",
+        "en": "extra, for coating"
+      }
     }
   ],
   "servings": {

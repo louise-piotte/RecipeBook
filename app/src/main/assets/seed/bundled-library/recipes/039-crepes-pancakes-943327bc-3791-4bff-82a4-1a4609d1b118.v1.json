@@ -60,7 +60,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 1,
       "unit": "count",
-      "preparation": "large"
+      "preparation": {
+        "fr": "gros",
+        "en": "large"
+      }
     },
     {
       "id": "943327bc-3791-4bff-82a4-1a4609d1b118-ingredient-6",
@@ -85,7 +88,10 @@
       "ingredientRefId": "ingredient-ref-salted-butter",
       "quantity": 1,
       "unit": "tbsp",
-      "preparation": "melted"
+      "preparation": {
+        "fr": "fondu",
+        "en": "melted"
+      }
     }
   ],
   "servings": {

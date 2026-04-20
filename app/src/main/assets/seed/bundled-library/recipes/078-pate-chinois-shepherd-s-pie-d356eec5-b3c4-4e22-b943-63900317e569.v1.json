@@ -36,7 +36,10 @@
       "ingredientRefId": "ingredient-ref-onion",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "yellow, chopped"
+      "preparation": {
+        "fr": "jaune, hach\u00e9",
+        "en": "yellow, chopped"
+      }
     },
     {
       "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-3",
@@ -45,7 +48,10 @@
       "ingredientRefId": "ingredient-ref-ground-beef",
       "quantity": 1,
       "unit": "lb",
-      "notes": "ground lamb can be used instead"
+      "notes": {
+        "fr": "de l'agneau hach\u00e9 peut \u00eatre utilis\u00e9 \u00e0 la place",
+        "en": "ground lamb can be used instead"
+      }
     },
     {
       "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-4",
@@ -54,7 +60,10 @@
       "ingredientRefId": "ingredient-ref-parsley",
       "quantity": 2,
       "unit": "tsp",
-      "preparation": "dried"
+      "preparation": {
+        "fr": "s\u00e9ch\u00e9",
+        "en": "dried"
+      }
     },
     {
       "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-5",
@@ -103,7 +112,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 2,
       "unit": "count",
-      "preparation": "minced"
+      "preparation": {
+        "fr": "\u00e9minc\u00e9",
+        "en": "minced"
+      }
     },
     {
       "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-11",
@@ -135,7 +147,10 @@
       "ingredientName": "peas and carrots",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "frozen"
+      "preparation": {
+        "fr": "congel\u00e9",
+        "en": "frozen"
+      }
     },
     {
       "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-15",
@@ -144,7 +159,10 @@
       "ingredientRefId": "ingredient-ref-corn-kernels",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "frozen"
+      "preparation": {
+        "fr": "congel\u00e9",
+        "en": "frozen"
+      }
     },
     {
       "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-16",
@@ -154,8 +172,14 @@
       "quantity": 1.5,
       "unit": "lb",
       "group": "Mashed Potato Topping",
-      "preparation": "russet, peeled and cut into 1-inch cubes",
-      "notes": "up to 2 lb"
+      "preparation": {
+        "fr": "russet, pel\u00e9 et coup\u00e9 en cubes de 1 po",
+        "en": "russet, peeled and cut into 1-inch cubes"
+      },
+      "notes": {
+        "fr": "jusqu'\u00e0 2 lb",
+        "en": "up to 2 lb"
+      }
     },
     {
       "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-17",

@@ -24,7 +24,10 @@
       "ingredientRefId": "ingredient-ref-cranberries",
       "quantity": 1,
       "unit": "count",
-      "notes": "box"
+      "notes": {
+        "fr": "bo\u00eete",
+        "en": "box"
+      }
     },
     {
       "id": "05a7ab4d-bf11-40ff-a570-cc0733da292b-ingredient-2",

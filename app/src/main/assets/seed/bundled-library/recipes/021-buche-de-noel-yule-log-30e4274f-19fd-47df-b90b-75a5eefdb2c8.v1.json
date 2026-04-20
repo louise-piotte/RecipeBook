@@ -37,7 +37,10 @@
       "ingredientRefId": "ingredient-ref-rosemary-sprigs",
       "quantity": 4,
       "unit": "count",
-      "preparation": "4 to 5 sprigs",
+      "preparation": {
+        "fr": "4 \u00e0 5 brins",
+        "en": "4 to 5 sprigs"
+      },
       "group": "Sugared cranberries and rosemary",
       "optional": true
     },
@@ -56,7 +59,10 @@
       "ingredientRefId": "ingredient-ref-granulated-sugar",
       "quantity": 250,
       "unit": "g",
-      "preparation": "divided",
+      "preparation": {
+        "fr": "divis\u00e9",
+        "en": "divided"
+      },
       "group": "Sugared cranberries and rosemary"
     },
     {
@@ -102,7 +108,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 6,
       "unit": "large egg",
-      "preparation": "separated",
+      "preparation": {
+        "fr": "s\u00e9par\u00e9",
+        "en": "separated"
+      },
       "group": "Cake"
     },
     {
@@ -112,7 +121,10 @@
       "ingredientRefId": "ingredient-ref-granulated-sugar",
       "quantity": 200,
       "unit": "g",
-      "preparation": "divided",
+      "preparation": {
+        "fr": "divis\u00e9",
+        "en": "divided"
+      },
       "group": "Cake"
     },
     {
@@ -189,7 +201,10 @@
       "unit": "tsp",
       "group": "Meringue mushrooms",
       "optional": true,
-      "notes": "for dusting"
+      "notes": {
+        "fr": "pour saupoudrer",
+        "en": "for dusting"
+      }
     },
     {
       "id": "30e4274f-19fd-47df-b90b-75a5eefdb2c8-ingredient-19",
@@ -208,7 +223,10 @@
       "ingredientRefId": "ingredient-ref-heavy-cream",
       "quantity": 360,
       "unit": "ml",
-      "preparation": "cold",
+      "preparation": {
+        "fr": "froid",
+        "en": "cold"
+      },
       "group": "Whipped cream filling"
     },
     {
@@ -245,7 +263,10 @@
       "ingredientRefId": "ingredient-ref-hazelnuts",
       "quantity": 60,
       "unit": "g",
-      "preparation": "finely chopped",
+      "preparation": {
+        "fr": "finement hach\u00e9",
+        "en": "finely chopped"
+      },
       "group": "Whipped cream filling",
       "optional": true
     },

@@ -24,7 +24,10 @@
       "ingredientRefId": "ingredient-ref-calamari",
       "quantity": 140,
       "unit": "g",
-      "preparation": "sliced into rings"
+      "preparation": {
+        "fr": "tranch\u00e9 en rondelles",
+        "en": "sliced into rings"
+      }
     },
     {
       "id": "5fecccc1-d734-4f2b-9958-ac0c6a960f29-ingredient-2",
@@ -33,7 +36,10 @@
       "ingredientRefId": "ingredient-ref-breadcrumbs",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "panko"
+      "preparation": {
+        "fr": "panko",
+        "en": "panko"
+      }
     },
     {
       "id": "5fecccc1-d734-4f2b-9958-ac0c6a960f29-ingredient-3",

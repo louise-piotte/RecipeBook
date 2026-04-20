@@ -36,7 +36,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 226,
       "unit": "g",
-      "preparation": "softened to room temperature"
+      "preparation": {
+        "fr": "ramolli \u00e0 temp\u00e9rature ambiante",
+        "en": "softened to room temperature"
+      }
     },
     {
       "id": "e34243f0-f13c-47bf-991f-a8d50e3c67a8-ingredient-3",
@@ -53,7 +56,10 @@
       "ingredientRefId": "ingredient-ref-heavy-cream",
       "quantity": 60,
       "unit": "ml",
-      "preparation": "room temperature"
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      }
     },
     {
       "id": "e34243f0-f13c-47bf-991f-a8d50e3c67a8-ingredient-5",

@@ -24,7 +24,10 @@
       "ingredientRefId": "ingredient-ref-rice",
       "quantity": 0.3333,
       "unit": "cup",
-      "notes": "Cooked"
+      "notes": {
+        "fr": "cuit",
+        "en": "Cooked"
+      }
     },
     {
       "id": "2a2a7481-b5dc-45a5-9733-e3885d682131-ingredient-2",
@@ -38,13 +41,19 @@
       "id": "2a2a7481-b5dc-45a5-9733-e3885d682131-ingredient-3",
       "originalText": "Vegetables, to taste",
       "ingredientName": "vegetables",
-      "notes": "Use vegetables that saute well"
+      "notes": {
+        "fr": "utiliser des l\u00e9gumes qui se sautent bien",
+        "en": "Use vegetables that saute well"
+      }
     },
     {
       "id": "2a2a7481-b5dc-45a5-9733-e3885d682131-ingredient-4",
       "originalText": "Cooked meat or seafood, to taste",
       "ingredientName": "cooked meat or seafood",
-      "notes": "Use leftovers if available"
+      "notes": {
+        "fr": "utiliser des restes s'il y en a",
+        "en": "Use leftovers if available"
+      }
     },
     {
       "id": "2a2a7481-b5dc-45a5-9733-e3885d682131-ingredient-5",

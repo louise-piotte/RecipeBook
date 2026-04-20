@@ -36,7 +36,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 1,
       "unit": "clove",
-      "preparation": "minced"
+      "preparation": {
+        "fr": "\u00e9minc\u00e9",
+        "en": "minced"
+      }
     },
     {
       "id": "4392bc3d-9785-43ac-b98e-496f96c1d628-ingredient-3",
@@ -45,7 +48,10 @@
       "ingredientRefId": "ingredient-ref-chipotle-in-adobo",
       "quantity": 1,
       "unit": "count",
-      "preparation": "minced"
+      "preparation": {
+        "fr": "\u00e9minc\u00e9",
+        "en": "minced"
+      }
     },
     {
       "id": "4392bc3d-9785-43ac-b98e-496f96c1d628-ingredient-4",
@@ -54,7 +60,10 @@
       "ingredientRefId": "ingredient-ref-pinto-beans",
       "quantity": 1,
       "unit": "can",
-      "preparation": "with liquid"
+      "preparation": {
+        "fr": "avec le liquide",
+        "en": "with liquid"
+      }
     },
     {
       "id": "4392bc3d-9785-43ac-b98e-496f96c1d628-ingredient-5",

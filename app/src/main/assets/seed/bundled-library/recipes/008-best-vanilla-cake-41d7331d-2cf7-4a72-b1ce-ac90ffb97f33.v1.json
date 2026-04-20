@@ -64,7 +64,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 340,
       "unit": "g",
-      "preparation": "softened to room temperature",
+      "preparation": {
+        "fr": "ramolli \u00e0 temp\u00e9rature ambiante",
+        "en": "softened to room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -83,7 +86,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 3,
       "unit": "large egg",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -93,7 +99,10 @@
       "ingredientRefId": "ingredient-ref-egg-white",
       "quantity": 2,
       "unit": "large egg white",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -112,7 +121,10 @@
       "ingredientRefId": "ingredient-ref-buttermilk",
       "quantity": 360,
       "unit": "ml",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -122,7 +134,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 340,
       "unit": "g",
-      "preparation": "softened to room temperature",
+      "preparation": {
+        "fr": "ramolli \u00e0 temp\u00e9rature ambiante",
+        "en": "softened to room temperature"
+      },
       "group": "Frosting"
     },
     {

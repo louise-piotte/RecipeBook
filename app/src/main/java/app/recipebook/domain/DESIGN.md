@@ -18,3 +18,4 @@ This layer contains app-facing models and logic that should remain independent f
 ## Maintenance Notes
 - When adding a field, verify whether it belongs in the domain model, storage entities, schema DTOs, or all three.
 - Domain models are allowed to evolve aggressively pre-MVP, but the rest of the stack must be updated in lockstep.
+- Ingredient-line `preparation` and `notes` are bilingual domain data, while `originalText` and `ingredientName` remain single-source fields tied to the imported or edited source wording.

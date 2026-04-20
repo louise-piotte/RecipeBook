@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-all-purpose-flour",
       "quantity": 313,
       "unit": "g",
-      "notes": "plus more as needed for dusting"
+      "notes": {
+        "fr": "plus au besoin pour saupoudrer",
+        "en": "plus more as needed for dusting"
+      }
     },
     {
       "id": "1882aaf2-bb7a-4c13-bb7d-59ce0836ac48-ingredient-2",
@@ -53,7 +56,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 226,
       "unit": "g",
-      "preparation": "chilled and cubed"
+      "preparation": {
+        "fr": "refroidi et coup\u00e9 en cubes",
+        "en": "chilled and cubed"
+      }
     },
     {
       "id": "1882aaf2-bb7a-4c13-bb7d-59ce0836ac48-ingredient-5",
@@ -62,8 +68,14 @@
       "ingredientRefId": "ingredient-ref-water",
       "quantity": 120,
       "unit": "ml",
-      "preparation": "ice cold",
-      "notes": "plus more as needed"
+      "preparation": {
+        "fr": "glac\u00e9",
+        "en": "ice cold"
+      },
+      "notes": {
+        "fr": "plus au besoin",
+        "en": "plus more as needed"
+      }
     }
   ],
   "servings": {

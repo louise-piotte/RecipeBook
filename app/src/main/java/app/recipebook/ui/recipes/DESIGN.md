@@ -29,4 +29,5 @@ This package contains the main Compose product UI.
 - In-app import entry points should stay discoverable from the library hamburger menu and reuse the same importer pipeline as Android share intake.
 - The library hamburger menu is also the home for direct export actions that do not need a dedicated screen; long-running file work should stay out of composables and use thin launcher/save wiring only.
 - Recipe text editing is active-language-only: the editor shows one localized text surface at a time and writes changes back to the currently selected app language while the opposite language is tracked through sync metadata.
+- Ingredient-line `preparation` and `notes` follow that same active-language-only editor rule, but `originalText` remains a single shared source field and should never be auto-translated between tabs.
 - The editor's regenerate action is asynchronous and currently uses a local stub generator; the UI should show progress, preserve the current draft on failure, and clearly tell the user the stub output still needs review.

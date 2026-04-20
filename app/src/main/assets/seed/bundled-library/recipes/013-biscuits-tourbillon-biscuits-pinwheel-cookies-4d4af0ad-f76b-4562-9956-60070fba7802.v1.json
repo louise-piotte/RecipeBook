@@ -44,7 +44,10 @@
       "ingredientRefId": "ingredient-ref-salt",
       "quantity": 0.5,
       "unit": "tsp",
-      "preparation": "kosher"
+      "preparation": {
+        "fr": "casher",
+        "en": "kosher"
+      }
     },
     {
       "id": "4d4af0ad-f76b-4562-9956-60070fba7802-ingredient-4",
@@ -53,7 +56,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 227,
       "unit": "g",
-      "preparation": "room temperature"
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      }
     },
     {
       "id": "4d4af0ad-f76b-4562-9956-60070fba7802-ingredient-5",
@@ -86,7 +92,10 @@
       "ingredientRefId": "ingredient-ref-unsweetened-chocolate",
       "quantity": 56,
       "unit": "g",
-      "preparation": "chopped"
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      }
     }
   ],
   "servings": {

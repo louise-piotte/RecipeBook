@@ -45,7 +45,10 @@
       "quantity": 1,
       "unit": "to taste",
       "optional": true,
-      "notes": "Examples: anko or maple syrup"
+      "notes": {
+        "fr": "exemples : anko ou sirop d'\u00e9rable",
+        "en": "Examples: anko or maple syrup"
+      }
     },
     {
       "id": "7dde7849-5f6e-4e20-b84f-e90fa780d871-ingredient-5",
@@ -54,7 +57,10 @@
       "quantity": 1,
       "unit": "to taste",
       "optional": true,
-      "notes": "Examples: vanilla, cocoa, or peanut butter"
+      "notes": {
+        "fr": "exemples : vanille, cacao ou beurre d'arachide",
+        "en": "Examples: vanilla, cocoa, or peanut butter"
+      }
     },
     {
       "id": "7dde7849-5f6e-4e20-b84f-e90fa780d871-ingredient-6",
@@ -63,7 +69,10 @@
       "quantity": 1,
       "unit": "to taste",
       "optional": true,
-      "notes": "Examples: dates, bananas, blueberries, or cranberry sauce"
+      "notes": {
+        "fr": "exemples : dattes, bananes, bleuets ou sauce aux canneberges",
+        "en": "Examples: dates, bananas, blueberries, or cranberry sauce"
+      }
     },
     {
       "id": "7dde7849-5f6e-4e20-b84f-e90fa780d871-ingredient-7",
@@ -72,7 +81,10 @@
       "quantity": 1,
       "unit": "to taste",
       "optional": true,
-      "notes": "Add just before serving"
+      "notes": {
+        "fr": "ajouter juste avant de servir",
+        "en": "Add just before serving"
+      }
     }
   ],
   "servings": {

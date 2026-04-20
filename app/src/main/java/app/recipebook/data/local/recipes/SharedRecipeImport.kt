@@ -4,6 +4,7 @@ import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.IngredientLine
+import app.recipebook.domain.model.LocalizedValue
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeSource
@@ -258,7 +259,7 @@ fun ImportedRecipeDraft.applyToRecipe(recipe: Recipe, language: AppLanguage): Re
     }
     return recipe.copy(
         languages = languages,
-        ingredients = ingredients.map(ImportedIngredientDraft::toIngredientLine),
+        ingredients = ingredients.map { it.toIngredientLine(language) },
         source = if (sourceName.isBlank() && sourceUrl.isBlank()) {
             null
         } else {
@@ -883,21 +884,30 @@ private fun resolveUrl(pageUrl: String, candidate: String): String? = runCatchin
     URI(pageUrl).resolve(candidate).toString()
 }.getOrNull()
 
-private fun ImportedIngredientDraft.toIngredientLine(): IngredientLine = IngredientLine(
+private fun ImportedIngredientDraft.toIngredientLine(language: AppLanguage): IngredientLine = IngredientLine(
     id = id,
     ingredientRefId = ingredientRefId,
     originalText = originalText.trim(),
     quantity = quantity,
     unit = unit?.trim()?.ifBlank { null },
     ingredientName = ingredientName.trim().ifBlank { originalText.trim() },
-    preparation = preparation?.trim()?.ifBlank { null },
-    notes = notes?.trim()?.ifBlank { null }
+    preparation = localizedValueForLanguage(preparation, language),
+    notes = localizedValueForLanguage(notes, language)
 )
 
 private fun toImportedIngredientDraft(line: String): ImportedIngredientDraft = ImportedIngredientDraft(
     ingredientName = line.trim(),
     originalText = line.trim()
 )
+
+private fun localizedValueForLanguage(value: String?, language: AppLanguage): LocalizedValue {
+    val trimmed = value?.trim().orEmpty()
+    if (trimmed.isBlank()) return LocalizedValue()
+    return when (language) {
+        AppLanguage.FR -> LocalizedValue(fr = trimmed)
+        AppLanguage.EN -> LocalizedValue(en = trimmed)
+    }
+}
 
 private fun deterministicDraftJson(bundle: RawExtractionBundle): String = Json.encodeToString(
     ImporterDeterministicDraftContextDto.serializer(),

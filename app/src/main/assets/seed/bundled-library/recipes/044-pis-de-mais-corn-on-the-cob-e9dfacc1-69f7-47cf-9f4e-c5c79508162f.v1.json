@@ -62,7 +62,10 @@
       "originalText": "Garlic powder or fresh garlic, to taste",
       "ingredientName": "garlic powder",
       "ingredientRefId": "ingredient-ref-garlic-powder",
-      "notes": "Garlic powder or fresh garlic, to taste"
+      "notes": {
+        "fr": "poudre d'ail ou ail frais, au go\u00fbt",
+        "en": "Garlic powder or fresh garlic, to taste"
+      }
     },
     {
       "id": "e9dfacc1-69f7-47cf-9f4e-c5c79508162f-ingredient-7",

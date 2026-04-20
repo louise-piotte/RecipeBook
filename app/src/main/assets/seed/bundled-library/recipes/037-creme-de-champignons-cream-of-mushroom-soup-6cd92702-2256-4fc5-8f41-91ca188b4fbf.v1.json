@@ -44,7 +44,10 @@
       "ingredientRefId": "ingredient-ref-onion",
       "quantity": 1,
       "unit": "count",
-      "preparation": "yellow, chopped"
+      "preparation": {
+        "fr": "jaune, hach\u00e9",
+        "en": "yellow, chopped"
+      }
     },
     {
       "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-4",
@@ -69,7 +72,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 2,
       "unit": "clove",
-      "preparation": "chopped"
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      }
     },
     {
       "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-7",
@@ -78,7 +84,10 @@
       "ingredientRefId": "ingredient-ref-mushroom",
       "quantity": 1,
       "unit": "lb",
-      "preparation": "white, sliced"
+      "preparation": {
+        "fr": "blanc, tranch\u00e9",
+        "en": "white, sliced"
+      }
     },
     {
       "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-8",
@@ -87,7 +96,10 @@
       "ingredientRefId": "ingredient-ref-potato",
       "quantity": 1,
       "unit": "count",
-      "preparation": "peeled and diced"
+      "preparation": {
+        "fr": "pel\u00e9 et en d\u00e9s",
+        "en": "peeled and diced"
+      }
     },
     {
       "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-9",
@@ -104,7 +116,10 @@
       "ingredientRefId": "ingredient-ref-cooking-cream",
       "quantity": 0.33,
       "unit": "cup",
-      "preparation": "15% fat"
+      "preparation": {
+        "fr": "15 % m.g.",
+        "en": "15% fat"
+      }
     },
     {
       "id": "6cd92702-2256-4fc5-8f41-91ca188b4fbf-ingredient-11",
@@ -121,8 +136,14 @@
       "ingredientRefId": "ingredient-ref-mushroom",
       "quantity": 1,
       "unit": "to taste",
-      "preparation": "sliced and sauteed",
-      "notes": "For garnish and added texture."
+      "preparation": {
+        "fr": "tranch\u00e9 et saut\u00e9",
+        "en": "sliced and sauteed"
+      },
+      "notes": {
+        "fr": "pour garnir et ajouter de la texture.",
+        "en": "For garnish and added texture."
+      }
     }
   ],
   "servings": {

@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-strawberries",
       "quantity": 6.5,
       "unit": "cup",
-      "preparation": "quartered",
+      "preparation": {
+        "fr": "coup\u00e9 en quartiers",
+        "en": "quartered"
+      },
       "group": "Strawberries"
     },
     {
@@ -47,7 +50,10 @@
       "ingredientRefId": "ingredient-ref-all-purpose-flour",
       "quantity": 345,
       "unit": "g",
-      "notes": "Plus extra for the work surface",
+      "notes": {
+        "fr": "plus un peu pour le plan de travail",
+        "en": "Plus extra for the work surface"
+      },
       "group": "Biscuits"
     },
     {
@@ -93,7 +99,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 180,
       "unit": "g",
-      "preparation": "cold and cubed",
+      "preparation": {
+        "fr": "froid et coup\u00e9 en cubes",
+        "en": "cold and cubed"
+      },
       "group": "Biscuits"
     },
     {
@@ -103,7 +112,10 @@
       "ingredientRefId": "ingredient-ref-buttermilk",
       "quantity": 240,
       "unit": "ml",
-      "preparation": "cold",
+      "preparation": {
+        "fr": "froid",
+        "en": "cold"
+      },
       "group": "Biscuits"
     },
     {
@@ -118,7 +130,10 @@
       "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-11",
       "originalText": "Coarse sugar, for sprinkling",
       "ingredientName": "coarse sugar",
-      "notes": "For sprinkling",
+      "notes": {
+        "fr": "pour saupoudrer",
+        "en": "For sprinkling"
+      },
       "group": "Biscuits"
     },
     {

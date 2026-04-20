@@ -84,7 +84,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 113,
       "unit": "g",
-      "preparation": "room temperature"
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      }
     },
     {
       "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-9",
@@ -101,7 +104,10 @@
       "ingredientRefId": "ingredient-ref-banana",
       "quantity": 3,
       "unit": "count",
-      "preparation": "very ripe, mashed"
+      "preparation": {
+        "fr": "tr\u00e8s m\u00fbr, \u00e9cras\u00e9",
+        "en": "very ripe, mashed"
+      }
     },
     {
       "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-11",

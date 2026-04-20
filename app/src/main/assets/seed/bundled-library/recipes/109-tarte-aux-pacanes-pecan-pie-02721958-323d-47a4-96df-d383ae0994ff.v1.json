@@ -29,7 +29,10 @@
       "quantity": 1,
       "unit": "count",
       "group": "Crust",
-      "notes": "5-inch sweet pie shell"
+      "notes": {
+        "fr": "abaisse \u00e0 tarte sucr\u00e9e de 5 po",
+        "en": "5-inch sweet pie shell"
+      }
     },
     {
       "id": "02721958-323d-47a4-96df-d383ae0994ff-ingredient-2",
@@ -38,7 +41,10 @@
       "ingredientRefId": "ingredient-ref-pecans",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "coarsely chopped",
+      "preparation": {
+        "fr": "grossi\u00e8rement hach\u00e9",
+        "en": "coarsely chopped"
+      },
       "group": "Filling"
     },
     {
@@ -74,7 +80,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 19,
       "unit": "g",
-      "preparation": "melted",
+      "preparation": {
+        "fr": "fondu",
+        "en": "melted"
+      },
       "group": "Filling"
     },
     {

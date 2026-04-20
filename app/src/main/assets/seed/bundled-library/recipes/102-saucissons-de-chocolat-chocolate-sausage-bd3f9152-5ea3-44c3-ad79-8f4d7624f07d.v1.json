@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-dark-chocolate",
       "quantity": 225,
       "unit": "g",
-      "preparation": "70%, chopped"
+      "preparation": {
+        "fr": "70 %, hach\u00e9",
+        "en": "70%, chopped"
+      }
     },
     {
       "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-ingredient-2",
@@ -37,7 +40,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "softened"
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      }
     },
     {
       "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-ingredient-3",
@@ -62,7 +68,10 @@
       "ingredientRefId": "ingredient-ref-butter-cookies",
       "quantity": 1,
       "unit": "cup",
-      "preparation": "broken into 1 cm pieces"
+      "preparation": {
+        "fr": "cass\u00e9 en morceaux de 1 cm",
+        "en": "broken into 1 cm pieces"
+      }
     },
     {
       "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-ingredient-6",
@@ -71,7 +80,10 @@
       "ingredientRefId": "ingredient-ref-marshmallows",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "diced"
+      "preparation": {
+        "fr": "en d\u00e9s",
+        "en": "diced"
+      }
     },
     {
       "id": "bd3f9152-5ea3-44c3-ad79-8f4d7624f07d-ingredient-7",

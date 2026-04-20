@@ -26,7 +26,10 @@
       "ingredientRefId": "ingredient-ref-pistachios",
       "quantity": 130,
       "unit": "g",
-      "preparation": "finely ground"
+      "preparation": {
+        "fr": "finement moulu",
+        "en": "finely ground"
+      }
     },
     {
       "id": "f2600073-da39-4f35-805e-7df143e47dce-ingredient-2",
@@ -35,7 +38,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 230,
       "unit": "g",
-      "preparation": "softened"
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      }
     },
     {
       "id": "f2600073-da39-4f35-805e-7df143e47dce-ingredient-3",
@@ -75,7 +81,10 @@
       "ingredientName": "green gel food coloring",
       "quantity": 1,
       "unit": "optional",
-      "preparation": "1 to 2 drops"
+      "preparation": {
+        "fr": "1 \u00e0 2 gouttes",
+        "en": "1 to 2 drops"
+      }
     }
   ],
   "servings": {

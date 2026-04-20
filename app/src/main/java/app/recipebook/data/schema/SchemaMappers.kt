@@ -16,6 +16,7 @@ import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LibraryMetadata
 import app.recipebook.domain.model.LibrarySettings
+import app.recipebook.domain.model.LocalizedValue
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Ratings
@@ -129,6 +130,16 @@ private fun LocalizedSystemText.toDto(): LocalizedSystemTextDto = LocalizedSyste
     notes = notes
 )
 
+private fun LocalizedValueDto.toDomain(): LocalizedValue = LocalizedValue(
+    fr = fr,
+    en = en
+)
+
+private fun LocalizedValue.toDto(): LocalizedValueDto = LocalizedValueDto(
+    fr = fr,
+    en = en
+)
+
 private fun IngredientLineDto.toDomain(): IngredientLine = IngredientLine(
     id = id,
     ingredientRefId = ingredientRefId,
@@ -136,9 +147,9 @@ private fun IngredientLineDto.toDomain(): IngredientLine = IngredientLine(
     quantity = quantity,
     unit = unit,
     ingredientName = ingredientName,
-    preparation = preparation,
+    preparation = preparation.toDomain(),
     optional = optional,
-    notes = notes,
+    notes = notes.toDomain(),
     group = group,
     substitutions = substitutions.map { it.toDomain() }
 )
@@ -150,9 +161,9 @@ private fun IngredientLine.toDto(): IngredientLineDto = IngredientLineDto(
     quantity = quantity,
     unit = unit,
     ingredientName = ingredientName,
-    preparation = preparation,
+    preparation = preparation.toDto(),
     optional = optional,
-    notes = notes,
+    notes = notes.toDto(),
     group = group,
     substitutions = substitutions.map { it.toDto() }
 )

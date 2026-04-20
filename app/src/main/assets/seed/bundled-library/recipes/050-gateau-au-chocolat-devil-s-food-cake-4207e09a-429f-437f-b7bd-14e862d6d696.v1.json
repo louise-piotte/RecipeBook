@@ -60,7 +60,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 113,
       "unit": "g",
-      "preparation": "room temperature"
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      }
     },
     {
       "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-6",
@@ -69,7 +72,10 @@
       "ingredientRefId": "ingredient-ref-dutch-process-cocoa-powder",
       "quantity": 100,
       "unit": "g",
-      "preparation": "sifted"
+      "preparation": {
+        "fr": "tamis\u00e9",
+        "en": "sifted"
+      }
     },
     {
       "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-7",
@@ -94,7 +100,10 @@
       "ingredientRefId": "ingredient-ref-brown-sugar",
       "quantity": 110,
       "unit": "g",
-      "preparation": "packed"
+      "preparation": {
+        "fr": "tass\u00e9",
+        "en": "packed"
+      }
     },
     {
       "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-10",
@@ -103,7 +112,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 3,
       "unit": "large egg",
-      "preparation": "room temperature"
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      }
     },
     {
       "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-11",
@@ -120,7 +132,10 @@
       "ingredientRefId": "ingredient-ref-sour-cream",
       "quantity": 120,
       "unit": "g",
-      "preparation": "room temperature"
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      }
     },
     {
       "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-13",
@@ -129,7 +144,10 @@
       "ingredientRefId": "ingredient-ref-milk",
       "quantity": 120,
       "unit": "ml",
-      "preparation": "room temperature"
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      }
     },
     {
       "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-14",
@@ -137,7 +155,10 @@
       "ingredientName": "coffee",
       "quantity": 240,
       "unit": "ml",
-      "preparation": "hot"
+      "preparation": {
+        "fr": "chaud",
+        "en": "hot"
+      }
     }
   ],
   "servings": {

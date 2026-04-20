@@ -1,8 +1,7 @@
 # RecipeBook Roadmap (Active To-Do)
 
-- Add manual local-file full-library import (replace mode) when that workflow is needed outside Drive.
 - Add full shopping list functionality:
-  - Generate checklist from selected recipes
+  - Generate checklist from a recipe (add an option to add to shopping list and have the user select ingredient entry)
   - Allow manual arbitrary entries
   - Allow editing name/amount/section on all entries (including auto-generated)
   - Hide amounts by default (show on demand)

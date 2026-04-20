@@ -46,7 +46,10 @@
       "ingredientRefId": "ingredient-ref-unsweetened-cocoa-powder",
       "quantity": 10,
       "unit": "g",
-      "notes": "Natural cocoa powder",
+      "notes": {
+        "fr": "cacao naturel",
+        "en": "Natural cocoa powder"
+      },
       "group": "Cake"
     },
     {
@@ -65,7 +68,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 113,
       "unit": "g",
-      "preparation": "softened to room temperature",
+      "preparation": {
+        "fr": "ramolli \u00e0 temp\u00e9rature ambiante",
+        "en": "softened to room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -84,7 +90,10 @@
       "ingredientRefId": "ingredient-ref-vegetable-oil",
       "quantity": 240,
       "unit": "ml",
-      "notes": "Canola oil also works",
+      "notes": {
+        "fr": "l'huile de canola convient aussi",
+        "en": "Canola oil also works"
+      },
       "group": "Cake"
     },
     {
@@ -94,7 +103,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 4,
       "unit": "large egg",
-      "preparation": "separated",
+      "preparation": {
+        "fr": "s\u00e9par\u00e9",
+        "en": "separated"
+      },
       "group": "Cake"
     },
     {
@@ -113,7 +125,10 @@
       "ingredientRefId": "ingredient-ref-white-vinegar",
       "quantity": 1,
       "unit": "tsp",
-      "notes": "Distilled white vinegar",
+      "notes": {
+        "fr": "vinaigre blanc distill\u00e9",
+        "en": "Distilled white vinegar"
+      },
       "group": "Cake"
     },
     {
@@ -121,7 +136,10 @@
       "originalText": "Red food coloring, as needed",
       "ingredientName": "food coloring",
       "ingredientRefId": "ingredient-ref-food-coloring",
-      "notes": "Liquid or gel red food coloring, to desired color",
+      "notes": {
+        "fr": "colorant alimentaire rouge liquide ou en gel, selon la couleur d\u00e9sir\u00e9e",
+        "en": "Liquid or gel red food coloring, to desired color"
+      },
       "group": "Cake"
     },
     {
@@ -131,7 +149,10 @@
       "ingredientRefId": "ingredient-ref-buttermilk",
       "quantity": 240,
       "unit": "ml",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cake"
     },
     {
@@ -141,7 +162,10 @@
       "ingredientRefId": "ingredient-ref-cream-cheese",
       "quantity": 452,
       "unit": "g",
-      "preparation": "softened to room temperature",
+      "preparation": {
+        "fr": "ramolli \u00e0 temp\u00e9rature ambiante",
+        "en": "softened to room temperature"
+      },
       "group": "Frosting"
     },
     {
@@ -151,7 +175,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 170,
       "unit": "g",
-      "preparation": "softened to room temperature",
+      "preparation": {
+        "fr": "ramolli \u00e0 temp\u00e9rature ambiante",
+        "en": "softened to room temperature"
+      },
       "group": "Frosting"
     },
     {
@@ -177,7 +204,10 @@
       "originalText": "Pinch of salt",
       "ingredientName": "salt",
       "ingredientRefId": "ingredient-ref-salt",
-      "notes": "To taste",
+      "notes": {
+        "fr": "au go\u00fbt",
+        "en": "To taste"
+      },
       "group": "Frosting"
     }
   ],

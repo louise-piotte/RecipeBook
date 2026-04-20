@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-marzipan-box",
       "quantity": 198,
       "unit": "g",
-      "preparation": "grated"
+      "preparation": {
+        "fr": "r\u00e2p\u00e9",
+        "en": "grated"
+      }
     },
     {
       "id": "d21fb531-f3be-49a3-b361-d429150c05b2-ingredient-2",
@@ -37,7 +40,10 @@
       "ingredientRefId": "ingredient-ref-salted-butter",
       "quantity": 113,
       "unit": "g",
-      "preparation": "softened"
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      }
     },
     {
       "id": "d21fb531-f3be-49a3-b361-d429150c05b2-ingredient-3",
@@ -54,7 +60,10 @@
       "ingredientRefId": "ingredient-ref-water",
       "quantity": 2,
       "unit": "tbsp",
-      "preparation": "hot"
+      "preparation": {
+        "fr": "chaud",
+        "en": "hot"
+      }
     }
   ],
   "servings": {

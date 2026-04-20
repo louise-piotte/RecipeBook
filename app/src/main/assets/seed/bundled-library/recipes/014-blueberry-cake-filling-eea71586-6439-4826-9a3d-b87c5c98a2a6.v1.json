@@ -26,7 +26,10 @@
       "ingredientRefId": "ingredient-ref-blueberries",
       "quantity": 450,
       "unit": "g",
-      "preparation": "fresh or frozen"
+      "preparation": {
+        "fr": "frais ou congel\u00e9",
+        "en": "fresh or frozen"
+      }
     },
     {
       "id": "eea71586-6439-4826-9a3d-b87c5c98a2a6-ingredient-2",

@@ -199,6 +199,8 @@ class RecipeAiRuntimeTest {
                                   "id": "ingredient-1",
                                   "ingredientName": "farine",
                                   "originalText": "200 g farine",
+                                  "preparation": "tamisee",
+                                  "notes": "pour decorer",
                                   "referenceNameFr": "Farine tout usage",
                                   "referenceNameEn": "All-purpose flour",
                                   "referenceAliasesFr": ["farine"],
@@ -225,6 +227,8 @@ class RecipeAiRuntimeTest {
         assertEquals(1, result.generatedIngredients.size)
         assertEquals("ingredient-1", result.generatedIngredients.first().id)
         assertEquals("200 g farine", result.generatedIngredients.first().originalText)
+        assertEquals("tamisee", result.generatedIngredients.first().preparation)
+        assertEquals("pour decorer", result.generatedIngredients.first().notes)
         assertEquals("Farine tout usage", result.generatedIngredients.first().referenceDraft?.nameFr)
     }
 

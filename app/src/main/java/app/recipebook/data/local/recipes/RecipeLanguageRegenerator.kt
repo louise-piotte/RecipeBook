@@ -23,6 +23,8 @@ data class RegeneratedIngredientLine(
     val id: String,
     val ingredientName: String,
     val originalText: String,
+    val preparation: String = "",
+    val notes: String = "",
     val referenceDraft: IngredientReferenceDraft? = null
 )
 

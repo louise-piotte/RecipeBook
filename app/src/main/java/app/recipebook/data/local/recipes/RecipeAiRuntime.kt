@@ -354,6 +354,10 @@ private data class RegeneratedIngredientDto(
     val ingredientName: String = "",
     @SerialName("originalText")
     val originalText: String = "",
+    @SerialName("preparation")
+    val preparation: String = "",
+    @SerialName("notes")
+    val notes: String = "",
     @SerialName("referenceNameFr")
     val referenceNameFr: String = "",
     @SerialName("referenceNameEn")
@@ -369,6 +373,8 @@ private data class RegeneratedIngredientDto(
         id = id,
         ingredientName = ingredientName,
         originalText = originalText,
+        preparation = preparation.trim(),
+        notes = notes.trim(),
         referenceDraft = if (referenceNameFr.isBlank() || referenceNameEn.isBlank()) {
             null
         } else {
@@ -440,6 +446,8 @@ private fun regeneratorUserPrompt(request: RecipeLanguageRegenerationRequest): S
         appendLine("- id=${ingredient.id}")
         appendLine("  ingredientName=${ingredient.ingredientName}")
         appendLine("  originalText=${ingredient.originalText}")
+        appendLine("  preparation=${ingredient.preparation.forLanguage(request.authoritativeLanguage)}")
+        appendLine("  notes=${ingredient.notes.forLanguage(request.authoritativeLanguage)}")
         appendLine("  ingredientRefId=${ingredient.ingredientRefId.orEmpty()}")
     }
     appendLine("Instructions:")
@@ -512,6 +520,11 @@ private fun JsonElement?.extractAssistantText(): String? = when (this) {
 
 private fun JsonElement.jsonPrimitiveContentOrNull(): String? =
     (this as? JsonPrimitive)?.content
+
+private fun app.recipebook.domain.model.LocalizedValue.forLanguage(language: AppLanguage): String = when (language) {
+    AppLanguage.FR -> fr
+    AppLanguage.EN -> en
+}
 
 private fun String.removeSurroundingMarkdownCodeFence(): String {
     val trimmed = trim()

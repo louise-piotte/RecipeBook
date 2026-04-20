@@ -4,6 +4,7 @@ import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.BilingualSyncStatus
 import app.recipebook.domain.model.ImportMetadata
+import app.recipebook.domain.model.LocalizedValue
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Recipe
 
@@ -70,8 +71,22 @@ class RecipeLocalizationCoordinator(
             AppLanguage.FR -> BilingualText(fr = normalizedOpposite, en = authoritativeText)
             AppLanguage.EN -> BilingualText(fr = authoritativeText, en = normalizedOpposite)
         }
+        val regeneratedIngredientsById = regenerated.generatedIngredients.associateBy { it.id }
         val regeneratedRecipe = recipe.copy(
             languages = regeneratedLanguages,
+            ingredients = recipe.ingredients.map { ingredient ->
+                val regeneratedIngredient = regeneratedIngredientsById[ingredient.id] ?: return@map ingredient
+                ingredient.copy(
+                    preparation = ingredient.preparation.replaceForLanguage(
+                        regenerated.generatedLanguage,
+                        regeneratedIngredient.preparation
+                    ),
+                    notes = ingredient.notes.replaceForLanguage(
+                        regenerated.generatedLanguage,
+                        regeneratedIngredient.notes
+                    )
+                )
+            },
             importMetadata = (recipe.importMetadata ?: ImportMetadata())
                 .copy(generatorLabel = regenerated.generatorLabel)
                 .withSyncState(
@@ -189,6 +204,14 @@ private fun ImportMetadata.withSyncState(
     syncStatusFr = frStatus,
     syncStatusEn = enStatus
 )
+
+private fun LocalizedValue.replaceForLanguage(
+    language: AppLanguage,
+    value: String
+): LocalizedValue = when (language) {
+    AppLanguage.FR -> copy(fr = value.trim())
+    AppLanguage.EN -> copy(en = value.trim())
+}
 
 private fun normalizeRecipeMultilineText(input: String): String = input.lineSequence()
     .map { it.trim() }

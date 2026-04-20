@@ -767,8 +767,14 @@ internal fun buildDetailIngredientText(
     val ingredientName = ingredientReference?.localizedName(language)
         ?.ifBlank { ingredient.ingredientName }
         ?: ingredient.ingredientName
-    val localizedPreparation = ingredient.preparation?.localizedIngredientDescriptor(language)
-    val localizedNotes = ingredient.notes?.localizedIngredientDescriptor(language)
+    val localizedPreparation = when (language) {
+        AppLanguage.FR -> ingredient.preparation.fr
+        AppLanguage.EN -> ingredient.preparation.en
+    }.ifBlank { ingredient.preparation.primaryValue().orEmpty() }
+    val localizedNotes = when (language) {
+        AppLanguage.FR -> ingredient.notes.fr
+        AppLanguage.EN -> ingredient.notes.en
+    }.ifBlank { ingredient.notes.primaryValue().orEmpty() }
     val amountDisplay = formatIngredientAmount(
         quantity = quantityOverride,
         unit = unitOverride,
@@ -1211,6 +1217,9 @@ private fun RecipeLink.localizedLabel(language: AppLanguage): String? = when (la
     AppLanguage.FR -> labelFr?.trim()?.ifBlank { null }
     AppLanguage.EN -> labelEn?.trim()?.ifBlank { null }
 }
+
+private fun app.recipebook.domain.model.LocalizedValue.primaryValue(): String? =
+    en.ifBlank { fr }.ifBlank { null }
 
 private fun recipeLinkTypeLabelRes(type: RecipeLinkType): Int = when (type) {
     RecipeLinkType.COMPONENT -> R.string.recipe_link_type_component_label

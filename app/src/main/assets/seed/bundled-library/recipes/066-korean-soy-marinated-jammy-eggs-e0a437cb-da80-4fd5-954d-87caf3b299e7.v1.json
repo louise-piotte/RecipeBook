@@ -36,7 +36,10 @@
       "ingredientRefId": "ingredient-ref-onion",
       "quantity": 0.25,
       "unit": "item",
-      "preparation": "medium yellow, finely diced"
+      "preparation": {
+        "fr": "jaune moyen, finement coup\u00e9 en d\u00e9s",
+        "en": "medium yellow, finely diced"
+      }
     },
     {
       "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-3",
@@ -45,7 +48,10 @@
       "ingredientRefId": "ingredient-ref-green-onions",
       "quantity": 3,
       "unit": "item",
-      "preparation": "thinly sliced"
+      "preparation": {
+        "fr": "tranch\u00e9 finement",
+        "en": "thinly sliced"
+      }
     },
     {
       "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-4",
@@ -54,7 +60,10 @@
       "ingredientRefId": "ingredient-ref-serrano-pepper",
       "quantity": 1,
       "unit": "item",
-      "preparation": "thinly sliced",
+      "preparation": {
+        "fr": "tranch\u00e9 finement",
+        "en": "thinly sliced"
+      },
       "optional": true
     },
     {
@@ -64,7 +73,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 3,
       "unit": "clove",
-      "preparation": "chopped"
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      }
     },
     {
       "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-6",
@@ -112,7 +124,10 @@
       "ingredientRefId": "ingredient-ref-sesame-seeds",
       "quantity": 1,
       "unit": "tbsp",
-      "preparation": "toasted white"
+      "preparation": {
+        "fr": "blanc grill\u00e9",
+        "en": "toasted white"
+      }
     },
     {
       "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-12",
@@ -129,7 +144,10 @@
       "ingredientRefId": "ingredient-ref-lemon",
       "quantity": 0.5,
       "unit": "item",
-      "preparation": "thinly sliced"
+      "preparation": {
+        "fr": "tranch\u00e9 finement",
+        "en": "thinly sliced"
+      }
     },
     {
       "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-14",

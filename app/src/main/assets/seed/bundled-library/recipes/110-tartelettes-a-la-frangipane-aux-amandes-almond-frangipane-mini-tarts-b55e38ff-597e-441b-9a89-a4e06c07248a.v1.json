@@ -82,7 +82,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 142,
       "unit": "g",
-      "preparation": "very cold and diced",
+      "preparation": {
+        "fr": "tr\u00e8s froid et en d\u00e9s",
+        "en": "very cold and diced"
+      },
       "group": "Pastry"
     },
     {
@@ -155,7 +158,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 85,
       "unit": "g",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Frangipane"
     },
     {
@@ -165,7 +171,10 @@
       "ingredientRefId": "ingredient-ref-almonds",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "sliced",
+      "preparation": {
+        "fr": "tranch\u00e9",
+        "en": "sliced"
+      },
       "group": "Topping"
     }
   ],

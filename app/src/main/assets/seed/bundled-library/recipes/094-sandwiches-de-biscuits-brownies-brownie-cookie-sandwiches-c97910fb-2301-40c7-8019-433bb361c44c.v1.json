@@ -37,7 +37,10 @@
       "ingredientRefId": "ingredient-ref-bittersweet-chocolate",
       "quantity": 9,
       "unit": "oz",
-      "notes": "Chocolate chips or chopped chocolate",
+      "notes": {
+        "fr": "p\u00e9pites de chocolat ou chocolat hach\u00e9",
+        "en": "Chocolate chips or chopped chocolate"
+      },
       "group": "Cookies"
     },
     {
@@ -56,7 +59,10 @@
       "ingredientRefId": "ingredient-ref-brown-sugar",
       "quantity": 100,
       "unit": "g",
-      "preparation": "packed",
+      "preparation": {
+        "fr": "tass\u00e9",
+        "en": "packed"
+      },
       "group": "Cookies"
     },
     {
@@ -66,7 +72,10 @@
       "ingredientRefId": "ingredient-ref-egg",
       "quantity": 3,
       "unit": "large egg",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Cookies"
     },
     {
@@ -103,7 +112,10 @@
       "ingredientRefId": "ingredient-ref-dutch-process-cocoa-powder",
       "quantity": 25,
       "unit": "g",
-      "preparation": "sifted",
+      "preparation": {
+        "fr": "tamis\u00e9",
+        "en": "sifted"
+      },
       "group": "Cookies"
     },
     {
@@ -140,7 +152,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 170,
       "unit": "g",
-      "preparation": "room temperature",
+      "preparation": {
+        "fr": "\u00e0 temp\u00e9rature ambiante",
+        "en": "room temperature"
+      },
       "group": "Filling"
     },
     {
@@ -159,7 +174,10 @@
       "ingredientRefId": "ingredient-ref-icing-sugar",
       "quantity": 300,
       "unit": "g",
-      "preparation": "sifted",
+      "preparation": {
+        "fr": "tamis\u00e9",
+        "en": "sifted"
+      },
       "group": "Filling"
     },
     {
@@ -196,7 +214,10 @@
       "ingredientRefId": "ingredient-ref-heavy-cream",
       "quantity": 3,
       "unit": "tbsp",
-      "notes": "Add up to 4 tbsp as needed",
+      "notes": {
+        "fr": "ajouter jusqu'\u00e0 4 cuill\u00e8res \u00e0 soupe au besoin",
+        "en": "Add up to 4 tbsp as needed"
+      },
       "group": "Filling"
     }
   ],

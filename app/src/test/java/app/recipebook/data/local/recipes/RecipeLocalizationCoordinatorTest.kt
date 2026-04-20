@@ -5,6 +5,7 @@ import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.BilingualSyncStatus
 import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.IngredientLine
+import app.recipebook.domain.model.LocalizedValue
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Recipe
 import org.junit.Assert.assertEquals
@@ -148,7 +149,9 @@ class RecipeLocalizationCoordinatorTest {
                         RegeneratedIngredientLine(
                             id = "ingredient-1",
                             ingredientName = "farine",
-                            originalText = "200 g farine"
+                            originalText = "200 g farine",
+                            preparation = "tamisee",
+                            notes = "pour decorer"
                         )
                     )
                 )
@@ -160,6 +163,10 @@ class RecipeLocalizationCoordinatorTest {
         assertEquals("flour", regenerated.ingredients.single().ingredientName)
         assertEquals("200 g flour", regenerated.ingredients.single().originalText)
         assertEquals("Titre regenere", regenerated.languages.fr.title)
+        assertEquals("tamisee", regenerated.ingredients.single().preparation.fr)
+        assertEquals("sifted", regenerated.ingredients.single().preparation.en)
+        assertEquals("pour decorer", regenerated.ingredients.single().notes.fr)
+        assertEquals("for garnish", regenerated.ingredients.single().notes.en)
     }
 
     private fun sampleRecipe(): Recipe = Recipe(
@@ -174,7 +181,9 @@ class RecipeLocalizationCoordinatorTest {
             IngredientLine(
                 id = "ingredient-1",
                 originalText = "200 g flour",
-                ingredientName = "flour"
+                ingredientName = "flour",
+                preparation = LocalizedValue(en = "sifted"),
+                notes = LocalizedValue(en = "for garnish")
             )
         )
     )

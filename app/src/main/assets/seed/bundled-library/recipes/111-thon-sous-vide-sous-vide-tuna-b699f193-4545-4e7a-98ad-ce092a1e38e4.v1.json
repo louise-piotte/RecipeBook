@@ -40,7 +40,10 @@
       "originalText": "Freshly ground black pepper",
       "ingredientName": "black pepper",
       "ingredientRefId": "ingredient-ref-black-pepper",
-      "preparation": "freshly ground"
+      "preparation": {
+        "fr": "fra\u00eechement moulu",
+        "en": "freshly ground"
+      }
     },
     {
       "id": "b699f193-4545-4e7a-98ad-ce092a1e38e4-ingredient-4",
@@ -49,20 +52,29 @@
       "ingredientRefId": "ingredient-ref-olive-oil",
       "quantity": 1,
       "unit": "tbsp",
-      "notes": "extra-virgin"
+      "notes": {
+        "fr": "extra-vierge",
+        "en": "extra-virgin"
+      }
     },
     {
       "id": "b699f193-4545-4e7a-98ad-ce092a1e38e4-ingredient-5",
       "originalText": "Fresh aromatics such as thyme, dill, parsley, thinly sliced shallots, and/or citrus zest",
       "ingredientName": "fresh aromatics",
-      "notes": "optional; such as thyme, dill, parsley, thinly sliced shallots, and/or citrus zest"
+      "notes": {
+        "fr": "facultatif; par exemple thym, aneth, persil, \u00e9chalotes tranch\u00e9es finement ou zeste d'agrumes",
+        "en": "optional; such as thyme, dill, parsley, thinly sliced shallots, and/or citrus zest"
+      }
     },
     {
       "id": "b699f193-4545-4e7a-98ad-ce092a1e38e4-ingredient-6",
       "originalText": "Sesame seeds",
       "ingredientName": "sesame seeds",
       "ingredientRefId": "ingredient-ref-sesame-seeds",
-      "notes": "optional, for coating before searing"
+      "notes": {
+        "fr": "facultatif, pour enrober avant de saisir",
+        "en": "optional, for coating before searing"
+      }
     }
   ],
   "servings": {

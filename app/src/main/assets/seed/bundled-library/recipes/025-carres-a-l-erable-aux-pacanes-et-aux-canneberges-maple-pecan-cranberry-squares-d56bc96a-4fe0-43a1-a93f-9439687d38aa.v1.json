@@ -55,7 +55,10 @@
       "ingredientRefId": "ingredient-ref-unsalted-butter",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "cold and cut into pieces",
+      "preparation": {
+        "fr": "froid et coup\u00e9 en morceaux",
+        "en": "cold and cut into pieces"
+      },
       "group": "Crust"
     },
     {
@@ -101,7 +104,10 @@
       "ingredientRefId": "ingredient-ref-dried-cranberries",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "chopped",
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      },
       "group": "Filling"
     },
     {
@@ -111,7 +117,10 @@
       "ingredientRefId": "ingredient-ref-pecans",
       "quantity": 1.5,
       "unit": "cup",
-      "preparation": "chopped",
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      },
       "group": "Filling"
     }
   ],

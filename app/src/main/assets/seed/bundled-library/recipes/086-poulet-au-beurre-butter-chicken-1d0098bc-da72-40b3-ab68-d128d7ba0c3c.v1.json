@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-chicken-breast",
       "quantity": 1000,
       "unit": "g",
-      "preparation": "boneless and cut into cubes"
+      "preparation": {
+        "fr": "d\u00e9soss\u00e9 et coup\u00e9 en cubes",
+        "en": "boneless and cut into cubes"
+      }
     },
     {
       "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-2",
@@ -45,7 +48,10 @@
       "ingredientRefId": "ingredient-ref-onion",
       "quantity": 1,
       "unit": "count",
-      "preparation": "coarsely chopped"
+      "preparation": {
+        "fr": "grossi\u00e8rement hach\u00e9",
+        "en": "coarsely chopped"
+      }
     },
     {
       "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-4",
@@ -54,7 +60,10 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 2,
       "unit": "count",
-      "preparation": "coarsely chopped"
+      "preparation": {
+        "fr": "grossi\u00e8rement hach\u00e9",
+        "en": "coarsely chopped"
+      }
     },
     {
       "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-5",
@@ -63,7 +72,10 @@
       "ingredientRefId": "ingredient-ref-plain-yogurt",
       "quantity": 0.5,
       "unit": "cup",
-      "notes": "Greek style"
+      "notes": {
+        "fr": "style grec",
+        "en": "Greek style"
+      }
     },
     {
       "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-6",
@@ -118,7 +130,10 @@
       "ingredientRefId": "ingredient-ref-tomato-paste",
       "quantity": 156,
       "unit": "ml",
-      "notes": "1 small can"
+      "notes": {
+        "fr": "1 petite bo\u00eete",
+        "en": "1 small can"
+      }
     },
     {
       "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-13",
@@ -149,7 +164,10 @@
       "originalText": "cooked rice, for serving",
       "ingredientName": "cooked rice",
       "ingredientRefId": "ingredient-ref-rice",
-      "notes": "for serving"
+      "notes": {
+        "fr": "pour servir",
+        "en": "for serving"
+      }
     }
   ],
   "servings": {

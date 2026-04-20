@@ -18,3 +18,4 @@ This package defines serialized payload shapes and explicit mapping to and from 
 ## Maintenance Notes
 - Any change here should trigger a review of domain models, seed examples, schema docs, and round-trip tests.
 - During MVP, evolve v1 in place as directed by repo rules instead of adding compatibility layers.
+- Ingredient-line bilingual fields such as `preparation` and `notes` should stay modeled as `{ fr, en }` objects in both recipe-creation and full-library payloads; only source-capture fields like `originalText` stay single-language.

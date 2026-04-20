@@ -35,7 +35,10 @@
       "ingredientName": "butter",
       "quantity": 0.75,
       "unit": "cup",
-      "preparation": "melted"
+      "preparation": {
+        "fr": "fondu",
+        "en": "melted"
+      }
     },
     {
       "id": "ff66e4f7-c719-4203-970b-06993cdb25de-ingredient-3",
@@ -60,7 +63,10 @@
       "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 1.333,
       "unit": "cup",
-      "preparation": "flaked"
+      "preparation": {
+        "fr": "en flocons",
+        "en": "flaked"
+      }
     },
     {
       "id": "ff66e4f7-c719-4203-970b-06993cdb25de-ingredient-6",
@@ -69,7 +75,10 @@
       "ingredientRefId": "ingredient-ref-pecans",
       "quantity": 1.333,
       "unit": "cup",
-      "preparation": "chopped"
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      }
     }
   ],
   "servings": {

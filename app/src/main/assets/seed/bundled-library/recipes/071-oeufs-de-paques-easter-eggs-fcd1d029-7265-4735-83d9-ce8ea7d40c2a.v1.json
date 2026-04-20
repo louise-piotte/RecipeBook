@@ -27,7 +27,10 @@
       "ingredientName": "butter",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": "softened"
+      "preparation": {
+        "fr": "ramolli",
+        "en": "softened"
+      }
     },
     {
       "id": "fcd1d029-7265-4735-83d9-ce8ea7d40c2a-ingredient-2",
@@ -75,7 +78,10 @@
       "ingredientRefId": "ingredient-ref-semisweet-chocolate",
       "quantity": 680,
       "unit": "g",
-      "preparation": "melted"
+      "preparation": {
+        "fr": "fondu",
+        "en": "melted"
+      }
     }
   ],
   "servings": {

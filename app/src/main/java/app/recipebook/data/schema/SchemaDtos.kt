@@ -119,15 +119,23 @@ data class IngredientLineDto(
     @SerialName("ingredientName")
     val ingredientName: String,
     @SerialName("preparation")
-    val preparation: String? = null,
+    val preparation: LocalizedValueDto = LocalizedValueDto(),
     @SerialName("optional")
     val optional: Boolean = false,
     @SerialName("notes")
-    val notes: String? = null,
+    val notes: LocalizedValueDto = LocalizedValueDto(),
     @SerialName("group")
     val group: String? = null,
     @SerialName("substitutions")
     val substitutions: List<IngredientLineSubstitutionDto> = emptyList()
+)
+
+@Serializable
+data class LocalizedValueDto(
+    @SerialName("fr")
+    val fr: String = "",
+    @SerialName("en")
+    val en: String = ""
 )
 
 @Serializable

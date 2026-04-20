@@ -130,10 +130,12 @@ private fun inferIngredientForm(
     val searchableText = sequenceOf(
         ingredient.originalText,
         ingredient.ingredientName,
-        ingredient.preparation,
-        ingredient.notes
+        ingredient.preparation.en,
+        ingredient.preparation.fr,
+        ingredient.notes.en,
+        ingredient.notes.fr
     )
-        .filterNotNull()
+        .filter { it.isNotBlank() }
         .joinToString(" ")
         .lowercase()
 

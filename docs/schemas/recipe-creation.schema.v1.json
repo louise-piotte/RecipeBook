@@ -45,6 +45,15 @@
         "en": { "$ref": "#/$defs/LanguageTextRequired" }
       }
     },
+    "LocalizedValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fr", "en"],
+      "properties": {
+        "fr": { "type": "string" },
+        "en": { "type": "string" }
+      }
+    },
     "Source": {
       "type": "object",
       "additionalProperties": false,
@@ -65,9 +74,9 @@
         "quantity": { "type": "number" },
         "unit": { "type": "string", "description": "Canonical unit id (for example g, ml, tsp, cup)." },
         "ingredientName": { "type": "string" },
-        "preparation": { "type": "string" },
+        "preparation": { "$ref": "#/$defs/LocalizedValue" },
         "optional": { "type": "boolean", "default": false },
-        "notes": { "type": "string" },
+        "notes": { "$ref": "#/$defs/LocalizedValue" },
         "group": { "type": "string" },
         "substitutions": {
           "type": "array",

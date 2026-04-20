@@ -29,7 +29,10 @@
       "quantity": 1,
       "unit": "count",
       "group": "Crust",
-      "notes": "5-inch sweet pie shell, plus extra dough for the top crust"
+      "notes": {
+        "fr": "abaisse \u00e0 tarte sucr\u00e9e de 5 po, plus p\u00e2te suppl\u00e9mentaire pour la cro\u00fbte du dessus",
+        "en": "5-inch sweet pie shell, plus extra dough for the top crust"
+      }
     },
     {
       "id": "166eae41-5c40-4a1c-8c3e-2cec590ab18c-ingredient-2",
@@ -39,7 +42,10 @@
       "quantity": 1.5,
       "unit": "cup",
       "group": "Filling",
-      "notes": "fresh or frozen"
+      "notes": {
+        "fr": "frais ou congel\u00e9",
+        "en": "fresh or frozen"
+      }
     },
     {
       "id": "166eae41-5c40-4a1c-8c3e-2cec590ab18c-ingredient-3",
@@ -58,7 +64,10 @@
       "quantity": 1,
       "unit": "tbsp",
       "group": "Filling",
-      "notes": "use 2 tablespoons if the raspberries are frozen"
+      "notes": {
+        "fr": "utiliser 2 cuill\u00e8res \u00e0 soupe si les framboises sont congel\u00e9es",
+        "en": "use 2 tablespoons if the raspberries are frozen"
+      }
     },
     {
       "id": "166eae41-5c40-4a1c-8c3e-2cec590ab18c-ingredient-5",

@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-potato",
       "quantity": 160,
       "unit": "g",
-      "preparation": "peeled and cut into small dice"
+      "preparation": {
+        "fr": "pel\u00e9 et coup\u00e9 en petits d\u00e9s",
+        "en": "peeled and cut into small dice"
+      }
     },
     {
       "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-2",
@@ -53,7 +56,10 @@
       "ingredientRefId": "ingredient-ref-leek",
       "quantity": 95,
       "unit": "g",
-      "preparation": "chopped"
+      "preparation": {
+        "fr": "hach\u00e9",
+        "en": "chopped"
+      }
     },
     {
       "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-5",
@@ -62,7 +68,10 @@
       "ingredientRefId": "ingredient-ref-celery",
       "quantity": 1,
       "unit": "count",
-      "preparation": "cut into small dice"
+      "preparation": {
+        "fr": "coup\u00e9 en petits d\u00e9s",
+        "en": "cut into small dice"
+      }
     },
     {
       "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-6",
@@ -87,7 +96,10 @@
       "ingredientRefId": "ingredient-ref-milk",
       "quantity": 250,
       "unit": "ml",
-      "notes": "plus more for brushing"
+      "notes": {
+        "fr": "plus un peu pour badigeonner",
+        "en": "plus more for brushing"
+      }
     },
     {
       "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-9",
@@ -104,14 +116,20 @@
       "ingredientRefId": "ingredient-ref-salmon-fillets-without-skin",
       "quantity": 675,
       "unit": "g",
-      "preparation": "without skin, cut into cubes"
+      "preparation": {
+        "fr": "sans peau, coup\u00e9 en cubes",
+        "en": "without skin, cut into cubes"
+      }
     },
     {
       "id": "b8e3b67d-3a62-4e68-8842-457c86bbab5f-ingredient-11",
       "originalText": "Pie crust",
       "ingredientName": "pie crust",
       "ingredientRefId": "ingredient-ref-pie-crust",
-      "notes": "enough for 4 individual 5-inch pies with tops and bottoms"
+      "notes": {
+        "fr": "assez pour 4 tartes individuelles de 5 po avec dessus et dessous",
+        "en": "enough for 4 individual 5-inch pies with tops and bottoms"
+      }
     }
   ],
   "servings": {

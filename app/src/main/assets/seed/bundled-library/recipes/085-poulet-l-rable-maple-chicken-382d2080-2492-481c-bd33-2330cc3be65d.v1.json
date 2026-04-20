@@ -57,8 +57,14 @@
       "ingredientRefId": "ingredient-ref-garlic",
       "quantity": 1,
       "unit": "tbsp",
-      "preparation": "minced",
-      "notes": "about 2 or 3 cloves"
+      "preparation": {
+        "fr": "\u00e9minc\u00e9",
+        "en": "minced"
+      },
+      "notes": {
+        "fr": "environ 2 ou 3 gousses",
+        "en": "about 2 or 3 cloves"
+      }
     },
     {
       "id": "382d2080-2492-481c-bd33-2330cc3be65d-ingredient-6",
@@ -89,7 +95,10 @@
       "originalText": "chopped roasted peanuts",
       "ingredientName": "peanuts",
       "ingredientRefId": "ingredient-ref-peanuts",
-      "preparation": "chopped roasted",
+      "preparation": {
+        "fr": "r\u00f4ti et hach\u00e9",
+        "en": "chopped roasted"
+      },
       "optional": true
     }
   ],

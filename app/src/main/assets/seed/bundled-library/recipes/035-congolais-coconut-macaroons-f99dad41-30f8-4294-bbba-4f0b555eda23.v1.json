@@ -28,7 +28,10 @@
       "ingredientRefId": "ingredient-ref-shredded-coconut",
       "quantity": 396,
       "unit": "g",
-      "preparation": "sweetened"
+      "preparation": {
+        "fr": "sucr\u00e9",
+        "en": "sweetened"
+      }
     },
     {
       "id": "f99dad41-30f8-4294-bbba-4f0b555eda23-ingredient-2",
@@ -61,7 +64,10 @@
       "ingredientRefId": "ingredient-ref-egg-white",
       "quantity": 2,
       "unit": "count",
-      "preparation": "large, room temperature"
+      "preparation": {
+        "fr": "gros, \u00e0 temp\u00e9rature ambiante",
+        "en": "large, room temperature"
+      }
     },
     {
       "id": "f99dad41-30f8-4294-bbba-4f0b555eda23-ingredient-6",

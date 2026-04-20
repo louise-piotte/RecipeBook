@@ -44,8 +44,14 @@
       "ingredientRefId": "ingredient-ref-banana",
       "quantity": 0.5,
       "unit": "large banana",
-      "preparation": "over-ripe",
-      "notes": "more brown spots mean a sweeter banana"
+      "preparation": {
+        "fr": "tr\u00e8s m\u00fbr",
+        "en": "over-ripe"
+      },
+      "notes": {
+        "fr": "plus il y a de taches brunes, plus la banane sera sucr\u00e9e",
+        "en": "more brown spots mean a sweeter banana"
+      }
     },
     {
       "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-4",
@@ -109,7 +115,10 @@
       "ingredientName": "banana",
       "ingredientRefId": "ingredient-ref-banana",
       "optional": true,
-      "notes": "for topping"
+      "notes": {
+        "fr": "pour garnir",
+        "en": "for topping"
+      }
     }
   ],
   "servings": {

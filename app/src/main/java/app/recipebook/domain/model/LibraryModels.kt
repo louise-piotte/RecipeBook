@@ -7,6 +7,11 @@ enum class AppLanguage {
     EN
 }
 
+data class LocalizedValue(
+    val fr: String = "",
+    val en: String = ""
+)
+
 data class LocalizedSystemText(
     val title: String,
     val description: String,
@@ -53,9 +58,9 @@ data class IngredientLine(
     val quantity: Double? = null,
     val unit: String? = null,
     val ingredientName: String,
-    val preparation: String? = null,
+    val preparation: LocalizedValue = LocalizedValue(),
     val optional: Boolean = false,
-    val notes: String? = null,
+    val notes: LocalizedValue = LocalizedValue(),
     val group: String? = null,
     val substitutions: List<IngredientLineSubstitution> = emptyList()
 )
