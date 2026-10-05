@@ -53,6 +53,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import app.recipebook.R
+import app.recipebook.data.local.recipes.runCatchingRecipeWork
 import app.recipebook.data.local.recipes.IngredientReferenceDraft
 import app.recipebook.data.local.recipes.ImportWarning
 import app.recipebook.data.local.recipes.ImportWarningSeverity
@@ -63,6 +64,11 @@ import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.BilingualSyncStatus
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.IngredientLine
+import app.recipebook.domain.model.IngredientLineSubstitution
+import app.recipebook.domain.localization.parseRecipeQuantity
+import app.recipebook.domain.localization.formatIngredientBase
+import app.recipebook.domain.localization.isCountIngredientUnit
+import app.recipebook.domain.localization.normalizeIngredientUnit
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.LocalizedValue
@@ -104,7 +110,8 @@ fun RecipeEditorScreen(
     onDiscardDraftPhoto: (PhotoRef) -> Unit,
     onDraftPhotosChange: (List<PhotoRef>, String?) -> Unit,
     onDelete: (() -> Unit)?,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    isSaving: Boolean = false
 ) {
     var localizedTexts by rememberSaveable(stateSaver = bilingualTextSaver()) {
         mutableStateOf(
@@ -121,25 +128,25 @@ fun RecipeEditorScreen(
     var prepMinutes by rememberSaveable { mutableStateOf(initialRecipe.times?.prepTimeMinutes?.toString().orEmpty()) }
     var cookMinutes by rememberSaveable { mutableStateOf(initialRecipe.times?.cookTimeMinutes?.toString().orEmpty()) }
     var totalMinutes by rememberSaveable { mutableStateOf(initialRecipe.times?.totalTimeMinutes?.toString().orEmpty()) }
-    val ingredientRows = remember(initialRecipe.id) {
+    val ingredientRows = rememberSaveable(initialRecipe.id, saver = ingredientRowsSaver()) {
         mutableStateListOf<EditableIngredientRow>().apply {
             addAll(initialRecipe.ingredients.map(IngredientLine::toEditableRow))
             if (isEmpty()) add(blankIngredientRow())
         }
     }
-    val recipePhotos = remember(initialRecipe.id) {
+    val recipePhotos = rememberSaveable(initialRecipe.id, saver = photoRowsSaver()) {
         mutableStateListOf<PhotoRef>().apply { addAll(initialRecipe.photos) }
     }
-    val recipeLinkRows = remember(initialRecipe.id) {
+    val recipeLinkRows = rememberSaveable(initialRecipe.id, saver = recipeLinkRowsSaver()) {
         mutableStateListOf<EditableRecipeLinkRow>().apply {
             addAll(initialRecipe.recipeLinks.map(RecipeLink::toEditableRow))
         }
     }
     var mainPhotoId by rememberSaveable(initialRecipe.id) { mutableStateOf(initialRecipe.mainPhotoId) }
-    val selectedTagIds = remember(initialRecipe.id) {
+    val selectedTagIds = rememberSaveable(initialRecipe.id, saver = selectedIdsSaver()) {
         mutableStateListOf<String>().apply { addAll(initialRecipe.tagIds) }
     }
-    val selectedCollectionIds = remember(initialRecipe.id) {
+    val selectedCollectionIds = rememberSaveable(initialRecipe.id, saver = selectedIdsSaver()) {
         mutableStateListOf<String>().apply { addAll(initialRecipe.collectionIds) }
     }
     var ingredientPickerIndex by remember { mutableStateOf<Int?>(null) }
@@ -151,7 +158,7 @@ fun RecipeEditorScreen(
     var showRecipeLinkPickerDialog by remember { mutableStateOf(false) }
     var pendingRecipeLinkIndex by remember { mutableStateOf<Int?>(null) }
     var ingredientsExpanded by rememberSaveable { mutableStateOf(false) }
-    var pendingCameraCapture by remember { mutableStateOf<PendingRecipePhotoCapture?>(null) }
+    var pendingCameraCapture by rememberSaveable(stateSaver = pendingCameraCaptureSaver()) { mutableStateOf<PendingRecipePhotoCapture?>(null) }
     var currentImportMetadata by rememberSaveable(stateSaver = importMetadataSaver()) {
         mutableStateOf(initialRecipe.importMetadata)
     }
@@ -172,6 +179,8 @@ fun RecipeEditorScreen(
             importMetadata = currentImportMetadata
         )
     }
+    val hasInvalidAmounts = ingredientRows.any { isInvalidRecipeQuantity(it.quantity) } ||
+        (servingsAmount.isNotBlank() && (parseRecipeQuantity(servingsAmount)?.let { it > 0.0 } != true))
     val saveRecipe = {
         onSave(
             initialRecipe.copy(
@@ -254,7 +263,8 @@ fun RecipeEditorScreen(
                 AppIconButton(
                     icon = Icons.Filled.Save,
                     contentDescription = localizedString(R.string.save_recipe_label, language),
-                    onClick = saveRecipe
+                    onClick = saveRecipe,
+                    enabled = !isSaving && !hasInvalidAmounts && !isRegeneratingOtherLanguage
                 )
                 if (onDelete != null) {
                     AppIconButton(
@@ -286,6 +296,7 @@ fun RecipeEditorScreen(
                     otherLanguage = otherLanguage,
                     otherLanguageStatus = otherLanguageStatus,
                     isRegenerating = isRegeneratingOtherLanguage,
+                    canRegenerate = !hasInvalidAmounts,
                     onRegenerateClick = {
                         if (isRegeneratingOtherLanguage) return@BilingualSyncStatusCard
                         val draftRecipe = initialRecipe.copy(
@@ -307,7 +318,7 @@ fun RecipeEditorScreen(
                         )
                         coroutineScope.launch {
                             isRegeneratingOtherLanguage = true
-                            runCatching {
+                            runCatchingRecipeWork {
                                 onRegenerateOtherLanguage(draftRecipe, language)
                             }.onSuccess { regeneratedRecipe ->
                                 localizedTexts = regeneratedRecipe.languages
@@ -407,7 +418,12 @@ fun RecipeEditorScreen(
                         localizedImportWarningLine(warning, language)
                     }
                 ) { sourceUrl = it }
-                LabeledField(localizedString(R.string.servings_amount_label, language), servingsAmount) { servingsAmount = it }
+                val invalidServings = servingsAmount.isNotBlank() && (parseRecipeQuantity(servingsAmount)?.let { it > 0.0 } != true)
+                LabeledField(
+                    localizedString(R.string.servings_amount_label, language), servingsAmount,
+                    isError = invalidServings,
+                    supportingText = if (invalidServings) localizedString(R.string.invalid_servings_label, language) else null
+                ) { servingsAmount = it }
                 LabeledField(localizedString(R.string.servings_unit_label, language), servingsUnit) { servingsUnit = it }
                 LabeledField(localizedString(R.string.prep_minutes_label, language), prepMinutes) { prepMinutes = it }
                 LabeledField(localizedString(R.string.cook_minutes_label, language), cookMinutes) { cookMinutes = it }
@@ -693,6 +709,7 @@ private fun BilingualSyncStatusCard(
     otherLanguage: AppLanguage,
     otherLanguageStatus: BilingualSyncStatus,
     isRegenerating: Boolean,
+    canRegenerate: Boolean,
     onRegenerateClick: () -> Unit
 ) {
     val message = when (otherLanguageStatus) {
@@ -736,7 +753,7 @@ private fun BilingualSyncStatusCard(
                         style = MaterialTheme.typography.bodySmall
                     )
                 } else {
-                    TextButton(onClick = onRegenerateClick) {
+                    TextButton(onClick = onRegenerateClick, enabled = canRegenerate) {
                         Text(
                             localizedString(
                                 R.string.regenerate_other_language_label,
@@ -930,7 +947,13 @@ private fun IngredientEditorCard(
                 onClick = onRemove
             )
         }
-        LabeledField(localizedString(R.string.ingredient_quantity_label, language), row.quantity, onValueChange = onQuantityChange)
+        val invalidQuantity = isInvalidRecipeQuantity(row.quantity)
+        LabeledField(
+            localizedString(R.string.ingredient_quantity_label, language), row.quantity,
+            isError = invalidQuantity,
+            supportingText = if (invalidQuantity) localizedString(R.string.invalid_quantity_label, language) else null,
+            onValueChange = onQuantityChange
+        )
         LabeledField(localizedString(R.string.ingredient_unit_label, language), row.unit, onValueChange = onUnitChange)
         LabeledField(
             localizedString(R.string.ingredient_preparation_label, language),
@@ -1475,6 +1498,7 @@ private fun LabeledField(
     singleLine: Boolean = true,
     minLines: Int = 1,
     supportingText: String? = null,
+    isError: Boolean = false,
     leadingIcon: (@Composable () -> Unit)? = null,
     onValueChange: (String) -> Unit
 ) {
@@ -1483,6 +1507,7 @@ private fun LabeledField(
         onValueChange = onValueChange,
         modifier = Modifier.fillMaxWidth(),
         label = { Text(label) },
+        isError = isError,
         leadingIcon = leadingIcon,
         supportingText = supportingText?.let { text ->
             {
@@ -1733,8 +1758,10 @@ internal fun parseIngredients(input: String): List<IngredientLine> {
         }
 }
 
+internal fun isInvalidRecipeQuantity(value: String): Boolean = value.isNotBlank() && parseRecipeQuantity(value) == null
+
 private fun parseServings(amountText: String, unitText: String): Servings? {
-    val amount = amountText.trim().toDoubleOrNull() ?: return null
+    val amount = parseRecipeQuantity(amountText)?.takeIf { it > 0.0 } ?: return null
     return Servings(amount = amount, unit = unitText.trim().ifBlank { null })
 }
 
@@ -1761,7 +1788,10 @@ internal data class EditableIngredientRow(
     val unit: String = "",
     val preparation: LocalizedValue = LocalizedValue(),
     val notes: LocalizedValue = LocalizedValue(),
-    val originalText: String = ""
+    val originalText: String = "",
+    val optional: Boolean = false,
+    val group: String? = null,
+    val substitutions: List<IngredientLineSubstitution> = emptyList()
 )
 
 internal data class EditableRecipeLinkRow(
@@ -1772,7 +1802,7 @@ internal data class EditableRecipeLinkRow(
     val labelEn: String = ""
 )
 
-private fun IngredientLine.toEditableRow(): EditableIngredientRow = EditableIngredientRow(
+internal fun IngredientLine.toEditableRow(): EditableIngredientRow = EditableIngredientRow(
     id = id,
     ingredientRefId = ingredientRefId,
     ingredientName = ingredientName,
@@ -1780,7 +1810,10 @@ private fun IngredientLine.toEditableRow(): EditableIngredientRow = EditableIngr
     unit = unit.orEmpty(),
     preparation = preparation,
     notes = notes,
-    originalText = originalText
+    originalText = originalText,
+    optional = optional,
+    group = group,
+    substitutions = substitutions
 )
 
 private fun RecipeLink.toEditableRow(): EditableRecipeLinkRow = EditableRecipeLinkRow(
@@ -1824,8 +1857,8 @@ internal fun List<EditableIngredientRow>.toIngredientLines(
         val ingredientName = ingredientReference?.canonicalName()
             ?.ifBlank { row.ingredientName.trim() }
             ?: row.ingredientName.trim()
-        val quantity = row.quantity.trim().toDoubleOrNull()
-        val unit = row.unit.trim().ifBlank { null }
+        val quantity = parseRecipeQuantity(row.quantity)
+        val unit = row.unit.normalizeIngredientUnit().ifBlank { null }
         val preparation = row.preparation.normalized()
         val notes = row.notes.normalized()
         val originalText = row.originalText.trim().ifBlank {
@@ -1848,7 +1881,10 @@ internal fun List<EditableIngredientRow>.toIngredientLines(
                 unit = unit,
                 ingredientName = ingredientName.ifBlank { originalText },
                 preparation = preparation,
-                notes = notes
+                notes = notes,
+                optional = row.optional,
+                group = row.group,
+                substitutions = row.substitutions
             )
         }
     }
@@ -1871,11 +1907,11 @@ private fun buildIngredientPreview(
     preparation: String?,
     notes: String?
 ): String {
-    val base = listOfNotNull(
-        quantity?.let(::formatNumber),
-        unit,
-        ingredientName.ifBlank { null }
-    ).joinToString(" ")
+    val base = if (isCountIngredientUnit(unit)) {
+        formatIngredientBase(quantity, unit, ingredientName, AppLanguage.EN)
+    } else {
+        listOfNotNull(quantity?.let(::formatNumber), unit, ingredientName.ifBlank { null }).joinToString(" ")
+    }
 
     val withPreparation = if (preparation.isNullOrBlank()) base else "$base, $preparation"
     return if (notes.isNullOrBlank()) withPreparation else "$withPreparation ($notes)"
@@ -1890,8 +1926,8 @@ private fun EditableIngredientRow.toIngredientLinePreview(
     val resolvedName = ingredientReference?.localizedName(language)
         ?.ifBlank { ingredientName.trim() }
         ?: ingredientName.trim()
-    val quantityValue = quantity.trim().toDoubleOrNull()
-    val resolvedUnit = unit.trim().ifBlank { null }
+    val quantityValue = parseRecipeQuantity(quantity)
+    val resolvedUnit = unit.normalizeIngredientUnit().ifBlank { null }
     val resolvedPreparation = preparation.normalized()
     val resolvedNotes = notes.normalized()
     val resolvedOriginalText = originalText.trim().ifBlank {
@@ -1914,7 +1950,10 @@ private fun EditableIngredientRow.toIngredientLinePreview(
         unit = resolvedUnit,
         ingredientName = resolvedName.ifBlank { resolvedOriginalText },
         preparation = resolvedPreparation,
-        notes = resolvedNotes
+        notes = resolvedNotes,
+        optional = optional,
+        group = group,
+        substitutions = substitutions
     )
 }
 

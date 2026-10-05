@@ -17,6 +17,56 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class RecipeEditorScreenTest {
+    @Test fun freshCountRowsComposeSourceTextOnceAndRetainSizeDependentUnit() {
+        val row = editableIngredientRowForTest(id = "egg", ingredientName = "egg white", quantity = "2", unit = "large egg white",
+            preparation = app.recipebook.domain.model.LocalizedValue(en = "lightly beaten"))
+        val line = listOf(row).toIngredientLines(emptyList()).single()
+        assertEquals("2 large egg whites, lightly beaten", line.originalText)
+        assertEquals("large egg white", line.unit)
+        assertEquals(2.0, requireNotNull(line.quantity), 0.000001)
+        for (unit in listOf("g", "cup", "tbsp")) {
+            val measured = listOf(row.copy(unit = unit)).toIngredientLines(emptyList()).single()
+            assertEquals("2 $unit egg white, lightly beaten", measured.originalText)
+            assertEquals(unit, measured.unit)
+            assertEquals(2.0, requireNotNull(measured.quantity), 0.000001)
+        }
+    }
+
+    @Test
+    fun invalidQuantityIsReportedBeforeSaveCanDropIt() {
+        assertTrue(isInvalidRecipeQuantity("1,2.3"))
+        assertTrue(isInvalidRecipeQuantity("NaN"))
+        assertEquals(false, isInvalidRecipeQuantity("1,5"))
+        assertEquals(false, isInvalidRecipeQuantity("1½"))
+        assertEquals(false, isInvalidRecipeQuantity(""))
+    }
+
+    @Test
+    fun ingredientEditorRoundTripPreservesOptionalGroupAndSubstitutions() {
+        val line = app.recipebook.domain.model.IngredientLine(
+            id = "line-1", originalText = "1.5 cups flour", quantity = 1.5, unit = "cup",
+            ingredientName = "flour", optional = true, group = "Dough",
+            substitutions = listOf(app.recipebook.domain.model.IngredientLineSubstitution(
+                id = "sub-1", ingredientLineId = "line-1", substitutionRuleId = "rule-1",
+                isPreferred = true, createdAt = "2026-01-01", updatedAt = "2026-01-01"
+            ))
+        )
+        val saved = listOf(line.toEditableRow().copy(quantity = "1,5", unit = "tasses"))
+            .toIngredientLines(emptyList()).single()
+        assertEquals(line, saved)
+    }
+
+    @Test
+    fun ingredientEditorAcceptsFractionGlyphsAfterLanguageChanges() {
+        val row = editableIngredientRowForTest(id = "line-1", ingredientName = "flour", quantity = "1½", unit = "tasse")
+            .withPreparation(AppLanguage.EN, "sifted").withPreparation(AppLanguage.FR, "tamisée")
+        val line = listOf(row).toIngredientLines(emptyList()).single()
+        assertEquals(1.5, requireNotNull(line.quantity), 0.000001)
+        assertEquals("cup", line.unit)
+        assertEquals("sifted", line.preparation.en)
+        assertEquals("tamisée", line.preparation.fr)
+    }
+
 
     @Test
     fun filterIngredientReferences_returnsAllMatchesWithoutTruncation() {

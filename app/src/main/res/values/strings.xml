@@ -43,7 +43,7 @@
     <string name="other_language_needs_regeneration_label">%1$s needs regeneration after your edits.</string>
     <string name="other_language_missing_label">%1$s is missing and should be regenerated.</string>
     <string name="regenerate_other_language_label">Regenerate %1$s</string>
-    <string name="regeneration_in_progress_label">Generating %1$s...</string>
+    <string name="regeneration_in_progress_label">Generating %1$s…</string>
     <string name="regeneration_applied_title">Regeneration applied</string>
     <string name="regeneration_applied_message">RecipeBook regenerated %1$s. Review it before relying on it.</string>
     <string name="regeneration_failed_title">Regeneration failed</string>
@@ -68,13 +68,13 @@
     <string name="import_warning_empty_shared_text">The shared text was empty.</string>
     <string name="import_warning_missing_source_url">The shared source link was missing.</string>
     <string name="import_warning_generic">RecipeBook could not fully confirm this imported content.</string>
-    <string name="ai_settings_info_title">OpenAI-compatible backend</string>
-    <string name="ai_settings_info_message">These settings stay on this device and are used for importer AI and bilingual regeneration.</string>
-    <string name="ai_settings_status_configured">AI configuration looks complete.</string>
-    <string name="ai_settings_status_incomplete">Add all three values before the real AI backend can be used.</string>
-    <string name="ai_settings_api_key_label">API key</string>
-    <string name="ai_settings_base_url_label">Base URL</string>
-    <string name="ai_settings_model_label">Model</string>
+    <string name="ai_settings_info_title">OpenRouter</string>
+    <string name="ai_settings_info_message">Enter your own OpenRouter API key. Only requested AI import or bilingual regeneration sends recipe text to OpenRouter. Saved Poe keys are never reused.</string>
+    <string name="ai_settings_status_configured">OpenRouter settings are complete; the key has not been validated online.</string>
+    <string name="ai_settings_status_incomplete">Enter an OpenRouter API key and model ID. Clearing the key disables remote AI.</string>
+    <string name="ai_settings_api_key_label">OpenRouter API key</string>
+    <string name="ai_settings_base_url_label">OpenRouter endpoint</string>
+    <string name="ai_settings_model_label">OpenRouter model (provider/model)</string>
     <string name="ai_settings_save_label">Save AI settings</string>
     <string name="ai_settings_fallback_message">If these settings are missing or the backend fails, RecipeBook falls back to deterministic import and can keep using the local stub regenerator.</string>
     <string name="save_recipe_label">Save recipe</string>
@@ -233,9 +233,16 @@
     <string name="ingredient_state_pending">Pending</string>
     <string name="all_recipes_count_label">All Recipes (%1$d)</string>
     <string name="collection_name_with_count">%1$s (%2$d)</string>
-    <string name="collection_recipe_count_label">%1$d recipes</string>
+    <plurals name="collection_recipe_count_label">
+        <item quantity="one">%1$d recipe</item>
+        <item quantity="other">%1$d recipes</item>
+    </plurals>
     <string name="add_to_collection_dialog_title">Add recipes to %1$s</string>
-    <string name="import_loading_label">Building recipe draft...</string>
+    <string name="import_loading_label">Building recipe draft…</string>
+    <string name="invalid_quantity_label">Enter a non-negative number or fraction.</string>
+    <string name="invalid_servings_label">Enter a number or fraction greater than zero.</string>
+    <string name="local_save_backup_failed_label">Saved locally, but the backup could not be updated.</string>
+    <string name="recipe_save_failed_label">The recipe could not be saved. Your draft is still available.</string>
 </resources>
 
 

@@ -9,8 +9,47 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import kotlinx.coroutines.runBlocking
 
 class SharedRecipeImportTest {
+    @Test
+    fun thrownAiFailureKeepsDeterministicDraft() = runBlocking {
+        val importer = SharedRecipeImporter(aiRecipeImportService = object : AiRecipeImportService {
+            override suspend fun buildDraft(request: AiRecipeImportRequest): AiRecipeImportResult = throw java.io.IOException("failed")
+        })
+        val draft = importer.import("Soup\nIngredients\n1 carrot\nInstructions\nCook.")
+        assertEquals("Soup", draft.title)
+        assertEquals("1 carrot", draft.ingredients.single().originalText)
+        assertTrue(draft.warnings.any { it.code == "ai_draft_unavailable" })
+    }
+
+    @Test(expected = kotlinx.coroutines.CancellationException::class)
+    fun canceledExtractionDoesNotStartAiImport() = runBlocking {
+        val importer = SharedRecipeImporter(
+            fetchUrlContent = { throw kotlinx.coroutines.CancellationException("canceled") },
+            aiRecipeImportService = object : AiRecipeImportService {
+                override suspend fun buildDraft(request: AiRecipeImportRequest): AiRecipeImportResult = error("AI must not start")
+            }
+        )
+        importer.import("https://example.com/recipe")
+        Unit
+    }
+
+    @Test
+    fun invalidAiQuantitiesKeepDeterministicIngredientEvidence() = runBlocking {
+        val importer = SharedRecipeImporter(aiRecipeImportService = object : AiRecipeImportService {
+            override suspend fun buildDraft(request: AiRecipeImportRequest): AiRecipeImportResult = AiRecipeImportResult.Success(
+                AiRecipeImportResponse(payload = AiRecipeDraftPayload(title = "Incorrect", ingredients = listOf(
+                    ImportedIngredientDraft(id = "line-1", originalText = "-1 carrot", ingredientName = "carrot", quantity = -1.0)
+                )), generatorLabel = "fixture")
+            )
+        })
+        val draft = importer.import("Soup\nIngredients\n1 carrot\nInstructions\nCook.")
+        assertEquals("Soup", draft.title)
+        assertEquals("1 carrot", draft.ingredients.single().originalText)
+        assertTrue(draft.warnings.any { it.code == "ai_response_invalid" })
+    }
+
 
     @Test
     fun applyToRecipe_placesIngredientPreparationAndNotesInAuthoritativeLanguageOnly() {

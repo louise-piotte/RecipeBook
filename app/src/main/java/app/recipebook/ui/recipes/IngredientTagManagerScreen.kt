@@ -49,6 +49,7 @@ import app.recipebook.data.local.recipes.IngredientReferenceDraft
 import app.recipebook.data.local.recipes.IngredientSubstitutionDraft
 import app.recipebook.data.local.recipes.TagDraft
 import app.recipebook.domain.model.AppLanguage
+import app.recipebook.domain.localization.parseRecipeQuantity
 import app.recipebook.domain.model.ContextualSubstitutionRule
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.SubstitutionRiskLevel
@@ -1065,7 +1066,7 @@ internal fun validateIngredientSubstitutionDraft(
     if (targetIngredientRefId.isNullOrBlank()) {
         return IngredientSubstitutionValidationError.MissingTarget
     }
-    val parsedRatio = ratioText.trim().toDoubleOrNull()
+    val parsedRatio = parseRecipeQuantity(ratioText)
     if (parsedRatio == null || parsedRatio <= 0.0) {
         return IngredientSubstitutionValidationError.InvalidRatio
     }

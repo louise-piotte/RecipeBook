@@ -14,3 +14,7 @@ This package holds lightweight app settings that do not belong in the recipe lib
 
 ## Maintenance Notes
 - `AppLanguageStore.kt` is intentionally simple. Avoid over-abstracting until more settings truly share the same behavior.
+
+- `AiBackendSettingsStore.kt` stores only user-entered OpenRouter credentials and model in provider-scoped preferences. The fixed HTTPS endpoint is `https://openrouter.ai/api/v1`; the verified default model is `openai/gpt-5.4`. Legacy Poe preferences are ignored and removed on an explicit settings save. No credential is embedded; blank credentials disable remote AI. Credentials are masked, omitted from settings string representations and activity saved state, and excluded from Android cloud backup/device transfer. Library exports exclude device-local credentials. The earlier Luna request remains deferred.
+
+MainActivity supplies the saved device language after launch sync. A legacy library missing library settings therefore preserves that preference; stored/imported library settings still take precedence.

@@ -93,17 +93,19 @@ class RecipePhotoStore(private val context: Context) {
     }
 
     suspend fun persistRecipePhotos(recipeId: String, photos: List<PhotoRef>): List<PhotoRef> = withContext(Dispatchers.IO) {
+        requireValidStorageId(recipeId)
         photos.map { photo ->
+            requireValidStorageId(photo.id)
             val sourceFile = File(photo.localPath)
             if (!sourceFile.exists()) {
                 photo
             } else if (isPermanentPath(sourceFile.absolutePath)) {
                 photo
             } else {
-                val extension = sourceFile.extension.ifBlank { "jpg" }
+                val extension = safeStorageExtension(sourceFile.extension, "jpg")
                 val recipeDir = ensureDirectory(File(permanentRoot, recipeId))
                 val targetFile = File(recipeDir, "${photo.id}.$extension")
-                moveFile(sourceFile, targetFile)
+                copyDraftFile(sourceFile, targetFile)
                 photo.copy(localPath = targetFile.absolutePath)
             }
         }
@@ -147,19 +149,11 @@ class RecipePhotoStore(private val context: Context) {
         return fromPath?.ifBlank { null }?.lowercase() ?: "jpg"
     }
 
-    private fun moveFile(sourceFile: File, targetFile: File) {
+    private fun copyDraftFile(sourceFile: File, targetFile: File) {
         targetFile.parentFile?.mkdirs()
-        if (sourceFile.absolutePath == targetFile.absolutePath) {
-            return
-        }
-        if (!sourceFile.renameTo(targetFile)) {
-            FileInputStream(sourceFile).use { input ->
-                FileOutputStream(targetFile).use { output ->
-                    input.copyTo(output)
-                }
-            }
-            sourceFile.delete()
-        }
+        if (sourceFile.absolutePath == targetFile.absolutePath) return
+        // Keep the draft available for retry if the subsequent database save fails.
+        sourceFile.copyTo(targetFile, overwrite = true)
     }
 
     private fun ensureDirectory(directory: File): File {

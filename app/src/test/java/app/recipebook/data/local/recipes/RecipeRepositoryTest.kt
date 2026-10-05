@@ -55,6 +55,103 @@ import org.junit.Assert.fail
 import org.junit.Test
 
 class RecipeRepositoryTest {
+    @Test fun missingLibrarySettingsPreserveFrenchPreferenceOverBundledEnglish() = runBlocking {
+        val seedSettings = LibrarySettings(language = AppLanguage.EN, driveSyncEnabled = false, driveFileName = "seed.zip")
+        val dao = FakeLibrarySettingsDao()
+        val repository = RecipeRepository(FakeRecipeDao(), librarySettingsDao = dao,
+            seedLibrary = SeedLibraryData(settings = seedSettings))
+        assertEquals(seedSettings.copy(language = AppLanguage.FR), repository.getLibrarySettings(AppLanguage.FR))
+        assertNull(dao.value)
+        assertEquals(AppLanguage.FR, repository.getLibrarySettings(AppLanguage.FR).language)
+    }
+
+    @Test fun missingLibrarySettingsPreserveEnglishPreferenceOverBundledFrench() = runBlocking {
+        val repository = RecipeRepository(FakeRecipeDao(),
+            seedLibrary = SeedLibraryData(settings = LibrarySettings(language = AppLanguage.FR, driveSyncEnabled = false)))
+        assertEquals(AppLanguage.EN, repository.getLibrarySettings(AppLanguage.EN).language)
+        assertEquals(AppLanguage.FR, repository.getLibrarySettings().language)
+    }
+
+    @Test fun storedLibrarySettingsOutrankDevicePreferenceInBothLanguages() = runBlocking {
+        val dao = FakeLibrarySettingsDao()
+        val repository = RecipeRepository(FakeRecipeDao(), librarySettingsDao = dao)
+        for (language in AppLanguage.entries) {
+            val settings = LibrarySettings(language = language, driveSyncEnabled = true, driveFileName = "chosen.zip")
+            repository.updateLibrarySettings(settings, notifyMutation = false)
+            val opposite = if (language == AppLanguage.FR) AppLanguage.EN else AppLanguage.FR
+            assertEquals(settings, repository.getLibrarySettings(opposite))
+        }
+    }
+
+    @Test fun absentSeedAndLibrarySettingsUseDevicePreferenceOrEnglishDefault() = runBlocking {
+        val repository = RecipeRepository(FakeRecipeDao())
+        assertEquals(AppLanguage.FR, repository.getLibrarySettings(AppLanguage.FR).language)
+        assertEquals(AppLanguage.EN, repository.getLibrarySettings().language)
+    }
+
+    @Test fun failedBackupReportsWarningButDoesNotFailSavedRecipe() = runBlocking {
+        val repository = RecipeRepository(FakeRecipeDao())
+        var warning: Exception? = null
+        repository.onLibraryMutated = {
+            runRecipeBackupAfterMutation(refresh = { throw java.io.IOException("backup unavailable") }, onFailure = { warning = it })
+        }
+        repository.upsertRecipe(sampleRecipe("saved-before-backup"))
+        assertNotNull(repository.getRecipeById("saved-before-backup"))
+        assertTrue(warning is java.io.IOException)
+    }
+
+    @Test fun importedCatalogIsUsedByReopenedRepositoryInsteadOfSeed() = runBlocking {
+        val dao = FakeRecipeDao()
+        val store = InMemoryRecipeCatalogStore()
+        val seedForm = app.recipebook.domain.model.IngredientForm("seed", "ref", "dry", "Sec", "Dry", updatedAt = "now")
+        val importedForm = seedForm.copy(id = "imported", labelEn = "Imported")
+        val seed = SeedLibraryData(ingredientForms = listOf(seedForm))
+        val first = RecipeRepository(recipeDao = dao, seedLibrary = seed, catalogStore = store)
+        first.replaceLibrary(first.buildExportLibrary().copy(ingredientForms = listOf(importedForm)), notifyMutation = false)
+        val reopened = RecipeRepository(recipeDao = dao, seedLibrary = seed, catalogStore = store)
+        assertEquals(listOf(importedForm), reopened.loadIngredientSubstitutionCatalog().ingredientForms)
+        assertEquals(listOf(importedForm), reopened.buildExportLibrary().ingredientForms)
+        reopened.replaceLibrary(reopened.buildExportLibrary().copy(ingredientForms = emptyList()), notifyMutation = false)
+        assertEquals(emptyList<app.recipebook.domain.model.IngredientForm>(), reopened.loadIngredientSubstitutionCatalog().ingredientForms)
+    }
+
+    @Test fun failedReplacementCommitRestoresPreviousCatalog() = runBlocking {
+        val store = InMemoryRecipeCatalogStore()
+        val previous = StoredRecipeCatalog(ingredientForms = listOf(app.recipebook.domain.model.IngredientForm("old", "ref", "dry", "Sec", "Dry", updatedAt = "now")))
+        store.replace(previous)
+        val repository = RecipeRepository(recipeDao = FakeRecipeDao(), catalogStore = store)
+        try {
+            repository.replaceLibrary(repository.buildExportLibrary().copy(ingredientForms = emptyList()), notifyMutation = false,
+                beforeCommit = { throw java.io.IOException("media failure") })
+            fail("Expected failed commit")
+        } catch (_: java.io.IOException) { }
+        assertEquals(previous.ingredientForms, repository.loadIngredientSubstitutionCatalog().ingredientForms)
+    }
+
+    @Test
+    fun initializedLibraryDoesNotRestoreDeletedSeedRecipeOnNextLaunch() = runBlocking {
+        val dao = FakeRecipeDao()
+        val metadata = FakeLibraryMetadataDao()
+        val seed = SeedLibraryData(recipes = listOf(sampleRecipe(id = "seed-recipe")))
+        RecipeRepository(recipeDao = dao, libraryMetadataDao = metadata, seedLibrary = seed).seedBundledLibraryIfMissing()
+        dao.deleteById("seed-recipe")
+        RecipeRepository(recipeDao = dao, libraryMetadataDao = metadata, seedLibrary = seed).seedBundledLibraryIfMissing()
+        assertEquals(0, dao.size())
+        assertTrue(metadata.value != null)
+    }
+
+    @Test
+    fun seedingDoesNotOverwriteCustomizedCollection() = runBlocking {
+        val collections = FakeCollectionDao()
+        collections.upsert(CollectionEntity(id = "collection-family", nameFr = "Ma famille", nameEn = "My family"))
+        val repository = RecipeRepository(
+            recipeDao = FakeRecipeDao(), collectionDao = collections, libraryMetadataDao = FakeLibraryMetadataDao(),
+            seedLibrary = SeedLibraryData(collections = listOf(Collection("collection-family", "Famille", "Family")))
+        )
+        repository.seedBundledLibraryIfMissing()
+        assertEquals("My family", collections.items["collection-family"]?.nameEn)
+    }
+
 
     @Test
     fun recipeStorageRoundTrip_preservesRecipeDetails() = runBlocking {

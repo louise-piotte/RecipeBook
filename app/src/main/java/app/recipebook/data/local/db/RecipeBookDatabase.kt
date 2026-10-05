@@ -47,7 +47,7 @@ object RecipeBookDatabaseProvider {
                 context.applicationContext,
                 RecipeBookDatabase::class.java,
                 RecipeBookDatabase.DATABASE_NAME
-            ).fallbackToDestructiveMigration().build().also { db ->
+            ).addMigrations(*supportedRecipeBookMigrations).build().also { db ->
                 instance = db
             }
         }

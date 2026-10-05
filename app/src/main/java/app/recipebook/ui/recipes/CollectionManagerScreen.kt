@@ -226,7 +226,7 @@ private fun CollectionManagerRow(
                     style = MaterialTheme.typography.titleMedium
                 )
                 Text(
-                    text = localizedString(R.string.collection_recipe_count_label, language, count),
+                    text = localizedQuantityString(R.plurals.collection_recipe_count_label, language, count),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )

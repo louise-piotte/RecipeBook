@@ -45,6 +45,11 @@ import app.recipebook.data.local.recipes.IngredientSubstitutionCatalog
 import app.recipebook.data.local.recipes.IngredientSubstitutionSuggestion
 import app.recipebook.data.local.recipes.resolveIngredientSubstitutions
 import app.recipebook.domain.localization.BilingualTextResolver
+import app.recipebook.domain.localization.formatIngredientAmount
+import app.recipebook.domain.localization.formatIngredientBase
+import app.recipebook.domain.localization.formatIngredientPreparation
+import app.recipebook.domain.localization.normalizeIngredientUnit
+import app.recipebook.domain.localization.localizedMeasurementUnit
 import app.recipebook.domain.localization.MissingTextPlaceholders
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.localization.BilingualText
@@ -57,8 +62,6 @@ import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.domain.model.Tag
 import app.recipebook.ui.theme.PopupShape
-import kotlin.math.abs
-import kotlin.math.floor
 import kotlin.math.round
 
 @Composable
@@ -66,7 +69,6 @@ internal fun RecipeDetailScreen(
     recipe: Recipe?,
     recipes: List<Recipe>,
     ingredientReferences: List<IngredientReference>,
-    substitutionCatalog: IngredientSubstitutionCatalog = IngredientSubstitutionCatalog.EMPTY,
     tags: List<Tag>,
     language: AppLanguage,
     onLanguageChange: (AppLanguage) -> Unit,
@@ -74,7 +76,8 @@ internal fun RecipeDetailScreen(
     onNavigate: (MainMenuDestination) -> Unit,
     onEdit: (String) -> Unit,
     onOpenLinkedRecipe: (String) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    substitutionCatalog: IngredientSubstitutionCatalog = IngredientSubstitutionCatalog.EMPTY
 ) {
     val resolver = BilingualTextResolver()
     val placeholders = MissingTextPlaceholders(
@@ -204,8 +207,8 @@ private fun RecipeDetailCard(
     onOpenLinkedRecipe: (String) -> Unit,
     onSelectIngredientConversion: (String, String?) -> Unit
 ) {
-    val ingredientReferenceMap = ingredientReferences.associateBy(IngredientReference::id)
-    val recipeMap = recipes.associateBy(Recipe::id)
+    val ingredientReferenceMap = remember(ingredientReferences) { ingredientReferences.associateBy(IngredientReference::id) }
+    val recipeMap = remember(recipes) { recipes.associateBy(Recipe::id) }
     val uriHandler = LocalUriHandler.current
     val resolvedTags = recipe.tagIds.mapNotNull { tagId -> tags.firstOrNull { it.id == tagId } }
     val notes = resolver.resolveUserText(
@@ -215,6 +218,11 @@ private fun RecipeDetailCard(
         placeholders = placeholders
     )
     val instructions = parseTextEntries(resolver.resolveSystemText(language, recipe.instructionsText()))
+    val substitutionsByLineId = remember(recipe, tags, ingredientReferences, substitutionCatalog) {
+        recipe.ingredients.associate { ingredient ->
+            ingredient.id to resolveIngredientSubstitutions(ingredient, recipe, tags, ingredientReferences, substitutionCatalog)
+        }
+    }
     val ingredientItems = recipe.ingredients.mapNotNull { ingredient ->
         val ingredientReference = ingredient.ingredientRefId?.let(ingredientReferenceMap::get)
         val convertedUnit = convertedUnits[ingredient.id]
@@ -233,13 +241,7 @@ private fun RecipeDetailCard(
             quantityOverride = convertedQuantity ?: ingredient.quantity,
             unitOverride = convertedUnit ?: ingredient.unit
         )
-        val substitutions = resolveIngredientSubstitutions(
-            ingredient = ingredient,
-            recipe = recipe,
-            tags = tags,
-            ingredientReferences = ingredientReferences,
-            catalog = substitutionCatalog
-        )
+        val substitutions = substitutionsByLineId[ingredient.id].orEmpty()
         displayText.takeIf { it.isNotEmpty() }?.let {
             DetailIngredientItem(
                 ingredient = ingredient,
@@ -762,7 +764,7 @@ internal fun buildDetailIngredientText(
     language: AppLanguage,
     quantityOverride: Double? = ingredient.quantity,
     unitOverride: String? = ingredient.unit,
-    preserveUnitOverride: Boolean = unitOverride != null && unitOverride.normalizeUnit() != ingredient.unit?.normalizeUnit()
+    preserveUnitOverride: Boolean = unitOverride != null && unitOverride.normalizeIngredientUnit() != ingredient.unit?.normalizeIngredientUnit()
 ): String {
     val ingredientName = ingredientReference?.localizedName(language)
         ?.ifBlank { ingredient.ingredientName }
@@ -775,17 +777,9 @@ internal fun buildDetailIngredientText(
         AppLanguage.FR -> ingredient.notes.fr
         AppLanguage.EN -> ingredient.notes.en
     }.ifBlank { ingredient.notes.primaryValue().orEmpty() }
-    val amountDisplay = formatIngredientAmount(
-        quantity = quantityOverride,
-        unit = unitOverride,
-        language = language,
-        preserveUnit = preserveUnitOverride
-    )
-    val base = listOfNotNull(
-        amountDisplay,
-        ingredientName.ifBlank { null }
-    ).joinToString(" ")
-    val withPreparation = if (localizedPreparation.isNullOrBlank()) base else "$base, $localizedPreparation"
+    val base = formatIngredientBase(quantityOverride, unitOverride, ingredientName, language, preserveUnitOverride)
+    val preparationDisplay = formatIngredientPreparation(localizedPreparation, quantityOverride, unitOverride, ingredientName, language)
+    val withPreparation = if (preparationDisplay.isBlank()) base else "$base, $preparationDisplay"
     val withNotes = if (localizedNotes.isNullOrBlank()) withPreparation else "$withPreparation ($localizedNotes)"
     return withNotes.ifBlank { ingredient.originalText.trim() }
 }
@@ -823,183 +817,11 @@ private fun riskLevelLabelResId(riskLevel: SubstitutionRiskLevel): Int = when (r
     SubstitutionRiskLevel.HIGH_RISK -> R.string.ingredient_substitution_risk_high_label
 }
 
-private fun formatIngredientAmount(
-    quantity: Double?,
-    unit: String?,
-    language: AppLanguage,
-    preserveUnit: Boolean
-): String? {
-    val normalizedUnit = unit?.normalizeUnit()
-    return when {
-        quantity == null -> normalizedUnit?.localizedMeasurementUnit(language, 1.0)
-        normalizedUnit == null -> formatNumber(quantity)
-        normalizedUnit == "cup" -> formatCupAmount(quantity, language, preserveUnit)
-        normalizedUnit == "tbsp" -> formatTablespoonAmount(quantity, language, preserveUnit)
-        normalizedUnit == "tsp" -> formatTeaspoonAmount(quantity, language)
-        else -> "${formatNumber(quantity)} ${normalizedUnit.localizedMeasurementUnit(language, quantity)}"
-    }
-}
-
-private fun formatCupAmount(quantity: Double, language: AppLanguage, preserveUnit: Boolean): String {
-    val wholeCups = floor(quantity + MEASUREMENT_TOLERANCE).toInt()
-    val remainder = (quantity - wholeCups).coerceAtLeast(0.0)
-    if (isNearZero(remainder)) {
-        return joinAmountWithUnit(wholeCups.toString(), "cup", wholeCups.toDouble(), language)
-    }
-
-    val matchingFraction = nearestAllowedFraction(remainder, CUP_FRACTIONS, CUP_FRACTION_TOLERANCE)
-    if (matchingFraction != null) {
-        return joinAmountWithUnit(
-            formatMixedNumberText(wholeCups, matchingFraction),
-            "cup",
-            wholeCups + matchingFraction,
-            language
-        )
-    }
-
-    if (preserveUnit) {
-        return joinAmountWithUnit(formatRoundedCupText(quantity), "cup", quantity, language)
-    }
-
-    val tablespoonText = formatTablespoonAmount(remainder * TABLESPOONS_PER_CUP, language, preserveUnit = false)
-    return if (wholeCups > 0) {
-        "${joinAmountWithUnit(wholeCups.toString(), "cup", wholeCups.toDouble(), language)} $tablespoonText"
-    } else {
-        tablespoonText
-    }
-}
-
-private fun formatTablespoonAmount(quantity: Double, language: AppLanguage, preserveUnit: Boolean): String {
-    val wholeTablespoons = floor(quantity + MEASUREMENT_TOLERANCE).toInt()
-    val remainder = (quantity - wholeTablespoons).coerceAtLeast(0.0)
-    if (isNearZero(remainder)) {
-        return joinAmountWithUnit(wholeTablespoons.toString(), "tbsp", wholeTablespoons.toDouble(), language)
-    }
-
-    val matchingFraction = nearestAllowedFraction(remainder, TABLESPOON_FRACTIONS, TABLESPOON_FRACTION_TOLERANCE)
-    if (matchingFraction != null) {
-        return joinAmountWithUnit(
-            formatMixedNumberText(wholeTablespoons, matchingFraction),
-            "tbsp",
-            wholeTablespoons + matchingFraction,
-            language
-        )
-    }
-
-    if (preserveUnit) {
-        return joinAmountWithUnit(formatRoundedTablespoonText(quantity), "tbsp", quantity, language)
-    }
-
-    val teaspoonText = formatTeaspoonAmount(remainder * TEASPOONS_PER_TABLESPOON, language)
-    return if (wholeTablespoons > 0) {
-        "${joinAmountWithUnit(wholeTablespoons.toString(), "tbsp", wholeTablespoons.toDouble(), language)} $teaspoonText"
-    } else {
-        teaspoonText
-    }
-}
-
-private fun formatTeaspoonAmount(quantity: Double, language: AppLanguage): String {
-    val roundedQuantity = roundToNearestAllowedTeaspoon(quantity)
-    val wholeTeaspoons = floor(roundedQuantity + MEASUREMENT_TOLERANCE).toInt()
-    val remainder = (roundedQuantity - wholeTeaspoons).coerceAtLeast(0.0)
-    val fraction = nearestAllowedFraction(remainder, TEASPOON_FRACTIONS, 1.0) ?: 0.0
-    return joinAmountWithUnit(
-        formatMixedNumberText(wholeTeaspoons, fraction),
-        "tsp",
-        roundedQuantity,
-        language
-    )
-}
-
-private fun formatRoundedCupText(quantity: Double): String {
-    val roundedWhole = floor(quantity + MEASUREMENT_TOLERANCE).toInt()
-    val roundedFraction = nearestAllowedFraction(
-        value = (quantity - roundedWhole).coerceAtLeast(0.0),
-        fractions = CUP_FRACTIONS,
-        tolerance = CUP_FRACTION_TOLERANCE
-    ) ?: nearestAllowedFraction(
-        value = (quantity - roundedWhole).coerceAtLeast(0.0),
-        fractions = HALF_FRACTIONS,
-        tolerance = HALF_FRACTION_TOLERANCE
-    ) ?: 0.0
-    return formatMixedNumberText(roundedWhole, roundedFraction)
-}
-
-private fun formatRoundedTablespoonText(quantity: Double): String {
-    val roundedWhole = floor(quantity + MEASUREMENT_TOLERANCE).toInt()
-    val roundedFraction = nearestAllowedFraction(
-        value = (quantity - roundedWhole).coerceAtLeast(0.0),
-        fractions = HALF_FRACTIONS,
-        tolerance = HALF_FRACTION_TOLERANCE
-    ) ?: 0.0
-    return formatMixedNumberText(roundedWhole, roundedFraction)
-}
-private fun joinAmountWithUnit(
-    amountText: String,
-    unit: String,
-    quantity: Double,
-    language: AppLanguage
-): String = "$amountText ${unit.localizedMeasurementUnit(language, quantity)}"
-
-private fun formatMixedNumberText(whole: Int, fraction: Double): String {
-    val fractionText = fractionGlyphs[fraction]
-    return when {
-        fractionText == null || isNearZero(fraction) -> whole.toString()
-        whole <= 0 -> fractionText
-        else -> "$whole$FRACTION_SPACING$fractionText"
-    }
-}
-
-private fun nearestAllowedFraction(
-    value: Double,
-    fractions: List<Double>,
-    tolerance: Double
-): Double? = fractions
-    .map { fraction -> fraction to abs(value - fraction) }
-    .filter { (_, delta) -> delta <= tolerance }
-    .minByOrNull { (_, delta) -> delta }
-    ?.first
-
-private fun roundToNearestAllowedTeaspoon(value: Double): Double {
-    val whole = floor(value + MEASUREMENT_TOLERANCE).toInt()
-    val remainder = (value - whole).coerceAtLeast(0.0)
-    val fraction = TEASPOON_FRACTIONS
-        .minByOrNull { candidate -> abs(remainder - candidate) }
-        ?: 0.0
-    val roundedWhole = if (fraction >= 0.875 && abs(remainder - 1.0) <= 0.125) whole + 1 else whole
-    return if (roundedWhole > whole) {
-        roundedWhole.toDouble()
-    } else {
-        whole + fraction
-    }
-}
-
-private fun isNearZero(value: Double): Boolean = abs(value) <= MEASUREMENT_TOLERANCE
-
-private fun String.localizedMeasurementUnit(language: AppLanguage, quantity: Double): String {
-    val normalized = normalizeUnit()
-    val isSingular = quantity < 1.0 + MEASUREMENT_TOLERANCE || abs(quantity - 1.0) <= MEASUREMENT_TOLERANCE
-    return when (language) {
-        AppLanguage.EN -> when (normalized) {
-            "cup" -> if (isSingular) "cup" else "cups"
-            "tbsp" -> "tbsp"
-            "tsp" -> "tsp"
-            else -> localizedIngredientUnit(language)
-        }
-        AppLanguage.FR -> when (normalized) {
-            "cup" -> if (isSingular) "tasse" else "tasses"
-            "tbsp" -> if (isSingular) "cuill\u00e8re \u00e0 soupe" else "cuill\u00e8res \u00e0 soupe"
-            "tsp" -> if (isSingular) "cuill\u00e8re \u00e0 th\u00e9" else "cuill\u00e8res \u00e0 th\u00e9"
-            else -> localizedIngredientUnit(language)
-        }
-    }
-}
-
 internal fun availableConversionUnits(
     currentUnit: String?,
     ingredientReference: IngredientReference?
 ): List<String> {
-    val fromUnit = currentUnit?.normalizeUnit() ?: return emptyList()
+    val fromUnit = currentUnit?.normalizeIngredientUnit() ?: return emptyList()
     val graph = buildIngredientConversionGraph(ingredientReference)
     if (fromUnit !in graph) return emptyList()
     val visited = linkedSetOf(fromUnit)
@@ -1028,9 +850,9 @@ internal fun convertIngredientQuantity(
     toUnit: String,
     ingredientReference: IngredientReference?
 ): Double? {
-    val amount = quantity ?: return null
-    val normalizedFrom = fromUnit?.normalizeUnit() ?: return null
-    val normalizedTo = toUnit.normalizeUnit()
+    val amount = quantity?.takeIf { it.isFinite() && it >= 0.0 } ?: return null
+    val normalizedFrom = fromUnit?.normalizeIngredientUnit() ?: return null
+    val normalizedTo = toUnit.normalizeIngredientUnit()
     if (normalizedFrom == normalizedTo) return amount
     val factor = findConversionFactor(
         graph = buildIngredientConversionGraph(ingredientReference),
@@ -1050,7 +872,7 @@ private fun buildIngredientConversionGraph(
         }
     }
     ingredientReference?.unitMappings.orEmpty().forEach { mapping ->
-        addConversionEdge(graph, mapping.fromUnit.normalizeUnit(), mapping.toUnit.normalizeUnit(), mapping.factor)
+        addConversionEdge(graph, mapping.fromUnit.normalizeIngredientUnit(), mapping.toUnit.normalizeIngredientUnit(), mapping.factor)
     }
     ingredientReference?.defaultDensity?.takeIf { it > 0.0 }?.let { density ->
         addConversionEdge(graph, "ml", "g", density)
@@ -1064,7 +886,7 @@ private fun addConversionEdge(
     toUnit: String,
     factor: Double
 ) {
-    if (factor <= 0.0) return
+    if (!factor.isFinite() || factor <= 0.0) return
     graph.getOrPut(fromUnit) { mutableMapOf() }[toUnit] = factor
     graph.getOrPut(toUnit) { mutableMapOf() }[fromUnit] = 1.0 / factor
 }
@@ -1101,72 +923,9 @@ private fun roundIngredientQuantity(value: Double, unit: String): Double {
         "tbsp", "tsp" -> 0.25
         else -> 0.25
     }
-    return round(value / increment) * increment
+    val rounded = round(value / increment) * increment
+    return if (rounded == 0.0 && value > 0.0) value else rounded
 }
-
-private fun String.normalizeUnit(): String = when (trim().lowercase()) {
-    "gram", "grams" -> "g"
-    "kilogram", "kilograms" -> "kg"
-    "milliliter", "milliliters", "millilitre", "millilitres" -> "ml"
-    "liter", "liters", "litre", "litres" -> "l"
-    "tablespoon", "tablespoons" -> "tbsp"
-    "teaspoon", "teaspoons" -> "tsp"
-    "ounce", "ounces" -> "oz"
-    "pound", "pounds", "lbs" -> "lb"
-    "fluid ounce", "fluid ounces" -> "fl oz"
-    "cups" -> "cup"
-    else -> trim().lowercase()
-}
-
-private fun String.localizedIngredientUnit(language: AppLanguage): String {
-    val normalized = normalizeUnit()
-    if (normalized.isEmpty()) return normalized
-    return when (language) {
-        AppLanguage.EN -> normalized
-        AppLanguage.FR -> ingredientUnitTranslations[normalized] ?: normalized
-    }
-}
-
-private fun String.localizedIngredientDescriptor(language: AppLanguage): String {
-    val normalized = trim()
-    if (normalized.isEmpty()) return normalized
-    return when (language) {
-        AppLanguage.EN -> normalized
-        AppLanguage.FR -> ingredientDescriptorTranslations[normalized.lowercase()] ?: normalized
-    }
-}
-
-private val ingredientUnitTranslations = mapOf(
-    "cup" to "tasse",
-    "tbsp" to "cuill\u00E8re \u00E0 soupe",
-    "tsp" to "cuill\u00E8re \u00E0 th\u00E9",
-    "tablespoon" to "cuill\u00E8re \u00E0 soupe",
-    "tablespoons" to "cuill\u00E8res \u00E0 soupe",
-    "teaspoon" to "cuill\u00E8re \u00E0 th\u00E9",
-    "teaspoons" to "cuill\u00E8res \u00E0 th\u00E9",
-    "g" to "g",
-    "kg" to "kg",
-    "ml" to "ml",
-    "l" to "l",
-    "oz" to "oz",
-    "lb" to "lb",
-    "fl oz" to "fl oz",
-    "ounce" to "once",
-    "ounces" to "onces",
-    "square" to "carr\u00E9",
-    "squares" to "carr\u00E9s",
-    "cookie" to "biscuit",
-    "cookies" to "biscuits"
-)
-
-private val ingredientDescriptorTranslations = mapOf(
-    "divided" to "divis\u00E9",
-    "beaten" to "battu",
-    "chopped" to "hach\u00E9",
-    "baking" to "pour cuisson",
-    "room temperature" to "temp\u00E9rature ambiante",
-    "softened" to "ramolli"
-)
 
 private fun IngredientReference.localizedName(language: AppLanguage): String = when (language) {
     AppLanguage.FR -> nameFr.ifBlank { nameEn }
@@ -1235,26 +994,6 @@ private fun recipeLinkTypeLabelRes(type: RecipeLinkType): Int = when (type) {
 }
 
 private val DoneIngredientTextColor = Color(0xFFB8B8B8)
-private const val TABLESPOONS_PER_CUP = 16.0
-private const val TEASPOONS_PER_TABLESPOON = 3.0
-private const val MEASUREMENT_TOLERANCE = 0.02
-private const val CUP_FRACTION_TOLERANCE = 0.04
-private const val TABLESPOON_FRACTION_TOLERANCE = 0.08
-private const val FRACTION_SPACING = " "
-private const val HALF_FRACTION_TOLERANCE = 0.14
-private val HALF_FRACTIONS = listOf(0.5)
-private val CUP_FRACTIONS = listOf(0.25, 1.0 / 3.0, 0.5, 2.0 / 3.0, 0.75)
-private val TABLESPOON_FRACTIONS = listOf(0.5)
-private val TEASPOON_FRACTIONS = listOf(0.125, 0.25, 0.5, 0.75)
-private val fractionGlyphs = mapOf(
-    0.125 to "\u215B",
-    0.25 to "\u00BC",
-    (1.0 / 3.0) to "\u2153",
-    0.5 to "\u00BD",
-    (2.0 / 3.0) to "\u2154",
-    0.75 to "\u00BE"
-)
-
 private val standardUnitDefinitions = listOf(
     StandardUnitDefinition(unit = "g", baseUnit = "g", toBaseFactor = 1.0),
     StandardUnitDefinition(unit = "kg", baseUnit = "g", toBaseFactor = 1000.0),
@@ -1269,7 +1008,7 @@ private val standardUnitDefinitions = listOf(
 )
 
 private fun String.toUnitSortKey(): UnitOptionSortKey {
-    val normalized = normalizeUnit()
+    val normalized = normalizeIngredientUnit()
     val category = when (normalized) {
         "g", "kg", "oz", "lb" -> 0
         "ml", "l", "tsp", "tbsp", "cup", "fl oz" -> 1

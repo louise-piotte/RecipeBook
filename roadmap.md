@@ -9,12 +9,8 @@
   - Keep local-only reusable name memory with section, case-insensitive and typo-tolerant suggestions
   - Allow add/rename/delete sections and persist locally
 - Expand recipe importer beyond shared text and `schema.org/Recipe` URLs:
-  - Add AI settings screen and local config storage for `apiKey`, `baseUrl`, and shared `model`
-  - Remove the temporary hardcoded default AI credentials/config from `AiBackendSettingsStore`
-  - Add the real OpenAI-compatible importer/regenerator backend with deterministic importer fallback and local-stub regeneration fallback
   - Add richer webpage fallback extraction when no recipe schema is present
   - Add image/OCR intake
-  - Replace the local stub regenerator with a real AI-backed bilingual generation backend through `RecipeLanguageRegenerator`
   - Add AI-assisted draft finishing and normalization
 
 - Post-MVP first nice-to-have:
@@ -23,6 +19,10 @@
 - Expose bundled ingredient conversion data in user-facing recipe screens:
   - Show reference-based unit conversions using saved density and explicit ingredient mappings
   - Surface duplicate warnings and ingredient suggestions using internal aliases/synonyms
+
+## Review Follow-ups
+- Count ingredient QA follow-ups outside the current count-only repair: implement serving-scaling controls; review mass/volume conversion-label floating-point rounding and source preparation carried into substitution suggestions; unquantified units displayed with numeric amounts; unlinked source ingredient names remaining English in French views.
+- Luna model selection remains deferred; OpenRouter uses the verified `openai/gpt-5.4` model until a new model is explicitly requested.
 
 ## Maintenance Rules
 - Remove an item immediately when it is done.

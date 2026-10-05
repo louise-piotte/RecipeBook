@@ -11,6 +11,65 @@ import org.junit.Test
 import kotlinx.coroutines.runBlocking
 
 class RecipeAiRuntimeTest {
+    @Test fun futureCountImportsKeepSizeQuantityPreparationAndConversionIdentity() = runBlocking {
+        val response = """{"title":"Fixture", "ingredients":[{"id":"white", "ingredientName":"egg white", "quantity":2,
+            "unit":"large egg white", "preparation":"lightly beaten", "originalText":"2 large egg whites, lightly beaten"}]}"""
+        val service = OpenAiCompatibleRecipeImportService(object : RecipeAiCompletionClient {
+            override suspend fun completeJson(request: RecipeAiCompletionRequest) = RecipeAiCompletionResult.Success(response, "fixture")
+        }, "fixture")
+        val result = service.buildDraft(AiRecipeImportRequest("fixture", "shared_text", "fixture", AppLanguage.EN,
+            "synthetic", "synthetic", "", DeterministicRecipeFields(title = "Fixture"), emptyList(), "{}", "{}")) as AiRecipeImportResult.Success
+        val draft = result.response.payload.ingredients.single()
+        val recipe = ImportedRecipeDraft(title = "Fixture", ingredients = listOf(draft)).applyToRecipe(sampleRecipe(), AppLanguage.EN)
+        val line = recipe.ingredients.single()
+        assertEquals(2.0, requireNotNull(line.quantity), 0.000001)
+        assertEquals("large egg white", line.unit)
+        assertEquals("lightly beaten", line.preparation.en)
+        assertEquals("2 large egg whites, lightly beaten", app.recipebook.ui.recipes.buildDetailIngredientText(line, null, AppLanguage.EN))
+        assertEquals("2 large egg whites, lightly beaten", line.originalText)
+    }
+
+    @Test(expected = kotlinx.coroutines.CancellationException::class)
+    fun settingsReadCancellationIsNeverConvertedToAiFailure() = runBlocking {
+        OpenRouterRecipeAiClient(loadSettings = { throw kotlinx.coroutines.CancellationException("canceled fixture") })
+            .completeJson(RecipeAiCompletionRequest("system", "synthetic recipe"))
+        Unit
+    }
+
+    @Test fun regeneratorRequestsItsSchemaAndKeepsLocalTextForEmptyAiTitle() = runBlocking {
+        var captured: RecipeAiCompletionRequest? = null
+        val regenerator = SettingsAwareRecipeLanguageRegenerator(object : RecipeAiCompletionClient {
+            override suspend fun completeJson(request: RecipeAiCompletionRequest): RecipeAiCompletionResult {
+                captured = request
+                return RecipeAiCompletionResult.Success("{\"title\":\"\"}", "openrouter:fixture/model")
+            }
+        }, LocalStubRecipeLanguageRegenerator(), "system")
+        val result = regenerator.regenerateOppositeLanguage(RecipeLanguageRegenerationRequest(sampleRecipe(), AppLanguage.EN))
+        assertEquals("local_stub", result.generatorLabel)
+        assertEquals("Reviewed title", result.generatedText.title)
+        assertTrue(captured?.responseSchema?.containsKey("properties") == true)
+        assertTrue(captured?.responseSchema.toString().contains("ingredients"))
+    }
+
+    @Test(expected = kotlinx.coroutines.CancellationException::class)
+    fun aiClientPropagatesCancellation() = runBlocking {
+        OpenRouterRecipeAiClient(
+            loadSettings = { app.recipebook.data.local.settings.AiBackendSettings(apiKey = "test", model = "fixture") },
+            postCompletion = { _, _ -> throw kotlinx.coroutines.CancellationException("canceled") }
+        ).completeJson(RecipeAiCompletionRequest("system", "synthetic recipe"))
+        Unit
+    }
+
+    @Test
+    fun aiClientDoesNotPersistRawExceptionDetails() = runBlocking {
+        val result = OpenRouterRecipeAiClient(
+            loadSettings = { app.recipebook.data.local.settings.AiBackendSettings(apiKey = "test", model = "fixture") },
+            postCompletion = { _, _ -> throw IllegalArgumentException("private recipe and credential details") }
+        ).completeJson(RecipeAiCompletionRequest("system", "synthetic recipe")) as RecipeAiCompletionResult.Failed
+        assertEquals("ai_request_failed", result.reasonCode)
+        assertEquals(false, result.retryable)
+    }
+
 
     @Test
     fun openAiCompatibleRecipeImportService_notConfiguredSkips() = runBlocking {

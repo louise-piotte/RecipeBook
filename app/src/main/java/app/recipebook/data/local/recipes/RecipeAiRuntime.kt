@@ -3,12 +3,16 @@ package app.recipebook.data.local.recipes
 import android.content.Context
 import app.recipebook.data.local.settings.AiBackendSettings
 import app.recipebook.data.local.settings.AiBackendSettingsStore
+import app.recipebook.data.local.settings.normalized
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.IngredientCategory
 import app.recipebook.domain.model.LocalizedSystemText
 import java.net.HttpURLConnection
 import java.net.URL
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.ensureActive
+import kotlinx.coroutines.runInterruptible
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.SerialName
@@ -19,15 +23,17 @@ import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
 
-private val aiJson = Json { ignoreUnknownKeys = true }
+private val aiJson = Json { ignoreUnknownKeys = true; encodeDefaults = true }
 
 object RecipeAiRuntime {
     fun createSharedRecipeImporter(context: Context): SharedRecipeImporter {
         val settingsStore = AiBackendSettingsStore(context)
         val repository = RecipeRepositoryProvider.create(context)
         val importerPrompt = RecipeAiPrompts.loadImporterSystemPrompt(context)
-        val completionClient = OpenAiCompatibleRecipeAiClient(
+        val completionClient = OpenRouterRecipeAiClient(
             loadSettings = { settingsStore.settings.first() }
         )
         return SharedRecipeImporter(
@@ -47,7 +53,7 @@ object RecipeAiRuntime {
     fun createLocalizationCoordinator(context: Context): RecipeLocalizationCoordinator {
         val settingsStore = AiBackendSettingsStore(context)
         val regeneratorPrompt = RecipeAiPrompts.loadRegeneratorSystemPrompt(context)
-        val completionClient = OpenAiCompatibleRecipeAiClient(
+        val completionClient = OpenRouterRecipeAiClient(
             loadSettings = { settingsStore.settings.first() }
         )
         val regenerator = SettingsAwareRecipeLanguageRegenerator(
@@ -61,7 +67,8 @@ object RecipeAiRuntime {
 
 data class RecipeAiCompletionRequest(
     val systemPrompt: String,
-    val userPrompt: String
+    val userPrompt: String,
+    val responseSchema: JsonObject? = null
 )
 
 sealed interface RecipeAiCompletionResult {
@@ -82,31 +89,24 @@ interface RecipeAiCompletionClient {
     suspend fun completeJson(request: RecipeAiCompletionRequest): RecipeAiCompletionResult
 }
 
-class OpenAiCompatibleRecipeAiClient(
+class OpenRouterRecipeAiClient(
     private val loadSettings: suspend () -> AiBackendSettings,
-    private val postCompletion: suspend (AiBackendSettings, String) -> String = ::postOpenAiCompatibleCompletion
+    private val postCompletion: suspend (AiBackendSettings, String) -> String = { settings, body -> postOpenRouterCompletion(settings, body) }
 ) : RecipeAiCompletionClient {
-    override suspend fun completeJson(request: RecipeAiCompletionRequest): RecipeAiCompletionResult {
-        val settings = loadSettings().normalizedForRuntime()
-        if (!settings.isConfigured) return RecipeAiCompletionResult.NotConfigured
-
-        val requestBody = buildChatCompletionRequestBody(
-            model = settings.model,
-            systemPrompt = request.systemPrompt,
-            userPrompt = request.userPrompt
+    override suspend fun completeJson(request: RecipeAiCompletionRequest): RecipeAiCompletionResult = runCatchingRecipeWork {
+        val settings = loadSettings().normalized()
+        if (!settings.isConfigured) return@runCatchingRecipeWork RecipeAiCompletionResult.NotConfigured
+        currentCoroutineContext().ensureActive()
+        val requestBody = buildChatCompletionRequestBody(settings.model, request.systemPrompt, request.userPrompt, request.responseSchema)
+        val response = postCompletion(settings, requestBody)
+        currentCoroutineContext().ensureActive()
+        RecipeAiCompletionResult.Success(responseJson = response, generatorLabel = "openrouter:${settings.model}")
+    }.getOrElse { error ->
+        RecipeAiCompletionResult.Failed(
+            reasonCode = if (error is RecipeAiHttpException) "http_${error.statusCode}" else "ai_request_failed",
+            retryable = error is java.io.IOException ||
+                (error is RecipeAiHttpException && (error.statusCode in 500..599 || error.statusCode in setOf(408, 429)))
         )
-
-        return runCatching {
-            RecipeAiCompletionResult.Success(
-                responseJson = postCompletion(settings, requestBody),
-                generatorLabel = "openai_compatible:${settings.model}"
-            )
-        }.getOrElse { error ->
-            RecipeAiCompletionResult.Failed(
-                reasonCode = (error.message ?: error::class.java.simpleName).take(160),
-                retryable = true
-            )
-        }
     }
 }
 
@@ -119,7 +119,8 @@ class OpenAiCompatibleRecipeImportService(
         val completion = completionClient.completeJson(
             RecipeAiCompletionRequest(
                 systemPrompt = systemPrompt,
-                userPrompt = importerUserPrompt(request)
+                userPrompt = importerUserPrompt(request),
+                responseSchema = ImporterDraftPayloadDto.serializer().descriptor.toRecipeJsonSchema()
             )
         )
 
@@ -159,7 +160,8 @@ class SettingsAwareRecipeLanguageRegenerator(
         val completion = completionClient.completeJson(
             RecipeAiCompletionRequest(
                 systemPrompt = systemPrompt,
-                userPrompt = regeneratorUserPrompt(request)
+                userPrompt = regeneratorUserPrompt(request),
+                responseSchema = RegeneratedLocalizedTextDto.serializer().descriptor.toRecipeJsonSchema()
             )
         )
 
@@ -168,6 +170,7 @@ class SettingsAwareRecipeLanguageRegenerator(
             is RecipeAiCompletionResult.Failed -> null
             is RecipeAiCompletionResult.Success -> runCatching {
                 val regenerated = json.decodeFromString(RegeneratedLocalizedTextDto.serializer(), completion.responseJson)
+                require(regenerated.title.isNotBlank())
                 RecipeLanguageRegenerationResult(
                     generatedLanguage = request.authoritativeLanguage.opposite(),
                     generatedText = regenerated.toTextDomain(),
@@ -196,7 +199,13 @@ private data class ChatCompletionRequestDto(
     @SerialName("messages")
     val messages: List<ChatCompletionMessageDto>,
     @SerialName("temperature")
-    val temperature: Double
+    val temperature: Double,
+    @SerialName("response_format")
+    val responseFormat: JsonObject,
+    @SerialName("provider")
+    val provider: JsonObject,
+    @SerialName("stream")
+    val stream: Boolean = false
 )
 
 @Serializable
@@ -208,7 +217,9 @@ private data class ChatCompletionResponseDto(
 @Serializable
 private data class ChatCompletionChoiceDto(
     @SerialName("message")
-    val message: ChatCompletionResponseMessageDto? = null
+    val message: ChatCompletionResponseMessageDto? = null,
+    @SerialName("finish_reason")
+    val finishReason: String? = null
 )
 
 @Serializable
@@ -456,53 +467,63 @@ private fun regeneratorUserPrompt(request: RecipeLanguageRegenerationRequest): S
     appendLine(authoritativeText.notes)
 }
 
-private fun buildChatCompletionRequestBody(
+internal fun buildChatCompletionRequestBody(
     model: String,
     systemPrompt: String,
-    userPrompt: String
-): String = Json.encodeToString(
+    userPrompt: String,
+    responseSchema: JsonObject? = null
+): String = aiJson.encodeToString(
     ChatCompletionRequestDto(
         model = model,
         messages = listOf(
             ChatCompletionMessageDto(role = "system", content = systemPrompt.trim()),
             ChatCompletionMessageDto(role = "user", content = userPrompt.trim())
         ),
-        temperature = 0.2
+        temperature = 0.2,
+        responseFormat = buildJsonObject {
+            put("type", if (responseSchema == null) "json_object" else "json_schema")
+            if (responseSchema != null) put("json_schema", buildJsonObject {
+                put("name", "recipebook_recipe"); put("strict", true); put("schema", responseSchema)
+            })
+        },
+        provider = buildJsonObject {
+            put("require_parameters", true)
+            put("data_collection", "deny")
+        }
     )
 )
 
-private suspend fun postOpenAiCompatibleCompletion(settings: AiBackendSettings, requestBody: String): String =
-    withContext(Dispatchers.IO) {
-        val endpoint = settings.baseUrl.trimEnd('/') + "/chat/completions"
-        val connection = URL(endpoint).openConnection() as HttpURLConnection
+internal class RecipeAiHttpException(val statusCode: Int) : Exception("http_$statusCode")
+
+internal suspend fun postOpenRouterCompletion(
+    settings: AiBackendSettings,
+    requestBody: String,
+    openConnection: (URL) -> HttpURLConnection = { it.openConnection() as HttpURLConnection }
+): String = runInterruptible(Dispatchers.IO) {
+    require(settings.isConfigured)
+    val connection = openConnection(URL(AiBackendSettings.DEFAULT_BASE_URL + "/chat/completions"))
+    try {
+        connection.instanceFollowRedirects = false
         connection.requestMethod = "POST"
         connection.connectTimeout = 20000
         connection.readTimeout = 60000
         connection.doOutput = true
         connection.setRequestProperty("Content-Type", "application/json")
         connection.setRequestProperty("Authorization", "Bearer ${settings.apiKey}")
-        connection.outputStream.bufferedWriter().use { it.write(requestBody) }
-
+        connection.setRequestProperty("X-OpenRouter-Title", "RecipeBook")
+        connection.outputStream.bufferedWriter(Charsets.UTF_8).use { it.write(requestBody) }
         val responseCode = connection.responseCode
-        val responseText = if (responseCode in 200..299) {
-            connection.inputStream.bufferedReader().use { it.readText() }
-        } else {
-            val errorBody = connection.errorStream?.bufferedReader()?.use { it.readText() }.orEmpty()
-            throw IllegalStateException("http_${responseCode}:${errorBody.take(200)}")
-        }
-
+        if (responseCode !in 200..299) throw RecipeAiHttpException(responseCode)
+        val responseText = connection.inputStream.bufferedReader(Charsets.UTF_8).use { it.readText() }
         val response = aiJson.decodeFromString(ChatCompletionResponseDto.serializer(), responseText)
-        val content = response.choices.firstOrNull()?.message?.content.extractAssistantText()
-            ?.trim()
-            ?.removeSurroundingMarkdownCodeFence()
-            ?.trim()
-            .orEmpty()
-
-        if (content.isBlank()) {
-            throw IllegalStateException("empty_ai_response")
-        }
+        val choice = response.choices.firstOrNull()
+        check(choice?.finishReason !in setOf("length", "content_filter")) { "incomplete_ai_response" }
+        val content = choice?.message?.content.extractAssistantText()?.trim()
+            ?.removeSurroundingMarkdownCodeFence()?.trim().orEmpty()
+        check(content.isNotBlank() && aiJson.parseToJsonElement(content) is JsonObject) { "invalid_ai_response" }
         content
-    }
+    } finally { connection.disconnect() }
+}
 
 private fun JsonElement?.extractAssistantText(): String? = when (this) {
     null -> null
@@ -515,7 +536,6 @@ private fun JsonElement?.extractAssistantText(): String? = when (this) {
         }
     }.trim().ifBlank { null }
     is JsonObject -> this["text"]?.jsonPrimitiveContentOrNull()
-    else -> null
 }
 
 private fun JsonElement.jsonPrimitiveContentOrNull(): String? =
@@ -536,9 +556,3 @@ private fun String.removeSurroundingMarkdownCodeFence(): String {
         .removeSuffix("```")
         .trim()
 }
-
-private fun AiBackendSettings.normalizedForRuntime(): AiBackendSettings = copy(
-    apiKey = apiKey.trim(),
-    baseUrl = baseUrl.trim().trimEnd('/'),
-    model = model.trim()
-)

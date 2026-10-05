@@ -5,7 +5,9 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.performTextInput
+import androidx.compose.ui.test.performTextReplacement
+import androidx.compose.ui.test.assertIsEnabled
+import androidx.test.espresso.Espresso
 import app.recipebook.data.local.recipes.IngredientSubstitutionDraft
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.IngredientReference
@@ -70,8 +72,9 @@ class IngredientTagManagerScreenInteractionTest {
         composeRule.onNodeWithText("Unsalted butter").performClick()
         composeRule.onNodeWithText("Add substitution").performClick()
         composeRule.onNodeWithTag("ingredient-substitution-target-ingredient-ref-salted-butter").performClick()
-        composeRule.onNodeWithText("Ratio").performTextInput("1")
-        composeRule.onNodeWithText("Save").performClick()
+        composeRule.onNodeWithText("Ratio").performTextReplacement("1")
+        Espresso.closeSoftKeyboard()
+        composeRule.onNodeWithText("Save").assertIsEnabled().performClick()
 
         composeRule.runOnIdle {
             assertNotNull(savedDraft)

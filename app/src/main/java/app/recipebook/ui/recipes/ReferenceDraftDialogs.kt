@@ -1,4 +1,4 @@
-﻿package app.recipebook.ui.recipes
+package app.recipebook.ui.recipes
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -34,6 +34,7 @@ import app.recipebook.R
 import app.recipebook.data.local.recipes.IngredientReferenceDraft
 import app.recipebook.data.local.recipes.TagDraft
 import app.recipebook.domain.model.AppLanguage
+import app.recipebook.domain.localization.parseRecipeQuantity
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.ui.theme.PopupShape
 
@@ -72,7 +73,7 @@ internal fun IngredientDraftDialog(
                     nameEn = nameEn,
                     aliasesFr = parseAliasList(aliasesFr),
                     aliasesEn = parseAliasList(aliasesEn),
-                    defaultDensity = density.trim().toDoubleOrNull(),
+                    defaultDensity = parseRecipeQuantity(density),
                     unitMappings = mappings.mapNotNull(DraftUnitMappingRow::toDomain)
                 )
             )
@@ -262,7 +263,7 @@ internal data class DraftUnitMappingRow(
     val factor: String = ""
 ) {
     fun toDomain(): IngredientUnitMapping? {
-        val parsedFactor = factor.trim().toDoubleOrNull() ?: return null
+        val parsedFactor = parseRecipeQuantity(factor) ?: return null
         val normalizedFrom = fromUnit.trim()
         val normalizedTo = toUnit.trim()
         if (normalizedFrom.isEmpty() || normalizedTo.isEmpty()) return null

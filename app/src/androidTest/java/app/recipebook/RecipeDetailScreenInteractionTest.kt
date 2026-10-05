@@ -31,6 +31,42 @@ import org.junit.Test
 import org.junit.Assert.assertEquals
 
 class RecipeDetailScreenInteractionTest {
+    @Test
+    fun languageSwitchKeepsIngredientQuantityAndSelectedConversion() {
+        val language = androidx.compose.runtime.mutableStateOf(AppLanguage.EN)
+        val recipe = Recipe(
+            id = "language-fixture", createdAt = "2026-01-01", updatedAt = "2026-01-01",
+            languages = BilingualText(LocalizedSystemText("Sucre", "", "", ""), LocalizedSystemText("Sugar", "", "", "")),
+            ingredients = listOf(IngredientLine(
+                id = "line-language", ingredientRefId = "ref-sugar", originalText = "1.5 cups sugar",
+                quantity = 1.5, unit = "tasses", ingredientName = "sugar"
+            ))
+        )
+        val reference = IngredientReference(
+            id = "ref-sugar", nameFr = "sucre", nameEn = "sugar", updatedAt = "2026-01-01",
+            unitMappings = listOf(IngredientUnitMapping("cup", "g", 200.0))
+        )
+        composeRule.setContent {
+            RecipeDetailScreen(
+                recipe = recipe, recipes = listOf(recipe), ingredientReferences = listOf(reference), tags = emptyList(),
+                language = language.value, onLanguageChange = { language.value = it }, onBack = {}, onNavigate = {},
+                onEdit = {}, onOpenLinkedRecipe = {}
+            )
+        }
+        repeat(3) {
+            composeRule.onNodeWithText("1 ½ cups sugar").assert(hasText("1 ½ cups sugar"))
+            composeRule.runOnIdle { language.value = AppLanguage.FR }
+            composeRule.onNodeWithText("1 ½ tasses sucre").assert(hasText("1 ½ tasses sucre"))
+            composeRule.runOnIdle { language.value = AppLanguage.EN }
+        }
+        composeRule.onNodeWithTag("ingredient-row-line-language").performSemanticsAction(SemanticsActions.OnLongClick)
+        composeRule.onNodeWithTag("ingredient-convert-g").performClick()
+        composeRule.onNodeWithText("300 g sugar").assert(hasText("300 g sugar"))
+        composeRule.runOnIdle { language.value = AppLanguage.FR }
+        composeRule.onNodeWithText("300 g sucre").assert(hasText("300 g sucre"))
+        composeRule.runOnIdle { assertEquals(1.5, requireNotNull(recipe.ingredients.single().quantity), 0.000001) }
+    }
+
 
     @get:Rule
     val composeRule = createAndroidComposeRule<ComponentActivity>()

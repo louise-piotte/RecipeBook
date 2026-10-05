@@ -389,8 +389,8 @@ class SharedRecipeImporter(
         bundle: RawExtractionBundle,
         activeLanguage: AppLanguage = AppLanguage.EN
     ): ImportedRecipeDraft {
-        val ingredientCatalogJson = runCatching { loadIngredientCatalogJson() }.getOrDefault("")
-        val aiResult = aiRecipeImportService.buildDraft(
+        val ingredientCatalogJson = runCatchingRecipeWork { loadIngredientCatalogJson() }.getOrDefault("")
+        val aiResult = runCatchingRecipeWork { aiRecipeImportService.buildDraft(
             AiRecipeImportRequest(
                 jobId = bundle.jobId,
                 sourceType = bundle.sourceType,
@@ -404,7 +404,9 @@ class SharedRecipeImporter(
                 deterministicDraftJson = deterministicDraftJson(bundle),
                 ingredientCatalogJson = ingredientCatalogJson
             )
-        )
+        ) }.getOrElse {
+            AiRecipeImportResult.Failed(reasonCode = "ai_request_failed", retryable = true)
+        }
 
         return when (aiResult) {
             is AiRecipeImportResult.Success -> {
@@ -457,7 +459,7 @@ class SharedRecipeImporter(
             )
         }
 
-        val html = runCatching { fetchUrlContent(url) }.getOrNull()
+        val html = runCatchingRecipeWork { fetchUrlContent(url) }.getOrNull()
         val sourceName = source.displayLabel.ifBlank { hostLabel(url) }
         val fallbackFields = DeterministicRecipeFields(
             sourceName = sourceName,
@@ -624,7 +626,13 @@ class SharedRecipeImporter(
 
 private fun validateAiResponse(response: AiRecipeImportResponse): List<ImportWarning> {
     val payload = response.payload
-    if (payload.hasMeaningfulContent()) return emptyList()
+    val validIngredients = payload.ingredients.all { it.id.isNotBlank() && (it.quantity == null || (it.quantity.isFinite() && it.quantity >= 0.0)) } &&
+        payload.ingredients.map { it.id }.distinct().size == payload.ingredients.size
+    val validServings = payload.servings?.let { it.amount.isFinite() && it.amount > 0.0 } ?: true
+    val validTimes = payload.times?.let { times ->
+        listOfNotNull(times.prepTimeMinutes, times.cookTimeMinutes, times.totalTimeMinutes).all { it >= 0 }
+    } ?: true
+    if (payload.hasMeaningfulContent() && validIngredients && validServings && validTimes) return emptyList()
     return listOf(
         ImportWarning(
             code = "ai_response_invalid",
@@ -660,7 +668,11 @@ private suspend fun fetchUrlText(url: String): String = withContext(Dispatchers.
     connection.readTimeout = 10000
     connection.requestMethod = "GET"
     connection.setRequestProperty("User-Agent", "RecipeBook/1.0")
-    connection.inputStream.bufferedReader().use { it.readText() }
+    try {
+        connection.inputStream.bufferedReader(Charsets.UTF_8).use { it.readText() }
+    } finally {
+        connection.disconnect()
+    }
 }
 
 private fun extractRecipeBundleFromHtml(

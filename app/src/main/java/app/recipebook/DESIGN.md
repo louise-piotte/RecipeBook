@@ -25,3 +25,7 @@ This package contains Android entry points and thin activity-level wiring.
 ## Maintenance Notes
 - If dependency setup grows, prefer introducing a clear app-level composition pattern rather than letting each activity drift.
 - When adding a new screen flow, document its intent extras and the screen/repository dependencies it owns.
+
+RecipeEditorActivity restores the initial draft from saved instance state, retains its ID and local media paths, and preserves Compose saveable editor collections during recreation. Failed saves leave temporary sources available for retry; permanent photo deletion follows a successful database deletion.
+
+After launch sync, MainActivity resolves library language with the current DataStore language as fallback. Existing library settings remain authoritative; missing legacy settings cannot replace a saved French preference with bundled English.

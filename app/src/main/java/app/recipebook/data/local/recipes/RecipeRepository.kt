@@ -58,6 +58,9 @@ import java.text.Normalizer
 import java.time.Instant
 import java.util.UUID
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flowOf
@@ -67,7 +70,7 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
-class RecipeRepository(
+class RecipeRepository internal constructor(
     private val recipeDao: RecipeDao,
     private val ingredientReferenceDao: IngredientReferenceDao = EmptyIngredientReferenceDao,
     private val contextualSubstitutionRuleDao: ContextualSubstitutionRuleDao = EmptyContextualSubstitutionRuleDao,
@@ -77,7 +80,8 @@ class RecipeRepository(
     private val libraryMetadataDao: LibraryMetadataDao = EmptyLibraryMetadataDao,
     private val seedLibrary: SeedLibraryData = SeedLibraryData(),
     private val seedLibraryLoader: (() -> SeedLibraryData)? = null,
-    private val transactionRunner: suspend (suspend () -> Unit) -> Unit = { block -> block() }
+    private val transactionRunner: suspend (suspend () -> Unit) -> Unit = { block -> block() },
+    private val catalogStore: RecipeCatalogStore = InMemoryRecipeCatalogStore()
 ) {
     private var cachedSeedLibrary: SeedLibraryData = seedLibrary
     var onLibraryMutated: (suspend () -> Unit)? = null
@@ -100,11 +104,11 @@ class RecipeRepository(
         }
 
     fun observeIngredientSubstitutionCatalog(): Flow<IngredientSubstitutionCatalog> =
-        contextualSubstitutionRuleDao.observeAll().map { storedRules ->
+        combine(contextualSubstitutionRuleDao.observeAll(), catalogStore.catalog) { storedRules, catalog ->
             val seedLibrary = resolveSeedLibrary()
             IngredientSubstitutionCatalog(
-                ingredientForms = seedLibrary.ingredientForms,
-                substitutionRules = seedLibrary.substitutionRules,
+                ingredientForms = catalog?.ingredientForms ?: seedLibrary.ingredientForms,
+                substitutionRules = catalog?.substitutionRules ?: seedLibrary.substitutionRules,
                 contextualSubstitutionRules = storedRules.map(ContextualSubstitutionRuleEntity::toDomain)
             )
         }
@@ -288,7 +292,7 @@ class RecipeRepository(
         require(rule.fromIngredientRefId != rule.toIngredientRefId) {
             "Ingredient substitution target must be different from source ingredient"
         }
-        require((rule.ratio ?: 0.0) > 0.0) {
+        require(rule.ratio?.let { it.isFinite() && it > 0.0 } == true) {
             "Ingredient substitution ratio must be greater than zero"
         }
         if (rule.riskLevel == SubstitutionRiskLevel.HIGH_RISK) {
@@ -385,12 +389,15 @@ class RecipeRepository(
     }
 
     suspend fun getLibrarySettings(
-        fallbackLanguage: AppLanguage = AppLanguage.EN
+        fallbackLanguage: AppLanguage? = null
     ): LibrarySettings = withContext(Dispatchers.IO) {
         librarySettingsDao.getById()?.toDomain()
-            ?: resolveSeedLibrary().settings
+            ?: resolveSeedLibrary().settings?.let { settings ->
+                // A device preference outranks bundled defaults when a legacy library has no settings.
+                fallbackLanguage?.let { settings.copy(language = it) } ?: settings
+            }
             ?: LibrarySettings(
-                language = fallbackLanguage,
+                language = fallbackLanguage ?: AppLanguage.EN,
                 driveSyncEnabled = false
             )
     }
@@ -407,54 +414,69 @@ class RecipeRepository(
 
     suspend fun replaceLibrary(
         library: RecipeLibrary,
-        notifyMutation: Boolean = true
+        notifyMutation: Boolean = true,
+        beforeCommit: suspend () -> Unit = {}
     ) = withContext(Dispatchers.IO) {
-        transactionRunner {
-            recipeDao.deleteAll()
-            contextualSubstitutionRuleDao.deleteAll()
-            ingredientReferenceDao.deleteAll()
-            tagDao.deleteAll()
-            collectionDao.deleteAll()
-            libraryMetadataDao.deleteAll()
-            librarySettingsDao.deleteAll()
+        val previousCatalog = catalogStore.catalog.first()
+        try {
+            transactionRunner {
+                recipeDao.deleteAll()
+                contextualSubstitutionRuleDao.deleteAll()
+                ingredientReferenceDao.deleteAll()
+                tagDao.deleteAll()
+                collectionDao.deleteAll()
+                libraryMetadataDao.deleteAll()
+                librarySettingsDao.deleteAll()
 
-            library.ingredientReferences
-                .distinctBy(IngredientReference::id)
-                .takeIf(List<IngredientReference>::isNotEmpty)
-                ?.let { ingredientReferenceDao.upsertAll(it.map(IngredientReference::toEntity)) }
+                library.ingredientReferences
+                    .distinctBy(IngredientReference::id)
+                    .takeIf(List<IngredientReference>::isNotEmpty)
+                    ?.let { ingredientReferenceDao.upsertAll(it.map(IngredientReference::toEntity)) }
 
-            library.contextualSubstitutionRules
-                .distinctBy(ContextualSubstitutionRule::id)
-                .takeIf(List<ContextualSubstitutionRule>::isNotEmpty)
-                ?.let { contextualSubstitutionRuleDao.upsertAll(it.map(ContextualSubstitutionRule::toEntity)) }
+                library.contextualSubstitutionRules
+                    .distinctBy(ContextualSubstitutionRule::id)
+                    .takeIf(List<ContextualSubstitutionRule>::isNotEmpty)
+                    ?.let { contextualSubstitutionRuleDao.upsertAll(it.map(ContextualSubstitutionRule::toEntity)) }
 
-            library.tags
-                .distinctBy(Tag::id)
-                .takeIf(List<Tag>::isNotEmpty)
-                ?.let { tagDao.upsertAll(it.map(Tag::toEntity)) }
+                library.tags
+                    .distinctBy(Tag::id)
+                    .takeIf(List<Tag>::isNotEmpty)
+                    ?.let { tagDao.upsertAll(it.map(Tag::toEntity)) }
 
-            library.collections
-                .distinctBy(Collection::id)
-                .takeIf(List<Collection>::isNotEmpty)
-                ?.let { collectionDao.upsertAll(it.map(Collection::toEntity)) }
+                library.collections
+                    .distinctBy(Collection::id)
+                    .takeIf(List<Collection>::isNotEmpty)
+                    ?.let { collectionDao.upsertAll(it.map(Collection::toEntity)) }
 
-            library.metadata.let { libraryMetadataDao.upsert(it.toEntity()) }
-            library.settings.let { librarySettingsDao.upsert(it.toEntity()) }
+                library.metadata.let { libraryMetadataDao.upsert(it.toEntity()) }
+                library.settings.let { librarySettingsDao.upsert(it.toEntity()) }
 
-            library.recipes
-                .distinctBy(Recipe::id)
-                .forEach { importedRecipe ->
-                    validateRecipeLinks(importedRecipe)
-                    val storage = importedRecipe.toStorageGraph()
-                    recipeDao.replaceRecipeGraph(
-                        recipe = storage.recipe,
-                        ingredientLines = storage.ingredientLines,
-                        ingredientLineSubstitutions = storage.ingredientLineSubstitutions,
-                        recipeLinks = storage.recipeLinks,
-                        tagRefs = storage.tagRefs,
-                        collectionRefs = storage.collectionRefs
-                    )
+                library.recipes
+                    .distinctBy(Recipe::id)
+                    .forEach { importedRecipe ->
+                        validateRecipeLinks(importedRecipe)
+                        val storage = importedRecipe.toStorageGraph()
+                        recipeDao.replaceRecipeGraph(
+                            recipe = storage.recipe,
+                            ingredientLines = storage.ingredientLines,
+                            ingredientLineSubstitutions = storage.ingredientLineSubstitutions,
+                            recipeLinks = storage.recipeLinks,
+                            tagRefs = storage.tagRefs,
+                            collectionRefs = storage.collectionRefs
+                        )
+                    }
+                catalogStore.replace(StoredRecipeCatalog(library.ingredientForms, library.substitutionRules, library.units))
+                beforeCommit()
+            }
+        } catch (error: Throwable) {
+            withContext(NonCancellable) {
+                try {
+                    catalogStore.replace(previousCatalog)
+                } catch (restoreError: Exception) {
+                    error.addSuppressed(restoreError)
                 }
+            }
+            throw error
         }
         if (notifyMutation) {
             notifyLibraryMutated()
@@ -463,58 +485,73 @@ class RecipeRepository(
 
 
     suspend fun seedBundledLibraryIfMissing() {
-        val resolvedSeedLibrary = resolveSeedLibrary()
-        if (resolvedSeedLibrary.isEmpty()) {
-            Log.e(TAG, "Bundled library seeding skipped because no seed data could be loaded")
-            return
+        transactionRunner {
+            // Metadata records initialization even after the user deletes every recipe.
+            if (libraryMetadataDao.getAny() != null) return@transactionRunner
+            val resolvedSeedLibrary = resolveSeedLibrary()
+            if (resolvedSeedLibrary.isEmpty()) {
+                Log.e(TAG, "Bundled library seeding skipped because no seed data could be loaded")
+                return@transactionRunner
+            }
+
+            resolvedSeedLibrary.recipes
+                .distinctBy(Recipe::id)
+                .forEach { seedRecipe ->
+                    if (recipeDao.getById(seedRecipe.id) == null) {
+                        val storage = seedRecipe.toStorageGraph()
+                        recipeDao.replaceRecipeGraph(
+                            recipe = storage.recipe,
+                            ingredientLines = storage.ingredientLines,
+                            ingredientLineSubstitutions = storage.ingredientLineSubstitutions,
+                            recipeLinks = storage.recipeLinks,
+                            tagRefs = storage.tagRefs,
+                            collectionRefs = storage.collectionRefs
+                        )
+                    }
+                }
+
+            resolvedSeedLibrary.ingredientReferences
+                .distinctBy(IngredientReference::id)
+                .forEach { ingredientReference ->
+                    if (ingredientReferenceDao.getById(ingredientReference.id) == null) {
+                        ingredientReferenceDao.upsert(ingredientReference.toEntity())
+                    }
+                }
+
+            resolvedSeedLibrary.contextualSubstitutionRules
+                .distinctBy(ContextualSubstitutionRule::id)
+                .forEach { rule ->
+                    if (contextualSubstitutionRuleDao.getById(rule.id) == null) {
+                        contextualSubstitutionRuleDao.upsert(rule.toEntity())
+                    }
+                }
+
+            resolvedSeedLibrary.tags
+                .distinctBy(Tag::id)
+                .forEach { tag ->
+                    if (tagDao.getById(tag.id) == null) {
+                        tagDao.upsert(tag.toEntity())
+                    }
+                }
+
+            resolvedSeedLibrary.collections
+                .distinctBy(Collection::id)
+                .forEach { collection ->
+                    if (collectionDao.getById(collection.id) == null) {
+                        collectionDao.upsert(collection.toEntity())
+                    }
+                }
+            if (librarySettingsDao.getById() == null) {
+                resolvedSeedLibrary.settings?.let { librarySettingsDao.upsert(it.toEntity()) }
+            }
+            val now = Instant.now().toString()
+            val metadata = resolvedSeedLibrary.metadata ?: LibraryMetadata(
+                libraryId = UUID.randomUUID().toString(), createdAt = now, updatedAt = now, exportedAt = now
+            )
+            catalogStore.replace(StoredRecipeCatalog(resolvedSeedLibrary.ingredientForms,
+                resolvedSeedLibrary.substitutionRules, resolvedSeedLibrary.units))
+            libraryMetadataDao.upsert(metadata.toEntity())
         }
-
-        resolvedSeedLibrary.recipes
-            .distinctBy(Recipe::id)
-            .forEach { seedRecipe ->
-                if (recipeDao.getById(seedRecipe.id) == null) {
-                    val storage = seedRecipe.toStorageGraph()
-                    recipeDao.replaceRecipeGraph(
-                        recipe = storage.recipe,
-                        ingredientLines = storage.ingredientLines,
-                        ingredientLineSubstitutions = storage.ingredientLineSubstitutions,
-                        recipeLinks = storage.recipeLinks,
-                        tagRefs = storage.tagRefs,
-                        collectionRefs = storage.collectionRefs
-                    )
-                }
-            }
-
-        resolvedSeedLibrary.ingredientReferences
-            .distinctBy(IngredientReference::id)
-            .forEach { ingredientReference ->
-                if (ingredientReferenceDao.getById(ingredientReference.id) == null) {
-                    ingredientReferenceDao.upsert(ingredientReference.toEntity())
-                }
-            }
-
-        resolvedSeedLibrary.contextualSubstitutionRules
-            .distinctBy(ContextualSubstitutionRule::id)
-            .forEach { rule ->
-                if (contextualSubstitutionRuleDao.getById(rule.id) == null) {
-                    contextualSubstitutionRuleDao.upsert(rule.toEntity())
-                }
-            }
-
-        resolvedSeedLibrary.tags
-            .distinctBy(Tag::id)
-            .forEach { tag ->
-                if (tagDao.getById(tag.id) == null) {
-                    tagDao.upsert(tag.toEntity())
-                }
-            }
-
-        resolvedSeedLibrary.collections
-            .distinctBy(Collection::id)
-            .takeIf(List<Collection>::isNotEmpty)
-            ?.let { collections ->
-                collectionDao.upsertAll(collections.map(Collection::toEntity))
-            }
     }
 
     private fun resolveSeedLibrary(): SeedLibraryData {
@@ -556,9 +593,10 @@ class RecipeRepository(
 
     suspend fun loadIngredientSubstitutionCatalog(): IngredientSubstitutionCatalog = withContext(Dispatchers.IO) {
         val seedLibrary = resolveSeedLibrary()
+        val catalog = catalogStore.catalog.first()
         IngredientSubstitutionCatalog(
-            ingredientForms = seedLibrary.ingredientForms,
-            substitutionRules = seedLibrary.substitutionRules,
+            ingredientForms = catalog?.ingredientForms ?: seedLibrary.ingredientForms,
+            substitutionRules = catalog?.substitutionRules ?: seedLibrary.substitutionRules,
             contextualSubstitutionRules = contextualSubstitutionRuleDao.observeAll()
                 .map { rules -> rules.map(ContextualSubstitutionRuleEntity::toDomain) }
                 .firstOrNull()
@@ -573,6 +611,7 @@ class RecipeRepository(
         deviceId: String? = null
     ): RecipeLibrary = withContext(Dispatchers.IO) {
         val seedLibrary = resolveSeedLibrary()
+        val catalog = catalogStore.catalog.first()
         val recipes = observeRecipes().firstOrNull().orEmpty()
         val ingredientReferences = observeIngredientReferences().firstOrNull().orEmpty()
         val contextualSubstitutionRules = observeContextualSubstitutionRules().firstOrNull().orEmpty()
@@ -607,10 +646,10 @@ class RecipeRepository(
             metadata = metadata,
             recipes = recipes,
             ingredientReferences = ingredientReferences,
-            ingredientForms = seedLibrary.ingredientForms,
-            substitutionRules = seedLibrary.substitutionRules,
+            ingredientForms = catalog?.ingredientForms ?: seedLibrary.ingredientForms,
+            substitutionRules = catalog?.substitutionRules ?: seedLibrary.substitutionRules,
             contextualSubstitutionRules = contextualSubstitutionRules,
-            units = seedLibrary.units,
+            units = catalog?.units ?: seedLibrary.units,
             tags = tags,
             collections = collections.reconciledForExport(recipes),
             settings = settings

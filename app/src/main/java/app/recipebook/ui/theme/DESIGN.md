@@ -12,3 +12,5 @@ This package defines the app's visual foundation.
 
 ## Maintenance Notes
 - If compact phone-first UI guidance changes, update shared tokens here before patching many screens individually.
+
+The minimum Android version is 16, so the dynamic-color path requires no Android 12 SDK guard.

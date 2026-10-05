@@ -1,8 +1,16 @@
 package app.recipebook
 
 import android.content.Context
+import android.content.res.Configuration
+import java.util.Locale
+import app.recipebook.data.local.recipes.runCatchingRecipeWork
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
+import app.recipebook.ui.recipes.encodeEditorRecipe
+import app.recipebook.ui.recipes.decodeEditorRecipe
+import app.recipebook.ui.recipes.encodeEditorPhotos
+import app.recipebook.ui.recipes.decodeEditorPhotos
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.view.WindowCompat
@@ -45,6 +53,8 @@ class RecipeEditorActivity : ComponentActivity() {
     private lateinit var photoStore: RecipePhotoStore
     private var draftPhotos: List<PhotoRef> = emptyList()
     private var didCommitChanges = false
+    private var loadedRecipe: Recipe? = null
+    private var isSaving by mutableStateOf(false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +62,8 @@ class RecipeEditorActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, true)
 
         photoStore = RecipePhotoStore(this)
+        loadedRecipe = savedInstanceState?.getString("editor_initial_recipe")?.let(::decodeEditorRecipe)
+        draftPhotos = savedInstanceState?.getString("editor_draft_photos")?.let(::decodeEditorPhotos).orEmpty()
 
         val repository = RecipeRepositoryProvider.createServices(this).repository
         val localizationCoordinator = RecipeAiRuntime.createLocalizationCoordinator(this)
@@ -60,7 +72,7 @@ class RecipeEditorActivity : ComponentActivity() {
         val isNewRecipe = recipeId == null
         val importedDraft = importedDraftFromIntent(intent)
         val importLanguage = intent.getStringExtra(EXTRA_IMPORT_LANGUAGE)
-            ?.let { runCatching { AppLanguage.valueOf(it) }.getOrNull() }
+            ?.let { runCatchingRecipeWork { AppLanguage.valueOf(it) }.getOrNull() }
             ?: AppLanguage.EN
         val importedPendingReferences = importedDraft?.ingredients
             ?.associateNotNull { ingredient ->
@@ -76,7 +88,7 @@ class RecipeEditorActivity : ComponentActivity() {
         setContent {
             RecipeBookTheme {
                 val language by languageStore.language.collectAsState(initial = AppLanguage.EN)
-                var recipe by remember { mutableStateOf<Recipe?>(null) }
+                var recipe by remember { mutableStateOf(loadedRecipe) }
                 val recipes by repository.observeRecipes().collectAsState(initial = emptyList())
                 val ingredientReferences by repository.observeIngredientReferences().collectAsState(initial = emptyList())
                 val tags by repository.observeTags().collectAsState(initial = emptyList())
@@ -85,6 +97,7 @@ class RecipeEditorActivity : ComponentActivity() {
 
                 LaunchedEffect(recipeId) {
                     repository.seedBundledLibraryIfMissing()
+                    if (recipe != null) return@LaunchedEffect
                     recipe = if (recipeId == null) {
                         val blankRecipe = repository.createBlankRecipe()
                         val importedRecipe = importedDraft?.applyToRecipe(blankRecipe, importLanguage) ?: blankRecipe
@@ -92,7 +105,7 @@ class RecipeEditorActivity : ComponentActivity() {
                         if (importedPhotoUrl.isBlank()) {
                             importedRecipe
                         } else {
-                            runCatching {
+                            runCatchingRecipeWork {
                                 val importedPhoto = photoStore.importDraftPhotoFromUrl(importedPhotoUrl)
                                 importedRecipe.copy(
                                     mainPhotoId = importedPhoto.id,
@@ -103,6 +116,7 @@ class RecipeEditorActivity : ComponentActivity() {
                     } else {
                         repository.getRecipeById(recipeId) ?: repository.createBlankRecipe()
                     }
+                    loadedRecipe = recipe
                     draftPhotos = recipe?.photos.orEmpty()
                 }
 
@@ -125,30 +139,45 @@ class RecipeEditorActivity : ComponentActivity() {
                             }
                         },
                         onBack = ::finish,
+                        isSaving = isSaving,
                         onSave = { updatedRecipe, authoritativeLanguage ->
-                            lifecycleScope.launch {
-                                val recipeWithResolvedImportedReferences = updatedRecipe.resolveImportedIngredientReferences(
-                                    pendingByLineId = importedPendingReferences,
-                                    repository = repository
-                                )
-                                val persistedPhotos = photoStore.persistRecipePhotos(updatedRecipe.id, updatedRecipe.photos)
-                                val persistedMainPhotoId = persistedPhotos.firstOrNull { it.id == recipeWithResolvedImportedReferences.mainPhotoId }?.id
-                                    ?: persistedPhotos.firstOrNull()?.id
-                                val persistedRecipe = recipeWithResolvedImportedReferences.copy(
-                                    mainPhotoId = persistedMainPhotoId,
-                                    photos = persistedPhotos
-                                )
-                                val finalizedRecipe = localizationCoordinator.finalizeForSave(
-                                    recipe = persistedRecipe,
-                                    authoritativeLanguage = authoritativeLanguage
-                                )
-                                val removedPhotos = currentRecipe.photos.filter { oldPhoto ->
-                                    persistedPhotos.none { it.id == oldPhoto.id }
+                            if (!isSaving) {
+                                isSaving = true
+                                lifecycleScope.launch {
+                                    try {
+                                        val recipeWithResolvedImportedReferences = updatedRecipe.resolveImportedIngredientReferences(
+                                            pendingByLineId = importedPendingReferences,
+                                            repository = repository
+                                        )
+                                        val persistedPhotos = photoStore.persistRecipePhotos(updatedRecipe.id, updatedRecipe.photos)
+                                        val persistedMainPhotoId = persistedPhotos.firstOrNull { it.id == recipeWithResolvedImportedReferences.mainPhotoId }?.id
+                                            ?: persistedPhotos.firstOrNull()?.id
+                                        val persistedRecipe = recipeWithResolvedImportedReferences.copy(
+                                            mainPhotoId = persistedMainPhotoId,
+                                            photos = persistedPhotos
+                                        )
+                                        val finalizedRecipe = localizationCoordinator.finalizeForSave(
+                                            recipe = persistedRecipe,
+                                            authoritativeLanguage = authoritativeLanguage
+                                        )
+                                        val removedPhotos = currentRecipe.photos.filter { oldPhoto ->
+                                            persistedPhotos.none { it.id == oldPhoto.id }
+                                        }
+                                        repository.upsertRecipe(finalizedRecipe)
+                                        photoStore.deleteManagedPhotos(removedPhotos)
+                                        photoStore.cleanupDraftPhotos(draftPhotos)
+                                        didCommitChanges = true
+                                        finish()
+                                    } catch (error: kotlinx.coroutines.CancellationException) {
+                                        throw error
+                                    } catch (error: Exception) {
+                                        val errorContext = createConfigurationContext(Configuration(resources.configuration).apply {
+                                            setLocale(if (language == AppLanguage.FR) Locale.CANADA_FRENCH else Locale.ENGLISH)
+                                        })
+                                        Toast.makeText(this@RecipeEditorActivity,
+                                            errorContext.getString(R.string.recipe_save_failed_label), Toast.LENGTH_LONG).show()
+                                    } finally { isSaving = false }
                                 }
-                                repository.upsertRecipe(finalizedRecipe)
-                                photoStore.deleteManagedPhotos(removedPhotos)
-                                didCommitChanges = true
-                                finish()
                             }
                         },
                         onRegenerateOtherLanguage = { draftRecipe, authoritativeLanguage ->
@@ -187,8 +216,8 @@ class RecipeEditorActivity : ComponentActivity() {
                         onDelete = if (isNewRecipe) null else {
                             {
                                 lifecycleScope.launch {
-                                    photoStore.deleteManagedPhotos(photosToDeleteForRecipeDeletion(currentRecipe.photos, draftPhotos))
                                     repository.deleteRecipeById(currentRecipe.id)
+                                    photoStore.deleteManagedPhotos(photosToDeleteForRecipeDeletion(currentRecipe.photos, draftPhotos))
                                     didCommitChanges = true
                                     finish()
                                 }
@@ -200,8 +229,14 @@ class RecipeEditorActivity : ComponentActivity() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        loadedRecipe?.let { outState.putString("editor_initial_recipe", encodeEditorRecipe(it)) }
+        outState.putString("editor_draft_photos", encodeEditorPhotos(draftPhotos))
+        super.onSaveInstanceState(outState)
+    }
+
     override fun onDestroy() {
-        if (::photoStore.isInitialized && !didCommitChanges) {
+        if (::photoStore.isInitialized && !didCommitChanges && isFinishing) {
             photoStore.cleanupDraftPhotos(draftPhotos)
         }
         super.onDestroy()
@@ -334,7 +369,7 @@ class RecipeEditorActivity : ComponentActivity() {
                     ImportWarning(
                         code = code,
                         severity = warningSeverities.getOrNull(index)
-                            ?.let { runCatching { ImportWarningSeverity.valueOf(it) }.getOrNull() }
+                            ?.let { runCatchingRecipeWork { ImportWarningSeverity.valueOf(it) }.getOrNull() }
                             ?: ImportWarningSeverity.INFO,
                         field = warningFields.getOrNull(index)?.ifBlank { null },
                         sourceEvidence = warningEvidence.getOrNull(index)?.ifBlank { null }
@@ -362,7 +397,7 @@ private val importedDraftIntentJson = Json { ignoreUnknownKeys = true }
 private fun parseImportedIngredients(intent: Intent): List<ImportedIngredientDraft> {
     val ingredientsJson = intent.getStringExtra(RecipeEditorActivity.EXTRA_IMPORTED_INGREDIENTS_JSON).orEmpty()
     if (ingredientsJson.isNotBlank()) {
-        return runCatching {
+        return runCatchingRecipeWork {
             importedDraftIntentJson.decodeFromString(
                 ListSerializer(ImportedIngredientDraft.serializer()),
                 ingredientsJson

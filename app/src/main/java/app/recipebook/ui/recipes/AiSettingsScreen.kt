@@ -15,10 +15,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import app.recipebook.R
@@ -39,7 +41,7 @@ fun AiSettingsScreen(
     onNavigateToTags: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var apiKey by rememberSaveable { mutableStateOf(settings.apiKey) }
+    var apiKey by remember { mutableStateOf(settings.apiKey) }
     var baseUrl by rememberSaveable { mutableStateOf(settings.baseUrl) }
     var model by rememberSaveable { mutableStateOf(settings.model) }
 
@@ -113,7 +115,7 @@ fun AiSettingsScreen(
             OutlinedTextField(
                 value = apiKey,
                 onValueChange = { apiKey = it },
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth().testTag("ai-settings-api-key"),
                 label = { Text(localizedString(R.string.ai_settings_api_key_label, language)) },
                 visualTransformation = PasswordVisualTransformation(),
                 singleLine = true
@@ -121,8 +123,9 @@ fun AiSettingsScreen(
 
             OutlinedTextField(
                 value = baseUrl,
-                onValueChange = { baseUrl = it },
-                modifier = Modifier.fillMaxWidth(),
+                onValueChange = {},
+                readOnly = true,
+                modifier = Modifier.fillMaxWidth().testTag("ai-settings-endpoint"),
                 label = { Text(localizedString(R.string.ai_settings_base_url_label, language)) },
                 singleLine = true
             )
@@ -130,14 +133,14 @@ fun AiSettingsScreen(
             OutlinedTextField(
                 value = model,
                 onValueChange = { model = it },
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth().testTag("ai-settings-model"),
                 label = { Text(localizedString(R.string.ai_settings_model_label, language)) },
                 singleLine = true
             )
 
             Button(
                 onClick = { onSave(editedSettings) },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().testTag("ai-settings-save")
             ) {
                 Text(localizedString(R.string.ai_settings_save_label, language))
             }

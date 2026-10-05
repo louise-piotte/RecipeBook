@@ -1,5 +1,7 @@
 package app.recipebook.ui.recipes
 
+import android.content.Context
+
 import android.content.Intent
 import android.content.res.Configuration
 import android.net.Uri
@@ -66,12 +68,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import app.recipebook.AiSettingsActivity
 import app.recipebook.IngredientTagManagerActivity
 import app.recipebook.R
+import app.recipebook.data.local.recipes.runCatchingRecipeWork
 import app.recipebook.CollectionManagerActivity
 import app.recipebook.RecipeDetailActivity
 import app.recipebook.RecipeEditorActivity
@@ -82,6 +86,7 @@ import app.recipebook.data.local.recipes.RecipeRepository
 import app.recipebook.domain.localization.BilingualText
 import app.recipebook.domain.localization.BilingualTextResolver
 import app.recipebook.domain.model.AppLanguage
+import app.recipebook.domain.localization.formatRecipeNumber
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.Tag
@@ -95,9 +100,9 @@ fun RecipeLibraryScreen(
     repository: RecipeRepository,
     syncCoordinator: RecipeLibrarySyncCoordinator,
     language: AppLanguage,
-    initialSelectedCollectionId: String? = null,
     onLanguageChange: (AppLanguage) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    initialSelectedCollectionId: String? = null
 ) {
     var searchQuery by rememberSaveable { mutableStateOf("") }
     var selectedTagIds by rememberSaveable { mutableStateOf(emptyList<String>()) }
@@ -140,7 +145,7 @@ fun RecipeLibraryScreen(
         }
         exportInProgress = true
         scope.launch {
-            runCatching {
+            runCatchingRecipeWork {
                 context.contentResolver.openOutputStream(uri).use { output ->
                     requireNotNull(output) { "Unable to open export destination" }
                     exportFile.inputStream().use { input -> input.copyTo(output) }
@@ -169,7 +174,7 @@ fun RecipeLibraryScreen(
         }
         driveSyncInProgress = true
         scope.launch {
-            runCatching {
+            runCatchingRecipeWork {
                 syncCoordinator.configureDriveBackupDocument(uri)
             }.onSuccess {
                 Toast.makeText(context, driveSetupSuccessLabel, Toast.LENGTH_SHORT).show()
@@ -186,7 +191,7 @@ fun RecipeLibraryScreen(
         }
         driveSyncInProgress = true
         scope.launch {
-            runCatching {
+            runCatchingRecipeWork {
                 syncCoordinator.replaceLibraryFromDrive(uri)
             }.onSuccess {
                 onLanguageChange(repository.getLibrarySettings().language)
@@ -283,7 +288,7 @@ fun RecipeLibraryScreen(
                             if (exportInProgress) return@RecipeBookTopBar
                             exportInProgress = true
                             scope.launch {
-                                runCatching {
+                                runCatchingRecipeWork {
                                     exporter.createRecipeArchive(language)
                                 }.onSuccess { bundle ->
                                     pendingExportFile?.delete()
@@ -310,7 +315,7 @@ fun RecipeLibraryScreen(
                             if (driveSyncInProgress) return@RecipeBookTopBar
                             driveSyncInProgress = true
                             scope.launch {
-                                val usedConfiguredBackup = runCatching {
+                                val usedConfiguredBackup = runCatchingRecipeWork {
                                     if (syncCoordinator.hasConfiguredDriveBackup()) {
                                         syncCoordinator.replaceLibraryFromConfiguredDrive()
                                         true
@@ -467,8 +472,8 @@ internal fun SearchField(
     value: String,
     onValueChange: (String) -> Unit,
     label: String,
-    placeholder: String? = null,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    placeholder: String? = null
 ) {
     OutlinedTextField(
         value = value,
@@ -968,7 +973,7 @@ private fun RecipeImportDialog(
                         onClick = {
                             isImporting = true
                             coroutineScope.launch {
-                                runCatching {
+                                runCatchingRecipeWork {
                                     onImport(input.trim())
                                 }
                                 isImporting = false
@@ -994,11 +999,7 @@ internal fun Recipe.descriptionText(): BilingualText = BilingualText(
     en = languages.en.description
 )
 
-internal fun formatNumber(value: Double): String = if (value % 1.0 == 0.0) {
-    value.toInt().toString()
-} else {
-    value.toString()
-}
+internal fun formatNumber(value: Double): String = formatRecipeNumber(value)
 
 internal fun filterRecipes(
     recipes: List<Recipe>,
@@ -1086,15 +1087,21 @@ internal fun localizedString(
     language: AppLanguage,
     vararg formatArgs: Any
 ): String {
+    return localizedResourceContext(language).resources.getString(resId, *formatArgs)
+}
+
+@Composable
+internal fun localizedQuantityString(resId: Int, language: AppLanguage, count: Int): String =
+    localizedResourceContext(language).resources.getQuantityString(resId, count, count)
+
+@Composable
+private fun localizedResourceContext(language: AppLanguage): Context {
     val context = LocalContext.current
-    val locale = when (language) {
-        AppLanguage.FR -> Locale.CANADA_FRENCH
-        AppLanguage.EN -> Locale.CANADA
+    val locale = if (language == AppLanguage.FR) Locale.CANADA_FRENCH else Locale.CANADA
+    val configuration = LocalConfiguration.current
+    return remember(context, configuration, locale) {
+        context.createConfigurationContext(Configuration(configuration).apply { setLocale(locale) })
     }
-    val config = Configuration(context.resources.configuration)
-    config.setLocale(locale)
-    val localizedContext = context.createConfigurationContext(config)
-    return localizedContext.resources.getString(resId, *formatArgs)
 }
 
 enum class LibraryManagerSection {
@@ -1102,7 +1109,7 @@ enum class LibraryManagerSection {
     Tags
 }
 
-internal enum class MainMenuDestination(@StringRes val labelResId: Int) {
+internal enum class MainMenuDestination(@param:StringRes val labelResId: Int) {
     Library(R.string.menu_recipe_library_label),
     Import(R.string.import_recipe_label),
     ExportRecipes(R.string.menu_export_recipes_label),
@@ -1185,9 +1192,10 @@ internal fun RecipeBookTopBar(
 internal fun AppIconButton(
     icon: ImageVector,
     contentDescription: String,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    enabled: Boolean = true
 ) {
-    IconButton(onClick = onClick) {
+    IconButton(onClick = onClick, enabled = enabled) {
         Icon(imageVector = icon, contentDescription = contentDescription)
     }
 }

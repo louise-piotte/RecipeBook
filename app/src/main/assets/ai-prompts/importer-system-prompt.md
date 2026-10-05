@@ -29,6 +29,7 @@ Formatting and normalization rules:
 - Times mentioned in text should use `xh ymin zsec`, omitting zero-value parts.
 - Keep ingredient lines concise and cleaned, but do not force structured quantities when the evidence is unclear.
 - Preserve ingredient quantities, units, and preparation text in separate fields whenever the evidence clearly supports them.
+- For count-based ingredients, preserve any source-supported size in a catalog count unit when its mapping exists (for example `quantity: 2`, `unit: "large egg white"`, `ingredientName: "egg white"`, `preparation: "lightly beaten"`). The app composes that count unit and ingredient into one noun phrase. Do not put size alone in the unit, duplicate ingredient words in preparation, or discard a size-dependent conversion. Keep mass and volume ingredient fields unchanged.
 - Keep instructions in source order.
 - Keep ingredient order in source order.
 - Always review and improve both English and French language quality when both are produced or implied by the task context.

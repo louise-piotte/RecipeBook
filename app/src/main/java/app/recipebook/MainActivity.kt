@@ -18,6 +18,7 @@ import app.recipebook.data.local.settings.AppLanguageStore
 import app.recipebook.ui.recipes.RecipeLibraryScreen
 import app.recipebook.ui.theme.RecipeBookTheme
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.first
 
 class MainActivity : ComponentActivity() {
     private var initialCollectionId by mutableStateOf<String?>(null)
@@ -45,7 +46,9 @@ class MainActivity : ComponentActivity() {
                     Toast.makeText(this@MainActivity, getString(R.string.drive_sync_pull_failed_label), Toast.LENGTH_SHORT).show()
                 }
             }
-            languageStore.setLanguage(repository.getLibrarySettings().language)
+            languageStore.setLanguage(
+                repository.getLibrarySettings(fallbackLanguage = languageStore.language.first()).language
+            )
         }
 
         setContent {

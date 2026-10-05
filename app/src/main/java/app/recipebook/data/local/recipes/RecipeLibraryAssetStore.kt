@@ -23,7 +23,7 @@ class RecipeLibraryAssetStore(context: Context) {
     private val appContext = context.applicationContext
     private val photoRoot = File(appContext.filesDir, "recipe-photos")
     private val attachmentRoot = File(appContext.filesDir, "recipe-attachments")
-    private val stagingRoot = File(appContext.cacheDir, "library-import-staging")
+    private val stagingRoot = File(appContext.filesDir, "library-import-staging")
 
     fun createImportSession(): ImportSession {
         val sessionRoot = File(stagingRoot, UUID.randomUUID().toString())
@@ -34,29 +34,13 @@ class RecipeLibraryAssetStore(context: Context) {
             sessionAttachmentRoot = sessionAttachmentRoot,
             finalPhotoRoot = photoRoot,
             finalAttachmentRoot = attachmentRoot,
-            commit = {
-                photoRoot.deleteRecursively()
-                attachmentRoot.deleteRecursively()
-                moveDirectory(sessionPhotoRoot, photoRoot)
-                moveDirectory(sessionAttachmentRoot, attachmentRoot)
-                sessionRoot.deleteRecursively()
-            },
-            discard = {
-                sessionRoot.deleteRecursively()
-            }
+            replacement = RecipeMediaReplacement(
+                staged = listOf(sessionPhotoRoot, sessionAttachmentRoot),
+                managed = listOf(photoRoot, attachmentRoot),
+                backupRoot = File(sessionRoot, "previous-media")
+            ),
+            discard = { sessionRoot.deleteRecursively() }
         )
-    }
-
-    private fun moveDirectory(source: File, target: File) {
-        if (!source.exists()) return
-        target.parentFile?.mkdirs()
-        if (target.exists()) {
-            target.deleteRecursively()
-        }
-        if (!source.renameTo(target)) {
-            source.copyRecursively(target, overwrite = true)
-            source.deleteRecursively()
-        }
     }
 
     class ImportSession internal constructor(
@@ -64,7 +48,7 @@ class RecipeLibraryAssetStore(context: Context) {
         private val sessionAttachmentRoot: File,
         private val finalPhotoRoot: File,
         private val finalAttachmentRoot: File,
-        private val commit: () -> Unit,
+        private val replacement: RecipeMediaReplacement,
         private val discard: () -> Unit
     ) : RecipeLibraryAssetSink {
         override fun importPhoto(
@@ -73,7 +57,9 @@ class RecipeLibraryAssetStore(context: Context) {
             archivePath: String,
             input: InputStream
         ): PhotoRef {
-            val extension = File(archivePath).extension.ifBlank { "jpg" }
+            requireValidStorageId(recipeId)
+            requireValidStorageId(photoId)
+            val extension = safeStorageExtension(File(archivePath).extension, "jpg")
             val targetFile = File(ensureDirectory(File(sessionPhotoRoot, recipeId)), "$photoId.$extension")
             targetFile.outputStream().use { output -> input.copyTo(output) }
             return PhotoRef(
@@ -90,9 +76,9 @@ class RecipeLibraryAssetStore(context: Context) {
             mimeType: String,
             input: InputStream
         ): AttachmentRef {
-            val extension = File(fileName).extension
-                .ifBlank { File(archivePath).extension }
-                .ifBlank { "bin" }
+            requireValidStorageId(recipeId)
+            requireValidStorageId(attachmentId)
+            val extension = safeStorageExtension(File(fileName).extension.ifBlank { File(archivePath).extension }, "bin")
             val safeBaseName = fileName.substringBeforeLast('.', fileName)
                 .replace("[^A-Za-z0-9._-]".toRegex(), "-")
                 .trim('-')
@@ -110,11 +96,15 @@ class RecipeLibraryAssetStore(context: Context) {
             )
         }
 
-        fun commitToManagedStorage() {
-            commit()
+        fun installToManagedStorage() { replacement.install() }
+
+        fun completeCommit() {
+            replacement.complete()
+            discard()
         }
 
         fun discardStagedAssets() {
+            replacement.rollback()
             discard()
         }
 

@@ -92,12 +92,12 @@ class RecipeLocalizationCoordinator(
                 .withSyncState(
                     authoritativeLanguage = authoritativeLanguage,
                     frStatus = if (regenerated.generatedLanguage == AppLanguage.FR) {
-                        resolveGeneratedStatus(normalizedOpposite)
+                        resolveGeneratedStatus(normalizedOpposite, regenerated.generatorLabel == "local_stub")
                     } else {
                         BilingualSyncStatus.UP_TO_DATE
                     },
                     enStatus = if (regenerated.generatedLanguage == AppLanguage.EN) {
-                        resolveGeneratedStatus(normalizedOpposite)
+                        resolveGeneratedStatus(normalizedOpposite, regenerated.generatorLabel == "local_stub")
                     } else {
                         BilingualSyncStatus.UP_TO_DATE
                     }
@@ -105,7 +105,10 @@ class RecipeLocalizationCoordinator(
         )
         return RecipeRegenerationOutcome(
             recipe = regeneratedRecipe,
-            ingredientReferenceSuggestions = regenerated.generatedIngredients.mapNotNull { ingredient ->
+            ingredientReferenceSuggestions = regenerated.generatedIngredients
+                .filter { generated -> recipe.ingredients.any { it.id == generated.id } }
+                .distinctBy { it.id }
+                .mapNotNull { ingredient ->
                 ingredient.referenceDraft?.let { draft ->
                     IngredientReferenceSuggestion(
                         ingredientLineId = ingredient.id,
@@ -183,8 +186,11 @@ private fun LocalizedSystemText.isBlank(): Boolean =
 private fun LocalizedSystemText.toSyncStatus(): BilingualSyncStatus =
     if (isBlank()) BilingualSyncStatus.MISSING else BilingualSyncStatus.NEEDS_REGENERATION
 
-private fun resolveGeneratedStatus(text: LocalizedSystemText): BilingualSyncStatus =
-    if (text.isBlank()) BilingualSyncStatus.MISSING else BilingualSyncStatus.UP_TO_DATE
+private fun resolveGeneratedStatus(text: LocalizedSystemText, requiresReview: Boolean): BilingualSyncStatus = when {
+    text.isBlank() -> BilingualSyncStatus.MISSING
+    requiresReview -> BilingualSyncStatus.NEEDS_REGENERATION
+    else -> BilingualSyncStatus.UP_TO_DATE
+}
 
 private fun resolveOppositeStatus(
     text: LocalizedSystemText,

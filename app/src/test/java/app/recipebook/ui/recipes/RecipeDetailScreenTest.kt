@@ -14,6 +14,44 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class RecipeDetailScreenTest {
+    @Test fun countDisplayScalingAndConversionsPreserveStoredIngredientEvidence() {
+        val line = IngredientLine(id = "egg", originalText = "2 large egg whites (60 g), lightly beaten", quantity = 2.0,
+            unit = "large egg white", ingredientName = "egg white",
+            preparation = LocalizedValue(fr = "légèrement battu", en = "lightly beaten"),
+            notes = LocalizedValue(fr = "pour la pâte", en = "for the dough"))
+        val reference = IngredientReference(id = "egg-white", nameFr = "blanc d'œuf", nameEn = "egg white",
+            unitMappings = listOf(IngredientUnitMapping("large egg white", "g", 30.0)), updatedAt = "2026-10-05T00:00:00Z")
+        assertEquals("2 large egg whites, lightly beaten (for the dough)", buildDetailIngredientText(line, reference, AppLanguage.EN))
+        assertEquals("2 blancs de gros œufs, légèrement battus (pour la pâte)", buildDetailIngredientText(line, reference, AppLanguage.FR))
+        assertEquals("1 blanc de gros œuf, légèrement battu (pour la pâte)", buildDetailIngredientText(line, reference, AppLanguage.FR, quantityOverride = 1.0))
+        assertEquals(60.0, requireNotNull(convertIngredientQuantity(line.quantity, line.unit, "g", reference)), 0.000001)
+        assertEquals("60 g egg white, lightly beaten (for the dough)", buildIngredientConversionOptionLabel(60.0, "g", line, reference, AppLanguage.EN))
+        assertEquals("2 large egg whites (60 g), lightly beaten", line.originalText)
+        assertEquals("large egg white", line.unit)
+        assertEquals("légèrement battu", line.preparation.fr)
+        assertEquals(2.0, requireNotNull(line.quantity), 0.000001)
+    }
+
+    @Test fun massAndVolumeDetailTextIsNotPluralizedByCountGrammar() {
+        val line = IngredientLine(id = "egg", originalText = "", quantity = 2.0, unit = "g", ingredientName = "egg white",
+            preparation = LocalizedValue(fr = "légèrement battu", en = "lightly beaten"))
+        val reference = IngredientReference(id = "egg-white", nameFr = "blanc d'œuf", nameEn = "egg white", updatedAt = "2026-10-05T00:00:00Z")
+        assertEquals("2 g egg white, lightly beaten", buildDetailIngredientText(line, reference, AppLanguage.EN))
+        assertEquals("2 g blanc d'œuf, légèrement battu", buildDetailIngredientText(line, reference, AppLanguage.FR))
+        assertEquals("2 cups egg white, lightly beaten", buildDetailIngredientText(line.copy(unit = "cup"), reference, AppLanguage.EN))
+        assertEquals("2 tasses blanc d'œuf, légèrement battu", buildDetailIngredientText(line.copy(unit = "cup"), reference, AppLanguage.FR))
+    }
+
+    @Test
+    fun smallMassConversionDoesNotBecomeZero() {
+        assertTrue(requireNotNull(convertIngredientQuantity(0.01, "g", "kg", null)) > 0.0)
+    }
+
+    @Test
+    fun frenchUnitsHaveTheSameConversionsAsCanonicalEnglishUnits() {
+        assertEquals(convertIngredientQuantity(1.0, "cup", "ml", null), convertIngredientQuantity(1.0, "tasse", "millilitres", null))
+    }
+
 
     @Test
     fun buildDetailTagText_formatsTagsAsCommaSeparatedText() {

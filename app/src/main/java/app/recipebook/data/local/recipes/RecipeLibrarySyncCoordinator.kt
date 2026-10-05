@@ -6,6 +6,9 @@ import android.provider.OpenableColumns
 import app.recipebook.data.local.settings.DriveSyncSettingsStore
 import app.recipebook.domain.model.RecipeLibrary
 import java.io.File
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -22,7 +25,8 @@ class RecipeLibrarySyncCoordinator internal constructor(
     private val exporter: RecipeLibraryExporter,
     private val assetStore: RecipeLibraryAssetStore,
     private val cacheStore: RecipeLibraryCacheStore,
-    private val driveSettingsStore: DriveSyncSettingsStore
+    private val driveSettingsStore: DriveSyncSettingsStore,
+    private val onBackupFailure: suspend (Exception) -> Unit = {}
 ) {
     private val appContext = context.applicationContext
     private val acceptedDriveAuthorities = setOf(
@@ -66,27 +70,31 @@ class RecipeLibrarySyncCoordinator internal constructor(
         val importSession = assetStore.createImportSession()
         try {
             val importedLibrary = readLibraryFromUri(uri, importSession)
-            repository.replaceLibrary(importedLibrary, notifyMutation = false)
-            importSession.commitToManagedStorage()
+            commitImportedLibrary(importedLibrary, importSession)
         } catch (error: Throwable) {
             importSession.discardStagedAssets()
             throw error
         }
-        driveSettingsStore.setDocumentUri(uri)
-        val importedSettings = repository.getLibrarySettings()
-        repository.updateLibrarySettings(
-            importedSettings.copy(
-                driveSyncEnabled = true,
-                driveFileName = queryDisplayName(uri) ?: importedSettings.driveFileName
-            ),
-            notifyMutation = false
+        runRecipeBackupAfterMutation(
+            refresh = {
+                driveSettingsStore.setDocumentUri(uri)
+                val importedSettings = repository.getLibrarySettings()
+                repository.updateLibrarySettings(
+                    importedSettings.copy(
+                        driveSyncEnabled = true,
+                        driveFileName = queryDisplayName(uri) ?: importedSettings.driveFileName
+                    ),
+                    notifyMutation = false
+                )
+                val bundle = exporter.createRecipeArchive(fallbackLanguage = importedSettings.language)
+                try {
+                    cacheStore.writeSnapshot(bundle.archiveFile)
+                } finally {
+                    bundle.archiveFile.delete()
+                }
+            },
+            onFailure = onBackupFailure
         )
-        val bundle = exporter.createRecipeArchive(fallbackLanguage = importedSettings.language)
-        try {
-            cacheStore.writeSnapshot(bundle.archiveFile)
-        } finally {
-            bundle.archiveFile.delete()
-        }
     }
 
     suspend fun syncFromConfiguredSourceOnLaunch(): LaunchSyncOutcome = withContext(Dispatchers.IO) {
@@ -96,16 +104,15 @@ class RecipeLibrarySyncCoordinator internal constructor(
             return@withContext LaunchSyncOutcome.NotConfigured
         }
 
-        return@withContext runCatching {
+        return@withContext runCatchingRecipeWork {
             replaceLibraryFromDrive(configuredUri)
             LaunchSyncOutcome.PulledFromDrive
-        }.recoverCatching {
+        }.recoverCatchingRecipeWork {
             val cacheFile = cacheStore.snapshotFileOrNull() ?: throw it
             val importSession = assetStore.createImportSession()
             try {
                 val importedLibrary = RecipeLibraryImportCodec(importSession).readSeedPackageZip(cacheFile)
-                repository.replaceLibrary(importedLibrary, notifyMutation = false)
-                importSession.commitToManagedStorage()
+                commitImportedLibrary(importedLibrary, importSession)
             } catch (error: Throwable) {
                 importSession.discardStagedAssets()
                 throw error
@@ -113,6 +120,18 @@ class RecipeLibrarySyncCoordinator internal constructor(
             LaunchSyncOutcome.RestoredFromLocalCache
         }.getOrElse { error ->
             LaunchSyncOutcome.Failed(error)
+        }
+    }
+
+    private suspend fun commitImportedLibrary(
+        library: RecipeLibrary,
+        session: RecipeLibraryAssetStore.ImportSession
+    ) {
+        currentCoroutineContext().ensureActive()
+        // Complete the short filesystem/database commit before accepting cancellation.
+        withContext(NonCancellable) {
+            repository.replaceLibrary(library, notifyMutation = false, beforeCommit = session::installToManagedStorage)
+            session.completeCommit()
         }
     }
 

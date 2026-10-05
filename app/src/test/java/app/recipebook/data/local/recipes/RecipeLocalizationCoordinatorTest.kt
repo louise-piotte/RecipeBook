@@ -103,7 +103,7 @@ class RecipeLocalizationCoordinatorTest {
     }
 
     @Test
-    fun regenerateOppositeLanguage_appliesStubContentAndMarksBothLanguagesUpToDate() = runBlocking {
+    fun regenerateOppositeLanguage_marksStubLanguageAsStillNeedingRegeneration() = runBlocking {
         val recipe = sampleRecipe().copy(
             languages = BilingualText(
                 fr = LocalizedSystemText(title = "", description = "", instructions = "", notes = ""),
@@ -126,7 +126,7 @@ class RecipeLocalizationCoordinatorTest {
             regenerated.languages.fr.notes
         )
         assertEquals("local_stub", regenerated.importMetadata?.generatorLabel)
-        assertEquals(BilingualSyncStatus.UP_TO_DATE, regenerated.importMetadata?.syncStatusFr)
+        assertEquals(BilingualSyncStatus.NEEDS_REGENERATION, regenerated.importMetadata?.syncStatusFr)
         assertEquals(BilingualSyncStatus.UP_TO_DATE, regenerated.importMetadata?.syncStatusEn)
     }
 

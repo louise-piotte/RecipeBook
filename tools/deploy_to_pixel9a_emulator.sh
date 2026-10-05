@@ -5,10 +5,10 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 ADB_EXE='/mnt/c/Users/Louise/AppData/Local/Android/Sdk/platform-tools/adb.exe'
 EMULATOR_EXE='/mnt/c/Users/Louise/AppData/Local/Android/Sdk/emulator/emulator.exe'
 AVD_NAME='Pixel_9a'
-APK_PATH_WSL="$REPO_ROOT/app/build/outputs/apk/debug/app-debug.apk"
+APK_PATH_WSL="${RECIPEBOOK_APK_PATH:-$REPO_ROOT/app/build/outputs/apk/debug/app-debug.apk}"
 APK_PATH_WIN="$(wslpath -w "$APK_PATH_WSL")"
-APP_ID='app.recipebook'
-LAUNCH_ACTIVITY='app.recipebook/.MainActivity'
+APP_ID="${RECIPEBOOK_APP_ID:-app.recipebook}"
+LAUNCH_ACTIVITY="$APP_ID/app.recipebook.MainActivity"
 
 export GRADLE_USER_HOME="$REPO_ROOT/.gradle-user-home"
 
@@ -26,7 +26,7 @@ find_emulator_serial() {
         awk '{ print $1 }'
 }
 
-emulator_serial="$(find_emulator_serial | head -n 1)"
+emulator_serial="${RECIPEBOOK_EMULATOR_SERIAL:-$(find_emulator_serial | head -n 1)}"
 
 if [ -z "$emulator_serial" ]; then
     powershell.exe -NoProfile -Command "& \"$EMULATOR_EXE\" -avd $AVD_NAME" >/dev/null 2>&1 &
@@ -62,14 +62,17 @@ if [ "$boot_completed" != "1" ]; then
 fi
 
 cd "$REPO_ROOT"
-./gradlew test --no-daemon --console=plain
-./gradlew :app:assembleDebug --no-daemon --console=plain
+gradle_args=()
+if [ -n "${RECIPEBOOK_GRADLE_INIT_SCRIPT:-}" ]; then
+    gradle_args+=(-I "$RECIPEBOOK_GRADLE_INIT_SCRIPT")
+fi
+./gradlew "${gradle_args[@]}" test --no-daemon --console=plain
+./gradlew "${gradle_args[@]}" :app:assembleDebug --no-daemon --console=plain
 
 if [ ! -f "$APK_PATH_WSL" ]; then
     echo "APK not found at $APK_PATH_WSL" >&2
     exit 1
 fi
 
-run_adb -s "$emulator_serial" uninstall "$APP_ID" || true
-run_adb -s "$emulator_serial" install "$APK_PATH_WIN"
+run_adb -s "$emulator_serial" install -r "$APK_PATH_WIN"
 run_adb -s "$emulator_serial" shell am start -n "$LAUNCH_ACTIVITY"

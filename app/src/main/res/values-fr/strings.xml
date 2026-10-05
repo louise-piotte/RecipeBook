@@ -43,7 +43,7 @@
     <string name="other_language_needs_regeneration_label">%1$s doit &#234;tre r&#233;g&#233;n&#233;r&#233; apr&#232;s vos modifications.</string>
     <string name="other_language_missing_label">%1$s est manquant et devrait &#234;tre r&#233;g&#233;n&#233;r&#233;.</string>
     <string name="regenerate_other_language_label">R&#233;g&#233;n&#233;rer %1$s</string>
-    <string name="regeneration_in_progress_label">G&#233;n&#233;ration de %1$s...</string>
+    <string name="regeneration_in_progress_label">G&#233;n&#233;ration de %1$s…</string>
     <string name="regeneration_applied_title">R&#233;g&#233;n&#233;ration appliqu&#233;e</string>
     <string name="regeneration_applied_message">RecipeBook a r&#233;g&#233;n&#233;r&#233; %1$s. R&#233;visez-le avant de vous y fier.</string>
     <string name="regeneration_failed_title">&#201;chec de la r&#233;g&#233;n&#233;ration</string>
@@ -68,13 +68,13 @@
     <string name="import_warning_empty_shared_text">Le texte partag&#233; &#233;tait vide.</string>
     <string name="import_warning_missing_source_url">Le lien source partag&#233; &#233;tait manquant.</string>
     <string name="import_warning_generic">RecipeBook n&#8217;a pas pu confirmer enti&#232;rement ce contenu import&#233;.</string>
-    <string name="ai_settings_info_title">Backend compatible OpenAI</string>
-    <string name="ai_settings_info_message">Ces r&#233;glages restent sur cet appareil et servent &#224; l&#8217;IA d&#8217;importation ainsi qu&#8217;&#224; la r&#233;g&#233;n&#233;ration bilingue.</string>
-    <string name="ai_settings_status_configured">La configuration IA semble compl&#232;te.</string>
-    <string name="ai_settings_status_incomplete">Ajoutez les trois valeurs avant d&#8217;utiliser le vrai backend IA.</string>
-    <string name="ai_settings_api_key_label">Cl&#233; API</string>
-    <string name="ai_settings_base_url_label">URL de base</string>
-    <string name="ai_settings_model_label">Mod&#232;le</string>
+    <string name="ai_settings_info_title">OpenRouter</string>
+    <string name="ai_settings_info_message">Entrez votre propre clé API OpenRouter. Seules les actions IA d’importation ou de régénération bilingue demandées envoient du texte de recette à OpenRouter. Les clés Poe enregistrées ne sont jamais réutilisées.</string>
+    <string name="ai_settings_status_configured">Les réglages OpenRouter sont complets; la clé n’a pas été validée en ligne.</string>
+    <string name="ai_settings_status_incomplete">Entrez une clé API OpenRouter et un identifiant de modèle. Effacez la clé pour désactiver l’IA distante.</string>
+    <string name="ai_settings_api_key_label">Clé API OpenRouter</string>
+    <string name="ai_settings_base_url_label">Point de connexion OpenRouter</string>
+    <string name="ai_settings_model_label">Modèle OpenRouter (fournisseur/modèle)</string>
     <string name="ai_settings_save_label">Enregistrer les r&#233;glages IA</string>
     <string name="ai_settings_fallback_message">Si ces r&#233;glages sont manquants ou si le backend &#233;choue, RecipeBook retombe sur l&#8217;importation d&#233;terministe et peut continuer d&#8217;utiliser le g&#233;n&#233;rateur local simul&#233;.</string>
     <string name="save_recipe_label">Enregistrer la recette</string>
@@ -233,9 +233,17 @@
     <string name="ingredient_state_pending">&#192; faire</string>
     <string name="all_recipes_count_label">Toutes les recettes (%1$d)</string>
     <string name="collection_name_with_count">%1$s (%2$d)</string>
-    <string name="collection_recipe_count_label">%1$d recettes</string>
+    <plurals name="collection_recipe_count_label">
+        <item quantity="one">%1$d recette</item>
+        <item quantity="many">%1$d recettes</item>
+        <item quantity="other">%1$d recettes</item>
+    </plurals>
     <string name="add_to_collection_dialog_title">Ajouter des recettes &#224; %1$s</string>
-    <string name="import_loading_label">Construction de l&#8217;&#233;bauche de recette...</string>
+    <string name="import_loading_label">Construction de l&#8217;&#233;bauche de recette…</string>
+    <string name="invalid_quantity_label">Entrez un nombre positif ou nul, ou une fraction.</string>
+    <string name="invalid_servings_label">Entrez un nombre ou une fraction supérieur à zéro.</string>
+    <string name="local_save_backup_failed_label">Enregistré sur cet appareil, mais la sauvegarde n’a pas pu être mise à jour.</string>
+    <string name="recipe_save_failed_label">La recette n’a pas pu être enregistrée. Votre brouillon est toujours disponible.</string>
 </resources>
 
 

@@ -19,3 +19,5 @@ This package defines serialized payload shapes and explicit mapping to and from 
 - Any change here should trigger a review of domain models, seed examples, schema docs, and round-trip tests.
 - During MVP, evolve v1 in place as directed by repo rules instead of adding compatibility layers.
 - Ingredient-line bilingual fields such as `preparation` and `notes` should stay modeled as `{ fr, en }` objects in both recipe-creation and full-library payloads; only source-capture fields like `originalText` stay single-language.
+
+Catalog storage and editor saved state reuse internal schema part mappers. These internal mapper visibility changes do not change DTO fields, schema versions, or the canonical full-library ZIP layout. Editor state explicitly retains actual local photo/attachment paths rather than export-relative paths.

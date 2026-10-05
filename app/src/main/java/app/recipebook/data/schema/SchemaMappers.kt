@@ -130,17 +130,17 @@ private fun LocalizedSystemText.toDto(): LocalizedSystemTextDto = LocalizedSyste
     notes = notes
 )
 
-private fun LocalizedValueDto.toDomain(): LocalizedValue = LocalizedValue(
+internal fun LocalizedValueDto.toDomain(): LocalizedValue = LocalizedValue(
     fr = fr,
     en = en
 )
 
-private fun LocalizedValue.toDto(): LocalizedValueDto = LocalizedValueDto(
+internal fun LocalizedValue.toDto(): LocalizedValueDto = LocalizedValueDto(
     fr = fr,
     en = en
 )
 
-private fun IngredientLineDto.toDomain(): IngredientLine = IngredientLine(
+internal fun IngredientLineDto.toDomain(): IngredientLine = IngredientLine(
     id = id,
     ingredientRefId = ingredientRefId,
     originalText = originalText,
@@ -154,7 +154,7 @@ private fun IngredientLineDto.toDomain(): IngredientLine = IngredientLine(
     substitutions = substitutions.map { it.toDomain() }
 )
 
-private fun IngredientLine.toDto(): IngredientLineDto = IngredientLineDto(
+internal fun IngredientLine.toDto(): IngredientLineDto = IngredientLineDto(
     id = id,
     ingredientRefId = ingredientRefId,
     originalText = originalText,
@@ -202,7 +202,7 @@ private fun Ratings.toDto(): RatingsDto = RatingsDto(
     lastMadeAt = lastMadeAt
 )
 
-private fun RecipeLinkDto.toDomain(): RecipeLink = RecipeLink(
+internal fun RecipeLinkDto.toDomain(): RecipeLink = RecipeLink(
     id = id,
     targetRecipeId = targetRecipeId,
     linkType = RecipeLinkType.valueOf(linkType),
@@ -210,7 +210,7 @@ private fun RecipeLinkDto.toDomain(): RecipeLink = RecipeLink(
     labelEn = labelEn
 )
 
-private fun RecipeLink.toDto(): RecipeLinkDto = RecipeLinkDto(
+internal fun RecipeLink.toDto(): RecipeLinkDto = RecipeLinkDto(
     id = id,
     targetRecipeId = targetRecipeId,
     linkType = linkType.name,
@@ -352,7 +352,7 @@ private fun IngredientReference.toDto(): IngredientReferenceDto = IngredientRefe
     updatedAt = updatedAt
 )
 
-private fun IngredientFormDto.toDomain(): IngredientForm = IngredientForm(
+internal fun IngredientFormDto.toDomain(): IngredientForm = IngredientForm(
     id = id,
     ingredientRefId = ingredientRefId,
     formCode = formCode,
@@ -367,7 +367,7 @@ private fun IngredientFormDto.toDomain(): IngredientForm = IngredientForm(
     updatedAt = updatedAt
 )
 
-private fun IngredientForm.toDto(): IngredientFormDto = IngredientFormDto(
+internal fun IngredientForm.toDto(): IngredientFormDto = IngredientFormDto(
     id = id,
     ingredientRefId = ingredientRefId,
     formCode = formCode,
@@ -382,7 +382,7 @@ private fun IngredientForm.toDto(): IngredientFormDto = IngredientFormDto(
     updatedAt = updatedAt
 )
 
-private fun SubstitutionRuleDto.toDomain(): SubstitutionRule = SubstitutionRule(
+internal fun SubstitutionRuleDto.toDomain(): SubstitutionRule = SubstitutionRule(
     id = id,
     fromFormId = fromFormId,
     toFormId = toFormId,
@@ -403,7 +403,7 @@ private fun SubstitutionRuleDto.toDomain(): SubstitutionRule = SubstitutionRule(
     updatedAt = updatedAt
 )
 
-private fun SubstitutionRule.toDto(): SubstitutionRuleDto = SubstitutionRuleDto(
+internal fun SubstitutionRule.toDto(): SubstitutionRuleDto = SubstitutionRuleDto(
     id = id,
     fromFormId = fromFormId,
     toFormId = toFormId,
@@ -466,7 +466,7 @@ private fun ContextualSubstitutionRule.toDto(): ContextualSubstitutionRuleDto = 
     updatedAt = updatedAt
 )
 
-private fun IngredientLineSubstitutionDto.toDomain(): IngredientLineSubstitution = IngredientLineSubstitution(
+internal fun IngredientLineSubstitutionDto.toDomain(): IngredientLineSubstitution = IngredientLineSubstitution(
     id = id,
     ingredientLineId = ingredientLineId,
     substitutionRuleId = substitutionRuleId,
@@ -478,7 +478,7 @@ private fun IngredientLineSubstitutionDto.toDomain(): IngredientLineSubstitution
     updatedAt = updatedAt
 )
 
-private fun IngredientLineSubstitution.toDto(): IngredientLineSubstitutionDto = IngredientLineSubstitutionDto(
+internal fun IngredientLineSubstitution.toDto(): IngredientLineSubstitutionDto = IngredientLineSubstitutionDto(
     id = id,
     ingredientLineId = ingredientLineId,
     substitutionRuleId = substitutionRuleId,
@@ -502,7 +502,7 @@ private fun IngredientUnitMapping.toDto(): IngredientUnitMappingDto = Ingredient
     factor = factor
 )
 
-private fun UnitDefinitionDto.toDomain(): UnitDefinition = UnitDefinition(
+internal fun UnitDefinitionDto.toDomain(): UnitDefinition = UnitDefinition(
     unitId = unitId,
     symbol = symbol,
     nameFr = nameFr,
@@ -512,7 +512,7 @@ private fun UnitDefinitionDto.toDomain(): UnitDefinition = UnitDefinition(
     toBaseFactor = toBaseFactor
 )
 
-private fun UnitDefinition.toDto(): UnitDefinitionDto = UnitDefinitionDto(
+internal fun UnitDefinition.toDto(): UnitDefinitionDto = UnitDefinitionDto(
     unitId = unitId,
     symbol = symbol,
     nameFr = nameFr,

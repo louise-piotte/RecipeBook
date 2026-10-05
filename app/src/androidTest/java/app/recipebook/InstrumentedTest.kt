@@ -33,6 +33,36 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class InstrumentedTest {
+    @Test fun replacementFailureRollsBackDatabaseCatalogAndManagedMedia() = runBlocking {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val root = java.io.File(context.cacheDir, "replacement-test-${java.util.UUID.randomUUID()}").apply { mkdirs() }
+        val oldMedia = java.io.File(root, "photos").apply { mkdirs() }
+        java.io.File(oldMedia, "photo").writeText("old")
+        val staged = java.io.File(root, "staged").apply { mkdirs() }
+        java.io.File(staged, "photo").writeText("new")
+        val media = app.recipebook.data.local.recipes.RecipeMediaReplacement(listOf(staged), listOf(oldMedia), java.io.File(root, "backup"))
+        val catalog = app.recipebook.data.local.recipes.InMemoryRecipeCatalogStore()
+        val repository = RecipeRepository(recipeDao = db.recipeDao(), ingredientReferenceDao = db.ingredientReferenceDao(),
+            contextualSubstitutionRuleDao = db.contextualSubstitutionRuleDao(), tagDao = db.tagDao(), collectionDao = db.collectionDao(),
+            librarySettingsDao = db.librarySettingsDao(), libraryMetadataDao = db.libraryMetadataDao(),
+            transactionRunner = { block -> db.withTransaction { block() } }, catalogStore = catalog)
+        val oldRecipe = repository.createBlankRecipe().copy(id = "old")
+        val form = app.recipebook.domain.model.IngredientForm("old-form", "ref", "dry", "Sec", "Dry", updatedAt = "now")
+        try {
+            val original = repository.buildExportLibrary().copy(recipes = listOf(oldRecipe), ingredientForms = listOf(form))
+            repository.replaceLibrary(original, notifyMutation = false)
+            try {
+                repository.replaceLibrary(original.copy(recipes = listOf(oldRecipe.copy(id = "new")), ingredientForms = emptyList()),
+                    notifyMutation = false, beforeCommit = { media.install(); throw java.io.IOException("commit failure") })
+                org.junit.Assert.fail("Expected failed commit")
+            } catch (_: java.io.IOException) { media.rollback() }
+            assertNotNull(repository.getRecipeById("old"))
+            org.junit.Assert.assertNull(repository.getRecipeById("new"))
+            assertEquals(listOf(form), repository.loadIngredientSubstitutionCatalog().ingredientForms)
+            assertEquals("old", java.io.File(oldMedia, "photo").readText())
+        } finally { root.deleteRecursively() }
+    }
+
 
     private lateinit var db: RecipeBookDatabase
 
