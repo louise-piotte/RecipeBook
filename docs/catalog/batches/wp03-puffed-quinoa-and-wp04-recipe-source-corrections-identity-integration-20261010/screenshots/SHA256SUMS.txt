@@ -1,0 +1,9 @@
+73264a933704260d7ba2a07683cc5330290d0f66ac7d5c3474f01d7886e88648  docs/catalog/batches/wp03-puffed-quinoa-and-wp04-recipe-source-corrections-identity-integration-20261010/screenshots/home-en.png
+9b26a6a2c1da741ac75ab65eec1e42caa67b233275e2ab73f3fe147c79a38d40  docs/catalog/batches/wp03-puffed-quinoa-and-wp04-recipe-source-corrections-identity-integration-20261010/screenshots/home-fr.png
+132d2c68d8168facc28a5abacee94fb68845f3e220bb0feb91bcd0581238da88  docs/catalog/batches/wp03-puffed-quinoa-and-wp04-recipe-source-corrections-identity-integration-20261010/screenshots/picker-gnocchi-fr.png
+96557665635eec54703a0fec8cb519c9e5b7dcd85554021d7ff4edc8d0e38baf  docs/catalog/batches/wp03-puffed-quinoa-and-wp04-recipe-source-corrections-identity-integration-20261010/screenshots/picker-millet-fr.png
+24fa76abfc8dd179ab9fca77eb8fc68a36ebfdf3bca8a3c791c55f2dcee4485c  docs/catalog/batches/wp03-puffed-quinoa-and-wp04-recipe-source-corrections-identity-integration-20261010/screenshots/picker-millet.png
+bffc0f48fd1548c49be2f79f363896b7096edd5eff25bed9d094b68dfdd45cf1  docs/catalog/batches/wp03-puffed-quinoa-and-wp04-recipe-source-corrections-identity-integration-20261010/screenshots/picker-puffed.png
+d2427323b3f1032007dfd98fc8ce3ee8f11c7418079cad109749de374ae68a56  docs/catalog/batches/wp03-puffed-quinoa-and-wp04-recipe-source-corrections-identity-integration-20261010/screenshots/picker-spaetzle.png
+883cb2deb1b309ace32d995b7fcac2e3639c38caca8189303f810e5bf356f2a1  docs/catalog/batches/wp03-puffed-quinoa-and-wp04-recipe-source-corrections-identity-integration-20261010/screenshots/recipe-german-chocolate-cake-fr.png
+9e3eb23d60860969c392d395bc5e838f558b7a89791b20ecd36a53265a2f27b8  app/build/outputs/apk/debug/app-debug.apk

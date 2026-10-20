@@ -24,14 +24,11 @@
     {
       "id": "f99dad41-30f8-4294-bbba-4f0b555eda23-ingredient-1",
       "originalText": "396 g sweetened shredded coconut",
-      "ingredientName": "shredded coconut",
-      "ingredientRefId": "ingredient-ref-shredded-coconut",
+      "ingredientName": "coconut",
+      "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 396,
       "unit": "g",
-      "preparation": {
-        "fr": "sucr\u00e9",
-        "en": "sweetened"
-      }
+      "ingredientFormId": "ingredient-form-coconut-shredded-sweetened"
     },
     {
       "id": "f99dad41-30f8-4294-bbba-4f0b555eda23-ingredient-2",

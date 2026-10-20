@@ -4,6 +4,7 @@ import app.recipebook.data.schema.CollectionDto
 import app.recipebook.data.schema.ContextualSubstitutionRuleDto
 import app.recipebook.data.schema.FullLibraryPayloadDto
 import app.recipebook.data.schema.IngredientFormDto
+import app.recipebook.data.schema.PackageYieldObservationDto
 import app.recipebook.data.schema.IngredientReferenceDto
 import app.recipebook.data.schema.LibraryDto
 import app.recipebook.data.schema.LibraryMetadataDto
@@ -50,6 +51,10 @@ class RecipeLibraryImportCodec(
                     ingredientForms = zip.readJsonEntry(
                         manifest.ingredientFormsFile,
                         ListSerializer(IngredientFormDto.serializer())
+                    ),
+                    packageYields = zip.readJsonEntry(
+                        manifest.packageYieldsFile,
+                        ListSerializer(PackageYieldObservationDto.serializer())
                     ),
                     substitutionRules = zip.readJsonEntry(
                         manifest.substitutionRulesFile,
@@ -124,8 +129,34 @@ class RecipeLibraryImportCodec(
         val contextualRuleIds = library.contextualSubstitutionRules.map { it.id }.toSet()
         val tagIds = library.tags.map { it.id }.toSet()
         val collectionIds = library.collections.map { it.id }.toSet()
+        val ingredientFormsById = library.ingredientForms.associateBy { it.id }
 
         require(recipeIds.size == recipeIds.distinct().size) { "Duplicate recipe ids in imported library" }
+        require(library.packageYields.map { it.id }.distinct().size == library.packageYields.size) {
+            "Duplicate package yield observation ids in imported library"
+        }
+        library.packageYields.forEach { observation ->
+            require(observation.ingredientRefId in ingredientReferenceIds) {
+                "Package yield ${observation.id} references a missing ingredient"
+            }
+            require(ingredientFormsById[observation.ingredientFormId]?.ingredientRefId == observation.ingredientRefId) {
+                "Package yield ${observation.id} references a missing or unrelated ingredient form"
+            }
+            require(observation.declaredNetQuantity.isFinite() && observation.declaredNetQuantity > 0.0) {
+                "Package yield ${observation.id} has an invalid net quantity"
+            }
+            require(listOfNotNull(observation.netMassG, observation.netVolumeMl, observation.drainedMassG, observation.edibleMassG)
+                .all { it.isFinite() && it > 0.0 }) {
+                "Package yield ${observation.id} has an invalid reported quantity"
+            }
+            require(observation.netMassG != null || observation.netVolumeMl != null ||
+                observation.drainedMassG != null || observation.edibleMassG != null) {
+                "Package yield ${observation.id} has no reported contents or usable yield"
+            }
+            require(observation.sourceUrl.isNotBlank() && observation.sourceName.isNotBlank()) {
+                "Package yield ${observation.id} is missing its source"
+            }
+        }
 
         library.collections.forEach { collection ->
             require(collection.recipeIds.all { it in recipeIds }) {

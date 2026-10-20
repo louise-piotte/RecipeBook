@@ -46,8 +46,8 @@
     {
       "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f-ingredient-3",
       "originalText": "flaky sea salt, for topping",
-      "ingredientName": "salt",
-      "ingredientRefId": "ingredient-ref-salt",
+      "ingredientName": "flaky sea salt",
+      "ingredientRefId": "ingredient-ref-flaky-sea-salt",
       "optional": true,
       "notes": {
         "fr": "sel de mer en flocons, pour garnir",
@@ -60,7 +60,9 @@
       "originalText": "crushed nuts, for topping",
       "ingredientName": "crushed nuts",
       "optional": true,
-      "group": "Base"
+      "group": "Base",
+      "ingredientRefId": "ingredient-ref-nuts",
+      "ingredientFormId": "ingredient-form-nuts-crushed"
     },
     {
       "id": "fdb8f001-0f1a-4c73-a916-8721bdc1713f-ingredient-5",

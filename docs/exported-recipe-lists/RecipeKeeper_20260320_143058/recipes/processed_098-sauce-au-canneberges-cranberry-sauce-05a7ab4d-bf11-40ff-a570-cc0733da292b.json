@@ -5,7 +5,7 @@
     "linkedRecipeId":  "7dde7849-5f6e-4e20-b84f-e90fa780d871",
     "isFavourite":  "False",
     "rating":  "3",
-    "course":  "Ingrédient/Ingredient",
+    "course":  "IngrÃ©dient/Ingredient",
     "categories":  [
                        "Canneberge/Cranberry",
                        "Sauce"
@@ -19,15 +19,15 @@
     "cookTimeIso":  "PT10M",
     "ingredientLines":  [
                             "1 casseaux de canneberges - 1 box of cranberries",
-                            "¼ tasse d\u0027eau - ¼ cup water",
+                            "Â¼ tasse d\u0027eau - Â¼ cup water",
                             "â…” tasse de sucre - â…” cup sugar"
                         ],
     "directionLines":  [
-                           "Mettre les canneberges et l\u0027eau dans un chaudron. L\u0027eau est là pour que les canneberges ne brûlent pas. Bouillir les canneberges avec l\u0027eau 5 minutes.",
+                           "Mettre les canneberges et l\u0027eau dans un chaudron. L\u0027eau est lÃ  pour que les canneberges ne brÃ»lent pas. Bouillir les canneberges avec l\u0027eau 5 minutes.",
                            "Put cranberries and water in a pot. The water is there so the cranberries don\u0027t burn. Boil the cranberries with the water for 5 minutes.",
-                           "Écraser les canneberges avec un pile patate ou une cuillère en bois le plus que possible. Il ne doit pas rester de canneberges entières.",
+                           "Ã‰craser les canneberges avec un pile patate ou une cuillÃ¨re en bois le plus que possible. Il ne doit pas rester de canneberges entiÃ¨res.",
                            "Crush the cranberries with a potato masher or a wooden spoon as much as possible. There should not be any whole cranberries left.",
-                           "Ajouter le sucre. Les canneberges devraient se liquéfier.",
+                           "Ajouter le sucre. Les canneberges devraient se liquÃ©fier.",
                            "Add the sugar. The cranberries should liquefy.",
                            "Retirer du feu et mettre dans des pots Masson. Manger froid",
                            "Remove from the heat and put in Mason jars. Eat cold"

@@ -6,6 +6,7 @@ import app.recipebook.data.schema.CollectionDto
 import app.recipebook.data.schema.ContextualSubstitutionRuleDto
 import app.recipebook.data.schema.FullLibraryPayloadDto
 import app.recipebook.data.schema.IngredientFormDto
+import app.recipebook.data.schema.PackageYieldObservationDto
 import app.recipebook.data.schema.IngredientReferenceDto
 import app.recipebook.data.schema.LibraryDto
 import app.recipebook.data.schema.LibraryMetadataDto
@@ -20,6 +21,7 @@ import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.ContextualSubstitutionRule
 import app.recipebook.domain.model.IngredientForm
+import app.recipebook.domain.model.PackageYieldObservation
 import app.recipebook.domain.model.LibraryMetadata
 import app.recipebook.domain.model.LibrarySettings
 import app.recipebook.domain.model.PhotoRef
@@ -67,6 +69,11 @@ object BundledRecipeLibraryLoader {
                     manifest.assetPath(manifest.ingredientFormsFile),
                     ListSerializer(IngredientFormDto.serializer())
                 ),
+                packageYields = loadAssetJson(
+                    context,
+                    manifest.assetPath(manifest.packageYieldsFile),
+                    ListSerializer(PackageYieldObservationDto.serializer())
+                ),
                 substitutionRules = loadAssetJson(
                     context,
                     manifest.assetPath(manifest.substitutionRulesFile),
@@ -93,6 +100,7 @@ object BundledRecipeLibraryLoader {
             recipes = materializeSeedRecipePhotos(context, manifest, library.recipes),
             ingredientReferences = library.ingredientReferences,
             ingredientForms = library.ingredientForms,
+            packageYields = library.packageYields,
             substitutionRules = library.substitutionRules,
             contextualSubstitutionRules = library.contextualSubstitutionRules,
             units = library.units,
@@ -162,6 +170,7 @@ private data class BundledSeedManifestDto(
     val recipeFiles: List<String>,
     val ingredientReferencesFile: String,
     val ingredientFormsFile: String,
+    val packageYieldsFile: String,
     val substitutionRulesFile: String,
     val contextualSubstitutionRulesFile: String,
     val unitsFile: String,
@@ -177,6 +186,7 @@ data class SeedLibraryData(
     val recipes: List<Recipe> = emptyList(),
     val ingredientReferences: List<IngredientReference> = emptyList(),
     val ingredientForms: List<IngredientForm> = emptyList(),
+    val packageYields: List<PackageYieldObservation> = emptyList(),
     val substitutionRules: List<SubstitutionRule> = emptyList(),
     val contextualSubstitutionRules: List<ContextualSubstitutionRule> = emptyList(),
     val units: List<UnitDefinition> = emptyList(),

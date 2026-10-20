@@ -1,11 +1,11 @@
 {
     "recipeId":  "4af3c637-fd51-4344-8695-5dfe3583b237",
-    "title":  "Glaçage au mascarpone/Mascarpone frosting",
+    "title":  "GlaÃ§age au mascarpone/Mascarpone frosting",
     "recipeShareId":  "",
     "linkedRecipeId":  null,
     "isFavourite":  "False",
     "rating":  "5",
-    "course":  "Déssert/Dessert",
+    "course":  "DÃ©ssert/Dessert",
     "categories":  [
                        "Glassage/Icing"
                    ],
@@ -18,19 +18,19 @@
     "cookTimeIso":  "PT5M",
     "ingredientLines":  [
                             "8 onces de fromage mascarpone - 8 ounces mascarpone cheese",
-                            "1 tasse de sucre à glacé - 1 cup confectioners sugar",
-                            "1 tasse de crème fouettée épaisse froide - 1 cup cold heavy whipping cream",
-                            "½ cuillère à thé d\u0027extrait d\u0027amande - ½ teaspoon almond extract",
-                            "1 cuillère à soupe d\u0027extrait de vanille - 1 tablespoon vanilla extract"
+                            "1 tasse de sucre Ã  glacÃ© - 1 cup confectioners sugar",
+                            "1 tasse de crÃ¨me fouettÃ©e Ã©paisse froide - 1 cup cold heavy whipping cream",
+                            "Â½ cuillÃ¨re Ã  thÃ© d\u0027extrait d\u0027amande - Â½ teaspoon almond extract",
+                            "1 cuillÃ¨re Ã  soupe d\u0027extrait de vanille - 1 tablespoon vanilla extract"
                         ],
     "directionLines":  [
-                           "Placez le mascarpone dans le bol d\u0027un batteur sur socle équipé du fouet et commencez à battre à vitesse moyenne. Tout en battant, ajoutez l\u0027extrait d\u0027amande et la vanille suivi du sucre glace. Racler les côtés et continuer à battre jusqu\u0027à ce que le mélange soit léger et mousseux.",
+                           "Placez le mascarpone dans le bol d\u0027un batteur sur socle Ã©quipÃ© du fouet et commencez Ã  battre Ã  vitesse moyenne. Tout en battant, ajoutez l\u0027extrait d\u0027amande et la vanille suivi du sucre glace. Racler les cÃ´tÃ©s et continuer Ã  battre jusqu\u0027Ã  ce que le mÃ©lange soit lÃ©ger et mousseux.",
                            "Place the mascarpone in the bowl of a stand mixer with the whisk attachment and start beating on medium speed. While beating, add the almond extract and vanilla followed by the confectioners sugar. Scrape sides and continue beating until light and fluffy.",
-                           "Pendant que le batteur tourne à grande vitesse, ajoutez lentement la crème fouettée jusqu\u0027à ce que le glaçage devienne léger et mousseux, environ 1 à 3 minutes.",
+                           "Pendant que le batteur tourne Ã  grande vitesse, ajoutez lentement la crÃ¨me fouettÃ©e jusqu\u0027Ã  ce que le glaÃ§age devienne lÃ©ger et mousseux, environ 1 Ã  3 minutes.",
                            "With the mixer running on high speed, slowly add the whipping cream until the frosting becomes light and fluffy, about 1-3 minutes."
                        ],
     "notes":  [
-                  "Ne pas trop mélanger.",
+                  "Ne pas trop mÃ©langer.",
                   "Do not overmix."
               ],
     "nutrition":  {

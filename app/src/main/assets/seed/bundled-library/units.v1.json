@@ -9,6 +9,33 @@
     "toBaseFactor": 1
   },
   {
+    "unitId": "kg",
+    "symbol": "kg",
+    "nameFr": "kilogramme",
+    "nameEn": "kilogram",
+    "type": "mass",
+    "baseUnitId": "g",
+    "toBaseFactor": 1000
+  },
+  {
+    "unitId": "oz",
+    "symbol": "oz",
+    "nameFr": "once",
+    "nameEn": "ounce",
+    "type": "mass",
+    "baseUnitId": "g",
+    "toBaseFactor": 28.34952
+  },
+  {
+    "unitId": "lb",
+    "symbol": "lb",
+    "nameFr": "livre",
+    "nameEn": "pound",
+    "type": "mass",
+    "baseUnitId": "g",
+    "toBaseFactor": 453.5924
+  },
+  {
     "unitId": "ml",
     "symbol": "ml",
     "nameFr": "millilitre",
@@ -18,21 +45,228 @@
     "toBaseFactor": 1
   },
   {
+    "unitId": "l",
+    "symbol": "l",
+    "nameFr": "litre",
+    "nameEn": "liter",
+    "type": "volume",
+    "baseUnitId": "ml",
+    "toBaseFactor": 1000
+  },
+  {
+    "unitId": "tsp",
+    "symbol": "tsp",
+    "nameFr": "cuill\u00e8re \u00e0 th\u00e9",
+    "nameEn": "teaspoon",
+    "type": "volume",
+    "baseUnitId": "ml",
+    "toBaseFactor": 4.928922
+  },
+  {
+    "unitId": "tbsp",
+    "symbol": "tbsp",
+    "nameFr": "cuill\u00e8re \u00e0 soupe",
+    "nameEn": "tablespoon",
+    "type": "volume",
+    "baseUnitId": "ml",
+    "toBaseFactor": 14.78676
+  },
+  {
     "unitId": "cup",
     "symbol": "cup",
     "nameFr": "tasse",
     "nameEn": "cup",
     "type": "volume",
-    "baseUnitId": null,
-    "toBaseFactor": 1
+    "baseUnitId": "ml",
+    "toBaseFactor": 236.5882
+  },
+  {
+    "unitId": "fl oz",
+    "symbol": "fl oz",
+    "nameFr": "once liquide am\u00e9ricaine",
+    "nameEn": "US fluid ounce",
+    "type": "volume",
+    "baseUnitId": "ml",
+    "toBaseFactor": 29.57353
   },
   {
     "unitId": "count",
     "symbol": "x",
-    "nameFr": "unite",
+    "nameFr": "unit\u00e9",
     "nameEn": "count",
     "type": "count",
     "baseUnitId": "count",
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "item",
+    "symbol": "item",
+    "nameFr": "article",
+    "nameEn": "item",
+    "type": "count",
+    "baseUnitId": "item",
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "clove",
+    "symbol": "clove",
+    "nameFr": "gousse",
+    "nameEn": "clove",
+    "type": "count",
+    "baseUnitId": "clove",
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "date",
+    "symbol": "date",
+    "nameFr": "datte",
+    "nameEn": "date",
+    "type": "count",
+    "baseUnitId": "date",
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "large egg",
+    "symbol": "large egg",
+    "nameFr": "gros \u0153uf",
+    "nameEn": "large egg",
+    "type": "count",
+    "baseUnitId": "large egg",
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "large egg white",
+    "symbol": "large egg white",
+    "nameFr": "blanc de gros \u0153uf",
+    "nameEn": "large egg white",
+    "type": "count",
+    "baseUnitId": "large egg white",
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "large egg yolk",
+    "symbol": "large egg yolk",
+    "nameFr": "jaune de gros \u0153uf",
+    "nameEn": "large egg yolk",
+    "type": "count",
+    "baseUnitId": "large egg yolk",
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "large banana",
+    "symbol": "large banana",
+    "nameFr": "grosse banane",
+    "nameEn": "large banana",
+    "type": "count",
+    "baseUnitId": "large banana",
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "medium onion",
+    "symbol": "medium onion",
+    "nameFr": "oignon moyen",
+    "nameEn": "medium onion",
+    "type": "count",
+    "baseUnitId": "medium onion",
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "stalk",
+    "symbol": "stalk",
+    "nameFr": "tige",
+    "nameEn": "stalk",
+    "type": "count",
+    "baseUnitId": "stalk",
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "rack",
+    "symbol": "rack",
+    "nameFr": "carr\u00e9",
+    "nameEn": "rack",
+    "type": "count",
+    "baseUnitId": "rack",
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "can",
+    "symbol": "can",
+    "nameFr": "bo\u00eete",
+    "nameEn": "can",
+    "type": "other",
+    "baseUnitId": null,
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "jar",
+    "symbol": "jar",
+    "nameFr": "pot",
+    "nameEn": "jar",
+    "type": "other",
+    "baseUnitId": null,
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "package",
+    "symbol": "package",
+    "nameFr": "paquet",
+    "nameEn": "package",
+    "type": "other",
+    "baseUnitId": null,
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "bunch",
+    "symbol": "bunch",
+    "nameFr": "botte",
+    "nameEn": "bunch",
+    "type": "other",
+    "baseUnitId": null,
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "drop",
+    "symbol": "drop",
+    "nameFr": "goutte",
+    "nameEn": "drop",
+    "type": "other",
+    "baseUnitId": null,
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "to taste",
+    "symbol": "to taste",
+    "nameFr": "au go\u00fbt",
+    "nameEn": "to taste",
+    "type": "other",
+    "baseUnitId": null,
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "for garnish",
+    "symbol": "for garnish",
+    "nameFr": "pour garnir",
+    "nameEn": "for garnish",
+    "type": "other",
+    "baseUnitId": null,
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "for serving",
+    "symbol": "for serving",
+    "nameFr": "pour servir",
+    "nameEn": "for serving",
+    "type": "other",
+    "baseUnitId": null,
+    "toBaseFactor": 1
+  },
+  {
+    "unitId": "optional",
+    "symbol": "optional",
+    "nameFr": "facultatif",
+    "nameEn": "optional",
+    "type": "other",
+    "baseUnitId": null,
     "toBaseFactor": 1
   }
 ]

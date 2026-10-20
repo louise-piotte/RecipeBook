@@ -72,7 +72,8 @@
         "fr": "cassonade claire",
         "en": "Light brown sugar"
       },
-      "group": "Cookie Cake"
+      "group": "Cookie Cake",
+      "ingredientFormId": "ingredient-form-brown-sugar-light"
     },
     {
       "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-6",
@@ -112,7 +113,8 @@
         "fr": "plus un peu pour d\u00e9corer",
         "en": "Plus more for decorating"
       },
-      "group": "Cookie Cake"
+      "group": "Cookie Cake",
+      "ingredientFormId": "ingredient-form-semisweet-chocolate-chips"
     },
     {
       "id": "ad2f1317-aa4d-4d1e-9aec-0d70a72228af-ingredient-10",

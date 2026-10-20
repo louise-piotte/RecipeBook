@@ -1,0 +1,24 @@
+# WP02/WP03/WP04 R171 gap-review integration
+
+**Integrated:** 2026-10-16
+
+**Plan:** [global ingredient catalog plan](../../../RecipeBook-global-ingredient-catalog-plan.txt)
+
+**Reviewed proposals:** [Harka Kodo names](../../proposals/wp02-a6-next-regional-flour-review-r171-20261016-harka.md), [cooked-quinoa CNF 2026 recheck](../../proposals/wp03-section-f-cooked-quinoa-cnf-2026-row-recheck-r171-20261016.md), and [generic fish-cake boundary](../../proposals/wp04-section-p-generic-fish-cake-boundary-review-r171-20261016.md).
+
+## Integrated decisions
+
+- **WP02 A6 — Kodo grain and flour names:** Added `harka` to the existing Kodo grain aliases and `harka atta` to the existing Kodo flour aliases. ICAR–IIMR maps Kannada `Harka` to Kodo millet; Organic Mandya uses `Harka Atta (Kannada)` for its finely ground Kodo flour ([ICAR–IIMR](https://millets.res.in/millets_info.php), [Organic Mandya](https://organicmandya.com/products/kodo-millet-flour-500-gm)). Reused ledger sources S08 and S03 and updated their existing locators/support; no source ID or URL was duplicated. Preserved the French displays, all measurements, and blocked substitution findings. Added no French alias, form, active measure, recipe link, conversion, yield, or substitution.
+- **WP03 Section F — cooked quinoa:** Held the open CNF 2026 measurement review. Health Canada’s current dataset listing is indexed with an October 4, 2026 modification date and lists the Food Name and Measure Weight Conversion CSVs, but their quinoa rows could not be retrieved in this audit ([CNF 2026 listing](https://open.canada.ca/data/en/dataset/1b6139bd-ed7e-4043-bc28-ff00e10f3109?res_page=1), [Food Name CSV](https://open.canada.ca/data/dataset/1b6139bd-ed7e-4043-bc28-ff00e10f3109/resource/e1ffee62-58cb-4e3e-b359-115c658388ad/download/food_name.csv), [Measure Weight Conversion CSV](https://open.canada.ca/data/dataset/1b6139bd-ed7e-4043-bc28-ff00e10f3109/resource/bb76d816-3ac0-4749-8c4b-f0dbfd0fac76/download/measure_weight_conversion.csv)). Keep the plan item open, retain `measurementState: not_yet_researched`, preserve the four older publication-specific observations and the existing recipe 016 cooked-quinoa link, and add no 2026 observation or reusable numeric behavior.
+- **WP04 Section P — generic fish cake:** Held `fish cake / fish cakes` without an active reference, form, legacy allocation, or ledger record. A Québec fishmonger lists products qualified by trout, crab, salmon, barbue, and lobster; a MAPAQ notice uses `Custard fish cake / gâteau poisson` for one recalled shop product. OQLF’s preferred French terms describe a more specific fish, breadcrumb, and egg preparation, while CFIA guidance distinguishes product-specific names for surimi foods ([Poissonnerie Du Cree](https://www.poissonnerieducreek.com/nos-produits), [MAPAQ notice](https://www.newswire.ca/fr/news-releases/mise-en-garde-a-la-population-presence-non-declaree-de-ble-et-de-soya-dans-du-gateau-vendu-par-l-entreprise-marche-bento-kim-longueuil-812947230.html), [OQLF](https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/9488990/croquette-de-poisson), [CFIA](https://inspection.canada.ca/en/food-labels/labelling/industry/fish)). No bundled recipe demand identifies a style, so no generic name or universal French alias was allocated.
+
+## Static validation
+
+- Bundled seed-package validation passed; ingredient-reference normalization and generated-index freshness checks passed. The generated index contains **1,547 references**.
+- Research-ledger validation passed. The two accepted Kodo decisions link to their existing source IDs; no research source entry, source ID, URL, form, observation, substitution, or recipe link was added.
+- Static picker review confirms `harka` returns Kodo grain and flour, `harka atta` returns Kodo flour, and existing `kodo`, `kodra`, and `kodra peeth` projections remain unchanged. The fish-cake review keeps the hypothetical broad row out; the quinoa review adds no search terms.
+- The corpus review covered **114 recipe files / 1,123 ingredient rows**. WP02 found no Harka/Kodo demand or direct Kodo links; WP04 found no fish-cake terms. WP03’s existing cooked-quinoa ingredient and form link remain unchanged.
+- Totals remain **1,547 references**, **119 forms**, **1,891 ledger records**, **8,099 source entries**, **6,925 distinct source IDs**, and **5,721 distinct source URLs**; the bundle remains **114 recipes / 1,123 ingredient rows**. Local Markdown links, UTF-8/no-BOM checks, and scoped whitespace checks passed.
+- No app, unit, instrumentation, emulator, build, or deployment tests were run. This batch adds database JSON data and related documentation under the updated `AGENTS.md` rule.
+
+Sections 04 A6, F, and P remain open. Recheck the CNF 2026 quinoa rows when the official CSV contents are retrievable; reconsider generic fish cake when a bundled recipe or exact product request identifies a preparation.

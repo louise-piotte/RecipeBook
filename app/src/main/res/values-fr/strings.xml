@@ -88,6 +88,14 @@
     <string name="source_url_label">URL de la source</string>
     <string name="servings_amount_label">Quantit&#233; de portions</string>
     <string name="servings_unit_label">Unit&#233; de portions</string>
+    <string name="recipe_scale_label">Adapter</string>
+    <string name="recipe_scale_dialog_title">Adapter la recette</string>
+    <string name="recipe_scale_times_unchanged_note">Les temps de pr&#233;paration et de cuisson restent inchang&#233;s.</string>
+    <string name="recipe_scale_by_servings_label">Par portions</string>
+    <string name="recipe_scale_by_multiplier_label">Par multiplicateur</string>
+    <string name="recipe_scale_multiplier_label">Multiplicateur</string>
+    <string name="recipe_scale_factor_value">&#215; %1$s</string>
+    <string name="apply_label">Appliquer</string>
     <string name="prep_minutes_label">Minutes de pr&#233;paration</string>
     <string name="cook_minutes_label">Minutes de cuisson</string>
     <string name="total_minutes_label">Minutes totales</string>
@@ -122,6 +130,8 @@
     <string name="add_ingredient_line_label">Ajouter une ligne d\'ingr&#233;dient</string>
     <string name="ingredient_quantity_label">Quantit&#233;</string>
     <string name="ingredient_unit_label">Unit&#233;</string>
+    <string name="ingredient_form_label">Forme de l’ingr&#233;dient</string>
+    <string name="no_ingredient_form_label">Aucune forme</string>
     <string name="ingredient_preparation_label">Pr&#233;paration</string>
     <string name="ingredient_notes_label">Notes d\'ingr&#233;dient</string>
     <string name="ingredient_original_text_label">Texte original de la ligne</string>
@@ -199,6 +209,8 @@
     <string name="recipe_photo_preview_label">Aper&#231;u de la photo de la recette</string>
     <string name="ingredient_conversion_dialog_title">Convertir %1$s</string>
     <string name="ingredient_conversion_unavailable_label">Aucune conversion d&#8217;unit&#233; prise en charge n&#8217;est disponible pour cet ingr&#233;dient.</string>
+    <string name="package_yield_source_qualifier">Estimation propre &#224; la source : %1$s</string>
+    <string name="package_yield_fractional_note">Une fraction de l’emballage suppose une part proportionnelle du rendement document&#233;.</string>
     <string name="ingredient_conversion_reset_label">R&#233;initialiser</string>
     <string name="ingredient_substitution_button_label">Afficher les substitutions d&#8217;ingr&#233;dient</string>
     <string name="ingredient_substitution_dialog_title">Substituer %1$s</string>
@@ -245,8 +257,6 @@
     <string name="local_save_backup_failed_label">Enregistré sur cet appareil, mais la sauvegarde n’a pas pu être mise à jour.</string>
     <string name="recipe_save_failed_label">La recette n’a pas pu être enregistrée. Votre brouillon est toujours disponible.</string>
 </resources>
-
-
 
 
 

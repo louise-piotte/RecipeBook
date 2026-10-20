@@ -1,4 +1,4 @@
-﻿package app.recipebook.data.local.recipes
+package app.recipebook.data.local.recipes
 
 import java.io.File
 import org.junit.Assert.assertEquals
@@ -70,8 +70,8 @@ class RecipeKeeperIngredientImportTest {
 
         assertTrue(audit.matched.any { it.ingredientName == "all-purpose flour" })
         assertTrue(audit.matched.any { it.ingredientName == "vanilla extract" })
-        assertTrue(audit.matched.any { it.ingredientName == "almond milk" })
-        assertTrue(audit.matched.any { it.ingredientName == "oat milk" })
+        assertTrue(audit.unmatched.any { it.candidateName == "almond milk" })
+        assertTrue(audit.unmatched.any { it.candidateName == "oat milk" })
         assertTrue(audit.matched.any { it.ingredientName == "banana" })
         assertTrue(audit.matched.any { it.ingredientName == "black pepper" })
         assertTrue(audit.unmatched.isNotEmpty())

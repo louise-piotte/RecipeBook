@@ -31,7 +31,8 @@
       "preparation": {
         "fr": "s\u00e9ch\u00e9",
         "en": "dried"
-      }
+      },
+      "ingredientFormId": "ingredient-form-azuki-beans-dried"
     },
     {
       "id": "583ae5e3-e482-42ba-971f-72d8418ef175-ingredient-2",

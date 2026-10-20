@@ -63,7 +63,8 @@
         "fr": "tass\u00e9",
         "en": "packed"
       },
-      "group": "Cookies"
+      "group": "Cookies",
+      "ingredientFormId": "ingredient-form-brown-sugar-light"
     },
     {
       "id": "c97910fb-2301-40c7-8019-433bb361c44c-ingredient-5",

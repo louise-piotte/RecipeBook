@@ -1,0 +1,7 @@
+# Defatted walnut-flour picker hold — 2026-10-12
+
+Keep the defatted-walnut-flour candidate outside the active catalog until the picker can preserve its process qualifier. Québec Metro uses `farine de noix dégraissée` for a product whose English label says `defatted walnut flour`; Canadian English retail also uses the broad title `walnut flour` for a partially defatted product, while full-fat finely ground walnuts are sold as walnut meal/flour. Under the current complete-phrase matcher, adding a `defatted walnut flour / farine de noix dégraissée` display would also make unqualified `walnut flour / farine de noix` queries resolve to that narrower class. [Metro English](https://www.metro.ca/en/online-grocery/aisles/snacks/salty-snacks/crackers/organic-walnut-crispbreads/p/749544012086), [Metro French](https://www.metro.ca/epicerie-en-ligne/allees/collations/collations-salees/craquelins/craquelins-aux-noix-biologiques/p/749544012086), [Naturitas Canada](https://www.naturitas.ca/p/food/cereals-legumes-and-pasta/flours/walnut-flour-250-g-salud-viva), [HBS Natural Choice](https://naturalchoice.co.uk/products/walnut-meal-flour)
+
+The candidate has no matching recipe demand. No active reference, alias, ledger identity, form, measurement, recipe link, or substitution was added. This documentation-only hold required no tests.
+
+Review: [proposal](../../proposals/wp02-b2-defatted-walnut-flour-picker-boundary-hold-20261012.md).

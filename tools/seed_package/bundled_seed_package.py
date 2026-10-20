@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 import json
+import math
 import re
 import unicodedata
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
+
+from jsonschema import Draft202012Validator, FormatChecker
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -13,12 +16,38 @@ SEED_ROOT = REPO_ROOT / "app" / "src" / "main" / "assets" / "seed" / "bundled-li
 MANIFEST_PATH = SEED_ROOT / "manifest.v1.json"
 SEED_PACKAGE_SCHEMA_VERSION = "bundled-seed-package/v1"
 RECIPES_DIR = SEED_ROOT / "recipes"
+FULL_LIBRARY_SCHEMA_PATH = REPO_ROOT / "docs" / "schemas" / "full-library.schema.v1.json"
+RESEARCH_LEDGER_PATH = REPO_ROOT / "docs" / "catalog" / "research-ledger.v1.json"
+RESEARCH_LEDGER_SCHEMA_PATH = REPO_ROOT / "docs" / "catalog" / "research-ledger.schema.json"
+
+INGREDIENT_CATEGORIES = {
+    "FLOUR_AND_STARCH",
+    "GRAIN_AND_CEREAL",
+    "SUGAR_AND_SWEETENER",
+    "BAKING_AND_SPICE",
+    "HERB",
+    "CHOCOLATE_AND_CANDY",
+    "FAT_AND_OIL",
+    "DAIRY_AND_ALTERNATIVE",
+    "EGG",
+    "CHEESE",
+    "BAKING_MIXIN_AND_PANTRY",
+    "NUT_SEED_AND_DRIED_FRUIT",
+    "FRUIT",
+    "VEGETABLE_AND_AROMATIC",
+    "LEGUME_AND_PULSE",
+    "STOCK_AND_BROTH",
+    "SAUCE_AND_CONDIMENT",
+    "PROTEIN",
+    "OTHER",
+}
 
 PART_KEY_ORDER = (
     "metadataFile",
     "recipeFiles",
     "ingredientReferencesFile",
     "ingredientFormsFile",
+    "packageYieldsFile",
     "substitutionRulesFile",
     "contextualSubstitutionRulesFile",
     "unitsFile",
@@ -31,6 +60,7 @@ STATIC_PARTS = (
     "metadata",
     "ingredientReferences",
     "ingredientForms",
+    "packageYields",
     "substitutionRules",
     "contextualSubstitutionRules",
     "units",
@@ -149,15 +179,11 @@ def normalize_ingredient_reference_entry(entry: dict[str, Any]) -> None:
 
     entry["nameFr"] = name_fr
     entry["nameEn"] = name_en
-    entry["aliasesFr"] = dedupe_preserve_order(entry.get("aliasesFr", []))
-    entry["aliasesEn"] = dedupe_preserve_order(entry.get("aliasesEn", []))
-
-    if name_fr.casefold() != name_en.casefold():
-        entry["aliasesFr"] = [alias for alias in entry["aliasesFr"] if alias.casefold() != name_en.casefold()]
-        entry["aliasesEn"] = [alias for alias in entry["aliasesEn"] if alias.casefold() != name_fr.casefold()]
-
-    entry["aliasesFr"] = [alias for alias in entry["aliasesFr"] if alias.casefold() != name_fr.casefold()]
-    entry["aliasesEn"] = [alias for alias in entry["aliasesEn"] if alias.casefold() != name_en.casefold()]
+    canonical_keys = {normalize_search_key(name_fr), normalize_search_key(name_en)}
+    entry["aliasesFr"] = dedupe_search_aliases(entry.get("aliasesFr", []), canonical_keys)
+    entry["aliasesEn"] = dedupe_search_aliases(entry.get("aliasesEn", []), canonical_keys)
+    if "category" in entry:
+        entry["category"] = entry["category"].strip().upper()
 
 
 def apply_curated_ingredient_reference_normalization(entry: dict[str, Any]) -> None:
@@ -236,6 +262,18 @@ def normalize_recipe(recipe: dict[str, Any]) -> dict[str, Any]:
                 }
             )
         recipe["attachments"] = normalized_attachments
+    if "recipeLinks" in recipe:
+        normalized_links = []
+        for position, link in enumerate(recipe["recipeLinks"]):
+            if "position" in link:
+                if link["position"] != position:
+                    raise ValueError(
+                        f"recipe {recipe['id']} recipeLinks position does not match list order: "
+                        f"{link['position']} != {position}"
+                    )
+                link = {key: value for key, value in link.items() if key != "position"}
+            normalized_links.append(link)
+        recipe["recipeLinks"] = normalized_links
     return recipe
 
 
@@ -324,6 +362,8 @@ def normalize_part(part_name: str, data: Any) -> Any:
         return normalize_collections(data)
     if part_name == "ingredientForms":
         return normalize_identity_list(data, "id")
+    if part_name == "packageYields":
+        return normalize_identity_list(data, "id")
     if part_name == "substitutionRules":
         return normalize_identity_list(data, "id")
     if part_name == "contextualSubstitutionRules":
@@ -352,6 +392,7 @@ def load_seed_package() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]
         "recipes": recipe_paths,
         "ingredientReferences": SEED_ROOT / manifest["ingredientReferencesFile"],
         "ingredientForms": SEED_ROOT / manifest["ingredientFormsFile"],
+        "packageYields": SEED_ROOT / manifest["packageYieldsFile"],
         "substitutionRules": SEED_ROOT / manifest["substitutionRulesFile"],
         "contextualSubstitutionRules": SEED_ROOT / manifest["contextualSubstitutionRulesFile"],
         "units": SEED_ROOT / manifest["unitsFile"],
@@ -365,6 +406,7 @@ def load_seed_package() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]
         "recipes": [load_json(path) for path in recipe_paths],
         "ingredientReferences": load_json(part_paths["ingredientReferences"]),
         "ingredientForms": load_json(part_paths["ingredientForms"]),
+        "packageYields": load_json(part_paths["packageYields"]),
         "substitutionRules": load_json(part_paths["substitutionRules"]),
         "contextualSubstitutionRules": load_json(part_paths["contextualSubstitutionRules"]),
         "units": load_json(part_paths["units"]),
@@ -389,6 +431,147 @@ def validate_unique_ids(items: list[dict[str, Any]], id_key: str, label: str) ->
     for item in items:
         counts[item[id_key]] += 1
     return [f"duplicate {label} id: {item_id}" for item_id, count in counts.items() if count > 1]
+
+
+def normalize_search_key(value: str) -> str:
+    folded = unicodedata.normalize("NFKD", value.casefold())
+    folded = folded.replace("œ", "oe").replace("æ", "ae").replace("ß", "ss")
+    unaccented = "".join(character for character in folded if not unicodedata.combining(character))
+    return re.sub(r"[^a-z0-9]+", " ", unaccented.replace("&", " and ")).strip()
+
+
+def dedupe_search_aliases(values: list[str], canonical_keys: set[str]) -> list[str]:
+    seen: set[str] = set()
+    result: list[str] = []
+    for value in values:
+        alias = value.strip()
+        key = normalize_search_key(alias)
+        if not alias or not key or key in canonical_keys or key in seen:
+            continue
+        seen.add(key)
+        result.append(alias)
+    return result
+
+
+def validate_numeric_values(value: Any, path: str = "") -> list[str]:
+    errors: list[str] = []
+    if isinstance(value, dict):
+        for key, nested in value.items():
+            current_path = f"{path}/{key}"
+            if isinstance(nested, (int, float)) and not isinstance(nested, bool):
+                number = float(nested)
+                if not math.isfinite(number):
+                    errors.append(f"non-finite numeric value at {current_path}")
+                    continue
+                if key in {"defaultDensity", "densityGPerMl", "factor", "toBaseFactor", "ratio", "amount", "minQty", "maxQty", "count", "declaredNetQuantity", "netMassG", "netVolumeMl", "drainedMassG", "edibleMassG"} and number <= 0:
+                    errors.append(f"non-positive {key} at {current_path}: {number}")
+                elif key == "quantity" and number < 0:
+                    errors.append(f"negative quantity at {current_path}: {number}")
+                elif key == "userRating" and not 0 <= number <= 5:
+                    errors.append(f"userRating is outside 0..5 at {current_path}: {number}")
+                elif key in {"madeCount", "prepTimeMinutes", "cookTimeMinutes", "totalTimeMinutes"} and number < 0:
+                    errors.append(f"negative {key} at {current_path}: {number}")
+            else:
+                errors.extend(validate_numeric_values(nested, current_path))
+    elif isinstance(value, list):
+        for index, nested in enumerate(value):
+            errors.extend(validate_numeric_values(nested, f"{path}/{index}"))
+    elif isinstance(value, float) and not math.isfinite(value):
+        errors.append(f"non-finite numeric value at {path}")
+    return errors
+
+
+def validate_full_library_schema(payload: dict[str, Any]) -> list[str]:
+    library = {
+        "metadata": payload["metadata"],
+        "recipes": payload["recipes"],
+        "ingredientReferences": payload["ingredientReferences"],
+        "ingredientForms": payload["ingredientForms"],
+        "packageYields": payload["packageYields"],
+        "substitutionRules": payload["substitutionRules"],
+        "contextualSubstitutionRules": payload["contextualSubstitutionRules"],
+        "units": payload["units"],
+        "tags": payload["tags"],
+        "collections": payload["collections"],
+        "settings": payload["settings"],
+    }
+    full_payload = {"schemaVersion": "full-library/v1", "library": library}
+    schema = json.loads(FULL_LIBRARY_SCHEMA_PATH.read_text(encoding="utf-8"))
+    Draft202012Validator.check_schema(schema)
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    errors = []
+    for error in sorted(validator.iter_errors(full_payload), key=lambda item: (list(item.absolute_path), item.message)):
+        path = "/".join(str(item) for item in error.absolute_path) or "/"
+        errors.append(f"full-library schema validation at {path}: {error.message}")
+    errors.extend(validate_numeric_values(full_payload))
+    return errors
+
+
+def validate_research_ledger(ledger_payload: dict[str, Any] | None = None) -> tuple[dict[str, dict[str, Any]], list[str]]:
+    schema = json.loads(RESEARCH_LEDGER_SCHEMA_PATH.read_text(encoding="utf-8"))
+    Draft202012Validator.check_schema(schema)
+    ledger = ledger_payload if ledger_payload is not None else json.loads(RESEARCH_LEDGER_PATH.read_text(encoding="utf-8"))
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    errors = []
+    for error in sorted(validator.iter_errors(ledger), key=lambda item: (list(item.absolute_path), item.message)):
+        path = "/".join(str(item) for item in error.absolute_path) or "/"
+        errors.append(f"research ledger validation at {path}: {error.message}")
+    records = {record["recordId"]: record for record in ledger.get("records", [])}
+    if len(records) != len(ledger.get("records", [])):
+        errors.append("research ledger contains duplicate recordId values")
+
+    units = json.loads((SEED_ROOT / "units.v1.json").read_text(encoding="utf-8"))
+    unit_types = {unit["unitId"]: unit["type"] for unit in units}
+    for record in ledger.get("records", []):
+        source_ids = {source.get("sourceId") for source in record.get("sources", [])}
+        for observation in record.get("measurementObservations", []):
+            intervals = observation.get("valueIntervals")
+            if not intervals:
+                continue
+            origins = [interval.get("origin") for interval in intervals]
+            if origins and all(origin == "source_reported" for origin in origins) and observation.get("calculation"):
+                errors.append(
+                    f"research ledger interval observation {observation.get('observationId')} "
+                    "adds a calculation to source-reported values"
+                )
+            for index, interval in enumerate(intervals):
+                interval_path = f"{observation.get('observationId')} valueIntervals[{index}]"
+                lower = interval.get("lowerValue")
+                upper = interval.get("upperValue")
+                if (
+                    isinstance(lower, (int, float)) and not isinstance(lower, bool)
+                    and isinstance(upper, (int, float)) and not isinstance(upper, bool)
+                    and math.isfinite(float(lower)) and math.isfinite(float(upper))
+                    and lower >= upper
+                ):
+                    errors.append(f"research ledger interval {interval_path} has unordered or equal bounds")
+
+                unit = interval.get("unit")
+                if not isinstance(unit, str) or unit not in unit_types:
+                    errors.append(f"research ledger interval {interval_path} has unknown unit: {unit}")
+                elif observation.get("relationship") == "count_weight" and unit_types[unit] != "mass":
+                    errors.append(
+                        f"research ledger count_weight interval {interval_path} must use a mass unit"
+                    )
+
+                if unit == "oz":
+                    convention = interval.get("unitConvention", "").casefold()
+                    if "avoirdupois" not in convention or ("fluid" in convention and "not fluid" not in convention):
+                        errors.append(
+                            f"research ledger interval {interval_path} must qualify oz as avoirdupois mass"
+                        )
+                if interval.get("intervalKind") == "source_reported_range" and interval.get("origin") != "source_reported":
+                    errors.append(
+                        f"research ledger interval {interval_path} labels a non-source value as a source-reported range"
+                    )
+
+            for source_id in observation.get("sourceIds", []):
+                if not isinstance(source_id, str) or source_id not in source_ids:
+                    errors.append(
+                        f"research ledger interval observation {observation.get('observationId')} "
+                        f"references a source not present on record {record.get('recordId')}: {source_id}"
+                    )
+    return records, errors
 
 
 def validate_seed_package(payload: dict[str, Any], part_paths: dict[str, Any]) -> list[str]:
@@ -429,12 +612,38 @@ def validate_seed_package(payload: dict[str, Any], part_paths: dict[str, Any]) -
 
     errors.extend(validate_unique_ids(payload["ingredientReferences"], "id", "ingredient reference"))
     errors.extend(validate_unique_ids(payload["ingredientForms"], "id", "ingredient form"))
+    errors.extend(validate_unique_ids(payload["packageYields"], "id", "package yield observation"))
     errors.extend(validate_unique_ids(payload["substitutionRules"], "id", "substitution rule"))
     errors.extend(validate_unique_ids(payload["contextualSubstitutionRules"], "id", "contextual substitution rule"))
     errors.extend(validate_unique_ids(payload["tags"], "id", "tag"))
     errors.extend(validate_unique_ids(payload["collections"], "id", "collection"))
     errors.extend(validate_unique_ids(payload["recipes"], "id", "recipe"))
     errors.extend(validate_unique_ids(payload["units"], "unitId", "unit"))
+    errors.extend(validate_full_library_schema(payload))
+    ledger_records, ledger_errors = validate_research_ledger()
+    errors.extend(ledger_errors)
+    research_ledger = json.loads(RESEARCH_LEDGER_PATH.read_text(encoding="utf-8"))
+    unit_conversions: dict[tuple[str, str], dict[str, Any]] = {}
+    for conversion in research_ledger.get("unitConversions", []):
+        key = (conversion["fromUnit"], conversion["toUnit"])
+        if key in unit_conversions:
+            errors.append(f"research ledger contains duplicate unit conversion: {key[0]} -> {key[1]}")
+        unit_conversions[key] = conversion
+    known_source_ids = {
+        source["sourceId"]
+        for record in research_ledger.get("records", [])
+        for source in record.get("sources", [])
+    }
+    for conversion in unit_conversions.values():
+        if conversion["fromUnit"] not in unit_ids:
+            errors.append(f"research ledger unit conversion has unknown fromUnit: {conversion['fromUnit']}")
+        if conversion["toUnit"] not in unit_ids:
+            errors.append(f"research ledger unit conversion has unknown toUnit: {conversion['toUnit']}")
+        if any(source_id not in known_source_ids for source_id in conversion["sourceIds"]):
+            errors.append(
+                f"research ledger unit conversion {conversion['fromUnit']} -> {conversion['toUnit']} "
+                "references a missing source"
+            )
 
     tag_slugs = defaultdict(int)
     for tag in payload["tags"]:
@@ -443,30 +652,40 @@ def validate_seed_package(payload: dict[str, Any], part_paths: dict[str, Any]) -
 
     alias_owners: dict[str, set[str]] = defaultdict(set)
     for reference in ingredient_references:
-        canonical_fr = reference["nameFr"].strip().lower()
-        canonical_en = reference["nameEn"].strip().lower()
+        canonical_fr = normalize_search_key(reference["nameFr"])
+        canonical_en = normalize_search_key(reference["nameEn"])
+        if reference.get("category") not in INGREDIENT_CATEGORIES:
+            errors.append(f"ingredient reference has missing or unsupported category: {reference['id']}")
         aliases_fr = reference.get("aliasesFr", [])
         aliases_en = reference.get("aliasesEn", [])
 
-        if aliases_fr != dedupe_preserve_order(aliases_fr):
+        if aliases_fr != dedupe_search_aliases(aliases_fr, {canonical_fr, canonical_en}):
             errors.append(f"ingredient reference aliasesFr not normalized: {reference['id']}")
-        if aliases_en != dedupe_preserve_order(aliases_en):
+        if aliases_en != dedupe_search_aliases(aliases_en, {canonical_fr, canonical_en}):
             errors.append(f"ingredient reference aliasesEn not normalized: {reference['id']}")
-        if any(alias.strip().lower() == canonical_fr for alias in aliases_fr):
+        if any(normalize_search_key(alias) == canonical_fr for alias in aliases_fr):
             errors.append(f"ingredient reference aliasesFr repeats canonical FR name: {reference['id']}")
-        if any(alias.strip().lower() == canonical_en for alias in aliases_en):
+        if any(normalize_search_key(alias) == canonical_en for alias in aliases_en):
             errors.append(f"ingredient reference aliasesEn repeats canonical EN name: {reference['id']}")
-        if canonical_fr != canonical_en and any(alias.strip().lower() == canonical_en for alias in aliases_fr):
+        if canonical_fr != canonical_en and any(normalize_search_key(alias) == canonical_en for alias in aliases_fr):
             errors.append(f"ingredient reference aliasesFr repeats canonical EN name: {reference['id']}")
-        if canonical_fr != canonical_en and any(alias.strip().lower() == canonical_fr for alias in aliases_en):
+        if canonical_fr != canonical_en and any(normalize_search_key(alias) == canonical_fr for alias in aliases_en):
             errors.append(f"ingredient reference aliasesEn repeats canonical FR name: {reference['id']}")
 
         for key in [reference["nameFr"], reference["nameEn"], *aliases_fr, *aliases_en]:
-            alias_owners[key.strip().lower()].add(reference["id"])
+            normalized_key = normalize_search_key(key)
+            if normalized_key:
+                alias_owners[normalized_key].add(reference["id"])
 
         for mapping in reference.get("unitMappings", []):
+            if mapping["fromUnit"] not in unit_ids:
+                errors.append(f"ingredient reference {reference['id']} maps from unknown unit: {mapping['fromUnit']}")
             if mapping["toUnit"] not in unit_ids:
                 errors.append(f"ingredient reference {reference['id']} maps to unknown unit: {mapping['toUnit']}")
+        if reference.get("defaultDensity") is not None or reference.get("unitMappings"):
+            evidence = ledger_records.get(reference["id"], {})
+            if evidence.get("measurementState") != "researched_supported" or not evidence.get("measurementObservations"):
+                errors.append(f"ingredient reference {reference['id']} has active measurements without reviewed ledger evidence")
 
     for key, owners in alias_owners.items():
         if len(owners) > 1:
@@ -476,6 +695,21 @@ def validate_seed_package(payload: dict[str, Any], part_paths: dict[str, Any]) -
         base_unit_id = unit.get("baseUnitId")
         if base_unit_id is not None and base_unit_id not in unit_ids:
             errors.append(f"unit {unit['unitId']} references unknown baseUnitId: {base_unit_id}")
+        elif base_unit_id is not None:
+            base_unit = next((candidate for candidate in payload["units"] if candidate["unitId"] == base_unit_id), None)
+            if base_unit is not None and unit["type"] != base_unit["type"]:
+                errors.append(f"unit {unit['unitId']} has a baseUnitId with a different unit type: {base_unit_id}")
+        if base_unit_id == unit["unitId"] and unit["toBaseFactor"] != 1:
+            errors.append(f"base unit {unit['unitId']} must have toBaseFactor 1")
+        if base_unit_id is not None and base_unit_id != unit["unitId"]:
+            conversion = unit_conversions.get((unit["unitId"], base_unit_id))
+            if conversion is None:
+                errors.append(f"unit {unit['unitId']} has no sidecar evidence for {unit['unitId']} -> {base_unit_id}")
+            elif not math.isclose(conversion["factor"], unit["toBaseFactor"], rel_tol=1e-12, abs_tol=0.0):
+                errors.append(f"unit {unit['unitId']} factor differs from its sidecar evidence")
+            evidence = ledger_records.get(unit["unitId"], {})
+            if evidence.get("measurementState") != "researched_supported" or not evidence.get("sources"):
+                errors.append(f"unit {unit['unitId']} has active conversion data without reviewed source evidence")
 
     for ingredient_form in payload["ingredientForms"]:
         if ingredient_form["ingredientRefId"] not in ingredient_reference_ids:
@@ -483,6 +717,22 @@ def validate_seed_package(payload: dict[str, Any], part_paths: dict[str, Any]) -
                 f"ingredient form {ingredient_form['id']} references unknown ingredientRefId: "
                 f"{ingredient_form['ingredientRefId']}"
             )
+
+    for package_yield in payload["packageYields"]:
+        if package_yield["ingredientRefId"] not in ingredient_reference_ids:
+            errors.append(
+                f"package yield {package_yield['id']} references unknown ingredientRefId: "
+                f"{package_yield['ingredientRefId']}"
+            )
+        form = next((item for item in payload["ingredientForms"] if item["id"] == package_yield["ingredientFormId"]), None)
+        if form is None or form["ingredientRefId"] != package_yield["ingredientRefId"]:
+            errors.append(f"package yield {package_yield['id']} references an unknown or unrelated ingredient form")
+        record_id = package_yield.get("researchRecordId") or package_yield["id"]
+        evidence = ledger_records.get(record_id, {})
+        if evidence.get("recordType") != "package_yield" or evidence.get("measurementState") != "researched_supported":
+            errors.append(f"package yield {package_yield['id']} has no supported research-ledger record")
+        if not evidence.get("measurementObservations"):
+            errors.append(f"package yield {package_yield['id']} has no source-backed measurement observation")
 
     for substitution_rule in payload["substitutionRules"]:
         if substitution_rule["fromFormId"] not in ingredient_form_ids:
@@ -507,6 +757,40 @@ def validate_seed_package(payload: dict[str, Any], part_paths: dict[str, Any]) -
                 f"contextual substitution rule {contextual_rule['id']} references unknown toIngredientRefId: "
                 f"{contextual_rule['toIngredientRefId']}"
             )
+        if contextual_rule["fromIngredientRefId"] == contextual_rule["toIngredientRefId"]:
+            errors.append(f"contextual substitution rule {contextual_rule['id']} replaces an ingredient with itself")
+        if not any(contextual_rule.get(key) for key in ("allowedDishTypes", "allowedIngredientRoles", "allowedCookingMethods")):
+            errors.append(f"contextual substitution rule {contextual_rule['id']} has no positive context scope")
+        if contextual_rule.get("riskLevel") == "high_risk" and (
+            not contextual_rule.get("warningTextFr", "").strip() or
+            not contextual_rule.get("warningTextEn", "").strip()
+        ):
+            errors.append(f"high-risk contextual substitution rule {contextual_rule['id']} lacks bilingual warnings")
+        evidence = ledger_records.get(contextual_rule["id"], {})
+        findings = evidence.get("substitutionFindings", [])
+        if evidence.get("substitutionResearchState") != "researched_supported" or not any(
+            finding.get("researchState") == "researched_supported" and finding.get("sourceIds")
+            for finding in findings
+        ):
+            errors.append(f"contextual substitution rule {contextual_rule['id']} has no reviewed source-backed ledger finding")
+
+    for rule in payload["substitutionRules"]:
+        if rule.get("riskLevel") == "high_risk" and (
+            not rule.get("warningTextFr", "").strip() or
+            not rule.get("warningTextEn", "").strip()
+        ):
+            errors.append(f"high-risk form-conversion rule {rule['id']} lacks bilingual warnings")
+        min_qty = rule.get("minQty")
+        max_qty = rule.get("maxQty")
+        if min_qty is not None and max_qty is not None and max_qty < min_qty:
+            errors.append(f"form-conversion rule {rule['id']} has maxQty below minQty")
+        evidence = ledger_records.get(rule["id"], {})
+        findings = evidence.get("substitutionFindings", [])
+        if evidence.get("substitutionResearchState") != "researched_supported" or evidence.get("measurementState") != "researched_supported" or not any(
+            finding.get("researchState") == "researched_supported" and finding.get("sourceIds")
+            for finding in findings
+        ):
+            errors.append(f"form-conversion rule {rule['id']} has no reviewed source-backed ledger finding")
 
     for collection in payload["collections"]:
         for recipe_id in collection.get("recipeIds", []):

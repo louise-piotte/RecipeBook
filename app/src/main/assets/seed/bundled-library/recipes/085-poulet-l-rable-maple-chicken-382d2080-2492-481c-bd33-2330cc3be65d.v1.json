@@ -95,6 +95,7 @@
       "originalText": "chopped roasted peanuts",
       "ingredientName": "peanuts",
       "ingredientRefId": "ingredient-ref-peanuts",
+      "ingredientFormId": "ingredient-form-peanuts-roasted",
       "preparation": {
         "fr": "r\u00f4ti et hach\u00e9",
         "en": "chopped roasted"

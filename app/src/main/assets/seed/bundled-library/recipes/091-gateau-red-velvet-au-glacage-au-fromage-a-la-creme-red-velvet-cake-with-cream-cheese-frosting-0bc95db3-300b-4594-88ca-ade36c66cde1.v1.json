@@ -42,8 +42,8 @@
     {
       "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-3",
       "originalText": "10 g unsweetened natural cocoa powder",
-      "ingredientName": "unsweetened cocoa powder",
-      "ingredientRefId": "ingredient-ref-unsweetened-cocoa-powder",
+      "ingredientName": "natural cocoa powder",
+      "ingredientRefId": "ingredient-ref-natural-cocoa-powder",
       "quantity": 10,
       "unit": "g",
       "notes": {
@@ -135,7 +135,7 @@
       "id": "0bc95db3-300b-4594-88ca-ade36c66cde1-ingredient-11",
       "originalText": "Red food coloring, as needed",
       "ingredientName": "food coloring",
-      "ingredientRefId": "ingredient-ref-food-coloring",
+      "ingredientRefId": "ingredient-ref-red-food-coloring",
       "notes": {
         "fr": "colorant alimentaire rouge liquide ou en gel, selon la couleur d\u00e9sir\u00e9e",
         "en": "Liquid or gel red food coloring, to desired color"

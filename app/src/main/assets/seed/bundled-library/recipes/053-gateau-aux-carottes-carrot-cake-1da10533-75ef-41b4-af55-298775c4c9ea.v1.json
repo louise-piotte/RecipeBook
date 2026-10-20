@@ -157,7 +157,8 @@
         "fr": "\u00e9cras\u00e9 et \u00e9goutt\u00e9",
         "en": "crushed and drained"
       },
-      "group": "Cake"
+      "group": "Cake",
+      "ingredientFormId": "ingredient-form-pineapple-crushed"
     },
     {
       "id": "1da10533-75ef-41b4-af55-298775c4c9ea-ingredient-15",

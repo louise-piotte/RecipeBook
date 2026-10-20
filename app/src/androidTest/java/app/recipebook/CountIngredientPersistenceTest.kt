@@ -18,6 +18,106 @@ import java.util.UUID
 
 class CountIngredientPersistenceTest {
     @get:Rule val compose = createEmptyComposeRule()
+
+    @Test
+    fun formPickerHasItsOwnBilingualLabelAndKeepsFreeTextPreparationSeparate(): Unit = runBlocking {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val repository = RecipeRepositoryProvider.create(context)
+        val store = AppLanguageStore(context)
+        val previousLanguage = store.language.first()
+        val id = "qa-form-picker-${UUID.randomUUID()}"
+        val recipe = Recipe(
+            id = id,
+            createdAt = "2026-10-05T00:00:00Z",
+            updatedAt = "2026-10-05T00:00:00Z",
+            languages = BilingualText(
+                fr = LocalizedSystemText("Sélecteur de forme", "", "", ""),
+                en = LocalizedSystemText("Form selector", "", "", "")
+            ),
+            ingredients = listOf(
+                IngredientLine(
+                    id = "form-line",
+                    ingredientRefId = "ingredient-ref-chickpeas",
+                    ingredientFormId = "ingredient-form-chickpeas-dried",
+                    originalText = "1 cup chickpeas",
+                    quantity = 1.0,
+                    unit = "cup",
+                    ingredientName = "chickpeas"
+                )
+            )
+        )
+        var scenario: ActivityScenario<RecipeEditorActivity>? = null
+        try {
+            repository.seedBundledLibraryIfMissing()
+            repository.upsertRecipe(recipe)
+            store.setLanguage(AppLanguage.EN)
+            scenario = ActivityScenario.launch(
+                Intent(context, RecipeEditorActivity::class.java)
+                    .putExtra(RecipeEditorActivity.EXTRA_RECIPE_ID, id)
+            )
+            compose.waitUntil(10000) {
+                compose.onAllNodesWithContentDescription("Edit ingredients").fetchSemanticsNodes().isNotEmpty()
+            }
+            compose.onNodeWithContentDescription("Edit ingredients").performClick()
+            compose.onNodeWithText("dried chickpeas").performClick()
+            compose.onNodeWithText("No form selected").performClick()
+            compose.onNodeWithText("Ingredient form").assertExists()
+            compose.onNodeWithText("Preparation").assertExists()
+
+            store.setLanguage(AppLanguage.FR)
+            compose.waitForIdle()
+            compose.onNodeWithText("Forme de l’ingrédient").assertExists()
+            compose.onNodeWithText("Préparation").assertExists()
+            compose.onNodeWithText("Forme de l’ingrédient").performClick()
+            compose.onNodeWithText("Aucune forme").assertExists()
+        } finally {
+            scenario?.close()
+            repository.deleteRecipeById(id)
+            store.setLanguage(previousLanguage)
+        }
+        Unit
+    }
+
+    @Test fun selectedIngredientFormAndAliasHintSurviveRoomRoundTrip() = runBlocking {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val repository = RecipeRepositoryProvider.create(context)
+        val id = "qa-form-${UUID.randomUUID()}"
+        val ingredient = IngredientLine(
+            id = "form-line",
+            ingredientRefId = "ingredient-ref-chickpeas",
+            originalText = "1 cup chickpeas",
+            quantity = 1.0,
+            unit = "cup",
+            ingredientName = "chickpeas",
+            ingredientFormId = "ingredient-form-chickpeas-dried",
+            ingredientAliasHint = "garbanzo beans",
+            packageAmount = IngredientPackageAmount(
+                count = 0.5,
+                packageType = IngredientPackageType.CAN,
+                declaredNetQuantity = 15.0,
+                declaredNetUnit = "oz",
+                requestedBasis = PackageYieldBasis.DRAINED_MASS
+            )
+        )
+        val recipe = Recipe(
+            id = id,
+            createdAt = "2026-10-05T00:00:00Z",
+            updatedAt = "2026-10-05T00:00:00Z",
+            languages = BilingualText(
+                fr = LocalizedSystemText("QA forme", "", "", ""),
+                en = LocalizedSystemText("QA form", "", "", "")
+            ),
+            ingredients = listOf(ingredient)
+        )
+        try {
+            repository.seedBundledLibraryIfMissing()
+            repository.upsertRecipe(recipe)
+            assertEquals(ingredient, requireNotNull(repository.getRecipeById(id)).ingredients.single())
+        } finally {
+            repository.deleteRecipeById(id)
+        }
+    }
+
     @Test fun countEditSaveReopenPreservesSizeNotesAndSharedQuantitiesAcrossLanguages() = runBlocking {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val repository = RecipeRepositoryProvider.create(context)

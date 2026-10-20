@@ -99,7 +99,8 @@
       "preparation": {
         "fr": "en conserve, en d\u00e9s",
         "en": "canned, diced"
-      }
+      },
+      "ingredientFormId": "ingredient-form-tomatoes-canned-diced"
     },
     {
       "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-9",
@@ -111,6 +112,14 @@
       "preparation": {
         "fr": "rinc\u00e9 et \u00e9goutt\u00e9",
         "en": "rinsed and drained"
+      },
+      "ingredientFormId": "ingredient-form-kidney-beans-canned-drained-rinsed",
+      "packageAmount": {
+        "count": 1,
+        "packageType": "CAN",
+        "declaredNetQuantity": 540,
+        "declaredNetUnit": "ml",
+        "requestedBasis": "DRAINED_MASS"
       }
     },
     {
@@ -129,7 +138,7 @@
       "id": "4cbff09a-679f-420c-89e2-4175fb8e8662-ingredient-11",
       "originalText": "1/4 cup beef broth",
       "ingredientName": "beef broth",
-      "ingredientRefId": "ingredient-ref-beef-stock",
+      "ingredientRefId": "ingredient-ref-beef-broth",
       "quantity": 0.25,
       "unit": "cup",
       "notes": {

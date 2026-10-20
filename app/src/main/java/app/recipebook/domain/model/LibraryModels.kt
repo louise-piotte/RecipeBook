@@ -51,6 +51,43 @@ data class RecipeLink(
     val labelEn: String? = null
 )
 
+enum class IngredientPackageType {
+    CAN,
+    TIN,
+    JAR,
+    POUCH,
+    CARTON,
+    TUB,
+    PACKET,
+    BLOCK,
+    SACHET,
+    STICK,
+    BAG,
+    BOTTLE,
+    BOX,
+    TUBE,
+    OTHER
+}
+
+enum class PackageYieldBasis {
+    NET_CONTENTS,
+    DRAINED_MASS,
+    EDIBLE_MASS
+}
+
+/** Structured package details keep count, declared contents, and usable yield as separate facts. */
+data class IngredientPackageAmount(
+    val count: Double,
+    val packageType: IngredientPackageType,
+    val declaredNetQuantity: Double? = null,
+    val declaredNetUnit: String? = null,
+    val packingMedium: String? = null,
+    val brand: String? = null,
+    val productCode: String? = null,
+    val countryOfOrigin: String? = null,
+    val requestedBasis: PackageYieldBasis? = null
+)
+
 data class IngredientLine(
     val id: String,
     val ingredientRefId: String? = null,
@@ -62,7 +99,10 @@ data class IngredientLine(
     val optional: Boolean = false,
     val notes: LocalizedValue = LocalizedValue(),
     val group: String? = null,
-    val substitutions: List<IngredientLineSubstitution> = emptyList()
+    val substitutions: List<IngredientLineSubstitution> = emptyList(),
+    val ingredientFormId: String? = null,
+    val ingredientAliasHint: String? = null,
+    val packageAmount: IngredientPackageAmount? = null
 )
 
 data class Servings(
@@ -214,6 +254,31 @@ data class IngredientForm(
     val updatedAt: String
 )
 
+/** A product and package specific observation; it is never a universal package-size factor. */
+data class PackageYieldObservation(
+    val id: String,
+    val ingredientRefId: String,
+    val ingredientFormId: String,
+    val packageType: IngredientPackageType,
+    val declaredNetQuantity: Double,
+    val declaredNetUnit: String,
+    val netMassG: Double? = null,
+    val netVolumeMl: Double? = null,
+    val drainedMassG: Double? = null,
+    val edibleMassG: Double? = null,
+    val packingMedium: String? = null,
+    val brand: String? = null,
+    val productName: String? = null,
+    val productCode: String? = null,
+    val countryOfOrigin: String? = null,
+    val sourceUrl: String,
+    val sourceName: String,
+    val sourceVersionOrDate: String? = null,
+    val researchRecordId: String? = null,
+    val measurementMethod: String? = null,
+    val variabilityNotes: String? = null
+)
+
 data class SubstitutionRule(
     val id: String,
     val fromFormId: String,
@@ -361,7 +426,8 @@ data class RecipeLibrary(
     val units: List<UnitDefinition>,
     val tags: List<Tag>,
     val collections: List<Collection>,
-    val settings: LibrarySettings
+    val settings: LibrarySettings,
+    val packageYields: List<PackageYieldObservation> = emptyList()
 )
 
 

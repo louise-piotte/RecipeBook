@@ -1,0 +1,24 @@
+# WP02/WP03/WP04 R160 gap-review integration
+
+Integrated 2026-10-16 after root review of each proposal, current sources, exact catalog ownership, picker effects, and bundled-recipe demand.
+
+## Decisions
+
+- **WP02 Section 04 A6 — Joshinko rice flour:** Add identity-only `Joshinko rice flour / farine de riz Joshinko` as `ingredient-ref-joshinko-rice-flour` in `FLOUR_AND_STARCH`. Add only the source-attested English spelling alias `Joshin ko`. Keep the French display provisional pending independent Québec wording review. Keep Joshinko separate from generic rice flour, glutinous rice flour, Mochiko, Shiratamako, and rice grain. Add no forms, density, unit mappings, conversions, yield, recipe links, or substitutions.
+- **WP03 Section F — barley berries:** Hold the bare phrase outside active names, aliases, forms, and the ledger. Canadian products use the phrase for both hulless and semi-pearled grain, and no matching Québec French human-food name defines the processing state. Keep existing generic, hulled, pearl, and pot barley identities unchanged.
+- **WP04 Section P — calamari in marinara:** Hold the composite product outside the catalog and ledger. The current Québec-facing product title is `Calmar à la sauce marinara`, but broad calamari and marinara searches would gain overlapping composite results without recipe demand. Keep plain calamari and marinara as separate identities.
+
+## Root source review
+
+- For **Joshinko**, Gusta Supplies currently lists a 220 g Mitake product in Markham and distinguishes it from glutinous Mochiko and Shiratamako. The manufacturer Gishi uses both `Joshin ko` and `Joshinko` for its non-glutinous rice-flour line. Japan's MEXT food table classifies Joshinko under non-glutinous rice products and translates it as ordinary rice flour. MAFF's Kushi-dango recipe lists 120 g Joshinko alongside 30 g Shiratamako for four servings and hydrates the flours separately; this remains one recipe-specific amount, not a reusable measure or substitution. MAFF also says regional methods vary and the product family lacks a uniform flour-like standard. OQLF supports only the generic French term `farine de riz`. The French Hungry Ninja listing retains Joshinko in its title and says `Riz non gluant (Japon)` in its ingredient line, but its displayed best-before date is past; it is used for wording evidence only. The French display remains provisional.
+- For **barley berries**, Ontario and Alberta product listings support different processing states under the phrase: a hulless whole-grain product and a semi-pearled purple barley product. OQLF's `orge` and `orge mondé` entries do not define the bare phrase, and CFIA's `grain d'orge` source belongs to an animal-feed table. No French human-food product boundary or recipe demand supports an alias or new identity.
+- For **calamari in marinara**, Supermarché PA lists `Calmar à la sauce marinara`, 115 g, as a canned fish product; Apex Trades shows the O'Mer label in French and English. These listings support a composite market product, not a general calamari form. The 115 g package size is not a recipe measure, and no bundled recipe requests the prepared product.
+
+## Data changes and static checks
+
+- Added one ingredient reference and one `ingredient_reference` ledger record. The row has one English spelling alias, no French aliases, and null density with no unit mappings. The ledger adds seven source entries, including four new unique source IDs; three existing source IDs are reused. It records the MAFF 120 g / four-serving recipe amount only as a source-specific published portion observation.
+- No form, legacy identity, recipe row, conversion table, yield, or substitution rule changed. The manifest scan found no candidate demand across **114 recipes / 1,123 ingredient rows**.
+- The seed-package normalizer completed with zero changed package parts; package validation passed. The generated Kotlin picker catalog is current at **1,535 references**; the package contains **119 forms** and **61 legacy candidates**.
+- Exact-key ownership, source-ID collision and linkage, static picker projections, ledger schema, recipe-corpus scan, UTF-8/no-BOM, escaped Unicode, local Markdown links, and scoped whitespace checks passed. No app, unit, instrumentation, emulator, or deployment tests were run because the catalog change adds database JSON data under the current `AGENTS.md` rule.
+
+See the [Joshinko proposal](../../proposals/wp02-a6-next-regional-flour-gap-review-r160-20261016-joshinko-rice-flour.md), [barley berries hold](../../proposals/wp03-section-f-barley-berries-naming-boundary-hold-r160-20261016.md), [calamari product-boundary review](../../proposals/wp04-section-p-calamari-in-marinara-product-boundary-review-r160-20261016.md), [global catalog plan](../../../RecipeBook-global-ingredient-catalog-plan.txt), and [roadmap](../../../../roadmap.md).

@@ -1,0 +1,3 @@
+2559efaf5d9e299fb764fb03ac3f9bfa1680d05e5a7c408d04f0baf21a2f16d1  docs/catalog/batches/wp02-wp06-regional-flour-starch-africa-integration-20261010/screenshots/en-merguez-picker.png
+34d812285bb2a57d35b469a2ea7be01674f42ec65b367ebe99fdd0170ba14932  docs/catalog/batches/wp02-wp06-regional-flour-starch-africa-integration-20261010/screenshots/fr-fecule-de-patate-douce-picker.png
+fe95d4138c26436bb6ad8897fc92a646863c500406b30187d2203426d3aef9d7  docs/catalog/batches/wp02-wp06-regional-flour-starch-africa-integration-20261010/screenshots/home-fr-114.png

@@ -1,0 +1,2 @@
+7dc1dd6b46a9720e98f6d424e4b4d36d84ba0ebcb72c00e5af6cc2613373ac76  picker-en-egg-pasta.png
+fa1e5288e965183c7471f687543c31406e3ee9b3fe6f8b5747557e07f8426ec0  picker-fr-egg-pasta.png

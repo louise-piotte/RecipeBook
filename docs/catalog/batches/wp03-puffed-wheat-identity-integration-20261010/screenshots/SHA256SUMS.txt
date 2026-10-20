@@ -1,0 +1,5 @@
+6974ff67654f9b36af9fc8e649bbad737ca47026cee034a9648abb34f99271d4  docs/catalog/batches/wp03-puffed-wheat-identity-integration-20261010/screenshots/en-coated-puffed-wheat-no-result.png
+fbe539b959cdb6ddcc97607751145e855129590574c2117f2a64e07ab03ea806  docs/catalog/batches/wp03-puffed-wheat-identity-integration-20261010/screenshots/en-puffed-rice.png
+fd002b2280460ec7d145b2f54b9534663bdfae379968745f92cae597baaea1c4  docs/catalog/batches/wp03-puffed-wheat-identity-integration-20261010/screenshots/en-puffed-wheat.png
+5681232d04d87501f2e283bda90df8d851d172939b8827cb532b90786eeb4c22  docs/catalog/batches/wp03-puffed-wheat-identity-integration-20261010/screenshots/fr-ble-souffle.png
+c8435c33d99c38690bfc9d402eb02b9b700146d353d7b5286542829dfb2a32d0  docs/catalog/batches/wp03-puffed-wheat-identity-integration-20261010/screenshots/fr-home-114-recipes-restored.png

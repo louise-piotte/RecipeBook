@@ -19,3 +19,5 @@ This layer owns persistence formats, local storage access, seed loading, and sch
 ## Maintenance Notes
 - When a model changes, check all three surfaces: Room/entity mapping, schema DTO mapping, and seed content/tooling.
 - Prefer explicit mapping code over clever reflection or generic abstraction because the product model is still changing quickly.
+- The split bundled seed package is the canonical source for shipped ingredient references and unit definitions. Generate the Kotlin import index from that package and validate source-backed numeric evidence in the catalog sidecar before activating conversions or substitutions.
+- Source-specific package yields are a separate split package part and remain paired with their ingredient/form, exact declared net size/unit, product qualifiers, usable basis, and research-ledger record. Recipe lines store parsed package details as nullable structured data while retaining the original text.

@@ -1,0 +1,62 @@
+# WP04 Section P — canned herring fillets in tomato sauce boundary review (R178)
+
+- **Reviewed / source-access date:** 2026-10-16.
+- **Candidate:** Shelf-stable herring fillets sold with tomato sauce; Québec-facing product wording includes *filets de hareng à la sauce tomate* and *hareng de l’Atlantique à la sauce tomate*.
+- **Recommendation:** **Hold** this product identity outside active references, forms, legacy mappings, and the research ledger until a recipe selects a specific product or a stable, species-scoped market boundary is established.
+- **Scope:** One exact preserved-finfish product boundary from the open Section P checklist. This review does not reopen canned mackerel, canned sardines, smoked herring, kippers, Matjes, rollmops, herring roe, or the active Atlantic/Pacific herring species identities.
+- **Proposal source labels:** `WP04-SECTIONP-CANNED-HERRING-TOMATO-R178-20261016-S01` through `S05`, plus audit ID `WP04-SECTIONP-CANNED-HERRING-TOMATO-R178-20261016-R01`. New IDs are proposal-local and unallocated; reused sources retain their existing ledger IDs.
+
+## Why this boundary remains open
+
+The [Section P preservation checklist](../../RecipeBook-global-ingredient-catalog-plan.txt#L5937) leaves canned and packed fish product states open and cautions against universal preserved-fish forms without an exact recipe or product request. Prior rounds resolved canned mackerel and anchovy fillets in oil, while separate reviews held kippers, Matjes herring, and rollmops. None decides whether tomato-sauce herring fillets should become a generic finished-food identity.
+
+Current Canadian retail listings show more than one product under closely related wording. Walmart Canada lists Appel herring fillets in tomato sauce in a 200 g can and provides ingredients, but no fish species. Metro Québec lists Rügen Fisch *filet de hareng mariné à la sauce tomate*, also 200 g, with a different ingredient declaration and no species. Québec-facing distributor Ilios explicitly names *hareng de l’Atlantique à la sauce tomate* and sells the imported product by an 8 × 180 g case. These are useful evidence of a real product family and its French wording, but the species name on one distributor’s item cannot be transferred to the other retail products or to generic herring fillets in tomato sauce. [S01–S03]
+
+The OQLF GDT supports *hareng* / *herring* as the Québec French and English fish-name pair; it is not a canned-product or tomato-sauce term. CFIA guidance explains that Canadian fish common names are species-linked and that generic “fish fillets” wording is generally not used for a single-species product outside a prescribed standard. The cited Canadian retail listings do not expose enough package-label detail to determine whether their species and product naming align with that guidance. This review therefore does not treat retailer titles as species determinations or labeling rulings. [S04–S05]
+
+## Ownership and collision audit
+
+Read-only ownership checks covered active reference names and aliases, forms and their match terms, legacy identities, research-ledger record IDs/source IDs/URLs, focused proposals and batch notes, and candidate product phrases. No exact active, legacy, or ledger owner exists for `canned herring`, `canned herring fillets in tomato sauce`, `filets de hareng en conserve à la sauce tomate`, or `ingredient-ref-canned-herring-tomato-sauce`. No earlier focused tomato-sauce herring review was found. The exact Appel and Metro product URLs have no ledger owner. The Ilios product index URL is already cited for unrelated products by `WP03-H-FROZEN-PEAS-CARROTS-20261011-S04` and `WP04-SECTIONP-SMOKED-MUSSELS-R159-20261016-S04`; S03 reuses this URL with a distinct proposal-local source label and bounded product claim. S04 reuses the OQLF *hareng* URL from WP04 regional fish reviews, and S05 reuses the existing CFIA fish-labelling URL. [S03–S05; R01]
+
+| Nearby owner | Boundary to preserve |
+|---|---|
+| `ingredient-ref-atlantic-herring` — *hareng de l’Atlantique* / `Atlantic herring` | Existing species identity. Do not add canned or tomato-sauce forms or aliases based on generic retailer wording. Ilios’s explicitly Atlantic SKU remains product-specific evidence. |
+| `ingredient-ref-pacific-herring` — *hareng du Pacifique* / `Pacific herring` | Existing species identity. Do not attach generic canned herring wording or infer Pacific origin from a product’s country of manufacture. |
+| Existing smoked-herring, kipper, Matjes, and rollmops decisions | Distinct smoke, cure, or marination boundaries; tomato-sauce listings do not establish any of these states. |
+| `ingredient-ref-canned-sardines` and `ingredient-ref-canned-mackerel` | Other finished-food market groups, with their own source-backed scopes. Neither owns canned herring. |
+| `ingredient-ref-tomato-sauce` | The tomato sauce ingredient itself, not herring in a composite prepared product. |
+
+### Picker and corpus impact
+
+The picker prefers complete normalized phrases and falls back to substring matches ([`IngredientSearch.kt`](../../../app/src/main/java/app/recipebook/domain/localization/IngredientSearch.kt)). If a future row used `canned herring fillets in tomato sauce` / `filets de hareng en conserve à la sauce tomate`, exact product phrases would isolate it, while broad `herring` / `hareng` searches would gain another result beside Atlantic and Pacific herring. A French term containing *sauce tomate* could also collide with the existing tomato-sauce reference under broad or partial queries. With no recipe demand, there is no evidence that these additional broad-query results would improve ingredient selection.
+
+The manifest-listed bundle contains **114 recipe files and 1,123 ingredient rows**. A read-only search of full recipe JSON and ingredient-row fields for herring/hareng, canned/conserve, tomato-sauce product phrases, and the current product names found **zero matching recipe files and zero matching ingredient rows**. No recipe or line ownership is proposed. [R01]
+
+## Product, numeric, and substitution boundaries
+
+- **Product scope:** Evidence covers tomato-sauce herring fillets, not all canned herring. Appel’s and Rügen Fisch’s Canadian listings give different multi-ingredient formulations. Ilios names one Atlantic-herring SKU and separately lists Atlantic herring in oil. Do not fold oil-packed, smoked, marinated/pickled, Matjes, kippered, or rollmops products into a tomato-sauce identity.
+- **Species and process:** The Appel and Metro retailer listings use generic herring wording without a binomial; Ilios explicitly names Atlantic herring for its own item. No reviewed source assigns one species to every product in this market class or establishes one canning/heat-treatment process across the brands. Do not alias this product to Atlantic or Pacific herring or infer a preservation process beyond each listing’s own can/shelf-stable descriptions.
+- **French display:** *Filet(s) de hareng à la sauce tomate* is supported by Québec-facing product listings; Ilios uses *hareng de l’Atlantique à la sauce tomate*. These are source-attested phrases, not a settled universal display name for the generic product.
+- **Numbers and measures:** Appel and Rügen Fisch each list a 200 g package; Ilios lists an 8 × 180 g distributor case. These are SKU or case declarations, not recipe quantities, drained weights, fish-only weights, edible yields, or reusable can measures. Add no package mapping, count conversion, density, unit mapping, drained-yield observation, or portion value.
+- **Forms and substitutions:** No global form, cooking conversion, yield, or safe substitution is supported between sauced herring, plain canned herring, raw Atlantic/Pacific herring, smoked herring, canned sardines, or another fish. Add no active form, contextual/global substitution, warning rule, or recipe-line link.
+
+## Source register
+
+Pages were accessed on 2026-10-16. Proposal-local source labels are provenance identifiers only.
+
+| Source ID | Source | Evidence and limits |
+|---|---|---|
+| **WP04-SECTIONP-CANNED-HERRING-TOMATO-R178-20261016-S01** | Walmart Canada, [Appel Herring Fillets in Tomato Sauce, 200 g](https://www.walmart.ca/fr/ip/Appel-Herring-Fillets-in-Tomato-Sauce-200-g/10303773). | Current Canadian/French-facing listing identifies canned, shelf-stable herring fillets in tomato sauce, a 200 g package, ready-to-eat marketing, and an ingredient list. It does not disclose a species or drained amount; retailer product information is not a species determination or full package-label audit. |
+| **WP04-SECTIONP-CANNED-HERRING-TOMATO-R178-20261016-S02** | Metro Québec, [Filet de hareng mariné à la sauce tomate Rügen Fisch](https://www.metro.ca/epicerie-en-ligne/allees/garde-manger/aliments-en-conserve-et-en-pot/poissons-et-fruits-de-mer/filet-de-hareng-marine-a-la-sauce-tomate/p/069694013635). | Current Québec storefront uses the French product wording, lists a 200 g unit, provides a different ingredient list, and places the item in the canned/jarred fish-and-seafood aisle. The page does not identify fish species or drained weight. |
+| **WP04-SECTIONP-CANNED-HERRING-TOMATO-R178-20261016-S03** | Ilios Foods, [Produits](https://fr.iliosfoods.ca/products). | Québec-facing distributor lists *Hareng de l’Atlantique à la sauce tomate*, produced in Latvia, Item #3560BF, in an 8 × 180 g case, and separately lists Atlantic herring in oil. SKU and case data apply to this supplier’s items only. This URL is already present in the ledger for unrelated products; the URL is reused, not newly owned. |
+| **WP04-SECTIONP-CANNED-HERRING-TOMATO-R178-20261016-S04 (reused source)** | OQLF, [GDT: hareng](https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/1198850/hareng). | Québec terminology source pairs *hareng* with English *herring* and treats it as a food fish name. It does not define a canned product, sauce preparation, or species assignment for the cited SKUs. |
+| **WP04-SECTIONP-CANNED-HERRING-TOMATO-R178-20261016-S05 (reused source)** | CFIA, [Labelling requirements for fish and fish products](https://inspection.canada.ca/en/food-labels/labelling/industry/fish). | Current federal guidance explains fish common-name and CFIA Fish List context, species-name use for single-species fish products, and true-nature descriptors for product form and packing medium. Regulatory labelling context only; this review has not inspected the actual packages. |
+| **WP04-SECTIONP-CANNED-HERRING-TOMATO-R178-20261016-R01** | [Section P plan](../../RecipeBook-global-ingredient-catalog-plan.txt#L5937), active references/forms, legacy identities, research ledger, manifest-listed recipes, focused proposal/batch archive, and [`IngredientSearch.kt`](../../../app/src/main/java/app/recipebook/domain/localization/IngredientSearch.kt). | Read-only archive, ownership, picker, and corpus audit. The corpus count is 114 manifest-listed recipes / 1,123 ingredient rows; candidate IDs and source labels remain unallocated. |
+
+## Final disposition
+
+**Hold** `canned herring fillets in tomato sauce` / *filets de hareng en conserve à la sauce tomate* outside active references and the ledger. Canadian and Québec-facing evidence confirms a distinct retail product family, but current examples disagree on formulation and one supplier’s Atlantic species claim cannot resolve generic retailer listings. The bundle has no demand and broad herring searches already return species-qualified identities. Revisit when a recipe identifies a product or when label-level evidence supports a stable scope. Until then add no reference, alias, form, legacy mapping, measurement, unit mapping, conversion, yield, recipe link, or substitution.
+
+## Integration outcome (R178)
+
+Root accepted a narrower identity-only `PROTEIN` market group: `herring fillets in tomato sauce / filets de hareng à la sauce tomate`. The Walmart Appel and Metro Rügen Fisch listings share the named fish cut and sauce preparation, even though their recipes differ. The catalog row assigns no species, cure, heat process, drained amount, or universal can measure; it remains separate from Atlantic/Pacific herring and tomato sauce as a standalone ingredient. No aliases, forms, measures, recipe links, conversions, yields, or substitutions were added. The two current product listings support the identity; the Ilios SKU-specific Atlantic name was not transferred to the group.

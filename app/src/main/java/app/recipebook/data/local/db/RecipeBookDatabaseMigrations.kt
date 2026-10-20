@@ -4,7 +4,26 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
 internal val supportedRecipeBookMigrations: Array<Migration> =
-    arrayOf(PreserveLegacyRecipeLibrary(5), PreserveLegacyRecipeLibrary(6), PreserveLegacyRecipeLibrary(7))
+    arrayOf(
+        PreserveLegacyRecipeLibrary(5),
+        PreserveLegacyRecipeLibrary(6),
+        PreserveLegacyRecipeLibrary(7),
+        AddIngredientFormSelection(),
+        AddIngredientPackageAmount()
+    )
+
+private class AddIngredientFormSelection : Migration(8, 9) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL("ALTER TABLE `recipe_ingredient_lines` ADD COLUMN `ingredientFormId` TEXT")
+        db.execSQL("ALTER TABLE `recipe_ingredient_lines` ADD COLUMN `ingredientAliasHint` TEXT")
+    }
+}
+
+private class AddIngredientPackageAmount : Migration(9, 10) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL("ALTER TABLE `recipe_ingredient_lines` ADD COLUMN `packageAmountJson` TEXT")
+    }
+}
 
 /** Upgrades the supported legacy schemas without discarding recipes or managed media. */
 private class PreserveLegacyRecipeLibrary(version: Int) : Migration(version, 8) {

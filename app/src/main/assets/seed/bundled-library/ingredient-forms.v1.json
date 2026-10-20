@@ -1,5 +1,887 @@
 [
   {
+    "id": "ingredient-form-agar-flakes",
+    "ingredientRefId": "ingredient-ref-agar",
+    "formCode": "flaked",
+    "labelFr": "agar-agar en flocons",
+    "labelEn": "agar flakes",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "flocons d'agar-agar"
+    ],
+    "matchTermsEn": [
+      "agar-agar flakes"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation commerciale seulement; aucune densit\u00e9, mesure ou \u00e9quivalence de poudre \u00e0 flocons n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial presentation only; no density, measure, or powder-to-flake equivalence is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-agar-powder",
+    "ingredientRefId": "ingredient-ref-agar",
+    "formCode": "powdered",
+    "labelFr": "agar-agar en poudre",
+    "labelEn": "agar powder",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "poudre d'agar-agar"
+    ],
+    "matchTermsEn": [
+      "agar-agar powder"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation commerciale seulement; aucune densit\u00e9 ou mesure n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial presentation only; no density or measure is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-aji-amarillo-pepper-dried",
+    "ingredientRefId": "ingredient-ref-aji-amarillo-pepper",
+    "formCode": "dried",
+    "labelFr": "piment jaune (aj\u00ed amarillo), s\u00e9ch\u00e9",
+    "labelEn": "dried aj\u00ed amarillo pepper",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "aj\u00ed amarillo seco"
+    ],
+    "matchTermsEn": [
+      "aj\u00ed amarillo seco"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Aucune mesure, densit\u00e9 ou relation de rendement n\u2019est \u00e9tablie. Mirasol n\u2019est pas retenu comme terme global pour cette forme.",
+    "notesEn": "No measure, density, or yield relationship is established. Mirasol is not used as a global term for this form.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-aji-amarillo-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-aji-amarillo-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment jaune (aj\u00ed amarillo), frais",
+    "labelEn": "fresh aj\u00ed amarillo pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [
+      "aj\u00ed amarillo fresco"
+    ],
+    "matchTermsEn": [
+      "aj\u00ed amarillo fresco"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Aucune mesure, densit\u00e9 ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "No measure, density, or yield relationship is established.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-aji-charapita-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-aji-charapita-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment Charapita frais",
+    "labelEn": "fresh aj\u00ed charapita pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Les sources p\u00e9ruviennes documentent l\u2019usage frais; aucune mesure g\u00e9n\u00e9rique ni densit\u00e9 n\u2019est \u00e9tablie.",
+    "notesEn": "Peruvian sources document fresh use; no generic measure or density is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-aji-dulce-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-aji-dulce-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment aj\u00ed dulce frais",
+    "labelEn": "fresh aj\u00ed dulce pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "L\u2019usage frais est document\u00e9; aucune mesure g\u00e9n\u00e9rale ni densit\u00e9 n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh use is documented; no generic measure or density is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-aji-limo-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-aji-limo-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment aj\u00ed limo frais",
+    "labelEn": "fresh aj\u00ed limo pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Les sources nomment une pr\u00e9sentation fra\u00eeche; aucune mesure g\u00e9n\u00e9rale ou densit\u00e9 n'est \u00e9tablie.",
+    "notesEn": "Sources name a fresh presentation; no general measure or density is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-aji-panca-pepper-dried",
+    "ingredientRefId": "ingredient-ref-aji-panca-pepper",
+    "formCode": "dried",
+    "labelFr": "piment panca (aj\u00ed panca), s\u00e9ch\u00e9",
+    "labelEn": "dried aj\u00ed panca pepper",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "aj\u00ed panca seco"
+    ],
+    "matchTermsEn": [
+      "aj\u00ed panca seco"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Aucune mesure, densit\u00e9 ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "No measure, density, or yield relationship is established.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-aji-panca-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-aji-panca-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment panca (aj\u00ed panca), frais",
+    "labelEn": "fresh aj\u00ed panca pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [
+      "aj\u00ed panca fresco"
+    ],
+    "matchTermsEn": [
+      "aj\u00ed panca fresco"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Aucune mesure, densit\u00e9 ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "No measure, density, or yield relationship is established.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-alaska-pollock-frozen-fillets",
+    "ingredientRefId": "ingredient-ref-alaska-pollock",
+    "formCode": "fillet_cut",
+    "labelFr": "filets de goberge de l\u2019Alaska surgel\u00e9s",
+    "labelEn": "frozen Alaska pollock fillets",
+    "prepState": "frozen",
+    "matchTermsFr": [
+      "filet de goberge de l\u2019Alaska surgel\u00e9"
+    ],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de coupe qualifi\u00e9e par esp\u00e8ce, appuy\u00e9e par les routes anglaise et fran\u00e7aise de Metro pour le produit 226631. L\u2019\u00e9tat surgel\u00e9 et le poids moyen par barquette demeurent propres \u00e0 ce produit; aucun poids par filet, rendement ou mesure r\u00e9utilisable n\u2019est \u00e9tabli.",
+    "notesEn": "Species-qualified cut form supported by Metro\u2019s matched English and French routes for product 226631. The frozen state and average tray weight remain specific to that product; no mass per fillet, yield, or reusable measure is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-almonds-blanched",
+    "ingredientRefId": "ingredient-ref-almonds",
+    "formCode": "blanched",
+    "labelFr": "amandes mond\u00e9es",
+    "labelEn": "blanched almonds",
+    "prepState": "blanched",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "La peau a \u00e9t\u00e9 retir\u00e9e. La forme ne pr\u00e9cise pas si les amandes sont enti\u00e8res ou tranch\u00e9es. Aucune mesure, densit\u00e9 ou conversion n\u2019est \u00e9tablie.",
+    "notesEn": "The skins have been removed. This form does not specify whether the almonds are whole or sliced. No measure, density, or conversion is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-almonds-finely-chopped",
+    "ingredientRefId": "ingredient-ref-almonds",
+    "formCode": "finely_chopped",
+    "labelFr": "amandes hach\u00e9es finement",
+    "labelEn": "finely chopped almonds",
+    "prepState": "finely_chopped",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "almonds, finely chopped"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La source nomme des amandes hach\u00e9es finement; la taille exacte des morceaux demeure propre \u00e0 la recette. Aucune mesure, densit\u00e9 ou conversion n'est \u00e9tablie.",
+    "notesEn": "The source names finely chopped almonds; exact particle size remains recipe-specific. No measure, density, or conversion is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-almonds-sliced",
+    "ingredientRefId": "ingredient-ref-almonds",
+    "formCode": "sliced",
+    "labelFr": "amandes effil\u00e9es",
+    "labelEn": "sliced almonds",
+    "prepState": "sliced",
+    "matchTermsFr": [
+      "amandes \u00e9minc\u00e9es",
+      "amandes en lamelles"
+    ],
+    "matchTermsEn": [
+      "almond slices",
+      "flaked almonds"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Amandes coup\u00e9es en tranches fines dans le sens de la longueur, selon l\u2019OQLF. Elles peuvent \u00eatre mond\u00e9es ou non; la forme ne pr\u00e9cise pas cet \u00e9tat. Aucune mesure ou conversion n\u2019est \u00e9tablie.",
+    "notesEn": "Thin almond slices cut lengthwise, per OQLF. They may be blanched or unblanched; this form does not specify that state. No measure or conversion is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-anaheim-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-anaheim-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment Anaheim frais",
+    "labelEn": "fresh Anaheim pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "L\u2019ACIA et un producteur qu\u00e9b\u00e9cois documentent le piment Anaheim vendu ou consomm\u00e9 frais. Aucune mesure g\u00e9n\u00e9rique n\u2019est ajout\u00e9e.",
+    "notesEn": "The CFIA study and a Qu\u00e9bec grower document whole fresh Anaheim peppers. No generic measure is added.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-arctic-char-whole-fish",
+    "ingredientRefId": "ingredient-ref-arctic-char",
+    "formCode": "whole_fish",
+    "labelFr": "omble chevalier entier",
+    "labelEn": "whole Arctic char",
+    "prepState": "whole",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Opercule indique que ses ombles chevaliers sont offerts en filets ou entiers chez son partenaire montr\u00e9alais; ceux vendus aux particuliers sont emball\u00e9s sous vide et congel\u00e9s. Seacore offre aussi l\u2019omble chevalier entier frais ou congel\u00e9. La forme d\u00e9crit uniquement la pr\u00e9sentation enti\u00e8re et ne pr\u00e9cise pas l\u2019\u00e9tat de fra\u00eecheur ou de cong\u00e9lation, la t\u00eate, l\u2019\u00e9visc\u00e9ration, l\u2019\u00e9caillage, la peau ou les ar\u00eates. Les poids et formats des fournisseurs ainsi que la quantit\u00e9 d\u2019une recette MAPAQ demeurent propres \u00e0 leurs sources. Aucune mesure, densit\u00e9, conversion, relation de rendement, recette li\u00e9e ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Opercule lists its Arctic char as fillets or whole fish through its Montr\u00e9al partner; fish sold to individual customers are vacuum-packed and frozen. Seacore also offers Arctic char whole in fresh and frozen supply. This form describes only the whole presentation and specifies no fresh or frozen state, head, gutting, scaling, skin, or bones. Supplier weights and sizes, and the quantity in a MAPAQ recipe, remain source-specific. No measure, density, conversion, yield relationship, linked recipe, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-atlantic-capelin-dried",
+    "ingredientRefId": "ingredient-ref-atlantic-capelin",
+    "formCode": "dried",
+    "labelFr": "capelan de l\u2019Atlantique s\u00e9ch\u00e9",
+    "labelEn": "dried Atlantic capelin",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "capelan s\u00e9ch\u00e9"
+    ],
+    "matchTermsEn": [
+      "dried capelin"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Raymer classe le capelan parmi les formats s\u00e9ch\u00e9s. La source ne pr\u00e9cise ni si le poisson est entier, ni s\u2019il est sal\u00e9, par\u00e9 ou r\u00e9hydrat\u00e9; aucune mesure ni \u00e9quivalence n\u2019est \u00e9tablie.",
+    "notesEn": "Raymer lists capelin among dried products. The source does not state whether the fish is whole, salted, trimmed, or rehydrated; no measure or equivalence is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-atlantic-cod-fillet",
+    "ingredientRefId": "ingredient-ref-atlantic-cod",
+    "formCode": "fillet_cut",
+    "labelFr": "filets de morue de l\u2019Atlantique",
+    "labelEn": "Atlantic cod fillets",
+    "prepState": "fillet_cut",
+    "matchTermsFr": [
+      "filet de morue de l\u2019Atlantique"
+    ],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de coupe de morue de l\u2019Atlantique appuy\u00e9e par des produits alimentaires bilingues. Les \u00e9tats congel\u00e9, d\u00e9congel\u00e9 et d\u00e9sar\u00eat\u00e9, les tailles et les formats d\u2019emballage demeurent propres \u00e0 chaque produit. Aucune mesure r\u00e9utilisable, quantit\u00e9 par filet ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "Atlantic cod cut form supported by bilingual food-product listings. Frozen, thawed, and boneless states, size ranges, and pack formats remain specific to each product. No reusable measure, mass per fillet, or yield relationship is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-atlantic-cod-fresh-whole",
+    "ingredientRefId": "ingredient-ref-atlantic-cod",
+    "formCode": "fresh_whole",
+    "labelFr": "morue de l\u2019Atlantique fra\u00eeche enti\u00e8re",
+    "labelEn": "fresh whole Atlantic cod",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation de morue de l\u2019Atlantique fra\u00eeche vendue enti\u00e8re. Une fiche de fournisseur d\u00e9crit un produit sans t\u00eate et \u00e9visc\u00e9r\u00e9; cet \u00e9tat propre au produit n\u2019est pas une r\u00e8gle g\u00e9n\u00e9rale pour toutes les morues enti\u00e8res. Aucune mesure, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh Atlantic cod sold as a whole-fish presentation. One supplier listing describes its product as head-off and gutted; that product-specific state is not a general rule for all whole cod. No measure, conversion, yield relationship, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-atlantic-cod-loin",
+    "ingredientRefId": "ingredient-ref-atlantic-cod",
+    "formCode": "loin_cut",
+    "labelFr": "longe de morue de l\u2019Atlantique",
+    "labelEn": "Atlantic cod loin",
+    "prepState": "loin_cut",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de coupe qualifi\u00e9e par esp\u00e8ce, appuy\u00e9e par des produits bilingues du fabricant. Les quantit\u00e9s du SKU High Liner ne constituent pas une masse r\u00e9utilisable par longe, une portion de recette ou un rendement; aucune conversion ni substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Species-qualified cut form supported by bilingual manufacturer product evidence. High Liner SKU quantities do not establish a reusable mass per loin, recipe portion, or yield; no conversion or substitution is established.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-atlantic-halibut-fresh-whole",
+    "ingredientRefId": "ingredient-ref-atlantic-halibut",
+    "formCode": "fresh_whole",
+    "labelFr": "fl\u00e9tan de l\u2019Atlantique frais entier",
+    "labelEn": "fresh whole Atlantic halibut",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation de fl\u00e9tan de l\u2019Atlantique entier frais offerte par P\u00eacherie Manicouagan. La page du fournisseur pr\u00e9cise que son format entier est sans la t\u00eate; ne pas g\u00e9n\u00e9raliser cet \u00e9tat \u00e0 tous les produits. Elle ne pr\u00e9cise pas si le poisson est vid\u00e9, \u00e9caill\u00e9, avec peau ou avec ar\u00eates. Aucune mesure, densit\u00e9, conversion, relation de rendement, recette li\u00e9e ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh whole Atlantic-halibut presentation offered by P\u00eacherie Manicouagan. The supplier page says its whole format is without the head; do not generalize that state to all products. It does not state whether the fish is gutted, scaled, skin-on, or bone-in. No measure, density, conversion, yield relationship, linked recipe, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-atlantic-halibut-steak",
+    "ingredientRefId": "ingredient-ref-atlantic-halibut",
+    "formCode": "steak_cut",
+    "labelFr": "darne de fl\u00e9tan de l\u2019Atlantique",
+    "labelEn": "Atlantic halibut steak",
+    "prepState": "steak_cut",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de coupe de poisson qualifi\u00e9e par esp\u00e8ce, appuy\u00e9e par le produit Metro 235791 et la terminologie qu\u00e9b\u00e9coise de la darne. La fiche du d\u00e9taillant n\u2019\u00e9tablit aucune quantit\u00e9 r\u00e9utilisable, \u00e9paisseur standard, masse d\u2019emballage, rendement comestible ou pr\u00e9sence de peau ou d\u2019ar\u00eates. Aucune conversion ni substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Species-qualified fish-cut form supported by Metro SKU 235791 and Qu\u00e9bec terminology for darne. The retailer listing does not establish a reusable quantity, standard thickness, package mass, edible yield, or skin/bone condition. No conversion or substitution is established.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-atlantic-herring-whole-fish",
+    "ingredientRefId": "ingredient-ref-atlantic-herring",
+    "formCode": "whole_fish",
+    "labelFr": "hareng de l\u2019Atlantique entier",
+    "labelEn": "whole Atlantic herring",
+    "prepState": "whole",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Les pages Seafood from Canada indiquent que le hareng de l\u2019Atlantique est offert entier, frais ou congel\u00e9. Caudle\u2019s Catch d\u00e9crit un produit propre \u00e0 son d\u00e9taillant comme hareng de l\u2019Atlantique entier congel\u00e9; cette temp\u00e9rature et la disponibilit\u00e9 diff\u00e9r\u00e9e demeurent propres \u00e0 sa fiche. La forme d\u00e9crit uniquement la pr\u00e9sentation enti\u00e8re et ne pr\u00e9cise pas la t\u00eate, l\u2019\u00e9visc\u00e9ration, l\u2019\u00e9caillage, la peau ou les ar\u00eates. La vente \u00e0 la livre et la fourchette approximative de 400 \u00e0 600 g sont des d\u00e9tails marchands, pas une mesure de cuisine ou une portion standard. Aucune densit\u00e9, mesure, conversion, relation de rendement, recette li\u00e9e ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Seafood from Canada lists Atlantic herring whole, fresh or frozen. Caudle\u2019s Catch describes its own product as frozen whole Atlantic herring; that state and its backorder status remain specific to that listing. This form describes only the whole presentation and specifies no head, gutting, scaling, skin, or bones. The by-the-pound sale and approximate 400\u2013600 g range are retailer details, not a kitchen measure or standard portion. No density, measure, conversion, yield relationship, linked recipe, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-atlantic-pollock-fresh-fillets",
+    "ingredientRefId": "ingredient-ref-atlantic-pollock",
+    "formCode": "fillet_cut",
+    "labelFr": "filets de goberge Atlantique frais",
+    "labelEn": "fresh Atlantic pollock fillets",
+    "prepState": "fresh",
+    "matchTermsFr": [
+      "filet de goberge Atlantique frais"
+    ],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de coupe qualifi\u00e9e par esp\u00e8ce, appuy\u00e9e par les titres anglais et fran\u00e7ais du d\u00e9taillant PA et par le profil de goberge de l\u2019Atlantique de Nova Scotia Seafood. L\u2019\u00e9tat frais et tout poids de paquet restent propres aux produits cit\u00e9s; aucune mesure, quantit\u00e9 par filet, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Species-qualified cut form supported by PA\u2019s English and French listing titles and Nova Scotia Seafood\u2019s Atlantic pollock profile. The fresh state and any package amount remain specific to the cited listings; no reusable measure, mass per fillet, yield relationship, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-atlantic-salmon-fresh-whole",
+    "ingredientRefId": "ingredient-ref-atlantic-salmon",
+    "formCode": "fresh_whole",
+    "labelFr": "saumon de l\u2019Atlantique frais entier",
+    "labelEn": "fresh whole Atlantic salmon",
+    "prepState": "fresh",
+    "matchTermsFr": [
+      "saumon atlantique entier"
+    ],
+    "matchTermsEn": [
+      "whole Atlantic salmon"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La Mer pr\u00e9sente un saumon de l\u2019Atlantique frais et un choix de coupe enti\u00e8re. La page ne pr\u00e9cise pas s\u2019il est \u00e9caill\u00e9, vid\u00e9, \u00e9visc\u00e9r\u00e9 ou autrement pr\u00e9par\u00e9. Aucune mesure, densit\u00e9, conversion, portion, origine ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "La Mer presents fresh Atlantic salmon with a whole-cut option. The page does not specify whether it is scaled, gutted, gilled, or otherwise prepared. No measure, density, conversion, portion, origin, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-atlantic-wolffish-whole",
+    "ingredientRefId": "ingredient-ref-atlantic-wolffish",
+    "formCode": "whole_fish",
+    "labelFr": "loup de l\u2019Atlantique entier",
+    "labelEn": "whole Atlantic wolffish",
+    "prepState": "whole",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation enti\u00e8re seulement. La source ne pr\u00e9cise pas l\u2019\u00e9tat frais ou surgel\u00e9, le nettoyage, l\u2019\u00e9t\u00eatage ni l\u2019\u00e9visc\u00e9ration; aucune mesure ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "Whole-fish presentation only. The source does not specify fresh/frozen, cleaning, heading, or evisceration; no measure or yield relationship is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-azuki-beans-dried",
+    "ingredientRefId": "ingredient-ref-azuki-beans",
+    "formCode": "dried",
+    "labelFr": "haricots adzuki s\u00e9ch\u00e9s",
+    "labelEn": "dried adzuki beans",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "haricots adzuki s\u00e9ch\u00e9s"
+    ],
+    "matchTermsEn": [
+      "dried azuki beans",
+      "dried adzuki beans"
+    ],
+    "densityGPerMl": null,
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-banana-mashed-ripe",
+    "ingredientRefId": "ingredient-ref-banana",
+    "formCode": "mashed_ripe",
+    "labelFr": "pur\u00e9e de bananes m\u00fbres",
+    "labelEn": "mashed ripe bananas",
+    "prepState": "mashed",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de bananes m\u00fbres \u00e9cras\u00e9es pour une recette, comme \u00e0 la ligne 073#10. Ne d\u00e9finit pas un seuil de maturit\u00e9 et ne d\u00e9signe pas une pur\u00e9e commerciale formul\u00e9e. Aucune mesure, densit\u00e9, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Ripe bananas mashed for a recipe, as in line 073#10. This does not define a ripeness threshold or identify a formulated commercial puree. No measure, density, conversion, yield relationship, or substitution is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-banana-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-banana-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment banane frais",
+    "labelEn": "fresh banana pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Le rapport de l'ACIA et une fiche canadienne de vente au d\u00e9tail classent le piment banane parmi les produits frais. Aucune masse par piment n'est \u00e9tablie.",
+    "notesEn": "The CFIA report and a Canadian retail listing classify banana pepper as fresh produce. No per-pepper mass is established.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-barramundi-fresh-whole",
+    "ingredientRefId": "ingredient-ref-barramundi",
+    "formCode": "fresh_whole",
+    "labelFr": "barramundi frais entier",
+    "labelEn": "fresh whole barramundi",
+    "prepState": "fresh",
+    "matchTermsFr": [
+      "barramundi entier"
+    ],
+    "matchTermsEn": [
+      "whole barramundi"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Metro indique offrir du barramundi frais entier et recommande de le cuisiner entier plut\u00f4t qu\u2019en filets. Les sources ne pr\u00e9cisent pas s\u2019il est \u00e9caill\u00e9, vid\u00e9, \u00e9visc\u00e9r\u00e9 ou autrement pr\u00e9par\u00e9. Aucune mesure, densit\u00e9, conversion, rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Metro describes fresh whole Barramundi and recommends cooking it whole rather than as fillets. The sources do not specify whether it is scaled, gutted, gilled, or otherwise prepared. No measure, density, conversion, yield, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-black-bean-flour-sprouted",
+    "ingredientRefId": "ingredient-ref-black-bean-flour",
+    "formCode": "sprouted",
+    "labelFr": "farine de haricots noirs germ\u00e9s",
+    "labelEn": "sprouted black bean flour",
+    "prepState": "sprouted",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "La formulation et le protocole de germination propres au produit ne sont pas publi\u00e9s. Aucune densit\u00e9, mesure ou conversion n\u2019est \u00e9tablie pour cette forme.",
+    "notesEn": "The product-specific formulation and sprouting protocol are not published. No density, measure, or conversion is established for this form.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-black-beans-canned-drained",
+    "ingredientRefId": "ingredient-ref-black-beans",
+    "formCode": "canned_drained",
+    "labelFr": "haricots noirs en conserve, \u00e9goutt\u00e9s",
+    "labelEn": "canned black beans, drained",
+    "prepState": "drained",
+    "matchTermsFr": [
+      "haricots noirs en conserve",
+      "haricots noirs \u00e9goutt\u00e9s"
+    ],
+    "matchTermsEn": [
+      "canned black beans",
+      "drained black beans"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La fiche de produit indique un poids \u00e9goutt\u00e9; elle ne pr\u00e9cise pas si les haricots sont rinc\u00e9s ni le milieu de conditionnement.",
+    "notesEn": "The product catalogue reports drained weight; it does not state whether the beans are rinsed or identify the packing medium.",
+    "updatedAt": "2026-10-06T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-black-eyed-peas-canned-with-liquid",
+    "ingredientRefId": "ingredient-ref-black-eyed-peas",
+    "formCode": "canned_with_liquid",
+    "labelFr": "doliques \u00e0 \u0153il noir en conserve, avec le liquide",
+    "labelEn": "canned black-eyed peas with liquid",
+    "prepState": "with_liquid",
+    "matchTermsFr": [
+      "pois \u00e0 \u0153il noir en conserve"
+    ],
+    "matchTermsEn": [
+      "canned black-eyed peas"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Le CNF d\u00e9crit des doliques en conserve, solides et liquide. \u00c9goutter et rincer produit un \u00e9tat distinct.",
+    "notesEn": "The CNF describes canned black-eyed peas, solids and liquid. Draining and rinsing produces a separate state.",
+    "updatedAt": "2026-10-13T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-bluefish-whole-fish",
+    "ingredientRefId": "ingredient-ref-bluefish",
+    "formCode": "whole_fish",
+    "labelFr": "tassergal entier",
+    "labelEn": "whole bluefish",
+    "prepState": "whole",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Supermarch\u00e9 PA affiche un produit Whole Bluefish; son emballage indiqu\u00e9 \u00e0 environ 550 g demeure propre \u00e0 cette fiche. La liste d\u2019arrivages bilingue de Poissonnerie La Mer classe TASSERGAL / BLUEFISH sous POISSONS ENTIERS / WHOLE FISH. La forme d\u00e9crit uniquement la pr\u00e9sentation enti\u00e8re. Elle ne pr\u00e9cise pas la temp\u00e9rature, la t\u00eate, l\u2019\u00e9visc\u00e9ration, l\u2019\u00e9caillage, la peau ou les ar\u00eates. Aucune mesure, densit\u00e9, conversion, relation de rendement, recette li\u00e9e ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Supermarch\u00e9 PA lists a Whole Bluefish product; its approximate 550 g package remains specific to that listing. Poissonnerie La Mer\u2019s bilingual arrival list places TASSERGAL / BLUEFISH under WHOLE FISH. This form describes only the whole presentation. It specifies no temperature, head, gutting, scaling, skin, or bones. No measure, density, conversion, yield relationship, linked recipe, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-breadcrumbs-dried",
+    "ingredientRefId": "ingredient-ref-breadcrumbs",
+    "formCode": "dried",
+    "labelFr": "chapelure",
+    "labelEn": "dried bread crumbs",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che correspondant \u00e0 la chapelure. Aucune mesure, densit\u00e9, conversion ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "Dry form corresponding to chapelure. No measure, density, conversion, or yield relationship is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-breadcrumbs-fresh",
+    "ingredientRefId": "ingredient-ref-breadcrumbs",
+    "formCode": "fresh",
+    "labelFr": "mie de pain fra\u00eeche",
+    "labelEn": "fresh bread crumbs",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme fra\u00eeche distincte de la chapelure s\u00e8che. Aucune mesure, densit\u00e9, conversion ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh form distinct from dried bread crumbs. No measure, density, conversion, or yield relationship is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-brook-trout-whole-fish",
+    "ingredientRefId": "ingredient-ref-brook-trout",
+    "formCode": "whole_fish",
+    "labelFr": "omble de fontaine entier",
+    "labelEn": "whole brook trout",
+    "prepState": "whole",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Raymer indique que l\u2019omble de fontaine est disponible entier (portion) pour le march\u00e9 de la table, et s\u00e9par\u00e9ment vivant pour l\u2019ensemencement. \u00ab Portion \u00bb ne donne aucun compte ni poids. La fiche technique indique une taille moyenne de march\u00e9 de 350 \u00e0 900 g, sans \u00e9tablir un poids de portion ou une mesure de recette. La forme ne pr\u00e9cise ni l\u2019\u00e9tat de fra\u00eecheur ou de cong\u00e9lation, ni la t\u00eate, l\u2019\u00e9visc\u00e9ration, l\u2019\u00e9caillage, la peau ou les ar\u00eates. Aucune densit\u00e9, mesure de cuisine, conversion, relation de rendement, recette li\u00e9e ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Raymer lists brook trout as whole (portions) for the table market, separately from live fish for stocking. \u201cPortions\u201d provides no count or weight. Its technical sheet states an average consumption-market size of 350\u2013900 g, which does not establish portion weight or a recipe measure. The form specifies no fresh or frozen state, head, gutting, scaling, skin, or bones. No kitchen measure, density, conversion, yield relationship, linked recipe, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-brown-rice-flour-sprouted",
+    "ingredientRefId": "ingredient-ref-brown-rice-flour",
+    "formCode": "sprouted",
+    "labelFr": "farine de riz brun germ\u00e9",
+    "labelEn": "sprouted brown rice flour",
+    "prepState": "sprouted",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "germinated brown rice flour"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La farine germ\u00e9e reste distincte du grain de riz brun germ\u00e9. Les quantit\u00e9s observ\u00e9es sont propres aux produits ou aux recettes cit\u00e9es; aucune mesure r\u00e9utilisable, densit\u00e9 ou conversion n\u2019est \u00e9tablie.",
+    "notesEn": "Sprouted flour remains distinct from whole sprouted brown rice. The recorded amounts are specific to the cited product or recipe; no reusable measure, density, or conversion is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-brown-sugar-dark",
+    "ingredientRefId": "ingredient-ref-brown-sugar",
+    "formCode": "dark_brown",
+    "labelFr": "cassonade fonc\u00e9e",
+    "labelEn": "dark brown sugar",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "dark brown sugar"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Qualificatif de couleur et de teneur relative en m\u00e9lasse pour une cassonade fonc\u00e9e. Le terme d\u00e9crit la vari\u00e9t\u00e9 indiqu\u00e9e, sans \u00e9tablir de mesure, densit\u00e9, conversion ou substitution.",
+    "notesEn": "A color and relative molasses-level qualifier for dark brown sugar. The terms identify the stated variety and establish no measure, density, conversion, or substitution.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-brown-sugar-light",
+    "ingredientRefId": "ingredient-ref-brown-sugar",
+    "formCode": "light_brown",
+    "labelFr": "cassonade claire",
+    "labelEn": "light brown sugar",
+    "matchTermsFr": [
+      "cassonade claire bien tass\u00e9e",
+      "sucre brun clair"
+    ],
+    "matchTermsEn": [
+      "light brown sugar",
+      "packed light brown sugar",
+      "light brown sugar, packed"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Qualificatif de couleur et de teneur relative en m\u00e9lasse pour une cassonade claire. Les termes d\u00e9crivent la vari\u00e9t\u00e9 indiqu\u00e9e, sans \u00e9tablir de mesure, densit\u00e9, conversion ou substitution.",
+    "notesEn": "A color and relative molasses-level qualifier for light brown sugar. These terms identify the stated variety and establish no measure, density, conversion, or substitution.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-bulgur-coarse-grind",
+    "ingredientRefId": "ingredient-ref-bulgur",
+    "formCode": "coarse_grind",
+    "labelFr": "boulgour gros",
+    "labelEn": "coarse bulgur",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Classe de mouture grossi\u00e8re, correspondant \u00e0 la classe f\u00e9d\u00e9rale no 3. Ne pas la confondre avec la mouture tr\u00e8s grossi\u00e8re ou une classe de fabricant. Aucune densit\u00e9, conversion ou substitution g\u00e9n\u00e9rale n\u2019est \u00e9tablie.",
+    "notesEn": "Coarse-grind class corresponding to federal class No. 3. Do not conflate with very coarse grind or a manufacturer grade. No general density, conversion, or substitution is established.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-bulgur-extra-coarse-grind",
+    "ingredientRefId": "ingredient-ref-bulgur",
+    "formCode": "extra_coarse_grind",
+    "labelFr": "boulgour extra gros",
+    "labelEn": "extra coarse bulgur",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Classe de mouture extra-grossi\u00e8re, correspondant \u00e0 la classe f\u00e9d\u00e9rale no 4. Ne pas mapper la mouture tr\u00e8s grossi\u00e8re, les demi-coupes no 5 ou les grades de fabricants \u00e0 cette forme sans preuve de correspondance. Aucune densit\u00e9, conversion ou substitution g\u00e9n\u00e9rale n\u2019est \u00e9tablie.",
+    "notesEn": "Extra-coarse-grind class corresponding to federal class No. 4. Do not map very coarse grind, No. 5 half cuts, or manufacturer grades to this form without evidence of equivalence. No general density, conversion, or substitution is established.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-bulgur-extra-fine-grind",
+    "ingredientRefId": "ingredient-ref-bulgur",
+    "formCode": "extra_fine_grind",
+    "labelFr": "boulgour extra fin",
+    "labelEn": "extra fine bulgur",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "Duru extra fine bulgur"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Classe d\u00e9finie par les produits \u00e9tiquet\u00e9s extra fin; les plages de mouture Duru se chevauchent avec celles du boulgour fin. Aucun seuil universel ni \u00e9quivalence de grade n\u2019est \u00e9tabli.",
+    "notesEn": "Class defined by products labelled extra fine; Duru grind-size ranges overlap its fine bulgur range. No universal cutoff or grade equivalence is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-bulgur-fine-grind",
+    "ingredientRefId": "ingredient-ref-bulgur",
+    "formCode": "fine_grind",
+    "labelFr": "boulgour fin",
+    "labelEn": "fine bulgur",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Classe de mouture fine. Aucune densit\u00e9 ou conversion globale n'est activ\u00e9e.",
+    "notesEn": "Fine-grind class. No general density or conversion is active.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-bulgur-medium-grind",
+    "ingredientRefId": "ingredient-ref-bulgur",
+    "formCode": "medium_grind",
+    "labelFr": "boulgour moyen",
+    "labelEn": "medium bulgur",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Classe de mouture moyenne. Aucune densit\u00e9 ou conversion globale n'est activ\u00e9e.",
+    "notesEn": "Medium-grind class. No general density or conversion is active.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-bulgur-no-5-half-cuts",
+    "ingredientRefId": "ingredient-ref-bulgur",
+    "formCode": "half_cuts_grind",
+    "labelFr": "boulgour no 5, mouture tr\u00e8s grossi\u00e8re",
+    "labelEn": "No. 5 half-cuts bulgur",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "boulgour no 5",
+      "mouture tr\u00e8s grossi\u00e8re"
+    ],
+    "matchTermsEn": [
+      "No. 5 half cuts",
+      "half cut grind bulgur"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che de demi-coupes no 5, selon le nom de classe f\u00e9d\u00e9ral et les \u00e9tiquettes distinctes du fabricant. La mention de mouture tr\u00e8s grossi\u00e8re ne permet pas de mapper d\u2019autres produits; le texte f\u00e9d\u00e9ral est incoh\u00e9rent sur le nombre de tailles. Aucune densit\u00e9, conversion ou substitution g\u00e9n\u00e9rale n\u2019est \u00e9tablie.",
+    "notesEn": "Dry No. 5 half-cuts class, supported by the federal class name and distinct manufacturer labels. \u201cExtra-large grind\u201d alone does not map other products; the federal text is inconsistent about the number of sizes. No general density, conversion, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-calamansi-juice",
+    "ingredientRefId": "ingredient-ref-calamansi",
+    "formCode": "juice",
+    "labelFr": "jus de calamondin",
+    "labelEn": "calamansi juice",
+    "prepState": "juiced",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de jus pur de calamondin (calamansi), repr\u00e9sent\u00e9e par le produit canadien dont la liste d'ingr\u00e9dients indique 100 % calamansi. L'usage qu\u00e9b\u00e9cois appuie le terme \u00ab jus de calamondin \u00bb. Garder distincts les boissons sucr\u00e9es ou dilu\u00e9es et les concentr\u00e9s compos\u00e9s. Aucune mesure de cuisine, densit\u00e9, conversion, rendement, association \u00e0 une recette ni substitution n'est \u00e9tablie.",
+    "notesEn": "Pure calamondin/calamansi fruit-juice form, represented by the Canadian product listing whose ingredient declaration is 100% calamansi. Qu\u00e9bec usage supports the French term \u201cjus de calamondin\u201d. Keep sweetened or diluted drinks and compounded concentrates separate. No kitchen measure, density, conversion, yield relationship, recipe link, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-calamansi-puree",
+    "ingredientRefId": "ingredient-ref-calamansi",
+    "formCode": "puree",
+    "labelFr": "pur\u00e9e de kalamansi",
+    "labelEn": "calamansi puree",
+    "prepState": "pureed",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "kalamansi puree"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme de pur\u00e9e de fruit \u00e0 100 %, sans sucre ajout\u00e9, repr\u00e9sent\u00e9e par une pur\u00e9e surgel\u00e9e des Vergers Boiron. Le distributeur qu\u00e9b\u00e9cois Gastronomia emploie \u00ab pur\u00e9e de kalamansi \u00bb. Le proc\u00e9d\u00e9 de pressage du fruit entier et la cong\u00e9lation d\u00e9crits pour ce produit ne sont pas g\u00e9n\u00e9ralis\u00e9s \u00e0 toutes les pur\u00e9es. Aucune mesure de cuisine, densit\u00e9, conversion, rendement, association \u00e0 une recette ni substitution n\u2019est \u00e9tablie.",
+    "notesEn": "100% fruit puree with no added sugar, represented by a frozen Les vergers Boiron product. Qu\u00e9bec distributor Gastronomia uses the French title \u201cpur\u00e9e de kalamansi\u201d. The whole-fruit pressing method and frozen state described for that product are not generalized to all purees. No kitchen measure, density, conversion, yield relationship, recipe link, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-calamari-frozen-tubes",
+    "ingredientRefId": "ingredient-ref-calamari",
+    "formCode": "frozen",
+    "labelEn": "frozen squid tubes",
+    "labelFr": "tubes de calmar congel\u00e9s",
+    "prepState": "frozen",
+    "matchTermsEn": [],
+    "matchTermsFr": [],
+    "densityGPerMl": null,
+    "notesEn": "Commercial frozen tube presentation under the generic species-unspecified squid identity. Sources do not establish whether the product is raw or cooked. No measure, density, conversion, yield relationship, or substitution is established.",
+    "notesFr": "Pr\u00e9sentation commerciale de tubes de calmar congel\u00e9s sous l\u2019identit\u00e9 g\u00e9n\u00e9rique sans esp\u00e8ce pr\u00e9cis\u00e9e. Les sources ne pr\u00e9cisent pas si le produit est cru ou cuit. Aucune mesure, densit\u00e9, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-calamari-rings",
+    "ingredientRefId": "ingredient-ref-calamari",
+    "formCode": "ring_cut",
+    "labelFr": "rondelles de calmar",
+    "labelEn": "calamari rings",
+    "prepState": "ring_cut",
+    "matchTermsFr": [
+      "calmar tranch\u00e9 en rondelles"
+    ],
+    "matchTermsEn": [
+      "squid rings"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Calmar coup\u00e9 en rondelles. Cette forme ne pr\u00e9cise pas l\u2019esp\u00e8ce, l\u2019\u00e9tat surgel\u00e9, la cuisson, l\u2019enrobage ou le conditionnement. Aucune mesure, densit\u00e9, conversion ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "Calamari cut into rings. This form does not specify species, frozen state, cooking, breading, or packing. No measure, density, conversion, or yield relationship is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-canned-salmon-in-water",
+    "ingredientRefId": "ingredient-ref-canned-salmon",
+    "formCode": "canned_in_water",
+    "labelFr": "saumon en conserve dans l\u2019eau",
+    "labelEn": "canned salmon in water",
+    "prepState": "canned_in_water",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de saumon en conserve explicitement emball\u00e9 dans l\u2019eau. La source actuelle d\u00e9crit un seul produit de saumon rose du Pacifique; elle n\u2019\u00e9tablit pas d\u2019esp\u00e8ce, de coupe, d\u2019ingr\u00e9dients, de taille de bo\u00eete, d\u2019\u00e9tat \u00e9goutt\u00e9 ou de directive d\u2019\u00e9gouttage communs. Aucune mesure g\u00e9n\u00e9rique, densit\u00e9, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Canned-salmon form explicitly packed in water. The current source describes one Pacific pink-salmon product; it does not establish a shared species, cut, ingredient list, can size, drained state, or draining instruction. No generic measure, density, conversion, yield relationship, or substitution is established.",
+    "updatedAt": "2026-10-19T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-canned-tuna-in-broth-and-oil",
+    "ingredientRefId": "ingredient-ref-canned-tuna",
+    "formCode": "canned_in_broth_and_oil",
+    "labelFr": "thon en conserve dans le bouillon et l\u2019huile",
+    "labelEn": "canned tuna in broth and oil",
+    "prepState": "canned_in_broth_and_oil",
+    "matchTermsFr": [
+      "thon dans bouillon et huile"
+    ],
+    "matchTermsEn": [
+      "tuna in broth and oil"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme de thon en conserve explicitement commercialis\u00e9 dans un m\u00e9lange de bouillon et d\u2019huile. Les pages actuelles couvrent diff\u00e9rentes esp\u00e8ces, coupes et formules; elles n\u2019\u00e9tablissent pas une esp\u00e8ce, une coupe, un ratio de bouillon et d\u2019huile, une composition, un format de bo\u00eete ou un \u00e9tat \u00e9goutt\u00e9 communs. Le thon dans l\u2019eau, dans l\u2019huile d\u2019olive seulement, dans le bouillon seulement ou dans un autre milieu reste distinct. Aucune mesure g\u00e9n\u00e9rique, densit\u00e9, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Canned tuna explicitly marketed in a broth-and-oil mixture. Current product pages cover different species, cuts, and formulas; they do not establish a shared species, cut, broth-to-oil ratio, ingredient formula, can size, or drained state. Water-packed, olive-oil-only, broth-only, and other packing media remain distinct. No general measure, density, conversion, yield relationship, or substitution is established.",
+    "updatedAt": "2026-10-19T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-canned-tuna-in-olive-oil",
+    "ingredientRefId": "ingredient-ref-canned-tuna",
+    "formCode": "canned_in_olive_oil",
+    "labelFr": "thon en conserve dans l\u2019huile d\u2019olive",
+    "labelEn": "canned tuna in olive oil",
+    "prepState": "canned_in_olive_oil",
+    "matchTermsFr": [
+      "thon dans l\u2019huile d\u2019olive"
+    ],
+    "matchTermsEn": [
+      "tuna in olive oil"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme de thon en conserve explicitement commercialis\u00e9 dans l\u2019huile d\u2019olive. Les sources couvrent des esp\u00e8ces et pr\u00e9sentations pr\u00e9cises; elles n\u2019\u00e9tablissent pas une esp\u00e8ce, une coupe, une formule, un format de bo\u00eete ou un \u00e9tat \u00e9goutt\u00e9 communs. Les produits dans un m\u00e9lange d\u2019huile et de bouillon, dans un autre milieu ou avec un assaisonnement distinct restent s\u00e9par\u00e9s. Aucune mesure g\u00e9n\u00e9rique, densit\u00e9, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Canned-tuna form explicitly marketed in olive oil. Sources cover named species and presentations only; they do not establish a shared species, cut, formula, can size, or drained state. Products packed in an oil-and-broth mixture, another medium, or a distinct seasoning remain separate. No general measure, density, conversion, yield relationship, or substitution is established.",
+    "updatedAt": "2026-10-19T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-canned-tuna-in-water",
+    "ingredientRefId": "ingredient-ref-canned-tuna",
+    "formCode": "canned_in_water",
+    "labelFr": "thon en conserve dans l\u2019eau",
+    "labelEn": "canned tuna in water",
+    "prepState": "canned_in_water",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de thon en conserve explicitement commercialis\u00e9 dans l\u2019eau. Les sources couvrent des esp\u00e8ces et pr\u00e9sentations pr\u00e9cises; elles n\u2019\u00e9tablissent pas une esp\u00e8ce, une couleur, une coupe, une formule, un format de bo\u00eete ou un \u00e9tat \u00e9goutt\u00e9 communs. Certaines listes d\u2019ingr\u00e9dients indiquent aussi du sel. Aucune mesure g\u00e9n\u00e9rique, densit\u00e9, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Canned-tuna form explicitly marketed in water. Sources cover named species and presentations only; they do not establish a shared species, colour class, cut, formula, can size, or drained state. Some ingredient lists also name salt. No generic measure, density, conversion, yield relationship, or substitution is established.",
+    "updatedAt": "2026-10-19T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-cherries-pitted",
+    "ingredientRefId": "ingredient-ref-cherries",
+    "formCode": "pitted",
+    "labelFr": "cerises d\u00e9noyaut\u00e9es",
+    "labelEn": "pitted cherries",
+    "prepState": "pitted",
+    "matchTermsFr": [
+      "cerises fra\u00eeches ou congel\u00e9es d\u00e9noyaut\u00e9es"
+    ],
+    "matchTermsEn": [
+      "fresh or frozen pitted cherries"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "\u00c9tat de pr\u00e9paration indiquant uniquement que le noyau a \u00e9t\u00e9 retir\u00e9. La recette source accepte les cerises fra\u00eeches ou congel\u00e9es; elle ne pr\u00e9cise pas si les cerises fra\u00eeches sont pes\u00e9es avant ou apr\u00e8s le d\u00e9noyautage ni si les cerises congel\u00e9es sont d\u00e9congel\u00e9es ou \u00e9goutt\u00e9es. Aucune conversion de rendement ou de poids avant/apr\u00e8s d\u00e9noyautage n\u2019est \u00e9tablie.",
+    "notesEn": "Preparation state indicating only that the pits have been removed. The source recipe accepts fresh or frozen cherries; it does not say whether fresh cherries are weighed before or after pitting or whether frozen cherries are thawed or drained. No pitting yield or before/after weight conversion is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-chervil-fresh",
+    "ingredientRefId": "ingredient-ref-chervil",
+    "formCode": "fresh",
+    "labelFr": "cerfeuil frais",
+    "labelEn": "fresh chervil",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme fra\u00eeche document\u00e9e pour le cerfeuil culinaire. L\u2019emballage de 10 g est une preuve de produit, pas une mesure r\u00e9utilisable. Aucune densit\u00e9, mesure ou conversion n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh form documented for culinary chervil. The 10 g package is product evidence, not a reusable measure. No density, measure, or conversion is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-chickpea-flour-precooked",
+    "ingredientRefId": "ingredient-ref-chickpea-flour",
+    "formCode": "precooked",
+    "labelFr": "farine de pois chiche pr\u00e9cuite",
+    "labelEn": "precooked chickpea flour",
+    "prepState": "precooked",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "\u00c9tat de produit commercial attest\u00e9 par des farines de pois chiche vendues comme pr\u00e9cuites. Le libell\u00e9 fran\u00e7ais est descriptif et provisoire pour le Qu\u00e9bec. Simpson Seeds ne pr\u00e9cise pas le proc\u00e9d\u00e9 thermique; ne pas assimiler ce produit \u00e0 une farine pr\u00e9g\u00e9latinis\u00e9e ou pr\u00eate \u00e0 manger. Aucune mesure m\u00e9nag\u00e8re ni densit\u00e9 propre au produit Simpson n\u2019est \u00e9tablie; aucune substitution g\u00e9n\u00e9rale n\u2019est \u00e9tay\u00e9e.",
+    "notesEn": "Commercial product state attested by chickpea flours sold as precooked. The French label is descriptive and provisional for Qu\u00e9bec. Simpson Seeds does not specify the thermal process; do not equate this product with pregelatinized or ready-to-eat flour. No household measure or density is established for the Simpson product; no general substitution is supported.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
     "id": "ingredient-form-chickpeas-canned-drained",
     "ingredientRefId": "ingredient-ref-chickpeas",
     "formCode": "canned_drained",
@@ -41,5 +923,2417 @@
     "notesFr": "N\u00e9cessitent un trempage et une cuisson avant utilisation.",
     "notesEn": "Need soaking and cooking before use.",
     "updatedAt": "2026-04-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-coconut-desiccated",
+    "ingredientRefId": "ingredient-ref-coconut",
+    "formCode": "desiccated",
+    "labelFr": "noix de coco dess\u00e9ch\u00e9e",
+    "labelEn": "desiccated coconut",
+    "prepState": "dried",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "\u00c9tat dess\u00e9ch\u00e9; le terme ne pr\u00e9cise pas si la coupe est r\u00e2p\u00e9e ou en flocons. Aucune conversion n\u2019est \u00e9tablie.",
+    "notesEn": "Dried state; this term does not specify shredded or flaked cut. No conversion is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-coconut-flaked",
+    "ingredientRefId": "ingredient-ref-coconut",
+    "formCode": "flaked",
+    "labelFr": "noix de coco en flocons",
+    "labelEn": "flaked coconut",
+    "prepState": "flaked",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Coupe en flocons, distincte de la noix de coco r\u00e2p\u00e9e; aucune conversion de masse-volume n\u2019est \u00e9tablie.",
+    "notesEn": "Flaked cut, distinct from shredded coconut; no mass-volume conversion is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-coconut-fresh-meat",
+    "ingredientRefId": "ingredient-ref-coconut",
+    "formCode": "fresh_meat",
+    "labelFr": "chair de noix de coco fra\u00eeche",
+    "labelEn": "fresh coconut meat",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Chair fra\u00eeche de noix de coco; aucune conversion vers la noix de coco dess\u00e9ch\u00e9e n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh coconut meat; no conversion to dried coconut is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-coconut-shredded-sweetened",
+    "ingredientRefId": "ingredient-ref-coconut",
+    "formCode": "shredded_sweetened",
+    "labelFr": "noix de coco r\u00e2p\u00e9e sucr\u00e9e",
+    "labelEn": "sweetened shredded coconut",
+    "prepState": "shredded_sweetened",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Coupe r\u00e2p\u00e9e et formulation sucr\u00e9e; la forme non sucr\u00e9e demeure distincte. Aucune conversion ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Shredded cut and sweetened formulation; unsweetened product remains distinct. No conversion or substitution is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-coconut-shredded-unsweetened",
+    "ingredientRefId": "ingredient-ref-coconut",
+    "formCode": "shredded_unsweetened",
+    "labelFr": "noix de coco r\u00e2p\u00e9e non sucr\u00e9e",
+    "labelEn": "unsweetened shredded coconut",
+    "prepState": "shredded_unsweetened",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Coupe r\u00e2p\u00e9e et formulation non sucr\u00e9e; la forme sucr\u00e9e demeure distincte. Aucune conversion ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Shredded cut and unsweetened formulation; sweetened product remains distinct. No conversion or substitution is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-coconut-toasted",
+    "ingredientRefId": "ingredient-ref-coconut",
+    "formCode": "toasted",
+    "labelFr": "noix de coco grill\u00e9e",
+    "labelEn": "toasted coconut",
+    "prepState": "toasted",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "\u00c9tat grill\u00e9; aucune mesure, conversion ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Toasted state; no measurement, conversion, or substitution is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-coconut-toasted-flakes",
+    "ingredientRefId": "ingredient-ref-coconut",
+    "formCode": "toasted_flakes",
+    "labelFr": "flocons de noix de coco grill\u00e9s",
+    "labelEn": "toasted coconut flakes",
+    "prepState": "toasted_flaked",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Coupe en flocons et \u00e9tat grill\u00e9, document\u00e9s pour un produit pr\u00e9cis; aucune conversion g\u00e9n\u00e9rale n\u2019est \u00e9tablie.",
+    "notesEn": "Flaked cut and toasted state, documented for a specific product; no general conversion is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-common-millet-dry",
+    "ingredientRefId": "ingredient-ref-common-millet",
+    "formCode": "dry",
+    "labelFr": "millet commun, sec",
+    "labelEn": "common millet, dry",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "\u00c9tat sec du CNF; aucune densit\u00e9 ni conversion g\u00e9n\u00e9rale n'est \u00e9tablie.",
+    "notesEn": "CNF dry state; no general density or reusable conversion is established.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-corn-husks-dried",
+    "ingredientRefId": "ingredient-ref-corn-husks",
+    "formCode": "dried",
+    "labelFr": "enveloppes de ma\u00efs s\u00e9ch\u00e9es",
+    "labelEn": "dried corn husks",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "enveloppe de ma\u00efs s\u00e9ch\u00e9e",
+      "feuille de ma\u00efs s\u00e9ch\u00e9e",
+      "feuilles de ma\u00efs s\u00e9ch\u00e9es"
+    ],
+    "matchTermsEn": [
+      "dried corn husk"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Enveloppes s\u00e9ch\u00e9es utilis\u00e9es pour emballer les tamales; une recette d\u2019extension indique de les tremper dans l\u2019eau chaude avant usage. La quantit\u00e9 et le rendement de cette recette sont propres \u00e0 sa formule. Aucune mesure, densit\u00e9 ou conversion depuis des feuilles fra\u00eeches n\u2019est \u00e9tablie.",
+    "notesEn": "Dried husks used to wrap tamales; an extension recipe says to soak them in hot water before use. That recipe\u2019s quantity and yield are formula-specific. No household measure, density, or conversion from fresh leaves is established.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-couscous-cooked",
+    "ingredientRefId": "ingredient-ref-couscous",
+    "formCode": "cooked",
+    "labelFr": "couscous, cuit",
+    "labelEn": "couscous, cooked",
+    "prepState": "cooked",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "cooked couscous"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme cuite nomm\u00e9e par le CNF 2015; aucune densit\u00e9, conversion r\u00e9utilisable ou relation de rendement \u00e0 la cuisson n\u2019est \u00e9tablie.",
+    "notesEn": "CNF 2015 cooked state; no density, reusable conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-19T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-couscous-dry",
+    "ingredientRefId": "ingredient-ref-couscous",
+    "formCode": "dry",
+    "labelFr": "couscous, sec",
+    "labelEn": "couscous, dry",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "dry couscous"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che nomm\u00e9e par le CNF 2015; aucune densit\u00e9, conversion r\u00e9utilisable ou relation de rendement \u00e0 la cuisson n\u2019est \u00e9tablie.",
+    "notesEn": "CNF 2015 dry state; no density, reusable conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-19T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-crab-canned",
+    "ingredientRefId": "ingredient-ref-crab",
+    "formCode": "canned",
+    "labelFr": "chair de crabe en conserve",
+    "labelEn": "canned crab meat",
+    "prepState": "canned",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme commerciale de chair de crabe en conserve. Les sources couvrent plusieurs esp\u00e8ces et pr\u00e9sentations; elles ne pr\u00e9cisent pas une esp\u00e8ce, une coupe, un milieu de conditionnement ni un \u00e9tat \u00e9goutt\u00e9 communs. Aucune mesure, densit\u00e9, conversion ou substitution n'est \u00e9tablie.",
+    "notesEn": "Commercial canned crab-meat form. Sources cover multiple species and presentations; they do not establish a shared species, cut, packing medium, or drained state. No measure, density, conversion, or substitution is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-crab-jumbo-lump",
+    "ingredientRefId": "ingredient-ref-crab",
+    "formCode": "jumbo_lump",
+    "labelFr": "chair de crabe en gros morceaux (jumbo lump)",
+    "labelEn": "jumbo lump crab meat",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Cat\u00e9gorie commerciale de chair de crabe. Aucune mesure, densit\u00e9, conversion ni substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial crab-meat grade. No measurement, density, conversion, or substitution is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-curry-leaves-dried",
+    "ingredientRefId": "ingredient-ref-curry-leaves",
+    "formCode": "dried",
+    "labelFr": "feuilles de cari s\u00e9ch\u00e9es",
+    "labelEn": "dried curry leaves",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "feuilles de cari lyophilis\u00e9es",
+      "feuille de cari s\u00e9ch\u00e9e",
+      "feuille de curry s\u00e9ch\u00e9e",
+      "feuilles de curry s\u00e9ch\u00e9es",
+      "feuille de Murraya s\u00e9ch\u00e9e",
+      "feuilles de Murraya s\u00e9ch\u00e9es"
+    ],
+    "matchTermsEn": [
+      "curry leaves, dried",
+      "freeze-dried curry leaves",
+      "dried curry leaf",
+      "curry leaf, dried",
+      "freeze-dried curry leaf"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Aucune mesure, densit\u00e9 ou relation de rendement n\u2019est \u00e9tablie. Les quantit\u00e9s et proc\u00e9d\u00e9s d\u2019un produit pr\u00e9cis ne sont pas g\u00e9n\u00e9ralis\u00e9s.",
+    "notesEn": "No measure, density, or yield relationship is established. Quantities and processes from a specific product are not generalized.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-dark-chocolate-chips",
+    "ingredientRefId": "ingredient-ref-dark-chocolate",
+    "formCode": "chips",
+    "labelFr": "p\u00e9pites de chocolat noir",
+    "labelEn": "dark chocolate chips",
+    "prepState": "chips",
+    "matchTermsFr": [
+      "brisures de chocolat noir"
+    ],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme en p\u00e9pites d\u2019une identit\u00e9 de chocolat existante; aucune densit\u00e9 ni conversion distincte n\u2019est \u00e9tablie.",
+    "notesEn": "Chip form of an existing chocolate identity; no separate density or conversion is established.",
+    "updatedAt": "2026-10-06T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-dates-pitted",
+    "ingredientRefId": "ingredient-ref-dates",
+    "formCode": "pitted",
+    "labelFr": "dattes d\u00e9noyaut\u00e9es",
+    "labelEn": "pitted dates",
+    "prepState": "pitted",
+    "matchTermsFr": [
+      "dattes enti\u00e8res d\u00e9noyaut\u00e9es"
+    ],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "\u00c9tat de pr\u00e9paration indiquant uniquement que le noyau a \u00e9t\u00e9 retir\u00e9. N\u2019ajoute ni vari\u00e9t\u00e9, ni \u00e9tat frais ou s\u00e9ch\u00e9, ni taille, ni quantit\u00e9 comestible. Les sources de produits d\u00e9noyaut\u00e9s consult\u00e9es d\u00e9crivent des produits s\u00e9ch\u00e9s; la recette li\u00e9e emploie les dattes g\u00e9n\u00e9riques et n\u2019indique pas \u00ab s\u00e9ch\u00e9es \u00bb. Aucune conversion du poids avec noyau, ni aucun rendement, n\u2019est \u00e9tabli.",
+    "notesEn": "Preparation state indicating only that the pit has been removed. It adds no variety, fresh or dried state, size, or edible quantity. The consulted pitted-date product listings describe dried products; the linked generic-date recipe does not say \u201cdried.\u201d No with-pit to pitted weight conversion or yield is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-desi-chickpeas-roasted-split-dehulled",
+    "ingredientRefId": "ingredient-ref-desi-chickpeas",
+    "formCode": "roasted_split_dehulled",
+    "labelFr": "pois chiches Desi cass\u00e9s et r\u00f4tis",
+    "labelEn": "roasted split Bengal gram",
+    "prepState": "roasted_split_dehulled",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "roasted Bengal gram split",
+      "roasted gram split",
+      "roasted chana split",
+      "roasted chana dal",
+      "roasted split chickpeas"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La norme AGMARK d\u00e9crit des graines de Cicer arietinum matures, s\u00e8ches et saines, r\u00f4ties sans huile, cass\u00e9es et d\u00e9cortiqu\u00e9es. Le libell\u00e9 fran\u00e7ais est descriptif; aucun nom compos\u00e9 exact de produit n\u2019a \u00e9t\u00e9 trouv\u00e9 au Canada. Aucun terme de correspondance fran\u00e7ais n\u2019est activ\u00e9.",
+    "notesEn": "The AGMARK standard describes mature, dried, sound Cicer arietinum grains roasted without oil, split, and husked. The French label is descriptive, not an attested Canadian name for the exact combined product. This is not whole roasted Kala Chana or flour.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-desi-chickpeas-split-dehulled",
+    "ingredientRefId": "ingredient-ref-desi-chickpeas",
+    "formCode": "split_dehulled",
+    "labelFr": "pois chiches Desi cass\u00e9s",
+    "labelEn": "split, dehulled Desi chickpeas",
+    "prepState": "split_dehulled",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "split Desi chickpeas",
+      "dry split Desi chickpeas",
+      "dried split Desi chickpeas",
+      "chana dal",
+      "channa dal"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Le produit chana dal cit\u00e9 par la source canadienne est d\u00e9cortiqu\u00e9. Ne pas g\u00e9n\u00e9raliser cet \u00e9tat \u00e0 tous les pois chiches cass\u00e9s.",
+    "notesEn": "Chana dal is scoped here to split, dehulled Desi chickpeas. Do not infer that every split chickpea product is dehulled.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-dextrose-anhydrous",
+    "ingredientRefId": "ingredient-ref-dextrose",
+    "formCode": "anhydrous",
+    "labelFr": "dextrose anhydre",
+    "labelEn": "anhydrous dextrose",
+    "prepState": "anhydrous",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "La norme canadienne distingue cette forme du dextrose monohydrat\u00e9; aucune conversion culinaire n\u2019est \u00e9tablie.",
+    "notesEn": "The Canadian standard distinguishes this form from dextrose monohydrate; no culinary conversion is established.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-dextrose-monohydrate",
+    "ingredientRefId": "ingredient-ref-dextrose",
+    "formCode": "monohydrate",
+    "labelFr": "dextrose monohydrat\u00e9",
+    "labelEn": "dextrose monohydrate",
+    "prepState": "monohydrate",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "La norme canadienne distingue cette forme du dextrose anhydre; aucune conversion culinaire n\u2019est \u00e9tablie.",
+    "notesEn": "The Canadian standard distinguishes this form from anhydrous dextrose; no culinary conversion is established.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-dill-seed-ground",
+    "ingredientRefId": "ingredient-ref-dill-seed",
+    "formCode": "ground",
+    "labelFr": "graines d\u2019aneth moulues",
+    "labelEn": "ground dill seed",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che moulue, distincte des feuilles d\u2019aneth. Aucune mesure, densit\u00e9 ou conversion n\u2019est \u00e9tablie.",
+    "notesEn": "Dry, ground form, distinct from dill leaves. No measure, density, or conversion is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-dried-bonito-powder",
+    "ingredientRefId": "ingredient-ref-dried-bonito",
+    "formCode": "powdered",
+    "labelFr": "bonito s\u00e9ch\u00e9 en poudre",
+    "labelEn": "dried bonito powder",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "bonito powder",
+      "katsuobushi powder"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation commerciale en poudre seulement; aucune mesure ni conversion n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial powder presentation only; no measure or conversion is established.",
+    "updatedAt": "2026-10-13T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-dried-dates-powdered",
+    "ingredientRefId": "ingredient-ref-dried-dates",
+    "formCode": "powdered",
+    "labelFr": "dattes en poudre",
+    "labelEn": "date powder",
+    "prepState": "powdered",
+    "matchTermsFr": [
+      "sucre de dattes",
+      "poudre de datte"
+    ],
+    "matchTermsEn": [
+      "date sugar"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Produit sec fait de dattes enti\u00e8res s\u00e9ch\u00e9es, d\u00e9noyaut\u00e9es et moulues. \u00ab Sucre de dattes \u00bb est un nom commercial attest\u00e9 pour certaines poudres de dattes, pas du sucre extrait. Ne pas confondre avec le sirop, la p\u00e2te ou le jus de dattes. Aucune densit\u00e9 ni substitution g\u00e9n\u00e9rale n\u2019est \u00e9tablie.",
+    "notesEn": "Dry product made from whole dried, pitted, ground dates. \u201cDate sugar\u201d is an attested market name for some date powders, not extracted sugar. Keep distinct from date syrup, paste, or juice. No general density or substitution is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-duck-egg-salted",
+    "ingredientRefId": "ingredient-ref-duck-egg",
+    "formCode": "salted",
+    "labelFr": "\u0153uf de canard sal\u00e9",
+    "labelEn": "salted duck egg",
+    "prepState": "salted",
+    "matchTermsFr": [
+      "\u0153ufs de canard sal\u00e9s",
+      "\u0153uf de canard sal\u00e9 cuit",
+      "\u0153ufs de canard sal\u00e9s cuits"
+    ],
+    "matchTermsEn": [
+      "salted duck eggs",
+      "salted cooked duck egg",
+      "salted cooked duck eggs",
+      "cooked salted duck egg",
+      "cooked salted duck eggs"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme enti\u00e8re de l\u2019\u0153uf de canard sal\u00e9e; le terme ne signifie pas n\u00e9cessairement que l\u2019\u0153uf est cuit. Le jaune d\u2019\u0153uf de canard sal\u00e9 et l\u2019\u0153uf de canard pr\u00e9serv\u00e9 (\u0153uf de cent ans/pidan) restent distincts. Aucune mesure, densit\u00e9, conversion ou substitution n\u2019est \u00e9tablie. La formulation fran\u00e7aise est attest\u00e9e par des produits qu\u00e9b\u00e9cois; elle n\u2019est pas pr\u00e9sent\u00e9e comme un terme normalis\u00e9 par l\u2019OQLF.",
+    "notesEn": "Salted whole-duck-egg form; the term does not necessarily mean the egg is cooked. Salted duck-egg yolk and preserved duck egg (century egg/pidan) remain distinct. No measure, density, conversion, or substitution is established. The French wording is attested on Qu\u00e9bec-facing products and is not presented as an OQLF-standardized term.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-edamame-frozen-shelled",
+    "ingredientRefId": "ingredient-ref-edamame",
+    "formCode": "frozen_shelled",
+    "labelFr": "edamames \u00e9coss\u00e9s surgel\u00e9s",
+    "labelEn": "frozen shelled edamame",
+    "prepState": "frozen",
+    "matchTermsFr": [
+      "edamames \u00e9coss\u00e9s"
+    ],
+    "matchTermsEn": [
+      "shelled edamame"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation surgel\u00e9e et \u00e9coss\u00e9e; aucune densit\u00e9, mesure, conversion ou relation de rendement n\u2019est \u00e9tablie pour cette forme.",
+    "notesEn": "Frozen, shelled presentation; no density, measure, conversion, or yield relationship is established for this form.",
+    "updatedAt": "2026-10-13T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-egg-white-dried",
+    "ingredientRefId": "ingredient-ref-egg-white",
+    "formCode": "dried",
+    "labelFr": "poudre de blanc d\u2019\u0153uf",
+    "labelEn": "dried egg white",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "poudre d\u2019albumen",
+      "blanc d\u2019\u0153uf d\u00e9shydrat\u00e9"
+    ],
+    "matchTermsEn": [
+      "egg white powder",
+      "powdered egg white",
+      "dried albumen",
+      "dried egg-white"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Blanc d\u2019\u0153uf ou albumen s\u00e9ch\u00e9 comme ovoproduit simple; exclut la meringue en poudre, les m\u00e9langes d\u2019\u0153ufs et les succ\u00e9dan\u00e9s. Aucune densit\u00e9, mesure ou proportion de r\u00e9hydratation g\u00e9n\u00e9rale n\u2019est \u00e9tablie.",
+    "notesEn": "Dried egg white or albumen as a single egg product; excludes meringue powder, egg mixes, and egg substitutes. No density, household measure, or general reconstitution ratio is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-egg-white-liquid-pasteurized",
+    "ingredientRefId": "ingredient-ref-egg-white",
+    "formCode": "liquid_pasteurized",
+    "labelFr": "blanc d\u2019\u0153uf liquide pasteuris\u00e9",
+    "labelEn": "pasteurized liquid egg white",
+    "prepState": "liquid",
+    "matchTermsFr": [
+      "blanc d\u2019\u0153uf liquide",
+      "blancs d\u2019\u0153ufs liquides",
+      "blancs d\u2019\u0153ufs liquides pasteuris\u00e9s"
+    ],
+    "matchTermsEn": [
+      "liquid egg white",
+      "liquid egg whites",
+      "pasteurized egg whites",
+      "pasteurized egg white",
+      "pasteurized liquid egg whites"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Blanc d\u2019\u0153uf vendu liquide et pasteuris\u00e9. Les produits congel\u00e9s, les \u0153ufs liquides entiers, les jaunes et les m\u00e9langes formul\u00e9s restent distincts. Aucune densit\u00e9 ni mesure g\u00e9n\u00e9rale par blanc n\u2019est \u00e9tablie.",
+    "notesEn": "Egg white sold in liquid, pasteurized form. Frozen products, liquid whole egg, yolk, and formulated mixes remain distinct. No density or general per-white measure is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-egg-whole-dried",
+    "ingredientRefId": "ingredient-ref-egg",
+    "formCode": "dried",
+    "labelFr": "poudre d\u2019\u0153uf entier",
+    "labelEn": "dried whole egg",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "\u0153uf entier en poudre",
+      "\u0153ufs entiers en poudre"
+    ],
+    "matchTermsEn": [
+      "whole egg powder",
+      "powdered whole egg"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Ovoproduit entier s\u00e9ch\u00e9, comprenant le blanc et le jaune. Exclut le blanc ou le jaune s\u00e9ch\u00e9 s\u00e9par\u00e9ment, les m\u00e9langes d\u2019\u0153ufs entiers sal\u00e9s ou sucr\u00e9s, la meringue en poudre et les succ\u00e9dan\u00e9s. Aucune densit\u00e9, mesure domestique, conversion de r\u00e9hydratation ou \u00e9quivalence avec un nombre d\u2019\u0153ufs frais n\u2019est \u00e9tablie.",
+    "notesEn": "Dried whole-egg product containing both white and yolk. Excludes separately dried white or yolk, salted or sweetened whole-egg mixes, meringue powder, and egg substitutes. No density, household measure, reconstitution conversion, or fresh-egg count equivalence is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-egg-yolk-dried",
+    "ingredientRefId": "ingredient-ref-egg-yolk",
+    "formCode": "dried",
+    "labelFr": "poudre de jaune d\u2019\u0153uf",
+    "labelEn": "dried egg yolk",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "jaune d\u2019\u0153uf d\u00e9shydrat\u00e9",
+      "poudre de jaune d\u2019\u0153uf s\u00e9ch\u00e9"
+    ],
+    "matchTermsEn": [
+      "egg yolk powder",
+      "powdered egg yolk",
+      "dried yolk"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Jaune d\u2019\u0153uf s\u00e9ch\u00e9 comme ovoproduit simple; exclut les m\u00e9langes de jaune sal\u00e9s ou sucr\u00e9s et les succ\u00e9dan\u00e9s. Une proportion de r\u00e9hydratation publi\u00e9e par un fabricant est propre \u00e0 son produit; aucune proportion g\u00e9n\u00e9rale, densit\u00e9 ou mesure n\u2019est \u00e9tablie.",
+    "notesEn": "Dried egg yolk as a single egg product; excludes salted or sweetened yolk mixes and egg substitutes. A manufacturer-published reconstitution ratio is product-specific; no general ratio, density, or household measure is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-fava-bean-flour-precooked",
+    "ingredientRefId": "ingredient-ref-fava-bean-flour",
+    "formCode": "precooked",
+    "labelFr": "farine de gourgane pr\u00e9cuite",
+    "labelEn": "precooked fava flour",
+    "prepState": "precooked",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "\u00c9tat de produit commercial. Simpson Seeds d\u00e9crit son produit comme pr\u00e9cuit par extrusion \u00e0 haute pression. La source n\u2019\u00e9tablit aucune mesure m\u00e9nag\u00e8re, densit\u00e9 ni substitution.",
+    "notesEn": "Commercial product state. Simpson Seeds describes its product as precooked by high-pressure extrusion. The source establishes no household measure, density, or substitution.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-fennel-seed-ground",
+    "ingredientRefId": "ingredient-ref-fennel-seeds",
+    "formCode": "ground",
+    "labelFr": "graine de fenouil moulue",
+    "labelEn": "ground fennel seed",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "graines de fenouil moulues"
+    ],
+    "matchTermsEn": [
+      "ground fennel seeds"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che moulue, distincte de la graine enti\u00e8re. Aucune mesure, densit\u00e9 ou conversion n\u2019est \u00e9tablie.",
+    "notesEn": "Dry, ground form, distinct from whole seed. No measure, density, or conversion is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-fenugreek-leaves-dried",
+    "ingredientRefId": "ingredient-ref-fenugreek-leaves",
+    "formCode": "dried",
+    "labelFr": "feuilles de fenugrec s\u00e9ch\u00e9es",
+    "labelEn": "dried fenugreek leaves",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "feuille de fenugrec s\u00e9ch\u00e9e"
+    ],
+    "matchTermsEn": [
+      "dried fenugreek leaf",
+      "fenugreek leaf, dried",
+      "kasuri methi",
+      "kasoori methi"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Feuilles de fenugrec s\u00e9ch\u00e9es enti\u00e8res. Cette forme exclut les feuilles moulues ou en poudre; aucune mesure, densit\u00e9 ou conversion depuis les feuilles fra\u00eeches n\u2019est \u00e9tablie.",
+    "notesEn": "Whole dried fenugreek leaves. This form excludes ground or powdered leaves; no measure, density, or conversion from fresh leaves is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-fenugreek-leaves-fresh",
+    "ingredientRefId": "ingredient-ref-fenugreek-leaves",
+    "formCode": "fresh",
+    "labelFr": "feuilles de fenugrec fra\u00eeches",
+    "labelEn": "fresh fenugreek leaves",
+    "prepState": "fresh",
+    "matchTermsFr": [
+      "feuille de fenugrec fra\u00eeche"
+    ],
+    "matchTermsEn": [
+      "fresh fenugreek leaf"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Feuilles fra\u00eeches de fenugrec. Aucune mesure, densit\u00e9 ou conversion vers les feuilles s\u00e9ch\u00e9es n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh fenugreek leaves. No measure, density, or conversion to dried leaves is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-flattened-rice-poha-medium",
+    "ingredientRefId": "ingredient-ref-flattened-rice-poha",
+    "formCode": "medium_flakes",
+    "labelFr": "flocons de riz moyens (poha)",
+    "labelEn": "medium poha",
+    "matchTermsFr": [
+      "poha moyen"
+    ],
+    "matchTermsEn": [
+      "poha medium",
+      "medium rice flakes"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Grade commercial d\u2019\u00e9paisseur. Les sources distinguent les poha minces, moyens et \u00e9pais sans seuil dimensionnel normalis\u00e9; aucune conversion ni substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial thickness grade. Sources distinguish thin, medium, and thick poha without standardized dimensional cutoffs; no conversion or substitution is established.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-flattened-rice-poha-thick",
+    "ingredientRefId": "ingredient-ref-flattened-rice-poha",
+    "formCode": "thick_flakes",
+    "labelFr": "flocons de riz \u00e9pais (poha)",
+    "labelEn": "thick poha",
+    "matchTermsFr": [
+      "poha \u00e9pais"
+    ],
+    "matchTermsEn": [
+      "poha thick",
+      "thick rice flakes"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Grade commercial d\u2019\u00e9paisseur. Les sources distinguent les poha minces, moyens et \u00e9pais sans seuil dimensionnel normalis\u00e9; aucune conversion ni substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial thickness grade. Sources distinguish thin, medium, and thick poha without standardized dimensional cutoffs; no conversion or substitution is established.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-flattened-rice-poha-thin",
+    "ingredientRefId": "ingredient-ref-flattened-rice-poha",
+    "formCode": "thin_flakes",
+    "labelFr": "flocons de riz fins (poha)",
+    "labelEn": "thin poha",
+    "matchTermsFr": [
+      "poha fin",
+      "poha mince"
+    ],
+    "matchTermsEn": [
+      "poha thin",
+      "thin rice flakes"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Grade commercial d\u2019\u00e9paisseur. Les sources distinguent les poha minces, moyens et \u00e9pais sans seuil dimensionnel normalis\u00e9; aucune conversion ni substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial thickness grade. Sources distinguish thin, medium, and thick poha without standardized dimensional cutoffs; no conversion or substitution is established.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-fresno-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-fresno-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment fort Fresno frais",
+    "labelEn": "fresh Fresno pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "La fiche de vente au d\u00e9tail indique un emballage de 225 g sans nombre de piments; le rapport de l'ACIA d\u00e9crit des \u00e9chantillons compos\u00e9s d'une ou de plusieurs unit\u00e9s. Aucune masse par piment n'est \u00e9tablie.",
+    "notesEn": "The retail listing shows a 225 g package without a pepper count; the CFIA report describes samples made up of one or more retail units. No per-pepper mass is established.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-gelatin-powder",
+    "ingredientRefId": "ingredient-ref-gelatin",
+    "formCode": "powdered",
+    "labelFr": "g\u00e9latine en poudre",
+    "labelEn": "gelatin powder",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "poudre de g\u00e9latine"
+    ],
+    "matchTermsEn": [
+      "powdered gelatin"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation distincte de la g\u00e9latine en feuilles; aucune force Bloom, densit\u00e9 ou conversion n\u2019est pr\u00e9sum\u00e9e.",
+    "notesEn": "Presentation distinct from sheet gelatin; no Bloom strength, density, or conversion is assumed.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-gelatin-sheets",
+    "ingredientRefId": "ingredient-ref-gelatin",
+    "formCode": "sheet",
+    "labelFr": "g\u00e9latine en feuilles",
+    "labelEn": "sheet gelatin",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "feuilles de g\u00e9latine"
+    ],
+    "matchTermsEn": [
+      "gelatin sheets",
+      "leaf gelatin"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation distincte de la g\u00e9latine en poudre; aucune force Bloom, densit\u00e9 ou conversion n\u2019est pr\u00e9sum\u00e9e.",
+    "notesEn": "Presentation distinct from powdered gelatin; no Bloom strength, density, or conversion is assumed.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-grain-sorghum-whole-cooked",
+    "ingredientRefId": "ingredient-ref-grain-sorghum",
+    "formCode": "whole_cooked",
+    "labelFr": "sorgho en grains entiers, cuit",
+    "labelEn": "grain sorghum, whole, cooked",
+    "prepState": "cooked",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "\u00c9tat cuit de grains entiers de sorgho correspondant \u00e0 la sortie du guide USDA. Le rendement approximatif est une observation de recherche; la m\u00e9thode de cuisson et la quantit\u00e9 d\u2019eau ne sont pas pr\u00e9cis\u00e9es. Ne pas en faire une conversion active ni un mode d\u2019emploi.",
+    "notesEn": "Cooked whole-sorghum state corresponding to the USDA guide output. The approximate yield is a research observation; cooking method and water quantity are not specified. Do not turn it into an active conversion or cooking instruction.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-grain-sorghum-whole-dry",
+    "ingredientRefId": "ingredient-ref-grain-sorghum",
+    "formCode": "whole_dry",
+    "labelFr": "sorgho en grains entiers, sec",
+    "labelEn": "grain sorghum, whole, dry",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che de grains entiers de sorgho correspondant \u00e0 l\u2019entr\u00e9e USDA Group H \u00ab Whole, Dry \u00bb. Le guide donne environ 2 1/4 tasses s\u00e8ches par livre; il ne pr\u00e9cise ni cultivar ni m\u00e9thode de mesure. N\u2019en d\u00e9duire aucune densit\u00e9 ou conversion g\u00e9n\u00e9rique.",
+    "notesEn": "Dry whole-sorghum form corresponding to the USDA Group H \u201cWhole, Dry\u201d entry. The guide reports about 2 1/4 dry cups per pound; it does not specify cultivar or measuring method. Do not derive a density or generic conversion.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-granulated-sugar-fine-grain",
+    "ingredientRefId": "ingredient-ref-granulated-sugar",
+    "formCode": "fine_grain",
+    "labelFr": "sucre tr\u00e8s fin",
+    "labelEn": "superfine granulated sugar",
+    "prepState": "fine_crystal",
+    "matchTermsFr": [
+      "sucre semoule",
+      "sucre-semoule",
+      "sucre superfin",
+      "sucre extra fin"
+    ],
+    "matchTermsEn": [
+      "caster sugar",
+      "castor sugar",
+      "superfine sugar",
+      "super-fine sugar"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme de sucre granul\u00e9 blanc \u00e0 cristaux tr\u00e8s fins. Le GDT de l\u2019OQLF associe caster/castor sugar \u00e0 sucre semoule; Sugar.ca d\u00e9crit le sucre tr\u00e8s fin comme une classe \u00e0 cristaux tr\u00e8s petits et note certains noms de produits utilis\u00e9s comme substituts. La correspondance d\u00e9crit la granulom\u00e9trie seulement : elle n\u2019\u00e9tablit aucune \u00e9quivalence de formulation, conversion, densit\u00e9 ou substitution. Garder le sucre \u00e0 glacer et les termes ambigus sucre de fruit et poudre de fruit \u00e0 part.",
+    "notesEn": "Fine-crystal form of white granulated sugar. OQLF's GDT maps caster/castor sugar to sucre semoule; Sugar.ca describes very fine sugar as a fine-crystal class and notes some product names used as substitutes. This match represents crystal size only; it establishes no formulation equivalence, conversion, density, or substitution. Keep icing sugar and the ambiguous fruit-sugar/fruit-powder terms separate.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-greek-yogurt-plain",
+    "ingredientRefId": "ingredient-ref-greek-yogurt",
+    "formCode": "plain",
+    "labelFr": "yogourt grec nature",
+    "labelEn": "plain Greek-style yogurt",
+    "prepState": "plain",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "plain Greek yogurt"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Qualifier de produit nature sous l\u2019identit\u00e9 de yogourt grec; aucune mesure ou conversion n\u2019est \u00e9tablie.",
+    "notesEn": "Plain product qualifier under the Greek-style yogurt identity; no measurement or conversion is established.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-greenland-halibut-steak",
+    "ingredientRefId": "ingredient-ref-greenland-halibut",
+    "formCode": "steak_cut",
+    "labelFr": "darne de fl\u00e9tan du Groenland",
+    "labelEn": "Greenland halibut steak",
+    "prepState": "steak_cut",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de coupe de poisson qualifi\u00e9e par esp\u00e8ce. La fiche anglaise d\u2019un produit nomme explicitement des darnes congel\u00e9es de fl\u00e9tan du Groenland; les sources qu\u00e9b\u00e9coises appuient darne comme coupe de fl\u00e9tan et indiquent cette coupe parmi les options pour le fl\u00e9tan du Groenland. Le libell\u00e9 fran\u00e7ais combine les termes qu\u00e9b\u00e9cois \u00e9tablis pour la coupe et l\u2019esp\u00e8ce; aucune fiche anglaise et fran\u00e7aise appari\u00e9e ne confirme l\u2019emploi de darne dans le titre du produit. Les masses d\u2019emballage des d\u00e9taillants sont propres \u00e0 chaque produit et n\u2019\u00e9tablissent aucune masse par darne, aucun nombre de darnes ni aucune portion r\u00e9utilisable. Aucune densit\u00e9, correspondance d\u2019unit\u00e9, conversion, rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Species-qualified fish-cut form. The English product page explicitly names frozen Greenland halibut cross-cut steaks; Qu\u00e9bec sources support darne as a halibut cut and identify darne as one possible cut for Greenland halibut. The French label composes established Qu\u00e9bec cut and species terms; no paired English/French product page verified the use of darne in the product title. Retailer pack masses are SKU-specific and establish no mass per steak, count, or reusable portion. No density, unit mapping, conversion, yield, or substitution is established.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-guarana-seed-powder",
+    "ingredientRefId": "ingredient-ref-guarana-seed",
+    "formCode": "powdered",
+    "labelFr": "poudre de graines de guarana",
+    "labelEn": "guarana seed powder",
+    "prepState": "powdered",
+    "matchTermsFr": [
+      "guarana en poudre",
+      "poudre de guarana"
+    ],
+    "matchTermsEn": [
+      "guarana powder",
+      "ground guarana"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Produit de graine moulue; distinct d\u2019une poudre soluble ou d\u2019un extrait de guarana.",
+    "notesEn": "Ground seed product; distinct from soluble guarana powder or guarana extract.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-habanero-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-habanero-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment habanero frais",
+    "labelEn": "fresh habanero pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "La pr\u00e9sentation fra\u00eeche est appuy\u00e9e par les fiches de produits frais du Qu\u00e9bec. Aucune mesure r\u00e9utilisable n'est ajout\u00e9e.",
+    "notesEn": "The fresh presentation is supported by fresh-produce listings. No reusable measure is added.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-habanero-pepper-whole-dehydrated",
+    "ingredientRefId": "ingredient-ref-habanero-pepper",
+    "formCode": "whole_dehydrated",
+    "labelFr": "piment habanero entier s\u00e9ch\u00e9",
+    "labelEn": "whole dried habanero pepper",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "piment habanero s\u00e9ch\u00e9"
+    ],
+    "matchTermsEn": [
+      "dried habanero pepper"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "L'entr\u00e9e de l'OQLF mentionne la consommation s\u00e9ch\u00e9e; des fournisseurs canadiens listent des Habaneros entiers s\u00e9ch\u00e9s. Aucun produit rouge ou carib\u00e9en particulier n'est g\u00e9n\u00e9ralis\u00e9.",
+    "notesEn": "The OQLF entry notes dried use, and Canadian sellers list whole dried Habanero products. No particular red or Caribbean product is generalized.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-haddock-fresh-whole",
+    "ingredientRefId": "ingredient-ref-haddock",
+    "formCode": "fresh_whole",
+    "labelFr": "\u00e9glefin frais entier",
+    "labelEn": "fresh whole haddock",
+    "prepState": "fresh",
+    "matchTermsFr": [
+      "\u00e9glefin entier",
+      "aiglefin frais entier",
+      "aiglefin entier"
+    ],
+    "matchTermsEn": [
+      "whole haddock"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation fra\u00eeche enti\u00e8re seulement. La source distingue entier, HOG et H&G, sans pr\u00e9ciser la pr\u00e9paration du produit entier; aucune mesure, conversion ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh whole presentation only. The source lists whole separately from HOG and H&G but does not specify the preparation of the whole product; no measure, conversion, or yield relationship is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-hazelnuts-finely-chopped",
+    "ingredientRefId": "ingredient-ref-hazelnuts",
+    "formCode": "finely_chopped",
+    "labelFr": "noisettes hach\u00e9es finement",
+    "labelEn": "finely chopped hazelnuts",
+    "prepState": "finely_chopped",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Coupe finement hach\u00e9e telle que nomm\u00e9e dans la recette source; la taille exacte des morceaux demeure propre \u00e0 cette recette. Aucune mesure, densit\u00e9 ou conversion n\u2019est \u00e9tablie.",
+    "notesEn": "Finely chopped state named in the source recipe; exact particle size remains recipe-specific. No measure, density, or conversion is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-hungarian-wax-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-hungarian-wax-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment fort hongrois frais",
+    "labelEn": "fresh Hungarian wax pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Le rapport de l'ACIA classe le piment hongrois parmi les piments forts entiers frais vendus au Canada; un fournisseur ontarien affiche Hungarian Wax Chili Peppers. Aucune masse par piment n'est \u00e9tablie.",
+    "notesEn": "The CFIA report classifies Hungarian pepper among whole fresh hot peppers sold in Canada; an Ontario supplier lists Hungarian Wax Chili Peppers. No per-pepper mass is established.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-jackfruit-young-in-brine",
+    "ingredientRefId": "ingredient-ref-jackfruit",
+    "formCode": "canned_with_liquid",
+    "labelFr": "jeune fruit du jacquier en saumure",
+    "labelEn": "young jackfruit in brine",
+    "prepState": "with_liquid",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Produit de jeune fruit vendu en bo\u00eete et en saumure. Les sources indiquent un format de 400 mL, pas une masse \u00e9goutt\u00e9e. Aucune densit\u00e9, mesure, conversion ou relation de rendement n\u2019est \u00e9tablie. Ne pas g\u00e9n\u00e9raliser les \u00e9tapes de rin\u00e7age, d\u2019\u00e9gouttage et de cuisson d\u2019une recette externe.",
+    "notesEn": "Source-named canned young fruit in brine. The cited package is 400 mL; no drained mass, density, measure, conversion, or yield relationship is established. Do not generalize the rinsing, draining, and cooking steps from an external recipe.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-jalapeno-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-jalapeno-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment jalapeno frais",
+    "labelEn": "fresh jalapeno pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Les sources appuient la pr\u00e9sentation fra\u00eeche; aucune mesure g\u00e9n\u00e9rale ou densit\u00e9 n'est \u00e9tablie.",
+    "notesEn": "Sources support the fresh presentation; no general measure or density is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-jalapeno-pepper-whole-smoked-dried",
+    "ingredientRefId": "ingredient-ref-jalapeno-pepper",
+    "formCode": "whole_smoked_dried",
+    "labelFr": "piment jalapeno entier fum\u00e9 et s\u00e9ch\u00e9 (chipotle)",
+    "labelEn": "whole smoked-and-dried jalape\u00f1o pepper (chipotle)",
+    "prepState": "smoked_dried",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "chipotle chili",
+      "chipotle chilli"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Le chipotle est un piment jalapeno m\u00fbr fum\u00e9 et s\u00e9ch\u00e9; aucune mesure g\u00e9n\u00e9rale ni densit\u00e9 n'est \u00e9tablie.",
+    "notesEn": "Chipotle is a ripe jalape\u00f1o pepper that is smoked and dried; no general measure or density is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-kidney-beans-canned-drained-rinsed",
+    "ingredientRefId": "ingredient-ref-kidney-beans",
+    "formCode": "canned_drained_rinsed",
+    "labelFr": "haricots rouges en conserve, rinc\u00e9s et \u00e9goutt\u00e9s",
+    "labelEn": "canned kidney beans, rinsed and drained",
+    "prepState": "drained",
+    "matchTermsFr": [
+      "haricots rouges rinc\u00e9s et \u00e9goutt\u00e9s"
+    ],
+    "matchTermsEn": [
+      "kidney beans, rinsed and drained"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La recette indique une bo\u00eete de 540 ml, puis les haricots sont rinc\u00e9s et \u00e9goutt\u00e9s. Le volume net de la bo\u00eete n\u2019est pas le volume des haricots \u00e9goutt\u00e9s.",
+    "notesEn": "The recipe names a 540 ml can, then rinses and drains the beans. The can\u2019s declared net volume is not the volume of the drained beans.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-lake-trout-whole-fish",
+    "ingredientRefId": "ingredient-ref-lake-trout",
+    "formCode": "whole_fish",
+    "labelFr": "touladi entier",
+    "labelEn": "whole lake trout",
+    "prepState": "whole",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation enti\u00e8re de touladi offerte par l\u2019Office de commercialisation du poisson d\u2019eau douce. Le profil indique une offre fra\u00eeche de juillet \u00e0 septembre et congel\u00e9e toute l\u2019ann\u00e9e; la forme ne distingue pas ces \u00e9tats. Il ne pr\u00e9cise pas si le poisson entier est vid\u00e9, \u00e9caill\u00e9, avec ou sans t\u00eate, avec peau ou avec ar\u00eates. Aucune mesure, densit\u00e9, conversion, relation de rendement, recette li\u00e9e ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Whole-lake-trout presentation offered by the Freshwater Fish Marketing Corporation. Its profile states a fresh offer from July through September and frozen product year-round; the form does not distinguish these states. The page does not say whether whole fish are gutted, scaled, head-on, skin-on, or bone-in. No measure, density, conversion, yield relationship, linked recipe, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-lake-whitefish-whole-fish",
+    "ingredientRefId": "ingredient-ref-lake-whitefish",
+    "formCode": "whole_fish",
+    "labelFr": "grand cor\u00e9gone entier",
+    "labelEn": "whole lake whitefish",
+    "prepState": "whole",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Seacore indique que le Coregonus clupeaformis est offert entier ou en filets, frais ou congel\u00e9. Allseas r\u00e9pertorie un produit sp\u00e9cifique de grand cor\u00e9gone entier habill\u00e9; cet \u00e9tat de pr\u00e9paration demeure propre \u00e0 ce produit. La forme d\u00e9crit uniquement la pr\u00e9sentation enti\u00e8re et ne pr\u00e9cise pas l\u2019\u00e9tat frais ou congel\u00e9, la t\u00eate, l\u2019\u00e9visc\u00e9ration, l\u2019\u00e9caillage, la peau ou les ar\u00eates. Les tailles et le format de caisse du fournisseur ne sont pas des mesures de cuisine. Aucune densit\u00e9, mesure, conversion, relation de rendement, recette li\u00e9e ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Seacore lists Coregonus clupeaformis whole or as fillets, fresh or frozen. Allseas lists a supplier-specific whole dressed whitefish product; that preparation wording remains specific to its product. This form describes only the whole presentation and specifies no fresh or frozen state, head, gutting, scaling, skin, or bones. Supplier size and case details are not kitchen measures. No density, measure, conversion, yield relationship, linked recipe, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-lobster-meat-cooked-frozen",
+    "ingredientRefId": "ingredient-ref-lobster-meat",
+    "formCode": "cooked_frozen",
+    "labelEn": "cooked frozen lobster meat",
+    "labelFr": "chair de homard cuite surgel\u00e9e",
+    "prepState": "cooked_frozen",
+    "matchTermsEn": [],
+    "matchTermsFr": [],
+    "densityGPerMl": null,
+    "notesEn": "Cooked-frozen market presentation. Species, cut, and formulation remain specific to each product; no measure, density, conversion, yield, or substitution is established.",
+    "notesFr": "Pr\u00e9sentation commerciale cuite et surgel\u00e9e. L\u2019esp\u00e8ce, la coupe et la formulation restent propres \u00e0 chaque produit; aucune mesure, densit\u00e9, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-lotus-leaves-dried",
+    "ingredientRefId": "ingredient-ref-lotus-leaves",
+    "formCode": "dried",
+    "labelFr": "feuilles de lotus s\u00e9ch\u00e9es",
+    "labelEn": "dried lotus leaves",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "feuille de lotus s\u00e9ch\u00e9e"
+    ],
+    "matchTermsEn": [
+      "dried lotus leaf"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Un produit canadien est explicitement \u00e9tiquet\u00e9 s\u00e9ch\u00e9. Aucun poids par feuille, aucune mesure, conversion de r\u00e9hydratation ou \u00e9quivalence avec les feuilles fra\u00eeches n\u2019est \u00e9tabli.",
+    "notesEn": "A Canadian product is explicitly labeled dried. No mass per leaf, household measure, rehydration conversion, or equivalence to fresh leaves is established.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-mahlab-ground",
+    "ingredientRefId": "ingredient-ref-mahlab",
+    "formCode": "ground",
+    "labelFr": "mahlab en poudre",
+    "labelEn": "mahlab powder",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "mahlab moulu"
+    ],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation commerciale en poudre, distincte de la forme en grains. Aucune mesure, densit\u00e9 ou \u00e9quivalence avec la forme enti\u00e8re n\u2019est \u00e9tablie.",
+    "notesEn": "Dry powdered retail presentation, distinct from whole kernels. No measure, density, or whole-to-ground equivalence is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-mahlab-whole-kernel",
+    "ingredientRefId": "ingredient-ref-mahlab",
+    "formCode": "whole_kernel",
+    "labelFr": "mahlab en grains",
+    "labelEn": "mahlab seeds",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation commerciale en grains du noyau de mahlab; aucune mesure, densit\u00e9 ni \u00e9quivalence avec la forme moulue n\u2019est \u00e9tablie.",
+    "notesEn": "Dry whole-kernel retail presentation; no measure, density, or whole-to-ground equivalence is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-makhana-roasted-popped",
+    "ingredientRefId": "ingredient-ref-makhana-seeds",
+    "formCode": "roasted_popped",
+    "labelFr": "graines de makhana grill\u00e9es et souffl\u00e9es",
+    "labelEn": "roasted, popped makhana kernels",
+    "prepState": "roasted_popped",
+    "matchTermsFr": [
+      "graines de makhana souffl\u00e9es",
+      "noix de renard"
+    ],
+    "matchTermsEn": [
+      "roasted makhana",
+      "popped makhana",
+      "puffed makhana",
+      "roasted fox nuts"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Noyaux de graines de makhana grill\u00e9s puis souffl\u00e9s; aucune mesure ni conversion de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "Makhana seed kernels roasted and popped; no recipe measure or process-yield conversion is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-makrut-lime-leaves-dried",
+    "ingredientRefId": "ingredient-ref-makrut-lime-leaves",
+    "formCode": "dried",
+    "labelFr": "feuilles de combava s\u00e9ch\u00e9es",
+    "labelEn": "dried makrut lime leaves",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Feuilles s\u00e9ch\u00e9es de Citrus hystrix. La forme ne comprend pas une conversion depuis les feuilles fra\u00eeches.",
+    "notesEn": "Dried Citrus hystrix leaves. This form does not imply a conversion from fresh leaves.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-makrut-lime-leaves-fresh",
+    "ingredientRefId": "ingredient-ref-makrut-lime-leaves",
+    "formCode": "fresh",
+    "labelFr": "feuilles fra\u00eeches de combava",
+    "labelEn": "fresh makrut lime leaves",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Feuilles fra\u00eeches de Citrus hystrix. Aucune densit\u00e9, quantit\u00e9 de r\u00e9f\u00e9rence ou conversion vers les formes congel\u00e9e ou s\u00e9ch\u00e9e n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh Citrus hystrix leaves. No density, reference quantity, or conversion to frozen or dried forms is established.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-makrut-lime-leaves-frozen",
+    "ingredientRefId": "ingredient-ref-makrut-lime-leaves",
+    "formCode": "frozen",
+    "labelFr": "feuilles de combava congel\u00e9es",
+    "labelEn": "frozen makrut lime leaves",
+    "prepState": "frozen",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme congel\u00e9e document\u00e9e comme m\u00e9thode de conservation. Aucune densit\u00e9, mesure ou conversion n\u2019est \u00e9tablie.",
+    "notesEn": "Frozen form documented as a preservation method. No density, measurement, or conversion is established.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-maple-syrup-amber-rich",
+    "ingredientRefId": "ingredient-ref-maple-syrup",
+    "formCode": "grade_a_amber_rich",
+    "labelFr": "Ambr\u00e9, go\u00fbt riche",
+    "labelEn": "Amber, Rich Taste",
+    "matchTermsFr": [
+      "sirop d\u2019\u00e9rable ambr\u00e9",
+      "sirop d\u2019\u00e9rable ambr\u00e9, go\u00fbt riche"
+    ],
+    "matchTermsEn": [
+      "amber maple syrup"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Classe de couleur de cat\u00e9gorie A au Canada. Les seuils de transmission lumineuse sont des crit\u00e8res de classement, pas une mesure culinaire; aucune densit\u00e9, mesure ou conversion propre \u00e0 cette classe n\u2019est \u00e9tablie.",
+    "notesEn": "Canada Grade A colour class. Light-transmission thresholds are classification criteria, not kitchen measures; no class-specific density, measure, or conversion is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-maple-syrup-dark-robust",
+    "ingredientRefId": "ingredient-ref-maple-syrup",
+    "formCode": "grade_a_dark_robust",
+    "labelFr": "Fonc\u00e9, go\u00fbt robuste",
+    "labelEn": "Dark, Robust Taste",
+    "matchTermsFr": [
+      "sirop d\u2019\u00e9rable fonc\u00e9",
+      "sirop d\u2019\u00e9rable fonc\u00e9, go\u00fbt robuste"
+    ],
+    "matchTermsEn": [
+      "dark maple syrup"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Classe de couleur de cat\u00e9gorie A au Canada. Les seuils de transmission lumineuse sont des crit\u00e8res de classement, pas une mesure culinaire; aucune densit\u00e9, mesure ou conversion propre \u00e0 cette classe n\u2019est \u00e9tablie.",
+    "notesEn": "Canada Grade A colour class. Light-transmission thresholds are classification criteria, not kitchen measures; no class-specific density, measure, or conversion is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-maple-syrup-golden-delicate",
+    "ingredientRefId": "ingredient-ref-maple-syrup",
+    "formCode": "grade_a_golden_delicate",
+    "labelFr": "Dor\u00e9, go\u00fbt d\u00e9licat",
+    "labelEn": "Golden, Delicate Taste",
+    "matchTermsFr": [
+      "sirop d\u2019\u00e9rable dor\u00e9",
+      "sirop d\u2019\u00e9rable dor\u00e9, go\u00fbt d\u00e9licat"
+    ],
+    "matchTermsEn": [
+      "golden maple syrup"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Classe de couleur de cat\u00e9gorie A au Canada. Les seuils de transmission lumineuse sont des crit\u00e8res de classement, pas une mesure culinaire; aucune densit\u00e9, mesure ou conversion propre \u00e0 cette classe n\u2019est \u00e9tablie.",
+    "notesEn": "Canada Grade A colour class. Light-transmission thresholds are classification criteria, not kitchen measures; no class-specific density, measure, or conversion is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-maple-syrup-very-dark-strong",
+    "ingredientRefId": "ingredient-ref-maple-syrup",
+    "formCode": "grade_a_very_dark_strong",
+    "labelFr": "Tr\u00e8s fonc\u00e9, go\u00fbt prononc\u00e9",
+    "labelEn": "Very Dark, Strong Taste",
+    "matchTermsFr": [
+      "sirop d\u2019\u00e9rable tr\u00e8s fonc\u00e9",
+      "sirop d\u2019\u00e9rable tr\u00e8s fonc\u00e9, go\u00fbt prononc\u00e9"
+    ],
+    "matchTermsEn": [
+      "very dark maple syrup"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Classe de couleur de cat\u00e9gorie A au Canada. Les seuils de transmission lumineuse sont des crit\u00e8res de classement, pas une mesure culinaire; aucune densit\u00e9, mesure ou conversion propre \u00e0 cette classe n\u2019est \u00e9tablie.",
+    "notesEn": "Canada Grade A colour class. Light-transmission thresholds are classification criteria, not kitchen measures; no class-specific density, measure, or conversion is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-medjool-dates-pitted",
+    "ingredientRefId": "ingredient-ref-medjool-dates",
+    "formCode": "pitted",
+    "labelFr": "dattes Medjool d\u00e9noyaut\u00e9es",
+    "labelEn": "pitted Medjool dates",
+    "prepState": "pitted",
+    "matchTermsFr": [
+      "dattes de type Medjool d\u00e9noyaut\u00e9es"
+    ],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "\u00c9tat d\u00e9noyaut\u00e9 seulement. La source Ricardo indique aussi des dattes hach\u00e9es et l\u00e9g\u00e8rement tass\u00e9es, mais ces pr\u00e9parations propres \u00e0 la recette ne font pas partie de cette forme. Les portions de 425 g/2 \u00bd tasses et de 1 datte/24 g demeurent des observations propres aux sources; aucune conversion ou correspondance active n\u2019est \u00e9tablie.",
+    "notesEn": "Pitted state only. The Ricardo source also specifies chopped, lightly packed dates, but those recipe-specific preparations are not part of this form. The 425 g/2\u00bd cup and 1 date/24 g portions remain source-specific observations; no active conversion or mapping is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-milk-chocolate-chips",
+    "ingredientRefId": "ingredient-ref-milk-chocolate",
+    "formCode": "chips",
+    "labelFr": "p\u00e9pites de chocolat au lait",
+    "labelEn": "milk chocolate chips",
+    "prepState": "chips",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme en p\u00e9pites d\u2019une identit\u00e9 de chocolat existante; aucune densit\u00e9 ni conversion distincte n\u2019est \u00e9tablie.",
+    "notesEn": "Chip form of an existing chocolate identity; no separate density or conversion is established.",
+    "updatedAt": "2026-10-06T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-millet-cooked",
+    "ingredientRefId": "ingredient-ref-millet",
+    "formCode": "cooked",
+    "labelFr": "millet, cuit",
+    "labelEn": "millet, cooked",
+    "prepState": "cooked",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "\u00c9tat cuit du CNF 2015 Food Code 4492; les portions publi\u00e9es ne d\u00e9finissent aucune densit\u00e9 ni conversion g\u00e9n\u00e9rale.",
+    "notesEn": "Cooked state from CNF 2015 Food Code 4492; its published portions do not establish a general density or conversion.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-naranjilla-frozen-pulp",
+    "ingredientRefId": "ingredient-ref-naranjilla",
+    "formCode": "pulp",
+    "labelFr": "pulpe de lulo congel\u00e9e",
+    "labelEn": "frozen lulo pulp",
+    "prepState": "frozen",
+    "matchTermsFr": [
+      "pulpe de naranjilla congel\u00e9e"
+    ],
+    "matchTermsEn": [
+      "lulo fruit pulp",
+      "naranjilla pulp"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La formulation, la dilution et la concentration du produit ne sont pas pr\u00e9cis\u00e9es. Aucune mesure ni conversion n\u2019est \u00e9tablie.",
+    "notesEn": "Product formulation, dilution, and concentration are unspecified. No measure or conversion is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-northern-pike-fresh-whole",
+    "ingredientRefId": "ingredient-ref-northern-pike",
+    "formCode": "fresh_whole",
+    "labelFr": "grand brochet frais entier",
+    "labelEn": "fresh whole northern pike",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation de grand brochet frais offerte dans la cat\u00e9gorie de poissons entiers d\u2019un fournisseur ontarien. La page indique aussi une pr\u00e9sentation par\u00e9e ou en filets, mais ne pr\u00e9cise pas l\u2019\u00e9tat de pr\u00e9paration du poisson entier. Aucune mesure, densit\u00e9, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh whole-pike presentation listed by an Ontario supplier. The page also says fish is available dressed or in fillets but does not specify the preparation state of its whole-pike option. No measure, density, conversion, yield relationship, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-nuts-crushed",
+    "ingredientRefId": "ingredient-ref-nuts",
+    "formCode": "crushed",
+    "labelFr": "noix concass\u00e9es",
+    "labelEn": "crushed nuts",
+    "prepState": "crushed",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de garniture nomm\u00e9e dans la recette source. La recette ne pr\u00e9cise ni esp\u00e8ce de noix ni taille exacte des morceaux. Aucune mesure, densit\u00e9 ou conversion n\u2019est \u00e9tablie.",
+    "notesEn": "Crushed-nut garnish state named in the source recipe. The recipe does not specify a nut species or exact particle size. No measure, density, or conversion is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-oat-bran-cooked",
+    "ingredientRefId": "ingredient-ref-oat-bran",
+    "formCode": "cooked",
+    "labelFr": "son d'avoine, cuit",
+    "labelEn": "oat bran, cooked",
+    "prepState": "cooked",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme cuite; aucune densit\u00e9, conversion ou relation de rendement \u00e0 la cuisson n'est \u00e9tablie.",
+    "notesEn": "Cooked form; no density, conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-07T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-oat-bran-dry",
+    "ingredientRefId": "ingredient-ref-oat-bran",
+    "formCode": "dry",
+    "labelFr": "son d'avoine, sec",
+    "labelEn": "oat bran, dry",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che; aucune densit\u00e9, conversion ou relation de rendement \u00e0 la cuisson n'est \u00e9tablie.",
+    "notesEn": "Dry form; no density, conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-07T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-octopus-cooked-tentacles",
+    "ingredientRefId": "ingredient-ref-octopus",
+    "formCode": "cooked_tentacles",
+    "labelEn": "cooked octopus tentacles",
+    "labelFr": "tentacules de pieuvre cuits",
+    "prepState": "cooked",
+    "matchTermsEn": [
+      "previously frozen cooked octopus tentacles"
+    ],
+    "matchTermsFr": [
+      "tentacules de pieuvre cuits d\u00e9congel\u00e9s"
+    ],
+    "densityGPerMl": null,
+    "notesEn": "A cooked-tentacle form supported by Metro Qu\u00e9bec product 244396. Previously frozen/thawed describes that seller's SKU only. No species, household measure, conversion, yield, or substitution is established.",
+    "notesFr": "Forme de tentacules de pieuvre cuits appuy\u00e9e par le produit Metro Qu\u00e9bec 244396. La cong\u00e9lation ant\u00e9rieure et la d\u00e9cong\u00e9lation d\u00e9crivent uniquement ce produit. Aucune esp\u00e8ce, mesure m\u00e9nag\u00e8re, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-octopus-frozen-whole",
+    "ingredientRefId": "ingredient-ref-octopus",
+    "formCode": "whole_frozen",
+    "labelFr": "pieuvre enti\u00e8re surgel\u00e9e",
+    "labelEn": "frozen whole octopus",
+    "prepState": "frozen",
+    "matchTermsFr": [
+      "pieuvre enti\u00e8re"
+    ],
+    "matchTermsEn": [
+      "whole octopus"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme commerciale enti\u00e8re surgel\u00e9e appuy\u00e9e par les pages bilingues du fournisseur. Les esp\u00e8ces, ingr\u00e9dients, calibres et d\u00e9tails de produit demeurent propres aux SKU; aucune mesure, densit\u00e9, pr\u00e9paration crue/cuite, propret\u00e9, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Whole frozen commercial form supported by the supplier\u2019s bilingual pages. Species, ingredients, grades, and product details remain SKU-specific; no measure, density, raw/cooked preparation, cleaned state, conversion, yield, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-orange-footed-sea-cucumber-dried-gutted-body-wall",
+    "ingredientRefId": "ingredient-ref-orange-footed-sea-cucumber",
+    "formCode": "dried_gutted_body_wall",
+    "labelFr": "paroi corporelle s\u00e9ch\u00e9e d\u2019holothurie touffue \u00e9visc\u00e9r\u00e9e",
+    "labelEn": "dried gutted body wall of orange-footed sea cucumber",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "paroi corporelle s\u00e9ch\u00e9e d\u2019holothurie touffue"
+    ],
+    "matchTermsEn": [
+      "dried gutted body wall of Cucumaria frondosa"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme commerciale document\u00e9e pour Cucumaria frondosa. Elle reste distincte des muscles, des formes congel\u00e9es ou enti\u00e8res et des autres esp\u00e8ces. Aucune mesure, densit\u00e9, conversion, r\u00e9hydratation ou relation de rendement culinaire n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial form documented for Cucumaria frondosa. Keep separate from muscles, frozen or whole products, and other species. No measure, density, conversion, rehydration ratio, or culinary yield is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-pacific-cod-fillet",
+    "ingredientRefId": "ingredient-ref-pacific-cod",
+    "formCode": "fillet_cut",
+    "labelFr": "filets de morue du Pacifique",
+    "labelEn": "Pacific cod fillets",
+    "prepState": "fillet_cut",
+    "matchTermsFr": [
+      "filet de morue du Pacifique"
+    ],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de coupe de morue du Pacifique appuy\u00e9e par un produit bilingue Metro et un produit distinct de fournisseur. Les \u00e9tats d\u00e9congel\u00e9 et d\u00e9sar\u00eat\u00e9, les additifs, tailles et formats d\u2019emballage demeurent propres \u00e0 chaque produit. Aucune mesure r\u00e9utilisable, quantit\u00e9 par filet ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "Pacific cod cut form supported by a bilingual Metro product and a separate supplier product. Thawed and boneless states, additives, size ranges, and pack formats remain specific to each product. No reusable measure, mass per fillet, or yield relationship is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-pacific-cod-fresh-whole",
+    "ingredientRefId": "ingredient-ref-pacific-cod",
+    "formCode": "fresh_whole",
+    "labelFr": "morue du Pacifique fra\u00eeche enti\u00e8re",
+    "labelEn": "fresh whole Pacific cod",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation de morue du Pacifique fra\u00eeche vendue enti\u00e8re. Les sources \u00e9tablissent cette cat\u00e9gorie, mais ne pr\u00e9cisent pas si le poisson est \u00e9visc\u00e9r\u00e9 ou vendu avec la t\u00eate. Aucune mesure, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh Pacific cod sold as a whole-fish presentation. The sources support this presentation category but do not state whether the fish is gutted or sold with its head. No measure, conversion, yield relationship, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-pacific-cod-loin",
+    "ingredientRefId": "ingredient-ref-pacific-cod",
+    "formCode": "loin_cut",
+    "labelFr": "longe de morue du Pacifique",
+    "labelEn": "Pacific cod loin",
+    "prepState": "loin_cut",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de coupe qualifi\u00e9e par esp\u00e8ce, appuy\u00e9e par le nom de produit Metro bilingue. Le poids de la portion Metro est propre \u00e0 ce SKU et n\u2019\u00e9tablit pas une mesure r\u00e9utilisable, un rendement, une conversion ou une substitution.",
+    "notesEn": "Species-qualified cut form supported by the bilingual Metro product name. Metro\u2019s item weight applies only to that SKU and does not establish a reusable measure, yield, conversion, or substitution.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-pacific-halibut-steak",
+    "ingredientRefId": "ingredient-ref-pacific-halibut",
+    "formCode": "steak_cut",
+    "labelFr": "darne de fl\u00e9tan du Pacifique",
+    "labelEn": "Pacific halibut steak",
+    "prepState": "steak_cut",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme de coupe de poisson qualifi\u00e9e par esp\u00e8ce, appuy\u00e9e par les fiches Metro de darnes de fl\u00e9tan du Pacifique et par la terminologie qu\u00e9b\u00e9coise de la darne. Le libell\u00e9 fran\u00e7ais combine le terme de coupe \u00e9tabli et le nom d\u2019esp\u00e8ce du MPO; aucune fiche fran\u00e7aise Metro appari\u00e9e \u00e0 un m\u00eame produit n\u2019a \u00e9t\u00e9 v\u00e9rifi\u00e9e. Les fiches n\u2019\u00e9tablissent aucune masse r\u00e9utilisable par darne, \u00e9paisseur standard, mesure d\u2019emballage, rendement comestible ni pr\u00e9sence de peau ou d\u2019ar\u00eates. Aucune conversion ni substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Species-qualified fish-cut form supported by Metro Pacific halibut steak listings and Qu\u00e9bec terminology for darne. The French form label combines the established cut term with DFO\u2019s species name; no paired French Metro SKU page was verified. The listings establish no reusable cut mass, standard thickness, package measure, edible yield, or skin/bone condition. No conversion or substitution is established.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-padron-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-padron-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment de Padr\u00f3n frais",
+    "labelEn": "fresh Padr\u00f3n pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "La fiche canadienne classe le produit parmi les fruits et l\u00e9gumes frais; le fournisseur qu\u00e9b\u00e9cois d\u00e9crit le fruit r\u00e9colt\u00e9 et son usage culinaire. Aucune mesure g\u00e9n\u00e9rique n'est \u00e9tablie.",
+    "notesEn": "The Canadian listing classifies the product under fresh produce; the Quebec grower describes harvested fruit and culinary use. No generic measure is established.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-pandan-leaves-powdered",
+    "ingredientRefId": "ingredient-ref-pandan-leaves",
+    "formCode": "powdered",
+    "labelFr": "poudre de feuilles de pandan",
+    "labelEn": "pandan leaf powder",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che de feuilles de pandan pures r\u00e9duites en poudre, confirm\u00e9e pour des produits pr\u00e9cis. Exclut les poudres d\u2019extrait, les aromatisants et les m\u00e9langes. Aucune densit\u00e9, mesure, conversion ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "Dry form of pure pandan leaves ground to a powder, confirmed for specific products. Excludes extract powders, flavourings, and blends. No density, measure, conversion, or yield relationship is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-pangasius-frozen-fillets",
+    "ingredientRefId": "ingredient-ref-pangasius-group",
+    "formCode": "frozen",
+    "labelFr": "filets de pangasius surgel\u00e9s",
+    "labelEn": "frozen basa fillets",
+    "prepState": "frozen",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation commerciale de filets surgel\u00e9s appuy\u00e9e par des termes de vente canadiens actuels. Le nom basa ne d\u00e9signe pas une seule esp\u00e8ce de Pangasius. Les additifs et le format d\u2019emballage restent propres \u00e0 chaque produit. Aucune mesure, conversion ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial frozen fillet presentation supported by current Canadian retail product wording. The label basa does not identify one Pangasius species. Additives and package details remain SKU-specific. No measure, conversion, or yield is established.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-peanuts-roasted",
+    "ingredientRefId": "ingredient-ref-peanuts",
+    "formCode": "roasted",
+    "labelFr": "arachides grill\u00e9es",
+    "labelEn": "roasted peanuts",
+    "prepState": "roasted",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Indique uniquement que les arachides sont grill\u00e9es; le proc\u00e9d\u00e9 (\u00e0 sec ou \u00e0 l'huile), le salage et le hachage ne sont pas pr\u00e9cis\u00e9s. Aucune densit\u00e9, conversion, mesure ou substitution g\u00e9n\u00e9rale n'est \u00e9tablie.",
+    "notesEn": "Indicates only that the peanuts are roasted; roast medium (dry or oil), salt status, and chopping are unspecified. No general density, conversion, measure, or substitution is established.",
+    "updatedAt": "2026-10-14T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-pearl-barley-cooked",
+    "ingredientRefId": "ingredient-ref-pearl-barley",
+    "formCode": "cooked",
+    "labelFr": "orge perl\u00e9, cuit",
+    "labelEn": "pearl barley, cooked",
+    "prepState": "cooked",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme cuite; aucune densit\u00e9, conversion ou relation de rendement \u00e0 la cuisson n'est \u00e9tablie.",
+    "notesEn": "Cooked form; no density, conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-13T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-pearl-barley-dry",
+    "ingredientRefId": "ingredient-ref-pearl-barley",
+    "formCode": "dry",
+    "labelFr": "orge perl\u00e9, sec",
+    "labelEn": "pearl barley, dry",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che; aucune densit\u00e9, conversion ou relation de rendement \u00e0 la cuisson n'est \u00e9tablie.",
+    "notesEn": "Dry form; no density, conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-13T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-pecans-chopped",
+    "ingredientRefId": "ingredient-ref-pecans",
+    "formCode": "chopped",
+    "labelFr": "pacanes hach\u00e9es",
+    "labelEn": "chopped pecans",
+    "prepState": "chopped",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "pecans, chopped",
+      "coarsely chopped pecans",
+      "pecans, coarsely chopped"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Les sources nomment des pacanes hach\u00e9es; une recette pr\u00e9cise une coupe grossi\u00e8re. La taille des morceaux demeure propre \u00e0 chaque recette. Aucune mesure, densit\u00e9 ou conversion n\u2019est \u00e9tablie.",
+    "notesEn": "The sources name chopped pecans; one recipe specifies coarse chopping. Particle size remains recipe-specific. No measure, density, or conversion is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-pineapple-crushed",
+    "ingredientRefId": "ingredient-ref-pineapple",
+    "formCode": "crushed",
+    "labelFr": "ananas broy\u00e9",
+    "labelEn": "crushed pineapple",
+    "prepState": "crushed",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "La forme nomme uniquement le fruit broy\u00e9. Les sources canadiennes consult\u00e9es documentent des produits commerciaux d\u2019ananas broy\u00e9 en conserve, mais la ligne 053#14 ne pr\u00e9cise pas que le fruit est en conserve ni le liquide de conditionnement. Aucune densit\u00e9, conversion ou relation de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "This form names the crushed fruit only. The Canadian sources reviewed document commercial canned crushed pineapple, but line 053#14 does not state that the fruit is canned or name its packing medium. No density, conversion, or yield relationship is established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-pinto-beans-canned-with-liquid",
+    "ingredientRefId": "ingredient-ref-pinto-beans",
+    "formCode": "canned_with_liquid",
+    "labelFr": "haricots pinto en conserve, avec le liquide",
+    "labelEn": "canned pinto beans with liquid",
+    "prepState": "with_liquid",
+    "matchTermsFr": [
+      "haricots pinto en conserve, avec le liquide",
+      "haricots pinto avec le liquide"
+    ],
+    "matchTermsEn": [
+      "canned pinto beans with liquid",
+      "pinto beans with liquid"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La recette 007#4 demande la bo\u00eete enti\u00e8re avec son liquide. Une fiche canadienne actuelle pour les haricots pinto Unico de 540 mL indique de l\u2019eau parmi les ingr\u00e9dients. La marque, le format et le milieu de conditionnement de la bo\u00eete utilis\u00e9e dans cette recette ne sont pas \u00e9tablis.",
+    "notesEn": "Recipe 007#4 uses the whole can with its liquid. A current Canadian listing for Unico 540 mL pinto beans lists water among the ingredients. The brand, size, and packing medium of the can used in this recipe are not established.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-pistachios-chopped",
+    "ingredientRefId": "ingredient-ref-pistachios",
+    "formCode": "chopped",
+    "labelFr": "pistaches hach\u00e9es",
+    "labelEn": "chopped pistachios",
+    "prepState": "chopped",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "La source nomme des pistaches hach\u00e9es; la taille exacte des morceaux demeure propre \u00e0 cette recette. Aucune mesure, densit\u00e9 ou conversion n'est \u00e9tablie.",
+    "notesEn": "The source names chopped pistachios; exact particle size remains recipe-specific. No measure, density, or conversion is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-poblano-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-poblano-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment poblano frais",
+    "labelEn": "fresh poblano pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "La pr\u00e9sentation fra\u00eeche est appuy\u00e9e par les fiches de produits frais. Aucune mesure ni relation avec le piment ancho n\u2019est ajout\u00e9e.",
+    "notesEn": "The fresh presentation is supported by fresh-produce listings. No measure or relationship to ancho is added.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-poblano-pepper-whole-dried-ancho",
+    "ingredientRefId": "ingredient-ref-poblano-pepper",
+    "formCode": "whole_dehydrated",
+    "labelFr": "piment ancho entier s\u00e9ch\u00e9",
+    "labelEn": "whole dried ancho pepper",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "piment ancho",
+      "piments anchos"
+    ],
+    "matchTermsEn": [
+      "ancho",
+      "ancho pepper",
+      "ancho peppers"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Le piment ancho est la forme s\u00e9ch\u00e9e du poblano. Les sources appuient la pr\u00e9sentation enti\u00e8re, mais aucune mesure r\u00e9utilisable, masse par piment, densit\u00e9, conversion ou substitution.",
+    "notesEn": "Ancho is the dried form of Poblano. Sources support the whole presentation, but no reusable measure, per-pepper mass, density, conversion, or substitution.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-psyllium-husk-powder",
+    "ingredientRefId": "ingredient-ref-psyllium-husk",
+    "formCode": "powdered",
+    "labelFr": "t\u00e9gument de psyllium en poudre",
+    "labelEn": "psyllium husk powder",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "poudre de t\u00e9gument de psyllium"
+    ],
+    "matchTermsEn": [
+      "powdered psyllium husk"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "T\u00e9gument moulu, distinct des graines enti\u00e8res; aucune densit\u00e9 ou conversion n\u2019est pr\u00e9sum\u00e9e.",
+    "notesEn": "Ground husk, distinct from whole seeds; no density or conversion is assumed.",
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-quinoa-cooked",
+    "ingredientRefId": "ingredient-ref-quinoa",
+    "formCode": "cooked",
+    "labelFr": "quinoa, cuit",
+    "labelEn": "quinoa, cooked",
+    "prepState": "cooked",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme cuite; aucune densit\u00e9, conversion ou relation de rendement \u00e0 la cuisson n'est \u00e9tablie.",
+    "notesEn": "Cooked form; no density, conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-07T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-quinoa-dry",
+    "ingredientRefId": "ingredient-ref-quinoa",
+    "formCode": "dry",
+    "labelFr": "quinoa, sec",
+    "labelEn": "quinoa, dry",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che; aucune densit\u00e9, conversion ou relation de rendement \u00e0 la cuisson n'est \u00e9tablie.",
+    "notesEn": "Dry form; no density, conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-07T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-rainbow-trout-fresh-whole",
+    "ingredientRefId": "ingredient-ref-rainbow-trout",
+    "formCode": "fresh_whole",
+    "labelFr": "truite arc-en-ciel enti\u00e8re fra\u00eeche",
+    "labelEn": "fresh whole rainbow trout",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation de truite arc-en-ciel enti\u00e8re fra\u00eeche list\u00e9e par Metro sous le no de produit 208107 et identifi\u00e9e comme Oncorhynchus mykiss. La page du produit indiquait que l\u2019article \u00e9tait en rupture de stock lors de la v\u00e9rification; elle n\u2019\u00e9tablit pas un approvisionnement continu ni un \u00e9tat g\u00e9n\u00e9ral de t\u00eate, d\u2019\u00e9visc\u00e9ration ou d\u2019\u00e9caillage. Aucune mesure, densit\u00e9, conversion, relation de rendement, recette li\u00e9e ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh whole rainbow-trout presentation listed by Metro under product no. 208107 and identified as Oncorhynchus mykiss. The product page showed the item out of stock at review time; it does not establish continuing stock or a general head, gutting, or scaling state. No measure, density, conversion, yield relationship, linked recipe, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-rice-cooked",
+    "ingredientRefId": "ingredient-ref-rice",
+    "formCode": "cooked",
+    "labelFr": "riz cuit",
+    "labelEn": "cooked rice",
+    "prepState": "cooked",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme cuite; aucune densit\u00e9, conversion ou relation de rendement \u00e0 la cuisson n'est \u00e9tablie.",
+    "notesEn": "Cooked form; no density, conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-07T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-rice-dry",
+    "ingredientRefId": "ingredient-ref-rice",
+    "formCode": "dry",
+    "labelFr": "riz sec",
+    "labelEn": "dry rice",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che; aucune densit\u00e9, conversion ou relation de rendement \u00e0 la cuisson n'est \u00e9tablie.",
+    "notesEn": "Dry form; no density, conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-07T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-roasted-coffee-ground",
+    "ingredientRefId": "ingredient-ref-roasted-coffee",
+    "formCode": "ground",
+    "labelFr": "caf\u00e9 moulu",
+    "labelEn": "ground coffee",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation commerciale du caf\u00e9 torr\u00e9fi\u00e9 seulement. Aucune mesure, densit\u00e9 ou \u00e9quivalence avec le caf\u00e9 infus\u00e9 n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial presentation of roasted coffee only. No measure, density, or equivalence with brewed coffee is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-roasted-coffee-whole-bean",
+    "ingredientRefId": "ingredient-ref-roasted-coffee",
+    "formCode": "whole_bean",
+    "labelFr": "caf\u00e9 en grains",
+    "labelEn": "whole-bean coffee",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "whole bean coffee"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation commerciale du caf\u00e9 torr\u00e9fi\u00e9 seulement. Aucune mesure, densit\u00e9 ou \u00e9quivalence de pr\u00e9paration n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial presentation of roasted coffee only. No measure, density, or preparation equivalence is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-rocoto-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-rocoto-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment rocoto frais",
+    "labelEn": "fresh rocoto pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [
+      "rocoto fresco"
+    ],
+    "matchTermsEn": [
+      "fresh rocoto",
+      "fresh rocoto peppers"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La pr\u00e9sentation fra\u00eeche est nomm\u00e9e s\u00e9par\u00e9ment. Aucune donn\u00e9e quantitative ni conversion n\u2019est ajout\u00e9e.",
+    "notesEn": "The fresh presentation is named separately. No quantitative data or conversion is added.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-rocoto-pepper-fresh-ground-with-skin-unsalted-water",
+    "ingredientRefId": "ingredient-ref-rocoto-pepper",
+    "formCode": "fresh_ground_with_skin_unsalted_water",
+    "labelFr": "piment rocoto frais, moulu avec la pelure, dans l\u2019eau sans sel",
+    "labelEn": "fresh ground rocoto with skin, in unsalted water",
+    "prepState": "fresh_ground",
+    "matchTermsFr": [
+      "rocoto fresco molido con c\u00e1scara en agua sin sal"
+    ],
+    "matchTermsEn": [
+      "rocoto fresco molido con c\u00e1scara en agua sin sal"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La fiche INS d\u00e9crit pr\u00e9cis\u00e9ment du rocoto frais moulu avec la pelure, dans de l\u2019eau sans sel. Ne pas g\u00e9n\u00e9raliser au terme non qualifi\u00e9 rocoto molido.",
+    "notesEn": "The INS entry specifically describes fresh ground rocoto with skin, in unsalted water. Do not generalize it to unqualified rocoto molido.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-rocoto-pepper-powdered",
+    "ingredientRefId": "ingredient-ref-rocoto-pepper",
+    "formCode": "powdered",
+    "labelFr": "poudre de rocoto",
+    "labelEn": "rocoto powder",
+    "prepState": "powdered",
+    "matchTermsFr": [
+      "rocoto en polvo"
+    ],
+    "matchTermsEn": [
+      "powdered rocoto",
+      "rocoto en polvo"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La poudre est une pr\u00e9sentation distincte du fruit entier d\u00e9shydrat\u00e9 et du rocoto frais moulu. Aucune densit\u00e9 ni conversion n\u2019est ajout\u00e9e.",
+    "notesEn": "Powder is distinct from whole dehydrated fruit and fresh-ground rocoto. No density or conversion is added.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-rocoto-pepper-qacha",
+    "ingredientRefId": "ingredient-ref-rocoto-pepper",
+    "formCode": "qacha",
+    "labelFr": "qacha (rocoto fendu, \u00e9p\u00e9pin\u00e9 et s\u00e9ch\u00e9 au soleil)",
+    "labelEn": "qacha (split, deseeded, sun-dried rocoto)",
+    "prepState": "sun_dried_split_deseeded",
+    "matchTermsFr": [
+      "qacha",
+      "rocoto qacha"
+    ],
+    "matchTermsEn": [
+      "qacha",
+      "qacha rocoto"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Le guide d\u00e9crit le rocoto fendu en deux ou plusieurs morceaux, \u00e9p\u00e9pin\u00e9 puis s\u00e9ch\u00e9 au soleil. Cette forme reste distincte du fruit entier d\u00e9shydrat\u00e9.",
+    "notesEn": "The guide describes rocoto split into two or more pieces, deseeded, then sun-dried. Keep it distinct from whole dehydrated fruit.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-rocoto-pepper-whole-dehydrated",
+    "ingredientRefId": "ingredient-ref-rocoto-pepper",
+    "formCode": "whole_dehydrated",
+    "labelFr": "piment rocoto entier s\u00e9ch\u00e9",
+    "labelEn": "whole dried rocoto pepper",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "rocoto entero deshidratado"
+    ],
+    "matchTermsEn": [
+      "rocoto entero deshidratado"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La forme enti\u00e8re d\u00e9shydrat\u00e9e reste distincte de la poudre et de la qacha; aucune \u00e9quivalence n\u2019est inf\u00e9r\u00e9e.",
+    "notesEn": "The whole dehydrated form stays distinct from powder and qacha; no equivalence is inferred.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-scotch-bonnet-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-scotch-bonnet-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment Scotch Bonnet frais",
+    "labelEn": "fresh Scotch Bonnet pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Les sources appuient la pr\u00e9sentation fra\u00eeche; aucune mesure g\u00e9n\u00e9rale ou densit\u00e9 n'est \u00e9tablie.",
+    "notesEn": "Sources support the fresh-market form; no general measure or density is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-semisweet-chocolate-chips",
+    "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+    "formCode": "chips",
+    "labelFr": "p\u00e9pites de chocolat mi-sucr\u00e9",
+    "labelEn": "semisweet chocolate chips",
+    "prepState": "chips",
+    "matchTermsFr": [
+      "p\u00e9pites de chocolat",
+      "brisures de chocolat",
+      "brisures de chocolat mi-sucr\u00e9"
+    ],
+    "matchTermsEn": [
+      "chocolate chips",
+      "semi-sweet chocolate chips",
+      "semisweet chocolate chips"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme en p\u00e9pites d\u2019une identit\u00e9 de chocolat existante; aucune densit\u00e9 ni conversion distincte n\u2019est \u00e9tablie.",
+    "notesEn": "Chip form of an existing chocolate identity; no separate density or conversion is established.",
+    "updatedAt": "2026-10-06T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-semisweet-chocolate-melted",
+    "ingredientRefId": "ingredient-ref-semisweet-chocolate",
+    "formCode": "melted",
+    "labelFr": "chocolat mi-sucr\u00e9 fondu",
+    "labelEn": "melted semisweet chocolate",
+    "prepState": "melted",
+    "matchTermsFr": [
+      "chocolat fondu"
+    ],
+    "matchTermsEn": [
+      "semisweet chocolate melted",
+      "melted chocolate"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Chocolat mi-sucr\u00e9 fondu pour la recette; aucune densit\u00e9 ni conversion distincte n\u2019est \u00e9tablie.",
+    "notesEn": "Semisweet chocolate melted for a recipe; no separate density or conversion is established.",
+    "updatedAt": "2026-10-06T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-serrano-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-serrano-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment serrano frais",
+    "labelEn": "fresh serrano pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Les sources appuient la pr\u00e9sentation fra\u00eeche; aucune mesure g\u00e9n\u00e9rale ou densit\u00e9 n'est \u00e9tablie.",
+    "notesEn": "Sources support the fresh-market form; no general measure or density is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-sesame-seeds-toasted",
+    "ingredientRefId": "ingredient-ref-sesame-seeds",
+    "formCode": "toasted",
+    "labelFr": "graines de s\u00e9same grill\u00e9es",
+    "labelEn": "toasted sesame seeds",
+    "prepState": "toasted",
+    "matchTermsFr": [
+      "graines de s\u00e9same grill\u00e9es"
+    ],
+    "matchTermsEn": [
+      "toasted sesame seeds",
+      "sesame seeds, toasted"
+    ],
+    "densityGPerMl": null,
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-shishito-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-shishito-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment Shishito frais",
+    "labelEn": "fresh Shishito pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Le rapport de l'ACIA porte sur des piments entiers \u00e0 l'\u00e9tat frais; Aliments du Qu\u00e9bec classe ce produit parmi les fruits et l\u00e9gumes frais. Aucune mesure g\u00e9n\u00e9rique n'est \u00e9tablie.",
+    "notesEn": "The CFIA report covers whole fresh peppers; Aliments du Qu\u00e9bec lists this product as fresh produce. No generic measure is established.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-skim-milk-powder",
+    "ingredientRefId": "ingredient-ref-skim-milk",
+    "formCode": "powdered",
+    "labelFr": "lait \u00e9cr\u00e9m\u00e9 en poudre",
+    "labelEn": "skim milk powder",
+    "prepState": "powdered",
+    "matchTermsFr": [
+      "poudre de lait \u00e9cr\u00e9m\u00e9"
+    ],
+    "matchTermsEn": [
+      "powdered skim milk"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Garde la classe de mati\u00e8re grasse \u00ab \u00e9cr\u00e9m\u00e9 \u00bb explicite. Aucune densit\u00e9 ni conversion de cuisine n\u2019est ajout\u00e9e.",
+    "notesEn": "Keeps the skim-milk fat class explicit. No density or kitchen conversion is added.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-sourdough-starter-dehydrated-reactivatable",
+    "ingredientRefId": "ingredient-ref-sourdough-starter",
+    "formCode": "dehydrated_reactivatable",
+    "labelFr": "levain naturel d\u00e9shydrat\u00e9",
+    "labelEn": "dehydrated sourdough starter",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme destin\u00e9e \u00e0 \u00eatre r\u00e9activ\u00e9e selon la preuve du produit. Aucun terme de correspondance g\u00e9n\u00e9rique n\u2019est ajout\u00e9; des produits semblables peuvent \u00eatre d\u00e9vitalis\u00e9s et ajout\u00e9s directement \u00e0 la p\u00e2te. Aucune mesure, conversion ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Form intended for reactivation, as established for the cited product. No generic match terms are added; similar products may be devitalized and added directly to dough. No measurement, conversion, or substitution is established.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-spinach-baby-leaves",
+    "ingredientRefId": "ingredient-ref-baby-spinach",
+    "formCode": "baby_leaves",
+    "labelFr": "jeunes \u00e9pinards",
+    "labelEn": "baby spinach",
+    "prepState": "young_tender_leaves",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Jeunes feuilles tendres; l'OQLF indique qu'elles peuvent \u00eatre consomm\u00e9es crues lorsqu'elles sont jeunes et tendres. Cette forme n'active aucune mesure ni substitution.",
+    "notesEn": "Young, tender spinach leaves; OQLF says they may be eaten raw. This form carries no measurement or substitution claim.",
+    "updatedAt": "2026-10-05T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-textured-vegetable-protein-balls",
+    "ingredientRefId": "ingredient-ref-textured-vegetable-protein",
+    "formCode": "balls",
+    "labelFr": "boulettes de prot\u00e9ine v\u00e9g\u00e9tale textur\u00e9e",
+    "labelEn": "textured vegetable protein balls",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation commerciale par forme. Aucune mesure, densit\u00e9 ou \u00e9quivalence entre formes n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial shape presentation. No measure, density, or cross-form equivalence is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-textured-vegetable-protein-flakes",
+    "ingredientRefId": "ingredient-ref-textured-vegetable-protein",
+    "formCode": "flakes",
+    "labelFr": "flocons de prot\u00e9ine v\u00e9g\u00e9tale textur\u00e9e",
+    "labelEn": "textured vegetable protein flakes",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation commerciale par forme. Aucune mesure, densit\u00e9 ou \u00e9quivalence entre formes n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial shape presentation. No measure, density, or cross-form equivalence is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-textured-vegetable-protein-pieces",
+    "ingredientRefId": "ingredient-ref-textured-vegetable-protein",
+    "formCode": "pieces",
+    "labelFr": "petits morceaux de prot\u00e9ine v\u00e9g\u00e9tale textur\u00e9e",
+    "labelEn": "small pieces of textured vegetable protein",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation commerciale par forme. Aucune mesure, densit\u00e9 ou \u00e9quivalence entre formes n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial shape presentation. No measure, density, or cross-form equivalence is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-textured-vegetable-protein-strips",
+    "ingredientRefId": "ingredient-ref-textured-vegetable-protein",
+    "formCode": "strips",
+    "labelFr": "languettes de prot\u00e9ine v\u00e9g\u00e9tale textur\u00e9e",
+    "labelEn": "textured vegetable protein strips",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation commerciale par forme, distincte d\u2019un produit particulier de lani\u00e8res de soya. Aucune mesure ou \u00e9quivalence n\u2019est \u00e9tablie.",
+    "notesEn": "Commercial shape presentation, distinct from a particular soy-strip product. No measure or equivalence is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-thai-pepper-fresh",
+    "ingredientRefId": "ingredient-ref-thai-pepper",
+    "formCode": "fresh",
+    "labelFr": "piment tha\u00ef frais",
+    "labelEn": "fresh Thai chili pepper",
+    "prepState": "fresh",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "fresh Thai pepper"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Les sources appuient la pr\u00e9sentation fra\u00eeche. Aucune mesure, densit\u00e9, conversion ou relation de rendement n'est \u00e9tablie.",
+    "notesEn": "Sources support the fresh presentation. No measure, density, conversion, or yield relationship is established.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-tomatoes-canned-crushed",
+    "ingredientRefId": "ingredient-ref-tomatoes",
+    "formCode": "canned_crushed",
+    "labelFr": "tomates broy\u00e9es en conserve",
+    "labelEn": "canned crushed tomatoes",
+    "prepState": "canned_crushed",
+    "matchTermsFr": [
+      "tomates en conserve",
+      "tomate broy\u00e9e en conserve"
+    ],
+    "matchTermsEn": [
+      "canned tomatoes",
+      "crushed canned tomatoes",
+      "canned crushed tomato"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme commerciale de tomates broy\u00e9es en conserve. Les sources canadiennes consult\u00e9es confirment ce nom de produit, mais la norme canadienne des pr\u00e9sentations de tomates ne d\u00e9finit pas une coupe \u00ab broy\u00e9e \u00bb. Ne pas l'assimiler aux tomates hach\u00e9es, en d\u00e9s, \u00e0 la pulpe, \u00e0 la pur\u00e9e ou \u00e0 la sauce chili. Aucune densit\u00e9, conversion, mesure de rendement ou substitution n'est \u00e9tablie.",
+    "notesEn": "Commercial canned crushed-tomato presentation. Canadian sources confirm the product name, but the Canadian tomato-presentation standard does not define a crushed cut. Do not equate it with chopped, diced, tomato pulp, pur\u00e9e, or tomato chili sauce. No density, conversion, yield measure, or substitution is established.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-tomatoes-canned-diced",
+    "ingredientRefId": "ingredient-ref-tomatoes",
+    "formCode": "canned_diced",
+    "labelFr": "tomates en d\u00e9s en conserve",
+    "labelEn": "canned diced tomatoes",
+    "prepState": "canned_diced",
+    "matchTermsFr": [
+      "tomates en conserve",
+      "tomates en d\u00e9s"
+    ],
+    "matchTermsEn": [
+      "canned tomatoes",
+      "diced tomatoes"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La norme canadienne distingue les tomates transform\u00e9es en conserve et leurs pr\u00e9sentations, dont les tomates en d\u00e9s. Aucune densit\u00e9, conversion de volume ou \u00e9quivalence de rendement n\u2019est \u00e9tablie.",
+    "notesEn": "The Canadian standard distinguishes canned processed tomatoes and their presentations, including diced tomatoes. No density, volume conversion, or yield equivalence is established.",
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-tomatoes-canned-whole",
+    "ingredientRefId": "ingredient-ref-tomatoes",
+    "formCode": "canned_whole",
+    "labelFr": "tomates enti\u00e8res en conserve",
+    "labelEn": "canned whole tomatoes",
+    "prepState": "canned_whole",
+    "matchTermsFr": [
+      "tomates en conserve"
+    ],
+    "matchTermsEn": [
+      "canned tomatoes",
+      "whole canned tomatoes"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme de pr\u00e9sentation enti\u00e8re d'un produit de tomates transform\u00e9 en conserve. Les normes canadiennes distinguent tomate enti\u00e8re et tomate presque enti\u00e8re; cette forme ne pr\u00e9cise pas la marque, la vari\u00e9t\u00e9 ni le liquide d'emballage. Aucune densit\u00e9, conversion, mesure de rendement ou substitution n'est \u00e9tablie.",
+    "notesEn": "Whole presentation of a canned processed tomato product. Canadian standards distinguish whole from almost whole tomatoes; this form does not specify brand, cultivar, or packing liquid. No density, conversion, yield measure, or substitution is established.",
+    "updatedAt": "2026-10-15T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-tomatoes-fresh",
+    "ingredientRefId": "ingredient-ref-tomatoes",
+    "formCode": "fresh",
+    "labelFr": "tomates fra\u00eeches",
+    "labelEn": "fresh tomatoes",
+    "prepState": "fresh",
+    "matchTermsFr": [
+      "tomate fra\u00eeche"
+    ],
+    "matchTermsEn": [
+      "fresh tomato"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme de tomates vendues fra\u00eeches. L\u2019\u00e9tat frais ne pr\u00e9cise pas la vari\u00e9t\u00e9, la taille, la maturit\u00e9, l\u2019origine ou la coupe; la pr\u00e9paration reste distincte. Aucune densit\u00e9, mesure, conversion ou substitution g\u00e9n\u00e9rale n\u2019est \u00e9tablie.",
+    "notesEn": "Fresh-market tomato form. Fresh state does not specify variety, size, ripeness, origin, or cut; preparation remains separate. No general density, measure, conversion, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-tomatoes-sun-dried",
+    "ingredientRefId": "ingredient-ref-tomatoes",
+    "formCode": "sun_dried",
+    "labelFr": "tomates s\u00e9ch\u00e9es au soleil",
+    "labelEn": "sun-dried tomatoes",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "tomate s\u00e9ch\u00e9e au soleil"
+    ],
+    "matchTermsEn": [
+      "sun-dried tomato"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme de tomate s\u00e9ch\u00e9e au soleil. Les sources documentent des produits conditionn\u00e9s \u00e0 l'air et un produit qu\u00e9b\u00e9cois contenant de l'huile; l'emballage, l'huile, l'assaisonnement, l'hydratation et les mesures ne sont pas mod\u00e9lis\u00e9s.",
+    "notesEn": "Sun-dried tomato form. Sources document air-packed products and a Qu\u00e9bec product containing oil; packaging, oil, seasoning, hydration, and measures are not modeled.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-tomatoes-sun-dried-packed-in-oil",
+    "ingredientRefId": "ingredient-ref-tomatoes",
+    "formCode": "sun_dried_packed_in_oil",
+    "labelFr": "tomates s\u00e9ch\u00e9es au soleil dans l\u2019huile",
+    "labelEn": "sun-dried tomatoes packed in oil",
+    "prepState": "sun_dried_packed_in_oil",
+    "matchTermsFr": [
+      "tomate s\u00e9ch\u00e9e au soleil dans l\u2019huile"
+    ],
+    "matchTermsEn": [
+      "sun-dried tomato packed in oil",
+      "sun-dried tomatoes in oil",
+      "sun-dried tomato in oil",
+      "oil-packed sun-dried tomatoes"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme combinant tomates s\u00e9ch\u00e9es au soleil et emballage dans l\u2019huile. Les sources distinguent les tomates s\u00e9ch\u00e9es des tomates s\u00e9ch\u00e9es emball\u00e9es dans l\u2019huile et \u00e9goutt\u00e9es; les produits qu\u00e9b\u00e9cois contiennent aussi des ingr\u00e9dients propres \u00e0 chaque produit. La quantit\u00e9 de r\u00e9f\u00e9rence de Sant\u00e9 Canada sert \u00e0 l\u2019\u00e9tiquetage nutritionnel, pas \u00e0 une mesure de recette. L\u2019huile, l\u2019\u00e9gouttage, l\u2019assaisonnement, la coupe et l\u2019hydratation ne sont pas mod\u00e9lis\u00e9s.",
+    "notesEn": "Combined sun-dried, oil-packed tomato presentation. Sources distinguish sun-dried tomatoes from the oil-packed and drained version; Qu\u00e9bec retail products also contain product-specific ingredients. Health Canada\u2019s reference amount is for nutrition labeling, not a recipe measure. Oil, draining, seasoning, cut, and hydration are not modeled.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-urad-beans-split-dehulled",
+    "ingredientRefId": "ingredient-ref-urad-beans",
+    "formCode": "split_dehulled",
+    "labelFr": "haricots urd fendus et d\u00e9cortiqu\u00e9s",
+    "labelEn": "split, dehulled urad beans",
+    "prepState": "split_dehulled",
+    "matchTermsFr": [
+      "haricots matpe noirs \u00e9coss\u00e9s fendus"
+    ],
+    "matchTermsEn": [
+      "split huskless black matpe beans",
+      "split and dehusked black gram"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Forme commerciale s\u00e8che pr\u00e9cise. Ne pas y associer les termes non qualifi\u00e9s \u00ab urad dal \u00bb ou \u00ab black gram dal \u00bb; aucune mesure, densit\u00e9, conversion, cuisson ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Specific dry commercial form. Do not attach unqualified \u201curad dal\u201d or \u201cblack gram dal\u201d; no measure, density, conversion, cooking yield, or substitution is established.",
+    "updatedAt": "2026-10-13T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-walleye-whole-fish",
+    "ingredientRefId": "ingredient-ref-walleye",
+    "formCode": "whole_fish",
+    "labelFr": "dor\u00e9 jaune entier",
+    "labelEn": "whole walleye",
+    "prepState": "whole",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation enti\u00e8re de dor\u00e9 jaune offerte dans un produit pr\u00e9cis d\u2019un d\u00e9taillant ontarien. La page d\u00e9crit cet article comme nettoy\u00e9 et \u00e9caill\u00e9, mais ne pr\u00e9cise pas s\u2019il est frais ou surgel\u00e9; ces attributs ne sont pas g\u00e9n\u00e9ralis\u00e9s \u00e0 la forme. Aucune mesure, densit\u00e9, conversion, relation de rendement ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Whole-walleye presentation listed in one specific Ontario retailer product. That item is described as cleaned and scaled, but its fresh or frozen state is unstated; those attributes are not generalized to the form. No measure, density, conversion, yield relationship, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-walnuts-chopped",
+    "ingredientRefId": "ingredient-ref-walnuts",
+    "formCode": "chopped",
+    "labelFr": "noix de Grenoble hach\u00e9es",
+    "labelEn": "chopped walnuts",
+    "prepState": "chopped",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "walnuts, chopped"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "La source nomme des noix de Grenoble hach\u00e9es; la taille des morceaux demeure propre \u00e0 la recette. Aucune mesure, densit\u00e9 ou conversion n'est \u00e9tablie.",
+    "notesEn": "The source names chopped walnuts; particle size remains recipe-specific. No measure, density, or conversion is established.",
+    "updatedAt": "2026-10-12T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-white-chocolate-chips",
+    "ingredientRefId": "ingredient-ref-white-chocolate",
+    "formCode": "chips",
+    "labelFr": "p\u00e9pites de chocolat blanc",
+    "labelEn": "white chocolate chips",
+    "prepState": "chips",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme en p\u00e9pites d\u2019une identit\u00e9 de chocolat existante; aucune densit\u00e9 ni conversion distincte n\u2019est \u00e9tablie.",
+    "notesEn": "Chip form of an existing chocolate identity; no separate density or conversion is established.",
+    "updatedAt": "2026-10-06T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-white-chocolate-melted",
+    "ingredientRefId": "ingredient-ref-white-chocolate",
+    "formCode": "melted",
+    "labelFr": "chocolat blanc fondu",
+    "labelEn": "melted white chocolate",
+    "prepState": "melted",
+    "matchTermsFr": [
+      "chocolat fondu"
+    ],
+    "matchTermsEn": [
+      "white chocolate melted",
+      "melted chocolate"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Chocolat blanc fondu pour la recette; aucune densit\u00e9 ni conversion distincte n\u2019est \u00e9tablie.",
+    "notesEn": "White chocolate melted for a recipe; no separate density or conversion is established.",
+    "updatedAt": "2026-10-06T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-white-rice-cooked",
+    "ingredientRefId": "ingredient-ref-white-rice",
+    "formCode": "cooked",
+    "labelFr": "riz blanchi, cuit",
+    "labelEn": "cooked white rice",
+    "prepState": "cooked",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme cuite; aucune densit\u00e9, conversion ou relation de rendement \u00e0 la cuisson n'est \u00e9tablie.",
+    "notesEn": "Cooked form; no density, conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-white-rice-dry",
+    "ingredientRefId": "ingredient-ref-white-rice",
+    "formCode": "dry",
+    "labelFr": "riz blanchi, sec",
+    "labelEn": "dry white rice",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che; aucune densit\u00e9, conversion ou relation de rendement \u00e0 la cuisson n'est \u00e9tablie.",
+    "notesEn": "Dry form; no density, conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-white-sesame-seeds-toasted",
+    "ingredientRefId": "ingredient-ref-white-sesame-seeds",
+    "formCode": "toasted",
+    "labelFr": "graines de s\u00e9same blanches grill\u00e9es",
+    "labelEn": "toasted white sesame seeds",
+    "prepState": "toasted",
+    "matchTermsFr": [
+      "graines de s\u00e9same blanches grill\u00e9es"
+    ],
+    "matchTermsEn": [
+      "toasted white sesame seeds",
+      "white sesame seeds, toasted"
+    ],
+    "densityGPerMl": null,
+    "updatedAt": "2026-10-09T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-whole-goat-milk-powder",
+    "ingredientRefId": "ingredient-ref-goat-milk",
+    "formCode": "powdered",
+    "labelFr": "lait de ch\u00e8vre entier en poudre",
+    "labelEn": "whole goat milk powder",
+    "prepState": "powdered",
+    "matchTermsFr": [],
+    "matchTermsEn": [
+      "powdered whole goat milk",
+      "dried whole goat milk"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Conserve explicitement la classe enti\u00e8re du lait de ch\u00e8vre. Exclut les poudres de lait de ch\u00e8vre \u00e9cr\u00e9m\u00e9 ou partiellement \u00e9cr\u00e9m\u00e9, les produits pour animaux et les m\u00e9langes. Les directives de reconstitution publi\u00e9es sont propres aux produits et ne constituent pas une conversion g\u00e9n\u00e9rale. Aucune densit\u00e9 ni mesure de cuisine n\u2019est ajout\u00e9e.",
+    "notesEn": "Keeps the whole goat milk class explicit. Excludes skimmed or partly skimmed goat milk powders, animal products, and mixes. Published reconstitution directions are product-specific and do not establish a general conversion. No density or kitchen measure is added.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-whole-grain-oat-flour-sprouted",
+    "ingredientRefId": "ingredient-ref-whole-grain-oat-flour",
+    "formCode": "sprouted",
+    "labelFr": "farine d'avoine germ\u00e9e",
+    "labelEn": "sprouted oat flour",
+    "prepState": "sprouted",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Cette forme est attest\u00e9e pour un produit fait d'avoine enti\u00e8re germ\u00e9e. Les sources cit\u00e9es n'\u00e9tablissent pas de proc\u00e9d\u00e9 normalis\u00e9 propre \u00e0 cette farine, de mesure r\u00e9utilisable, de densit\u00e9, de conversion, de rendement \u00e0 la cuisson ni de r\u00e8gle de substitution.",
+    "notesEn": "This form is attested for a product made from sprouted whole oats. The cited sources do not establish a standardized flour-specific process, reusable measure, density, conversion, cooking yield, or substitution rule.",
+    "updatedAt": "2026-10-17T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-whole-milk-powder",
+    "ingredientRefId": "ingredient-ref-milk",
+    "formCode": "powdered",
+    "labelFr": "lait entier en poudre",
+    "labelEn": "whole milk powder",
+    "prepState": "powdered",
+    "matchTermsFr": [
+      "poudre de lait entier"
+    ],
+    "matchTermsEn": [
+      "powdered whole milk",
+      "dried whole milk"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Garde la classe de mati\u00e8re grasse \u00ab entier \u00bb explicite. Aucune densit\u00e9 ni conversion de cuisine n\u2019est ajout\u00e9e.",
+    "notesEn": "Keeps the whole-milk fat class explicit. No density or kitchen conversion is added.",
+    "updatedAt": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-wild-rice-cooked",
+    "ingredientRefId": "ingredient-ref-wild-rice",
+    "formCode": "cooked",
+    "labelFr": "riz sauvage, cuit",
+    "labelEn": "wild rice, cooked",
+    "prepState": "cooked",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme cuite de riz sauvage; aucune densit\u00e9, conversion ou relation de rendement \u00e0 la cuisson n\u2019est \u00e9tablie.",
+    "notesEn": "Cooked wild rice; no density, conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-wild-rice-dry",
+    "ingredientRefId": "ingredient-ref-wild-rice",
+    "formCode": "dry",
+    "labelFr": "riz sauvage, sec",
+    "labelEn": "wild rice, dry",
+    "prepState": "dry",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Forme s\u00e8che de riz sauvage; aucune densit\u00e9, conversion ou relation de rendement \u00e0 la cuisson n\u2019est \u00e9tablie.",
+    "notesEn": "Dry wild rice; no density, conversion, or cooking-yield relation is established.",
+    "updatedAt": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-yellow-peas-whole-dried",
+    "ingredientRefId": "ingredient-ref-yellow-peas",
+    "formCode": "whole_dried",
+    "labelFr": "pois jaunes entiers s\u00e9ch\u00e9s",
+    "labelEn": "dried whole yellow peas",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "pois jaunes entiers s\u00e9ch\u00e9s"
+    ],
+    "matchTermsEn": [
+      "dried whole yellow peas",
+      "whole yellow peas"
+    ],
+    "densityGPerMl": null,
+    "updatedAt": "2026-10-11T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-yellow-perch-whole-fish",
+    "ingredientRefId": "ingredient-ref-yellow-perch",
+    "formCode": "whole_fish",
+    "labelFr": "perchaude enti\u00e8re",
+    "labelEn": "whole yellow perch",
+    "prepState": "whole",
+    "matchTermsFr": [],
+    "matchTermsEn": [],
+    "densityGPerMl": null,
+    "notesFr": "Allseas Fisheries indique un produit \u00ab Whole dressed Yellow Perch \u00bb et identifie l\u2019esp\u00e8ce comme Perca flavescens. La forme d\u00e9crit uniquement la pr\u00e9sentation enti\u00e8re. Le qualificatif \u00ab dressed \u00bb, les p\u00e9riodes frais/congel\u00e9, les poids individuels habituels de 227 \u00e0 600 g et la caisse de 10 lb demeurent propres \u00e0 la fiche du fournisseur et ne d\u00e9finissent pas une mesure ou un \u00e9tat de pr\u00e9paration r\u00e9utilisable. Aucune densit\u00e9, mesure de cuisine, conversion, relation de rendement, recette li\u00e9e ou substitution n\u2019est \u00e9tablie.",
+    "notesEn": "Allseas Fisheries lists a \u201cWhole dressed Yellow Perch\u201d product and identifies it as Perca flavescens. This form describes only the whole presentation. The listing\u2019s \u201cdressed\u201d qualifier, fresh/previously-frozen periods, typical 227\u2013600 g whole-fish size, and 10 lb case remain supplier-specific and establish no reusable preparation state or kitchen measure. No density, kitchen measure, conversion, yield relationship, linked recipe, or substitution is established.",
+    "updatedAt": "2026-10-18T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-radish-leaves-frozen",
+    "ingredientRefId": "ingredient-ref-radish-leaves",
+    "formCode": "frozen",
+    "labelFr": "feuilles de radis congel\u00e9es",
+    "labelEn": "frozen radish leaves",
+    "prepState": "frozen",
+    "matchTermsFr": [
+      "feuilles de radis congel\u00e9es"
+    ],
+    "matchTermsEn": [
+      "frozen radish leaves"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "\u00c9tat congel\u00e9 attest\u00e9 dans une recette qu\u00e9b\u00e9coise qui offre aussi des feuilles fra\u00eeches. Cette mention ne d\u00e9montre pas une \u00e9quivalence g\u00e9n\u00e9rale entre les deux \u00e9tats, une m\u00e9thode de d\u00e9cong\u00e9lation, une conversion de masse ou de volume, ni un rendement.",
+    "notesEn": "Frozen state attested in a Qu\u00e9bec recipe that also offers fresh leaves. This source does not establish general equivalence between the states, a thawing method, a mass or volume conversion, or a yield.",
+    "updatedAt": "2026-10-19T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-tomatoes-unripe-green",
+    "ingredientRefId": "ingredient-ref-tomatoes",
+    "formCode": "unripe_green",
+    "labelFr": "tomates vertes non m\u00fbres",
+    "labelEn": "unripe green tomatoes",
+    "prepState": "unripe",
+    "matchTermsFr": [
+      "tomate verte non m\u00fbre"
+    ],
+    "matchTermsEn": [
+      "unripe green tomato"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Tomates cueillies avant maturation et utilis\u00e9es vertes comme ingr\u00e9dient. Ne comprend pas les cultivars qui restent verts \u00e0 maturit\u00e9. Les termes sans le qualificatif non m\u00fbr restent ambigus. Aucune mesure, densit\u00e9, conversion ou substitution g\u00e9n\u00e9rale n\u2019est \u00e9tablie.",
+    "notesEn": "Tomatoes harvested before ripening and used green as an ingredient. Excludes cultivars that remain green when ripe. Wording without the unripe qualifier remains ambiguous. No general measure, density, conversion, or substitution is established.",
+    "updatedAt": "2026-10-19T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-mushroom-dried",
+    "ingredientRefId": "ingredient-ref-mushroom",
+    "formCode": "dried",
+    "labelFr": "champignons s\u00e9ch\u00e9s",
+    "labelEn": "dried mushrooms",
+    "prepState": "dry",
+    "matchTermsFr": [
+      "champignon s\u00e9ch\u00e9"
+    ],
+    "matchTermsEn": [
+      "dried mushroom"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "\u00c9tat sec sans esp\u00e8ce pr\u00e9cis\u00e9e. Les quantit\u00e9s et proc\u00e9d\u00e9s de r\u00e9hydratation restent propres \u00e0 leur recette ou \u00e0 leur produit; aucune mesure, densit\u00e9, conversion ou relation de rendement g\u00e9n\u00e9rale n\u2019est \u00e9tablie.",
+    "notesEn": "Dry state with no species specified. Quantities and reconstitution methods remain specific to their recipe or product; no general measure, density, conversion, or yield relationship is established.",
+    "updatedAt": "2026-10-19T00:00:00Z"
+  },
+  {
+    "id": "ingredient-form-glasswort-pickled",
+    "ingredientRefId": "ingredient-ref-glasswort",
+    "formCode": "pickled",
+    "labelFr": "salicorne marin\u00e9e",
+    "labelEn": "pickled glasswort (Salicornia)",
+    "prepState": "pickled",
+    "matchTermsFr": [
+      "salicorne marin\u00e9e"
+    ],
+    "matchTermsEn": [
+      "pickled glasswort"
+    ],
+    "densityGPerMl": null,
+    "notesFr": "Pr\u00e9sentation marin\u00e9e g\u00e9n\u00e9rique; le pot de 190 mL est propre au produit Gourmet Sauvage cit\u00e9 et ne donne ni masse nette ni masse \u00e9goutt\u00e9e.",
+    "notesEn": "Generic pickled presentation; the cited Gourmet Sauvage 190 mL jar is product-specific and provides neither net nor drained mass.",
+    "updatedAt": "2026-10-19T00:00:00Z"
   }
 ]

@@ -1,0 +1,13 @@
+8dec0d2feae794d778345021cbc9b043161499135bc749d1ab6de99f1c91b01a  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/home-en.png
+2007aacd2cbbad8bfaa4c76c0c6677b01e02a3ddb670dcc222c83faf804bd714  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/home-final-fr.png
+1ad294ab8e788d640a77c710c25546e2c64ca0bb78cc2c425d5b23ad384577f0  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/picker-en-american-plaice.png
+0d1b80c842ec14beda5f78e7aa614fd667d0dea29ebcba12060adbc3165d515a  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/picker-en-channel-catfish.png
+65dca3ed6157dfb3637108c889027e7e1befb5707203ba2bb96da97804b46f7e  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/picker-en-huitlacoche.png
+9a2c22d938734067caee85a0afb2a07b721a584820009c19407739c483c55f70  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/picker-en-pacific-halibut.png
+58ef8c33e37fd2ebb604e28699efad5f645ac194150cee3da1b2bd72eb3a3476  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/picker-en-pawpaw.png
+0574e681314b52fa88715c0c490af096ac3a28834a35f252794eb1f7bf6ec8ae  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/picker-en-prickly-pear.png
+dafb16fd9d8419c9a359ebc78c32e2b3da5b222bb2aa579801a4e6cb58e1b625  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/picker-fr-asimine.png
+87e7f83d171f604f0fb2fe06bfcf79801e5325141baf071df18d72b2f5a8767c  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/picker-fr-barbue-de-riviere.png
+101368ca363c555663fb9f6933b279d8003fe3e3ad81b9aea6a94127d3fc7afd  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/picker-fr-figue-de-barbarie.png
+694acd728f93e77eedb5d2fcdd12b24fa37f8c2b08247ad003c3bdce995ae1f6  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/picker-fr-fletan-pacifique.png
+2c411ec2fecfa180e5aafcb31086512e7890f436a97f4f33b44c69359bee124f  docs/catalog/batches/wp03-section-mnh-wp04-finfish-integration-20261010/screenshots/picker-fr-plie-canadienne.png

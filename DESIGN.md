@@ -26,6 +26,9 @@ This file is the architectural index for the current Android app. Package-level 
 - Domain models in `domain/model` are the main cross-layer contract used by UI and repository code.
 - Schema DTOs in `data/schema` describe import/export payloads and must stay aligned with the domain model and docs.
 - Bundled seed assets provide initial catalog and recipe content, not a separate compatibility format.
+- The catalog research ledger in `docs/catalog/` is an authoring-side evidence store. Scalar and
+  source-reported interval observations support review; they do not activate ingredient conversions
+  or become app DTOs unless a future full-library schema explicitly adds them.
 
 ## Important Invariants
 - User-facing content is bilingual and should remain UI-agnostic until rendered.

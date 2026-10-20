@@ -122,15 +122,12 @@
     {
       "id": "f3ce6ed8-0389-457c-92ec-240cf53eacde-ingredient-11",
       "originalText": "1/2 cup unsweetened shredded coconut",
-      "ingredientName": "shredded coconut",
-      "ingredientRefId": "ingredient-ref-shredded-coconut",
+      "ingredientName": "coconut",
+      "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": {
-        "fr": "non sucr\u00e9",
-        "en": "unsweetened"
-      },
-      "group": "Cake"
+      "group": "Cake",
+      "ingredientFormId": "ingredient-form-coconut-shredded-unsweetened"
     },
     {
       "id": "f3ce6ed8-0389-457c-92ec-240cf53eacde-ingredient-12",
@@ -260,8 +257,7 @@
       "targetRecipeId": "9a714acf-d991-4932-bb4c-63af19051022",
       "linkType": "OTHER",
       "labelFr": "Inspiration",
-      "labelEn": "Inspiration",
-      "position": 0
+      "labelEn": "Inspiration"
     }
   ],
   "mainPhotoId": "photo-f3ce6ed8-0389-457c-92ec-240cf53eacde-0",

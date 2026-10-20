@@ -1,5 +1,6 @@
 package app.recipebook.data.schema
 
+import app.recipebook.loadBundledRecipeForTest
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.AttachmentRef
 import app.recipebook.domain.model.BilingualText
@@ -10,6 +11,8 @@ import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.IngredientForm
 import app.recipebook.domain.model.IngredientCategory
 import app.recipebook.domain.model.IngredientLine
+import app.recipebook.domain.model.IngredientPackageAmount
+import app.recipebook.domain.model.IngredientPackageType
 import app.recipebook.domain.model.IngredientLineSubstitution
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
@@ -17,6 +20,8 @@ import app.recipebook.domain.model.LibraryMetadata
 import app.recipebook.domain.model.LibrarySettings
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.PhotoRef
+import app.recipebook.domain.model.PackageYieldBasis
+import app.recipebook.domain.model.PackageYieldObservation
 import app.recipebook.domain.model.Ratings
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeLibrary
@@ -38,6 +43,60 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class SchemaRoundTripTest {
+
+    @Test
+    fun wp04SourceChoicesAndCompositionWordingRoundTripAsRecipeLines() {
+        val recipeIds = listOf(
+            "ff66e4f7-c719-4203-970b-06993cdb25de", // Eagle Brand recipe line.
+            "1fb908b6-f079-44f2-916b-1b6c6b55367c", // Cream or buttermilk.
+            "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90", // Sour cream or yogurt.
+            "d356eec5-b3c4-4e22-b943-63900317e569", // Lean beef or ground lamb.
+            "43199cff-7fba-4cd0-8447-2c7265b0bb1c"  // Historical ground-turkey amount.
+        )
+
+        recipeIds.forEach { recipeId ->
+            val recipe = loadBundledRecipeForTest(recipeId)
+            val restored = json.decodeFromString(
+                RecipeCreationPayloadDto.serializer(),
+                json.encodeToString(RecipeCreationPayloadDto.serializer(), recipe.toRecipeCreationPayloadDto())
+            ).toDomainRecipe()
+            assertEquals(recipe.ingredients, restored.ingredients)
+        }
+
+        val magicBars = loadBundledRecipeForTest("ff66e4f7-c719-4203-970b-06993cdb25de")
+            .ingredients.single { it.id.endsWith("ingredient-3") }
+        assertEquals(
+            "1 can (300 mL) Eagle Brand® Original or Low Fat Sweetened Condensed Milk",
+            magicBars.originalText
+        )
+        assertEquals(300.0, requireNotNull(magicBars.quantity), 0.0)
+        assertEquals("ml", magicBars.unit)
+
+        val shortcakeChoice = loadBundledRecipeForTest("1fb908b6-f079-44f2-916b-1b6c6b55367c")
+            .ingredients.single { it.id.endsWith("ingredient-10") }
+        assertEquals("30 ml heavy cream or buttermilk", shortcakeChoice.originalText)
+        assertEquals(null, shortcakeChoice.ingredientRefId)
+        assertEquals(emptyList<IngredientLineSubstitution>(), shortcakeChoice.substitutions)
+
+        val cakeChoice = loadBundledRecipeForTest("eadf54de-0fa2-4ef3-a620-3f6fbeac7c90")
+            .ingredients.single { it.id.endsWith("ingredient-9") }
+        assertEquals("75 g sour cream or plain yogurt, room temperature", cakeChoice.originalText)
+        assertEquals(null, cakeChoice.ingredientRefId)
+        assertEquals(emptyList<IngredientLineSubstitution>(), cakeChoice.substitutions)
+
+        val shepherdsPie = loadBundledRecipeForTest("d356eec5-b3c4-4e22-b943-63900317e569")
+            .ingredients.single { it.id.endsWith("ingredient-3") }
+        assertEquals("1 lb. 90% lean ground beef -or ground lamb", shepherdsPie.originalText)
+        assertEquals("ingredient-ref-ground-beef", shepherdsPie.ingredientRefId)
+        assertEquals("ground lamb can be used instead", shepherdsPie.notes.en)
+        assertEquals(emptyList<IngredientLineSubstitution>(), shepherdsPie.substitutions)
+
+        val turkey = loadBundledRecipeForTest("43199cff-7fba-4cd0-8447-2c7265b0bb1c")
+            .ingredients.single { it.id.endsWith("ingredient-1") }
+        assertEquals("2 lb lean ground turkey", turkey.originalText)
+        assertEquals(2.0, requireNotNull(turkey.quantity), 0.0)
+        assertEquals("lb", turkey.unit)
+    }
 
     private val json = Json {
         prettyPrint = false
@@ -72,6 +131,77 @@ class SchemaRoundTripTest {
         val roundTrip = decoded.toDomainLibrary()
 
         assertEquals(library, roundTrip)
+    }
+
+    @Test
+    fun packageQuantitiesAndSourceSpecificYields_roundTripInBothPayloads() {
+        val formId = "3b7cb1f8-79c3-4abc-90ac-99cae87b8eca"
+        val referenceId = "8c35153a-4bf2-4501-a77f-b7a5af15427b"
+        val packageLine = sampleRecipe().ingredients.first().copy(
+            originalText = "1 x 15 oz bag All-purpose flour",
+            quantity = 1.0,
+            unit = "bag",
+            ingredientFormId = formId,
+            packageAmount = IngredientPackageAmount(
+                count = 1.0,
+                packageType = IngredientPackageType.BAG,
+                declaredNetQuantity = 15.0,
+                declaredNetUnit = "oz",
+                requestedBasis = PackageYieldBasis.NET_CONTENTS
+            )
+        )
+        val tomatoPasteLine = sampleRecipe().ingredients.first().copy(
+            id = "tomato-paste-package-amount-fixture",
+            originalText = "156 ml tomato paste",
+            ingredientRefId = "ingredient-ref-tomato-paste",
+            ingredientName = "tomato paste",
+            quantity = 156.0,
+            unit = "ml",
+            packageAmount = IngredientPackageAmount(
+                count = 1.0,
+                packageType = IngredientPackageType.CAN,
+                declaredNetQuantity = 156.0,
+                declaredNetUnit = "ml"
+            )
+        )
+        val pintoBeansLine = sampleRecipe().ingredients.first().copy(
+            id = "pinto-beans-package-amount-fixture",
+            originalText = "1 can pinto beans with liquid",
+            ingredientRefId = "ingredient-ref-pinto-beans",
+            ingredientName = "pinto beans",
+            quantity = 1.0,
+            unit = "can",
+            preparation = app.recipebook.domain.model.LocalizedValue(fr = "avec le liquide", en = "with liquid"),
+            packageAmount = IngredientPackageAmount(
+                count = 1.0,
+                packageType = IngredientPackageType.CAN,
+                requestedBasis = PackageYieldBasis.NET_CONTENTS
+            )
+        )
+        val observation = PackageYieldObservation(
+            id = "package-yield-schema-fixture",
+            ingredientRefId = referenceId,
+            ingredientFormId = formId,
+            packageType = IngredientPackageType.BAG,
+            declaredNetQuantity = 15.0,
+            declaredNetUnit = "oz",
+            netMassG = 425.0,
+            brand = "Fixture brand",
+            productName = "Fixture flour",
+            sourceUrl = "https://example.com/package-spec",
+            sourceName = "Schema fixture"
+        )
+        val recipe = sampleRecipe().copy(ingredients = listOf(packageLine, tomatoPasteLine, pintoBeansLine))
+        assertEquals(recipe, json.decodeFromString(
+            RecipeCreationPayloadDto.serializer(),
+            json.encodeToString(RecipeCreationPayloadDto.serializer(), recipe.toRecipeCreationPayloadDto())
+        ).toDomainRecipe())
+
+        val library = sampleLibrary().copy(recipes = listOf(recipe), packageYields = listOf(observation))
+        assertEquals(library, json.decodeFromString(
+            FullLibraryPayloadDto.serializer(),
+            json.encodeToString(FullLibraryPayloadDto.serializer(), library.toFullLibraryPayloadDto())
+        ).toDomainLibrary())
     }
 
     @Test
@@ -259,6 +389,8 @@ class SchemaRoundTripTest {
                 quantity = 200.0,
                 unit = "g",
                 ingredientName = "flour",
+                ingredientFormId = "ingredient-form-test-form",
+                ingredientAliasHint = "plain flour",
                 group = "Batter",
                 substitutions = listOf(
                     IngredientLineSubstitution(

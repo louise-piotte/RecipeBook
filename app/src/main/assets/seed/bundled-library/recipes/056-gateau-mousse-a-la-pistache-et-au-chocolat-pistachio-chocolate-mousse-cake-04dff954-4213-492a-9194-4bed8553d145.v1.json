@@ -277,6 +277,7 @@
       "originalText": "Chopped pistachios, for decoration",
       "ingredientName": "pistachios",
       "ingredientRefId": "ingredient-ref-pistachios",
+      "ingredientFormId": "ingredient-form-pistachios-chopped",
       "notes": {
         "fr": "pour d\u00e9coration",
         "en": "For decoration"

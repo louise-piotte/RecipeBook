@@ -41,6 +41,7 @@
       "ingredientRefId": "ingredient-ref-pecans",
       "quantity": 0.5,
       "unit": "cup",
+      "ingredientFormId": "ingredient-form-pecans-chopped",
       "preparation": {
         "fr": "grossi\u00e8rement hach\u00e9",
         "en": "coarsely chopped"
@@ -53,7 +54,8 @@
       "ingredientName": "dark corn syrup",
       "quantity": 0.333,
       "unit": "cup",
-      "group": "Filling"
+      "group": "Filling",
+      "ingredientRefId": "ingredient-ref-dark-corn-syrup"
     },
     {
       "id": "02721958-323d-47a4-96df-d383ae0994ff-ingredient-4",
@@ -130,8 +132,7 @@
     {
       "id": "recipe-link-02721958-323d-47a4-96df-d383ae0994ff-pie-crust",
       "targetRecipeId": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca",
-      "linkType": "COMPONENT",
-      "position": 0
+      "linkType": "COMPONENT"
     }
   ],
   "mainPhotoId": "photo-02721958-323d-47a4-96df-d383ae0994ff-0",

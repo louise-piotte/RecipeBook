@@ -1,0 +1,268 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://recipebook.app/schemas/ingredient-research-ledger/v1",
+  "title": "RecipeBook Ingredient Research Ledger v1",
+  "description": "Sidecar evidence states keyed by stable catalog record IDs. This is not full-library interchange data.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ledgerVersion", "records", "unitConversions"],
+  "properties": {
+    "ledgerVersion": { "const": 1 },
+    "records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/Record" }
+    },
+    "unitConversions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/UnitConversion" }
+    }
+  },
+  "$defs": {
+    "Record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recordId", "recordType", "identityState", "measurementState", "substitutionResearchState", "sources", "decisions"],
+      "properties": {
+        "recordId": { "type": "string", "minLength": 1 },
+        "recordType": {
+          "enum": ["ingredient_reference", "ingredient_form", "form_conversion_rule", "contextual_substitution_rule", "unit_definition", "package_yield", "candidate"]
+        },
+        "identityState": {
+          "enum": ["unreviewed", "verified", "needs_clarification", "merged", "rejected", "not_applicable"]
+        },
+        "measurementState": {
+          "enum": ["not_yet_researched", "researched_supported", "researched_no_supported_value", "existing_value_needs_source_review", "blocked_pending_evidence", "not_applicable"]
+        },
+        "substitutionResearchState": {
+          "enum": ["not_yet_researched", "researched_supported", "researched_no_supported_substitute", "blocked_pending_evidence", "not_applicable", "existing_rule_needs_review"]
+        },
+        "sources": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Source" }
+        },
+        "measurementObservations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/MeasurementObservation" }
+        },
+        "substitutionFindings": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/SubstitutionFinding" }
+        },
+        "decisions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Decision" }
+        }
+      }
+    },
+    "Source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceId", "url", "title", "accessedOn", "locator", "supports"],
+      "properties": {
+        "sourceId": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" },
+        "title": { "type": "string", "minLength": 1 },
+        "versionOrDate": { "type": "string" },
+        "accessedOn": { "type": "string", "format": "date" },
+        "locator": { "type": "string", "minLength": 1 },
+        "supports": { "type": "string", "minLength": 1 },
+        "sourceKind": {
+          "enum": ["food_composition", "direct_measurement", "test_kitchen", "manufacturer", "extension", "regional_authority", "culinary_reference", "other"]
+        }
+      }
+    },
+    "Quantity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["amount", "unit"],
+      "properties": {
+        "amount": { "type": "number", "exclusiveMinimum": 0 },
+        "unit": { "type": "string", "minLength": 1 },
+        "unitConvention": { "type": "string" }
+      }
+    },
+    "UnitConversion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fromUnit", "toUnit", "factor", "unitConvention", "sourceIds"],
+      "properties": {
+        "fromUnit": { "type": "string", "minLength": 1 },
+        "toUnit": { "type": "string", "minLength": 1 },
+        "factor": { "type": "number", "exclusiveMinimum": 0 },
+        "unitConvention": { "type": "string", "minLength": 1 },
+        "sourceIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string" } }
+      }
+    },
+    "ObservedInterval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lowerValue", "upperValue", "unit", "lowerInclusive", "upperInclusive", "intervalKind", "origin"],
+      "properties": {
+        "lowerValue": { "type": "number", "exclusiveMinimum": 0 },
+        "upperValue": { "type": "number", "exclusiveMinimum": 0 },
+        "unit": { "type": "string", "minLength": 1 },
+        "unitConvention": { "type": "string", "minLength": 1 },
+        "lowerInclusive": { "type": ["boolean", "null"] },
+        "upperInclusive": { "type": ["boolean", "null"] },
+        "intervalKind": {
+          "enum": ["source_reported_range", "observed_sample_range", "confidence_interval", "measurement_uncertainty", "estimate_range"]
+        },
+        "origin": { "enum": ["source_reported", "measured", "derived"] },
+        "reportedText": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "unit": { "const": "oz" } }, "required": ["unit"] },
+          "then": { "required": ["unitConvention"] }
+        },
+        {
+          "if": { "properties": { "origin": { "const": "source_reported" } }, "required": ["origin"] },
+          "then": { "required": ["reportedText"] }
+        }
+      ]
+    },
+    "MeasurementObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["observationId", "relationship", "foodDescription", "evidenceKind", "sourceIds"],
+      "properties": {
+        "observationId": { "type": "string", "minLength": 1 },
+        "relationship": {
+          "enum": ["mass_density", "bulk_density", "portion_weight", "count_weight", "cooking_yield", "edible_portion_yield", "package_yield"]
+        },
+        "ingredientFormId": { "type": "string" },
+        "value": { "type": "number", "exclusiveMinimum": 0 },
+        "valueUnit": { "type": "string", "minLength": 1 },
+        "valueIntervals": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/ObservedInterval" }
+        },
+        "foodDescription": { "type": "string", "minLength": 1 },
+        "foodState": { "type": "string" },
+        "measurementMethod": { "type": "string" },
+        "quantityBasis": { "type": "string" },
+        "sourceQuantity": { "$ref": "#/$defs/Quantity" },
+        "observedMassG": { "type": "number", "exclusiveMinimum": 0 },
+        "observedVolumeMl": { "type": "number", "exclusiveMinimum": 0 },
+        "evidenceKind": {
+          "enum": ["measured", "published_portion", "manufacturer_label", "derived", "estimate"]
+        },
+        "calculation": { "type": "string" },
+        "sourceIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string" } }
+      },
+      "oneOf": [
+        {
+          "required": ["value", "valueUnit"],
+          "not": { "required": ["valueIntervals"] }
+        },
+        {
+          "required": ["valueIntervals"],
+          "not": { "anyOf": [{ "required": ["value"] }, { "required": ["valueUnit"] }] }
+        }
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "relationship": { "const": "count_weight" },
+              "valueIntervals": { "type": "array" }
+            },
+            "required": ["relationship", "valueIntervals"]
+          },
+          "then": {
+            "required": ["sourceQuantity", "foodState", "measurementMethod", "quantityBasis"],
+            "properties": {
+              "foodState": { "type": "string", "minLength": 1 },
+              "measurementMethod": { "type": "string", "minLength": 1 },
+              "quantityBasis": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "valueIntervals": {
+                "contains": {
+                  "properties": { "origin": { "const": "derived" } },
+                  "required": ["origin"]
+                }
+              }
+            },
+            "required": ["valueIntervals"]
+          },
+          "then": {
+            "required": ["calculation"],
+            "properties": { "calculation": { "type": "string", "minLength": 1 } }
+          }
+        }
+      ]
+    },
+    "SubstitutionFinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["findingId", "researchState", "context", "sourceIds"],
+      "properties": {
+        "findingId": { "type": "string", "minLength": 1 },
+        "ruleId": { "type": "string" },
+        "researchState": {
+          "enum": ["researched_supported", "researched_no_supported_substitute", "blocked_pending_evidence"]
+        },
+        "fromIngredientRefId": { "type": "string" },
+        "fromFormId": { "type": "string" },
+        "replacements": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Replacement" }
+        },
+        "context": { "type": "string", "minLength": 1 },
+        "basis": { "type": "string" },
+        "adjustments": { "type": "array", "items": { "type": "string" } },
+        "expectedEffects": { "type": "array", "items": { "type": "string" } },
+        "limitations": { "type": "array", "items": { "type": "string" } },
+        "rejectedCandidates": { "type": "array", "items": { "$ref": "#/$defs/RejectedCandidate" } },
+        "sourceIds": { "type": "array", "items": { "type": "string" } }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "researchState": { "const": "researched_supported" } } },
+          "then": { "required": ["replacements"], "properties": { "replacements": { "minItems": 1 }, "sourceIds": { "minItems": 1 } } }
+        },
+        {
+          "if": { "properties": { "researchState": { "const": "researched_no_supported_substitute" } } },
+          "then": { "properties": { "replacements": { "maxItems": 0 } } }
+        }
+      ]
+    },
+    "Replacement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ingredientRefId"],
+      "properties": {
+        "ingredientRefId": { "type": "string", "minLength": 1 },
+        "ingredientFormId": { "type": "string" },
+        "quantity": { "$ref": "#/$defs/Quantity" },
+        "roleInCompound": { "type": "string" }
+      }
+    },
+    "RejectedCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate", "reason"],
+      "properties": {
+        "candidate": { "type": "string", "minLength": 1 },
+        "reason": { "type": "string", "minLength": 1 },
+        "sourceIds": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "Decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcome", "reason"],
+      "properties": {
+        "outcome": { "enum": ["accepted", "rejected", "merged", "unresolved"] },
+        "reason": { "type": "string", "minLength": 1 },
+        "sourceIds": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

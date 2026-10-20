@@ -4,6 +4,7 @@ import app.recipebook.data.schema.CollectionDto
 import app.recipebook.data.schema.ContextualSubstitutionRuleDto
 import app.recipebook.data.schema.FullLibraryPayloadDto
 import app.recipebook.data.schema.IngredientFormDto
+import app.recipebook.data.schema.PackageYieldObservationDto
 import app.recipebook.data.schema.IngredientReferenceDto
 import app.recipebook.data.schema.LibraryMetadataDto
 import app.recipebook.data.schema.LibrarySettingsDto
@@ -30,6 +31,7 @@ internal object RecipeExportCodec {
     private const val METADATA_FILE = "metadata.v1.json"
     private const val INGREDIENT_REFERENCES_FILE = "ingredient-references.v1.json"
     private const val INGREDIENT_FORMS_FILE = "ingredient-forms.v1.json"
+    private const val PACKAGE_YIELDS_FILE = "package-yields.v1.json"
     private const val SUBSTITUTION_RULES_FILE = "substitution-rules.v1.json"
     private const val CONTEXTUAL_SUBSTITUTION_RULES_FILE = "contextual-substitution-rules.v1.json"
     private const val UNITS_FILE = "units.v1.json"
@@ -58,6 +60,7 @@ internal object RecipeExportCodec {
             metadataFile = METADATA_FILE,
             ingredientReferencesFile = INGREDIENT_REFERENCES_FILE,
             ingredientFormsFile = INGREDIENT_FORMS_FILE,
+            packageYieldsFile = PACKAGE_YIELDS_FILE,
             substitutionRulesFile = SUBSTITUTION_RULES_FILE,
             contextualSubstitutionRulesFile = CONTEXTUAL_SUBSTITUTION_RULES_FILE,
             unitsFile = UNITS_FILE,
@@ -81,6 +84,11 @@ internal object RecipeExportCodec {
                 INGREDIENT_FORMS_FILE,
                 ListSerializer(IngredientFormDto.serializer()),
                 payload.library.ingredientForms
+            )
+            zip.putJsonEntry(
+                PACKAGE_YIELDS_FILE,
+                ListSerializer(PackageYieldObservationDto.serializer()),
+                payload.library.packageYields
             )
             zip.putJsonEntry(
                 SUBSTITUTION_RULES_FILE,
@@ -130,6 +138,7 @@ internal object RecipeExportCodec {
                 schemaVersion = "ingredient-catalog/v1",
                 ingredientReferences = payload.library.ingredientReferences,
                 ingredientForms = payload.library.ingredientForms,
+                packageYields = payload.library.packageYields,
                 substitutionRules = payload.library.substitutionRules,
                 contextualSubstitutionRules = payload.library.contextualSubstitutionRules
             )
@@ -204,6 +213,7 @@ internal data class SeedExportManifestDto(
     val recipeFiles: List<String>,
     val ingredientReferencesFile: String,
     val ingredientFormsFile: String,
+    val packageYieldsFile: String,
     val substitutionRulesFile: String,
     val contextualSubstitutionRulesFile: String,
     val unitsFile: String,
@@ -217,6 +227,7 @@ internal data class IngredientCatalogExportDto(
     val schemaVersion: String,
     val ingredientReferences: List<IngredientReferenceDto>,
     val ingredientForms: List<IngredientFormDto>,
+    val packageYields: List<PackageYieldObservationDto>,
     val substitutionRules: List<SubstitutionRuleDto>,
     val contextualSubstitutionRules: List<ContextualSubstitutionRuleDto>
 )

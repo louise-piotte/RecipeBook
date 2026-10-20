@@ -1,0 +1,9 @@
+# Mustard-seed type identities
+
+Added identity-only references for yellow, brown, oriental, and black mustard seeds. Kept the existing unqualified `mustard seeds / graines de moutarde` identity for unspecified recipe wording. Yellow/white is represented as one type with the source-supported `white mustard seeds / graines de moutarde blanche` aliases. Brown and oriental remain separate Canadian market classes even though both are identified as *Brassica juncea*; the catalog does not claim they are separate species. Black seeds are scoped to *Brassica nigra*.
+
+Recipe 082's exact “ground yellow mustard seeds” line now links to the yellow-seed identity. Recipe 083's unspecified “ground mustard seeds” line remains linked to the generic identity. The recipe's `ground` preparation remains line-level text; no new generic or type-specific forms were inferred. No recipe amounts, package sizes, agricultural figures, density, unit mappings, conversions, yields, or substitutions were added.
+
+The evidence is recorded in the five mustard-seed ledger records. Sources include OQLF's generic `graine de moutarde` entry, Health Canada's mustard-type review, Canadian federal mustard classes and product classification, and current Canadian product listings. See [OQLF](https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/2299050/graine-de-moutarde), [Health Canada](https://www.canada.ca/content/dam/hc-sc/migration/hc-sc/fn-an/alt_formats/pdf/pubs/label-etiquet/mustard-moutarde/index-fra.pdf), the [Canadian Grain Commission](https://grainscanada.gc.ca/fr/qualite-grains/guide-officiel-classement-grains/12-graine-moutarde-cultivee/classes.html), and [Agriculture and Agri-Food Canada's mustard overview](https://publications.gc.ca/Collection/A27-18-14-8F.pdf).
+
+No tests were run because this change only adds database JSON data. Section T remains open for the other listed spices and seed identities.

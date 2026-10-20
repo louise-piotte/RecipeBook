@@ -1,0 +1,30 @@
+# WP02/WP03/WP04 R159 gap-review integration
+
+Integrated 2026-10-16 after root review of each proposal, current sources, exact catalog ownership, picker behavior, and bundled-recipe impact.
+
+## Decisions
+
+- **WP02 A6 — black glutinous rice flour:** Add `black glutinous rice flour / farine de riz gluant noir` as identity-only `ingredient-ref-black-glutinous-rice-flour` in `FLOUR_AND_STARCH`. Keep it separate from black glutinous rice grain, unqualified black rice flour, general glutinous rice flour, Mochiko, and Shiratamako. The English product name is supported by a Canadian listing and manufacturer; the French compound is listed by a France-based retailer, while a Québec-facing French storefront supports the component terms. Keep independent Québec review of the compound open. Add no aliases, forms, measures, mappings, conversions, yields, recipe links, or substitutions.
+- **WP03 Section F — soft red wheat berries:** Add `soft red wheat berries / grains de blé tendre rouge` as identity-only `ingredient-ref-soft-red-wheat-berries` in `GRAIN_AND_CEREAL`. Keep the unqualified seller product separate from soft red winter wheat berries; do not infer season, cultivar, grade, or formal Canadian class. The French display is provisional and not a verified Québec whole-kernel title. Add no aliases, forms, measures, conversions, yields, recipe links, or substitutions.
+- **WP04 Section P — smoked mussels:** Add `smoked mussels / moules fumées` as identity-only `ingredient-ref-smoked-mussels` in `PROTEIN`, a finished-product group separate from raw mussel species and the unresolved generic mussel candidate. Keep packaging medium, species, smoke method, readiness, measures, yields, and substitution behavior product-specific. Add no aliases, forms, numeric behavior, recipe links, or substitutions.
+
+## Root source review
+
+- For **black glutinous rice flour**, root confirmed the Canadian retailer's exact English product title and 500 g listing from its current search result, the CAP MONYET manufacturer statement that it mills flour from selected black glutinous rice, and the French product title at Épices du Monde. The Québec-facing [Loblaws French results](https://www.loblaws.ca/fr/search?cartId=0e3c782e-eafb-4455-aa77-0758d5903573&search-bar=glutino&storeId=1050) separately list `Farine de riz gluant` and `Riz gluant noir`; they do not show the combined product name. The [OQLF riz glutineux entry](https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/8393595/riz-glutineux) supports component terminology but does not name the flour compound. The Canadian retailer page showed a 500 g package, but online ordering was temporarily paused; availability is not part of the identity decision.
+- For **soft red wheat berries**, root checked Fresh Acres' [organic soft red wheat berries](https://freshacres.ca/products/organic-soft-red-wheat-berries) and [grain collection](https://freshacres.ca/collections/grains), where the retailer lists soft red and hard spring red products separately. The [OQLF blé tendre entry](https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/8357378/ble-tendre) supports the base French term, while [Canadian Grain Commission class information](https://grainscanada.gc.ca/fr/qualite-grains/classement-des-grains/classes-ble.html) does not assign the seller's unqualified product to a formal class. The current detail page showed sold-out status; stock is not identity evidence.
+- For **smoked mussels**, root confirmed Clover Leaf's [French product page](https://www.cloverleaf.ca/fr/produits/moules-fumees-clover-leaf/) uses `moules fumées` and lists source scope spanning *Mytilus* spp. and *M. edulis*. The Québec MAPAQ [mollusk guide](https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/agriculture-pecheries-alimentation/peche/FI_mollusques-quebec_MAPAQ.pdf) lists varied smoked formats for blue mussels. The [ILIOS Foods product catalogue](https://fr.iliosfoods.ca/products) separately lists `Moules fumées` as an imported product. OQLF's [moule entry](https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/1198877/moule) addresses the species name and does not standardize the complete smoked-product phrase. Source-specific can weights and product states were not converted to general catalog measures.
+
+## Data changes
+
+Added three ingredient-reference rows and three `ingredient_reference` research-ledger records. The additions contain 17 new, unique source IDs. Forms, legacy candidates, recipe rows, numeric conversion tables, and substitutions were not changed. Refreshed the generated Kotlin picker catalog and marked the three R159 checklist items complete; the broader A6, Section F, and Section P lists remain open.
+
+## Static checks and totals
+
+- The seed package normalized with zero changed parts; package normalization and full validation passed.
+- The generated Kotlin picker catalog is current at **1,534 references**; the package has **119 forms** and **61 legacy candidates**.
+- The ledger schema and source links validate at **1,879 records / 7,983 source entries / 6,831 distinct source IDs**. The 17 R159 source IDs are new and unique.
+- Exact-key ownership, static picker projections, and the complete manifest scan passed. The scan covered **114 recipes / 1,123 ingredient rows** and found no candidate phrase or reference-ID hits.
+- UTF-8/no-BOM, escaped Unicode in bundled references, local Markdown links, mojibake scan, and scoped whitespace checks passed.
+- No unit, instrumentation, app, emulator, or deployment tests were run. These changes only add database JSON data, which is exempt from testing by the updated `AGENTS.md` rule.
+
+See the [WP02 black-glutinous-rice-flour proposal](../../proposals/wp02-a6-next-regional-flour-gap-review-r159-20261016-black-glutinous-rice-flour.md), [WP03 soft-red-wheat proposal](../../proposals/wp03-section-f-soft-red-wheat-berries-identity-review-r159-20261016.md), [WP04 smoked-mussels proposal](../../proposals/wp04-section-p-smoked-mussels-product-boundary-review-r159-20261016.md), [global catalog plan](../../../RecipeBook-global-ingredient-catalog-plan.txt), and [roadmap](../../../../roadmap.md).

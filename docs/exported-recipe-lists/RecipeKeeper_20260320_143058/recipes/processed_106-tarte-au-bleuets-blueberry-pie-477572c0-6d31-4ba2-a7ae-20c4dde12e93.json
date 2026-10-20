@@ -5,7 +5,7 @@
     "linkedRecipeId":  null,
     "isFavourite":  "False",
     "rating":  "4",
-    "course":  "Déssert/Dessert",
+    "course":  "DÃ©ssert/Dessert",
     "categories":  [
                        "Bleuet/Blueberry",
                        "Tarte/Pie"
@@ -18,26 +18,26 @@
     "prepTimeIso":  "PT10M",
     "cookTimeIso":  "PT40M",
     "ingredientLines":  [
-                            "1 croute de tarte non-cuite de 5 pouces + pâte extra pour le dessus - 1 5-inch raw sweet pie shell + extra dough for top layer",
-                            "1¼ tasse de bleuets - 1¼ cup blueberries",
-                            "¾ cuire à thé de zeste de citron - ¾ teaspoon lemon zest (optional)",
-                            "¾ de cuillère a soupe de jus de citron - ¾ tablespoon lemon Juice",
-                            "1 cuillère à soupe de fécule de maïs - 1 tablespoon corn starch",
+                            "1 croute de tarte non-cuite de 5 pouces + pÃ¢te extra pour le dessus - 1 5-inch raw sweet pie shell + extra dough for top layer",
+                            "1Â¼ tasse de bleuets - 1Â¼ cup blueberries",
+                            "Â¾ cuire Ã  thÃ© de zeste de citron - Â¾ teaspoon lemon zest (optional)",
+                            "Â¾ de cuillÃ¨re a soupe de jus de citron - Â¾ tablespoon lemon Juice",
+                            "1 cuillÃ¨re Ã  soupe de fÃ©cule de maÃ¯s - 1 tablespoon corn starch",
                             "â…› (25g) de tasse de sucre - â…› (25g) cup sugar",
-                            "Pincée de sel - Pinch of salt"
+                            "PincÃ©e de sel - Pinch of salt"
                         ],
     "directionLines":  [
-                           "Préchauffer le four a 400°F.",
-                           "Preheat oven to 400°F.",
-                           "Dans un bol, mélanger les bleuets, le jus et le zeste de citron, le sucre, la fécule de maïs et le sel.",
+                           "PrÃ©chauffer le four a 400Â°F.",
+                           "Preheat oven to 400Â°F.",
+                           "Dans un bol, mÃ©langer les bleuets, le jus et le zeste de citron, le sucre, la fÃ©cule de maÃ¯s et le sel.",
                            "In a bowl, mix together the blueberries, lemon juice, zest, sugar, salt, and corn starch.",
-                           "Mettre le mélange de bleuets dans la croute a tarte non-cuite. Fermer la tarte avec la pâte a tarte extra.",
+                           "Mettre le mÃ©lange de bleuets dans la croute a tarte non-cuite. Fermer la tarte avec la pÃ¢te a tarte extra.",
                            "Place the blueberry mixture in the raw 5-inch pie shell. Close the pie with the extra pie dough.",
                            "Cuire dans le four pour 40 minutes.",
                            "Bake in oven for 40 minutes."
                        ],
     "notes":  [
-                  "Faire 4 fois la quantité pour faire une tarte de 9 pouces.",
+                  "Faire 4 fois la quantitÃ© pour faire une tarte de 9 pouces.",
                   "Make four time the amount for a 9-inch pie."
               ],
     "nutrition":  {

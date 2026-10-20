@@ -36,20 +36,21 @@
     {
       "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-2",
       "originalText": "1 1/2 cups plain Greek yogurt",
-      "ingredientName": "plain yogurt",
-      "ingredientRefId": "ingredient-ref-plain-yogurt",
+      "ingredientName": "Greek-style yogurt",
+      "ingredientRefId": "ingredient-ref-greek-yogurt",
       "quantity": 1.5,
       "unit": "cup",
-      "notes": {
-        "fr": "style grec",
-        "en": "Greek style"
+      "ingredientFormId": "ingredient-form-greek-yogurt-plain",
+      "preparation": {
+        "fr": "nature",
+        "en": "plain"
       }
     },
     {
       "id": "9dc0c02c-ac20-411c-9adf-38095e980487-ingredient-3",
       "originalText": "2 tbsp extra-virgin olive oil",
-      "ingredientName": "olive oil",
-      "ingredientRefId": "ingredient-ref-olive-oil",
+      "ingredientName": "extra-virgin olive oil",
+      "ingredientRefId": "ingredient-ref-extra-virgin-olive-oil",
       "quantity": 2,
       "unit": "tbsp",
       "notes": {

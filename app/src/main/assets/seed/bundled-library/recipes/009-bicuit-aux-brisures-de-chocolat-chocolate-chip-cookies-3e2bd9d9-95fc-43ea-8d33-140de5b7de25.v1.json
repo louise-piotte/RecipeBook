@@ -75,7 +75,8 @@
       "ingredientName": "semisweet chocolate",
       "ingredientRefId": "ingredient-ref-semisweet-chocolate",
       "quantity": 1,
-      "unit": "cup"
+      "unit": "cup",
+      "ingredientFormId": "ingredient-form-semisweet-chocolate-chips"
     }
   ],
   "servings": {

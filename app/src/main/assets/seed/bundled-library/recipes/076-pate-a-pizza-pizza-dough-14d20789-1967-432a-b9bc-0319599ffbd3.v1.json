@@ -102,8 +102,7 @@
     {
       "id": "recipe-link-14d20789-1967-432a-b9bc-0319599ffbd3-pizza-sauce",
       "targetRecipeId": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7",
-      "linkType": "SAUCE",
-      "position": 0
+      "linkType": "SAUCE"
     }
   ],
   "mainPhotoId": "photo-14d20789-1967-432a-b9bc-0319599ffbd3-0",

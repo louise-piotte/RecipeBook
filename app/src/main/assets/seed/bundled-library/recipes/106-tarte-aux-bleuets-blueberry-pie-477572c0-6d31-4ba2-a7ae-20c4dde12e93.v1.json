@@ -114,8 +114,7 @@
     {
       "id": "recipe-link-477572c0-6d31-4ba2-a7ae-20c4dde12e93-pie-crust",
       "targetRecipeId": "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca",
-      "linkType": "COMPONENT",
-      "position": 0
+      "linkType": "COMPONENT"
     }
   ],
   "mainPhotoId": "photo-477572c0-6d31-4ba2-a7ae-20c4dde12e93-0",

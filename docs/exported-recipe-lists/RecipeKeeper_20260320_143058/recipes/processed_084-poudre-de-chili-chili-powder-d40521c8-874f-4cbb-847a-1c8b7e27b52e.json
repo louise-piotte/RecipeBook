@@ -5,9 +5,9 @@
     "linkedRecipeId":  null,
     "isFavourite":  "False",
     "rating":  "3",
-    "course":  "Ingrédient/Ingredient",
+    "course":  "IngrÃ©dient/Ingredient",
     "categories":  [
-                       "Épices/Spices"
+                       "Ã‰pices/Spices"
                    ],
     "collections":  [
 
@@ -17,12 +17,12 @@
     "prepTimeIso":  "PT5M",
     "cookTimeIso":  "PT0S",
     "ingredientLines":  [
-                            "2 cuillères à soupe de paprika - 2 tablespoons paprika",
-                            "2 cuillères à thé d\u0027origan - 2 teaspoons oregano",
-                            "1½ cuillère à thé de cumin - 1½ teaspoons cumin",
-                            "1½ cuillère à thé de poudre d\u0027ail - 1½ teaspoons garlic powder",
-                            "¾ cuillère à thé de poudre d\u0027oignon - ¾ teaspoon onion powder",
-                            "½ cuillère à thé de poivre de Cayenne, ou au goût - ½ teaspoon cayenne pepper, or to taste"
+                            "2 cuillÃ¨res Ã  soupe de paprika - 2 tablespoons paprika",
+                            "2 cuillÃ¨res Ã  thÃ© d\u0027origan - 2 teaspoons oregano",
+                            "1Â½ cuillÃ¨re Ã  thÃ© de cumin - 1Â½ teaspoons cumin",
+                            "1Â½ cuillÃ¨re Ã  thÃ© de poudre d\u0027ail - 1Â½ teaspoons garlic powder",
+                            "Â¾ cuillÃ¨re Ã  thÃ© de poudre d\u0027oignon - Â¾ teaspoon onion powder",
+                            "Â½ cuillÃ¨re Ã  thÃ© de poivre de Cayenne, ou au goÃ»t - Â½ teaspoon cayenne pepper, or to taste"
                         ],
     "directionLines":  [
                            "Fouetter le paprika, l\u0027origan, le cumin, la poudre d\u0027ail, la poudre d\u0027oignon et le poivre de Cayenne dans un bol.",

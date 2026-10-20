@@ -32,7 +32,8 @@
         "fr": "l\u00e9g\u00e8rement tass\u00e9",
         "en": "packed light"
       },
-      "group": "Cinnamon filling"
+      "group": "Cinnamon filling",
+      "ingredientFormId": "ingredient-form-brown-sugar-light"
     },
     {
       "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-2",
@@ -119,6 +120,7 @@
       "originalText": "1 cup walnuts, chopped",
       "ingredientName": "walnuts",
       "ingredientRefId": "ingredient-ref-walnuts",
+      "ingredientFormId": "ingredient-form-walnuts-chopped",
       "quantity": 1,
       "unit": "cup",
       "preparation": {
@@ -187,7 +189,8 @@
         "fr": "l\u00e9g\u00e8rement tass\u00e9",
         "en": "packed light"
       },
-      "group": "Cake"
+      "group": "Cake",
+      "ingredientFormId": "ingredient-form-brown-sugar-light"
     },
     {
       "id": "f6d10ccb-a696-4898-813b-a5a01e7f82ce-ingredient-17",

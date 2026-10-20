@@ -3,6 +3,7 @@ package app.recipebook.ui.recipes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Box
@@ -18,6 +19,7 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -36,24 +38,33 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import app.recipebook.R
 import app.recipebook.data.local.recipes.IngredientSubstitutionCatalog
+import app.recipebook.data.local.recipes.IngredientSubstitutionResolver
 import app.recipebook.data.local.recipes.IngredientSubstitutionSuggestion
-import app.recipebook.data.local.recipes.resolveIngredientSubstitutions
+import app.recipebook.data.local.recipes.buildIngredientUnitConversionGraph
+import app.recipebook.data.local.recipes.convertPackageAmount
+import app.recipebook.data.local.recipes.packageAmountForIngredientLine
 import app.recipebook.domain.localization.BilingualTextResolver
 import app.recipebook.domain.localization.formatIngredientAmount
 import app.recipebook.domain.localization.formatIngredientBase
 import app.recipebook.domain.localization.formatIngredientPreparation
+import app.recipebook.domain.localization.formatRecipeNumber
+import app.recipebook.domain.localization.parseRecipeQuantity
 import app.recipebook.domain.localization.normalizeIngredientUnit
 import app.recipebook.domain.localization.localizedMeasurementUnit
 import app.recipebook.domain.localization.MissingTextPlaceholders
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.localization.BilingualText
 import app.recipebook.domain.model.IngredientLine
+import app.recipebook.domain.model.IngredientForm
+import app.recipebook.domain.model.IngredientPackageAmount
+import app.recipebook.domain.model.PackageYieldBasis
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeLink
@@ -61,6 +72,7 @@ import app.recipebook.domain.model.RecipeLinkType
 import app.recipebook.domain.model.RecipeSource
 import app.recipebook.domain.model.SubstitutionRiskLevel
 import app.recipebook.domain.model.Tag
+import app.recipebook.domain.model.UnitDefinition
 import app.recipebook.ui.theme.PopupShape
 import kotlin.math.round
 
@@ -89,6 +101,8 @@ internal fun RecipeDetailScreen(
     var convertedUnits by remember { mutableStateOf<Map<String, String>>(emptyMap()) }
     var conversionDialogIngredientId by remember { mutableStateOf<String?>(null) }
     var substitutionDialogIngredientId by remember { mutableStateOf<String?>(null) }
+    var recipeScaleFactor by remember(recipe?.id, recipe?.servings) { mutableStateOf(1.0) }
+    var isScaleDialogOpen by remember(recipe?.id) { mutableStateOf(false) }
 
     Scaffold(
         modifier = modifier,
@@ -139,6 +153,7 @@ internal fun RecipeDetailScreen(
                     doneIngredientIds = doneIngredientIds,
                     emphasizedInstructionIndexes = emphasizedInstructionIndexes,
                     convertedUnits = convertedUnits,
+                    recipeScaleFactor = recipeScaleFactor,
                     conversionDialogIngredientId = conversionDialogIngredientId,
                     onToggleIngredientDone = { ingredientId ->
                         doneIngredientIds = if (ingredientId in doneIngredientIds) {
@@ -157,6 +172,8 @@ internal fun RecipeDetailScreen(
                     onOpenIngredientConversion = { ingredientId ->
                         conversionDialogIngredientId = ingredientId
                     },
+                    onOpenScaleDialog = { isScaleDialogOpen = true },
+                    onResetRecipeScale = { recipeScaleFactor = 1.0 },
                     onOpenIngredientSubstitutions = { ingredientId ->
                         substitutionDialogIngredientId = ingredientId
                     },
@@ -177,6 +194,18 @@ internal fun RecipeDetailScreen(
                     },
                     substitutionDialogIngredientId = substitutionDialogIngredientId
                 )
+                if (isScaleDialogOpen) {
+                    RecipeScaleDialog(
+                        recipe = recipe,
+                        currentScaleFactor = recipeScaleFactor,
+                        language = language,
+                        onDismiss = { isScaleDialogOpen = false },
+                        onApply = { scaleFactor ->
+                            recipeScaleFactor = scaleFactor
+                            isScaleDialogOpen = false
+                        }
+                    )
+                }
             }
         }
     }
@@ -196,11 +225,14 @@ private fun RecipeDetailCard(
     doneIngredientIds: Set<String>,
     emphasizedInstructionIndexes: Set<Int>,
     convertedUnits: Map<String, String>,
+    recipeScaleFactor: Double,
     conversionDialogIngredientId: String?,
     substitutionDialogIngredientId: String?,
     onToggleIngredientDone: (String) -> Unit,
     onToggleInstructionEmphasis: (Int) -> Unit,
     onOpenIngredientConversion: (String) -> Unit,
+    onOpenScaleDialog: () -> Unit,
+    onResetRecipeScale: () -> Unit,
     onOpenIngredientSubstitutions: (String) -> Unit,
     onDismissIngredientConversion: () -> Unit,
     onDismissIngredientSubstitutions: () -> Unit,
@@ -219,28 +251,68 @@ private fun RecipeDetailCard(
     )
     val instructions = parseTextEntries(resolver.resolveSystemText(language, recipe.instructionsText()))
     val substitutionsByLineId = remember(recipe, tags, ingredientReferences, substitutionCatalog) {
+        val substitutionResolver = IngredientSubstitutionResolver(
+            recipe = recipe,
+            tags = tags,
+            ingredientReferences = ingredientReferences,
+            catalog = substitutionCatalog
+        )
         recipe.ingredients.associate { ingredient ->
-            ingredient.id to resolveIngredientSubstitutions(ingredient, recipe, tags, ingredientReferences, substitutionCatalog)
+            ingredient.id to substitutionResolver.resolve(ingredient)
         }
     }
     val ingredientItems = recipe.ingredients.mapNotNull { ingredient ->
+        val scaledQuantity = scaleRecipeQuantity(ingredient.quantity, recipeScaleFactor)
+        val scaledIngredient = ingredient.copy(quantity = scaledQuantity)
         val ingredientReference = ingredient.ingredientRefId?.let(ingredientReferenceMap::get)
+        val packageAmount = scaleIngredientPackageAmount(
+            packageAmountForIngredientLine(ingredient, substitutionCatalog.ingredientForms, ingredientReferences),
+            recipeScaleFactor
+        )
+        val ingredientForm = ingredient.selectedForm(substitutionCatalog.ingredientForms)
         val convertedUnit = convertedUnits[ingredient.id]
         val convertedQuantity = convertedUnit?.let { unit ->
             convertIngredientQuantity(
-                quantity = ingredient.quantity,
+                quantity = scaledQuantity,
                 fromUnit = ingredient.unit,
                 toUnit = unit,
-                ingredientReference = ingredientReference
+                ingredientReference = ingredientReference,
+                ingredientForm = ingredientForm,
+                units = substitutionCatalog.units,
+                ingredientRefId = ingredient.ingredientRefId,
+                packageAmount = packageAmount,
+                packageYields = substitutionCatalog.packageYields
             )
         }
+        val activeConvertedUnit = convertedUnit.takeIf { convertedQuantity != null }
+        val activePackageConversion = if (activeConvertedUnit != null) {
+            convertPackageAmount(
+                ingredientRefId = ingredient.ingredientRefId,
+                ingredientForm = ingredientForm,
+                amount = packageAmount,
+                observations = substitutionCatalog.packageYields,
+                targetUnit = activeConvertedUnit,
+                ingredientReference = ingredientReference,
+                units = substitutionCatalog.units
+            )
+        } else null
+        val lineForDisplay = if (
+            activePackageConversion?.basis == PackageYieldBasis.DRAINED_MASS &&
+            ingredient.preparation.fr.isBlank() && ingredient.preparation.en.isBlank()
+        ) scaledIngredient.copy(preparation = app.recipebook.domain.model.LocalizedValue(fr = "égouttés", en = "drained"))
+        else scaledIngredient
         val displayText = buildDetailIngredientText(
-            ingredient = ingredient,
+            ingredient = lineForDisplay,
             ingredientReference = ingredientReference,
             language = language,
-            quantityOverride = convertedQuantity ?: ingredient.quantity,
-            unitOverride = convertedUnit ?: ingredient.unit
-        )
+            quantityOverride = convertedQuantity ?: scaledQuantity,
+            unitOverride = activeConvertedUnit ?: ingredient.unit,
+            ingredientForm = ingredientForm
+        ).let { text ->
+            if (activePackageConversion?.sourceSpecificEstimate == true) {
+                "$text (${localizedString(R.string.package_yield_source_qualifier, language, activePackageConversion.observation.brand ?: activePackageConversion.observation.sourceName)})"
+            } else text
+        }
         val substitutions = substitutionsByLineId[ingredient.id].orEmpty()
         displayText.takeIf { it.isNotEmpty() }?.let {
             DetailIngredientItem(
@@ -253,11 +325,28 @@ private fun RecipeDetailCard(
     }
     val selectedIngredientItem = conversionDialogIngredientId?.let { selectedId ->
         recipe.ingredients.firstOrNull { it.id == selectedId }?.let { ingredient ->
+            val scaledIngredient = ingredient.copy(
+                quantity = scaleRecipeQuantity(ingredient.quantity, recipeScaleFactor)
+            )
             val ingredientReference = ingredient.ingredientRefId?.let(ingredientReferenceMap::get)
+            val packageAmount = scaleIngredientPackageAmount(
+                packageAmountForIngredientLine(ingredient, substitutionCatalog.ingredientForms, ingredientReferences),
+                recipeScaleFactor
+            )
             ConversionDialogState(
-                ingredient = ingredient,
+                ingredient = scaledIngredient,
                 ingredientReference = ingredientReference,
-                targetUnits = availableConversionUnits(ingredient.unit, ingredientReference),
+                ingredientForm = ingredient.selectedForm(substitutionCatalog.ingredientForms),
+                packageAmount = packageAmount,
+                targetUnits = availableConversionUnits(
+                    ingredient.unit,
+                    ingredientReference,
+                    ingredient.selectedForm(substitutionCatalog.ingredientForms),
+                    substitutionCatalog.units,
+                    ingredient.ingredientRefId,
+                    packageAmount,
+                    substitutionCatalog.packageYields
+                ),
                 selectedUnit = convertedUnits[selectedId]
             )
         }
@@ -311,19 +400,53 @@ private fun RecipeDetailCard(
         )
 
         Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
-            recipe.servings?.let { servings ->
-                Text(
-                    text = localizedString(
-                        R.string.detail_amount_value,
-                        language,
-                        if (servings.unit.isNullOrBlank()) {
-                            formatNumber(servings.amount)
-                        } else {
-                            localizedString(R.string.servings_value_with_unit, language, formatNumber(servings.amount), servings.unit)
-                        }
-                    ),
-                    style = MaterialTheme.typography.bodyLarge
-                )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(4.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                recipe.servings?.let { servings ->
+                    val scaledServings = scaleRecipeQuantity(servings.amount, recipeScaleFactor) ?: servings.amount
+                    Text(
+                        text = localizedString(
+                            R.string.detail_amount_value,
+                            language,
+                            if (servings.unit.isNullOrBlank()) {
+                                formatRecipeNumber(scaledServings, language)
+                            } else {
+                                localizedString(R.string.servings_value_with_unit, language, formatRecipeNumber(scaledServings, language), servings.unit)
+                            }
+                        ),
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+                }
+                TextButton(
+                    onClick = onOpenScaleDialog,
+                    modifier = Modifier.testTag("recipe-scale-button")
+                ) {
+                    Text(localizedString(R.string.recipe_scale_label, language))
+                }
+            }
+            if (recipeScaleFactor != 1.0) {
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(4.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = localizedString(
+                            R.string.recipe_scale_factor_value,
+                            language,
+                            formatRecipeNumber(recipeScaleFactor, language)
+                        ),
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                    TextButton(
+                        onClick = onResetRecipeScale,
+                        modifier = Modifier.testTag("recipe-scale-reset")
+                    ) {
+                        Text(localizedString(R.string.ingredient_conversion_reset_label, language))
+                    }
+                }
             }
             recipe.times?.prepTimeMinutes?.let { prep ->
                 Text(
@@ -419,6 +542,11 @@ private fun RecipeDetailCard(
         IngredientConversionDialog(
             ingredient = dialogState.ingredient,
             ingredientReference = dialogState.ingredientReference,
+            ingredientForm = dialogState.ingredientForm,
+            packageAmount = dialogState.packageAmount,
+            ingredientRefId = dialogState.ingredient.ingredientRefId,
+            packageYields = substitutionCatalog.packageYields,
+            units = substitutionCatalog.units,
             targetUnits = dialogState.targetUnits,
             selectedUnit = dialogState.selectedUnit,
             language = language,
@@ -436,6 +564,7 @@ private fun RecipeDetailCard(
         IngredientSubstitutionDialog(
             ingredient = dialogState.ingredient,
             substitutions = dialogState.substitutions,
+            scaleFactor = recipeScaleFactor,
             language = language,
             onDismiss = onDismissIngredientSubstitutions
         )
@@ -596,11 +725,146 @@ private fun DetailIngredientRow(
     }
 }
 
+private enum class RecipeScaleMode { SERVINGS, MULTIPLIER }
+
+@Composable
+private fun RecipeScaleDialog(
+    recipe: Recipe,
+    currentScaleFactor: Double,
+    language: AppLanguage,
+    onDismiss: () -> Unit,
+    onApply: (Double) -> Unit
+) {
+    val baseServings = recipe.servings?.amount?.takeIf { it.isFinite() && it > 0.0 }
+    val initialMode = if (baseServings != null) RecipeScaleMode.SERVINGS else RecipeScaleMode.MULTIPLIER
+    var mode by remember(recipe.id) { mutableStateOf(initialMode) }
+    var input by remember(recipe.id, currentScaleFactor) {
+        mutableStateOf(
+            formatRecipeNumber(
+                if (mode == RecipeScaleMode.SERVINGS) {
+                    requireNotNull(baseServings) * currentScaleFactor
+                } else {
+                    currentScaleFactor
+                },
+                language
+            )
+        )
+    }
+    val enteredValue = parseRecipeQuantity(input)?.takeIf { it.isFinite() && it > 0.0 }
+    val requestedScaleFactor = when (mode) {
+        RecipeScaleMode.SERVINGS -> enteredValue?.let { servings ->
+            baseServings?.let { original -> servings / original }
+        }
+        RecipeScaleMode.MULTIPLIER -> enteredValue
+    }?.takeIf { it.isFinite() && it > 0.0 }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        shape = PopupShape,
+        confirmButton = {
+            TextButton(
+                enabled = requestedScaleFactor != null,
+                onClick = { requestedScaleFactor?.let(onApply) }
+            ) {
+                Text(localizedString(R.string.apply_label, language))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(localizedString(R.string.cancel_label, language))
+            }
+        },
+        title = { Text(localizedString(R.string.recipe_scale_dialog_title, language)) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text(localizedString(R.string.recipe_scale_times_unchanged_note, language))
+                Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                    if (baseServings != null) {
+                        TextButton(
+                            onClick = {
+                                mode = RecipeScaleMode.SERVINGS
+                                input = formatRecipeNumber(baseServings * currentScaleFactor, language)
+                            },
+                            modifier = Modifier.testTag("recipe-scale-mode-servings")
+                        ) {
+                            Text(
+                                if (mode == RecipeScaleMode.SERVINGS) {
+                                    "✓ ${localizedString(R.string.recipe_scale_by_servings_label, language)}"
+                                } else {
+                                    localizedString(R.string.recipe_scale_by_servings_label, language)
+                                }
+                            )
+                        }
+                    }
+                    TextButton(
+                        onClick = {
+                            mode = RecipeScaleMode.MULTIPLIER
+                            input = formatRecipeNumber(currentScaleFactor, language)
+                        },
+                        modifier = Modifier.testTag("recipe-scale-mode-multiplier")
+                    ) {
+                        Text(
+                            if (mode == RecipeScaleMode.MULTIPLIER) {
+                                "✓ ${localizedString(R.string.recipe_scale_by_multiplier_label, language)}"
+                            } else {
+                                localizedString(R.string.recipe_scale_by_multiplier_label, language)
+                            }
+                        )
+                    }
+                }
+                OutlinedTextField(
+                    value = input,
+                    onValueChange = { input = it },
+                    label = {
+                        Text(
+                            localizedString(
+                                if (mode == RecipeScaleMode.SERVINGS) {
+                                    R.string.servings_amount_label
+                                } else {
+                                    R.string.recipe_scale_multiplier_label
+                                },
+                                language
+                            )
+                        )
+                    },
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .testTag("recipe-scale-input")
+                )
+            }
+        }
+    )
+}
+
+internal fun scaleRecipeQuantity(quantity: Double?, scaleFactor: Double): Double? {
+    if (quantity == null || !quantity.isFinite() || !scaleFactor.isFinite() || scaleFactor <= 0.0) {
+        return quantity
+    }
+    val scaledQuantity = quantity * scaleFactor
+    return scaledQuantity.takeIf { it.isFinite() } ?: quantity
+}
+
+internal fun scaleIngredientPackageAmount(
+    packageAmount: IngredientPackageAmount?,
+    scaleFactor: Double
+): IngredientPackageAmount? {
+    val amount = packageAmount ?: return null
+    val scaledCount = scaleRecipeQuantity(amount.count, scaleFactor) ?: return amount
+    return amount.copy(count = scaledCount)
+}
+
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun IngredientConversionDialog(
     ingredient: IngredientLine,
     ingredientReference: IngredientReference?,
+    ingredientForm: IngredientForm?,
+    packageAmount: IngredientPackageAmount?,
+    ingredientRefId: String?,
+    packageYields: List<app.recipebook.domain.model.PackageYieldObservation>,
+    units: List<UnitDefinition>,
     targetUnits: List<String>,
     selectedUnit: String?,
     language: AppLanguage,
@@ -621,7 +885,10 @@ private fun IngredientConversionDialog(
         },
         dismissButton = if (selectedUnit != null) {
             {
-                TextButton(onClick = onReset) {
+                TextButton(
+                    onClick = onReset,
+                    modifier = Modifier.testTag("ingredient-conversion-reset")
+                ) {
                     Text(localizedString(R.string.ingredient_conversion_reset_label, language))
                 }
             }
@@ -644,8 +911,37 @@ private fun IngredientConversionDialog(
                             quantity = ingredient.quantity,
                             fromUnit = ingredient.unit,
                             toUnit = unit,
-                            ingredientReference = ingredientReference
+                            ingredientReference = ingredientReference,
+                            ingredientForm = ingredientForm,
+                            units = units,
+                            ingredientRefId = ingredientRefId,
+                            packageAmount = packageAmount,
+                            packageYields = packageYields
                         )
+                        val packageConversion = convertPackageAmount(
+                            ingredientRefId = ingredientRefId,
+                            ingredientForm = ingredientForm,
+                            amount = packageAmount,
+                            observations = packageYields,
+                            targetUnit = unit,
+                            ingredientReference = ingredientReference,
+                            units = units
+                        )
+                        val ingredientForDisplay = if (
+                            packageConversion?.basis == PackageYieldBasis.DRAINED_MASS &&
+                            ingredient.preparation.fr.isBlank() && ingredient.preparation.en.isBlank()
+                        ) ingredient.copy(preparation = app.recipebook.domain.model.LocalizedValue(fr = "égouttés", en = "drained"))
+                        else ingredient
+                        val optionLabel = buildIngredientConversionOptionLabel(
+                            quantity = convertedQuantity,
+                            unit = unit,
+                            ingredient = ingredientForDisplay,
+                            ingredientReference = ingredientReference,
+                            language = language
+                        )
+                        val qualifiedOptionLabel = if (packageConversion?.sourceSpecificEstimate == true) {
+                            "$optionLabel (${localizedString(R.string.package_yield_source_qualifier, language, packageConversion.observation.brand ?: packageConversion.observation.sourceName)})"
+                        } else optionLabel
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -655,13 +951,7 @@ private fun IngredientConversionDialog(
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
                             Text(
-                                text = buildIngredientConversionOptionLabel(
-                                    quantity = convertedQuantity,
-                                    unit = unit,
-                                    ingredient = ingredient,
-                                    ingredientReference = ingredientReference,
-                                    language = language
-                                ),
+                                text = qualifiedOptionLabel,
                                 color = if (unit == selectedUnit) {
                                     MaterialTheme.colorScheme.primary
                                 } else {
@@ -669,6 +959,12 @@ private fun IngredientConversionDialog(
                                 }
                             )
                         }
+                    }
+                    if (packageAmount != null && packageAmount.count % 1.0 != 0.0) {
+                        Text(
+                            text = localizedString(R.string.package_yield_fractional_note, language),
+                            style = MaterialTheme.typography.bodySmall
+                        )
                     }
                 }
             }
@@ -680,6 +976,7 @@ private fun IngredientConversionDialog(
 private fun IngredientSubstitutionDialog(
     ingredient: IngredientLine,
     substitutions: List<IngredientSubstitutionSuggestion>,
+    scaleFactor: Double,
     language: AppLanguage,
     onDismiss: () -> Unit
 ) {
@@ -711,7 +1008,11 @@ private fun IngredientSubstitutionDialog(
                             verticalArrangement = Arrangement.spacedBy(2.dp)
                         ) {
                             Text(
-                                text = buildIngredientSubstitutionOptionLabel(ingredient, substitution, language),
+                                text = buildIngredientSubstitutionOptionLabel(
+                                    ingredient,
+                                    substitution.copy(quantity = scaleRecipeQuantity(substitution.quantity, scaleFactor)),
+                                    language
+                                ),
                                 color = when (substitution.riskLevel) {
                                     SubstitutionRiskLevel.SAFE -> MaterialTheme.colorScheme.onSurface
                                     SubstitutionRiskLevel.CAUTION -> MaterialTheme.colorScheme.tertiary
@@ -764,15 +1065,21 @@ internal fun buildDetailIngredientText(
     language: AppLanguage,
     quantityOverride: Double? = ingredient.quantity,
     unitOverride: String? = ingredient.unit,
-    preserveUnitOverride: Boolean = unitOverride != null && unitOverride.normalizeIngredientUnit() != ingredient.unit?.normalizeIngredientUnit()
+    preserveUnitOverride: Boolean = unitOverride != null && unitOverride.normalizeIngredientUnit() != ingredient.unit?.normalizeIngredientUnit(),
+    ingredientForm: IngredientForm? = null
 ): String {
-    val ingredientName = ingredientReference?.localizedName(language)
-        ?.ifBlank { ingredient.ingredientName }
-        ?: ingredient.ingredientName
     val localizedPreparation = when (language) {
         AppLanguage.FR -> ingredient.preparation.fr
         AppLanguage.EN -> ingredient.preparation.en
     }.ifBlank { ingredient.preparation.primaryValue().orEmpty() }
+    val selectedFormName = ingredientForm
+        ?.takeIf { it.ingredientRefId == ingredient.ingredientRefId && localizedPreparation.isBlank() }
+        ?.let { form -> if (language == AppLanguage.FR) form.labelFr else form.labelEn }
+        ?.ifBlank { null }
+    val ingredientName = selectedFormName
+        ?: ingredientReference?.localizedName(language)
+            ?.ifBlank { ingredient.ingredientName }
+        ?: ingredient.ingredientName
     val localizedNotes = when (language) {
         AppLanguage.FR -> ingredient.notes.fr
         AppLanguage.EN -> ingredient.notes.en
@@ -819,23 +1126,25 @@ private fun riskLevelLabelResId(riskLevel: SubstitutionRiskLevel): Int = when (r
 
 internal fun availableConversionUnits(
     currentUnit: String?,
-    ingredientReference: IngredientReference?
+    ingredientReference: IngredientReference?,
+    ingredientForm: IngredientForm? = null,
+    units: List<UnitDefinition> = emptyList(),
+    ingredientRefId: String? = null,
+    packageAmount: IngredientPackageAmount? = null,
+    packageYields: List<app.recipebook.domain.model.PackageYieldObservation> = emptyList()
 ): List<String> {
-    val fromUnit = currentUnit?.normalizeIngredientUnit() ?: return emptyList()
-    val graph = buildIngredientConversionGraph(ingredientReference)
-    if (fromUnit !in graph) return emptyList()
-    val visited = linkedSetOf(fromUnit)
-    val queue = ArrayDeque<String>()
-    queue.add(fromUnit)
-    while (queue.isNotEmpty()) {
-        val unit = queue.removeFirst()
-        graph[unit].orEmpty().keys.forEach { neighbor ->
-            if (visited.add(neighbor)) {
-                queue.add(neighbor)
-            }
-        }
+    if (packageAmount?.requestedBasis != null) {
+        val candidateUnits = (units.map(UnitDefinition::unitId) + listOf("g", "kg", "oz", "lb", "ml", "l", "fl oz")).distinct()
+        return candidateUnits.asSequence()
+            .filter { target -> convertPackageAmount(ingredientRefId, ingredientForm, packageAmount, packageYields, target, ingredientReference, units) != null }
+            .map(String::toUnitSortKey)
+            .sortedWith(compareBy(UnitOptionSortKey::category, UnitOptionSortKey::rank, UnitOptionSortKey::unit))
+            .map(UnitOptionSortKey::unit)
+            .toList()
     }
-    return visited
+    val fromUnit = currentUnit?.normalizeIngredientUnit() ?: return emptyList()
+    val graph = buildIngredientUnitConversionGraph(ingredientReference, ingredientForm, units)
+    return graph.unitsConvertibleFrom(fromUnit)
         .asSequence()
         .filterNot { it == fromUnit }
         .map(String::toUnitSortKey)
@@ -848,70 +1157,31 @@ internal fun convertIngredientQuantity(
     quantity: Double?,
     fromUnit: String?,
     toUnit: String,
-    ingredientReference: IngredientReference?
+    ingredientReference: IngredientReference?,
+    ingredientForm: IngredientForm? = null,
+    units: List<UnitDefinition> = emptyList(),
+    ingredientRefId: String? = null,
+    packageAmount: IngredientPackageAmount? = null,
+    packageYields: List<app.recipebook.domain.model.PackageYieldObservation> = emptyList()
 ): Double? {
+    if (packageAmount != null) {
+        return convertPackageAmount(
+            ingredientRefId = ingredientRefId,
+            ingredientForm = ingredientForm,
+            amount = packageAmount,
+            observations = packageYields,
+            targetUnit = toUnit,
+            ingredientReference = ingredientReference,
+            units = units
+        )?.quantity?.let { roundIngredientQuantity(it, toUnit.normalizeIngredientUnit()) }
+    }
     val amount = quantity?.takeIf { it.isFinite() && it >= 0.0 } ?: return null
     val normalizedFrom = fromUnit?.normalizeIngredientUnit() ?: return null
     val normalizedTo = toUnit.normalizeIngredientUnit()
     if (normalizedFrom == normalizedTo) return amount
-    val factor = findConversionFactor(
-        graph = buildIngredientConversionGraph(ingredientReference),
-        fromUnit = normalizedFrom,
-        toUnit = normalizedTo
-    ) ?: return null
+    val factor = buildIngredientUnitConversionGraph(ingredientReference, ingredientForm, units)
+        .conversionFactor(normalizedFrom, normalizedTo) ?: return null
     return roundIngredientQuantity(amount * factor, normalizedTo)
-}
-
-private fun buildIngredientConversionGraph(
-    ingredientReference: IngredientReference?
-): Map<String, Map<String, Double>> {
-    val graph = mutableMapOf<String, MutableMap<String, Double>>()
-    standardUnitDefinitions.forEach { definition ->
-        if (definition.unit != definition.baseUnit) {
-            addConversionEdge(graph, definition.unit, definition.baseUnit, definition.toBaseFactor)
-        }
-    }
-    ingredientReference?.unitMappings.orEmpty().forEach { mapping ->
-        addConversionEdge(graph, mapping.fromUnit.normalizeIngredientUnit(), mapping.toUnit.normalizeIngredientUnit(), mapping.factor)
-    }
-    ingredientReference?.defaultDensity?.takeIf { it > 0.0 }?.let { density ->
-        addConversionEdge(graph, "ml", "g", density)
-    }
-    return graph
-}
-
-private fun addConversionEdge(
-    graph: MutableMap<String, MutableMap<String, Double>>,
-    fromUnit: String,
-    toUnit: String,
-    factor: Double
-) {
-    if (!factor.isFinite() || factor <= 0.0) return
-    graph.getOrPut(fromUnit) { mutableMapOf() }[toUnit] = factor
-    graph.getOrPut(toUnit) { mutableMapOf() }[fromUnit] = 1.0 / factor
-}
-
-private fun findConversionFactor(
-    graph: Map<String, Map<String, Double>>,
-    fromUnit: String,
-    toUnit: String
-): Double? {
-    if (fromUnit == toUnit) return 1.0
-    val visited = mutableSetOf<String>()
-    val queue = ArrayDeque<Pair<String, Double>>()
-    queue.add(fromUnit to 1.0)
-    while (queue.isNotEmpty()) {
-        val (unit, factor) = queue.removeFirst()
-        if (!visited.add(unit)) continue
-        graph[unit].orEmpty().forEach { (neighbor, edgeFactor) ->
-            val nextFactor = factor * edgeFactor
-            if (neighbor == toUnit) return nextFactor
-            if (neighbor !in visited) {
-                queue.add(neighbor to nextFactor)
-            }
-        }
-    }
-    return null
 }
 
 private fun roundIngredientQuantity(value: Double, unit: String): Double {
@@ -951,6 +1221,8 @@ private data class DetailIngredientItem(
 private data class ConversionDialogState(
     val ingredient: IngredientLine,
     val ingredientReference: IngredientReference?,
+    val ingredientForm: IngredientForm?,
+    val packageAmount: IngredientPackageAmount?,
     val targetUnits: List<String>,
     val selectedUnit: String?
 )
@@ -958,12 +1230,6 @@ private data class ConversionDialogState(
 private data class SubstitutionDialogState(
     val ingredient: IngredientLine,
     val substitutions: List<IngredientSubstitutionSuggestion>
-)
-
-private data class StandardUnitDefinition(
-    val unit: String,
-    val baseUnit: String,
-    val toBaseFactor: Double
 )
 
 private data class UnitOptionSortKey(
@@ -994,18 +1260,6 @@ private fun recipeLinkTypeLabelRes(type: RecipeLinkType): Int = when (type) {
 }
 
 private val DoneIngredientTextColor = Color(0xFFB8B8B8)
-private val standardUnitDefinitions = listOf(
-    StandardUnitDefinition(unit = "g", baseUnit = "g", toBaseFactor = 1.0),
-    StandardUnitDefinition(unit = "kg", baseUnit = "g", toBaseFactor = 1000.0),
-    StandardUnitDefinition(unit = "oz", baseUnit = "g", toBaseFactor = 28.349523125),
-    StandardUnitDefinition(unit = "lb", baseUnit = "g", toBaseFactor = 453.59237),
-    StandardUnitDefinition(unit = "ml", baseUnit = "ml", toBaseFactor = 1.0),
-    StandardUnitDefinition(unit = "l", baseUnit = "ml", toBaseFactor = 1000.0),
-    StandardUnitDefinition(unit = "tsp", baseUnit = "ml", toBaseFactor = 4.92892159375),
-    StandardUnitDefinition(unit = "tbsp", baseUnit = "ml", toBaseFactor = 14.78676478125),
-    StandardUnitDefinition(unit = "cup", baseUnit = "ml", toBaseFactor = 236.5882365),
-    StandardUnitDefinition(unit = "fl oz", baseUnit = "ml", toBaseFactor = 29.5735295625)
-)
 
 private fun String.toUnitSortKey(): UnitOptionSortKey {
     val normalized = normalizeIngredientUnit()
@@ -1029,6 +1283,9 @@ private fun String.toUnitSortKey(): UnitOptionSortKey {
     }
     return UnitOptionSortKey(unit = normalized, category = category, rank = rank)
 }
+
+private fun IngredientLine.selectedForm(forms: List<IngredientForm>): IngredientForm? =
+    ingredientFormId?.let { selectedId -> forms.firstOrNull { it.id == selectedId && it.ingredientRefId == ingredientRefId } }
 
 
 

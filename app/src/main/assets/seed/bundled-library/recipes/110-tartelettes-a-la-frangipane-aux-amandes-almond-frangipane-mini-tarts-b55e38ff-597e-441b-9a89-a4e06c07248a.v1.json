@@ -171,6 +171,7 @@
       "ingredientRefId": "ingredient-ref-almonds",
       "quantity": 0.5,
       "unit": "cup",
+      "ingredientFormId": "ingredient-form-almonds-sliced",
       "preparation": {
         "fr": "tranch\u00e9",
         "en": "sliced"

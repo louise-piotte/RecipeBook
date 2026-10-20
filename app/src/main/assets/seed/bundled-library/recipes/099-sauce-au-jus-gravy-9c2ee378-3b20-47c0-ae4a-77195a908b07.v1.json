@@ -36,8 +36,8 @@
     {
       "id": "9c2ee378-3b20-47c0-ae4a-77195a908b07-ingredient-3",
       "originalText": "1 tbsp Better Than Bouillon",
-      "ingredientName": "broth concentrate",
-      "ingredientRefId": "ingredient-ref-broth-concentrate",
+      "ingredientName": "Better Than Bouillon base",
+      "ingredientRefId": "ingredient-ref-better-than-bouillon-base",
       "quantity": 1,
       "unit": "tbsp"
     },

@@ -5,7 +5,7 @@
     "linkedRecipeId":  null,
     "isFavourite":  "False",
     "rating":  "4",
-    "course":  "Ingrédient/Ingredient",
+    "course":  "IngrÃ©dient/Ingredient",
     "categories":  [
                        "Chocolat/Chocolate",
                        "Sauce"
@@ -18,18 +18,18 @@
     "prepTimeIso":  "PT0S",
     "cookTimeIso":  "PT0S",
     "ingredientLines":  [
-                            "¾ tasse de sucre - ¾ cup sugar",
-                            "1½ cuillère à soupe de farine - 1½ tablespoon flour",
-                            "½ tasse de poudre de cacao - ½ cup cocoa powder",
-                            "1¼ tasse de lait - 1¼ cup milk",
-                            "2 cuillères à soupe de margarine - 2 tablespoon of margarine"
+                            "Â¾ tasse de sucre - Â¾ cup sugar",
+                            "1Â½ cuillÃ¨re Ã  soupe de farine - 1Â½ tablespoon flour",
+                            "Â½ tasse de poudre de cacao - Â½ cup cocoa powder",
+                            "1Â¼ tasse de lait - 1Â¼ cup milk",
+                            "2 cuillÃ¨res Ã  soupe de margarine - 2 tablespoon of margarine"
                         ],
     "directionLines":  [
-                           "Mettre les ingrédients secs et la margarine dans un petit chaudron.",
+                           "Mettre les ingrÃ©dients secs et la margarine dans un petit chaudron.",
                            "Put the dry ingredients and the margarine in a small pot.",
-                           "Allumer la cuisinière a feu moyen et ajouter le lait tranquillement en mélangeant avec un fouet. Il est important de s\u0027assurer qu\u0027il ne reste aucun grumeaux.",
+                           "Allumer la cuisiniÃ¨re a feu moyen et ajouter le lait tranquillement en mÃ©langeant avec un fouet. Il est important de s\u0027assurer qu\u0027il ne reste aucun grumeaux.",
                            "Turn on the stove to medium heat and slowly add the milk, stirring with a whisk. It is important to make sure that there are no lumps left.",
-                           "Amener le sirop à ébullition sans changer la température. Laisser bouillir pour une minute puis éteindre le feu. Brasser jusqu\u0027à ce que ça arrête de bouillir.",
+                           "Amener le sirop Ã  Ã©bullition sans changer la tempÃ©rature. Laisser bouillir pour une minute puis Ã©teindre le feu. Brasser jusqu\u0027Ã  ce que Ã§a arrÃªte de bouillir.",
                            "Bring the syrup to a boil without changing the temperature. Let boil for a minute then turn off the heat. Stir until it stops boiling.",
                            "Retirer de feu et mettre dans une bouteille.",
                            "Remove from heat and put in a bottle."

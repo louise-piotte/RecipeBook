@@ -5,23 +5,28 @@ import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.assert
+import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performSemanticsAction
+import androidx.compose.ui.test.performTextReplacement
 import app.recipebook.data.local.recipes.IngredientSubstitutionCatalog
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.ContextualSubstitutionRule
+import app.recipebook.domain.model.IngredientForm
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
 import app.recipebook.domain.model.LocalizedSystemText
 import app.recipebook.domain.model.Recipe
+import app.recipebook.domain.model.RecipeTimes
 import app.recipebook.domain.model.RecipeLink
 import app.recipebook.domain.model.RecipeLinkType
+import app.recipebook.domain.model.Servings
 import app.recipebook.domain.model.SubstitutionConfidence
 import app.recipebook.domain.model.SubstitutionConversionType
 import app.recipebook.domain.model.SubstitutionRiskLevel
@@ -31,6 +36,100 @@ import org.junit.Test
 import org.junit.Assert.assertEquals
 
 class RecipeDetailScreenInteractionTest {
+    @Test
+    fun servingAndMultiplierScalingCanBeAppliedAndResetWithoutChangingRecipeDataOrTimes() {
+        val measuredIngredient = IngredientLine(
+            id = "scaled-sugar",
+            ingredientRefId = "scale-sugar-reference",
+            originalText = "2 cups sugar",
+            quantity = 2.0,
+            unit = "cup",
+            ingredientName = "sugar"
+        )
+        val unquantifiedIngredient = IngredientLine(
+            id = "unquantified-salt",
+            originalText = "salt to taste",
+            ingredientName = "salt to taste"
+        )
+        val recipe = Recipe(
+            id = "scale-fixture",
+            createdAt = "2026-10-17",
+            updatedAt = "2026-10-17",
+            languages = BilingualText(
+                fr = LocalizedSystemText("Sucre", "", "", ""),
+                en = LocalizedSystemText("Sugar", "", "Stir for 2 minutes.", "")
+            ),
+            ingredients = listOf(measuredIngredient, unquantifiedIngredient),
+            servings = Servings(4.0),
+            times = RecipeTimes(prepTimeMinutes = 10, cookTimeMinutes = 20, totalTimeMinutes = 30)
+        )
+        val sugarReference = IngredientReference(
+            id = "scale-sugar-reference",
+            nameFr = "sucre",
+            nameEn = "sugar",
+            unitMappings = listOf(IngredientUnitMapping("cup", "g", 200.0)),
+            updatedAt = "2026-10-17"
+        )
+
+        composeRule.setContent {
+            RecipeDetailScreen(
+                recipe = recipe,
+                recipes = listOf(recipe),
+                ingredientReferences = listOf(sugarReference),
+                tags = emptyList(),
+                language = AppLanguage.EN,
+                onLanguageChange = {},
+                onBack = {},
+                onNavigate = {},
+                onEdit = {},
+                onOpenLinkedRecipe = {}
+            )
+        }
+
+        composeRule.onNodeWithTag("recipe-scale-button").performClick()
+        composeRule.onNodeWithTag("recipe-scale-input").performTextReplacement("6")
+        composeRule.onNodeWithText("Apply").performClick()
+        composeRule.onNodeWithText("Amount: 6").assertExists()
+        composeRule.onNodeWithText("3 cups sugar").assertExists()
+        composeRule.onNodeWithText("salt to taste").assertExists()
+        composeRule.onNodeWithText("1. Stir for 2 minutes.").assertExists()
+        composeRule.onNodeWithText("Prep Time: 10 min").assertExists()
+        composeRule.onNodeWithText("Cook Time: 20 min").assertExists()
+
+        composeRule.onNodeWithTag("ingredient-row-scaled-sugar")
+            .performSemanticsAction(SemanticsActions.OnLongClick)
+        composeRule.onNodeWithTag("ingredient-convert-g").performClick()
+        composeRule.onNodeWithText("600 g sugar").assertExists()
+        composeRule.onNodeWithTag("ingredient-row-scaled-sugar")
+            .performSemanticsAction(SemanticsActions.OnLongClick)
+        composeRule.onNodeWithTag("ingredient-conversion-reset").performClick()
+        composeRule.onNodeWithText("3 cups sugar").assertExists()
+
+        composeRule.onNodeWithTag("recipe-scale-reset").performClick()
+        composeRule.onNodeWithText("Amount: 4").assertExists()
+        composeRule.onNodeWithText("2 cups sugar").assertExists()
+
+        composeRule.onNodeWithTag("recipe-scale-button").performClick()
+        composeRule.onNodeWithTag("recipe-scale-mode-multiplier").performClick()
+        composeRule.onNodeWithTag("recipe-scale-input").performTextReplacement("0.5")
+        composeRule.onNodeWithText("Apply").performClick()
+        composeRule.onNodeWithText("Amount: 2").assertExists()
+        composeRule.onNodeWithText("1 cup sugar").assertExists()
+        composeRule.onNodeWithText("salt to taste").assertExists()
+        composeRule.onNodeWithText("1. Stir for 2 minutes.").assertExists()
+        composeRule.onNodeWithText("Prep Time: 10 min").assertExists()
+        composeRule.onNodeWithText("Cook Time: 20 min").assertExists()
+
+        composeRule.runOnIdle {
+            assertEquals(4.0, requireNotNull(recipe.servings).amount, 0.0)
+            assertEquals(2.0, requireNotNull(recipe.ingredients.first().quantity), 0.0)
+            assertEquals("2 cups sugar", recipe.ingredients.first().originalText)
+            assertEquals("salt to taste", recipe.ingredients.last().originalText)
+            assertEquals(10, recipe.times?.prepTimeMinutes)
+            assertEquals(20, recipe.times?.cookTimeMinutes)
+        }
+    }
+
     @Test
     fun languageSwitchKeepsIngredientQuantityAndSelectedConversion() {
         val language = androidx.compose.runtime.mutableStateOf(AppLanguage.EN)
@@ -65,6 +164,67 @@ class RecipeDetailScreenInteractionTest {
         composeRule.runOnIdle { language.value = AppLanguage.FR }
         composeRule.onNodeWithText("300 g sucre").assert(hasText("300 g sucre"))
         composeRule.runOnIdle { assertEquals(1.5, requireNotNull(recipe.ingredients.single().quantity), 0.000001) }
+    }
+
+    @Test
+    fun selectedFormDensityReachesRecipeDetailConversion() {
+        val form = IngredientForm(
+            id = "form-dry-beans",
+            ingredientRefId = "ref-beans",
+            formCode = "dry",
+            labelFr = "haricots secs",
+            labelEn = "dry beans",
+            densityGPerMl = 0.5,
+            updatedAt = "2026-10-12"
+        )
+        val recipe = Recipe(
+            id = "form-density-fixture",
+            createdAt = "2026-10-12",
+            updatedAt = "2026-10-12",
+            languages = BilingualText(
+                fr = LocalizedSystemText("Haricots", "", "", ""),
+                en = LocalizedSystemText("Beans", "", "", "")
+            ),
+            ingredients = listOf(
+                IngredientLine(
+                    id = "line-form-density",
+                    ingredientRefId = "ref-beans",
+                    ingredientFormId = form.id,
+                    originalText = "250 g dry beans",
+                    quantity = 250.0,
+                    unit = "g",
+                    ingredientName = "beans"
+                )
+            )
+        )
+        val reference = IngredientReference(
+            id = "ref-beans",
+            nameFr = "haricots",
+            nameEn = "beans",
+            defaultDensity = null,
+            updatedAt = "2026-10-12"
+        )
+
+        composeRule.setContent {
+            RecipeDetailScreen(
+                recipe = recipe,
+                recipes = listOf(recipe),
+                ingredientReferences = listOf(reference),
+                substitutionCatalog = IngredientSubstitutionCatalog(ingredientForms = listOf(form)),
+                tags = emptyList(),
+                language = AppLanguage.EN,
+                onLanguageChange = {},
+                onBack = {},
+                onNavigate = {},
+                onEdit = {},
+                onOpenLinkedRecipe = {}
+            )
+        }
+
+        composeRule.onNodeWithTag("ingredient-row-line-form-density")
+            .performSemanticsAction(SemanticsActions.OnLongClick)
+        composeRule.onNodeWithTag("ingredient-convert-ml").performClick()
+        composeRule.onNodeWithText("500 ml dry beans").assert(hasText("500 ml dry beans"))
     }
 
 
@@ -173,7 +333,7 @@ class RecipeDetailScreenInteractionTest {
     }
 
     @Test
-    fun substitutionIconOpensDialogAndShowsWarningText() {
+    fun highRiskContextualRuleIsNotOfferedAsAutomaticSuggestion() {
         val recipe = Recipe(
             id = "recipe-1",
             createdAt = "2026-04-21T00:00:00Z",
@@ -252,10 +412,14 @@ class RecipeDetailScreenInteractionTest {
         composeRule.onNodeWithTag("ingredient-substitute-ingredient-1").performClick()
 
         composeRule.onNodeWithText("Substitute flour").assert(hasText("Substitute flour"))
-        composeRule.onNodeWithTag("ingredient-substitution-option-rule-flour-cornstarch")
-            .assert(hasText("1 tbsp cornstarch"))
-        composeRule.onNodeWithText("Warning: Use only to thicken a sauce.")
-            .assert(hasText("Warning: Use only to thicken a sauce."))
+        composeRule.onAllNodes(
+            SemanticsMatcher.expectValue(
+                SemanticsProperties.TestTag,
+                "ingredient-substitution-option-rule-flour-cornstarch"
+            )
+        ).assertCountEquals(0)
+        composeRule.onAllNodes(hasText("Warning: Use only to thicken a sauce."))
+            .assertCountEquals(0)
     }
 
     @Test

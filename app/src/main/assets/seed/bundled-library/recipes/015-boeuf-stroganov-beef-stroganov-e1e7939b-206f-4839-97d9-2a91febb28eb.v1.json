@@ -20,7 +20,8 @@
       "originalText": "400 g beef",
       "ingredientName": "beef",
       "quantity": 400,
-      "unit": "g"
+      "unit": "g",
+      "ingredientRefId": "ingredient-ref-beef"
     },
     {
       "id": "e1e7939b-206f-4839-97d9-2a91febb28eb-ingredient-2",
@@ -43,7 +44,8 @@
       "originalText": "1 can beef broth",
       "ingredientName": "beef broth",
       "quantity": 1,
-      "unit": "can"
+      "unit": "can",
+      "ingredientRefId": "ingredient-ref-beef-broth"
     },
     {
       "id": "e1e7939b-206f-4839-97d9-2a91febb28eb-ingredient-5",
@@ -57,6 +59,7 @@
       "id": "e1e7939b-206f-4839-97d9-2a91febb28eb-ingredient-6",
       "originalText": "1 tbsp paprika",
       "ingredientName": "paprika",
+      "ingredientRefId": "ingredient-ref-paprika",
       "quantity": 1,
       "unit": "tbsp"
     },

@@ -1,0 +1,11 @@
+# WP04 Section P Arctic cod identity integration
+
+Added identity-only **Arctic cod / morue polaire** for *Boreogadus saida* as a `PROTEIN` reference, with no aliases. The CFIA Fish List and OQLF support the Canadian and Québec display pair. CFIA also accepts **Polar Cod** for *B. saida*, but the DFO Arctic-fish list and ITIS show that common name overlapping with *Arctogadus glacialis*; it remains outside aliases. The unqualified scientific and regional names remain outside picker aliases as well.
+
+The full 114-recipe / 1,123-row bundle has no candidate-term hits or broad `cod` / `morue` ingredient rows. No forms, recipe links, measures, density, unit mappings, conversions, yields, or active substitutions were added. DFO body-length information remains biological context, not a food portion. The targeted CNF lookup was not independently reproducible and was not used as evidence that no food analysis exists.
+
+The static picker projection preserves five qualified results for broad `cod` and `morue` searches after integration; `Arctic cod` and `morue polaire` resolve to the new row, while `polar cod` remains unsearchable as an alias.
+
+Package normalization, reference normalization, generated-catalog freshness, ledger validation, exact-key ownership, recipe-corpus scan, UTF-8/no-BOM, and scoped whitespace checks passed. No app tests or emulator checks were run because this change only adds database JSON data under `AGENTS.md`.
+
+Sources: [proposal and source list](../../proposals/wp04-section-p-next-open-seafood-gap-review-20261012-round2.md), [CFIA Fish List overview](https://inspection.canada.ca/en/food-labels/labelling/industry/fish/list), [OQLF morue polaire](https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/1199114/morue-polaire), [DFO Arctic cod profile](https://www.dfo-mpo.gc.ca/species-especes/profiles-profils/arctic-cod-morue-polaire-eng.html), [DFO Arctic-fish checklist](https://waves-vagues.dfo-mpo.gc.ca/Library/278854.pdf), [ITIS *Boreogadus saida*](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=164706), [ITIS *Arctogadus glacialis*](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=164704).

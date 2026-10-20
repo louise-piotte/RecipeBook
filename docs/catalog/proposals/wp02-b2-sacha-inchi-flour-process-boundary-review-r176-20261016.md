@@ -1,0 +1,43 @@
+# WP02 B2 R176 — Sacha Inchi flour process boundary review
+
+- **Reviewed:** 2026-10-16.
+- **Status:** Proposal only. This file is the sole change; catalog JSON, research ledger, plan, roadmap, code, generated files, and batch records were not edited.
+- **Scope:** Flour made from edible *Plukenetia volubilis* (Sacha Inchi) kernels or their post-extraction residue. This is a new seed-derived flour candidate, separate from R175's fenugreek-seed-flour hold and the existing roasted-seed identity.
+- **Proposal-local source IDs:** `WP02-B2-SACHA-INCHI-FLOUR-R176-20261016-S01` through `S06`. These are provenance labels only and are not shared-ledger records.
+
+## Recommendation
+
+**Hold a generic `Sacha Inchi flour` identity and its aliases for now.** Research confirms food-science use of at least two materially different flour products: a wet-milled, water-extracted kernel cake and a mechanically oil-pressed kernel cake. A Canada-facing retailer listing for Sacha Inchi powder instead lists whole seeds as its sole ingredient and was marked out of stock when reviewed; Health Canada's historical food-ingredient determination names Sacha Inchi seed protein specifically. Neither source establishes that the powder is flour or that either research flour is a commonly sold Canadian culinary product. TFO Canada's French-language publication mentions protein-rich flour after Sacha Inchi seed extraction, but does not identify the extraction process or provide a flour label. The Montréal French/English label example in that issue concerns a different exporter and its products, not Sacha Inchi flour. No exact OQLF term for this flour was found. The evidence therefore supports a research product family, but not a safe picker identity, stable product boundary, or Québec French display. [S01–S06]
+
+Keep `Sacha Inchi flour`, `Sacha Inchi meal`, `Sacha Inchi protein powder`, `Sacha Inchi seed powder`, and descriptive French phrases as research-only terms. Reopen if a current Canadian/Québec culinary product identifies whether its ingredient is whole-kernel meal, aqueous-extracted cake, or oil-pressed cake and supplies product-matched French wording. Do not map all of these to a single flour row by default.
+
+## Ownership and picker audit
+
+The active reference catalog contains one relevant owner: `ingredient-ref-roasted-sacha-inchi-seeds` (`roasted sacha inchi seeds / graines de sacha inchi grillées`). No active reference, ingredient form, or legacy-import candidate owns a Sacha Inchi flour or protein-powder term. The research ledger's matching Sacha Inchi record concerns roasted seeds; the cited Canadian retailer and Health Canada entries there establish seed product and seed-protein context, not flour. The focused proposal/batch archive contains no earlier Sacha Inchi flour review. Candidate names and source URLs in this proposal were checked against current ledger ownership; no candidate-specific source ID or URL collision was found.
+
+The picker matches complete phrases within names and aliases. If a future flour reference is activated with `Sacha Inchi` in its display, broad `sacha inchi` queries would return both it and the roasted-seed row. That is a useful product choice only when the flour's actual product form is established. Do not alias bare `sacha inchi`, `powder`, `meal`, `protein`, or `Inca peanut`; the latter is an imprecise common-name phrase and could blur the seed identity with unrelated peanuts. No picker change is proposed.
+
+## Bundled recipe demand
+
+A manifest-ordered scan covered all 114 recipe files and 1,123 ingredient rows. It found zero mentions of `sacha inchi`, `Sacha Inchi flour`, `Sacha Inchi meal`, `Plukenetia volubilis`, or `Inca peanut`, and no recipe link to a flour candidate. This result is bounded to the current bundled package.
+
+## Numeric and substitution boundaries
+
+The reviewed sources provide no transferable household volume-to-mass measure, bulk density, unit conversion, preparation yield, or general recipe substitution for a consumer Sacha Inchi flour. The research paper's composition values distinguish its experimental wet-method and mechanical-defatting samples; they are not reusable quantity data. The seed-protein determination and Canadian whole-seed powder listing do not supply flour measures. Study blend percentages, protein composition, processing temperatures, and the reported experimental methods remain source-specific; none is adopted as a recipe ratio, density, conversion, yield, or active substitution. Add no forms, recipe links, measurement fields, or substitution rules.
+
+## Source register
+
+Accessed 2026-10-16. IDs are proposal-local and unallocated.
+
+| ID | Source | Supports and limits |
+|---|---|---|
+| **WP02-B2-SACHA-INCHI-FLOUR-R176-20261016-S01** | Narváez Cadena et al., [“Characterization of sacha inchi (*Plukenetia volubilis*) and taro (*Colocasia esculenta*) flours with potential application in the preparation of both gluten-free and high protein foods”](https://pmc.ncbi.nlm.nih.gov/articles/PMC11809645/), *F1000Research* 12:378 (2023; revised version published October 9, 2023). | Primary food-science study. It explicitly prepares flour from kernel by wet milling and separation of the insoluble cake, and by mechanical oil pressing; the measured compositions differ. Establishes experimental flour variants, not Canadian market prevalence, Québec wording, or a common household flour identity. The study's methods and composition are not transferred into catalog numeric fields. |
+| **WP02-B2-SACHA-INCHI-FLOUR-R176-20261016-S02** | Health Canada, [List of non-novel determinations for food and food ingredients](https://www.canada.ca/en/health-canada/services/food-nutrition/genetically-modified-foods-other-novel-foods/requesting-novelty-determination/list-non-novel-determinations.html), entry dated 2015-05-29, “Sacha inchi (Plukenetia volubilis) seed protein.” | Official Canadian food-ingredient context. The listed ingredient is protein derived from Sacha Inchi seed and is described as having a history of safe use as food. It does not establish a whole-seed flour, oil-cake flour, retail availability, baking use, or a French food name. |
+| **WP02-B2-SACHA-INCHI-FLOUR-R176-20261016-S03** | Trade Facilitation Office Canada, [Exporter au Canada / Exporting to Canada, Jan.–Mar. 2025](https://tfocanada.ca/wp-content/uploads/2025/04/E2C-jan_March_FR_Final.pdf), p. 10. | The French-language export-promotion publication says Sacha Inchi seeds yield oil and a protein-rich flour after extraction. It does not identify the extraction process or provide a flour label. A Montréal French/English label adaptation discussed in a separate profile concerns another exporter and its products, not Sacha Inchi flour. |
+| **WP02-B2-SACHA-INCHI-FLOUR-R176-20261016-S04** | Miski Good Foods Canada, [Organic Sacha Inchi Powder](https://miskifoods.ca/products/sacha-inchi-powder). | Canada-facing seller page identifies “Organic Sacha Inchi Powder” and lists organic Sacha Inchi seeds as the ingredient. The page showed the product out of stock when reviewed. It supports a listed seed-derived powder product, not flour or oil-pressed cake. |
+| **WP02-B2-SACHA-INCHI-FLOUR-R176-20261016-S05** | Office québécois de la langue française, [Vitrine linguistique](https://vitrinelinguistique.oqlf.gouv.qc.ca/), site search for `sacha inchi`, `Plukenetia volubilis`, and flour phrases; Government of Canada, TERMIUM Plus not found for the candidate phrase. | No exact OQLF or TERMIUM entry establishing a Québec French name for Sacha Inchi flour was found in this review. This negative search result does not rule out local usage; it limits claims of official terminology support. |
+| **WP02-B2-SACHA-INCHI-FLOUR-R176-20261016-S06** | Project audit: active ingredient references and forms, legacy identity map, research ledger, focused WP02 proposal/batch archive, ingredient search behavior, and manifest-listed recipes. | Read-only ownership, normalized-term, archive, picker-collision, and recipe-corpus audit for this proposal. Shared files were not changed. |
+
+## Reopen criteria
+
+Reconsider a new identity only after a Canadian or Québec-facing culinary product or authoritative food specification names the flour and distinguishes its source/process. If evidence supports separate consumer products, keep whole-seed powder, wet-extracted cake flour, and oil-pressed cake flour distinct; do not infer they are interchangeable. Require product-matched Québec French naming before setting a confident French display. Measurements and substitutions require separate evidence and remain unknown until then.

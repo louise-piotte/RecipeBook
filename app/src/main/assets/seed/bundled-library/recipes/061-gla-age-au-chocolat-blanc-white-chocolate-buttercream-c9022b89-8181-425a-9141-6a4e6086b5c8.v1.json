@@ -99,8 +99,7 @@
     {
       "id": "recipe-link-c9022b89-8181-425a-9141-6a4e6086b5c8-devils-food-cake",
       "targetRecipeId": "4207e09a-429f-437f-b7bd-14e862d6d696",
-      "linkType": "FROSTING",
-      "position": 0
+      "linkType": "FROSTING"
     }
   ],
   "mainPhotoId": "photo-c9022b89-8181-425a-9141-6a4e6086b5c8-0",

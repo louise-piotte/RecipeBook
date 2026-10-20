@@ -84,7 +84,8 @@
       "preparation": {
         "fr": "1 \u00e0 2 gouttes",
         "en": "1 to 2 drops"
-      }
+      },
+      "ingredientRefId": "ingredient-ref-green-food-coloring"
     }
   ],
   "servings": {

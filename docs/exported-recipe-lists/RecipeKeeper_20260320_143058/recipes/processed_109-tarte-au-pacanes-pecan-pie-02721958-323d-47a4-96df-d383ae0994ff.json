@@ -5,7 +5,7 @@
     "linkedRecipeId":  "1d0e8bf3-4792-46f3-8766-5f2ab51af7ca",
     "isFavourite":  "False",
     "rating":  "4",
-    "course":  "Déssert/Dessert",
+    "course":  "DÃ©ssert/Dessert",
     "categories":  [
                        "Pacane/Pecan",
                        "Tarte/Pie"
@@ -19,26 +19,26 @@
     "cookTimeIso":  "PT40M",
     "ingredientLines":  [
                             "1 croute de tarte non-cuite de 5 pouces  - 1 5-inch raw sweet pie shell",
-                            "½ tasse de pacanes en morceaux - ½ cup coarsely chopped pecans",
-                            "â…“ tasse de sirop de maïs - â…“ cup dark corn syrup",
-                            "¼ sucre - ¼ cup (50g) sugar",
+                            "Â½ tasse de pacanes en morceaux - Â½ cup coarsely chopped pecans",
+                            "â…“ tasse de sirop de maÃ¯s - â…“ cup dark corn syrup",
+                            "Â¼ sucre - Â¼ cup (50g) sugar",
                             "1 oeuf 1 large egg",
-                            "19g de beurre non salé fondu - 19g unsalted butter melted",
-                            "1 cuillère à thé d\u0027extrait de vanille - 1 teaspoon vanilla extract",
-                            "¼ cuillère à thé de sel - ¼ teaspoon salt"
+                            "19g de beurre non salÃ© fondu - 19g unsalted butter melted",
+                            "1 cuillÃ¨re Ã  thÃ© d\u0027extrait de vanille - 1 teaspoon vanilla extract",
+                            "Â¼ cuillÃ¨re Ã  thÃ© de sel - Â¼ teaspoon salt"
                         ],
     "directionLines":  [
-                           "Préchauffer le four a 400°F.",
-                           "Preheat oven to 400°F.",
-                           "Dans un bol, mélanger le sirop de maïs le sucre, l\u0027oeuf, le beurre fondu, la vanille et le sel.",
+                           "PrÃ©chauffer le four a 400Â°F.",
+                           "Preheat oven to 400Â°F.",
+                           "Dans un bol, mÃ©langer le sirop de maÃ¯s le sucre, l\u0027oeuf, le beurre fondu, la vanille et le sel.",
                            "In a bowl, whisk together the corn syrup, sugar, egg, melted butter, vanilla, and salt until well combined.",
-                           "Mettre les pacanes en morceaux dans la croute a tarte non-cuite. Recouvrir du mélange de sirop de maïs. Placer les moitiés de pacanes sur le dessus pour décorer.",
+                           "Mettre les pacanes en morceaux dans la croute a tarte non-cuite. Recouvrir du mÃ©lange de sirop de maÃ¯s. Placer les moitiÃ©s de pacanes sur le dessus pour dÃ©corer.",
                            "Place the chopped pecans mixture in the raw 5-inch pie shell. Pour the corn syrup mixture on top. Place pecan halves on top for decoration.",
                            "Cuire dans le four pour 40 minutes.",
                            "Bake in oven for 40 minutes."
                        ],
     "notes":  [
-                  "Faire 3 fois la quantité pour faire une tarte de 9 pouces.",
+                  "Faire 3 fois la quantitÃ© pour faire une tarte de 9 pouces.",
                   "Make 3 time the amount for a 9-inch pie."
               ],
     "nutrition":  {

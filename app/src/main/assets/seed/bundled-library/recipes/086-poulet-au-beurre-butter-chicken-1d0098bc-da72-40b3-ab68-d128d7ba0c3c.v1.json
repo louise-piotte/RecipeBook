@@ -68,13 +68,14 @@
     {
       "id": "1d0098bc-da72-40b3-ab68-d128d7ba0c3c-ingredient-5",
       "originalText": "1/2 cup plain Greek yogurt",
-      "ingredientName": "plain yogurt",
-      "ingredientRefId": "ingredient-ref-plain-yogurt",
+      "ingredientName": "Greek-style yogurt",
+      "ingredientRefId": "ingredient-ref-greek-yogurt",
       "quantity": 0.5,
       "unit": "cup",
-      "notes": {
-        "fr": "style grec",
-        "en": "Greek style"
+      "ingredientFormId": "ingredient-form-greek-yogurt-plain",
+      "preparation": {
+        "fr": "nature",
+        "en": "plain"
       }
     },
     {
@@ -131,8 +132,14 @@
       "quantity": 156,
       "unit": "ml",
       "notes": {
-        "fr": "1 petite bo\u00eete",
-        "en": "1 small can"
+        "fr": "1 bo\u00eete",
+        "en": "1 can"
+      },
+      "packageAmount": {
+        "count": 1,
+        "packageType": "CAN",
+        "declaredNetQuantity": 156,
+        "declaredNetUnit": "ml"
       }
     },
     {
@@ -164,6 +171,7 @@
       "originalText": "cooked rice, for serving",
       "ingredientName": "cooked rice",
       "ingredientRefId": "ingredient-ref-rice",
+      "ingredientFormId": "ingredient-form-rice-cooked",
       "notes": {
         "fr": "pour servir",
         "en": "for serving"

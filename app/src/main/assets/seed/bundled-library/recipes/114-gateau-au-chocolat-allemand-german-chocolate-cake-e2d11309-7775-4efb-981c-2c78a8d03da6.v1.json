@@ -1,7 +1,7 @@
 {
   "id": "e2d11309-7775-4efb-981c-2c78a8d03da6",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-05T00:00:00Z",
+  "updatedAt": "2026-10-10T00:00:00Z",
   "source": {
     "sourceName": "Sally's Baking Addiction",
     "sourceUrl": "https://sallysbakingaddiction.com/german-chocolate-cake/"
@@ -33,8 +33,8 @@
     {
       "id": "e2d11309-7775-4efb-981c-2c78a8d03da6-ingredient-2",
       "originalText": "3/4 cup (62 g) unsweetened natural cocoa powder",
-      "ingredientName": "unsweetened cocoa powder",
-      "ingredientRefId": "ingredient-ref-unsweetened-cocoa-powder",
+      "ingredientName": "natural cocoa powder",
+      "ingredientRefId": "ingredient-ref-natural-cocoa-powder",
       "quantity": 62,
       "unit": "g",
       "group": "Cake"
@@ -191,10 +191,10 @@
     },
     {
       "id": "e2d11309-7775-4efb-981c-2c78a8d03da6-ingredient-17",
-      "originalText": "1 can (8 ounces; 240 ml) evaporated milk",
+      "originalText": "1 can (12 ounces; 354ml) evaporated milk",
       "ingredientName": "evaporated milk",
       "ingredientRefId": "ingredient-ref-evaporated-milk",
-      "quantity": 240,
+      "quantity": 354,
       "unit": "ml",
       "group": "Filling"
     },
@@ -210,15 +210,12 @@
     {
       "id": "e2d11309-7775-4efb-981c-2c78a8d03da6-ingredient-19",
       "originalText": "2 cups sweetened shredded coconut",
-      "ingredientName": "shredded coconut",
-      "ingredientRefId": "ingredient-ref-shredded-coconut",
+      "ingredientName": "coconut",
+      "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 2,
       "unit": "cup",
       "group": "Filling",
-      "notes": {
-        "fr": "sucr\u00e9",
-        "en": "sweetened"
-      }
+      "ingredientFormId": "ingredient-form-coconut-shredded-sweetened"
     },
     {
       "id": "e2d11309-7775-4efb-981c-2c78a8d03da6-ingredient-20",
@@ -227,6 +224,7 @@
       "ingredientRefId": "ingredient-ref-pecans",
       "quantity": 125,
       "unit": "g",
+      "ingredientFormId": "ingredient-form-pecans-chopped",
       "preparation": {
         "fr": "hach\u00e9",
         "en": "chopped"

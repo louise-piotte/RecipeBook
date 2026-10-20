@@ -1,0 +1,22 @@
+[
+  {
+    "id": "package-yield-sw-black-beans-15oz-drained",
+    "ingredientRefId": "ingredient-ref-black-beans",
+    "ingredientFormId": "ingredient-form-black-beans-canned-drained",
+    "packageType": "CAN",
+    "declaredNetQuantity": 15.0,
+    "declaredNetUnit": "oz",
+    "netMassG": 425.0,
+    "drainedMassG": 240.0,
+    "brand": "S&W",
+    "productName": "Black Beans",
+    "productCode": "1320217103112",
+    "countryOfOrigin": "USA",
+    "sourceUrl": "https://swpremiumfood.com/wp-content/uploads/2017/02/SW-Catalogue_2016.pdf",
+    "sourceName": "S&W Beans Catalogue",
+    "sourceVersionOrDate": "2016",
+    "researchRecordId": "package-yield-sw-black-beans-15oz-drained",
+    "measurementMethod": "The product table reports the net and drained weights; it does not state the drained-weight test procedure.",
+    "variabilityNotes": null
+  }
+]

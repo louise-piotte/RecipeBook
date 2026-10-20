@@ -25,6 +25,7 @@
       "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-1",
       "originalText": "1 1/4 cups boiling water",
       "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
       "quantity": 1.25,
       "unit": "cup",
       "preparation": {
@@ -43,7 +44,8 @@
         "fr": "d\u00e9noyaut\u00e9 et hach\u00e9",
         "en": "pitted and chopped"
       },
-      "group": "Cake"
+      "group": "Cake",
+      "ingredientRefId": "ingredient-ref-dates"
     },
     {
       "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-3",
@@ -125,6 +127,7 @@
       "originalText": "1/2 cup walnuts, chopped",
       "ingredientName": "walnuts",
       "ingredientRefId": "ingredient-ref-walnuts",
+      "ingredientFormId": "ingredient-form-walnuts-chopped",
       "quantity": 0.5,
       "unit": "cup",
       "preparation": {
@@ -140,11 +143,8 @@
       "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 1,
       "unit": "cup",
-      "preparation": {
-        "fr": "en flocons",
-        "en": "flaked"
-      },
-      "group": "Topping"
+      "group": "Topping",
+      "ingredientFormId": "ingredient-form-coconut-flaked"
     },
     {
       "id": "a3d38f7e-1c25-402b-a51e-8f99680eb02c-ingredient-13",
@@ -182,11 +182,8 @@
       "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": {
-        "fr": "grill\u00e9",
-        "en": "toasted"
-      },
-      "group": "Topping"
+      "group": "Topping",
+      "ingredientFormId": "ingredient-form-coconut-toasted"
     }
   ],
   "servings": {

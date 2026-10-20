@@ -107,7 +107,8 @@
       "ingredientName": "semisweet chocolate",
       "ingredientRefId": "ingredient-ref-semisweet-chocolate",
       "quantity": 2,
-      "unit": "tbsp"
+      "unit": "tbsp",
+      "ingredientFormId": "ingredient-form-semisweet-chocolate-chips"
     },
     {
       "id": "0a8b29b8-faf0-4597-8514-e09335de6c03-ingredient-11",

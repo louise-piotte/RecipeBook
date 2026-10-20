@@ -24,6 +24,7 @@
       "originalText": "2 cups cooked quinoa",
       "ingredientName": "quinoa",
       "ingredientRefId": "ingredient-ref-quinoa",
+      "ingredientFormId": "ingredient-form-quinoa-cooked",
       "quantity": 2,
       "unit": "cup",
       "preparation": {

@@ -1,0 +1,7 @@
+# R386 integration: amaranth-grain Rajgira alias
+
+Added English alias rajgira to the existing ingredient-ref-amaranth-grain record. Kept amaranth / amarante as the display pair, preserved the existing French alias grains d'amarante and English alias ramdana, and kept rajgira flour and rajgira atta on the distinct amaranth-flour record. The bare rajgira query now offers both grain and flour; qualified flour queries remain on the flour record.
+
+Added two current Canada-facing retailer sources to the existing amaranth-grain evidence record and recorded the accepted alias decision. Reused the existing FSSAI grain-standard source. Preserved the null density, empty unit mappings, measurement state researched_no_supported_value, and substitution state not_yet_researched. Added no form, measure, conversion, yield, recipe link, or substitution. The 114-file manifest scan found no matching recipe demand.
+
+See the [R386 proposal](../../proposals/wp03-section-f-next-grain-gap-review-r386-20261017.md). The package contains 1,700 references and 141 forms; the ledger retains 2,056 records and now has two additional source entries. Static package, ledger, generated-index, search-term ownership, recipe-scan, encoding, and whitespace checks were used. The only runtime content change is catalog data: the Kotlin import index was regenerated from canonical seed JSON. No app logic changed. No software tests, build, or emulator check was run under the AGENTS.md exception for database JSON data additions.

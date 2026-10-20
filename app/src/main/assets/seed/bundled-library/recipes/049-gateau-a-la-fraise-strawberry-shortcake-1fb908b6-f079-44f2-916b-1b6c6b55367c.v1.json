@@ -134,7 +134,8 @@
         "fr": "pour saupoudrer",
         "en": "For sprinkling"
       },
-      "group": "Biscuits"
+      "group": "Biscuits",
+      "ingredientRefId": "ingredient-ref-coarse-sugar"
     },
     {
       "id": "1fb908b6-f079-44f2-916b-1b6c6b55367c-ingredient-12",

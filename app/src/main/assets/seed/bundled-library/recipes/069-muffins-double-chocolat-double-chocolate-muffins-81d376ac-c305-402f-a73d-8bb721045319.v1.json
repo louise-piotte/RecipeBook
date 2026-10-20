@@ -53,6 +53,7 @@
       "id": "81d376ac-c305-402f-a73d-8bb721045319-ingredient-5",
       "originalText": "1 1/3 tbsp margarine",
       "ingredientName": "margarine",
+      "ingredientRefId": "ingredient-ref-margarine",
       "quantity": 1.3333333333,
       "unit": "tbsp"
     },
@@ -90,7 +91,8 @@
       "preparation": {
         "fr": "en p\u00e9pites",
         "en": "chips"
-      }
+      },
+      "ingredientFormId": "ingredient-form-white-chocolate-chips"
     }
   ],
   "servings": {

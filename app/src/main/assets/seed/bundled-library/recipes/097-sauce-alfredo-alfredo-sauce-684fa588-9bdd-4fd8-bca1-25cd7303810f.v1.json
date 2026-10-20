@@ -1,7 +1,7 @@
 {
   "id": "684fa588-9bdd-4fd8-bca1-25cd7303810f",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-05T00:00:00Z",
+  "updatedAt": "2026-10-05T00:00:00Z",
   "source": {
     "sourceName": "Food.com",
     "sourceUrl": "https://www.food.com/recipe/reduced-fat-alfredo-sauce-12365"
@@ -24,14 +24,10 @@
     {
       "id": "684fa588-9bdd-4fd8-bca1-25cd7303810f-ingredient-1",
       "originalText": "1 cup skim milk",
-      "ingredientName": "milk",
-      "ingredientRefId": "ingredient-ref-milk",
+      "ingredientName": "skim milk",
+      "ingredientRefId": "ingredient-ref-skim-milk",
       "quantity": 1,
-      "unit": "cup",
-      "preparation": {
-        "fr": "\u00e9cr\u00e9m\u00e9",
-        "en": "skim"
-      }
+      "unit": "cup"
     },
     {
       "id": "684fa588-9bdd-4fd8-bca1-25cd7303810f-ingredient-2",

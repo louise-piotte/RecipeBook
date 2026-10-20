@@ -127,7 +127,35 @@ data class IngredientLineDto(
     @SerialName("group")
     val group: String? = null,
     @SerialName("substitutions")
-    val substitutions: List<IngredientLineSubstitutionDto> = emptyList()
+    val substitutions: List<IngredientLineSubstitutionDto> = emptyList(),
+    @SerialName("ingredientFormId")
+    val ingredientFormId: String? = null,
+    @SerialName("ingredientAliasHint")
+    val ingredientAliasHint: String? = null,
+    @SerialName("packageAmount")
+    val packageAmount: IngredientPackageAmountDto? = null
+)
+
+@Serializable
+data class IngredientPackageAmountDto(
+    @SerialName("count")
+    val count: Double,
+    @SerialName("packageType")
+    val packageType: String,
+    @SerialName("declaredNetQuantity")
+    val declaredNetQuantity: Double? = null,
+    @SerialName("declaredNetUnit")
+    val declaredNetUnit: String? = null,
+    @SerialName("packingMedium")
+    val packingMedium: String? = null,
+    @SerialName("brand")
+    val brand: String? = null,
+    @SerialName("productCode")
+    val productCode: String? = null,
+    @SerialName("countryOfOrigin")
+    val countryOfOrigin: String? = null,
+    @SerialName("requestedBasis")
+    val requestedBasis: String? = null
 )
 
 @Serializable
@@ -220,6 +248,8 @@ data class LibraryDto(
     val ingredientReferences: List<IngredientReferenceDto>,
     @SerialName("ingredientForms")
     val ingredientForms: List<IngredientFormDto> = emptyList(),
+    @SerialName("packageYields")
+    val packageYields: List<PackageYieldObservationDto> = emptyList(),
     @SerialName("substitutionRules")
     val substitutionRules: List<SubstitutionRuleDto> = emptyList(),
     @SerialName("contextualSubstitutionRules")
@@ -259,7 +289,7 @@ data class IngredientReferenceDto(
     @SerialName("nameEn")
     val nameEn: String,
     @SerialName("category")
-    val category: String = "OTHER",
+    val category: String,
     @SerialName("aliasesFr")
     val aliasesFr: List<String> = emptyList(),
     @SerialName("aliasesEn")
@@ -298,6 +328,52 @@ data class IngredientFormDto(
     val notesEn: String? = null,
     @SerialName("updatedAt")
     val updatedAt: String
+)
+
+@Serializable
+data class PackageYieldObservationDto(
+    @SerialName("id")
+    val id: String,
+    @SerialName("ingredientRefId")
+    val ingredientRefId: String,
+    @SerialName("ingredientFormId")
+    val ingredientFormId: String,
+    @SerialName("packageType")
+    val packageType: String,
+    @SerialName("declaredNetQuantity")
+    val declaredNetQuantity: Double,
+    @SerialName("declaredNetUnit")
+    val declaredNetUnit: String,
+    @SerialName("netMassG")
+    val netMassG: Double? = null,
+    @SerialName("netVolumeMl")
+    val netVolumeMl: Double? = null,
+    @SerialName("drainedMassG")
+    val drainedMassG: Double? = null,
+    @SerialName("edibleMassG")
+    val edibleMassG: Double? = null,
+    @SerialName("packingMedium")
+    val packingMedium: String? = null,
+    @SerialName("brand")
+    val brand: String? = null,
+    @SerialName("productName")
+    val productName: String? = null,
+    @SerialName("productCode")
+    val productCode: String? = null,
+    @SerialName("countryOfOrigin")
+    val countryOfOrigin: String? = null,
+    @SerialName("sourceUrl")
+    val sourceUrl: String,
+    @SerialName("sourceName")
+    val sourceName: String,
+    @SerialName("sourceVersionOrDate")
+    val sourceVersionOrDate: String? = null,
+    @SerialName("researchRecordId")
+    val researchRecordId: String? = null,
+    @SerialName("measurementMethod")
+    val measurementMethod: String? = null,
+    @SerialName("variabilityNotes")
+    val variabilityNotes: String? = null
 )
 
 @Serializable

@@ -8,7 +8,7 @@
     "course":  "Accompagnement/Side Dish",
     "categories":  [
                        "Boeuf/Beef",
-                       "Épices/Spices",
+                       "Ã‰pices/Spices",
                        "Sauce"
                    ],
     "collections":  [
@@ -19,26 +19,26 @@
     "prepTimeIso":  "PT0S",
     "cookTimeIso":  "PT0S",
     "ingredientLines":  [
-                            "3 cuillères à soupe de beurre - 3 cuillères à soupe de beurre",
-                            "¼ tasse de farine - ¼ cup flour",
-                            "1 cuillère à soupe de \"better than bouillon\" - 1 tablespoon \"better than bouillon\"",
+                            "3 cuillÃ¨res Ã  soupe de beurre - 3 cuillÃ¨res Ã  soupe de beurre",
+                            "Â¼ tasse de farine - Â¼ cup flour",
+                            "1 cuillÃ¨re Ã  soupe de \"better than bouillon\" - 1 tablespoon \"better than bouillon\"",
                             "2 tasse d\u0027eau bouillante - 2 cup boiling water",
-                            "Épices au goût - Spices to taste"
+                            "Ã‰pices au goÃ»t - Spices to taste"
                         ],
     "directionLines":  [
-                           "Faire fondre le beurre dans une casserole à feu moyen.",
+                           "Faire fondre le beurre dans une casserole Ã  feu moyen.",
                            "Melt the butter in a saucepan over medium heat.",
                            "Ajouter la farine et faire cuire pour une minute (faire un roux).",
                            "Add the flour and cook for one minute (make a roux).",
-                           "Ajouter le \"better than bouillon\" et bien mélanger.",
+                           "Ajouter le \"better than bouillon\" et bien mÃ©langer.",
                            "Add the \"better than bouillon\" and mix well.",
-                           "Ajouter l\u0027eau bouillante et les épices additionnelles et remuer jusqu\u0027à épaississement.",
+                           "Ajouter l\u0027eau bouillante et les Ã©pices additionnelles et remuer jusqu\u0027Ã  Ã©paississement.",
                            "Add boiling water and additional spices and stir until thickened.",
-                           "Laisser refroidir pour qu\u0027il s\u0027épaississe plus.",
+                           "Laisser refroidir pour qu\u0027il s\u0027Ã©paississe plus.",
                            "Allow to cool to thicken more."
                        ],
     "notes":  [
-                  "N\u0027importe quel saveur de \"better than bouillon\" peut être utilisé pour varier la saveur.",
+                  "N\u0027importe quel saveur de \"better than bouillon\" peut Ãªtre utilisÃ© pour varier la saveur.",
                   "Any flavor of \"better than bouillon\" can be used to vary the flavor."
               ],
     "nutrition":  {

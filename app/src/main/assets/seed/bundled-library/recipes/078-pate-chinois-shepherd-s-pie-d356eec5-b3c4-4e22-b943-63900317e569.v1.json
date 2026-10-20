@@ -1,7 +1,7 @@
 {
   "id": "d356eec5-b3c4-4e22-b943-63900317e569",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-05T00:00:00Z",
+  "updatedAt": "2026-10-10T00:00:00Z",
   "source": {
     "sourceName": "The Wholesome Dish",
     "sourceUrl": "https://www.thewholesomedish.com/the-best-classic-shepherds-pie/"
@@ -43,7 +43,7 @@
     },
     {
       "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-3",
-      "originalText": "1 lb lean ground beef",
+      "originalText": "1 lb. 90% lean ground beef -or ground lamb",
       "ingredientName": "ground beef",
       "ingredientRefId": "ingredient-ref-ground-beef",
       "quantity": 1,
@@ -136,8 +136,8 @@
     {
       "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-13",
       "originalText": "1 cup beef broth",
-      "ingredientName": "beef stock",
-      "ingredientRefId": "ingredient-ref-beef-stock",
+      "ingredientName": "beef broth",
+      "ingredientRefId": "ingredient-ref-beef-broth",
       "quantity": 1,
       "unit": "cup"
     },
@@ -150,7 +150,8 @@
       "preparation": {
         "fr": "congel\u00e9",
         "en": "frozen"
-      }
+      },
+      "ingredientRefId": "ingredient-ref-frozen-peas-and-carrots"
     },
     {
       "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-15",
@@ -167,14 +168,14 @@
     {
       "id": "d356eec5-b3c4-4e22-b943-63900317e569-ingredient-16",
       "originalText": "1 1/2 to 2 lb russet potatoes, peeled and cut into 1-inch cubes",
-      "ingredientName": "potato",
-      "ingredientRefId": "ingredient-ref-potato",
+      "ingredientName": "Russet potato",
+      "ingredientRefId": "ingredient-ref-russet-potato",
       "quantity": 1.5,
       "unit": "lb",
       "group": "Mashed Potato Topping",
       "preparation": {
-        "fr": "russet, pel\u00e9 et coup\u00e9 en cubes de 1 po",
-        "en": "russet, peeled and cut into 1-inch cubes"
+        "fr": "pel\u00e9 et coup\u00e9 en cubes de 1 po",
+        "en": "peeled and cut into 1-inch cubes"
       },
       "notes": {
         "fr": "jusqu'\u00e0 2 lb",

@@ -28,6 +28,7 @@
       "ingredientRefId": "ingredient-ref-almonds",
       "quantity": 210,
       "unit": "g",
+      "ingredientFormId": "ingredient-form-almonds-blanched",
       "preparation": {
         "fr": "blanchi",
         "en": "blanched"

@@ -1,0 +1,11 @@
+# WP05 R325 — Québec French display review: bagna cauda
+
+Reviewed and integrated on 2026-10-16. Retain the already active `bagna cauda` display in English and French, with existing `bagna caoda` aliases in both locales. The identity remains the one already established for the Piemonte condiment; this review only closes the independent Québec French display check.
+
+Two current Québec City restaurant pages use `bagna cauda` in French menu text: Restaurant Melba lists it with an egg dish, and Le Cendrillon lists a house preparation as `bagna cauda à l’huile de homard`. Mora's French-Canadian OpenTable menu also uses the borrowed term and adds the house descriptor `hollandaise ail et anchois`. These are examples of local menu usage, not a Québec terminology ruling or evidence that the parenthetical descriptor is a general synonym. Do not add `sauce chaude`, `sauce aux anchois`, `anchoïade`, or `hollandaise ail et anchois` as aliases.
+
+The official Piemonte French page uses the regional spelling `Bagna Caoda` and explanatory wording `la Sauce Cauda`, supporting the existing spelling alias. That page does not establish a Québec-preferred translation. Targeted OQLF searches did not surface a matching GDT entry; this search result is not proof that none exists.
+
+The live reference retains its prior category, null density, empty unit mappings, no-form state, no recipe links, and unchanged measurement/substitution research states. Picker projection still gives one exact row for `bagna cauda`, `bagna caoda`, and accent-folded `bagna càuda`; tested translations and house descriptors have no owner. The bundled corpus contains 114 recipes / 1,123 ingredient lines and no bagna-cauda wording. No catalog or ledger JSON changed. No software tests, builds, emulator checks, or deployment were needed for this documentation-only review.
+
+See the [R325 proposal](../../proposals/wp05-bagna-cauda-quebec-french-display-review-r325-20261016.md), [prior identity review](../../proposals/wp05-cooking-sauces-exact-recipe-demand-review-20261010.md), [Restaurant Melba menu](https://restaurantmelba.ca/), [Le Cendrillon menu](https://lecendrillonrestaurant.com/menu/), [Mora menu listing](https://www.opentable.ca/r/mora-quebec), and [Piemonte French product page](https://www.piemonteagri.it/qualita/fr/produits/assaisonements-et-condiments/145-bagna-caoda).

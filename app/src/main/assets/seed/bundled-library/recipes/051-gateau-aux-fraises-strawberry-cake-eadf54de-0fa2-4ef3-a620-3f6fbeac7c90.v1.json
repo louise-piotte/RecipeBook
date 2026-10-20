@@ -141,7 +141,12 @@
       "ingredientName": "reduced strawberry puree",
       "quantity": 0.5,
       "unit": "cup",
-      "group": "Cake"
+      "group": "Cake",
+      "ingredientRefId": "ingredient-ref-strawberry-puree",
+      "preparation": {
+        "fr": "r\u00e9duite",
+        "en": "reduced"
+      }
     },
     {
       "id": "eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-ingredient-13",
@@ -182,8 +187,7 @@
     {
       "id": "recipe-link-eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-strawberry-frosting",
       "targetRecipeId": "e34243f0-f13c-47bf-991f-a8d50e3c67a8",
-      "linkType": "FROSTING",
-      "position": 0
+      "linkType": "FROSTING"
     }
   ],
   "mainPhotoId": "photo-eadf54de-0fa2-4ef3-a620-3f6fbeac7c90-0",

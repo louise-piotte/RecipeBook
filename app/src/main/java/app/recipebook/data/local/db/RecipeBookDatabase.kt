@@ -20,7 +20,7 @@ import androidx.room.RoomDatabase
         LibrarySettingsEntity::class,
         LibraryMetadataEntity::class
     ],
-    version = 8,
+    version = 10,
     exportSchema = false
 )
 abstract class RecipeBookDatabase : RoomDatabase() {

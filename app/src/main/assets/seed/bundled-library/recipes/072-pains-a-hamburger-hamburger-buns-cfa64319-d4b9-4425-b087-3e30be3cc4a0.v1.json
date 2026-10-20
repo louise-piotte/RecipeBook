@@ -77,8 +77,8 @@
     {
       "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-6",
       "originalText": "8 g instant yeast",
-      "ingredientName": "yeast",
-      "ingredientRefId": "ingredient-ref-yeast",
+      "ingredientName": "instant yeast",
+      "ingredientRefId": "ingredient-ref-instant-yeast",
       "quantity": 8,
       "unit": "g",
       "group": "Dough",
@@ -127,6 +127,7 @@
       "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-11",
       "originalText": "1 egg yolk",
       "ingredientName": "egg yolk",
+      "ingredientRefId": "ingredient-ref-egg-yolk",
       "quantity": 1,
       "unit": "count",
       "group": "Dough"
@@ -148,7 +149,8 @@
       "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-13",
       "originalText": "Egg wash",
       "ingredientName": "egg wash",
-      "group": "Topping"
+      "group": "Topping",
+      "ingredientRefId": "ingredient-ref-egg-wash"
     },
     {
       "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-14",
@@ -159,7 +161,8 @@
       "preparation": {
         "fr": "grill\u00e9",
         "en": "toasted"
-      }
+      },
+      "ingredientFormId": "ingredient-form-sesame-seeds-toasted"
     },
     {
       "id": "cfa64319-d4b9-4425-b087-3e30be3cc4a0-ingredient-15",
@@ -198,8 +201,7 @@
     {
       "id": "recipe-link-cfa64319-d4b9-4425-b087-3e30be3cc4a0-big-mac-sauce",
       "targetRecipeId": "834bade3-bdda-432f-a4a6-1cb0fec6f065",
-      "linkType": "SAUCE",
-      "position": 0
+      "linkType": "SAUCE"
     }
   ],
   "mainPhotoId": "photo-cfa64319-d4b9-4425-b087-3e30be3cc4a0-0",

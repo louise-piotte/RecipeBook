@@ -1,0 +1,11 @@
+# WP08 butter-to-margarine contextual finding integration
+
+Added five source records and one blocked, directed finding to the existing `ingredient-ref-unsalted-butter` ledger record. The finding is limited to butter replaced by margarine for the creamed cake batter in bundled recipe `008` and remains inactive at runtime.
+
+Utah State University Extension lists 1 cup butter to 1 cup margarine by volume. Land O’Lakes supports its own 80%-vegetable-oil stick margarine for most baking and reports softer dough and different flavor. CFIA standards distinguish standard margarine from calorie-reduced margarine; a separate Utah State article lists baking uses for margarine. Sally’s Baking identifies the local batter as 1 1/2 cups (340 g) unsalted butter creamed with sugar, plus a separate buttercream line. None of the sources tests margarine in this exact cake or supports a 340 g replacement.
+
+No contextual rule was added because the resolver cannot enforce the source volume basis, stick-margarine qualifier, cake-batter role, and creaming method together. The separate frosting line, inverse direction, pastry, candy, sauces, and other uses remain out of scope. No recipe, ingredient reference, form, measurement, unit mapping, or active rule changed.
+
+The proposal and independent source review are in [the original review](../../proposals/wp08-contextual-substitution-next-open-gap-review-20261012-round2.md) and [the audit addendum](../../proposals/wp08-contextual-substitution-butter-margarine-independent-source-audit-20261012.md). Sources include [USU’s substitution table](https://extension.usu.edu/archive/list-of-ingredient-substitutions-for-cooking-and-baking), [Land O’Lakes baking guidance](https://www.landolakes.com/faqs/butter-spreads/margarine/can-i-bake-with-margarine/), [CFIA’s standards](https://inspection.canada.ca/en/about-cfia/acts-and-regulations/list-acts-and-regulations/documents-incorporated-reference/canadian-food-compositional-standards-0), and [Sally’s vanilla cake](https://sallysbakingaddiction.com/vanilla-cake/).
+
+Ledger validation and scoped encoding/whitespace checks were run after integration. No app tests or emulator checks were run because this update only adds database JSON data.

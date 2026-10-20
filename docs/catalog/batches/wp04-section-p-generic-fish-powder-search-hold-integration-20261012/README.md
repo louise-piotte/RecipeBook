@@ -1,0 +1,9 @@
+# WP04 Section P generic fish-powder search hold
+
+- **Disposition:** Hold generic `fish powder / poudre de poisson`; do not allocate a reference, alias, form, or ledger candidate.
+- **Evidence:** A Québec grocery storefront lists `Poudre de Poisson` separately from `Poudre de Crevette`, but gives no species or product process. A Richmond seller lists `Fish Powder` with Japanese origin but no species, ingredient declaration, process, or French name. A fish-powder phrase also occurs inside a compound bouillon ingredient list. These uses do not establish one stable catalog identity.
+- **Picker boundary:** Complete-phrase search currently returns `Bonga dried fish powder / poudre de poisson Bonga` for `fish powder` and `poudre de poisson`. A generic row would return alongside that narrowly scoped identity without recipe evidence to guide the choice.
+- **Demand and numeric data:** No matching term appears in the 114 bundled recipes / 1,123 ingredient rows. Package sizes are not measures; no form, measurement, conversion, yield, recipe link, or substitution was added.
+- **Validation:** This is a docs-only hold. No catalog or research-ledger JSON changed, and no app tests or emulator checks were run.
+
+Sources include [the Québec retailer storefront](https://aliefeepicerieafricaine.com/), [Ng Fung Foods](https://ngfungfood.com/en/home/279-fish-powder.html), the [Metro fish bouillon ingredient listing](https://www.metro.ca/en/online-grocery/aisles/pantry/herbs-spices-sauces/marinades-cooking-pastes/fish-bouillon/p/065081500016), and OQLF's [farine de poisson / fish meal](https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/2084085/farine-de-poisson) entry. The full evidence and ownership audit are in the [source review](../../proposals/wp04-section-p-generic-fish-powder-product-scope-review-20261012.md). Revisit if a recipe or exact package establishes species/blend, processing state, and a Québec-facing product name.

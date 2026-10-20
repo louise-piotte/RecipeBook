@@ -125,5 +125,6 @@
     "recipes/112-truffes-aux-framboises-raspberry-truffles-b109cd15-b162-4825-9479-bbc022bd6cb4.v1.json",
     "recipes/113-tzatziki-9dc0c02c-ac20-411c-9adf-38095e980487.v1.json",
     "recipes/114-gateau-au-chocolat-allemand-german-chocolate-cake-e2d11309-7775-4efb-981c-2c78a8d03da6.v1.json"
-  ]
+  ],
+  "packageYieldsFile": "package-yields.v1.json"
 }

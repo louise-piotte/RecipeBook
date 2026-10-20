@@ -67,7 +67,8 @@
       "preparation": {
         "fr": "s\u00e9ch\u00e9",
         "en": "dried"
-      }
+      },
+      "ingredientFormId": "ingredient-form-breadcrumbs-dried"
     },
     {
       "id": "35267f47-fcd6-4d69-9124-c6e8ac85aa57-ingredient-6",

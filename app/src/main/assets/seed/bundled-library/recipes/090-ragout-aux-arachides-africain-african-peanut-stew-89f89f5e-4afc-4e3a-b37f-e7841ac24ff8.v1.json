@@ -72,8 +72,8 @@
     {
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-6",
       "originalText": "1/2 tsp kosher salt",
-      "ingredientName": "salt",
-      "ingredientRefId": "ingredient-ref-salt",
+      "ingredientName": "kosher salt",
+      "ingredientRefId": "ingredient-ref-kosher-salt",
       "quantity": 0.5,
       "unit": "tsp",
       "notes": {
@@ -110,7 +110,8 @@
       "notes": {
         "fr": "utiliser 2 1/2 tasses si vous ajoutez de la viande",
         "en": "use 2 1/2 cups if adding meat"
-      }
+      },
+      "ingredientRefId": "ingredient-ref-broth"
     },
     {
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-10",
@@ -175,13 +176,15 @@
       "ingredientName": "baby spinach",
       "ingredientRefId": "ingredient-ref-baby-spinach",
       "quantity": 3,
-      "unit": "cup"
+      "unit": "cup",
+      "ingredientFormId": "ingredient-form-spinach-baby-leaves"
     },
     {
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-16",
       "originalText": "cooked rice, for serving",
       "ingredientName": "cooked rice",
       "ingredientRefId": "ingredient-ref-rice",
+      "ingredientFormId": "ingredient-form-rice-cooked",
       "optional": true,
       "notes": {
         "fr": "pour servir",
@@ -192,6 +195,7 @@
       "id": "89f89f5e-4afc-4e3a-b37f-e7841ac24ff8-ingredient-17",
       "originalText": "peanuts and fresh cilantro, for garnish",
       "ingredientName": "peanuts",
+      "ingredientRefId": "ingredient-ref-peanuts",
       "optional": true,
       "notes": {
         "fr": "avec de la coriandre fra\u00eeche, pour garnir",

@@ -117,6 +117,7 @@
       "ingredientRefId": "ingredient-ref-pecans",
       "quantity": 1.5,
       "unit": "cup",
+      "ingredientFormId": "ingredient-form-pecans-chopped",
       "preparation": {
         "fr": "hach\u00e9",
         "en": "chopped"

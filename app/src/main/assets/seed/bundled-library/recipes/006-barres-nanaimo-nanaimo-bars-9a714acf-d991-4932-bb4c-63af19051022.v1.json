@@ -77,17 +77,15 @@
       "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 120,
       "unit": "g",
-      "preparation": {
-        "fr": "en flocons",
-        "en": "flaked"
-      },
-      "group": "Base"
+      "group": "Base",
+      "ingredientFormId": "ingredient-form-coconut-flaked"
     },
     {
       "id": "9a714acf-d991-4932-bb4c-63af19051022-ingredient-7",
       "originalText": "40 g almonds, finely chopped",
       "ingredientName": "almonds",
       "ingredientRefId": "ingredient-ref-almonds",
+      "ingredientFormId": "ingredient-form-almonds-finely-chopped",
       "quantity": 40,
       "unit": "g",
       "preparation": {

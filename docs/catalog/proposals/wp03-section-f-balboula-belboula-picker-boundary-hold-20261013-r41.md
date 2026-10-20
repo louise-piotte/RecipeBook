@@ -1,0 +1,54 @@
+# WP03 Section F R41 — Balboula / Belboula picker-boundary hold
+
+- **Reviewed:** 2026-10-13.
+- **Status:** integrated documentation-only hold; no catalog or ledger data changed.
+- **Open checklist:** Section F's regional cereal-mix and preprocessed-grain item remains open in the [live plan](../../RecipeBook-global-ingredient-catalog-plan.txt#L2555).
+- **Candidate:** Moroccan `balboula` / `belboula` cereal-product names. Sources use these closely related spellings for overlapping but non-identical scopes: barley semolina, cracked barley, a boiled barley preparation, and barley couscous. Current seller listings also apply `balboula` to other cereal bases and a five-cereal mixture.
+- **Decision:** keep generic `balboula` unallocated. Do not add it as an alias to the active barley-couscous reference, create a generic row, or assign a new ledger candidate. Preserve the existing R20 `belboula` alias on `ingredient-ref-barley-couscous`; this proposal does not reopen or modify that accepted product-specific decision. The generic barley-meal candidate remains unresolved separately.
+
+## Why this is a distinct open review
+
+The live Section F checklist and proposal archive have no Balboula-specific decision. [R40](wp03-section-f-barkoukch-product-boundary-hold-20261013-r40.md) mentions Balboula only as a neighboring product while reviewing Barkoukch. [R20](wp03-section-f-next-cereal-gap-review-20261013-round20-barley-couscous.md) accepted `belboula` as the alias for DARI's named barley-couscous product, and [R37](wp03-section-f-baddaz-corn-couscous-identity-review-20261013-r37.md) / [R38](wp03-section-f-keskes-khoumassi-five-cereal-couscous-boundary-review-20261013-r38.md) separately review corn couscous and the five-cereal Khoumassi product. This review covers only whether the broader Balboula name is safe to assign to a catalog identity or to the current barley-couscous row; it does not reopen those products.
+
+The strongest product-process source reviewed here distinguishes barley semolina cooked in boiling water as “Belboula” from the same semolina steamed as barley couscous [S01]. A WIPO/OMPIC Moroccan gastronomy study also uses `belboula` for a barley gruel and cracked-barley soup [S02]. Meanwhile, a current Moroccan seller lists `Balboula d'orge`, `Balboula de maïs`, and `Balboula Khoumassia` alongside a distinct hand-rolled `Couscous d'orge` [S04]. These sources show a real product family, but they do not support a single unqualified product identity or a crosswalk from every Balboula/Belboula spelling to barley couscous.
+
+The source-attested Moroccan French phrases include `Balboula d'orge` and `semoule d'orge concassée`; English sources use `barley semolina`, `cracked barley`, `barley grits`, and `barley couscous` for overlapping but non-identical scopes [S01–S05]. No Québec-facing standalone Balboula label or Québec terminology ruling was found. A current Québec retailer uses `orge finement concassée` only as an ingredient in a bread topping, which does not establish a standalone display [S06]. Do not approve any of these phrases as the bilingual catalog display in this review.
+
+## Exact ownership and picker effect
+
+Current static ownership snapshot: **1,367 active references, 100 forms, 64 legacy-import candidates, and 1,699 research-ledger records**. Exact normalized checks found no `balboula` owner in references, forms, or legacy-import candidates, and no Balboula-specific candidate record in the ledger. The existing `candidate-barley-meal` record in the [research ledger](../research-ledger.v1.json) remains unresolved because Canadian sources use barley-meal terms for different grinds and no standalone Québec French product display is established; it is related context, not an accepted Balboula owner. The ownership check covered the current [reference JSON](../../../app/src/main/assets/seed/bundled-library/ingredient-references.v1.json#L1193), [form JSON](../../../app/src/main/assets/seed/bundled-library/ingredient-forms.v1.json), and [legacy-import identities](../legacy-import-identities.v1.json).
+
+| Search phrase | Current exact picker result | R41 effect |
+|---|---|---|
+| `belboula`, `barley couscous`, `couscous d'orge` | `ingredient-ref-barley-couscous` (`barley couscous / couscous d'orge`); `belboula` is its only English alias. | Preserve this existing R20 ownership. |
+| `balboula`, `balboula d'orge`, `semoule d'orge concassée`, `barley semolina`, `barley grits`, `cracked barley`, `dchicha` | No active reference returned for these exact phrases. | Add no owner or alias. |
+
+The picker normalizes case, accents, punctuation, and spacing, then tries complete word phrases before substring fallback ([`IngredientSearch.kt`](../../../app/src/main/java/app/recipebook/domain/localization/IngredientSearch.kt#L9)). It does not equate the internal vowel in `balboula` and `belboula`: the current query `belboula` returns the barley-couscous row, while `balboula` returns no row. Adding `balboula` to that reference would route a broad name that sources use for gruel, cracked barley, and products based on other cereals to barley couscous. Adding a generic Balboula row would likewise conceal the source variation. Neither picker change is approved here. This is a static projection from the current reference/form JSON, not an Android UI observation.
+
+## Recipe-demand audit
+
+All **114 manifest-listed recipe files** and **1,123 ingredient rows** were searched across serialized recipe text and ingredient-reference IDs for `balboula`, `belboula`, `dchicha`, barley semolina/grits/couscous, cracked barley, `semoule d'orge`, and `orge concassée`. The scan found **zero matching recipe files**, **zero matching ingredient rows**, and no Balboula-linked recipe line. External Moroccan dishes and seller suggestions establish cultural use, not demand in this bundled recipe corpus. No recipe link or recipe edit is proposed.
+
+## Measurement, form, and substitution limits
+
+- **Product state:** S01's experiment prepared Belboula by boiling barley semolina and then drying it; the study contrasts this with the steamed barley-couscous product. Current seller descriptions also mix raw semolina/grits terminology with soups, porridge, and couscous uses. Do not model one reusable raw, cooked, or dried form from these sources.
+- **Numeric observations:** S01 reports a bulk density of 0.35 g/cm³ and an average boiling time of 12.33 minutes for its lab-prepared Belboula, alongside a different steamed-couscous result. These values describe that study's formulations and post-cooking/drying state, not a retail dry product or household measure. Do not activate density, unit mappings, cooking directions, or recipe observations from them. Seller package sizes such as 500 g are SKU amounts only.
+- **Substitution:** no Balboula source establishes a conversion ratio or method-specific substitution. DARI's broad statement about using its barley couscous in place of wheat couscous belongs to the separately reviewed R20 product and supplies no executable rule. Add no substitution or yield behavior.
+- **Other active data:** add no reference, alias, form, measure, density, mapping, recipe link, conversion, yield, or substitution.
+
+## Source register
+
+Sources were checked online on 2026-10-13. The prefix `WP03-BALBOULA-R41-20261013-` was unused in the repository before this proposal. No source or decision was added to the shared research ledger.
+
+| Source ID | Source and evidence | Limits |
+|---|---|---|
+| `WP03-BALBOULA-R41-20261013-S01` | El Yamlahi, Salghi, and Ouhssine, [Quality study of cooked and dried barley semolina](https://www.ijeijournal.com/papers/Vol.4-Iss.2/E04023144.pdf), *International Journal of Engineering Inventions* 4(2), 2014. The authors' Moroccan experiment distinguishes boiling-water-cooked Belboula from steamed barley couscous and reports form-specific laboratory results. | Primary experimental study, not a product standard or current retailer specification; its values concern the paper's formulations and processing conditions. |
+| `WP03-BALBOULA-R41-20261013-S02` | Kamal Rahal Essoulami, [Scoping study on the gastronomic tourism sector in Morocco](https://www.wipo.int/export/sites/www/ip-development/en/docs/Scoping_Study_en_Morocco.pdf), 2021, project adopted by WIPO and implemented with Morocco's OMPIC. The report calls Belboula a barley gruel and describes cracked-barley Belboula in regional soup contexts. | Cultural scoping report, not a food specification or lexical standard. It covers a limited set of dishes and notes that planned field visits were canceled during COVID restrictions. |
+| `WP03-BALBOULA-R41-20261013-S03` | DARI, [Barley Couscous](https://www.couscousdari.com/en/barley-couscous). The manufacturer's current page calls its barley couscous `Belboula`; this is the source basis for the existing R20 product-specific alias. | Manufacturer naming for its own barley-couscous SKU only. R20 records a conflict between DARI's English and French ingredient fields; R41 does not resolve or repeat a universal ingredient claim. |
+| `WP03-BALBOULA-R41-20261013-S04` | Dar Sebti, [Nos Produits — Semoules & Couscous](https://darsebti.ma/fr/categories/semoules). The current listing names Balboula d'orge, Balboula de maïs, and Balboula Khoumassia, while listing hand-rolled Couscous d'orge separately. | Moroccan seller taxonomy, not a formal definition or Québec term. The other Balboula products are cited only to establish the broad term's source variation; R41 does not reopen the separate corn or Khoumassi reviews. Direct retrieval returned an internal error, so the current indexed listing was used. |
+| `WP03-BALBOULA-R41-20261013-S05` | Ma Boucherie Solidaire, [Balboula de l'Orge — Coopérative](https://www.maboucheriesolidaire.com/epicerie-fine/244-balboula-orge-cooperative-500g.html). The current French-language listing describes `semoule d'orge concassée` from a Moroccan cooperative and suggests soups and porridge. | Retailer wording outside Québec; its 500 g package and use suggestions are not a household measure, recipe demand, or verified Québec display. |
+| `WP03-BALBOULA-R41-20261013-S06` | Maxi, [Pain tranché sans sucre ajouté blé entier](https://www.maxi.ca/fr/bl-entier-sans-sucre/p/21178631_EA). The current Québec French ingredient list includes `orge finement concassée` as part of a bread topping. | One composite bread label, not a standalone barley product or an attestation of `Balboula`; direct page retrieval exposed no body text during this check, so the indexed product text was used. |
+
+## Next action
+
+Keep generic Balboula unallocated and preserve the existing R20 `belboula` alias without extending it. Reopen only when a Québec-facing label or authoritative Québec terminology source establishes a standalone product name and a source distinguishes its cereal base and processed state from barley couscous. Keep Section F open.

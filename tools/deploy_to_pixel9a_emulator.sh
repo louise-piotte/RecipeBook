@@ -2,11 +2,15 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-ADB_EXE='/mnt/c/Users/Louise/AppData/Local/Android/Sdk/platform-tools/adb.exe'
+ADB_EXE="${RECIPEBOOK_ADB_EXE:-/mnt/c/Users/Louise/AppData/Local/Android/Sdk/platform-tools/adb.exe}"
 EMULATOR_EXE='/mnt/c/Users/Louise/AppData/Local/Android/Sdk/emulator/emulator.exe'
 AVD_NAME='Pixel_9a'
 APK_PATH_WSL="${RECIPEBOOK_APK_PATH:-$REPO_ROOT/app/build/outputs/apk/debug/app-debug.apk}"
-APK_PATH_WIN="$(wslpath -w "$APK_PATH_WSL")"
+if [[ "$ADB_EXE" == *.exe ]]; then
+    APK_PATH_DEVICE="$(wslpath -w "$APK_PATH_WSL")"
+else
+    APK_PATH_DEVICE="$APK_PATH_WSL"
+fi
 APP_ID="${RECIPEBOOK_APP_ID:-app.recipebook}"
 LAUNCH_ACTIVITY="$APP_ID/app.recipebook.MainActivity"
 
@@ -19,11 +23,7 @@ run_adb() {
 find_emulator_serial() {
     run_adb devices -l |
         tr -d '\r' |
-        grep -v '^List of devices attached$' |
-        grep -v '^$' |
-        grep '^emulator-' |
-        grep ' device ' |
-        awk '{ print $1 }'
+        awk '$1 ~ /^emulator-/ && $2 == "device" { print $1 }'
 }
 
 emulator_serial="${RECIPEBOOK_EMULATOR_SERIAL:-$(find_emulator_serial | head -n 1)}"
@@ -74,5 +74,5 @@ if [ ! -f "$APK_PATH_WSL" ]; then
     exit 1
 fi
 
-run_adb -s "$emulator_serial" install -r "$APK_PATH_WIN"
+run_adb -s "$emulator_serial" install -r "$APK_PATH_DEVICE"
 run_adb -s "$emulator_serial" shell am start -n "$LAUNCH_ACTIVITY"

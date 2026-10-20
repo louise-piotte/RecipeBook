@@ -9,6 +9,8 @@ import app.recipebook.domain.model.CollectionSortOrder
 import app.recipebook.domain.model.ContextualSubstitutionRule
 import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.IngredientForm
+import app.recipebook.domain.model.IngredientPackageAmount
+import app.recipebook.domain.model.IngredientPackageType
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientLineSubstitution
 import app.recipebook.domain.model.IngredientCategory
@@ -22,6 +24,8 @@ import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Ratings
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeLibrary
+import app.recipebook.domain.model.PackageYieldBasis
+import app.recipebook.domain.model.PackageYieldObservation
 import app.recipebook.domain.model.RecipeLink
 import app.recipebook.domain.model.RecipeLinkType
 import app.recipebook.domain.model.RecipeSource
@@ -143,6 +147,9 @@ internal fun LocalizedValue.toDto(): LocalizedValueDto = LocalizedValueDto(
 internal fun IngredientLineDto.toDomain(): IngredientLine = IngredientLine(
     id = id,
     ingredientRefId = ingredientRefId,
+    ingredientFormId = ingredientFormId,
+    ingredientAliasHint = ingredientAliasHint,
+    packageAmount = packageAmount?.toDomain(),
     originalText = originalText,
     quantity = quantity,
     unit = unit,
@@ -157,6 +164,9 @@ internal fun IngredientLineDto.toDomain(): IngredientLine = IngredientLine(
 internal fun IngredientLine.toDto(): IngredientLineDto = IngredientLineDto(
     id = id,
     ingredientRefId = ingredientRefId,
+    ingredientFormId = ingredientFormId,
+    ingredientAliasHint = ingredientAliasHint,
+    packageAmount = packageAmount?.toDto(),
     originalText = originalText,
     quantity = quantity,
     unit = unit,
@@ -166,6 +176,30 @@ internal fun IngredientLine.toDto(): IngredientLineDto = IngredientLineDto(
     notes = notes.toDto(),
     group = group,
     substitutions = substitutions.map { it.toDto() }
+)
+
+internal fun IngredientPackageAmountDto.toDomain(): IngredientPackageAmount = IngredientPackageAmount(
+    count = count,
+    packageType = IngredientPackageType.valueOf(packageType),
+    declaredNetQuantity = declaredNetQuantity,
+    declaredNetUnit = declaredNetUnit,
+    packingMedium = packingMedium,
+    brand = brand,
+    productCode = productCode,
+    countryOfOrigin = countryOfOrigin,
+    requestedBasis = requestedBasis?.let(PackageYieldBasis::valueOf)
+)
+
+internal fun IngredientPackageAmount.toDto(): IngredientPackageAmountDto = IngredientPackageAmountDto(
+    count = count,
+    packageType = packageType.name,
+    declaredNetQuantity = declaredNetQuantity,
+    declaredNetUnit = declaredNetUnit,
+    packingMedium = packingMedium,
+    brand = brand,
+    productCode = productCode,
+    countryOfOrigin = countryOfOrigin,
+    requestedBasis = requestedBasis?.name
 )
 
 private fun ServingsDto.toDomain(): Servings = Servings(
@@ -289,6 +323,7 @@ private fun LibraryDto.toDomain(): RecipeLibrary = RecipeLibrary(
     recipes = recipes.map { it.toDomain() },
     ingredientReferences = ingredientReferences.map { it.toDomain() },
     ingredientForms = ingredientForms.map { it.toDomain() },
+    packageYields = packageYields.map { it.toDomain() },
     substitutionRules = substitutionRules.map { it.toDomain() },
     contextualSubstitutionRules = contextualSubstitutionRules.map { it.toDomain() },
     units = units.map { it.toDomain() },
@@ -302,6 +337,7 @@ private fun RecipeLibrary.toDto(): LibraryDto = LibraryDto(
     recipes = recipes.map { it.toDto() },
     ingredientReferences = ingredientReferences.map { it.toDto() },
     ingredientForms = ingredientForms.map { it.toDto() },
+    packageYields = packageYields.map { it.toDto() },
     substitutionRules = substitutionRules.map { it.toDto() },
     contextualSubstitutionRules = contextualSubstitutionRules.map { it.toDto() },
     units = units.map { it.toDto() },
@@ -380,6 +416,54 @@ internal fun IngredientForm.toDto(): IngredientFormDto = IngredientFormDto(
     notesFr = notesFr,
     notesEn = notesEn,
     updatedAt = updatedAt
+)
+
+internal fun PackageYieldObservationDto.toDomain(): PackageYieldObservation = PackageYieldObservation(
+    id = id,
+    ingredientRefId = ingredientRefId,
+    ingredientFormId = ingredientFormId,
+    packageType = IngredientPackageType.valueOf(packageType),
+    declaredNetQuantity = declaredNetQuantity,
+    declaredNetUnit = declaredNetUnit,
+    netMassG = netMassG,
+    netVolumeMl = netVolumeMl,
+    drainedMassG = drainedMassG,
+    edibleMassG = edibleMassG,
+    packingMedium = packingMedium,
+    brand = brand,
+    productName = productName,
+    productCode = productCode,
+    countryOfOrigin = countryOfOrigin,
+    sourceUrl = sourceUrl,
+    sourceName = sourceName,
+    sourceVersionOrDate = sourceVersionOrDate,
+    researchRecordId = researchRecordId,
+    measurementMethod = measurementMethod,
+    variabilityNotes = variabilityNotes
+)
+
+internal fun PackageYieldObservation.toDto(): PackageYieldObservationDto = PackageYieldObservationDto(
+    id = id,
+    ingredientRefId = ingredientRefId,
+    ingredientFormId = ingredientFormId,
+    packageType = packageType.name,
+    declaredNetQuantity = declaredNetQuantity,
+    declaredNetUnit = declaredNetUnit,
+    netMassG = netMassG,
+    netVolumeMl = netVolumeMl,
+    drainedMassG = drainedMassG,
+    edibleMassG = edibleMassG,
+    packingMedium = packingMedium,
+    brand = brand,
+    productName = productName,
+    productCode = productCode,
+    countryOfOrigin = countryOfOrigin,
+    sourceUrl = sourceUrl,
+    sourceName = sourceName,
+    sourceVersionOrDate = sourceVersionOrDate,
+    researchRecordId = researchRecordId,
+    measurementMethod = measurementMethod,
+    variabilityNotes = variabilityNotes
 )
 
 internal fun SubstitutionRuleDto.toDomain(): SubstitutionRule = SubstitutionRule(

@@ -13,7 +13,6 @@ from tools.seed_package.bundled_seed_package import load_seed_package
 from tools.seed_package.bundled_seed_package import normalize_ingredient_references
 from tools.seed_package.bundled_seed_package import serialize_json
 from tools.seed_package.bundled_seed_package import validate_seed_package
-from tools.seed_package.bundled_seed_package import write_seed_package
 
 
 PART_NAME = "ingredientReferences"
@@ -44,7 +43,7 @@ def main() -> int:
         print("ingredient references need normalization")
         return 1
 
-    write_seed_package({PART_NAME: part_paths[PART_NAME]}, payload)
+    part_paths[PART_NAME].write_text(normalized_text, encoding="utf-8", newline="\n")
     print(f"normalized {len(payload[PART_NAME])} ingredient references in {part_paths[PART_NAME]}")
     return 0
 

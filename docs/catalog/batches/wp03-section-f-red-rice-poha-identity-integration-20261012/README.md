@@ -1,0 +1,9 @@
+# WP03 Section F red rice poha identity integration
+
+- **Added:** identity-only `red rice flakes / riz rouge aplati` as `ingredient-ref-red-rice-flakes` in `GRAIN_AND_CEREAL`, with the English alias `red rice poha`.
+- **Boundary:** kept intact `red rice / riz rouge`, generic `flattened rice (poha) / flocons de riz (poha)`, and roasted red rice flour separate. Bare `red rice` search returns three rows: intact red rice, roasted red rice flour, and red rice flakes. The French display is provisional wording attested by a Canadian French marketplace listing; it is not presented as an OQLF or TERMIUM preferred term.
+- **Evidence:** Canadian retailers use `red rice flakes` / `red rice poha`; a manufacturer describes one red-rice-poha process as parboiling, flattening, and drying. The process is not generalized. See [Indian Spice Haven](https://www.indianspicehaven.ca/product-page/red-rice-flakes-400g), [Walmart Canada (fr-CA)](https://www.walmart.ca/fr/ip/Unitaste-Riz-Rouge-Poha-Matta-Aval-500g-17-6oz-Riz-Rouge-Aplati-pour-Recettes-Traditionnelles/1EW9HTGVSXW8), and [Daivik Organic](https://daivikorganic.com/products/red-rice-poha-sivappu-aval).
+- **Excluded:** no forms, measures, density, unit mappings, conversions, yields, recipe links, or substitutions. Measurement and substitution research remain `not_yet_researched`. The 114 bundled recipes / 1,123 ingredient rows contain no matching phrase.
+- **Validation:** seed package and ingredient references normalized; generated Kotlin catalog current at 1,246 references; ledger has 1,553 records, 5,391 source entries, and 4,429 distinct source IDs. No app tests or emulator checks were run because this change only adds database JSON data under `AGENTS.md`.
+
+See the [source and picker review](../../proposals/wp03-section-f-red-rice-poha-product-boundary-review-20261012.md). Section F's broader regional cereal and preprocessed-grain work remains open.

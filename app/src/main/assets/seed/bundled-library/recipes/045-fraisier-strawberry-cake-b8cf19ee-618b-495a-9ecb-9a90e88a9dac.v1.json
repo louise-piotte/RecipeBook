@@ -159,7 +159,8 @@
         "fr": "fondu, pour d\u00e9coration",
         "en": "Melted, for decoration"
       },
-      "group": "Decoration"
+      "group": "Decoration",
+      "ingredientFormId": "ingredient-form-white-chocolate-melted"
     },
     {
       "id": "b8cf19ee-618b-495a-9ecb-9a90e88a9dac-ingredient-16",
@@ -177,7 +178,8 @@
         "fr": "pour d\u00e9coration",
         "en": "For decoration"
       },
-      "group": "Decoration"
+      "group": "Decoration",
+      "ingredientRefId": "ingredient-ref-sugar-pearls"
     }
   ],
   "servings": {

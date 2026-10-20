@@ -48,6 +48,7 @@
       "id": "30e4274f-19fd-47df-b90b-75a5eefdb2c8-ingredient-3",
       "originalText": "180 ml water",
       "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
       "quantity": 180,
       "unit": "ml",
       "group": "Sugared cranberries and rosemary"
@@ -263,6 +264,7 @@
       "ingredientRefId": "ingredient-ref-hazelnuts",
       "quantity": 60,
       "unit": "g",
+      "ingredientFormId": "ingredient-form-hazelnuts-finely-chopped",
       "preparation": {
         "fr": "finement hach\u00e9",
         "en": "finely chopped"

@@ -103,7 +103,8 @@
       "preparation": {
         "fr": "tass\u00e9",
         "en": "packed"
-      }
+      },
+      "ingredientFormId": "ingredient-form-brown-sugar-light"
     },
     {
       "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-10",
@@ -153,6 +154,7 @@
       "id": "4207e09a-429f-437f-b7bd-14e862d6d696-ingredient-14",
       "originalText": "240 ml hot coffee",
       "ingredientName": "coffee",
+      "ingredientRefId": "ingredient-ref-coffee",
       "quantity": 240,
       "unit": "ml",
       "preparation": {
@@ -184,8 +186,7 @@
     {
       "id": "recipe-link-4207e09a-429f-437f-b7bd-14e862d6d696-white-chocolate-buttercream",
       "targetRecipeId": "c9022b89-8181-425a-9141-6a4e6086b5c8",
-      "linkType": "FROSTING",
-      "position": 0
+      "linkType": "FROSTING"
     }
   ],
   "mainPhotoId": "photo-4207e09a-429f-437f-b7bd-14e862d6d696-0",

@@ -1,4 +1,4 @@
-﻿package app.recipebook.ui.recipes
+package app.recipebook.ui.recipes
 
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.IngredientReference
@@ -39,6 +39,19 @@ class IngredientTagManagerScreenTest {
         assertEquals(1, filtered.size)
         assertEquals("ingredient-ref-brown-sugar", filtered.single().id)
         assertEquals("Brown sugar", filtered.single().nameEn)
+    }
+
+    @Test
+    fun filterManagedIngredientReferences_foldsAccentsAndLigatures() {
+        val ingredient = IngredientReference(
+            id = "ingredient-ref-creme-fraiche",
+            nameFr = "crème fraîche",
+            nameEn = "crème fraîche",
+            aliasesEn = listOf("œuf"),
+            updatedAt = "now"
+        )
+        assertEquals(listOf(ingredient), filterManagedIngredientReferences(listOf(ingredient), "creme fraiche"))
+        assertEquals(listOf(ingredient), filterManagedIngredientReferences(listOf(ingredient), "oeuf"))
     }
 
     @Test

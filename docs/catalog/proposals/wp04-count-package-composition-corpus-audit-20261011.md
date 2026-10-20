@@ -1,0 +1,41 @@
+# WP04 Count, Package, and Composition Corpus Audit
+
+**Review date:** 2026-10-11
+**Status:** Proposal-only audit. No new measurement or composition observation is recommended.
+
+## Conclusion
+
+No genuinely unreviewed WP04 recipe line was found with both an identifiable exact publisher source and a plausible source-specific count, edible-portion, package-content, or composition match. Existing exact-source rows are already covered by proposals or integration notes. Remaining package and composition lines lack a matching source/version or the package/product qualifiers needed to make a measurement. Keep the WP04 fixture deliverable open.
+
+## Search scope and selection audit
+
+Checked the open WP04 checklist in `docs/RecipeBook-global-ingredient-catalog-plan.txt`, all 114 manifest-listed recipe files under `app/src/main/assets/seed/bundled-library/recipes` (1,123 ingredient rows), the live reference and form files, `package-yields.v1.json`, and `docs/catalog/research-ledger.v1.json`. Cross-checked the existing WP04 count/portion proposals and batch notes, including the recipe package-amounts batch, the 2026-10-11 count/portion follow-up, the CNF 2026 integration, and residual animal/produce reviews.
+
+Previously reviewed count candidates were excluded before selecting a next line: the covered produce/herb counts and CNF rows, eggs, maraschino cherries, dates, mango/banana, celery/asparagus, garlic/leek, pickle/brioche, tuna, pork/chicken counts, and the specified pie-crust lines (`089#8`, `106#1`, `107#1`, `108#1`, `109#1`). The exact source-backed package rows below were also excluded as already reviewed. No prior line decision is reopened here.
+
+The package-text pass found these nine relevant rows, including the structured package amount on `086#12`. Access dates below are transcribed from the cited source reviews; this audit did not reopen those webpages or introduce new source facts.
+
+| Recipe line | Linked source and prior source-check date | Existing disposition / why it is not a new candidate |
+|---|---|---|
+| `007#4` pinto beans, one can with liquid | [Ethan Chlebowski recipe](https://www.ethanchlebowski.com/cooking-techniques-recipes/mexican-inspired-bento-box-lunch) — 2026-10-10 | Exact recipe-can count and included-liquid basis already reviewed and integrated. The source gives no declared size, mass, drained yield, or edible portion. See `wp04-pinto-beans-package-count-basis-review-20261010.md` and `batches/wp04-recipe-package-amounts-integration-20261010/README.md`. |
+| `015#4` beef broth, one can | No external URL in the recipe or archived export | Unresolved. The local attribution is “Maman”; neither package size nor product/concentration is recorded. No linked source exists to match. See `wp04-next-animal-food-count-residual-20261010.md`. |
+| `026#3` sweetened condensed milk, one can (300 mL), Original or Low Fat | [Eagle Brand recipe](https://www.eaglebrand.ca/en/recipes/bars-and-cookies/magic-cookie-bars) — 2026-10-10 | Current official recipe wording and the recipe-specific can volume are already reviewed. The product choice does not provide quantified fat or other composition data. See `wp04-sweetened-condensed-milk-can-source-followup-20261010.md`. |
+| `081#12` cream of coconut, one 15 oz can | [Just A Pinch recipe](https://www.justapinch.com/recipes/dessert/cake/pistachio-coconut-amaretto-cheesecake.html) — 2026-10-10 | Exact recipe-specific package wording is already reviewed. It gives no composition panel, net edible mass, or general package yield. See `wp04-next-animal-food-count-residual-20261010.md`. |
+| `086#12` tomato paste, one 156 mL can | [Trois fois par jour recipe](https://www.troisfoisparjour.com/fr/recettes/plats-principaux/poulet-volaille/poulet-au-beurre/) — 2026-10-10 | Exact recipe-specific package count and declared volume are already integrated; no reusable yield or composition value was added. See `wp04-tomato-paste-recipe-package-amount-review-20261010.md` and `batches/wp04-recipe-package-amounts-integration-20261010/README.md`. |
+| `089#3` mushrooms, half a box | No external URL in the bundled recipe | Unresolved source and box contents. No source-backed package size or edible-portion match is available; not an eligible WP04 integration. |
+| `098#1` cranberries, one box | No external URL in the bundled recipe | Unresolved source and box contents. No source-backed package size or edible-portion match is available; not an eligible WP04 integration. |
+| `104#1` asparagus, one trimmed bunch | [Allrecipes recipe](https://www.allrecipes.com/recipe/220991/chef-johns-asparagus-souffle/) — 2026-10-11 | Exact recipe wording and CNF 2026/USDA comparison are already reviewed. The publisher gives no bunch weight or exact size-qualified spear count. See `wp04-next-count-portion-review-20261011-asparagus-bunch.md`. |
+| `114#17` evaporated milk, one can (12 ounces; 354 mL) | [Sally's Baking Addiction recipe](https://sallysbakingaddiction.com/german-chocolate-cake/) — 2026-10-10 | The incorrect bundled amount was source-corrected to the linked recipe's 354 mL; no universal can size, package yield, product composition, or edible mass was inferred. See `wp04-evaporated-milk-can-source-correction-20261010.md`. |
+
+The composition-sensitive pass also checked the WP04 ground-meat qualifier rows and the exact dairy alternatives/package wording already called out in WP04 reviews. `018#1` (lean ground turkey) remains source-version unresolved: the accessible [Preppy Kitchen page](https://preppykitchen.com/turkey-meatballs/) reviewed 2026-10-10 does not match the saved amount/qualifier. `078#3` is already source-corrected to the publisher’s exact `90% lean ground beef -or ground lamb` wording, but that recipe phrase is not an identified product label or a verified numeric fat composition; the [CFIA compositional standard](https://inspection.canada.ca/en/about-cfia/acts-and-regulations/list-acts-and-regulations/documents-incorporated-reference/canadian-food-compositional-standards-0) was reviewed 2026-10-10 and does not make the publisher’s phrase an exact Canadian class match. See `wp04-section-o-ground-meat-qualifier-review-20261010.md` and `wp04-ground-beef-90-percent-lean-line-followup-20261010.md`. The source-line dairy choices at `008#13`, `049#10`, and `051#9` remain choices local to their recipes, not count/portion observations or global equivalences; see the existing animal residual and cream-product reviews.
+
+The existing `104#1` review also records the official comparison sources: [Health Canada CNF 2026 dataset](https://open.canada.ca/data/en/dataset/1b6139bd-7ed4-4043-bc28-ff00e10f3109) and [USDA ERS Technical Bulletin 1927](https://www.ers.usda.gov/sites/default/files/_laserfiche/publications/47570/8043_tb1927.pdf), both accessed 2026-10-11 in that review. They support source-specific asparagus measures or a stated modeling assumption, not a measured, size- and trim-matched recipe bunch. This audit does not reassign those values.
+
+## Remaining evidence and checklist recommendation
+
+- Keep `015#4`, `089#3`, and `098#1` unresolved until the household source or an exact linked publisher/package is identified. A generic can/box size cannot supply their missing contents.
+- Keep `018#1` source-version comparison open. Do not replace its saved quantity or interpret “lean” from the current publisher page.
+- Keep source-specific animal count gaps (cut, size, state, or as-purchased basis) under their existing reviews. Existing CNF/USDA portions remain attached to their exact food, size, cut, and basis; none is reassigned to a mismatched count line here.
+- The plan’s prior bounded 44-row produce/herb inventory is already checked. This audit can close the one-time current-corpus package/count candidate search if recorded as a checklist subitem. It does not satisfy the open `[ ] Produce count, edible-portion, and composition-sensitive fixtures` deliverable: actual fixtures still need to preserve exact source qualifiers, measurement basis, and unavailable outcomes. No existing open fixture item should be closed on this proposal alone.
+
+No catalog, ledger, recipe, plan, roadmap, workflow, code, or test file was changed. No tests were run.

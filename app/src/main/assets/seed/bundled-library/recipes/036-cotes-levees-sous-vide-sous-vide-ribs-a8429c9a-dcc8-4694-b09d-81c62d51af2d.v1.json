@@ -46,7 +46,8 @@
       "preparation": {
         "fr": "divis\u00e9",
         "en": "divided"
-      }
+      },
+      "ingredientRefId": "ingredient-ref-pork-dry-rub"
     },
     {
       "id": "a8429c9a-dcc8-4694-b09d-81c62d51af2d-ingredient-4",
@@ -81,8 +82,7 @@
     {
       "id": "recipe-link-a8429c9a-dcc8-4694-b09d-81c62d51af2d-pork-rub",
       "targetRecipeId": "f137bc89-dee6-46e1-b9cd-1bb426bdbdda",
-      "linkType": "SEASONING",
-      "position": 0
+      "linkType": "SEASONING"
     }
   ],
   "mainPhotoId": "photo-a8429c9a-dcc8-4694-b09d-81c62d51af2d-0",

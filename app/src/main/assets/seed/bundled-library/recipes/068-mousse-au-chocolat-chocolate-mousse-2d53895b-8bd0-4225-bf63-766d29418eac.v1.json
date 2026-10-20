@@ -125,7 +125,8 @@
       "quantity": 1,
       "unit": "for garnish",
       "optional": true,
-      "group": "For serving"
+      "group": "For serving",
+      "ingredientRefId": "ingredient-ref-chocolate-shavings"
     }
   ],
   "servings": {

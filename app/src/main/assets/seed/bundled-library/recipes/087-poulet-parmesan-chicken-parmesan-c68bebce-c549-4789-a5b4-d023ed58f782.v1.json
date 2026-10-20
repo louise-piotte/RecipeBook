@@ -48,8 +48,8 @@
     {
       "id": "c68bebce-c549-4789-a5b4-d023ed58f782-ingredient-4",
       "originalText": "1 cup panko bread crumbs",
-      "ingredientName": "bread crumbs",
-      "ingredientRefId": "ingredient-ref-breadcrumbs",
+      "ingredientName": "panko bread crumbs",
+      "ingredientRefId": "ingredient-ref-panko",
       "quantity": 1,
       "unit": "cup",
       "notes": {

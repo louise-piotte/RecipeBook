@@ -1,0 +1,11 @@
+# WP03 Section F canary seed groats identity (2026-10-13)
+
+Added identity-only `ingredient-ref-canary-seed-groats` as **canary seed groats / grains mondés d’alpiste des Canaries**, category `GRAIN_AND_CEREAL`. The identity is limited to glabrous, dehulled *Phalaris canariensis* intended for human food. Ordinary hairy bird-feed varieties are outside its scope.
+
+The bilingual Health Canada approval supports the human-food boundary, dehulled groats, and wheat-allergy caution. Canadian Grain Commission material and a Canadian producer distinguish groats from flour and flakes; OQLF supports the Québec French botanical name `alpiste des Canaries`. The French display combines government-supported terms and is descriptive rather than an OQLF headword or a Québec retail label.
+
+Added a verified identity record and source entries to the research ledger. Measurement research found no reusable kitchen value. No aliases, forms, density, unit mappings, active measures, conversions, yields, recipe links, or substitutions were added. The Health Canada statement about possible sesame-replacement use does not establish a recipe substitution ratio. The bundled recipe corpus has no matching demand. Section F remains open.
+
+Static reference normalization, bundled-package validation, generated-index freshness, ledger validation, phrase-search projection, ownership, 114-recipe / 1,123-row demand, UTF-8/no-BOM, local links, and whitespace checks passed. The catalog now contains 1,388 references; the research ledger contains 1,721 records and 6,767 source entries. No app tests or emulator checks were run because this change only adds database JSON data.
+
+See the [review proposal](../../proposals/wp03-section-f-canary-seed-groats-identity-review-20261013-r63.md), [Health Canada English approval](https://www.canada.ca/en/health-canada/services/food-nutrition/genetically-modified-foods-other-novel-foods/approved-products/glabrous-canary-seed-phalaris-canariensis.html), [Health Canada French approval](https://www.canada.ca/fr/sante-canada/services/aliments-nutrition/aliments-genetiquement-modifies-autres-aliments-nouveaux/produits-approuves/graine-alpiste-canaries-glabre-phalaris-canariensis.html), and [OQLF entry for alpiste des Canaries](https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/17498891/alpiste-des-canaries).

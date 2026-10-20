@@ -43,6 +43,7 @@ import app.recipebook.domain.model.AppLanguage
 import app.recipebook.ui.recipes.normalizeMultilineText
 import app.recipebook.ui.recipes.parseIngredients
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
@@ -272,6 +273,195 @@ class RecipeRepositoryTest {
         assertTrue(ingredientDao.items.containsKey("ingredient-ref-all-purpose-flour"))
         assertTrue(tagDao.items.containsKey("tag-dessert"))
         assertTrue(collectionDao.items.containsKey("collection-family"))
+    }
+
+    @Test
+    fun seedBundledLibraryIfMissing_addsNewIngredientIdsWithoutReplacingUserData() = runBlocking {
+        val recipeDao = FakeRecipeDao()
+        val ingredientDao = FakeIngredientReferenceDao()
+        val metadataDao = FakeLibraryMetadataDao().apply {
+            value = LibraryMetadataEntity(
+                libraryId = "library-bundled-default",
+                createdAt = "2026-01-01T00:00:00Z",
+                updatedAt = "2026-01-02T00:00:00Z",
+                exportedAt = "2026-01-02T00:00:00Z"
+            )
+        }
+        val existingUserReference = IngredientReferenceEntity(
+            id = "ingredient-ref-existing",
+            nameFr = "mon nom personnalisé",
+            nameEn = "my custom name",
+            category = IngredientCategory.OTHER.name,
+            aliasesEnJson = "[\"personal alias\"]",
+            updatedAt = "user-edit"
+        )
+        ingredientDao.upsert(existingUserReference)
+        val existingUserRecipe = sampleRecipe(id = "existing-user-recipe", titleEn = "My recipe")
+
+        val repository = RecipeRepository(
+            recipeDao = recipeDao,
+            ingredientReferenceDao = ingredientDao,
+            libraryMetadataDao = metadataDao,
+            seedLibrary = SeedLibraryData(
+                metadata = LibraryMetadata(
+                    libraryId = "library-bundled-default",
+                    createdAt = "2026-01-01T00:00:00Z",
+                    updatedAt = "2026-01-02T00:00:00Z",
+                    exportedAt = "2026-01-02T00:00:00Z"
+                ),
+                recipes = listOf(sampleRecipe(id = "seed-recipe", titleEn = "Bundled recipe")),
+                ingredientReferences = listOf(
+                    IngredientReference(
+                        id = "ingredient-ref-existing",
+                        nameFr = "nom du paquet",
+                        nameEn = "bundled name",
+                        updatedAt = "seed-update"
+                    ),
+                    IngredientReference(
+                        id = "ingredient-ref-new",
+                        nameFr = "nouvel ingrédient",
+                        nameEn = "new ingredient",
+                        updatedAt = "seed-new"
+                    )
+                )
+            )
+        )
+        repository.upsertRecipe(existingUserRecipe)
+
+        repository.seedBundledLibraryIfMissing()
+
+        assertEquals(existingUserReference, ingredientDao.items.getValue(existingUserReference.id))
+        assertEquals("new ingredient", ingredientDao.items.getValue("ingredient-ref-new").nameEn)
+        assertNull(recipeDao.getById("seed-recipe"))
+        assertEquals("My recipe", repository.getRecipeById(existingUserRecipe.id)?.languages?.en?.title)
+        assertEquals("library-bundled-default", metadataDao.value?.libraryId)
+    }
+
+    @Test
+    fun seedBundledLibraryIfMissing_addsNewFormsWithoutReplacingExistingCatalogEntries() = runBlocking {
+        val now = "2026-10-06T00:00:00Z"
+        val preservedForm = app.recipebook.domain.model.IngredientForm(
+            id = "ingredient-form-semisweet-chips",
+            ingredientRefId = "ingredient-ref-semisweet-chocolate",
+            formCode = "chips",
+            labelFr = "étiquette personnalisée",
+            labelEn = "User-edited label",
+            updatedAt = "user-edit"
+        )
+        val newForm = app.recipebook.domain.model.IngredientForm(
+            id = "ingredient-form-white-chips",
+            ingredientRefId = "ingredient-ref-white-chocolate",
+            formCode = "chips",
+            labelFr = "pépites de chocolat blanc",
+            labelEn = "white chocolate chips",
+            updatedAt = now
+        )
+        val userRule = app.recipebook.domain.model.SubstitutionRule(
+            id = "user-rule",
+            fromFormId = "from",
+            toFormId = "to",
+            conversionType = app.recipebook.domain.model.SubstitutionConversionType.RATIO,
+            ratio = 1.0,
+            sourceUnitScope = app.recipebook.domain.model.UnitScope.MASS,
+            targetUnitScope = app.recipebook.domain.model.UnitScope.MASS,
+            confidence = app.recipebook.domain.model.SubstitutionConfidence.TESTED,
+            riskLevel = app.recipebook.domain.model.SubstitutionRiskLevel.SAFE,
+            roundingPolicy = "none",
+            updatedAt = now
+        )
+        val store = InMemoryRecipeCatalogStore().apply {
+            replace(StoredRecipeCatalog(ingredientForms = listOf(preservedForm), substitutionRules = listOf(userRule)))
+        }
+        val seedMetadata = LibraryMetadata(
+            libraryId = "library-bundled-default",
+            createdAt = now,
+            updatedAt = now,
+            exportedAt = now
+        )
+        val repository = RecipeRepository(
+            recipeDao = FakeRecipeDao(),
+            ingredientReferenceDao = FakeIngredientReferenceDao(),
+            libraryMetadataDao = FakeLibraryMetadataDao().apply {
+                value = LibraryMetadataEntity(
+                    libraryId = seedMetadata.libraryId,
+                    createdAt = seedMetadata.createdAt,
+                    updatedAt = seedMetadata.updatedAt,
+                    exportedAt = seedMetadata.exportedAt
+                )
+            },
+            catalogStore = store,
+            seedLibrary = SeedLibraryData(
+                metadata = seedMetadata,
+                ingredientForms = listOf(preservedForm.copy(labelEn = "Bundled label"), newForm),
+                substitutionRules = listOf(userRule.copy(id = "bundled-rule"))
+            )
+        )
+
+        repository.seedBundledLibraryIfMissing()
+
+        val updatedCatalog = requireNotNull(store.catalog.first())
+        assertEquals(listOf(preservedForm, newForm), updatedCatalog.ingredientForms)
+        assertEquals(listOf(userRule), updatedCatalog.substitutionRules)
+    }
+
+    @Test
+    fun seedBundledLibraryIfMissing_doesNotRefreshImportedLibrary() = runBlocking {
+        val ingredientDao = FakeIngredientReferenceDao()
+        val storedImportedForm = app.recipebook.domain.model.IngredientForm(
+            id = "imported-form",
+            ingredientRefId = "imported-reference",
+            formCode = "custom",
+            labelFr = "forme importée",
+            labelEn = "Imported form",
+            updatedAt = "user-data"
+        )
+        val catalogStore = InMemoryRecipeCatalogStore().apply {
+            replace(StoredRecipeCatalog(ingredientForms = listOf(storedImportedForm)))
+        }
+        val repository = RecipeRepository(
+            recipeDao = FakeRecipeDao(),
+            ingredientReferenceDao = ingredientDao,
+            catalogStore = catalogStore,
+            libraryMetadataDao = FakeLibraryMetadataDao().apply {
+                value = LibraryMetadataEntity(
+                    libraryId = "imported-library",
+                    createdAt = "2026-01-01T00:00:00Z",
+                    updatedAt = "2026-01-02T00:00:00Z",
+                    exportedAt = "2026-01-02T00:00:00Z"
+                )
+            },
+            seedLibrary = SeedLibraryData(
+                metadata = LibraryMetadata(
+                    libraryId = "library-bundled-default",
+                    createdAt = "2026-01-01T00:00:00Z",
+                    updatedAt = "2026-01-02T00:00:00Z",
+                    exportedAt = "2026-01-02T00:00:00Z"
+                ),
+                ingredientReferences = listOf(
+                    IngredientReference(
+                        id = "ingredient-ref-bundled-only",
+                        nameFr = "référence du paquet",
+                        nameEn = "bundled-only reference",
+                        updatedAt = "seed"
+                    )
+                ),
+                ingredientForms = listOf(
+                    app.recipebook.domain.model.IngredientForm(
+                        id = "ingredient-form-bundled-only",
+                        ingredientRefId = "ingredient-ref-bundled-only",
+                        formCode = "seed",
+                        labelFr = "forme du paquet",
+                        labelEn = "Bundled form",
+                        updatedAt = "seed"
+                    )
+                )
+            )
+        )
+
+        repository.seedBundledLibraryIfMissing()
+
+        assertTrue(ingredientDao.items.isEmpty())
+        assertEquals(listOf(storedImportedForm), catalogStore.catalog.first()?.ingredientForms)
     }
 
     @Test

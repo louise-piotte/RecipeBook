@@ -58,17 +58,23 @@ import app.recipebook.data.local.recipes.IngredientReferenceDraft
 import app.recipebook.data.local.recipes.ImportWarning
 import app.recipebook.data.local.recipes.ImportWarningSeverity
 import app.recipebook.data.local.recipes.PendingRecipePhotoCapture
+import app.recipebook.data.local.recipes.packageAmountForIngredientLine
 import app.recipebook.data.local.recipes.TagDraft
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.BilingualSyncStatus
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.IngredientLine
+import app.recipebook.domain.model.IngredientPackageAmount
 import app.recipebook.domain.model.IngredientLineSubstitution
+import app.recipebook.domain.model.IngredientForm
 import app.recipebook.domain.localization.parseRecipeQuantity
 import app.recipebook.domain.localization.formatIngredientBase
 import app.recipebook.domain.localization.isCountIngredientUnit
 import app.recipebook.domain.localization.normalizeIngredientUnit
+import app.recipebook.domain.localization.filterIngredientReferencesWithForms
+import app.recipebook.domain.localization.IngredientReferenceSearchIndex
+import app.recipebook.domain.localization.normalizeIngredientSearchKey
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.LocalizedValue
@@ -93,6 +99,7 @@ fun RecipeEditorScreen(
     isNewRecipe: Boolean,
     recipes: List<Recipe>,
     ingredientReferences: List<IngredientReference>,
+    ingredientForms: List<IngredientForm>,
     tags: List<Tag>,
     collections: List<Collection>,
     importWarnings: List<ImportWarning>,
@@ -193,7 +200,7 @@ fun RecipeEditorScreen(
                 ),
                 servings = parseServings(servingsAmount, servingsUnit),
                 times = parseTimes(prepMinutes, cookMinutes, totalMinutes),
-                ingredients = ingredientRows.toIngredientLines(ingredientReferences),
+                ingredients = ingredientRows.toIngredientLines(ingredientReferences, ingredientForms),
                 tagIds = selectedTagIds.distinct(),
                 collectionIds = selectedCollectionIds.distinct(),
                 recipeLinks = recipeLinkRows.toRecipeLinks(),
@@ -309,7 +316,7 @@ fun RecipeEditorScreen(
                             ),
                             servings = parseServings(servingsAmount, servingsUnit),
                             times = parseTimes(prepMinutes, cookMinutes, totalMinutes),
-                            ingredients = ingredientRows.toIngredientLines(ingredientReferences),
+                            ingredients = ingredientRows.toIngredientLines(ingredientReferences, ingredientForms),
                             tagIds = selectedTagIds.distinct(),
                             collectionIds = selectedCollectionIds.distinct(),
                             recipeLinks = recipeLinkRows.toRecipeLinks(),
@@ -362,6 +369,7 @@ fun RecipeEditorScreen(
                     language = language,
                     ingredientRows = ingredientRows,
                     ingredientReferences = ingredientReferences,
+                    ingredientForms = ingredientForms,
                     importWarning = importWarningsByField["ingredients"]?.firstOrNull(),
                     expanded = ingredientsExpanded,
                     onToggleExpanded = { ingredientsExpanded = !ingredientsExpanded },
@@ -371,6 +379,7 @@ fun RecipeEditorScreen(
                     },
                     onQuantityChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(quantity = value) },
                     onUnitChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(unit = value) },
+                    onIngredientFormChange = { index, value -> ingredientRows[index] = ingredientRows[index].copy(ingredientFormId = value) },
                     onPreparationChange = { index, value ->
                         ingredientRows[index] = ingredientRows[index].withPreparation(language, value)
                     },
@@ -565,12 +574,18 @@ fun RecipeEditorScreen(
         IngredientPickerDialog(
             language = language,
             ingredientReferences = ingredientReferences,
+            ingredientForms = ingredientForms,
             onDismiss = { ingredientPickerIndex = null },
-            onSelect = { ingredientReference ->
+            onSelect = { ingredientReference, formHint ->
                 val currentRow = ingredientRows[index]
                 ingredientRows[index] = currentRow.copy(
                     ingredientRefId = ingredientReference.id,
-                    ingredientName = ingredientReference.canonicalName().ifBlank { currentRow.ingredientName }
+                    ingredientName = ingredientReference.canonicalName().ifBlank { currentRow.ingredientName },
+                    ingredientFormId = formHint?.id ?: currentRow.ingredientFormId?.takeIf { selectedFormId ->
+                        ingredientForms.any { form -> form.id == selectedFormId && form.ingredientRefId == ingredientReference.id }
+                    },
+                    ingredientAliasHint = currentRow.ingredientAliasHint ?: currentRow.ingredientName.trim()
+                        .takeIf { it.isNotEmpty() && !it.equals(ingredientReference.canonicalName(), ignoreCase = true) }
                 )
                 ingredientPickerIndex = null
             },
@@ -823,12 +838,14 @@ private fun IngredientsEditorSection(
     language: AppLanguage,
     ingredientRows: List<EditableIngredientRow>,
     ingredientReferences: List<IngredientReference>,
+    ingredientForms: List<IngredientForm>,
     importWarning: ImportWarning?,
     expanded: Boolean,
     onToggleExpanded: () -> Unit,
     onSelectIngredient: (Int) -> Unit,
     onQuantityChange: (Int, String) -> Unit,
     onUnitChange: (Int, String) -> Unit,
+    onIngredientFormChange: (Int, String?) -> Unit,
     onPreparationChange: (Int, String) -> Unit,
     onNotesChange: (Int, String) -> Unit,
     onOriginalTextChange: (Int, String) -> Unit,
@@ -837,9 +854,16 @@ private fun IngredientsEditorSection(
     onAddReusableIngredient: () -> Unit
 ) {
     val ingredientMap = ingredientReferences.associateBy(IngredientReference::id)
+    val ingredientFormMap = ingredientForms.associateBy(IngredientForm::id)
     val previewLines = ingredientRows.mapNotNull { row ->
         val line = row.toIngredientLinePreview(ingredientMap, language)
-        if (line == null) null else buildDetailIngredientText(line, line.ingredientRefId?.let(ingredientMap::get), language)
+        if (line == null) null else buildDetailIngredientText(
+            ingredient = line,
+            ingredientReference = line.ingredientRefId?.let(ingredientMap::get),
+            language = language,
+            ingredientForm = row.ingredientFormId?.let(ingredientFormMap::get)
+                ?.takeIf { it.ingredientRefId == line.ingredientRefId }
+        )
     }
 
     Column(
@@ -874,9 +898,11 @@ private fun IngredientsEditorSection(
                     language = language,
                     row = row,
                     ingredientReference = ingredientReferences.firstOrNull { it.id == row.ingredientRefId },
+                    ingredientForms = ingredientForms.filter { it.ingredientRefId == row.ingredientRefId },
                     onSelectIngredient = { onSelectIngredient(index) },
                     onQuantityChange = { onQuantityChange(index, it) },
                     onUnitChange = { onUnitChange(index, it) },
+                    onIngredientFormChange = { onIngredientFormChange(index, it) },
                     onPreparationChange = { onPreparationChange(index, it) },
                     onNotesChange = { onNotesChange(index, it) },
                     onOriginalTextChange = { onOriginalTextChange(index, it) },
@@ -913,9 +939,11 @@ private fun IngredientEditorCard(
     language: AppLanguage,
     row: EditableIngredientRow,
     ingredientReference: IngredientReference?,
+    ingredientForms: List<IngredientForm>,
     onSelectIngredient: () -> Unit,
     onQuantityChange: (String) -> Unit,
     onUnitChange: (String) -> Unit,
+    onIngredientFormChange: (String?) -> Unit,
     onPreparationChange: (String) -> Unit,
     onNotesChange: (String) -> Unit,
     onOriginalTextChange: (String) -> Unit,
@@ -955,6 +983,14 @@ private fun IngredientEditorCard(
             onValueChange = onQuantityChange
         )
         LabeledField(localizedString(R.string.ingredient_unit_label, language), row.unit, onValueChange = onUnitChange)
+        if (ingredientForms.isNotEmpty()) {
+            IngredientFormSelector(
+                language = language,
+                forms = ingredientForms,
+                selectedFormId = row.ingredientFormId,
+                onSelect = onIngredientFormChange
+            )
+        }
         LabeledField(
             localizedString(R.string.ingredient_preparation_label, language),
             row.preparation.forLanguage(language),
@@ -976,16 +1012,61 @@ private fun IngredientEditorCard(
 }
 
 @Composable
+private fun IngredientFormSelector(
+    language: AppLanguage,
+    forms: List<IngredientForm>,
+    selectedFormId: String?,
+    onSelect: (String?) -> Unit
+) {
+    var expanded by remember(selectedFormId, forms) { mutableStateOf(false) }
+    val selectedForm = forms.firstOrNull { it.id == selectedFormId }
+    Box {
+        TextButton(onClick = { expanded = true }) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    selectedForm?.let { form -> if (language == AppLanguage.FR) form.labelFr else form.labelEn }
+                        ?: localizedString(R.string.ingredient_form_label, language)
+                )
+                Icon(imageVector = Icons.Filled.ExpandMore, contentDescription = null)
+            }
+        }
+        DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+            DropdownMenuItem(
+                text = { Text(localizedString(R.string.no_ingredient_form_label, language)) },
+                onClick = {
+                    onSelect(null)
+                    expanded = false
+                }
+            )
+            forms.forEach { form ->
+                DropdownMenuItem(
+                    text = { Text(if (language == AppLanguage.FR) form.labelFr else form.labelEn) },
+                    onClick = {
+                        onSelect(form.id)
+                        expanded = false
+                    }
+                )
+            }
+        }
+    }
+}
+
+@Composable
 private fun IngredientPickerDialog(
     language: AppLanguage,
     ingredientReferences: List<IngredientReference>,
+    ingredientForms: List<IngredientForm>,
     onDismiss: () -> Unit,
-    onSelect: (IngredientReference) -> Unit,
+    onSelect: (IngredientReference, IngredientForm?) -> Unit,
     onCreateNew: () -> Unit
 ) {
     var query by rememberSaveable { mutableStateOf("") }
-    val filtered = remember(query, ingredientReferences) {
-        filterIngredientReferences(ingredientReferences, query)
+    val ingredientSearchIndex = remember(ingredientReferences, ingredientForms) {
+        IngredientReferenceSearchIndex(ingredientReferences, ingredientForms)
+    }
+    val normalizedQuery = remember(query) { normalizeIngredientSearchKey(query) }
+    val filtered = remember(ingredientSearchIndex, normalizedQuery) {
+        ingredientSearchIndex.filterNormalized(normalizedQuery)
     }
 
     PickerDialogContainer(
@@ -1015,8 +1096,18 @@ private fun IngredientPickerDialog(
                     verticalArrangement = Arrangement.spacedBy(2.dp)
                 ) {
                     items(filtered, key = { it.id }) { ingredientReference ->
-                        TextButton(onClick = { onSelect(ingredientReference) }) {
-                            Text(ingredientReference.pickerName(language))
+                        val formHint = ingredientSearchIndex.matchFormHintNormalized(ingredientReference.id, normalizedQuery)
+                        TextButton(onClick = { onSelect(ingredientReference, formHint) }) {
+                            Column(horizontalAlignment = Alignment.Start) {
+                                Text(ingredientReference.pickerName(language))
+                                formHint?.let { form ->
+                                    Text(
+                                        text = if (language == AppLanguage.FR) form.labelFr else form.labelEn,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        style = MaterialTheme.typography.bodySmall
+                                    )
+                                }
+                            }
                         }
                     }
                 }
@@ -1791,7 +1882,10 @@ internal data class EditableIngredientRow(
     val originalText: String = "",
     val optional: Boolean = false,
     val group: String? = null,
-    val substitutions: List<IngredientLineSubstitution> = emptyList()
+    val substitutions: List<IngredientLineSubstitution> = emptyList(),
+    val ingredientFormId: String? = null,
+    val ingredientAliasHint: String? = null,
+    val packageAmount: IngredientPackageAmount? = null
 )
 
 internal data class EditableRecipeLinkRow(
@@ -1813,7 +1907,10 @@ internal fun IngredientLine.toEditableRow(): EditableIngredientRow = EditableIng
     originalText = originalText,
     optional = optional,
     group = group,
-    substitutions = substitutions
+    substitutions = substitutions,
+    ingredientFormId = ingredientFormId,
+    ingredientAliasHint = ingredientAliasHint,
+    packageAmount = packageAmountForIngredientLine(this)
 )
 
 private fun RecipeLink.toEditableRow(): EditableRecipeLinkRow = EditableRecipeLinkRow(
@@ -1833,7 +1930,9 @@ internal fun editableIngredientRowForTest(
     unit: String = "",
     preparation: LocalizedValue = LocalizedValue(),
     notes: LocalizedValue = LocalizedValue(),
-    originalText: String = ""
+    originalText: String = "",
+    ingredientFormId: String? = null,
+    ingredientAliasHint: String? = null
 ): EditableIngredientRow = EditableIngredientRow(
     id = id,
     ingredientRefId = ingredientRefId,
@@ -1842,14 +1941,17 @@ internal fun editableIngredientRowForTest(
     unit = unit,
     preparation = preparation,
     notes = notes,
-    originalText = originalText
+    originalText = originalText,
+    ingredientFormId = ingredientFormId,
+    ingredientAliasHint = ingredientAliasHint
 )
 private fun blankIngredientRow(): EditableIngredientRow = EditableIngredientRow(id = UUID.randomUUID().toString())
 
 private fun blankRecipeLinkRow(): EditableRecipeLinkRow = EditableRecipeLinkRow(id = UUID.randomUUID().toString())
 
 internal fun List<EditableIngredientRow>.toIngredientLines(
-    ingredientReferences: List<IngredientReference>
+    ingredientReferences: List<IngredientReference>,
+    ingredientForms: List<IngredientForm> = emptyList()
 ): List<IngredientLine> {
     val ingredientMap = ingredientReferences.associateBy(IngredientReference::id)
     return mapNotNull { row ->
@@ -1873,7 +1975,7 @@ internal fun List<EditableIngredientRow>.toIngredientLines(
         if (ingredientName.isBlank() && originalText.isBlank()) {
             null
         } else {
-            IngredientLine(
+            val ingredientLine = IngredientLine(
                 id = row.id,
                 ingredientRefId = row.ingredientRefId,
                 originalText = originalText,
@@ -1884,8 +1986,12 @@ internal fun List<EditableIngredientRow>.toIngredientLines(
                 notes = notes,
                 optional = row.optional,
                 group = row.group,
-                substitutions = row.substitutions
+                substitutions = row.substitutions,
+                ingredientFormId = row.ingredientFormId,
+                ingredientAliasHint = row.ingredientAliasHint,
+                packageAmount = row.packageAmount
             )
+            ingredientLine.copy(packageAmount = packageAmountForIngredientLine(ingredientLine, ingredientForms, ingredientReferences))
         }
     }
 }
@@ -1953,7 +2059,9 @@ private fun EditableIngredientRow.toIngredientLinePreview(
         notes = resolvedNotes,
         optional = optional,
         group = group,
-        substitutions = substitutions
+        substitutions = substitutions,
+        ingredientFormId = ingredientFormId,
+        ingredientAliasHint = ingredientAliasHint
     )
 }
 
@@ -1985,18 +2093,10 @@ private fun LocalizedValue.primaryValue(): String? =
     en.ifBlank { fr }.ifBlank { null }
 internal fun filterIngredientReferences(
     ingredientReferences: List<IngredientReference>,
-    query: String
+    query: String,
+    ingredientForms: List<IngredientForm> = emptyList()
 ): List<IngredientReference> {
-    val trimmed = query.trim()
-    if (trimmed.isEmpty()) return ingredientReferences
-    return ingredientReferences.filter { ingredientReference ->
-        listOf(
-            ingredientReference.nameFr,
-            ingredientReference.nameEn,
-            ingredientReference.aliasesFr.joinToString(" "),
-            ingredientReference.aliasesEn.joinToString(" ")
-        ).any { it.contains(trimmed, ignoreCase = true) }
-    }
+    return filterIngredientReferencesWithForms(ingredientReferences, ingredientForms, query)
 }
 
 internal fun filterTags(

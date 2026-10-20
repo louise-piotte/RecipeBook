@@ -5,7 +5,7 @@
     "linkedRecipeId":  "583ae5e3-e482-42ba-971f-72d8418ef175",
     "isFavourite":  "False",
     "rating":  "5",
-    "course":  "Déjeuné/Breakfast",
+    "course":  "DÃ©jeunÃ©/Breakfast",
     "categories":  [
                        "Avoine/Oat",
                        "Modifiable/Customisable"
@@ -21,17 +21,17 @@
                             "1 portion avoine - 1 portion oats",
                             "1 portion lait - 1 portion milk",
                             "â…› portion graine chia - â…› portion chia seeds",
-                            "Source de sucre  (anko, sirop d\u0027érable) - Source of sugar (anko, maple syrup)",
+                            "Source de sucre  (anko, sirop d\u0027Ã©rable) - Source of sugar (anko, maple syrup)",
                             "Saveur (vanille, cacao, beurre d\u0027arachide) - Flavor (vanilla, cocoa, peanut butter)",
                             "Garnitures (dates, bananes, bleuets, sauce aux canneberges) - Toppings (dates, bananas, blueberries, cranberry sauce)",
                             "Noix (amandes, pacanes, noix de Grenoble, arachides - Nuts (almonds, pecans, walnuts, peanuts)"
                         ],
     "directionLines":  [
-                           "Dans un pot Masson ajouter et mélanger l\u0027avoine, les graines de chia et le lait.",
+                           "Dans un pot Masson ajouter et mÃ©langer l\u0027avoine, les graines de chia et le lait.",
                            "In a Masson jar add and mix the oats, chia seeds and milk.",
-                           "Ajouter la source de sucre et les saveur. Mélanger a nouveau. La couleur doit être uniforme.",
+                           "Ajouter la source de sucre et les saveur. MÃ©langer a nouveau. La couleur doit Ãªtre uniforme.",
                            "Add sugar source and flavors. Mix again. The color should be uniform.",
-                           "Ajouter la garniture en mélangeant au fur et a mesure.",
+                           "Ajouter la garniture en mÃ©langeant au fur et a mesure.",
                            "Add the filling, mixing as you go.",
                            "Laisser tremper au frigidaire pour la nuit.",
                            "Leave to soak in the fridge for the night.",
@@ -39,13 +39,13 @@
                            "Add nuts just before serving. Eat hot or cold."
                        ],
     "notes":  [
-                  "Banane suprême: sirop d\u0027érable, vanille, cacao, beurre d\u0027arachide, bananes, pacanes",
+                  "Banane suprÃªme: sirop d\u0027Ã©rable, vanille, cacao, beurre d\u0027arachide, bananes, pacanes",
                   "Banana supreme: maple syrup, vanilla, cocoa, peanut butter, bananas, pecans",
                   "Surprise pourpre: anko, vanille, dates, amande",
                   "Purple surprise: anko, vanilla, dates, almonds",
-                  "Explosion de canneberges: sirop d\u0027érable, vanille, sauce aux canneberges, canneberges séchées, amandes",
+                  "Explosion de canneberges: sirop d\u0027Ã©rable, vanille, sauce aux canneberges, canneberges sÃ©chÃ©es, amandes",
                   "Cranberry Burst: maple syrup, vanilla, cranberry sauce, dried cranberries, almonds",
-                  "Tempête tropicale: sirop d\u0027érable, essence d\u0027amande, noix de coco en flocons, mangue, amandes",
+                  "TempÃªte tropicale: sirop d\u0027Ã©rable, essence d\u0027amande, noix de coco en flocons, mangue, amandes",
                   "Tropical Storm: maple syrup, almond extract, flaked coconut, mango, amandes"
               ],
     "nutrition":  {

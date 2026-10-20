@@ -1,0 +1,3 @@
+f69565335cdf87b9b07bcdd23613249c2c21c612c4198b4fa2c426e07d7ea021  home-fr-restored.png
+cf79c42fddba128fe6eb081e27f7bb441ef29fb6cc27835e2a7de1bfa3e7882b  injera-picker-en.png
+dbd14a29d21ff28d30f484da2d0517321259facc52d6d7b124ebf84f27e820ca  injera-picker-fr.png

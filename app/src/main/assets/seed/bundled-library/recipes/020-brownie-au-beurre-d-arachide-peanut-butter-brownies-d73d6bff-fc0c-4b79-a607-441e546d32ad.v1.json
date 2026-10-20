@@ -83,7 +83,8 @@
       "preparation": {
         "fr": "l\u00e9g\u00e8rement tass\u00e9",
         "en": "packed light"
-      }
+      },
+      "ingredientFormId": "ingredient-form-brown-sugar-light"
     },
     {
       "id": "d73d6bff-fc0c-4b79-a607-441e546d32ad-ingredient-8",

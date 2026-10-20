@@ -1,10 +1,10 @@
 {
   "id": "ff66e4f7-c719-4203-970b-06993cdb25de",
   "createdAt": "2026-03-20T00:00:00Z",
-  "updatedAt": "2026-04-04T00:00:00Z",
+  "updatedAt": "2026-10-10T00:00:00Z",
   "source": {
     "sourceName": "Eagle Brand",
-    "sourceUrl": "https://www.eaglebrand.ca/En/Recipes/Magic-Cookie-Bars"
+    "sourceUrl": "https://www.eaglebrand.ca/en/recipes/bars-and-cookies/magic-cookie-bars"
   },
   "languages": {
     "fr": {
@@ -42,7 +42,7 @@
     },
     {
       "id": "ff66e4f7-c719-4203-970b-06993cdb25de-ingredient-3",
-      "originalText": "1 can (300 ml) sweetened condensed milk",
+      "originalText": "1 can (300 mL) Eagle Brand\u00ae Original or Low Fat Sweetened Condensed Milk",
       "ingredientName": "sweetened condensed milk",
       "ingredientRefId": "ingredient-ref-sweetened-condensed-milk",
       "quantity": 300,
@@ -54,7 +54,8 @@
       "ingredientName": "semisweet chocolate",
       "ingredientRefId": "ingredient-ref-semisweet-chocolate",
       "quantity": 1.333,
-      "unit": "cup"
+      "unit": "cup",
+      "ingredientFormId": "ingredient-form-semisweet-chocolate-chips"
     },
     {
       "id": "ff66e4f7-c719-4203-970b-06993cdb25de-ingredient-5",
@@ -63,10 +64,7 @@
       "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 1.333,
       "unit": "cup",
-      "preparation": {
-        "fr": "en flocons",
-        "en": "flaked"
-      }
+      "ingredientFormId": "ingredient-form-coconut-flaked"
     },
     {
       "id": "ff66e4f7-c719-4203-970b-06993cdb25de-ingredient-6",
@@ -75,6 +73,7 @@
       "ingredientRefId": "ingredient-ref-pecans",
       "quantity": 1.333,
       "unit": "cup",
+      "ingredientFormId": "ingredient-form-pecans-chopped",
       "preparation": {
         "fr": "hach\u00e9",
         "en": "chopped"

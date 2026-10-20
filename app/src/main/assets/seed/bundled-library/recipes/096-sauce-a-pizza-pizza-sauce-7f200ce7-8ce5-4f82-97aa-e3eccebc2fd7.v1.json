@@ -31,7 +31,8 @@
       "preparation": {
         "fr": "gros, en d\u00e9s",
         "en": "large, diced"
-      }
+      },
+      "ingredientFormId": "ingredient-form-tomatoes-fresh"
     },
     {
       "id": "7f200ce7-8ce5-4f82-97aa-e3eccebc2fd7-ingredient-2",

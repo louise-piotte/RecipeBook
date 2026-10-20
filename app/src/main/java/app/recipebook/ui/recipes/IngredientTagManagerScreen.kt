@@ -1,5 +1,7 @@
 package app.recipebook.ui.recipes
 
+import app.recipebook.domain.localization.IngredientReferenceSearchIndex
+import app.recipebook.domain.localization.filterByIngredientSearchQuery
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
@@ -88,8 +90,11 @@ fun IngredientTagManagerScreen(
     var substitutionEditorIngredient by remember { mutableStateOf<IngredientReference?>(null) }
     var editingSubstitution by remember { mutableStateOf<ContextualSubstitutionRule?>(null) }
 
-    val filteredIngredients = remember(ingredientReferences, ingredientQuery) {
-        filterManagedIngredientReferences(ingredientReferences, ingredientQuery)
+    val ingredientSearchIndex = remember(ingredientReferences) {
+        IngredientReferenceSearchIndex(ingredientReferences)
+    }
+    val filteredIngredients = remember(ingredientSearchIndex, ingredientQuery) {
+        ingredientSearchIndex.filter(ingredientQuery)
     }
     val filteredTags = remember(tags, tagQuery) {
         filterTags(tags, tagQuery)
@@ -712,12 +717,15 @@ private fun IngredientSubstitutionEditorDialog(
     val selectedTarget = remember(selectedTargetId, ingredientReferences) {
         ingredientReferences.firstOrNull { it.id == selectedTargetId }
     }
-    val targetMatches = remember(sourceIngredient.id, ingredientReferences, targetSearch) {
-        availableIngredientSubstitutionTargets(
-            ingredientReferences = ingredientReferences,
-            sourceIngredientRefId = sourceIngredient.id,
-            query = targetSearch
-        ).take(8)
+    val targetSearchIndex = remember(sourceIngredient.id, ingredientReferences) {
+        IngredientReferenceSearchIndex(
+            ingredientReferences.filterNot { it.id == sourceIngredient.id }
+        )
+    }
+    val targetMatches = remember(targetSearchIndex, targetSearch) {
+        targetSearchIndex.filter(targetSearch)
+            .sortedBy { it.nameEn.lowercase() }
+            .take(8)
     }
 
     Dialog(
@@ -1028,15 +1036,13 @@ internal fun filterManagedIngredientReferences(
     ingredientReferences: List<IngredientReference>,
     query: String
 ): List<IngredientReference> {
-    val trimmedQuery = query.trim()
-    if (trimmedQuery.isEmpty()) return ingredientReferences
-    return ingredientReferences.filter { ingredient ->
+    return filterByIngredientSearchQuery(ingredientReferences, query) { ingredient ->
         listOf(
             ingredient.nameFr,
             ingredient.nameEn,
-            ingredient.aliasesFr.joinToString(" "),
-            ingredient.aliasesEn.joinToString(" ")
-        ).any { it.contains(trimmedQuery, ignoreCase = true) }
+            *ingredient.aliasesFr.toTypedArray(),
+            *ingredient.aliasesEn.toTypedArray()
+        )
     }
 }
 

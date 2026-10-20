@@ -65,6 +65,7 @@
       "id": "f4807560-d19f-4e2d-aeab-80138564b93f-ingredient-5",
       "originalText": "1 cup water",
       "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
       "quantity": 1,
       "unit": "cup",
       "group": "Cake"
@@ -91,6 +92,7 @@
       "id": "f4807560-d19f-4e2d-aeab-80138564b93f-ingredient-8",
       "originalText": "3 large egg yolks",
       "ingredientName": "egg yolk",
+      "ingredientRefId": "ingredient-ref-egg-yolk",
       "quantity": 3,
       "unit": "count",
       "preparation": {
@@ -119,7 +121,8 @@
         "fr": "l\u00e9ger",
         "en": "light"
       },
-      "group": "Cake"
+      "group": "Cake",
+      "ingredientFormId": "ingredient-form-brown-sugar-light"
     },
     {
       "id": "f4807560-d19f-4e2d-aeab-80138564b93f-ingredient-11",
@@ -254,6 +257,7 @@
       "id": "f4807560-d19f-4e2d-aeab-80138564b93f-ingredient-24",
       "originalText": "1/4 cup plus 2 tbsp water",
       "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
       "quantity": 0.375,
       "unit": "cup",
       "group": "Chocolate frosting"
@@ -262,6 +266,7 @@
       "id": "f4807560-d19f-4e2d-aeab-80138564b93f-ingredient-25",
       "originalText": "1 tbsp brandy",
       "ingredientName": "brandy",
+      "ingredientRefId": "ingredient-ref-brandy",
       "quantity": 1,
       "unit": "tbsp",
       "group": "Chocolate frosting"
@@ -301,7 +306,8 @@
         "en": "Bittersweet and white chocolate, for garnish"
       },
       "optional": true,
-      "group": "Garnish"
+      "group": "Garnish",
+      "ingredientRefId": "ingredient-ref-chocolate-shavings"
     }
   ],
   "servings": {

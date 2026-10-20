@@ -107,7 +107,8 @@
       "preparation": {
         "fr": "tr\u00e8s m\u00fbr, \u00e9cras\u00e9",
         "en": "very ripe, mashed"
-      }
+      },
+      "ingredientFormId": "ingredient-form-banana-mashed-ripe"
     },
     {
       "id": "c5486a31-4047-4437-ad8b-14a6e776bdd5-ingredient-11",

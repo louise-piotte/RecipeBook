@@ -70,7 +70,10 @@ data class RecipeIngredientLineEntity(
     val notesFr: String = "",
     val notesEn: String = "",
     @ColumnInfo(name = "groupName")
-    val group: String? = null
+    val group: String? = null,
+    val ingredientFormId: String? = null,
+    val ingredientAliasHint: String? = null,
+    val packageAmountJson: String? = null
 )
 
 @Entity(

@@ -81,7 +81,8 @@
       "preparation": {
         "fr": "fondu",
         "en": "melted"
-      }
+      },
+      "ingredientFormId": "ingredient-form-semisweet-chocolate-melted"
     }
   ],
   "servings": {

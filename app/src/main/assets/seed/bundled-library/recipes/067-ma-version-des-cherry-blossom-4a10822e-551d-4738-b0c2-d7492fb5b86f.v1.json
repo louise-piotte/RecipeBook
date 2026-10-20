@@ -27,7 +27,8 @@
       "preparation": {
         "fr": "en p\u00e9pites",
         "en": "chips"
-      }
+      },
+      "ingredientFormId": "ingredient-form-dark-chocolate-chips"
     },
     {
       "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-2",
@@ -38,7 +39,9 @@
       "preparation": {
         "fr": "en p\u00e9pites",
         "en": "chips"
-      }
+      },
+      "ingredientRefId": "ingredient-ref-milk-chocolate",
+      "ingredientFormId": "ingredient-form-milk-chocolate-chips"
     },
     {
       "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-3",
@@ -67,14 +70,11 @@
     {
       "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-5",
       "originalText": "1/2 cup unsweetened shredded coconut",
-      "ingredientName": "shredded coconut",
-      "ingredientRefId": "ingredient-ref-shredded-coconut",
+      "ingredientName": "coconut",
+      "ingredientRefId": "ingredient-ref-coconut",
       "quantity": 0.5,
       "unit": "cup",
-      "preparation": {
-        "fr": "non sucr\u00e9",
-        "en": "unsweetened"
-      }
+      "ingredientFormId": "ingredient-form-coconut-shredded-unsweetened"
     },
     {
       "id": "4a10822e-551d-4738-b0c2-d7492fb5b86f-ingredient-6",

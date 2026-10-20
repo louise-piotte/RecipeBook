@@ -23,6 +23,9 @@ import app.recipebook.data.local.db.RecipeWithRelations
 import app.recipebook.data.local.db.TagDao
 import app.recipebook.data.local.db.TagEntity
 import app.recipebook.domain.model.AttachmentRef
+import app.recipebook.data.schema.IngredientPackageAmountDto
+import app.recipebook.data.schema.toDomain as packageAmountDtoToDomain
+import app.recipebook.data.schema.toDto as packageAmountToDto
 import app.recipebook.domain.model.BilingualText
 import app.recipebook.domain.model.BilingualSyncStatus
 import app.recipebook.domain.model.Collection
@@ -32,8 +35,10 @@ import app.recipebook.domain.model.ImportMetadata
 import app.recipebook.domain.model.IngredientLine
 import app.recipebook.domain.model.IngredientLineSubstitution
 import app.recipebook.domain.model.IngredientCategory
+import app.recipebook.domain.model.IngredientForm
 import app.recipebook.domain.model.IngredientReference
 import app.recipebook.domain.model.IngredientUnitMapping
+import app.recipebook.domain.model.PackageYieldObservation
 import app.recipebook.domain.model.LibraryMetadata
 import app.recipebook.domain.model.LibrarySettings
 import app.recipebook.domain.model.LocalizedValue
@@ -54,7 +59,7 @@ import app.recipebook.domain.model.Tag
 import app.recipebook.domain.model.TagCategory
 import app.recipebook.domain.model.UnitDefinition
 import app.recipebook.domain.model.AppLanguage
-import java.text.Normalizer
+import app.recipebook.domain.localization.normalizeIngredientSearchKey
 import java.time.Instant
 import java.util.UUID
 import kotlinx.coroutines.Dispatchers
@@ -109,7 +114,9 @@ class RecipeRepository internal constructor(
             IngredientSubstitutionCatalog(
                 ingredientForms = catalog?.ingredientForms ?: seedLibrary.ingredientForms,
                 substitutionRules = catalog?.substitutionRules ?: seedLibrary.substitutionRules,
-                contextualSubstitutionRules = storedRules.map(ContextualSubstitutionRuleEntity::toDomain)
+                contextualSubstitutionRules = storedRules.map(ContextualSubstitutionRuleEntity::toDomain),
+                units = catalog?.units ?: seedLibrary.units,
+                packageYields = catalog?.packageYields ?: seedLibrary.packageYields
             )
         }
 
@@ -465,7 +472,9 @@ class RecipeRepository internal constructor(
                             collectionRefs = storage.collectionRefs
                         )
                     }
-                catalogStore.replace(StoredRecipeCatalog(library.ingredientForms, library.substitutionRules, library.units))
+                catalogStore.replace(StoredRecipeCatalog(
+                    library.ingredientForms, library.substitutionRules, library.units, library.packageYields
+                ))
                 beforeCommit()
             }
         } catch (error: Throwable) {
@@ -486,11 +495,44 @@ class RecipeRepository internal constructor(
 
     suspend fun seedBundledLibraryIfMissing() {
         transactionRunner {
-            // Metadata records initialization even after the user deletes every recipe.
-            if (libraryMetadataDao.getAny() != null) return@transactionRunner
+            val existingMetadata = libraryMetadataDao.getAny()
             val resolvedSeedLibrary = resolveSeedLibrary()
             if (resolvedSeedLibrary.isEmpty()) {
                 Log.e(TAG, "Bundled library seeding skipped because no seed data could be loaded")
+                return@transactionRunner
+            }
+
+            if (existingMetadata != null) {
+                if (existingMetadata.libraryId == resolvedSeedLibrary.metadata?.libraryId) {
+                    // Add new bundled identities without replacing rows a user may have edited.
+                    val existingIngredientIds = ingredientReferenceDao.observeAll()
+                        .firstOrNull()
+                        .orEmpty()
+                        .mapTo(mutableSetOf(), IngredientReferenceEntity::id)
+                    val newReferences = resolvedSeedLibrary.ingredientReferences
+                        .distinctBy(IngredientReference::id)
+                        .filterNot { it.id in existingIngredientIds }
+                    if (newReferences.isNotEmpty()) {
+                        ingredientReferenceDao.upsertAll(newReferences.map(IngredientReference::toEntity))
+                    }
+                    val currentCatalog = catalogStore.catalog.first()
+                    if (currentCatalog != null) {
+                        val existingFormIds = currentCatalog.ingredientForms.mapTo(mutableSetOf(), IngredientForm::id)
+                        val newIngredientForms = resolvedSeedLibrary.ingredientForms
+                            .distinctBy(IngredientForm::id)
+                            .filterNot { it.id in existingFormIds }
+                        val existingYieldIds = currentCatalog.packageYields.mapTo(mutableSetOf(), PackageYieldObservation::id)
+                        val newPackageYields = resolvedSeedLibrary.packageYields.filterNot { it.id in existingYieldIds }
+                        if (newIngredientForms.isNotEmpty() || newPackageYields.isNotEmpty()) {
+                            catalogStore.replace(
+                                currentCatalog.copy(
+                                    ingredientForms = currentCatalog.ingredientForms + newIngredientForms,
+                                    packageYields = currentCatalog.packageYields + newPackageYields
+                                )
+                            )
+                        }
+                    }
+                }
                 return@transactionRunner
             }
 
@@ -549,7 +591,7 @@ class RecipeRepository internal constructor(
                 libraryId = UUID.randomUUID().toString(), createdAt = now, updatedAt = now, exportedAt = now
             )
             catalogStore.replace(StoredRecipeCatalog(resolvedSeedLibrary.ingredientForms,
-                resolvedSeedLibrary.substitutionRules, resolvedSeedLibrary.units))
+                resolvedSeedLibrary.substitutionRules, resolvedSeedLibrary.units, resolvedSeedLibrary.packageYields))
             libraryMetadataDao.upsert(metadata.toEntity())
         }
     }
@@ -600,7 +642,9 @@ class RecipeRepository internal constructor(
             contextualSubstitutionRules = contextualSubstitutionRuleDao.observeAll()
                 .map { rules -> rules.map(ContextualSubstitutionRuleEntity::toDomain) }
                 .firstOrNull()
-                ?: seedLibrary.contextualSubstitutionRules
+                ?: seedLibrary.contextualSubstitutionRules,
+            units = catalog?.units ?: seedLibrary.units,
+            packageYields = catalog?.packageYields ?: seedLibrary.packageYields
         )
     }
 
@@ -647,6 +691,7 @@ class RecipeRepository internal constructor(
             recipes = recipes,
             ingredientReferences = ingredientReferences,
             ingredientForms = catalog?.ingredientForms ?: seedLibrary.ingredientForms,
+            packageYields = catalog?.packageYields ?: seedLibrary.packageYields,
             substitutionRules = catalog?.substitutionRules ?: seedLibrary.substitutionRules,
             contextualSubstitutionRules = contextualSubstitutionRules,
             units = catalog?.units ?: seedLibrary.units,
@@ -698,6 +743,7 @@ private fun SeedLibraryData.isEmpty(): Boolean =
     recipes.isEmpty() &&
         ingredientReferences.isEmpty() &&
         ingredientForms.isEmpty() &&
+        packageYields.isEmpty() &&
         substitutionRules.isEmpty() &&
         contextualSubstitutionRules.isEmpty() &&
         units.isEmpty() &&
@@ -1048,6 +1094,11 @@ private val storageJson = Json {
 private fun IngredientLineWithSubstitutions.toDomain(): IngredientLine = IngredientLine(
     id = ingredientLine.id,
     ingredientRefId = ingredientLine.ingredientRefId,
+    ingredientFormId = ingredientLine.ingredientFormId,
+    ingredientAliasHint = ingredientLine.ingredientAliasHint,
+    packageAmount = ingredientLine.packageAmountJson?.let {
+        storageJson.decodeFromString<IngredientPackageAmountDto>(it).packageAmountDtoToDomain()
+    },
     originalText = ingredientLine.originalText,
     quantity = ingredientLine.quantity,
     unit = ingredientLine.unit,
@@ -1072,6 +1123,9 @@ private fun IngredientLine.toEntity(recipeId: String, position: Int): RecipeIngr
     recipeId = recipeId,
     position = position,
     ingredientRefId = ingredientRefId,
+    ingredientFormId = ingredientFormId,
+    ingredientAliasHint = ingredientAliasHint,
+    packageAmountJson = packageAmount?.let { storageJson.encodeToString(it.packageAmountToDto()) },
     originalText = originalText,
     quantity = quantity,
     unit = unit,
@@ -1269,11 +1323,8 @@ private object EmptyLibraryMetadataDao : LibraryMetadataDao {
 }
 
 private fun slugify(input: String): String {
-    val normalized = Normalizer.normalize(input.lowercase(), Normalizer.Form.NFD)
-        .replace("\\p{M}+".toRegex(), "")
-    return normalized
-        .replace("[^a-z0-9]+".toRegex(), "-")
-        .trim('-')
+    return normalizeIngredientSearchKey(input)
+        .replace(' ', '-')
         .ifBlank { UUID.randomUUID().toString() }
 }
 
@@ -1283,9 +1334,8 @@ private fun normalizeAliases(
     counterpartName: String
 ): List<String> {
     val excluded = setOf(primaryName, counterpartName)
-        .map(String::trim)
+        .map(::normalizeIngredientSearchKey)
         .filter(String::isNotEmpty)
-        .map(String::lowercase)
         .toSet()
     val seen = linkedSetOf<String>()
     return aliases.mapNotNull { alias ->
@@ -1293,7 +1343,7 @@ private fun normalizeAliases(
         if (normalized.isEmpty()) {
             null
         } else {
-            val key = normalized.lowercase()
+            val key = normalizeIngredientSearchKey(normalized)
             if (key in excluded || !seen.add(key)) null else normalized
         }
     }
@@ -1314,18 +1364,6 @@ private fun IngredientReferenceDraft.lookupKeys(): Set<String> = buildSet {
 }.filter { it.isNotBlank() }.toSet()
 
 private fun lookupKey(input: String): String = slugify(input)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

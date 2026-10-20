@@ -5,28 +5,28 @@
     "linkedRecipeId":  null,
     "isFavourite":  "False",
     "rating":  "3",
-    "course":  "Ingrédient/Ingredient",
+    "course":  "IngrÃ©dient/Ingredient",
     "categories":  [
-                       "Épices/Spices"
+                       "Ã‰pices/Spices"
                    ],
     "collections":  [
 
                     ],
     "sourceUrl":  "https://ileauxepices.com/blog/2014/11/03/comment-faire-ses-propres-melanges-depices/wpid6390/",
-    "yield":  "10½ culière a thé / teaspoons",
+    "yield":  "10Â½ culiÃ¨re a thÃ© / teaspoons",
     "prepTimeIso":  "PT5M",
     "cookTimeIso":  "PT0S",
     "ingredientLines":  [
-                            "2 cuillères à thé de cumin - 2 teaspoons of cumin",
-                            "1½ cuillère à thé de coriandre - 1½ teaspoon coriander",
-                            "1½ cuillère à thé de cardamome - 1½ teaspoon cardamom",
-                            "1½ cuillère à thé de poivre noir moulu - 1½  teaspoon ground black pepper",
-                            "1 cuillère à thé de cannelle - 1 teaspoon cinnamon",
-                            "½ cuillère à thé de girofle - ½ teaspoon of cloves",
-                            "½ cuillère à thé de muscade - ½ teaspoon nutmeg"
+                            "2 cuillÃ¨res Ã  thÃ© deÂ cumin - 2 teaspoons of cumin",
+                            "1Â½ cuillÃ¨re Ã  thÃ© deÂ coriandre - 1Â½ teaspoon coriander",
+                            "1Â½ cuillÃ¨re Ã  thÃ© deÂ cardamome - 1Â½ teaspoon cardamom",
+                            "1Â½ cuillÃ¨re Ã  thÃ© deÂ poivre noir moulu - 1Â½  teaspoon ground black pepper",
+                            "1 cuillÃ¨re Ã  thÃ© deÂ cannelle - 1 teaspoon cinnamon",
+                            "Â½ cuillÃ¨re Ã  thÃ© deÂ girofle - Â½ teaspoon of cloves",
+                            "Â½ cuillÃ¨re Ã  thÃ© deÂ muscade - Â½ teaspoon nutmeg"
                         ],
     "directionLines":  [
-                           "Mélanger tout les épices dans un petit bol jusqu\u0027à l\u0027obtention d\u0027une poudre de couleur uniforme.",
+                           "MÃ©langer tout les Ã©pices dans un petit bol jusqu\u0027Ã  l\u0027obtention d\u0027une poudre de couleur uniforme.",
                            "Mix all the spices in a small bowl until you get a uniform colored powder."
                        ],
     "notes":  [

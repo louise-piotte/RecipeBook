@@ -74,6 +74,7 @@
       "originalText": "sliced almonds for rolling",
       "ingredientName": "almonds",
       "ingredientRefId": "ingredient-ref-almonds",
+      "ingredientFormId": "ingredient-form-almonds-sliced",
       "notes": {
         "fr": "tranch\u00e9, pour rouler",
         "en": "sliced, for rolling"
@@ -111,8 +112,7 @@
     {
       "id": "recipe-link-8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-almond-paste",
       "targetRecipeId": "1dca3c8b-ed68-4397-b804-ae62e769ee5e",
-      "linkType": "COMPONENT",
-      "position": 0
+      "linkType": "COMPONENT"
     }
   ],
   "mainPhotoId": "photo-8ccbf0c1-b6d9-4908-b122-1c7dacba5f0d-0",

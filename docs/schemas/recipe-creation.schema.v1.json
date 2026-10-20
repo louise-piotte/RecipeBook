@@ -5,7 +5,10 @@
   "description": "AI-friendly minimal payload for creating a single bilingual recipe with structured ingredient lines.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "recipe"],
+  "required": [
+    "schemaVersion",
+    "recipe"
+  ],
   "properties": {
     "schemaVersion": {
       "type": "string",
@@ -16,9 +19,10 @@
     }
   },
   "$defs": {
-    "Uuid": {
+    "StableId": {
       "type": "string",
-      "format": "uuid"
+      "minLength": 1,
+      "description": "Stable string ID. Ingredient and form IDs may use repository slugs."
     },
     "DateTime": {
       "type": "string",
@@ -28,163 +32,379 @@
       "type": "object",
       "description": "System-defined recipe text fields must exist in both languages, even if empty strings.",
       "additionalProperties": false,
-      "required": ["title", "description", "instructions", "notes"],
+      "required": [
+        "title",
+        "description",
+        "instructions",
+        "notes"
+      ],
       "properties": {
-        "title": { "type": "string" },
-        "description": { "type": "string" },
-        "instructions": { "type": "string" },
-        "notes": { "type": "string" }
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "instructions": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
       }
     },
     "LanguagesRequired": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["fr", "en"],
+      "required": [
+        "fr",
+        "en"
+      ],
       "properties": {
-        "fr": { "$ref": "#/$defs/LanguageTextRequired" },
-        "en": { "$ref": "#/$defs/LanguageTextRequired" }
+        "fr": {
+          "$ref": "#/$defs/LanguageTextRequired"
+        },
+        "en": {
+          "$ref": "#/$defs/LanguageTextRequired"
+        }
       }
     },
     "LocalizedValue": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["fr", "en"],
+      "required": [
+        "fr",
+        "en"
+      ],
       "properties": {
-        "fr": { "type": "string" },
-        "en": { "type": "string" }
+        "fr": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        }
       }
     },
     "Source": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["sourceUrl", "sourceName"],
+      "required": [
+        "sourceUrl",
+        "sourceName"
+      ],
       "properties": {
-        "sourceUrl": { "type": "string", "format": "uri" },
-        "sourceName": { "type": "string" }
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sourceName": {
+          "type": "string"
+        }
       }
     },
     "IngredientLine": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "originalText", "ingredientName"],
+      "required": [
+        "id",
+        "originalText",
+        "ingredientName"
+      ],
       "properties": {
-        "id": { "$ref": "#/$defs/Uuid" },
-        "ingredientRefId": { "$ref": "#/$defs/Uuid" },
-        "originalText": { "type": "string" },
-        "quantity": { "type": "number" },
-        "unit": { "type": "string", "description": "Canonical unit id (for example g, ml, tsp, cup)." },
-        "ingredientName": { "type": "string" },
-        "preparation": { "$ref": "#/$defs/LocalizedValue" },
-        "optional": { "type": "boolean", "default": false },
-        "notes": { "$ref": "#/$defs/LocalizedValue" },
-        "group": { "type": "string" },
+        "id": {
+          "$ref": "#/$defs/StableId"
+        },
+        "ingredientRefId": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StableId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ingredientFormId": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StableId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ingredientAliasHint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "originalText": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string",
+          "description": "Canonical unit id (for example g, ml, tsp, cup)."
+        },
+        "ingredientName": {
+          "type": "string"
+        },
+        "preparation": {
+          "$ref": "#/$defs/LocalizedValue"
+        },
+        "optional": {
+          "type": "boolean",
+          "default": false
+        },
+        "notes": {
+          "$ref": "#/$defs/LocalizedValue"
+        },
+        "group": {
+          "type": "string"
+        },
         "substitutions": {
           "type": "array",
-          "items": { "$ref": "#/$defs/IngredientLineSubstitution" }
+          "items": {
+            "$ref": "#/$defs/IngredientLineSubstitution"
+          }
+        },
+        "packageAmount": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/IngredientPackageAmount"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       }
     },
     "IngredientLineSubstitution": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "ingredientLineId", "createdAt", "updatedAt"],
+      "required": [
+        "id",
+        "ingredientLineId",
+        "createdAt",
+        "updatedAt"
+      ],
       "properties": {
-        "id": { "$ref": "#/$defs/Uuid" },
-        "ingredientLineId": { "$ref": "#/$defs/Uuid" },
-        "substitutionRuleId": { "$ref": "#/$defs/Uuid" },
-        "contextualSubstitutionRuleId": { "$ref": "#/$defs/Uuid" },
-        "isPreferred": { "type": "boolean", "default": false },
-        "customLabelFr": { "type": "string" },
-        "customLabelEn": { "type": "string" },
-        "createdAt": { "$ref": "#/$defs/DateTime" },
-        "updatedAt": { "$ref": "#/$defs/DateTime" }
+        "id": {
+          "$ref": "#/$defs/StableId"
+        },
+        "ingredientLineId": {
+          "$ref": "#/$defs/StableId"
+        },
+        "substitutionRuleId": {
+          "$ref": "#/$defs/StableId"
+        },
+        "contextualSubstitutionRuleId": {
+          "$ref": "#/$defs/StableId"
+        },
+        "isPreferred": {
+          "type": "boolean",
+          "default": false
+        },
+        "customLabelFr": {
+          "type": "string"
+        },
+        "customLabelEn": {
+          "type": "string"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/DateTime"
+        }
       },
       "anyOf": [
-        { "required": ["substitutionRuleId"] },
-        { "required": ["contextualSubstitutionRuleId"] }
+        {
+          "required": [
+            "substitutionRuleId"
+          ]
+        },
+        {
+          "required": [
+            "contextualSubstitutionRuleId"
+          ]
+        }
       ]
     },
     "Servings": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["amount"],
+      "required": [
+        "amount"
+      ],
       "properties": {
-        "amount": { "type": "number", "exclusiveMinimum": 0 },
-        "unit": { "type": "string" }
+        "amount": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "unit": {
+          "type": "string"
+        }
       }
     },
     "RecipeLink": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "targetRecipeId", "linkType"],
+      "required": [
+        "id",
+        "targetRecipeId",
+        "linkType"
+      ],
       "properties": {
-        "id": { "$ref": "#/$defs/Uuid" },
-        "targetRecipeId": { "$ref": "#/$defs/Uuid" },
+        "id": {
+          "$ref": "#/$defs/StableId"
+        },
+        "targetRecipeId": {
+          "$ref": "#/$defs/StableId"
+        },
         "linkType": {
           "type": "string",
-          "enum": ["COMPONENT", "TOPPING", "FILLING", "FROSTING", "SAUCE", "SEASONING", "SIDE", "PAIRING", "VARIATION", "OTHER"]
+          "enum": [
+            "COMPONENT",
+            "TOPPING",
+            "FILLING",
+            "FROSTING",
+            "SAUCE",
+            "SEASONING",
+            "SIDE",
+            "PAIRING",
+            "VARIATION",
+            "OTHER"
+          ]
         },
-        "labelFr": { "type": "string" },
-        "labelEn": { "type": "string" }
+        "labelFr": {
+          "type": "string"
+        },
+        "labelEn": {
+          "type": "string"
+        }
       }
     },
     "Times": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "prepTimeMinutes": { "type": "integer", "minimum": 0 },
-        "cookTimeMinutes": { "type": "integer", "minimum": 0 },
-        "totalTimeMinutes": { "type": "integer", "minimum": 0 }
+        "prepTimeMinutes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cookTimeMinutes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "totalTimeMinutes": {
+          "type": "integer",
+          "minimum": 0
+        }
       }
     },
     "RecipeCreation": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "createdAt", "updatedAt", "languages", "ingredients"],
+      "required": [
+        "id",
+        "createdAt",
+        "updatedAt",
+        "languages",
+        "ingredients"
+      ],
       "properties": {
-        "id": { "$ref": "#/$defs/Uuid" },
-        "createdAt": { "$ref": "#/$defs/DateTime" },
-        "updatedAt": { "$ref": "#/$defs/DateTime" },
-        "source": { "$ref": "#/$defs/Source" },
-        "languages": { "$ref": "#/$defs/LanguagesRequired" },
+        "id": {
+          "$ref": "#/$defs/StableId"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/DateTime"
+        },
+        "source": {
+          "$ref": "#/$defs/Source"
+        },
+        "languages": {
+          "$ref": "#/$defs/LanguagesRequired"
+        },
         "ingredients": {
           "type": "array",
-          "items": { "$ref": "#/$defs/IngredientLine" }
+          "items": {
+            "$ref": "#/$defs/IngredientLine"
+          }
         },
-        "servings": { "$ref": "#/$defs/Servings" },
-        "times": { "$ref": "#/$defs/Times" },
+        "servings": {
+          "$ref": "#/$defs/Servings"
+        },
+        "times": {
+          "$ref": "#/$defs/Times"
+        },
         "tags": {
           "type": "array",
-          "items": { "$ref": "#/$defs/Uuid" }
+          "items": {
+            "$ref": "#/$defs/StableId"
+          }
         },
         "collections": {
           "type": "array",
-          "items": { "$ref": "#/$defs/Uuid" }
+          "items": {
+            "$ref": "#/$defs/StableId"
+          }
         },
         "ratings": {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "userRating": { "type": "number", "minimum": 0, "maximum": 5 },
-            "madeCount": { "type": "integer", "minimum": 0 },
-            "lastMadeAt": { "$ref": "#/$defs/DateTime" }
+            "userRating": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "madeCount": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "lastMadeAt": {
+              "$ref": "#/$defs/DateTime"
+            }
           }
         },
         "recipeLinks": {
           "type": "array",
-          "items": { "$ref": "#/$defs/RecipeLink" }
+          "items": {
+            "$ref": "#/$defs/RecipeLink"
+          }
         },
-        "mainPhotoId": { "$ref": "#/$defs/Uuid" },
+        "mainPhotoId": {
+          "$ref": "#/$defs/StableId"
+        },
         "photos": {
           "type": "array",
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["id", "relativePath"],
+            "required": [
+              "id",
+              "relativePath"
+            ],
             "properties": {
-              "id": { "$ref": "#/$defs/Uuid" },
-              "relativePath": { "type": "string", "description": "Package-relative media path inside an export bundle, for example photos/abc.jpg." },
-              "cloudRef": { "type": "string" }
+              "id": {
+                "$ref": "#/$defs/StableId"
+              },
+              "relativePath": {
+                "type": "string",
+                "description": "Package-relative media path inside an export bundle, for example photos/abc.jpg."
+              },
+              "cloudRef": {
+                "type": "string"
+              }
             }
           }
         },
@@ -193,12 +413,26 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["id", "fileName", "mimeType", "relativePath"],
+            "required": [
+              "id",
+              "fileName",
+              "mimeType",
+              "relativePath"
+            ],
             "properties": {
-              "id": { "$ref": "#/$defs/Uuid" },
-              "fileName": { "type": "string" },
-              "mimeType": { "type": "string" },
-              "relativePath": { "type": "string", "description": "Package-relative media path inside an export bundle, for example attachments/abc.pdf." }
+              "id": {
+                "$ref": "#/$defs/StableId"
+              },
+              "fileName": {
+                "type": "string"
+              },
+              "mimeType": {
+                "type": "string"
+              },
+              "relativePath": {
+                "type": "string",
+                "description": "Package-relative media path inside an export bundle, for example attachments/abc.pdf."
+              }
             }
           }
         },
@@ -206,12 +440,109 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "sourceType": { "type": "string" },
-            "parserVersion": { "type": "string" },
-            "extractorVersion": { "type": "string" },
-            "generatorLabel": { "type": "string" },
-            "originalUnits": { "type": "string" }
+            "sourceType": {
+              "type": "string"
+            },
+            "parserVersion": {
+              "type": "string"
+            },
+            "extractorVersion": {
+              "type": "string"
+            },
+            "generatorLabel": {
+              "type": "string"
+            },
+            "originalUnits": {
+              "type": "string"
+            }
           }
+        }
+      }
+    },
+    "IngredientPackageAmount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "count",
+        "packageType"
+      ],
+      "properties": {
+        "count": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "packageType": {
+          "type": "string",
+          "enum": [
+            "CAN",
+            "TIN",
+            "JAR",
+            "POUCH",
+            "CARTON",
+            "TUB",
+            "PACKET",
+            "BLOCK",
+            "SACHET",
+            "STICK",
+            "BAG",
+            "BOTTLE",
+            "BOX",
+            "TUBE",
+            "OTHER"
+          ]
+        },
+        "declaredNetQuantity": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "declaredNetUnit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Keep mass oz and fluid oz as distinct unit values."
+        },
+        "packingMedium": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "brand": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "productCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "countryOfOrigin": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "requestedBasis": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "NET_CONTENTS",
+                "DRAINED_MASS",
+                "EDIBLE_MASS"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       }
     }
@@ -260,5 +591,3 @@
     }
   ]
 }
-
-

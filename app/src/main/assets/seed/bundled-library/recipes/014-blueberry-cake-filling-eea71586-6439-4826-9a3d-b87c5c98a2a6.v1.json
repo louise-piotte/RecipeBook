@@ -104,8 +104,7 @@
     {
       "id": "recipe-link-eea71586-6439-4826-9a3d-b87c5c98a2a6-cherry-filling-variation",
       "targetRecipeId": "5f004db4-2d76-458c-ae72-7f60379430fd",
-      "linkType": "VARIATION",
-      "position": 0
+      "linkType": "VARIATION"
     }
   ],
   "mainPhotoId": "photo-eea71586-6439-4826-9a3d-b87c5c98a2a6-0",

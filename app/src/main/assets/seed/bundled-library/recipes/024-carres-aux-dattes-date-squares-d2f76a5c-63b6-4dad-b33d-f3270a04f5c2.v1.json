@@ -38,6 +38,7 @@
       "id": "d2f76a5c-63b6-4dad-b33d-f3270a04f5c2-ingredient-2",
       "originalText": "1 cup water",
       "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
       "quantity": 1,
       "unit": "cup",
       "group": "Date Filling"
@@ -115,7 +116,8 @@
         "fr": "ramolli",
         "en": "softened"
       },
-      "group": "Crumb Mixture"
+      "group": "Crumb Mixture",
+      "ingredientRefId": "ingredient-ref-half-salted-butter"
     }
   ],
   "servings": {

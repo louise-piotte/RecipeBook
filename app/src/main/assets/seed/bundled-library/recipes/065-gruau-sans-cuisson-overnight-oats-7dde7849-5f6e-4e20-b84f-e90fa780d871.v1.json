@@ -78,6 +78,7 @@
       "id": "7dde7849-5f6e-4e20-b84f-e90fa780d871-ingredient-7",
       "originalText": "Nuts, to taste",
       "ingredientName": "nuts",
+      "ingredientRefId": "ingredient-ref-nuts",
       "quantity": 1,
       "unit": "to taste",
       "optional": true,

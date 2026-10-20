@@ -63,7 +63,13 @@
       "preparation": {
         "fr": "avec le liquide",
         "en": "with liquid"
-      }
+      },
+      "packageAmount": {
+        "count": 1,
+        "packageType": "CAN",
+        "requestedBasis": "NET_CONTENTS"
+      },
+      "ingredientFormId": "ingredient-form-pinto-beans-canned-with-liquid"
     },
     {
       "id": "4392bc3d-9785-43ac-b98e-496f96c1d628-ingredient-5",

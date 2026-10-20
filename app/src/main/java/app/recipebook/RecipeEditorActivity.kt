@@ -36,6 +36,7 @@ import app.recipebook.data.local.settings.AppLanguageStore
 import app.recipebook.domain.model.AppLanguage
 import app.recipebook.domain.model.Collection
 import app.recipebook.domain.model.IngredientReference
+import app.recipebook.domain.model.IngredientForm
 import app.recipebook.domain.model.PhotoRef
 import app.recipebook.domain.model.Recipe
 import app.recipebook.domain.model.RecipeTimes
@@ -91,12 +92,14 @@ class RecipeEditorActivity : ComponentActivity() {
                 var recipe by remember { mutableStateOf(loadedRecipe) }
                 val recipes by repository.observeRecipes().collectAsState(initial = emptyList())
                 val ingredientReferences by repository.observeIngredientReferences().collectAsState(initial = emptyList())
+                var ingredientForms by remember { mutableStateOf(emptyList<IngredientForm>()) }
                 val tags by repository.observeTags().collectAsState(initial = emptyList())
                 val collections by repository.observeCollections().collectAsState(initial = emptyList<Collection>())
                 val editorIngredientReferences = ingredientReferences.withImportedDraftPlaceholders(importedDraft)
 
                 LaunchedEffect(recipeId) {
                     repository.seedBundledLibraryIfMissing()
+                    ingredientForms = repository.loadIngredientSubstitutionCatalog().ingredientForms
                     if (recipe != null) return@LaunchedEffect
                     recipe = if (recipeId == null) {
                         val blankRecipe = repository.createBlankRecipe()
@@ -126,6 +129,7 @@ class RecipeEditorActivity : ComponentActivity() {
                         isNewRecipe = isNewRecipe,
                         recipes = recipes,
                         ingredientReferences = editorIngredientReferences,
+                        ingredientForms = ingredientForms,
                         tags = tags,
                         collections = collections,
                         importWarnings = importedDraft?.warnings.orEmpty(),

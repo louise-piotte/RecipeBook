@@ -5,14 +5,14 @@
     "linkedRecipeId":  null,
     "isFavourite":  "False",
     "rating":  "3",
-    "course":  "Déssert/Dessert",
+    "course":  "DÃ©ssert/Dessert",
     "categories":  [
                        "Chocolat/Chocolate",
                        "Date",
                        "Noisette/Hazelnut"
                    ],
     "collections":  [
-                        "Boîte de Noël/Christmas Box"
+                        "BoÃ®te de NoÃ«l/Christmas Box"
                     ],
     "sourceUrl":  "https://cookingwithayeh.com/chocolate-dates/",
     "yield":  "20",

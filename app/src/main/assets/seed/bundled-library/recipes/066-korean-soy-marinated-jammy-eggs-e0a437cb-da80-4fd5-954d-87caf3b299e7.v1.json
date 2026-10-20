@@ -90,6 +90,7 @@
       "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-7",
       "originalText": "1 cup water",
       "ingredientName": "water",
+      "ingredientRefId": "ingredient-ref-water",
       "quantity": 1,
       "unit": "cup"
     },
@@ -121,13 +122,14 @@
       "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-11",
       "originalText": "1 tbsp toasted white sesame seeds",
       "ingredientName": "sesame seeds",
-      "ingredientRefId": "ingredient-ref-sesame-seeds",
+      "ingredientRefId": "ingredient-ref-white-sesame-seeds",
       "quantity": 1,
       "unit": "tbsp",
       "preparation": {
         "fr": "blanc grill\u00e9",
         "en": "toasted white"
-      }
+      },
+      "ingredientFormId": "ingredient-form-white-sesame-seeds-toasted"
     },
     {
       "id": "e0a437cb-da80-4fd5-954d-87caf3b299e7-ingredient-12",
@@ -155,7 +157,9 @@
       "ingredientName": "cooked white rice",
       "quantity": 1,
       "unit": "for serving",
-      "optional": true
+      "optional": true,
+      "ingredientRefId": "ingredient-ref-white-rice",
+      "ingredientFormId": "ingredient-form-white-rice-cooked"
     }
   ],
   "servings": {

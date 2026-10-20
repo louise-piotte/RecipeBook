@@ -67,8 +67,8 @@
     {
       "id": "ad608924-df31-48be-89c5-721a7f0a2572-ingredient-6",
       "originalText": "1 tbsp ground yellow mustard seeds",
-      "ingredientName": "mustard seeds",
-      "ingredientRefId": "ingredient-ref-mustard-seeds",
+      "ingredientName": "yellow mustard seeds",
+      "ingredientRefId": "ingredient-ref-yellow-mustard-seeds",
       "quantity": 1,
       "unit": "tbsp",
       "preparation": {

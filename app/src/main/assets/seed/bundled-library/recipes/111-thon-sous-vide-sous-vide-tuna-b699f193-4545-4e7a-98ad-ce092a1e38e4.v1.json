@@ -48,8 +48,8 @@
     {
       "id": "b699f193-4545-4e7a-98ad-ce092a1e38e4-ingredient-4",
       "originalText": "1 tbsp extra-virgin olive oil",
-      "ingredientName": "olive oil",
-      "ingredientRefId": "ingredient-ref-olive-oil",
+      "ingredientName": "extra-virgin olive oil",
+      "ingredientRefId": "ingredient-ref-extra-virgin-olive-oil",
       "quantity": 1,
       "unit": "tbsp",
       "notes": {

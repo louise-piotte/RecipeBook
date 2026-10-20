@@ -26,7 +26,9 @@ internal fun encodeIngredientRows(rows: List<EditableIngredientRow>): String = J
     SavedIngredientRow(IngredientLine(id = row.id, ingredientRefId = row.ingredientRefId,
         ingredientName = row.ingredientName, originalText = row.originalText, unit = row.unit,
         preparation = row.preparation, notes = row.notes, optional = row.optional,
-        group = row.group, substitutions = row.substitutions).toDto(), row.quantity)
+        group = row.group, substitutions = row.substitutions,
+        ingredientFormId = row.ingredientFormId, ingredientAliasHint = row.ingredientAliasHint,
+        packageAmount = row.packageAmount).toDto(), row.quantity)
 })
 
 internal fun decodeIngredientRows(encoded: String): List<EditableIngredientRow> =

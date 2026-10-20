@@ -19,6 +19,7 @@
   - `.\\gradlew :app:testDebugUnitTest --no-daemon` for unit-test-safe changes when a narrower run is more practical.
   - Use instrumentation-specific Gradle tasks separately when instrumentation coverage is needed.
 - After the tests succeed, use `tools/deploy_to_pixel9a_emulator.sh` to upload it to the emulator and use navigation and screenshots to validate the change was correctly implemented.
+- If the change only concerns adding new data to the json files for the databases, no testing is needed.
 
 ## Localization
 - Localize all user-facing strings in both English and French.
@@ -47,6 +48,9 @@
 - Ingredient references carry an internal classification category for normalization, catalog management, and future filtering; pre-MVP, evolve these categories in place without compatibility shims.
 - Tags use a fixed built-in category taxonomy, including `OTHER`, with stored category values and localized FR/EN labels; keep categories code-defined rather than user-defined unless explicitly changed.
 - A bundled ingredient reference catalog overlay exists with internal FR/EN aliases plus density and unit-mapping data to support duplicate detection and user-facing conversions.
+- Catalog coverage focuses on generic culinary ingredient diversity across every ingredient type, not exhaustive brand, product-line, flavour-family, SKU, or retailer-variant rosters. Manufacturer sources may support a generic ingredient when their evidence applies beyond the named product; keep product-specific measurements and claims scoped to that product.
+- When reviewing queued catalog work, mark brand-, product-line-, flavour-family-, SKU-, or retailer-variant-only items out of scope with the reason that commercial-product counts do not add ingredient diversity, and stop pursuing those items.
+- Preserve existing branded entries. Do not delete or merge them into generic identities without reviewing whether each identity and its evidence are genuinely transferable.
 - Shopping list persistence uses a lightweight Android DataStore preferences store under `data/local/shoppinglist`, intentionally separate from JSON schema/DTO export models.
 - Room persistence foundation for core entities/DAOs lives in `data/local/db` and already includes a real instrumentation test for DAO round-trip behavior.
 - Recipe photo support stores app-managed local image files, tracks a recipe-level `mainPhotoId`, and renders list/detail images with centered square cropping.

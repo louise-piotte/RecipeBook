@@ -27,13 +27,14 @@
       "ingredientName": "dried yellow peas",
       "ingredientRefId": "ingredient-ref-yellow-peas",
       "quantity": 2,
-      "unit": "cup"
+      "unit": "cup",
+      "ingredientFormId": "ingredient-form-yellow-peas-whole-dried"
     },
     {
       "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-2",
       "originalText": "8 cups vegetable broth",
-      "ingredientName": "vegetable stock",
-      "ingredientRefId": "ingredient-ref-vegetable-stock",
+      "ingredientName": "vegetable broth",
+      "ingredientRefId": "ingredient-ref-vegetable-broth",
       "quantity": 8,
       "unit": "cup",
       "notes": {
@@ -128,8 +129,8 @@
     {
       "id": "e152b749-db75-4a7c-9bbf-3b94f721451d-ingredient-11",
       "originalText": "1 tbsp sesame oil",
-      "ingredientName": "toasted sesame oil",
-      "ingredientRefId": "ingredient-ref-toasted-sesame-oil",
+      "ingredientName": "sesame oil",
+      "ingredientRefId": "ingredient-ref-sesame-oil",
       "quantity": 1,
       "unit": "tbsp",
       "notes": {

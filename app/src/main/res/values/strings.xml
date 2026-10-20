@@ -88,6 +88,14 @@
     <string name="source_url_label">Source URL</string>
     <string name="servings_amount_label">Servings amount</string>
     <string name="servings_unit_label">Servings unit</string>
+    <string name="recipe_scale_label">Scale</string>
+    <string name="recipe_scale_dialog_title">Scale recipe</string>
+    <string name="recipe_scale_times_unchanged_note">Prep and cook times stay the same.</string>
+    <string name="recipe_scale_by_servings_label">By servings</string>
+    <string name="recipe_scale_by_multiplier_label">By multiplier</string>
+    <string name="recipe_scale_multiplier_label">Multiplier</string>
+    <string name="recipe_scale_factor_value">×%1$s</string>
+    <string name="apply_label">Apply</string>
     <string name="prep_minutes_label">Prep minutes</string>
     <string name="cook_minutes_label">Cook minutes</string>
     <string name="total_minutes_label">Total minutes</string>
@@ -122,6 +130,8 @@
     <string name="add_ingredient_line_label">Add ingredient line</string>
     <string name="ingredient_quantity_label">Quantity</string>
     <string name="ingredient_unit_label">Unit</string>
+    <string name="ingredient_form_label">Ingredient form</string>
+    <string name="no_ingredient_form_label">No form selected</string>
     <string name="ingredient_preparation_label">Preparation</string>
     <string name="ingredient_notes_label">Ingredient notes</string>
     <string name="ingredient_original_text_label">Original line text</string>
@@ -199,6 +209,8 @@
     <string name="recipe_photo_preview_label">Recipe photo preview</string>
     <string name="ingredient_conversion_dialog_title">Convert %1$s</string>
     <string name="ingredient_conversion_unavailable_label">No supported unit conversions are available for this ingredient.</string>
+    <string name="package_yield_source_qualifier">Source-specific estimate: %1$s</string>
+    <string name="package_yield_fractional_note">A fraction of a package assumes a proportional share of the documented yield.</string>
     <string name="ingredient_conversion_reset_label">Reset</string>
     <string name="ingredient_substitution_button_label">Show ingredient substitutions</string>
     <string name="ingredient_substitution_dialog_title">Substitute %1$s</string>
@@ -244,8 +256,6 @@
     <string name="local_save_backup_failed_label">Saved locally, but the backup could not be updated.</string>
     <string name="recipe_save_failed_label">The recipe could not be saved. Your draft is still available.</string>
 </resources>
-
-
 
 
 

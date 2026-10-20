@@ -37,15 +37,16 @@
     {
       "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-2",
       "originalText": "1/4 cup plain Greek yogurt",
-      "ingredientName": "plain yogurt",
-      "ingredientRefId": "ingredient-ref-plain-yogurt",
+      "ingredientName": "Greek-style yogurt",
+      "ingredientRefId": "ingredient-ref-greek-yogurt",
       "quantity": 0.25,
       "unit": "cup",
       "preparation": {
-        "fr": "grec",
-        "en": "Greek"
+        "fr": "nature",
+        "en": "plain"
       },
-      "group": "Crab balls"
+      "group": "Crab balls",
+      "ingredientFormId": "ingredient-form-greek-yogurt-plain"
     },
     {
       "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-3",
@@ -104,16 +105,17 @@
       "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-8",
       "originalText": "1 lb jumbo lump crab meat",
       "ingredientName": "jumbo lump crab meat",
-      "ingredientRefId": "ingredient-ref-jumbo-lump-crab-meat",
+      "ingredientRefId": "ingredient-ref-crab",
       "quantity": 1,
       "unit": "lb",
-      "group": "Crab balls"
+      "group": "Crab balls",
+      "ingredientFormId": "ingredient-form-crab-jumbo-lump"
     },
     {
       "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-9",
       "originalText": "1 cup panko bread crumbs",
-      "ingredientName": "bread crumbs",
-      "ingredientRefId": "ingredient-ref-breadcrumbs",
+      "ingredientName": "panko bread crumbs",
+      "ingredientRefId": "ingredient-ref-panko",
       "quantity": 1,
       "unit": "cup",
       "preparation": {
@@ -143,20 +145,22 @@
     {
       "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-12",
       "originalText": "1/4 cup plain Greek yogurt",
-      "ingredientName": "plain yogurt",
-      "ingredientRefId": "ingredient-ref-plain-yogurt",
+      "ingredientName": "Greek-style yogurt",
+      "ingredientRefId": "ingredient-ref-greek-yogurt",
       "quantity": 0.25,
       "unit": "cup",
       "preparation": {
-        "fr": "grec",
-        "en": "Greek"
+        "fr": "nature",
+        "en": "plain"
       },
-      "group": "Sriracha dipping sauce"
+      "group": "Sriracha dipping sauce",
+      "ingredientFormId": "ingredient-form-greek-yogurt-plain"
     },
     {
       "id": "135813a6-75e2-4596-8c71-ffd450fab0ca-ingredient-13",
       "originalText": "1/4 cup mayonnaise",
       "ingredientName": "mayonnaise",
+      "ingredientRefId": "ingredient-ref-mayo",
       "quantity": 0.25,
       "unit": "cup",
       "group": "Sriracha dipping sauce"

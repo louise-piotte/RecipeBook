@@ -95,8 +95,8 @@
     {
       "id": "9015696d-4126-49ee-91f5-578d66061fd9-ingredient-8",
       "originalText": "1 tsp kosher salt",
-      "ingredientName": "salt",
-      "ingredientRefId": "ingredient-ref-salt",
+      "ingredientName": "kosher salt",
+      "ingredientRefId": "ingredient-ref-kosher-salt",
       "quantity": 1,
       "unit": "tsp",
       "preparation": {

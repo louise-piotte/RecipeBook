@@ -36,7 +36,13 @@ class RecipeDatabaseMigrationTest {
             Room.databaseBuilder(context, RecipeBookDatabase::class.java, file.absolutePath)
                 .addMigrations(*supportedRecipeBookMigrations).build().useDatabase { db ->
                     val sql = db.openHelper.writableDatabase
-                    assertEquals(8, sql.version)
+                    assertEquals(10, sql.version)
+                    sql.query("PRAGMA table_info(recipe_ingredient_lines)").use { columns ->
+                        val names = buildSet { while (columns.moveToNext()) add(columns.getString(columns.getColumnIndexOrThrow("name"))) }
+                        assertTrue(names.contains("ingredientFormId"))
+                        assertTrue(names.contains("ingredientAliasHint"))
+                        assertTrue(names.contains("packageAmountJson"))
+                    }
                     sql.query("PRAGMA foreign_key_check").use { assertEquals(0, it.count) }
                     val repository = RecipeRepository(recipeDao = db.recipeDao(), libraryMetadataDao = db.libraryMetadataDao(),
                         librarySettingsDao = db.librarySettingsDao(),
@@ -59,6 +65,9 @@ class RecipeDatabaseMigrationTest {
                     assertEquals("Legacy recipe 0", recipe.languages.en.title)
                     assertEquals("/private/fixture/photo.png", recipe.photos.single().localPath)
                     val ingredient = recipe.ingredients.single()
+                    assertNull(ingredient.ingredientFormId)
+                    assertNull(ingredient.ingredientAliasHint)
+                    assertNull(ingredient.packageAmount)
                     assertEquals(1.5, requireNotNull(ingredient.quantity), 0.000001)
                     assertEquals("tasses", ingredient.unit)
                     assertEquals("haché", ingredient.preparation.fr)

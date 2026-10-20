@@ -1,6 +1,7 @@
 package app.recipebook.data.local.recipes
 
 import app.recipebook.domain.model.IngredientReference
+import app.recipebook.domain.localization.normalizeIngredientSearchKey
 
 internal data class RecipeKeeperRecipeIngredients(
     val title: String,
@@ -353,11 +354,7 @@ internal object RecipeKeeperIngredientImport {
         return index
     }
 
-    private fun normalizeKey(value: String): String = value
-        .lowercase()
-        .replace("&", "and")
-        .replace(Regex("[^a-z0-9]+"), " ")
-        .trim()
+    private fun normalizeKey(value: String): String = normalizeIngredientSearchKey(value)
 
     private fun decodeHtml(value: String): String {
         val namedDecoded = value
